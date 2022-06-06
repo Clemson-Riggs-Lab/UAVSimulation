@@ -1,33 +1,133 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2a31bee8-77bd-4176-b786-4bd852df0b13" name="Changes" comment="" />
+    <list default="true" id="2a31bee8-77bd-4176-b786-4bd852df0b13" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Helper Scripts/MyDebug.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Helper Scripts/MyDebug.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Helper Scripts/TextManipulation.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Helper Scripts/TextManipulation.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/InputFiles/baseInput/json - Copy (2) - Copy - Copy.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/InputFiles/baseInput/json - Copy (2) - Copy - Copy.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/InputFiles/baseInput/json - Copy (2) - Copy.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/InputFiles/baseInput/json - Copy (2) - Copy.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/InputFiles/baseInput/json - Copy (2).json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/InputFiles/baseInput/json - Copy (2).json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/InputFiles/baseInput/json - Copy (3) - Copy - Copy - Copy.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/InputFiles/baseInput/json - Copy (3) - Copy - Copy - Copy.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/InputFiles/baseInput/json - Copy (3) - Copy - Copy.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/InputFiles/baseInput/json - Copy (3) - Copy - Copy.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/InputFiles/baseInput/json - Copy (3).json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/InputFiles/baseInput/json - Copy (3).json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/InputFiles/baseInput/json - Copy.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/InputFiles/baseInput/json - Copy.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/InputFiles/baseInput/json.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/InputFiles/baseInput/json.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Menu/ConsoleTextHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Menu/FileBrowser.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Menu/FileBrowser.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Menu/InputFilesDropDownManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Menu/KeyValuePairController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Menu/KeyValuePairController.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Menu/SettingsReviewManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Menu/SettingsReviewManager.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/StandaloneFileBrowser.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/StandaloneFileBrowser/IStandaloneFileBrowser.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/StandaloneFileBrowser/IStandaloneFileBrowser.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/StandaloneFileBrowser/Plugins.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/StandaloneFileBrowser/Plugins/Linux.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/StandaloneFileBrowser/Plugins/Linux/x86_64.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/StandaloneFileBrowser/Plugins/Linux/x86_64/libStandaloneFileBrowser.so" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/StandaloneFileBrowser/Plugins/Linux/x86_64/libStandaloneFileBrowser.so.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/StandaloneFileBrowser/Plugins/Ookii.Dialogs.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/StandaloneFileBrowser/Plugins/Ookii.Dialogs.dll.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/StandaloneFileBrowser/Plugins/StandaloneFileBrowser.bundle.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/StandaloneFileBrowser/Plugins/StandaloneFileBrowser.bundle/Contents.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/StandaloneFileBrowser/Plugins/StandaloneFileBrowser.bundle/Contents/Info.plist" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/StandaloneFileBrowser/Plugins/StandaloneFileBrowser.bundle/Contents/Info.plist.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/StandaloneFileBrowser/Plugins/StandaloneFileBrowser.bundle/Contents/MacOS.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/StandaloneFileBrowser/Plugins/StandaloneFileBrowser.bundle/Contents/MacOS/StandaloneFileBrowser" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/StandaloneFileBrowser/Plugins/StandaloneFileBrowser.bundle/Contents/MacOS/StandaloneFileBrowser.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/StandaloneFileBrowser/Plugins/StandaloneFileBrowser.jslib" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/StandaloneFileBrowser/Plugins/StandaloneFileBrowser.jslib.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/StandaloneFileBrowser/Plugins/System.Windows.Forms.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/StandaloneFileBrowser/Plugins/System.Windows.Forms.dll.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/StandaloneFileBrowser/Sample.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/StandaloneFileBrowser/Sample/BasicSample.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/StandaloneFileBrowser/Sample/BasicSample.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/StandaloneFileBrowser/Sample/BasicSampleScene.unity" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/StandaloneFileBrowser/Sample/BasicSampleScene.unity.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/StandaloneFileBrowser/Sample/CanvasSampleOpenFileImage.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/StandaloneFileBrowser/Sample/CanvasSampleOpenFileImage.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/StandaloneFileBrowser/Sample/CanvasSampleOpenFileText.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/StandaloneFileBrowser/Sample/CanvasSampleOpenFileText.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/StandaloneFileBrowser/Sample/CanvasSampleOpenFileTextMultiple.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/StandaloneFileBrowser/Sample/CanvasSampleOpenFileTextMultiple.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/StandaloneFileBrowser/Sample/CanvasSampleSaveFileImage.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/StandaloneFileBrowser/Sample/CanvasSampleSaveFileImage.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/StandaloneFileBrowser/Sample/CanvasSampleSaveFileText.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/StandaloneFileBrowser/Sample/CanvasSampleSaveFileText.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/StandaloneFileBrowser/Sample/CanvasSampleScene.unity" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/StandaloneFileBrowser/Sample/CanvasSampleScene.unity.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/StandaloneFileBrowser/StandaloneFileBrowser.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/StandaloneFileBrowser/StandaloneFileBrowser.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/StandaloneFileBrowser/StandaloneFileBrowserEditor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/StandaloneFileBrowser/StandaloneFileBrowserEditor.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/StandaloneFileBrowser/StandaloneFileBrowserLinux.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/StandaloneFileBrowser/StandaloneFileBrowserLinux.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/StandaloneFileBrowser/StandaloneFileBrowserMac.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/StandaloneFileBrowser/StandaloneFileBrowserMac.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/StandaloneFileBrowser/StandaloneFileBrowserWindows.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/StandaloneFileBrowser/StandaloneFileBrowserWindows.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.UAVSimulation/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UAVSimulation/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/IOHandlers/InputFilesHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/IOHandlers/InputFilesHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Menu/ScrollRectExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Menu/ScrollRectExtensions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Menu/Setting Key Value Pair Panel.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Menu/Setting Key Value Pair Panel.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Menu/TypeWriterEffect.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Menu/TypeWriterEffect.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/599ef6b6d50f4e488ca73e2010b5243610fc00/70/b1ad8dee/Enumerable.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5a41d6b7189842eca409fd0b1c3e3dcf17bf78/8f/6daf9f6c/Void.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d4cde64232cf45659d86aafa597faa7746a800/7b/991b1fec/List`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d4cde64232cf45659d86aafa597faa7746a800/fc/4102a2a0/Dictionary`2.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/d44b17e136d09081da1e8fd0e8c83fde60e11818b9f2442d7ed8cb733fae895e/System.Collections.Generic.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Menu/ConsoleTextHandler.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Menu/FileBrowser.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Menu/KeyValuePairController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Menu/SettingsReviewManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.collab-proxy@1.15.17/Editor/PlasticSCM/Views/PendingChanges/PendingChangesTab.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/EventSystem/UIBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2A4RxRq3yJaRDp59EPxNvDCfGTB" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;rider.run.widget.enabled.cache&quot;: &quot;false&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Discover.Launch.Via.Unity": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "rider.run.widget.enabled.cache": "false",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="UnitTests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2021.3.4f1\Editor\Unity.exe" />
@@ -47,10 +147,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="14860">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="14860" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -69,6 +169,10 @@
       <workItem from="1654267126811" duration="179000" />
       <workItem from="1654267458208" duration="8000" />
       <workItem from="1654312163329" duration="380000" />
+      <workItem from="1654465525159" duration="113000" />
+      <workItem from="1654465871440" duration="63000" />
+      <workItem from="1654465952573" duration="11406000" />
+      <workItem from="1654483921649" duration="28785000" />
     </task>
     <servers />
   </component>
@@ -77,8 +181,39 @@
   </component>
   <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
-  <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Menu/InputFilesDropDownManager.cs</url>
+          <line>37</line>
+          <properties documentPath="C:\Users\abdel\OneDrive - University of Virginia\UVA\Research\UAV\UAVSimulation\Assets\Menu\InputFilesDropDownManager.cs" initialLine="37" containingFunctionPresentation="method 'PopulateDatabaseAndDropdown'">
+            <startOffsets>
+              <option value="1340" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1375" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

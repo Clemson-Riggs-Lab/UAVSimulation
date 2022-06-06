@@ -1,107 +1,122 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Helper_Scripts;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.UI;
-using static  NatoAlphabetConverter;
 
-public class TypeWriterEffect : MonoBehaviour
+namespace Menu
 {
-    public float durationOfSingleCharacterAnimation=0.02f;
-    public bool startDirectly = true;
-    public bool forceNewLine = true;
-    
-    private TextMeshProUGUI _mTextMeshPro;
-    
-    //animation queue variables
-    private IEnumerator _runningCoroutine = null;
-    private Queue<IEnumerator> _coroutineQueue = new Queue<IEnumerator> ();
-
-    void Start()
+    public class TypeWriterEffect : MonoBehaviour
     {
-        _mTextMeshPro = GetComponent<TextMeshProUGUI>() ?? gameObject.AddComponent<TextMeshProUGUI>();
-        _mTextMeshPro.ForceMeshUpdate(); //since we are calling in the start, this forces to render the text mesh. Otherwise we wouldnt be able to get the attributes since it hasnt laoded yet.
-        _mTextMeshPro.maxVisibleCharacters = 0; //making text invisible.
-        
-        if (startDirectly)
+        public float durationOfSingleCharacterAnimation=0.02f;
+        public bool startDirectly = true;
+        public bool forceNewLine = true;
+    
+        public TextMeshProUGUI _mTextMeshPro;
+    
+        //animation queue variables
+        private IEnumerator _runningCoroutine = null;
+        private Queue<IEnumerator> _coroutineQueue = new Queue<IEnumerator> ();
+
+        private void OnValidate()
         {
-             AnimateAll();
+            MyDebug.AssertComponentReferencedInEditor(_mTextMeshPro,this.gameObject);
         }
-    }
 
-    public void AnimateAll()
+        void Start()
+        {
+            _mTextMeshPro.ForceMeshUpdate(); //since we are calling in the start, this forces to render the text mesh. Otherwise we wouldnt be able to get the attributes since it hasnt laoded yet.
+            _mTextMeshPro.maxVisibleCharacters = 0; //making text invisible.
+        
+            if (startDirectly)
+            {
+                AnimateAll();
+            }
+        }
+
+        public void AnimateAll()
     
-    {
-        var totalCharacters = _mTextMeshPro.textInfo.characterCount;
-        StartCoroutine(AnimateText(0, totalCharacters));
+        {
+            var totalCharacters = _mTextMeshPro.textInfo.characterCount;
+            StartCoroutine(AnimateText(0, totalCharacters));
 
-    }
+        }
 
-    public void AddTextLoop(int iterations)
+        // testing function to make sure that the typewriter effect works
+        /*public void AddTextLoop(int iterations)
     {
         for (int i = 0; i <= iterations; i++)
         {
             QueueTextAddition(IntToLetters(i)); 
             QueueTextAddition(LettersToName(IntToLetters(i)));
-        }
-        
-    }
+        }     
+    }*/
 
 
-    public void QueueTextAddition(string textToAdd)
+        public void QueueTextAddition(string textToAdd, bool animateText=true)
 
-    {
-        if (_runningCoroutine == null)
         {
-            _runningCoroutine = AddText(textToAdd);
-            StartCoroutine(_runningCoroutine);
+            var addTextMethod = AddText(textToAdd, animateText);
+            if (_runningCoroutine == null)
+            {
+                _runningCoroutine = addTextMethod;
+                StartCoroutine(_runningCoroutine);
+            }
+            else
+                _coroutineQueue.Enqueue(addTextMethod);
         }
-        else
-            _coroutineQueue.Enqueue(AddText(textToAdd));
-    }
     
     
-    private IEnumerator AddText(string textToAdd)
-    {
-        if (forceNewLine)
-            textToAdd = Environment.NewLine +textToAdd; //adding newline to the begining;
-        
-        var startAnimationPosition = _mTextMeshPro.text.Length; //get length
-        int endAnimationPosition = startAnimationPosition + textToAdd.Length; //get new length
-        _mTextMeshPro.text += textToAdd; //append
-        StartCoroutine(AnimateText(startAnimationPosition, endAnimationPosition));
-        
-        var animationDuration = textToAdd.Length * durationOfSingleCharacterAnimation;
-        yield return new WaitForSeconds(animationDuration);
-
-        CheckAndUpdateQueue();
-
-    }
-
-    private void CheckAndUpdateQueue()
-    {
-        _runningCoroutine = null;
-        if (_coroutineQueue.Count > 0)
+        private IEnumerator AddText(string textToAdd, bool animateText)
         {
-            _runningCoroutine = _coroutineQueue.Dequeue();
-            StartCoroutine(_runningCoroutine);
+            if (forceNewLine) textToAdd = Environment.NewLine + textToAdd; //adding newline to the beginning;
+            if (animateText)
+            {
+                var startAnimationPosition = _mTextMeshPro.textInfo.characterCount; //get length
+                _mTextMeshPro.text += textToAdd; //append
+                var endAnimationPosition = _mTextMeshPro.textInfo.characterCount; //get new length
+
+                var totalCharacters = endAnimationPosition - startAnimationPosition;
+                var animationDuration = totalCharacters * durationOfSingleCharacterAnimation;
+
+                StartCoroutine(AnimateText(startAnimationPosition, endAnimationPosition));
+                yield return new WaitForSeconds(animationDuration);
+            }
+        
+            else
+            {
+                _mTextMeshPro.text += textToAdd;
+                _mTextMeshPro.maxVisibleCharacters = _mTextMeshPro.textInfo.characterCount;
+            }
+
+            CheckAndUpdateQueue();
+
         }
-    }
-    
-    private IEnumerator AnimateText(int startCharPos, int endCharPos)
-    {
-        
-        int visibleCount =startCharPos;
-        var delayBetweenLetters = new WaitForSeconds(durationOfSingleCharacterAnimation);
-        
-        while (visibleCount<endCharPos)
+
+        private void CheckAndUpdateQueue()
         {
-            visibleCount ++;
-            _mTextMeshPro.maxVisibleCharacters = visibleCount;
-            yield return delayBetweenLetters;
+            _runningCoroutine = null;
+            if (_coroutineQueue.Count > 0)
+            {
+                _runningCoroutine = _coroutineQueue.Dequeue();
+                StartCoroutine(_runningCoroutine);
+            }
         }
-    }
     
+        private IEnumerator AnimateText(int startCharPos, int endCharPos)
+        {
+        
+            int visibleCount =startCharPos;
+            var delayBetweenLetters = new WaitForSeconds(durationOfSingleCharacterAnimation);
+        
+            while (visibleCount<endCharPos)
+            {
+                visibleCount ++;
+                _mTextMeshPro.maxVisibleCharacters = visibleCount;
+                yield return delayBetweenLetters;
+            }
+        }
+    
+    }
 }

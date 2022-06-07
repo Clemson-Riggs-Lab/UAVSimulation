@@ -19,7 +19,7 @@ namespace Helper_Scripts
             return messageType switch
             {
                 MessageType.None => Color.black,
-                MessageType.Info => Color.cyan,
+                MessageType.Info => Color.blue,
                 MessageType.Warning => Color.yellow,
                 MessageType.Error => Color.red,
                 _ => Color.black

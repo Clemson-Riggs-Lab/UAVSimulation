@@ -24,5 +24,24 @@ namespace Helper_Scripts
 				Debug.LogError(debugString, go);
 			}
 		}
+
+		public static void CheckIfReferenceExistsOrComponentExistsInGameObject<T1, T2>(T1 variable,T2 script, GameObject go) where T1 : class
+		{
+			if (variable != null) return;
+			
+			if(go.TryGetComponent<T1>(out variable)==false)//try to get the reference from the gameObject
+			{
+				var debugString =$" Reference to { typeof(T1).Name } component in {typeof(T2).Name} script is not initialized in editor and was not found on containing gameObject {go.name}" +
+				                 $"{Environment.NewLine} Please reference a valid instance of ({typeof(T1).Name}) then clear debugger Errors";
+				Debug.LogError(debugString,go);
+			}
+			else
+			{
+				var debugString =$" Reference to { typeof(T1).Name } component in {typeof(T2).Name} script is not initialized in editor but was found from the object {go.name}" +
+				                 $"{Environment.NewLine} If this behavior is not intended, then please reference a valid instance of ({typeof(T1).Name}) then clear debugger Errors";
+				Debug.LogWarning(debugString,go);
+			}
+		}
+
 	}
 }

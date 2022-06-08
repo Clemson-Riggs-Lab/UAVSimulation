@@ -114,7 +114,7 @@ namespace IOHandlers
 
         private void RaiseError(string errorText, MessageType messageType =MessageType.Error)
         {
-            consoleTextHandler.AddTextToConsole(errorText,messageType, enableAnimation:false);
+            consoleTextHandler.AddTextToConsole(errorText,messageType, doAnimate:true);
         }
 
       

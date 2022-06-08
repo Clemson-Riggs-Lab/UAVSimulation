@@ -1,59 +1,40 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using Helper_Scripts;
 using TMPro;
 using UnityEngine;
+using static NatoAlphabetConverter;
 
 namespace Menu
 {
+	//TODO: Split this into two classes (one that handles the typewriter effect, and one that handles the queue. The queue class should be generic so it can be used for other classes, e.g., UAV routing, etc.)
 	public class TypeWriterEffect : MonoBehaviour
 	{
 		[SerializeField] public float durationOfSingleCharacterAnimation = 0.02f;
-		[SerializeField] public bool startDirectly = true;
-		[SerializeField] public bool forceNewLine = true;
-
 		[SerializeField] public TextMeshProUGUI mTextMeshPro;
-
-		//animation queue variables
-		private IEnumerator _runningCoroutine = null;
-		private Queue<IEnumerator> _coroutineQueue = new Queue<IEnumerator>();
-
+		[SerializeField] public ConsoleTextHandler consoleTextHandler;
+		
 		private void OnValidate()
 		{
-			MyDebug.AssertComponentReferencedInEditor(mTextMeshPro, this.gameObject);
+			MyDebug.CheckIfReferenceExistsOrComponentExistsInGameObject(mTextMeshPro,this, this.gameObject);
+			MyDebug.CheckIfReferenceExistsOrComponentExistsInGameObject(consoleTextHandler,this, this.gameObject);
 		}
-
-		void Start()
-		{
-			mTextMeshPro.ForceMeshUpdate(); //since we are calling in the start, this forces to render the text mesh. Otherwise we wouldnt be able to get the attributes since it hasnt laoded yet.
-			mTextMeshPro.maxVisibleCharacters = 0; //making text invisible.
-
-			if (startDirectly)
-			{
-				AnimateAll();
-			}
-		}
-
-		public void AnimateAll()
+		
+		public IEnumerator AnimateAll()
 
 		{
+			mTextMeshPro.ForceMeshUpdate();
 			var totalCharacters = mTextMeshPro.textInfo.characterCount;
-			StartCoroutine(AnimateText(0, totalCharacters));
+			yield return StartCoroutine(AnimateText(0, totalCharacters));
+			yield return null;
 		}
 
-		// testing function to make sure that the typewriter effect works
-		/*public void AddTextLoop(int iterations)
-	{
-		for (int i = 0; i <= iterations; i++)
-		{
-		    QueueTextAddition(IntToLetters(i)); 
-		    QueueTextAddition(LettersToName(IntToLetters(i)));
-		}     
-	}*/
 
 
-		public void QueueTextAddition(string textToAdd, bool animateText = true)
+
+		/*public void QueueTextAddition(string textToAdd, bool animateText = true)
 
 		{
 			var addTextMethod = AddText(textToAdd, animateText);
@@ -63,44 +44,48 @@ namespace Menu
 				StartCoroutine(_runningCoroutine);
 			}
 			else
-				_coroutineQueue.Enqueue(addTextMethod);
-		}
-
-
-		private IEnumerator AddText(string textToAdd, bool animateText)
+				_taskQueue.Enqueue(addTextMethod);
+		}*/
+		
+		public IEnumerator AddAnimatedText(string textToAdd)
 		{
-			if (forceNewLine) textToAdd = Environment.NewLine + textToAdd; //adding newline to the beginning;
-			if (animateText)
-			{
-				var startAnimationPosition = mTextMeshPro.textInfo.characterCount; //get length
-				mTextMeshPro.text += textToAdd; //append
-				var endAnimationPosition = mTextMeshPro.textInfo.characterCount; //get new length
+			var startAnimationPosition = mTextMeshPro.textInfo.characterCount; //get length
+			mTextMeshPro.text += textToAdd; //append
+			mTextMeshPro.ForceMeshUpdate(); //update mesh
+			var endAnimationPosition = mTextMeshPro.textInfo.characterCount; //get new length
 
-				var totalCharacters = endAnimationPosition - startAnimationPosition;
-				var animationDuration = totalCharacters * durationOfSingleCharacterAnimation;
+			var totalCharacters = endAnimationPosition - startAnimationPosition;
+			var animationDuration = totalCharacters * durationOfSingleCharacterAnimation;
 
-				StartCoroutine(AnimateText(startAnimationPosition, endAnimationPosition));
-				yield return new WaitForSeconds(animationDuration);
-			}
-
-			else
-			{
-				mTextMeshPro.text += textToAdd;
-				mTextMeshPro.maxVisibleCharacters = mTextMeshPro.textInfo.characterCount;
-			}
-
-			CheckAndUpdateQueue();
+			yield return StartCoroutine(AnimateText(startAnimationPosition, endAnimationPosition));
+			yield return new WaitForSeconds(animationDuration);
 		}
 
-		private void CheckAndUpdateQueue()
-		{
-			_runningCoroutine = null;
-			if (_coroutineQueue.Count > 0)
-			{
-				_runningCoroutine = _coroutineQueue.Dequeue();
-				StartCoroutine(_runningCoroutine);
-			}
-		}
+		// private bool _hasARunningTask = false;
+		// IEnumerator _currentTask = null;
+		// public void QueueAction(IEnumerator methodToQueue)
+		// 		{
+		// 			//_taskQueue.Enqueue(methodToQueue);
+		// 			_queueManager.Enqueue(methodToQueue);
+		// 			if (_hasARunningTask == false)
+		// 			{
+		// 				StartCoroutine(StartQueue());
+		// 			}
+		//
+		// 		}
+		// private IEnumerator StartQueue()
+		// {
+		// 	_hasARunningTask = true;
+		// 	
+		// 	while (_taskQueue.Count > 0)
+		// 	{
+		// 		Debug.Log("Visible Count: ");
+		// 		 _currentTask = _taskQueue.Dequeue();
+		// 		yield return  StartCoroutine(_currentTask);
+		// 		if(_taskQueue.Count == 0)_hasARunningTask = false;
+		// 	}
+		// 	
+		// }
 
 		private IEnumerator AnimateText(int startCharPos, int endCharPos)
 		{

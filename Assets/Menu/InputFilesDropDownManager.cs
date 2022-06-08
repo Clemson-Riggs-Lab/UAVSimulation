@@ -35,6 +35,8 @@ namespace Menu
 
 		public void PopulateDatabaseAndDropdown(List<FileInfo> filesInfo, bool initialized = true)
 		{
+			var selectedOptionDropdownIndex = int.MinValue;
+
 			foreach (var fileInfo in filesInfo)
 			{
 				if (_filesDatabase.TryAdd(fileInfo.Name, fileInfo)) continue; //added successfully
@@ -50,27 +52,28 @@ namespace Menu
 					else //same path same name, so it is the same file.
 					{
 						consoleTextHandler.AddTextToConsole(
-							$"Trying to add File ({fileInfo.FullName}) which is already in the dropdown list. The file is now selected as the input file.",
+							$"The file  ({fileInfo.Name}) is already in the dropdown list. The file is now selected as the input file.",
 							MessageType.Warning, false);
 
-						dropdown.value = _filesDatabase.Values.ToList().IndexOf(fileInfo);
+						selectedOptionDropdownIndex = _filesDatabase.Values.ToList().IndexOf(fileInfo);
 					}
 				}
 			}
 
-			dropdown.ClearOptions(); //removing all options (old)
-			dropdown.AddOptions(_filesDatabase.Keys.ToList()); //adding all options (old + new)
+			
 
-			if (!initialized) RefreshDropDown();
-			else
-				RefreshDropDown(selectedIndex: dropdown.options.Count - 1); //set selected to last option (most recently added)
+			RefreshDropDown(selectedIndex: selectedOptionDropdownIndex); //set selected to last option (most recently added)
 		}
 
 
-		private void RefreshDropDown(int selectedIndex = 0)
+		private void RefreshDropDown(int selectedIndex = int.MinValue)
 		{
-			dropdown.value = selectedIndex;
+			dropdown.ClearOptions(); //removing all options (old)
+			dropdown.AddOptions(_filesDatabase.Keys.ToList()); //adding all options (old + new)
+			
 			dropdown.RefreshShownValue();
+			if(selectedIndex!=int.MinValue)
+				dropdown.value = selectedIndex;
 		}
 
 		private void DropDownValueChanged(int position)

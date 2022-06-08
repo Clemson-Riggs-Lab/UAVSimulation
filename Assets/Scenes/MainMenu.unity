@@ -1129,13 +1129,7 @@ MonoBehaviour:
   m_ItemImage: {fileID: 0}
   m_Value: 0
   m_Options:
-    m_Options:
-    - m_Text: Option A
-      m_Image: {fileID: 0}
-    - m_Text: Option B
-      m_Image: {fileID: 0}
-    - m_Text: Option C
-      m_Image: {fileID: 0}
+    m_Options: []
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -2561,7 +2555,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Option A
+  m_text: Select a file
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -8301,7 +8295,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 845acbe2fdf00b841a8fc22062b3d331, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  settingsContainer: {fileID: 934522083}
+  reviewSettingsContainer: {fileID: 0}
   keyValuePairPrefab: {fileID: 7325418971208255881, guid: 7fa5bfb4a23aefe46a523eba7a138178, type: 3}
 --- !u!1 &937716501
 GameObject:
@@ -11052,7 +11046,7 @@ MonoBehaviour:
   durationOfSingleCharacterAnimation: 0.001
   startDirectly: 1
   forceNewLine: 1
-  _mTextMeshPro: {fileID: 1266965307}
+  mTextMeshPro: {fileID: 1266965307}
 --- !u!222 &1266965309
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -17547,7 +17541,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Option A
+  m_text: Option
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -17574,7 +17568,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 18
+  m_fontSize: 15.2
   m_fontSizeBase: 14
   m_fontWeight: 400
   m_enableAutoSizing: 1

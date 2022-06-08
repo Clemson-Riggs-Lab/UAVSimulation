@@ -18,9 +18,9 @@ namespace Menu
 
 		private void OnValidate()
 		{
-			MyDebug.AssertComponentReferencedInEditor(button, this.gameObject);
-			MyDebug.AssertComponentReferencedInEditor(dropDownManager, this.gameObject);
-			MyDebug.AssertComponentReferencedInEditor(inputFilesHandler, this.gameObject);
+			MyDebug.AssertComponentReferencedInEditor(button, this,this.gameObject);
+			MyDebug.AssertComponentReferencedInEditor(dropDownManager, this,this.gameObject);
+			MyDebug.AssertComponentReferencedInEditor(inputFilesHandler, this,this.gameObject);
 		}
 
 		void Start()
@@ -31,20 +31,18 @@ namespace Menu
 				this.transform.parent.gameObject.SetActive(false);
 			}
 			else
-			{
 				button.onClick.AddListener(ShowBrowseFileDialog);
-			}
 		}
 
 		private void ShowBrowseFileDialog()
-		{
-			var paths = StandaloneFileBrowser.OpenFilePanel("Open File",
+		{ 
+			//open file dialog without blocking the main thread
+			
+			var paths =  StandaloneFileBrowser.OpenFilePanel("Open File",
 				Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "json", true);
 			var filesInfo = paths.Select(path => new FileInfo(path)).ToList();
 			if (paths.Length == 1) //only one file selected, then the user probably wants this input file, and there is no need to do the extra step of selecting it from the Dropdown menu.
-			{
 				inputFilesHandler.SelectedBaseInputFileInfo = filesInfo[0];
-			}
 
 			dropDownManager.PopulateDatabaseAndDropdown(filesInfo);
 		}

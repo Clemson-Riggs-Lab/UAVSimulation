@@ -1,9 +1,5 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Threading.Tasks;
-using System.Threading;
-using Unity.VisualScripting;
 using UnityEngine;
 
 namespace UAVs
@@ -17,14 +13,13 @@ namespace UAVs
 		[NonSerialized] public string AbbrvName;
 		[NonSerialized] public List<Path> Paths;
 		[NonSerialized] public Path CurrentPath;
-
+		[NonSerialized] public bool IsActive;
 		public int ID
 		{
 			get => _id;
 			set => SetIDandNames(value);
 		}
 
-		public event EventHandler UAVIdisSet;
 
 		public Uav(int id = 999)
 		{

@@ -29,7 +29,7 @@ namespace UAVs
 
         private void Start()
         {
-           
+
         }
 
         public List<Uav> GenerateOneUAVOnEachWaypoint()

@@ -13,8 +13,8 @@ namespace Menu
 
 		private void OnValidate()
 		{
-			MyDebug.AssertComponentReferencedInEditor(keyText, this.gameObject);
-			MyDebug.AssertComponentReferencedInEditor(valueText, this.gameObject);
+			MyDebug.AssertComponentReferencedInEditor(keyText, this,this.gameObject);
+			MyDebug.AssertComponentReferencedInEditor(valueText,this, this.gameObject);
 		}
 
 		public void SetKeyText(string text, MessageType messageType)

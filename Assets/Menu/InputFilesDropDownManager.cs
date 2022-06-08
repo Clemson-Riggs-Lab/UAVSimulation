@@ -22,9 +22,9 @@ namespace Menu
 
 		private void OnValidate()
 		{
-			MyDebug.AssertComponentReferencedInEditor(dropdown, this.gameObject);
-			MyDebug.AssertComponentReferencedInEditor(inputFilesHandler, this.gameObject);
-			MyDebug.AssertComponentReferencedInEditor(consoleTextHandler, this.gameObject);
+			MyDebug.AssertComponentReferencedInEditor(dropdown,this, this.gameObject);
+			MyDebug.AssertComponentReferencedInEditor(inputFilesHandler, this,this.gameObject);
+			MyDebug.AssertComponentReferencedInEditor(consoleTextHandler, this,this.gameObject);
 		}
 
 		void Start()
@@ -53,7 +53,7 @@ namespace Menu
 					{
 						consoleTextHandler.AddTextToConsole(
 							$"The file  ({fileInfo.Name}) is already in the dropdown list. The file is now selected as the input file.",
-							MessageType.Warning, false);
+							MessageType.Warning, true);
 
 						selectedOptionDropdownIndex = _filesDatabase.Values.ToList().IndexOf(fileInfo);
 					}

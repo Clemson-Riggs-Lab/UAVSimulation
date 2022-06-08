@@ -14,7 +14,8 @@ namespace Menu
 	{
 		[SerializeField] public bool forceNewLine = true;
 		[SerializeField] public bool animateAllAtStart = true;
-		[SerializeField] public const bool DoAnimateByDefault = true;// change to false to disable animation by default
+		[DoNotSerialize] private const bool DoAnimateByDefault = true;// change to false to disable animation by default
+		
 		[SerializeField] public TextMeshProUGUI mTextMeshPro;
 		
 		public TypeWriterEffect typeWriterEffectScript;
@@ -33,13 +34,8 @@ namespace Menu
 
 		private void Start()
 		{
-
 			if (animateAllAtStart)
-			{
-				 _animationQueue.AddToQueue(typeWriterEffectScript.AnimateAll());
-			}
-			//AddTextLoop(10);
-			
+				_animationQueue.AddToQueue(typeWriterEffectScript.AnimateAll());
 		}
 
 		public void AddTextToConsole(string textToAdd, MessageType messageType = MessageType.None, bool doAnimate = DoAnimateByDefault)
@@ -59,13 +55,13 @@ namespace Menu
 		}
 
 		////testing function to make sure that the typewriter effect works
-		public void AddTextLoop(int iterations)
-		{
-			for (int i = 0; i <= iterations; i++)
-			{
-				AddTextToConsole(IntToLetters(i),MessageType.Info,true); 
-				AddTextToConsole(LettersToName(IntToLetters(i)),MessageType.Info,true);
-			}     
-		}
+		// public void AddTextLoop(int iterations)
+		// {
+		// 	for (int i = 0; i <= iterations; i++)
+		// 	{
+		// 		AddTextToConsole(IntToLetters(i),MessageType.Info,true); 
+		// 		AddTextToConsole(LettersToName(IntToLetters(i)),MessageType.Info,true);
+		// 	}     
+		// }
 	}
 }

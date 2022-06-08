@@ -53,8 +53,8 @@ namespace IOHandlers
         }
         private void OnValidate()
         {
-            MyDebug.AssertComponentReferencedInEditor(consoleTextHandler,this.gameObject);
-            MyDebug.AssertComponentReferencedInEditor(settingsReviewManager,this.gameObject);
+            MyDebug.AssertComponentReferencedInEditor(consoleTextHandler,this,this.gameObject);
+            MyDebug.AssertComponentReferencedInEditor(settingsReviewManager,this,this.gameObject);
         }
 
         public  void OnEnable()

@@ -16,8 +16,8 @@ public class SettingsReviewManager : MonoBehaviour
 
 	private void OnValidate()
 	{
-		MyDebug.AssertComponentReferencedInEditor(reviewSettingsContainer, this.gameObject);
-		MyDebug.AssertComponentReferencedInEditor(keyValuePairPrefab, this.gameObject);
+		MyDebug.AssertComponentReferencedInEditor(reviewSettingsContainer, this,this.gameObject);
+		MyDebug.AssertComponentReferencedInEditor(keyValuePairPrefab, this,this.gameObject);
 	}
 
 	void Start()

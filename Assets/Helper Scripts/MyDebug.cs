@@ -49,7 +49,7 @@ namespace Helper_Scripts
 			else
 			{
 				var debugString =$" Reference to { typeof(T1).Name } component in {typeof(T2).Name} script is not initialized in editor but was found from the object {go.name}" +
-				                 $"{Environment.NewLine} If this behavior is not intended, then please reference a valid instance of ({typeof(T1).Name}) then clear debugger Errors";
+				                 $"{Environment.NewLine} If this behavior is not intended, please remove the added reference then reference a valid instance of ({typeof(T1).Name}) then clear debugger Errors";
 				Debug.LogWarning(debugString,go);
 			}
 		}

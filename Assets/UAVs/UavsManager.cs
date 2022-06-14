@@ -15,8 +15,7 @@ namespace UAVs
         [SerializeField] private WaypointsManager waypointsManager;
         [SerializeField] private UavsGenerator uavsGenerator;
         
-        [NonSerialized] public List<Uav> UavsScripts = new List<Uav>();
-       
+        [NonSerialized] public List<Uav> Uavs = new List<Uav>();
 
         private void OnValidate()
         {
@@ -30,15 +29,15 @@ namespace UAVs
 
         void Start()
         {
-            UavsScripts= GetUavsInContainer();
+            Uavs= GetUavsInContainer();
         }
         
 
         private void ClearUavs()
         {
-            foreach (var uavScript in UavsScripts)
+            foreach (var uav in Uavs)
             {
-                Destroy(uavScript.gameObject);
+                Destroy(uav.gameObject);
             }
         }
 
@@ -49,14 +48,22 @@ namespace UAVs
         
         public List<Uav> GetUavs(bool includeInactive)
         {
-            if(includeInactive) return UavsScripts;
-            else return UavsScripts.Select(uav => uav).Where(uav => uav.IsActive).ToList();
+            if(includeInactive) return Uavs;
+            else return Uavs.Select(uav => uav).Where(uav => uav.isActive).ToList();
         }
         
         public void GenerateUavs()
         {
             ClearUavs();
-            UavsScripts = uavsGenerator.GenerateOneUAVOnEachWaypoint();
+            Uavs = uavsGenerator.GenerateOneUAVOnEachWaypoint();
+        }
+        
+        public void NavigateAll()
+        {
+            foreach (var uav in Uavs)
+            {
+                uav.Navigate();
+            }
         }
     }
 }

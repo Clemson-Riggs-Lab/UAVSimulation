@@ -26,37 +26,32 @@ namespace UAVs
             _uavsManager = gameObject.GetComponent<UavsManager>();
             _uavsContainer = _uavsManager.uavsContainer;   
         }
-
-        private void Start()
-        {
-
-        }
+        
 
         public List<Uav> GenerateOneUAVOnEachWaypoint()
         {
             _uavsContainer.transform.position = waypointsContainer.transform.position;
             var idIterator= 0;
-            var uavsList = new List<Uav>();
+            var uavs = new List<Uav>();
             
-            foreach (var wyptScript in _waypointsManager.WaypointsScripts)
+            foreach (var waypoint in _waypointsManager.waypoints)
             {
-                var wyptTransform = wyptScript.transform;
-                var uavScript = GenerateUav(idIterator, wyptTransform.localPosition);
-                uavsList.Add(uavScript);
+                var uav = GenerateUav(idIterator, waypoint);
+                uavs.Add(uav);
                 idIterator++;
             }
 
-            return uavsList;
+            return uavs;
         }
 
-        private Uav GenerateUav(int id, Vector3 position)
+        private Uav GenerateUav(int id, Waypoint waypoint)
         {
-            var  uavGO = Instantiate(uavPrefab,  _uavsContainer.transform);
-            uavGO.transform.localPosition = position;
-            var uavScript= uavGO.GetComponent<Uav>();
-            uavScript.ID = id;
+            var  uavGO = Instantiate(uavPrefab,  _uavsContainer.transform) as GameObject ;
+            var uav= uavGO.GetComponent<Uav>();
+            uav.Initialize(id, waypoint);
+            uav.ID = id;
         
-            return uavScript;
+            return uav;
         }
     }
 }

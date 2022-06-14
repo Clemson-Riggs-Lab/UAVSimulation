@@ -20,10 +20,6 @@ namespace Waypoints
             _waypointsContainer = gameObject.GetComponent<WaypointsManager>().waypointsContainer;
         }
 
-        private void Start()
-        {
-        }
-
         public List<Waypoint> GenerateWaypointsUniformOverPlane(int numOfWaypoints, int numOfCols, int numOfRows)
         {
             // moving the waypoint container's position to align with the plane

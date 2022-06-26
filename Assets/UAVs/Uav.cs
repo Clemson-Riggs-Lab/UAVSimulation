@@ -1,5 +1,9 @@
 using System;
 using System.Collections.Generic;
+using Events.ScriptableObjects;
+using HelperScripts;
+using IOHandlers;
+using IOHandlers.Records;
 using Unity.VisualScripting;
 using UnityEngine;
 using Waypoints;
@@ -11,17 +15,30 @@ namespace UAVs
 		private int _id = 999;
 		[NonSerialized] public string codeName;
 		[NonSerialized] public string abbrvName;
+		[SerializeField] public ObjectEventChannelSO uavCreatedChannel;
+		[SerializeField] public ObjectEventChannelSO uavDestroyedChannel;
 
-
-		[NonSerialized] public List<Path> Paths = new List<Path>();
+		[NonSerialized] public List<Path> Paths = new();
 		[NonSerialized] public Path CurrentPath;
 		[NonSerialized] public Waypoint LastWaypointVisited;
-		[NonSerialized] public bool isActive;
+		[NonSerialized] public bool isVisuallyEnabled;
+		private Renderer _renderer;
 
 		public int ID
 		{
 			get => _id;
 			set => SetIDandNames(value);
+		}
+
+		private void OnEnable()
+		{
+			_renderer = GetComponent<Renderer>();
+		}
+
+		private void Start()
+		{
+			if(uavCreatedChannel != null)
+				uavCreatedChannel.RaiseEvent(this);
 		}
 
 		public void Initialize(int id, Waypoint waypoint)
@@ -30,7 +47,8 @@ namespace UAVs
 			transform.localPosition =
 				waypoint.transform.position; // TODO: check if just position is enough instead of local position
 			LastWaypointVisited = waypoint;
-			this.isActive = false;
+			this.isVisuallyEnabled = false;
+			
 		}
 
 
@@ -39,11 +57,12 @@ namespace UAVs
 			_id = value;
 			abbrvName = NatoAlphabetConverter.IntToLetters(value);
 			codeName = NatoAlphabetConverter.LettersToName(abbrvName);
+			
 		}
 
 		public void Navigate()
 		{
-			isActive = true;
+			isVisuallyEnabled = true;
 
 			if (CurrentPath == null)
 			{
@@ -54,7 +73,9 @@ namespace UAVs
 				}
 				else
 				{
+					
 					CurrentPath = Paths[0];
+					isVisuallyEnabled = CurrentPath.isUavVisuallyEnabled;
 					CurrentPath.PathActivated();
 				}
 			}
@@ -63,7 +84,9 @@ namespace UAVs
 		//while paths are not empty, check if current path is finished, if it is, then start the next path
 		public void Update()
 		{
-			if (!isActive || Paths.Count == 0) return;
+
+
+			if (Paths.Count == 0) return;
 
 			//move uav towards next waypoint
 			if (CurrentPath != null)
@@ -85,12 +108,25 @@ namespace UAVs
 					else
 					{
 						CurrentPath = null;
-						isActive = false;
+						isVisuallyEnabled = false;
 					}
 				}
 			}
+		}
+		private void OnDisable()
+		{
+			if(uavDestroyedChannel != null)
+				uavDestroyedChannel.RaiseEvent(this);
+		}
 
+		public void SetUavRecord(UavRecord uavRecord)
+		{
+			this.isVisuallyEnabled= uavRecord.EnabledOnStart??false;
+		}
 
+		public void SetUavVisuallyEnabled(bool p0)
+		{
+			_renderer.enabled = p0;
 		}
 	}
 }

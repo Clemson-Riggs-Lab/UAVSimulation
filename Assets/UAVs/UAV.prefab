@@ -110,3 +110,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d66e7f5b92fa61a489051054901c8226, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uavCreatedChannel: {fileID: 11400000, guid: 2c0ad8844cd507c478486ac89803b222, type: 2}
+  uavDestroyedChannel: {fileID: 11400000, guid: c90c6554f88adea46867419e8399f102, type: 2}

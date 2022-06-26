@@ -1,5 +1,8 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using IOHandlers;
+using IOHandlers.Records;
 using Unity.VisualScripting;
 using UnityEngine;
 using Waypoints;
@@ -26,11 +29,14 @@ namespace UAVs
             _uavsManager = gameObject.GetComponent<UavsManager>();
             _uavsContainer = _uavsManager.uavsContainer;   
         }
-        
+
+        private void Start()
+        {
+            _uavsContainer.transform.position = waypointsContainer.transform.position;
+        }
 
         public List<Uav> GenerateOneUAVOnEachWaypoint()
         {
-            _uavsContainer.transform.position = waypointsContainer.transform.position;
             var idIterator= 0;
             var uavs = new List<Uav>();
             
@@ -43,6 +49,37 @@ namespace UAVs
 
             return uavs;
         }
+        public List<Uav> GenerateUavs(List<UavRecord> uavsRecords)
+        {
+            HandleNullValues(uavsRecords);
+            var uavs = new List<Uav>();
+            foreach (var uavRecord in uavsRecords)
+            {
+                //linq to get the waypoint by id
+                var waypoint = _waypointsManager.waypoints.FirstOrDefault(w => w.Id == uavRecord.StartingWaypointId);
+                if(waypoint != null)
+                {
+                    var uav = GenerateUav(uavRecord.Id??=0, waypoint);
+                    uav.SetUavRecord(uavRecord);
+                    uavs.Add(uav);
+                }
+                else
+                {
+                    Debug.LogError("Waypoint with id " + uavRecord.StartingWaypointId + " not found");
+                }
+            }
+            return uavs;
+        }
+
+        private void HandleNullValues(List<UavRecord> uavsRecords)
+        {
+            var maxId = uavsRecords.Max(x => x.Id) ?? 0;
+            foreach (var uavsRecord in uavsRecords)
+            {
+                uavsRecord.Id ??= maxId + 1;
+            }
+        }
+        
 
         private Uav GenerateUav(int id, Waypoint waypoint)
         {
@@ -53,5 +90,7 @@ namespace UAVs
         
             return uav;
         }
+
+       
     }
 }

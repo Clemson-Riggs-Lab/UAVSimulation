@@ -1,7 +1,7 @@
 using System;
 using System.IO;
 using System.Linq;
-using Helper_Scripts;
+using HelperScripts;
 using IOHandlers;
 using SFB;
 using TMPro;

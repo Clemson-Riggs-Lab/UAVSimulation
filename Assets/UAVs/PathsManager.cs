@@ -1,6 +1,9 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
-using Helper_Scripts;
+using HelperScripts;
+using IOHandlers;
+using IOHandlers.Records;
 using UnityEngine;
 using Waypoints;
 
@@ -15,7 +18,6 @@ namespace UAVs
 		}
 		
 		[SerializeField] public const int NumberOfRounds = 10;
-		[SerializeField]public float speed = 20f;
 		[NonSerialized] public List<Path> AllPaths = new List<Path>();
 		
 		[SerializeField] public PathsGenerator pathsGenerator ;
@@ -32,12 +34,17 @@ namespace UAVs
 			if (navType == NavType.InSequence)
 			{
 				var numberOfSteps = waypointsManager.waypoints.Count * NumberOfRounds;
-				AllPaths= pathsGenerator.GenerateSequentialNavigationPaths(waypointsManager, numberOfSteps,speed );
+				AllPaths= pathsGenerator.GenerateSequentialNavigationPaths(waypointsManager, numberOfSteps );
 			}
 			else
 			{
 				throw new System.NotImplementedException();
 			}
+		}
+
+		public void GeneratePaths(List<UavPathsRecord> uavPathsRecords)
+		{
+			AllPaths= pathsGenerator.GeneratePaths(waypointsManager,uavPathsRecords);
 		}
 	}
 }

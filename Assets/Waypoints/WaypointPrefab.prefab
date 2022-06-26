@@ -110,3 +110,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bbb868813524d3a956277dc6050058c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  waypointCreatedChannel: {fileID: 11400000, guid: 434256939b0e424438067ae5888d92c6, type: 2}
+  waypointDestroyedChannel: {fileID: 11400000, guid: ee622e049e3d02449b0fab8df64e091e, type: 2}

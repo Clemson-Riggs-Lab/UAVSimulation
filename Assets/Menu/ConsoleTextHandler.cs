@@ -1,25 +1,25 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using Helper_Scripts;
+using HelperScripts;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
-using static NatoAlphabetConverter;
+using static HelperScripts.NatoAlphabetConverter;
 
 namespace Menu
 {
 	public class ConsoleTextHandler : MonoBehaviour
 	{
-		[SerializeField] public bool forceNewLine = true;
-		[SerializeField] public bool animateAllAtStart = true;
+		[SerializeField] private bool forceNewLine = true;
+		[SerializeField] private bool animateAllAtStart = true;
 		[DoNotSerialize] private const bool DoAnimateByDefault = true;// change to false to disable animation by default
 		
-		[SerializeField] public TextMeshProUGUI mTextMeshPro;
+		[SerializeField] private TextMeshProUGUI mTextMeshPro;
 		
-		public TypeWriterEffect typeWriterEffectScript;
-		private   QueueManager _animationQueue; 
+		[SerializeField]public TypeWriterEffect typeWriterEffectScript;
+		[DoNotSerialize]private   QueueManager _animationQueue; 
 	
 		private void OnValidate()
 		{

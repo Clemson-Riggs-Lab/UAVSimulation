@@ -2,10 +2,10 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Helper_Scripts;
+using HelperScripts;
 using TMPro;
 using UnityEngine;
-using static NatoAlphabetConverter;
+using static HelperScripts.NatoAlphabetConverter;
 
 namespace Menu
 { 

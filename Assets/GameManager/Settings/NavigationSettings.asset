@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33a1ecd88f753b148972edec27d8f0cd, type: 3}
+  m_Name: New Settings
+  m_EditorClassIdentifier: 
+  navigationType: 3
+  speedMode: 0
+  fixedSpeed: 15.42
+  pathDuration: 15
+  followingType: 2
+  rotationDuration: 2
+  loopingType: 0
+  numberOfLoops: 0
+  ignorePositionAtAxis:
+    x: 0
+    y: 0
+    z: 0
+  waypointHoveringType: 3
+  hoverDurationOnWaypoint: 4
+  hoverAngle: 360
+  hoverSpeed: 1

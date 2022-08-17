@@ -12,7 +12,12 @@ namespace HelperScripts
             var textWithColor = "<color=#" + textColor.ToHexString() + ">" + text + "</color>";
             return textWithColor;
         }
-        
+        public static string AddColorToText(string text, string color)
+        {
+            var textColor = ColorHelper.StringToColor(color);
+            var textWithColor = "<color=#" + textColor.ToHexString() + ">" + text + "</color>";
+            return textWithColor;
+        }
         
         private static Color GetColorBasedOnMessageType(MessageType messageType)
         {

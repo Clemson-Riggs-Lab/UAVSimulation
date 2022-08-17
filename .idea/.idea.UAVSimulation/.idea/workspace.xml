@@ -2,283 +2,837 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2a31bee8-77bd-4176-b786-4bd852df0b13" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assembly-CSharp.csproj.DotSettings" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Events.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Events/ScriptableObjects.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Events/ScriptableObjects/ObjectEventChannelSO.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Events/ScriptableObjects/ObjectEventChannelSO.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/GameManager/SimulationSettings.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/GameManager/SimulationSettings.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/IOHandlers/FileManager.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/IOHandlers/FileManager.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/IOHandlers/Records.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/IOHandlers/Records/Coordinates.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/IOHandlers/Records/Coordinates.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/IOHandlers/Records/DefaultRecordsCreator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/IOHandlers/Records/DefaultRecordsCreator.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/IOHandlers/Records/Range.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/IOHandlers/Records/Range.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/IOHandlers/Records/RootObject.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/IOHandlers/Records/RootObject.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/IOHandlers/Records/SettingsRecord.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/IOHandlers/Records/SettingsRecord.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/IOHandlers/Records/UavFuelLeaksRecord.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/IOHandlers/Records/UavFuelLeaksRecord.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/IOHandlers/Records/UavPathsRecord.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/IOHandlers/Records/UavPathsRecord.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/IOHandlers/Records/UavRecord.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/IOHandlers/Records/UavRecord.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/IOHandlers/Records/VisualObjectRecord.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/IOHandlers/Records/VisualObjectRecord.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/IOHandlers/Records/WaypointRecord.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/IOHandlers/Records/WaypointRecord.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/InputFiles/Old To New UAV Input File conversion template.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/InputFiles/Old To New UAV Input File conversion template.xlsx.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/InputFiles/baseInput/DefaultInput.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/InputFiles/baseInput/DefaultInput.json.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/JsonSerializerTest.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/JsonSerializerTest.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scenes/GridWaypoints.unity" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scenes/GridWaypoints.unity.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/UAVs/UavCreatedChannel.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/UAVs/UavCreatedChannel.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/UAVs/UavDisabledChannel.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/UAVs/UavDisabledChannel.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Waypoints/waypointCreatedChannel.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Waypoints/waypointCreatedChannel.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Waypoints/waypointDisabledChannel.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Waypoints/waypointDisabledChannel.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Chat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Chat/Button.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Chat/Button.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Chat/ChatBox Panel Container.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Chat/ChatBox Panel Container.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Chat/ChatBoxTextHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Chat/ChatBoxTextHandler.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Chat/ChatLogHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Chat/ChatLogHandler.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Chat/ChatManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Chat/ChatManager.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Chat/ChatMessage.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Chat/ChatMessage.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Chat/ChatMessageOptionsSentEventChannel.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Chat/ChatMessageOptionsSentEventChannel.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Chat/ResponseReceivedSentEventChannel.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Chat/ResponseReceivedSentEventChannel.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Chat/ResponsesHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Chat/ResponsesHandler.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Chat/ScriptableObjects.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Chat/ScriptableObjects/ChatSettingsSO.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Chat/ScriptableObjects/ChatSettingsSO.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Chat/WriteTextToConsoleEventChannel.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Chat/WriteTextToConsoleEventChannel.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Events/ScriptableObjects/ConsoleTextEventChannelSO.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Events/ScriptableObjects/ConsoleTextEventChannelSO.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Events/ScriptableObjects/IntEventChannelSO.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Events/ScriptableObjects/IntEventChannelSO.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Events/ScriptableObjects/LogEventChannelSO.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Events/ScriptableObjects/LogEventChannelSO.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Events/ScriptableObjects/StringEventChannelSO.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Events/ScriptableObjects/StringEventChannelSO.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Events/ScriptableObjects/VoidEventChannelSO.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Events/ScriptableObjects/VoidEventChannelSO.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GameManager/CanvasManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GameManager/CanvasManager.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GameManager/PrefabsManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GameManager/PrefabsManager.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GameManager/Settings.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GameManager/Settings/Chat Settings.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GameManager/Settings/Chat Settings.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GameManager/Settings/FuelAndHealthSettings.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GameManager/Settings/FuelAndHealthSettings.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GameManager/Settings/NavigationSettings.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GameManager/Settings/NavigationSettings.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GameManager/Settings/UavCameraSettings.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GameManager/Settings/UavCameraSettings.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GameManager/SettingsManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GameManager/SettingsManager.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Gizmos.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Gizmos/coffee.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Gizmos/coffee.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Gizmos/jump.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Gizmos/jump.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Gizmos/speedUp.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Gizmos/speedUp.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/HelperScripts/ColorHelper.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/HelperScripts/ColorHelper.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/IOHandlers/Records/LayoutSettingsRecord.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/IOHandlers/Records/LayoutSettingsRecord.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Logging.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Logging/Log.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Logging/Log.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Logging/LoggingEventChannel SO.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Logging/LoggingEventChannel SO.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Logging/LoggingManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Logging/LoggingManager.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/MiniMap.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/MiniMap/CameraPositioning.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/MiniMap/CameraPositioning.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/MiniMap/MiniMapCameraRenderTexture.renderTexture" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/MiniMap/MiniMapCameraRenderTexture.renderTexture.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/New Terrain.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/New Terrain.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/DOTween.XML" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/DOTween.XML.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/DOTween.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/DOTween.dll.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Editor.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Editor/DOTweenEditor.XML" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Editor/DOTweenEditor.XML.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Editor/DOTweenEditor.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Editor/DOTweenEditor.dll.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Editor/Imgs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Editor/Imgs/DOTweenIcon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Editor/Imgs/DOTweenIcon.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Editor/Imgs/DOTweenMiniIcon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Editor/Imgs/DOTweenMiniIcon.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Editor/Imgs/Footer.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Editor/Imgs/Footer.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Editor/Imgs/Footer_dark.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Editor/Imgs/Footer_dark.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Editor/Imgs/Header.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Editor/Imgs/Header.jpg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Modules.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Modules/DOTweenModuleAudio.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Modules/DOTweenModuleAudio.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Modules/DOTweenModuleEPOOutline.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Modules/DOTweenModuleEPOOutline.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Modules/DOTweenModulePhysics.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Modules/DOTweenModulePhysics.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Modules/DOTweenModulePhysics2D.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Modules/DOTweenModulePhysics2D.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Modules/DOTweenModuleSprite.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Modules/DOTweenModuleSprite.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Modules/DOTweenModuleUI.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Modules/DOTweenModuleUI.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Modules/DOTweenModuleUnityVersion.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Modules/DOTweenModuleUnityVersion.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Modules/DOTweenModuleUtils.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Modules/DOTweenModuleUtils.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/readme.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/readme.txt.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Changelog.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Changelog.txt.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Animations.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Animations/Idle.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Animations/Idle.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Animations/Idle.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Animations/Idle.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Animations/Run Turn Sharp.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Animations/Run Turn Sharp.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Animations/Run Turn.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Animations/Run Turn.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Animations/Run.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Animations/Run.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Animations/Run.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Animations/Run.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Animations/Walk Turn Sharp.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Animations/Walk Turn Sharp.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Animations/Walk Turn.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Animations/Walk Turn.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Animations/Walk.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Animations/Walk.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Animations/Walk.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Animations/Walk.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Audio.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Audio/Low Acceleration.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Audio/Low Acceleration.wav.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Controller.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Controller/MoveController.controller" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Controller/MoveController.controller.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Controller/MoveController2D.controller" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Controller/MoveController2D.controller.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Materials.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Materials/AircraftFuselageGrey.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Materials/AircraftFuselageGrey.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Materials/AircraftFuselageWhite.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Materials/AircraftFuselageWhite.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Materials/AircraftWingsJetGrey.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Materials/AircraftWingsJetGrey.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Materials/AircraftWingsJetWhite.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Materials/AircraftWingsJetWhite.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Materials/Arrow.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Materials/Arrow.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Materials/ParticleAfterburner.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Materials/ParticleAfterburner.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Materials/ParticleContrail.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Materials/ParticleContrail.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Materials/ParticleJetTrail.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Materials/ParticleJetTrail.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Materials/PathIndicator.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Materials/PathIndicator.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Materials/PathRenderer.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Materials/PathRenderer.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Materials/ethan_eyes.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Materials/ethan_eyes.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Materials/ethan_hair.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Materials/ethan_hair.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Materials/ethan_plastic.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Materials/ethan_plastic.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Materials/ethan_skin.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Materials/ethan_skin.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Materials/ethan_suit.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Materials/ethan_suit.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Materials/part_firework.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Materials/part_firework.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Materials/part_smoke_white.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Materials/part_smoke_white.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Materials/part_spark.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Materials/part_spark.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Materials/prototype_black_grid.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Materials/prototype_black_grid.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Materials/prototype_blue_grid.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Materials/prototype_blue_grid.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Materials/prototype_green_grid.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Materials/prototype_green_grid.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Materials/prototype_white_grid.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Materials/prototype_white_grid.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Materials/rollingBall_metal.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Materials/rollingBall_metal.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Materials/skyCar_glass.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Materials/skyCar_glass.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Materials/skyCar_lightCovers.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Materials/skyCar_lightCovers.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Materials/skyCar_lightGlows.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Materials/skyCar_lightGlows.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Materials/skyCar_paint_orange.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Materials/skyCar_paint_orange.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Materials/skyCar_plastics.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Materials/skyCar_plastics.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Materials/skyCar_plate.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Materials/skyCar_plate.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Materials/skyCar_underside.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Materials/skyCar_underside.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Materials/skyCar_wheel_alloy.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Materials/skyCar_wheel_alloy.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Materials/skyCar_wheel_glow.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Materials/skyCar_wheel_glow.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Materials/skyCar_wheel_rubber.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Materials/skyCar_wheel_rubber.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Models.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Models/AircraftFuselage.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Models/AircraftFuselage.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Models/AircraftWingsJet.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Models/AircraftWingsJet.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Models/Ethan.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Models/Ethan.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Models/Materials.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Models/Materials/skyCar_paint_white.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Models/Materials/skyCar_paint_white.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Models/prototype_cube_2x2x2.FBX" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Models/prototype_cube_2x2x2.FBX.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Models/prototype_floor.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Models/prototype_floor.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Models/prototype_platform_2x1x2.FBX" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Models/prototype_platform_2x1x2.FBX.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Models/prototype_ramp_4x2x2.FBX" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Models/prototype_ramp_4x2x2.FBX.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Models/prototype_ring.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Models/prototype_ring.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Models/rollingBall.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Models/rollingBall.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Models/skyCar.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Models/skyCar.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/NavMesh.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/NavMesh/Example3_NavMesh.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/NavMesh/Example3_NavMesh.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/NavMesh/Example5_NavMesh.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/NavMesh/Example5_NavMesh.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Prefabs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Prefabs/AircraftJet.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Prefabs/AircraftJet.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Prefabs/Car.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Prefabs/Car.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Prefabs/Cube 2x2x2.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Prefabs/Cube 2x2x2.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Prefabs/Flare.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Prefabs/Flare.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Prefabs/Path.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Prefabs/Path.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Prefabs/PathIndicatorFX.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Prefabs/PathIndicatorFX.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Prefabs/PathIndicatorFX2D.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Prefabs/PathIndicatorFX2D.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Prefabs/Platform 2x1x2.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Prefabs/Platform 2x1x2.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Prefabs/Ramp 4x2x2.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Prefabs/Ramp 4x2x2.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Prefabs/Ring.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Prefabs/Ring.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Prefabs/Walker.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Prefabs/Walker.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Prefabs/Walker2D.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Prefabs/Walker2D.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Prefabs/WaypointGizmo.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Prefabs/WaypointGizmo.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Shaders.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Shaders/DiffuseReflectiveShader.shader" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Shaders/DiffuseReflectiveShader.shader.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Textures.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Textures/AircraftFuselageOcclusion.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Textures/AircraftFuselageOcclusion.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Textures/AircraftWingsJetOcclusion.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Textures/AircraftWingsJetOcclusion.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Textures/Arrow.psd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Textures/Arrow.psd.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Textures/PetitaMedium.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Textures/PetitaMedium.ttf.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Textures/cookie_flashlight.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Textures/cookie_flashlight.tif.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Textures/ethan_dff.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Textures/ethan_dff.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Textures/ethan_nrm.psd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Textures/ethan_nrm.psd.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Textures/part_cloud_white_alpha_dff.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Textures/part_cloud_white_alpha_dff.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Textures/part_flare_dff.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Textures/part_flare_dff.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Textures/part_spark_dff.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Textures/part_spark_dff.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Textures/pathIndicator.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Textures/pathIndicator.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Textures/prototype_black_dff.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Textures/prototype_black_dff.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Textures/prototype_blue_dff.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Textures/prototype_blue_dff.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Textures/prototype_green_2x2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Textures/prototype_green_2x2.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Textures/prototype_green_dff.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Textures/prototype_green_dff.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Textures/prototype_grey_4x1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Textures/prototype_grey_4x1.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Textures/prototype_red_4x1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Textures/prototype_red_4x1.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Textures/prototype_white_dff.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Textures/prototype_white_dff.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Textures/robotBoy_idle.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Textures/robotBoy_idle.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Textures/robotBoy_run.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Textures/robotBoy_run.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Textures/robotBoy_walk.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Textures/robotBoy_walk.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Textures/sandbox_sharp.cubemap" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Textures/sandbox_sharp.cubemap.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Textures/sandbox_soft.cubemap" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Textures/sandbox_soft.cubemap.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Textures/skyCar_body_dff.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Textures/skyCar_body_dff.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Textures/skyCar_body_nrm.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Textures/skyCar_body_nrm.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Textures/skyCar_lights_glw.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Textures/skyCar_lights_glw.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Textures/skyCar_plate_dff.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Textures/skyCar_plate_dff.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Textures/skyCar_plate_nrm.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Textures/skyCar_plate_nrm.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Textures/skyCar_underside_dff.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Textures/skyCar_underside_dff.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Textures/skyCar_underside_nrm.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Textures/skyCar_underside_nrm.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Textures/skyCar_wheel_dff.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Textures/skyCar_wheel_dff.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Textures/skyCar_wheel_nrm.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Assets/Textures/skyCar_wheel_nrm.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Example10_WaypointRotation.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Example10_WaypointRotation.unity" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Example10_WaypointRotation.unity.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Example10_WaypointRotation/NavMesh.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Example10_WaypointRotation/NavMesh.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Example1_Splines.unity" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Example1_Splines.unity.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Example2_Bezier.unity" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Example2_Bezier.unity.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Example3_Navmesh.unity" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Example3_Navmesh.unity.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Example4_Advanced.unity" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Example4_Advanced.unity.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Example5_Events.unity" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Example5_Events.unity.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Example6_PathInput.unity" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Example6_PathInput.unity.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Example7_Runtime.unity" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Example7_Runtime.unity.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Example8_CameraInput.unity" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Example8_CameraInput.unity.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Example9_RapidInput.unity" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Example9_RapidInput.unity.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Scripts.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Scripts/CameraInputDemo.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Scripts/CameraInputDemo.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Scripts/EventCollisionTrigger.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Scripts/EventCollisionTrigger.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Scripts/EventReceiver.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Scripts/EventReceiver.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Scripts/PathInputDemo.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Scripts/PathInputDemo.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Scripts/RapidInputDemo.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Scripts/RapidInputDemo.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Scripts/RotationHelper.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Scripts/RotationHelper.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Scripts/RuntimeDemo.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Scripts/RuntimeDemo.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Scripts/ShowcaseGUI.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Examples/Scripts/ShowcaseGUI.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Extensions.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/README.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/README.txt.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Scripts.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Scripts/Editor.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Scripts/Editor/AboutSWSEditor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Scripts/Editor/AboutSWSEditor.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Scripts/Editor/BezierPathEditor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Scripts/Editor/BezierPathEditor.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Scripts/Editor/CreateWPManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Scripts/Editor/CreateWPManager.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Scripts/Editor/EditorFiles.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Scripts/Editor/EditorFiles/Asset_smallLogo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Scripts/Editor/EditorFiles/Asset_smallLogo.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Scripts/Editor/PathEditor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Scripts/Editor/PathEditor.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Scripts/Editor/ReviewWindowEditor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Scripts/Editor/ReviewWindowEditor.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Scripts/Editor/WaypointEditor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Scripts/Editor/WaypointEditor.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Scripts/Editor/moveEditor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Scripts/Editor/moveEditor.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Scripts/Editor/navMoveEditor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Scripts/Editor/navMoveEditor.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Scripts/Editor/splineMoveEditor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Scripts/Editor/splineMoveEditor.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Scripts/Helper.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Scripts/Helper/MoveAnimator.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Scripts/Helper/MoveAnimator.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Scripts/Helper/PathIndicator.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Scripts/Helper/PathIndicator.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Scripts/Helper/PathRenderer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Scripts/Helper/PathRenderer.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Scripts/Manager.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Scripts/Manager/BezierPathManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Scripts/Manager/BezierPathManager.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Scripts/Manager/PathManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Scripts/Manager/PathManager.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Scripts/Manager/WaypointManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Scripts/Manager/WaypointManager.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Scripts/Movement.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Scripts/Movement/navMove.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Scripts/Movement/navMove.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Scripts/Movement/splineMove.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/Scripts/Movement/splineMove.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/SimpleWaypointSystem.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SWS/SimpleWaypointSystem.pdf.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SkySeries Freebie.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SkySeries Freebie/6SidedFluffball.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SkySeries Freebie/6SidedFluffball.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SkySeries Freebie/6SidedMegaSun.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SkySeries Freebie/6SidedMegaSun.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SkySeries Freebie/6sidedCosmicCoolCloud.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SkySeries Freebie/6sidedCosmicCoolCloud.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SkySeries Freebie/AmbienceExposure.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SkySeries Freebie/AmbienceExposure.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SkySeries Freebie/CasualDay.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SkySeries Freebie/CasualDay.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SkySeries Freebie/CloudedSunGlow.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SkySeries Freebie/CloudedSunGlow.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SkySeries Freebie/Cloudymorning.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SkySeries Freebie/Cloudymorning.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SkySeries Freebie/CoriolisNight4k.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SkySeries Freebie/CoriolisNight4k.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SkySeries Freebie/CosmicCoolCloud_Eq.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SkySeries Freebie/CosmicCoolCloud_Eq.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SkySeries Freebie/DarkStorm.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SkySeries Freebie/DarkStorm.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SkySeries Freebie/DayInTheClouds.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SkySeries Freebie/DayInTheClouds.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SkySeries Freebie/FluffballDay.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SkySeries Freebie/FluffballDay.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SkySeries Freebie/FreebieHdri.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SkySeries Freebie/FreebieHdri/AmbienceExposure4k.hdr" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SkySeries Freebie/FreebieHdri/AmbienceExposure4k.hdr.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SkySeries Freebie/FreebieHdri/CasualDay4K.hdr" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SkySeries Freebie/FreebieHdri/CasualDay4K.hdr.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SkySeries Freebie/FreebieHdri/CloudedSunGlow4k.hdr" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SkySeries Freebie/FreebieHdri/CloudedSunGlow4k.hdr.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SkySeries Freebie/FreebieHdri/Cloudymorning4k.hdr" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SkySeries Freebie/FreebieHdri/Cloudymorning4k.hdr.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SkySeries Freebie/FreebieHdri/CoriolisNight4k.hdr" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SkySeries Freebie/FreebieHdri/CoriolisNight4k.hdr.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SkySeries Freebie/FreebieHdri/CosmicCoolCloudBack.hdr" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SkySeries Freebie/FreebieHdri/CosmicCoolCloudBack.hdr.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SkySeries Freebie/FreebieHdri/CosmicCoolCloudBottom.hdr" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SkySeries Freebie/FreebieHdri/CosmicCoolCloudBottom.hdr.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SkySeries Freebie/FreebieHdri/CosmicCoolCloudEQ_hdr.exr" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SkySeries Freebie/FreebieHdri/CosmicCoolCloudEQ_hdr.exr.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SkySeries Freebie/FreebieHdri/CosmicCoolCloudFront.hdr" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SkySeries Freebie/FreebieHdri/CosmicCoolCloudFront.hdr.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SkySeries Freebie/FreebieHdri/CosmicCoolCloudLeft.hdr" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SkySeries Freebie/FreebieHdri/CosmicCoolCloudLeft.hdr.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SkySeries Freebie/FreebieHdri/CosmicCoolCloudRight.hdr" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SkySeries Freebie/FreebieHdri/CosmicCoolCloudRight.hdr.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SkySeries Freebie/FreebieHdri/CosmicCoolCloudTop.hdr" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SkySeries Freebie/FreebieHdri/CosmicCoolCloudTop.hdr.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SkySeries Freebie/FreebieHdri/DarkStorm4K.hdr" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SkySeries Freebie/FreebieHdri/DarkStorm4K.hdr.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SkySeries Freebie/FreebieHdri/DayInTheClouds4k.hdr" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SkySeries Freebie/FreebieHdri/DayInTheClouds4k.hdr.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SkySeries Freebie/FreebieHdri/FluffballDay4k.hdr" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SkySeries Freebie/FreebieHdri/FluffballDay4k.hdr.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SkySeries Freebie/FreebieHdri/FluffballDayBack.hdr" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SkySeries Freebie/FreebieHdri/FluffballDayBack.hdr.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SkySeries Freebie/FreebieHdri/FluffballDayBottom.hdr" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SkySeries Freebie/FreebieHdri/FluffballDayBottom.hdr.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SkySeries Freebie/FreebieHdri/FluffballDayFront.hdr" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SkySeries Freebie/FreebieHdri/FluffballDayFront.hdr.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SkySeries Freebie/FreebieHdri/FluffballDayLeft.hdr" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SkySeries Freebie/FreebieHdri/FluffballDayLeft.hdr.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SkySeries Freebie/FreebieHdri/FluffballDayRight.hdr" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SkySeries Freebie/FreebieHdri/FluffballDayRight.hdr.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SkySeries Freebie/FreebieHdri/FluffballDayTop.hdr" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SkySeries Freebie/FreebieHdri/FluffballDayTop.hdr.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SkySeries Freebie/FreebieHdri/HighFantasy4k.hdr" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SkySeries Freebie/FreebieHdri/HighFantasy4k.hdr.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SkySeries Freebie/FreebieHdri/MegaSun4k.hdr" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SkySeries Freebie/FreebieHdri/MegaSun4k.hdr.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SkySeries Freebie/FreebieHdri/MegaSunBack.hdr" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SkySeries Freebie/FreebieHdri/MegaSunBack.hdr.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SkySeries Freebie/FreebieHdri/MegaSunBottom.hdr" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SkySeries Freebie/FreebieHdri/MegaSunBottom.hdr.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SkySeries Freebie/FreebieHdri/MegaSunFront.hdr" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SkySeries Freebie/FreebieHdri/MegaSunFront.hdr.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SkySeries Freebie/FreebieHdri/MegaSunLeft.hdr" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SkySeries Freebie/FreebieHdri/MegaSunLeft.hdr.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SkySeries Freebie/FreebieHdri/MegaSunRight.hdr" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SkySeries Freebie/FreebieHdri/MegaSunRight.hdr.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SkySeries Freebie/FreebieHdri/MegaSunTop.hdr" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SkySeries Freebie/FreebieHdri/MegaSunTop.hdr.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SkySeries Freebie/FreebieHdri/PlanetaryEarth4k.hdr" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SkySeries Freebie/FreebieHdri/PlanetaryEarth4k.hdr.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SkySeries Freebie/FreebieHdri/SkyhighFluffycloudField4k.hdr" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SkySeries Freebie/FreebieHdri/SkyhighFluffycloudField4k.hdr.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SkySeries Freebie/FreebieHdri/SunlessCirruscover4k.hdr" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SkySeries Freebie/FreebieHdri/SunlessCirruscover4k.hdr.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SkySeries Freebie/FreebieHdri/UnderTheSea4k.hdr" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SkySeries Freebie/FreebieHdri/UnderTheSea4k.hdr.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SkySeries Freebie/FreebieHdri/UnearthlyRed4k.hdr" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SkySeries Freebie/FreebieHdri/UnearthlyRed4k.hdr.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SkySeries Freebie/Hdri setup.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SkySeries Freebie/Hdri setup.txt.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SkySeries Freebie/HighFantasy.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SkySeries Freebie/HighFantasy.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SkySeries Freebie/MegaSun.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SkySeries Freebie/MegaSun.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SkySeries Freebie/PlanetaryEarth.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SkySeries Freebie/PlanetaryEarth.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SkySeries Freebie/SkyhighFluffycloudField.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SkySeries Freebie/SkyhighFluffycloudField.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SkySeries Freebie/SunlessCirruscover.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SkySeries Freebie/SunlessCirruscover.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SkySeries Freebie/UnderTheSea4k.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SkySeries Freebie/UnderTheSea4k.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SkySeries Freebie/UnearthlyRed.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/SkySeries Freebie/UnearthlyRed.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Standard Assets.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Standard Assets/Physic Materials.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Standard Assets/Physic Materials/Bouncy.physicmaterial" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Standard Assets/Physic Materials/Bouncy.physicmaterial.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Standard Assets/Physic Materials/Ice.physicmaterial" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Standard Assets/Physic Materials/Ice.physicmaterial.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Standard Assets/Physic Materials/Metal.physicmaterial" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Standard Assets/Physic Materials/Metal.physicmaterial.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Standard Assets/Physic Materials/Rubber.physicmaterial" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Standard Assets/Physic Materials/Rubber.physicmaterial.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Standard Assets/Physic Materials/Wood.physicmaterial" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Standard Assets/Physic Materials/Wood.physicmaterial.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Standard Assets/Skyboxes.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Standard Assets/Skyboxes/Sunny1 Skybox.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Standard Assets/Skyboxes/Sunny1 Skybox.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Standard Assets/Skyboxes/Textures.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Standard Assets/Skyboxes/Textures/Sunny1.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Standard Assets/Skyboxes/Textures/Sunny1/Sunny1_back.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Standard Assets/Skyboxes/Textures/Sunny1/Sunny1_back.tif.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Standard Assets/Skyboxes/Textures/Sunny1/Sunny1_down.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Standard Assets/Skyboxes/Textures/Sunny1/Sunny1_down.tif.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Standard Assets/Skyboxes/Textures/Sunny1/Sunny1_front.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Standard Assets/Skyboxes/Textures/Sunny1/Sunny1_front.tif.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Standard Assets/Skyboxes/Textures/Sunny1/Sunny1_left.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Standard Assets/Skyboxes/Textures/Sunny1/Sunny1_left.tif.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Standard Assets/Skyboxes/Textures/Sunny1/Sunny1_right.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Standard Assets/Skyboxes/Textures/Sunny1/Sunny1_right.tif.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Standard Assets/Skyboxes/Textures/Sunny1/Sunny1_up.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Standard Assets/Skyboxes/Textures/Sunny1/Sunny1_up.tif.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Standard Assets/Terrain Assets.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Standard Assets/Terrain Assets/Terrain Grass.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Standard Assets/Terrain Assets/Terrain Grass/Grass.psd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Standard Assets/Terrain Assets/Terrain Grass/Grass.psd.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Standard Assets/Terrain Assets/Terrain Grass/Grass2.psd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Standard Assets/Terrain Assets/Terrain Grass/Grass2.psd.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Standard Assets/Terrain Assets/Terrain Textures.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Standard Assets/Terrain Assets/Terrain Textures/Cliff (Layered Rock).psd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Standard Assets/Terrain Assets/Terrain Textures/Cliff (Layered Rock).psd.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Standard Assets/Terrain Assets/Terrain Textures/GoodDirt.psd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Standard Assets/Terrain Assets/Terrain Textures/GoodDirt.psd.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Standard Assets/Terrain Assets/Terrain Textures/Grass (Hill).psd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Standard Assets/Terrain Assets/Terrain Textures/Grass (Hill).psd.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Standard Assets/Terrain Assets/Terrain Textures/Grass&amp;Rock.psd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Standard Assets/Terrain Assets/Terrain Textures/Grass&amp;Rock.psd.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Standard Assets/Terrain Assets/Trees Ambient-Occlusion.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Standard Assets/Terrain Assets/Trees Ambient-Occlusion/Palm.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Standard Assets/Terrain Assets/Trees Ambient-Occlusion/Palm/Materials.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Standard Assets/Terrain Assets/Trees Ambient-Occlusion/Palm/Materials/palmbark.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Standard Assets/Terrain Assets/Trees Ambient-Occlusion/Palm/Materials/palmbark.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Standard Assets/Terrain Assets/Trees Ambient-Occlusion/Palm/Materials/palmbranch.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Standard Assets/Terrain Assets/Trees Ambient-Occlusion/Palm/Materials/palmbranch.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Standard Assets/Terrain Assets/Trees Ambient-Occlusion/Palm/Palm.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Standard Assets/Terrain Assets/Trees Ambient-Occlusion/Palm/Palm.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Standard Assets/Terrain Assets/Trees Ambient-Occlusion/Palm/PalmBark.psd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Standard Assets/Terrain Assets/Trees Ambient-Occlusion/Palm/PalmBark.psd.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Standard Assets/Terrain Assets/Trees Ambient-Occlusion/Palm/PalmBranch.psd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Standard Assets/Terrain Assets/Trees Ambient-Occlusion/Palm/PalmBranch.psd.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Standard Assets/Water (Basic).meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Standard Assets/Water (Basic)/Daylight Simple Water.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Standard Assets/Water (Basic)/Daylight Simple Water.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Standard Assets/Water (Basic)/Nighttime Simple Water.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Standard Assets/Water (Basic)/Nighttime Simple Water.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Standard Assets/Water (Basic)/Sources.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Standard Assets/Water (Basic)/Sources/Materials.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Standard Assets/Water (Basic)/Sources/Materials/Daylight Simple Water.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Standard Assets/Water (Basic)/Sources/Materials/Daylight Simple Water.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Standard Assets/Water (Basic)/Sources/Materials/Nighttime Simple Water.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Standard Assets/Water (Basic)/Sources/Materials/Nighttime Simple Water.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Standard Assets/Water (Basic)/Sources/Objects.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Standard Assets/Water (Basic)/Sources/Objects/Materials.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Standard Assets/Water (Basic)/Sources/Objects/Materials/water plane-lambert1.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Standard Assets/Water (Basic)/Sources/Objects/Materials/water plane-lambert1.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Standard Assets/Water (Basic)/Sources/Objects/Water Plane.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Standard Assets/Water (Basic)/Sources/Objects/Water Plane.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Standard Assets/Water (Basic)/Sources/Scripts.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Standard Assets/Water (Basic)/Sources/Scripts/WaterSimple.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Standard Assets/Water (Basic)/Sources/Scripts/WaterSimple.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Standard Assets/Water (Basic)/Sources/Shaders.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Standard Assets/Water (Basic)/Sources/Shaders/FX-Water Simple.shader" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Standard Assets/Water (Basic)/Sources/Shaders/FX-Water Simple.shader.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Standard Assets/Water (Basic)/Sources/Textures.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Standard Assets/Water (Basic)/Sources/Textures/Water fallback.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Standard Assets/Water (Basic)/Sources/Textures/Water fallback.jpg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Standard Assets/Water (Basic)/Sources/Textures/Waterbump.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Standard Assets/Water (Basic)/Sources/Textures/Waterbump.jpg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Standard Assets/Water (Basic)/Sources/Textures/nightgradient cubemap.psd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Standard Assets/Water (Basic)/Sources/Textures/nightgradient cubemap.psd.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Standard Assets/Water (Basic)/Sources/Textures/nightgradient.psd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Standard Assets/Water (Basic)/Sources/Textures/nightgradient.psd.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Standard Assets/Water (Basic)/Sources/Textures/oceangradient.psd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Standard Assets/Water (Basic)/Sources/Textures/oceangradient.psd.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Standard Assets/Water (Basic)/Sources/Textures/oceangradientcube.psd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Standard Assets/Water (Basic)/Sources/Textures/oceangradientcube.psd.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/DOTweenSettings.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/DOTweenSettings.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scenes/SimulationScene.unity" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scenes/SimulationScene.unity.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scenes/TestScene.unity" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scenes/TestScene.unity.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/fuel_icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/fuel_icon.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/heart.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/heart.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UAVs/Camera.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UAVs/Camera/CamerasPanelManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UAVs/Camera/CamerasPanelManager.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UAVs/Camera/ScriptableObjects.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UAVs/Camera/ScriptableObjects/UavCameraSettingsSO.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UAVs/Camera/ScriptableObjects/UavCameraSettingsSO.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UAVs/Camera/UAV Camera and Target Selection Panel.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UAVs/Camera/UAV Camera and Target Selection Panel.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UAVs/Camera/UavCameraController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UAVs/Camera/UavCameraController.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UAVs/Camera/targetnotseen.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UAVs/Camera/targetnotseen.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UAVs/Camera/targetseen.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UAVs/Camera/targetseen.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UAVs/Fuel.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UAVs/Fuel/FuelAndHealthController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UAVs/Fuel/FuelAndHealthController.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UAVs/Fuel/FuelAndHealthManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UAVs/Fuel/FuelAndHealthManager.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UAVs/Fuel/ScriptableObjects.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UAVs/Fuel/ScriptableObjects/FuelAndHealthSettingsSO.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UAVs/Fuel/ScriptableObjects/FuelAndHealthSettingsSO.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UAVs/Fuel/StatusPanelController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UAVs/Fuel/StatusPanelController.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UAVs/Fuel/fuelIndicatorPanelPrefab.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UAVs/Fuel/fuelIndicatorPanelPrefab.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UAVs/Navigation/NavigationManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UAVs/Navigation/NavigationManager.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UAVs/Navigation/Navigator.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UAVs/Navigation/Navigator.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UAVs/Navigation/ScriptableObjects.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UAVs/Navigation/ScriptableObjects/NavigationSettingsSO.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UAVs/Navigation/ScriptableObjects/NavigationSettingsSO.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UAVs/UavShotDownChannel.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UAVs/UavShotDownChannel.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UAVs/bayraktar-tb2-military-ukrainian-navi.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UAVs/bayraktar-tb2-military-ukrainian-navi/BAIRAKTAR_NW3.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UAVs/bayraktar-tb2-military-ukrainian-navi/BAIRAKTAR_NW3.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UAVs/bayraktar-tb2-military-ukrainian-navi/source.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UAVs/bayraktar-tb2-military-ukrainian-navi/source/BAIRAKTAR_NW1.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UAVs/bayraktar-tb2-military-ukrainian-navi/source/BAIRAKTAR_NW1.rar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UAVs/bayraktar-tb2-military-ukrainian-navi/source/BAIRAKTAR_NW1.rar.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UAVs/bayraktar-tb2-military-ukrainian-navi/source/BAIRAKTAR_NW1/BAIRAKTAR_NW1.mtl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UAVs/bayraktar-tb2-military-ukrainian-navi/source/BAIRAKTAR_NW1/BAIRAKTAR_NW1.mtl.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UAVs/bayraktar-tb2-military-ukrainian-navi/source/BAIRAKTAR_NW1/BAIRAKTAR_NW1.obj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UAVs/bayraktar-tb2-military-ukrainian-navi/source/BAIRAKTAR_NW1/BAIRAKTAR_NW1.obj.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UAVs/bayraktar-tb2-military-ukrainian-navi/source/BAIRAKTAR_NW1/BAIRAKTAR_NW1_BaseColor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UAVs/bayraktar-tb2-military-ukrainian-navi/source/BAIRAKTAR_NW1/BAIRAKTAR_NW1_BaseColor.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UAVs/bayraktar-tb2-military-ukrainian-navi/source/BAIRAKTAR_NW1/BAIRAKTAR_NW1_Normal.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UAVs/bayraktar-tb2-military-ukrainian-navi/source/BAIRAKTAR_NW1/BAIRAKTAR_NW1_Normal.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UAVs/bayraktar-tb2-military-ukrainian-navi/source/BAIRAKTAR_NW1/BAIRAKTAR_NW1_Roughness.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UAVs/bayraktar-tb2-military-ukrainian-navi/source/BAIRAKTAR_NW1/BAIRAKTAR_NW1_Roughness.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UAVs/bayraktar-tb2-military-ukrainian-navi/source/BAIRAKTAR_NW1/BAIRAKTAR_NW1_ao.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UAVs/bayraktar-tb2-military-ukrainian-navi/source/BAIRAKTAR_NW1/BAIRAKTAR_NW1_ao.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UAVs/bayraktar-tb2-military-ukrainian-navi/source/BAIRAKTAR_NW1/BAIRAKTAR_NW3.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UAVs/bayraktar-tb2-military-ukrainian-navi/source/BAIRAKTAR_NW1/BAIRAKTAR_NW3.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UAVs/bayraktar-tb2-military-ukrainian-navi/textures.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UAVs/bayraktar-tb2-military-ukrainian-navi/textures/BAIRAKTAR_NW1_BaseColor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UAVs/bayraktar-tb2-military-ukrainian-navi/textures/BAIRAKTAR_NW1_BaseColor.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UAVs/bayraktar-tb2-military-ukrainian-navi/textures/BAIRAKTAR_NW1_Normal.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UAVs/bayraktar-tb2-military-ukrainian-navi/textures/BAIRAKTAR_NW1_Normal.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UAVs/bayraktar-tb2-military-ukrainian-navi/textures/BAIRAKTAR_NW1_Roughness.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UAVs/bayraktar-tb2-military-ukrainian-navi/textures/BAIRAKTAR_NW1_Roughness.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UAVs/bayraktar-tb2-military-ukrainian-navi/textures/BAIRAKTAR_NW1_ao.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UAVs/bayraktar-tb2-military-ukrainian-navi/textures/BAIRAKTAR_NW1_ao.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UAVs/bayraktar-tb2-military-ukrainian-navi/textures/UAV Color.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UAVs/bayraktar-tb2-military-ukrainian-navi/textures/UAV Color.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UI.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UI/Console.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UI/Console/Consol Panel.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UI/Console/Consol Panel.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UI/Console/ConsoleTextHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UI/Console/ConsoleTextHandler.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UI/Console/ScrollRectExtensions.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UI/Console/ScrollRectExtensions.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UI/Console/TypeWriterEffect.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UI/Console/TypeWriterEffect.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UI/DropDown.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UI/DropDown/InputFilesDropDownManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UI/DropDown/InputFilesDropDownManager.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UI/FileBrowser.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UI/FileBrowser.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UI/FlexibleGridLayout.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UI/FlexibleGridLayout.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UI/SceneLoader.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UI/SceneLoader.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UI/SettingsPanel.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UI/SettingsPanel/KeyValuePairController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UI/SettingsPanel/KeyValuePairController.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UI/SettingsPanel/Setting Key Value Pair Panel.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UI/SettingsPanel/Setting Key Value Pair Panel.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UI/SettingsPanel/SettingsReviewManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UI/SettingsPanel/SettingsReviewManager.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/WayPoints.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/WayPoints/IgnoreCollisions.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/WayPoints/IgnoreCollisions.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/WayPoints/WayPointsGenerator.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/WayPoints/WayPointsManager.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_TerrainAutoUpgrade.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_TerrainAutoUpgrade/layer_Cliff (Layered Rock)Cliff (Layered Rock)b3407d0e55802f81.terrainlayer" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_TerrainAutoUpgrade/layer_Cliff (Layered Rock)Cliff (Layered Rock)b3407d0e55802f81.terrainlayer.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_TerrainAutoUpgrade/layer_GoodDirtGoodDirt3d3aba195e4d26ee.terrainlayer" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_TerrainAutoUpgrade/layer_GoodDirtGoodDirt3d3aba195e4d26ee.terrainlayer.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_TerrainAutoUpgrade/layer_Grass (Hill)3d3aba195e4d26ee.terrainlayer" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_TerrainAutoUpgrade/layer_Grass (Hill)3d3aba195e4d26ee.terrainlayer.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_TerrainAutoUpgrade/layer_Grass&amp;RockGrass23d3aba195e4d26ee.terrainlayer" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_TerrainAutoUpgrade/layer_Grass&amp;RockGrass23d3aba195e4d26ee.terrainlayer.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_TerrainAutoUpgrade/layer_Grass3d3aba195e4d26ee.terrainlayer" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_TerrainAutoUpgrade/layer_Grass3d3aba195e4d26ee.terrainlayer.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_TerrainAutoUpgrade/layer_Water fallback3d3aba195e4d26ee.terrainlayer" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_TerrainAutoUpgrade/layer_Water fallback3d3aba195e4d26ee.terrainlayer.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_TerrainAutoUpgrade/layer_hex_gridee98ebadf327cfb5.terrainlayer" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_TerrainAutoUpgrade/layer_hex_gridee98ebadf327cfb5.terrainlayer.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.UAVSimulation/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UAVSimulation/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assembly-CSharp.csproj.DotSettings" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp.csproj.DotSettings" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Events/ScriptableObjects/ObjectEventChannelSO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Events/ScriptableObjects/ObjectEventChannelSO.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/GameManager/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameManager/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Helper Scripts.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HelperScripts.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Helper Scripts/MyDebug.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HelperScripts/MyDebug.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Helper Scripts/MyDebug.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HelperScripts/MyDebug.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Helper Scripts/NatoAlphabetConverter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HelperScripts/NatoAlphabetConverter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Helper Scripts/NatoAlphabetConverter.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HelperScripts/NatoAlphabetConverter.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Helper Scripts/PlatformDependentScriptsHelper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HelperScripts/PlatformDependentScriptsHelper.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Helper Scripts/PlatformDependentScriptsHelper.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HelperScripts/PlatformDependentScriptsHelper.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Helper Scripts/QueueManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HelperScripts/QueueManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Helper Scripts/QueueManager.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HelperScripts/QueueManager.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Helper Scripts/TextManipulation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HelperScripts/TextManipulation.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Helper Scripts/TextManipulation.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HelperScripts/TextManipulation.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameManager/GameManager.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameManager/GameManager.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameManager/SimulationSettings.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameManager/SimulationSettings.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HelperScripts/MyDebug.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HelperScripts/MyDebug.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HelperScripts/TextManipulation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HelperScripts/TextManipulation.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/IOHandlers/InputFilesHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/IOHandlers/InputFilesHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Menu/ConsoleTextHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Menu/ConsoleTextHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Menu/FileBrowser.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Menu/FileBrowser.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Menu/InputFilesDropDownManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Menu/InputFilesDropDownManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Menu/KeyValuePairController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Menu/KeyValuePairController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Menu/SettingsReviewManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Menu/SettingsReviewManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Menu/TypeWriterEffect.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Menu/TypeWriterEffect.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/Editor.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/Editor/PackageChecker.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/Editor/PackageChecker/PackageCheckerSettings.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/Editor/PackageChecker/PackageCheckerSettings.json.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/Editor/PackageChecker/StarterAssetsPackageChecker.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/Editor/PackageChecker/StarterAssetsPackageChecker.dll.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/Editor/StarterAssetsDeployMenu.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/Editor/StarterAssetsDeployMenu.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/Editor/ThirdPersonStarterAssetsDeployMenu.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/Editor/ThirdPersonStarterAssetsDeployMenu.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/InputSystem.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/InputSystem/StarterAssets.inputactions" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/InputSystem/StarterAssets.inputactions.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/InputSystem/StarterAssets.inputsettings.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/InputSystem/StarterAssets.inputsettings.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/InputSystem/StarterAssetsInputs.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/InputSystem/StarterAssetsInputs.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/Mobile.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/Mobile/Prefabs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/Mobile/Prefabs/CanvasInputs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/Mobile/Prefabs/CanvasInputs/UI_Canvas_StarterAssetsInputs_Joysticks.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/Mobile/Prefabs/CanvasInputs/UI_Canvas_StarterAssetsInputs_Joysticks.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/Mobile/Prefabs/CanvasInputs/UI_Canvas_StarterAssetsInputs_TouchZones.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/Mobile/Prefabs/CanvasInputs/UI_Canvas_StarterAssetsInputs_TouchZones.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/Mobile/Prefabs/EventSystem.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/Mobile/Prefabs/EventSystem/UI_EventSystem.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/Mobile/Prefabs/EventSystem/UI_EventSystem.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/Mobile/Prefabs/VirtualInputs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/Mobile/Prefabs/VirtualInputs/UI_Virtual_Button.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/Mobile/Prefabs/VirtualInputs/UI_Virtual_Button.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/Mobile/Prefabs/VirtualInputs/UI_Virtual_Joystick.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/Mobile/Prefabs/VirtualInputs/UI_Virtual_Joystick.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/Mobile/Prefabs/VirtualInputs/UI_Virtual_TouchZone.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/Mobile/Prefabs/VirtualInputs/UI_Virtual_TouchZone.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/Mobile/Scripts.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/Mobile/Scripts/CanvasInputs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/Mobile/Scripts/CanvasInputs/UICanvasControllerInput.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/Mobile/Scripts/CanvasInputs/UICanvasControllerInput.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/Mobile/Scripts/Utilities.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/Mobile/Scripts/Utilities/MobileDisableAutoSwitchControls.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/Mobile/Scripts/Utilities/MobileDisableAutoSwitchControls.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/Mobile/Scripts/VirtualInputs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/Mobile/Scripts/VirtualInputs/UIVirtualButton.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/Mobile/Scripts/VirtualInputs/UIVirtualButton.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/Mobile/Scripts/VirtualInputs/UIVirtualJoystick.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/Mobile/Scripts/VirtualInputs/UIVirtualJoystick.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/Mobile/Scripts/VirtualInputs/UIVirtualTouchZone.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/Mobile/Scripts/VirtualInputs/UIVirtualTouchZone.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/Mobile/UI.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/Mobile/UI/UI_Circle_Bevel_Base.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/Mobile/UI/UI_Circle_Bevel_Base.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/Mobile/UI/UI_Circle_Faded.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/Mobile/UI/UI_Circle_Faded.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/Mobile/UI/UI_Icon_Jump.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/Mobile/UI/UI_Icon_Jump.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/Mobile/UI/UI_Icon_Look.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/Mobile/UI/UI_Icon_Look.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/Mobile/UI/UI_Icon_Move.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/Mobile/UI/UI_Icon_Move.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/Mobile/UI/UI_Icon_Sprint.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/Mobile/UI/UI_Icon_Sprint.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/Readme.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/Readme.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/StarterAssets_Documentation_v1.1.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/StarterAssets_Documentation_v1.1.pdf.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/ThirdPersonController.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/ThirdPersonController/Character.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/ThirdPersonController/Character/Animations.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/ThirdPersonController/Character/Animations/Jump--InAir.anim.fbx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/ThirdPersonController/Character/Animations/Jump--InAir.anim.fbx.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/ThirdPersonController/Character/Animations/Jump--Jump.anim.fbx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/ThirdPersonController/Character/Animations/Jump--Jump.anim.fbx.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/ThirdPersonController/Character/Animations/Locomotion--Run_N.anim.fbx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/ThirdPersonController/Character/Animations/Locomotion--Run_N.anim.fbx.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/ThirdPersonController/Character/Animations/Locomotion--Run_N_Land.anim.fbx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/ThirdPersonController/Character/Animations/Locomotion--Run_N_Land.anim.fbx.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/ThirdPersonController/Character/Animations/Locomotion--Run_S.anim.fbx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/ThirdPersonController/Character/Animations/Locomotion--Run_S.anim.fbx.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/ThirdPersonController/Character/Animations/Locomotion--Walk_N.anim.fbx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/ThirdPersonController/Character/Animations/Locomotion--Walk_N.anim.fbx.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/ThirdPersonController/Character/Animations/Locomotion--Walk_N_Land.anim.fbx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/ThirdPersonController/Character/Animations/Locomotion--Walk_N_Land.anim.fbx.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/ThirdPersonController/Character/Animations/Stand--Idle.anim.fbx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/ThirdPersonController/Character/Animations/Stand--Idle.anim.fbx.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/ThirdPersonController/Character/Animations/StarterAssetsThirdPerson.controller" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/ThirdPersonController/Character/Animations/StarterAssetsThirdPerson.controller.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/ThirdPersonController/Character/Materials.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/ThirdPersonController/Character/Materials/Built-in_RP.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/ThirdPersonController/Character/Materials/Built-in_RP/M_ArmatureColor_Arms.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/ThirdPersonController/Character/Materials/Built-in_RP/M_ArmatureColor_Arms.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/ThirdPersonController/Character/Materials/Built-in_RP/M_ArmatureColor_Body.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/ThirdPersonController/Character/Materials/Built-in_RP/M_ArmatureColor_Body.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/ThirdPersonController/Character/Materials/Built-in_RP/M_ArmatureColor_Legs.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/ThirdPersonController/Character/Materials/Built-in_RP/M_ArmatureColor_Legs.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/ThirdPersonController/Character/Materials/M_Armature_Arms.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/ThirdPersonController/Character/Materials/M_Armature_Arms.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/ThirdPersonController/Character/Materials/M_Armature_Body.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/ThirdPersonController/Character/Materials/M_Armature_Body.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/ThirdPersonController/Character/Materials/M_Armature_Legs.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/ThirdPersonController/Character/Materials/M_Armature_Legs.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/ThirdPersonController/Character/Models.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/ThirdPersonController/Character/Models/Armature.fbx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/ThirdPersonController/Character/Models/Armature.fbx.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/ThirdPersonController/Character/Sfx.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/ThirdPersonController/Character/Sfx/Player_Footstep_01.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/ThirdPersonController/Character/Sfx/Player_Footstep_01.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/ThirdPersonController/Character/Sfx/Player_Footstep_02.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/ThirdPersonController/Character/Sfx/Player_Footstep_02.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/ThirdPersonController/Character/Sfx/Player_Footstep_03.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/ThirdPersonController/Character/Sfx/Player_Footstep_03.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/ThirdPersonController/Character/Sfx/Player_Footstep_04.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/ThirdPersonController/Character/Sfx/Player_Footstep_04.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/ThirdPersonController/Character/Sfx/Player_Footstep_05.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/ThirdPersonController/Character/Sfx/Player_Footstep_05.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/ThirdPersonController/Character/Sfx/Player_Footstep_06.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/ThirdPersonController/Character/Sfx/Player_Footstep_06.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/ThirdPersonController/Character/Sfx/Player_Footstep_07.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/ThirdPersonController/Character/Sfx/Player_Footstep_07.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/ThirdPersonController/Character/Sfx/Player_Footstep_08.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/ThirdPersonController/Character/Sfx/Player_Footstep_08.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/ThirdPersonController/Character/Sfx/Player_Footstep_09.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/ThirdPersonController/Character/Sfx/Player_Footstep_09.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/ThirdPersonController/Character/Sfx/Player_Footstep_10.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/ThirdPersonController/Character/Sfx/Player_Footstep_10.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/ThirdPersonController/Character/Sfx/Player_Land.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/ThirdPersonController/Character/Sfx/Player_Land.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/ThirdPersonController/Character/Textures.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/ThirdPersonController/Character/Textures/Armature_Arms_AlbedoTransparency.tif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/ThirdPersonController/Character/Textures/Armature_Arms_AlbedoTransparency.tif.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/ThirdPersonController/Character/Textures/Armature_Arms_MetallicSmoothness.tif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/ThirdPersonController/Character/Textures/Armature_Arms_MetallicSmoothness.tif.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/ThirdPersonController/Character/Textures/Armature_Arms_Normal.tif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/ThirdPersonController/Character/Textures/Armature_Arms_Normal.tif.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/ThirdPersonController/Character/Textures/Armature_Arms_RGB.tif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/ThirdPersonController/Character/Textures/Armature_Arms_RGB.tif.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/ThirdPersonController/Character/Textures/Armature_Body_AlbedoTransparency.tif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/ThirdPersonController/Character/Textures/Armature_Body_AlbedoTransparency.tif.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/ThirdPersonController/Character/Textures/Armature_Body_MetallicSmoothness.tif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/ThirdPersonController/Character/Textures/Armature_Body_MetallicSmoothness.tif.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/ThirdPersonController/Character/Textures/Armature_Body_Normal.tif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/ThirdPersonController/Character/Textures/Armature_Body_Normal.tif.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/ThirdPersonController/Character/Textures/Armature_Body_RGB.tif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/ThirdPersonController/Character/Textures/Armature_Body_RGB.tif.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/ThirdPersonController/Character/Textures/Armature_Legs_AlbedoTransparency.tif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/ThirdPersonController/Character/Textures/Armature_Legs_AlbedoTransparency.tif.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/ThirdPersonController/Character/Textures/Armature_Legs_MetallicSmoothness.tif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/ThirdPersonController/Character/Textures/Armature_Legs_MetallicSmoothness.tif.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/ThirdPersonController/Character/Textures/Armature_Legs_Normal.tif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/ThirdPersonController/Character/Textures/Armature_Legs_Normal.tif.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/ThirdPersonController/Character/Textures/Armature_Legs_RGB.tif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/ThirdPersonController/Character/Textures/Armature_Legs_RGB.tif.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/ThirdPersonController/Prefabs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/ThirdPersonController/Prefabs/MainCamera.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/ThirdPersonController/Prefabs/MainCamera.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/ThirdPersonController/Prefabs/NestedParentArmature_Unpack.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/ThirdPersonController/Prefabs/NestedParentArmature_Unpack.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/ThirdPersonController/Prefabs/NestedParentCapsule_Unpack.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/ThirdPersonController/Prefabs/NestedParentCapsule_Unpack.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/ThirdPersonController/Prefabs/PlayerArmature.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/ThirdPersonController/Prefabs/PlayerArmature.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/ThirdPersonController/Prefabs/PlayerCapsule.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/ThirdPersonController/Prefabs/PlayerCapsule.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/ThirdPersonController/Prefabs/PlayerFollowCamera.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/ThirdPersonController/Prefabs/PlayerFollowCamera.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/ThirdPersonController/Scenes.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/ThirdPersonController/Scenes/Playground.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/ThirdPersonController/Scenes/Playground.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/ThirdPersonController/Scenes/Playground.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/ThirdPersonController/Scenes/Playground/LightingData.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/ThirdPersonController/Scenes/Playground/LightingData.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/ThirdPersonController/Scenes/Playground/ReflectionProbe-0.exr" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/ThirdPersonController/Scenes/Playground/ReflectionProbe-0.exr.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/ThirdPersonController/Scenes/Playground/ReflectionProbe-1.exr" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/ThirdPersonController/Scenes/Playground/ReflectionProbe-1.exr.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/ThirdPersonController/Scenes/Playground/ReflectionProbe-2.exr" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/ThirdPersonController/Scenes/Playground/ReflectionProbe-2.exr.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/ThirdPersonController/Scenes/PlaygroundSettings.lighting" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/ThirdPersonController/Scenes/PlaygroundSettings.lighting.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/ThirdPersonController/Scripts.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/ThirdPersonController/Scripts/BasicRigidBodyPush.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/ThirdPersonController/Scripts/BasicRigidBodyPush.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/ThirdPersonController/Scripts/ThirdPersonController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/ThirdPersonController/Scripts/ThirdPersonController.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/TutorialInfo.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/TutorialInfo/Icons.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/TutorialInfo/Icons/ReadMeImg.PNG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/TutorialInfo/Icons/ReadMeImg.PNG.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/TutorialInfo/Scripts.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/TutorialInfo/Scripts/Editor.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/TutorialInfo/Scripts/Editor/ReadmeEditor.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/TutorialInfo/Scripts/Editor/ReadmeEditor.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/TutorialInfo/Scripts/Readme.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/TutorialInfo/Scripts/Readme.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/license.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/license.txt.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/IOHandlers/Records/DefaultRecordsCreator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/IOHandlers/Records/DefaultRecordsCreator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/IOHandlers/Records/DefaultRecordsCreator.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/IOHandlers/Records/DefaultRecordsCreator.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/IOHandlers/Records/RootObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/IOHandlers/Records/RootObject.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/IOHandlers/Records/SettingsRecord.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/IOHandlers/Records/SettingsRecord.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/IOHandlers/Records/UavPathsRecord.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/IOHandlers/Records/UavPathsRecord.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/IOHandlers/Records/UavRecord.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/IOHandlers/Records/UavRecord.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/IOHandlers/Records/VisualObjectRecord.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/IOHandlers/Records/VisualObjectRecord.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/IOHandlers/Records/WaypointRecord.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/IOHandlers/Records/WaypointRecord.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InputFiles/Old To New UAV Input File conversion template.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/InputFiles/Old To New UAV Input File conversion template.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InputFiles/baseInput/DefaultInput.json" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/InputFiles/baseInput/DefaultInput.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/JsonSerializerTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/JsonSerializerTest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Menu.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Menu/ConsoleTextHandler.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Menu/ConsoleTextHandler.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Menu/FileBrowser.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Menu/FileBrowser.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Menu/InputFilesDropDownManager.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Menu/InputFilesDropDownManager.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Menu/KeyValuePairController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Menu/KeyValuePairController.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Menu/ScrollRectExtensions.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Menu/ScrollRectExtensions.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Menu/Setting Key Value Pair Panel.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Menu/Setting Key Value Pair Panel.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Menu/SettingsReviewManager.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Menu/SettingsReviewManager.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Menu/TypeWriterEffect.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Menu/TypeWriterEffect.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/Environment/Art/Materials/Blue_Mat.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/Environment/Art/Materials/Blue_Mat.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/Environment/Art/Materials/GridOrange_01_Mat.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/StarterAssets/Environment/Art/Materials/GridOrange_01_Mat.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Drop Shadow.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Drop Shadow.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GridWaypoints.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GridWaypoints.unity.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UAVs/Path.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UAVs/Path.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UAVs/PathsGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UAVs/PathsGenerator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UAVs/PathsManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UAVs/PathsManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UAVs/FuelManager.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UAVs/FuelManager.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UAVs/Navigator.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UAVs/Navigator.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UAVs/Path.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UAVs/Navigation/Path.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UAVs/Path.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UAVs/Navigation/Path.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UAVs/PathsGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UAVs/Navigation/PathsGenerator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UAVs/PathsGenerator.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UAVs/Navigation/PathsGenerator.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UAVs/PathsManager.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UAVs/PathsManager.cs.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/UAVs/UAV.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UAVs/UAV.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/UAVs/Uav.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UAVs/Uav.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/UAVs/UavsGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UAVs/UavsGenerator.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/UAVs/UavsManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UAVs/UavsManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Waypoints/Waypoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Waypoints/Waypoint.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Waypoints/WaypointPrefab.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Waypoints/WaypointPrefab.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Waypoints/WaypointsGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Waypoints/WaypointsGenerator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Waypoints/WaypointsManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Waypoints/WaypointsManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VisualObjects/VisualObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/VisualObjects/VisualObject.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Waypoints.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Waypoints/Waypoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/WayPoints/WayPoint.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Waypoints/Waypoint.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/WayPoints/WayPoint.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Waypoints/WaypointPrefab.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/WayPoints/WaypointPrefab.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Waypoints/WaypointPrefab.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/WayPoints/WaypointPrefab.prefab.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Waypoints/WaypointsGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/WayPoints/WayPointsGenerator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Waypoints/WaypointsGenerator.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Waypoints/WaypointsManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/WayPoints/WayPointsManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Waypoints/WaypointsManager.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Waypoints/waypointCreatedChannel.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/WayPoints/waypointCreatedChannel.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Waypoints/waypointCreatedChannel.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/WayPoints/waypointCreatedChannel.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Waypoints/waypointDisabledChannel.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/WayPoints/waypointDisabledChannel.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Waypoints/waypointDisabledChannel.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/WayPoints/waypointDisabledChannel.asset.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/NavMeshAreas.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/NavMeshAreas.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -289,47 +843,68 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/IL/de1f8ef4975b4eacbeb0accc1b22c9b02a000/45/4c3b411a/0200001A.il" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/IL/f1212ad1dec44ce7b7147976b91869c3157800/95/d3da7fef/0200023D.il" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/599ef6b6d50f4e488ca73e2010b5243610fc00/70/b1ad8dee/Enumerable.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5a41d6b7189842eca409fd0b1c3e3dcf17bf78/8f/6daf9f6c/Void.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/880832f2c4e2458090401bbb74a86b24a8a00/68/17f2568f/JsonConverterAttribute.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/92528fbd7e224e579bebcb5f422062386c00/e0/8d649a7c/Canvas.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/986bc431530c4e10a9a66db75ccf7a921a000/b5/dcb13cdc/Physics.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d4cde64232cf45659d86aafa597faa7746a800/00/8ec6e158/SystemException.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d4cde64232cf45659d86aafa597faa7746a800/1f/a446b034/Array.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d4cde64232cf45659d86aafa597faa7746a800/27/af136265/IntPtr.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d4cde64232cf45659d86aafa597faa7746a800/49/aae2e0c0/Queue`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d4cde64232cf45659d86aafa597faa7746a800/5d/7eca01a0/String.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d4cde64232cf45659d86aafa597faa7746a800/7b/991b1fec/List`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d4cde64232cf45659d86aafa597faa7746a800/c7/54acb411/NullReferenceException.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d4cde64232cf45659d86aafa597faa7746a800/da/14d4ac4d/EqualityComparer`1.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d4cde64232cf45659d86aafa597faa7746a800/fc/4102a2a0/Dictionary`2.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/de1f8ef4975b4eacbeb0accc1b22c9b02a000/96/f082b3bf/TweenSettingsExtensions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/de1f8ef4975b4eacbeb0accc1b22c9b02a000/d3/a62fec26/LoopType.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/de1f8ef4975b4eacbeb0accc1b22c9b02a000/e6/15a75a68/Tween.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f1212ad1dec44ce7b7147976b91869c3157800/00/a09aa413/InvokableCall.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f1212ad1dec44ce7b7147976b91869c3157800/13/ae77c4fe/SetupCoroutine.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f1212ad1dec44ce7b7147976b91869c3157800/1a/1e1257ce/UnityEvent.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f1212ad1dec44ce7b7147976b91869c3157800/1c/a49fbe88/Gizmos.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f1212ad1dec44ce7b7147976b91869c3157800/45/673bb8a6/MonoBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f1212ad1dec44ce7b7147976b91869c3157800/45/d031f111/Debug.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f1212ad1dec44ce7b7147976b91869c3157800/8a/baf9f097/Object.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f1212ad1dec44ce7b7147976b91869c3157800/aa/38a78eba/UnityEvent`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f1212ad1dec44ce7b7147976b91869c3157800/b7/438f1536/Transform.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f1212ad1dec44ce7b7147976b91869c3157800/ec/c3b064a0/Time.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f1212ad1dec44ce7b7147976b91869c3157800/f1/bded1bd7/Component.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/5377ac4e788cc4f8c6545362cee39859969c7b346233bb3bdcf6191179ada9/System.Drawing.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/d44b17e136d09081da1e8fd0e8c83fde60e11818b9f2442d7ed8cb733fae895e/System.Collections.Generic.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/GameManager/SimulationSettings.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/IOHandlers/FileManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/IOHandlers/InputFilesHandler.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/IOHandlers/Records/Coordinates.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/IOHandlers/Records/VisualObjectRecord.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/JsonSerializerTest.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Menu/ConsoleTextHandler.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Menu/FileBrowser.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Menu/KeyValuePairController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Menu/SettingsReviewManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/MiniMap/CameraPositioning.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Plugins/StandaloneFileBrowser/StandaloneFileBrowserWindows.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/UAVs/Camera/CamerasPanelManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/UAVs/Fuel/FuelAndHealthController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/UAVs/Navigation/ScriptableObjects/NavigationSettingsSO.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/UI/SceneLoader.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ide.rider@3.0.14/Rider/Editor/ProjectGeneration/AssemblyNameProvider.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.textmeshpro@3.0.6/Scripts/Runtime/TMPro_UGUI_Private.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Editor/EventSystem/EventTriggerEditor.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Editor/UI/DropdownEditor.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/EventSystem/EventSystem.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/EventSystem/ExecuteEvents.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/EventSystem/InputModules/StandaloneInputModule.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/EventSystem/UIBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/UI/Core/Button.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/UI/Core/Graphic.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/UI/Core/Layout/HorizontalLayoutGroup.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/UI/Core/Layout/HorizontalOrVerticalLayoutGroup.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/UI/Core/Layout/LayoutGroup.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/Button/ButtonTests.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/Canvas/CanvasScalerWithChildTextObjectDoesNotCrash.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/Canvas/NestedCanvas.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/Layout/ContentSizeFitterTests.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/Layout/HorizonalLayoutGroupTests.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.visualscripting@1.7.8/Runtime/VisualScripting.Core/Utilities/ComponentHolderProtocol.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../UAV_Sim/Assets/Scripts/ReroutingManager.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -343,19 +918,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Discover.Launch.Via.Unity": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "nodejs_package_manager_path": "npm",
-    "rider.run.widget.enabled.cache": "false",
-    "settings.editor.selected.configurable": "advanced.settings",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Discover.Launch.Via.Unity&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;XThreadsFramesViewSplitterKey&quot;: &quot;0.50076336&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/abdel/OneDrive - University of Virginia/UVA/Research/UAV/UAVSimulation&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;rider.run.widget.enabled.cache&quot;: &quot;false&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;advanced.settings&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="UnitTests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2021.3.4f1\Editor\Unity.exe" />
@@ -375,10 +952,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="12648">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="17828">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="12648" />
+      <option name="pid" value="17828" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -411,7 +988,17 @@
       <workItem from="1655874451964" duration="10217000" />
       <workItem from="1655902633162" duration="634000" />
       <workItem from="1655967149715" duration="5471000" />
-      <workItem from="1656164137682" duration="30392000" />
+      <workItem from="1656164137682" duration="31401000" />
+      <workItem from="1657942055192" duration="230000" />
+      <workItem from="1657942324347" duration="4608000" />
+      <workItem from="1657948967105" duration="19684000" />
+      <workItem from="1658251239293" duration="690000" />
+      <workItem from="1658252151085" duration="13660000" />
+      <workItem from="1658290265656" duration="11115000" />
+      <workItem from="1658302634646" duration="5348000" />
+      <workItem from="1658620235152" duration="68799000" />
+      <workItem from="1658839309629" duration="49796000" />
+      <workItem from="1659007181829" duration="41870000" />
     </task>
     <servers />
   </component>
@@ -473,43 +1060,36 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/UAVs/Path.cs</url>
+          <url>file://$PROJECT_DIR$/Assets/UAVs/Navigation/Path.cs</url>
           <line>44</line>
-          <properties documentPath="C:\Users\abdel\OneDrive - University of Virginia\UVA\Research\UAV\UAVSimulation\Assets\UAVs\Path.cs" initialLine="44" containingFunctionPresentation="method 'PathActivated'">
-            <startOffsets>
-              <option value="1502" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1614" />
-            </endOffsets>
-          </properties>
+          <properties documentPath="C:\Users\abdel\OneDrive - University of Virginia\UVA\Research\UAV\UAVSimulation\Assets\UAVs\Path.cs" initialLine="44" containingFunctionPresentation="method 'PathActivated'" />
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Waypoints/WaypointsManager.cs</url>
-          <line>85</line>
-          <properties documentPath="C:\Users\abdel\OneDrive - University of Virginia\UVA\Research\UAV\UAVSimulation\Assets\Waypoints\WaypointsManager.cs" initialLine="85" containingFunctionPresentation="method 'OnWaypointCreated'">
+          <url>file://$PROJECT_DIR$/Assets/Chat/ChatManager.cs</url>
+          <line>73</line>
+          <properties documentPath="C:\Users\abdel\OneDrive - University of Virginia\UVA\Research\UAV\UAVSimulation\Assets\Chat\ChatManager.cs" initialLine="73" containingFunctionPresentation="method 'PopulateResponseOptions'">
             <startOffsets>
-              <option value="3052" />
+              <option value="1817" />
             </startOffsets>
             <endOffsets>
-              <option value="3086" />
+              <option value="1856" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="6" />
+          <option name="timeStamp" value="18" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/GameManager/GameManager.cs</url>
-          <line>52</line>
-          <properties documentPath="C:\Users\abdel\OneDrive - University of Virginia\UVA\Research\UAV\UAVSimulation\Assets\GameManager\GameManager.cs" initialLine="52" containingFunctionPresentation="method 'InitializeSimulation'">
+          <url>file://$PROJECT_DIR$/Assets/Logging/LoggingManager.cs</url>
+          <line>44</line>
+          <properties documentPath="C:\Users\abdel\OneDrive - University of Virginia\UVA\Research\UAV\UAVSimulation\Assets\Logging\LoggingManager.cs" initialLine="42" containingFunctionPresentation="method 'OnLogReceived'">
             <startOffsets>
-              <option value="1952" />
+              <option value="785" />
             </startOffsets>
             <endOffsets>
-              <option value="2020" />
+              <option value="786" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="7" />
+          <option name="timeStamp" value="19" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -518,10 +1098,5 @@
         <PinnedItemInfo parentTag="Type#Menu.TypeWriterEffect" memberName="mTextMeshPro" />
       </pinned-members>
     </pin-to-top-manager>
-    <watches-manager>
-      <configuration name="UNITY_DEBUG_RUN_CONFIGURATION">
-        <watch expression="_runningCoroutine" />
-      </configuration>
-    </watches-manager>
   </component>
 </project>

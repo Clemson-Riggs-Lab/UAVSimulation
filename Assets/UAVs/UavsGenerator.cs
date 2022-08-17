@@ -1,48 +1,51 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using HelperScripts;
 using IOHandlers;
 using IOHandlers.Records;
 using Unity.VisualScripting;
 using UnityEngine;
-using Waypoints;
+using WayPoints;
 
 namespace UAVs
 {
     public class UavsGenerator : MonoBehaviour
     {
   
-        [SerializeField] private GameObject uavPrefab=null;
-        [NonSerialized] private GameObject _uavsContainer;
-        [SerializeField] private GameObject waypointsContainer;
-        [NonSerialized] private WaypointsManager _waypointsManager;
-        [NonSerialized] private UavsManager _uavsManager;
-
-        private void Awake()
-        {
-            _waypointsManager = waypointsContainer.GetComponent<WaypointsManager>();
-            /*
-             Could just get the uavsContainer by serializing it and attaching the container.
-             But since UAVs manager already has it, it is better to get it from there
-             This way we can change the container in one place only (the manager), and this script will get it from there
-            */
-            _uavsManager = gameObject.GetComponent<UavsManager>();
-            _uavsContainer = _uavsManager.uavsContainer;   
-        }
+         private GameObject _uavPrefab;
+         private GameObject _uavsContainer;
+         private GameObject _wayPointsContainer;
+         private WayPointsManager _wayPointsManager;
+         private UavsManager _uavsManager;
+         
 
         private void Start()
         {
-            _uavsContainer.transform.position = waypointsContainer.transform.position;
+            _wayPointsManager =GameManager.Instance.wayPointsManager;
+            _uavsManager = GameManager.Instance.uavsManager;
+            _uavsContainer = GameManager.Instance.uavsContainer;
+            _wayPointsContainer = GameManager.Instance.wayPointsContainer;
+
+            MyDebug.AssertObjectReferenceObtainedFromGameManager( _wayPointsManager,this,gameObject);
+            MyDebug.AssertObjectReferenceObtainedFromGameManager( _uavsManager,this,gameObject);
+            MyDebug.AssertObjectReferenceObtainedFromGameManager( _uavsContainer,this,gameObject);
+            MyDebug.AssertObjectReferenceObtainedFromGameManager( _wayPointsContainer,this,gameObject);
+            
+            _uavPrefab = PrefabsManager.Instance.uavPrefab;
+            MyDebug.AssertPrefabReferenceObtainedFromPrefabsManager( _uavPrefab,"uav Prefab",this,gameObject);
+            
+            _uavsContainer.transform.position = _wayPointsContainer.transform.position;//centering both on top of each other to avoid any offset due to local positioning
         }
 
-        public List<Uav> GenerateOneUAVOnEachWaypoint()
+        public List<Uav> GenerateOneUAVOnEachWayPoint()
         {
             var idIterator= 0;
             var uavs = new List<Uav>();
             
-            foreach (var waypoint in _waypointsManager.waypoints)
+            foreach (var wayPoint in _wayPointsManager.wayPoints)
             {
-                var uav = GenerateUav(idIterator, waypoint);
+                var uav = GenerateUav(idIterator, wayPoint);
                 uavs.Add(uav);
                 idIterator++;
             }
@@ -55,17 +58,17 @@ namespace UAVs
             var uavs = new List<Uav>();
             foreach (var uavRecord in uavsRecords)
             {
-                //linq to get the waypoint by id
-                var waypoint = _waypointsManager.waypoints.FirstOrDefault(w => w.Id == uavRecord.StartingWaypointId);
-                if(waypoint != null)
+                //linq to get the wayPoint by id
+                var wayPoint = _wayPointsManager.wayPoints.FirstOrDefault(w => w.Id == uavRecord.StartingWayPointId);
+                if(wayPoint != null)
                 {
-                    var uav = GenerateUav(uavRecord.Id??=0, waypoint);
+                    var uav = GenerateUav(uavRecord.Id??=0, wayPoint);
                     uav.SetUavRecord(uavRecord);
                     uavs.Add(uav);
                 }
                 else
                 {
-                    Debug.LogError("Waypoint with id " + uavRecord.StartingWaypointId + " not found");
+                    Debug.LogError("WayPoint with id " + uavRecord.StartingWayPointId + " not found");
                 }
             }
             return uavs;
@@ -81,11 +84,11 @@ namespace UAVs
         }
         
 
-        private Uav GenerateUav(int id, Waypoint waypoint)
+        private Uav GenerateUav(int id, WayPoint wayPoint)
         {
-            var  uavGO = Instantiate(uavPrefab,  _uavsContainer.transform) as GameObject ;
+            var  uavGO = Instantiate(_uavPrefab,  _uavsContainer.transform) as GameObject ;
             var uav= uavGO.GetComponent<Uav>();
-            uav.Initialize(id, waypoint);
+            uav.Initialize(id, wayPoint);
             uav.ID = id;
         
             return uav;

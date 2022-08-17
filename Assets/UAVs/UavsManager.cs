@@ -6,32 +6,25 @@ using Events.ScriptableObjects;
 using HelperScripts;
 using IOHandlers;
 using IOHandlers.Records;
+using UAVs.Navigation;
 using Unity.VisualScripting;
 using UnityEngine;
-using Waypoints;
+using WayPoints;
 
 namespace UAVs
 {
     public class UavsManager : MonoBehaviour
     {
-        [SerializeField] public GameObject uavsContainer;
-        [SerializeField] public GameObject waypointsContainer;
-        [SerializeField] private WaypointsManager waypointsManager;
-        [SerializeField] private UavsGenerator uavsGenerator;
+         private GameObject _uavsContainer;
+         private GameObject _wayPointsContainer;
+         private WayPointsManager _wayPointsManager;
+         private UavsGenerator _uavsGenerator;
+         
         [SerializeField] private ObjectEventChannelSO uavCreatedChannel = null;
         [SerializeField] private ObjectEventChannelSO uavDisabledChannel = null;
         [NonSerialized] public List<Uav> Uavs = new List<Uav>(); //automatically updated by listening to the uavCreatedChannel
-
-        private void OnValidate()
-        {
-            MyDebug.AssertComponentReferencedInEditor(uavsContainer,this, this.gameObject);
-            MyDebug.AssertComponentReferencedInEditor(waypointsContainer,this, this.gameObject);
-            MyDebug.CheckIfReferenceExistsOrComponentExistsInGameObject(waypointsManager,this, this.gameObject);
-            MyDebug.CheckIfReferenceExistsOrComponentExistsInGameObject(uavsGenerator,this, this.gameObject);
-
-        }
+ 
         
-
         private void OnEnable()
         {
             if(uavCreatedChannel != null)
@@ -51,6 +44,17 @@ namespace UAVs
             Debug.Log("UAV created"+((Uav)uav).codeName,((Uav)uav).gameObject);
         }
 
+        private void Start()
+        {
+            _wayPointsContainer = GameManager.Instance.wayPointsContainer;
+            _wayPointsManager = GameManager.Instance.wayPointsManager;
+            _uavsContainer= GameManager.Instance.uavsContainer;
+            MyDebug.CheckIfReferenceExistsOrComponentExistsInGameObject(_wayPointsContainer,this, this.gameObject);
+            MyDebug.CheckIfReferenceExistsOrComponentExistsInGameObject(_wayPointsManager,this, this.gameObject);
+            MyDebug.CheckIfReferenceExistsOrComponentExistsInGameObject(_uavsContainer,this, this.gameObject);
+            
+            _uavsGenerator = gameObject.AddComponent<UavsGenerator>();
+        }
 
         private void ClearUavs()
         {
@@ -62,28 +66,24 @@ namespace UAVs
 
         public List<Uav> GetUavs(bool includeInactive)
         {
-            if(includeInactive) return Uavs;
-            else return Uavs.Select(uav => uav).Where(uav => uav.isVisuallyEnabled).ToList();
+            if(includeInactive) 
+                return Uavs;
+            else 
+                return Uavs.Select(uav => uav).Where(uav => uav.isVisuallyEnabled).ToList();
         }
         
         public void GenerateUavs()
         {
             ClearUavs();
-            Uavs = uavsGenerator.GenerateOneUAVOnEachWaypoint();//todo check if we need to assign the uavs since we are already listening. if it is not needed, then we can remove the return from the called method as well
+            _uavsGenerator.GenerateOneUAVOnEachWayPoint();
         }
         public void GenerateUavs(List<UavRecord> rootObjectUavsRecords)
         {
             ClearUavs();
-            Uavs = uavsGenerator.GenerateUavs(rootObjectUavsRecords);
+            _uavsGenerator.GenerateUavs(rootObjectUavsRecords);
         }
         
-        public void NavigateAll()
-        {
-            foreach (var uav in Uavs)
-            {
-                uav.Navigate();
-            }
-        }
+       
 
         private void OnDisable()
         {

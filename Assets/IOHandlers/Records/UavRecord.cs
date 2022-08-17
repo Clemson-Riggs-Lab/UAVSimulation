@@ -6,6 +6,6 @@ namespace IOHandlers.Records
 	{
 		public int? Id { get; set; }
 		public bool? EnabledOnStart { get; set; } = true;
-		public int StartingWaypointId { get; set; } = 0;
+		public int StartingWayPointId { get; set; } = 0;
 	}
 }

@@ -1,3 +1,19 @@
 fileFormatVersion: 2
 guid: 50cd7ed26b20462aac69c4eecea2d10f
-timeCreated: 1653447224
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - wayPointsContainer: {instanceID: 0}
+  - uavsContainer: {instanceID: 0}
+  - terrainContainer: {instanceID: 0}
+  - wayPointsManager: {instanceID: 0}
+  - uavsManager: {instanceID: 0}
+  - jsonSerializerTest: {instanceID: 0}
+  - navigationManager: {instanceID: 0}
+  - navigationSettings: {fileID: 11400000, guid: 46d8f6855e5e8794f81560bb096a53f3, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

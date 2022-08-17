@@ -5,7 +5,7 @@ namespace IOHandlers.Records
 	public class SettingsRecord
 	{
 		public float TimePeriodDurationInSecs { get; set; } = 10;
-		public string SceneName { get; set; } = "GridWaypoints";
+		public string SceneName { get; set; } = "GridWayPoints";
 		
 		[JsonProperty(NullValueHandling=NullValueHandling.Ignore)]
 		public Range TargetSpawnBufferRange { get; set; } = new Range(){ Min = 0, Max = 0 };

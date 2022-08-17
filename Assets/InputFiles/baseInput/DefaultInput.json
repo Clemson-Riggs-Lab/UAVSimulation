@@ -1,13 +1,13 @@
 {
   "Settings": {
     "TimePeriodDurationInSecs": 10.0,
-    "SceneName": "GridWaypoints",
+    "SceneName": "GridWayPoints",
     "TargetSpawnBuffer": {
       "Min": 5.0,
       "Max": 7.0
     }
   },
-  "WaypointsRecords": [
+  "WayPointsRecords": [
     {
       "ID": 0,
       "Position": {
@@ -141,78 +141,78 @@
     {
       "ID": 0,
       "Speed": null,
-      "StartingWaypointId": 0,
+      "StartingWayPointId": 0,
       "Navigations": [
         {
-          "DestinationWaypointID": 1,
+          "DestinationWayPointID": 1,
           "UavIsActive": true
         },
         {
-          "DestinationWaypointID": 2,
+          "DestinationWayPointID": 2,
           "UavIsActive": true
         },
         {
-          "DestinationWaypointID": 3,
+          "DestinationWayPointID": 3,
           "UavIsActive": true
         },
         {
-          "DestinationWaypointID": 11,
+          "DestinationWayPointID": 11,
           "UavIsActive": false
         },
         {
-          "DestinationWaypointID": 7,
+          "DestinationWayPointID": 7,
           "UavIsActive": true
         },
         {
-          "DestinationWaypointID": 9,
+          "DestinationWayPointID": 9,
           "UavIsActive": true
         },
         {
-          "DestinationWaypointID": 6,
+          "DestinationWayPointID": 6,
           "UavIsActive": true
         },
         {
-          "DestinationWaypointID": 5,
+          "DestinationWayPointID": 5,
           "UavIsActive": true
         },
         {
-          "DestinationWaypointID": 9,
+          "DestinationWayPointID": 9,
           "UavIsActive": true
         },
         {
-          "DestinationWaypointID": 10,
+          "DestinationWayPointID": 10,
           "UavIsActive": true
         },
         {
-          "DestinationWaypointID": 11,
+          "DestinationWayPointID": 11,
           "UavIsActive": true
         },
         {
-          "DestinationWaypointID": 12,
+          "DestinationWayPointID": 12,
           "UavIsActive": true
         },
         {
-          "DestinationWaypointID": 11,
+          "DestinationWayPointID": 11,
           "UavIsActive": false
         },
         {
-          "DestinationWaypointID": 12,
+          "DestinationWayPointID": 12,
           "UavIsActive": true
         },
         {
-          "DestinationWaypointID": 11,
+          "DestinationWayPointID": 11,
           "UavIsActive": false
         },
         {
-          "DestinationWaypointID": 10,
+          "DestinationWayPointID": 10,
           "UavIsActive": true
         },
         {
-          "DestinationWaypointID": 9,
+          "DestinationWayPointID": 9,
           "UavIsActive": true
         },
         {
-          "DestinationWaypointID": 5,
+          "DestinationWayPointID": 5,
           "UavIsActive": true
         }
       ]
@@ -220,74 +220,74 @@
     {
       "ID": 1,
       "Speed": null,
-      "StartingWaypointId": 1,
+      "StartingWayPointId": 1,
       "Navigations": [
         {
-          "DestinationWaypointID": 2,
+          "DestinationWayPointID": 2,
           "UavIsActive": true
         },
         {
-          "DestinationWaypointID": 3,
+          "DestinationWayPointID": 3,
           "UavIsActive": true
         },
         {
-          "DestinationWaypointID": 4,
+          "DestinationWayPointID": 4,
           "UavIsActive": true
         },
         {
-          "DestinationWaypointID": 5,
+          "DestinationWayPointID": 5,
           "UavIsActive": false
         },
         {
-          "DestinationWaypointID": 6,
+          "DestinationWayPointID": 6,
           "UavIsActive": true
         },
         {
-          "DestinationWaypointID": 7,
+          "DestinationWayPointID": 7,
           "UavIsActive": true
         },
         {
-          "DestinationWaypointID": 8,
+          "DestinationWayPointID": 8,
           "UavIsActive": true
         },
         {
-          "DestinationWaypointID": 9,
+          "DestinationWayPointID": 9,
           "UavIsActive": true
         },
         {
-          "DestinationWaypointID": 10,
+          "DestinationWayPointID": 10,
           "UavIsActive": false
         },
         {
-          "DestinationWaypointID": 11,
+          "DestinationWayPointID": 11,
           "UavIsActive": true
         },
         {
-          "DestinationWaypointID": 12,
+          "DestinationWayPointID": 12,
           "UavIsActive": true
         },
         {
-          "DestinationWaypointID": 13,
+          "DestinationWayPointID": 13,
           "UavIsActive": true
         },
         {
-          "DestinationWaypointID": 14,
+          "DestinationWayPointID": 14,
           "UavIsActive": true
         },
         {
-          "DestinationWaypointID": 15,
+          "DestinationWayPointID": 15,
           "UavIsActive": true
         },
         {
-          "DestinationWaypointID": 0,
+          "DestinationWayPointID": 0,
           "UavIsActive": true
         },
         {
-          "DestinationWaypointID": 1,
+          "DestinationWayPointID": 1,
           "UavIsActive": false
         },
         {
-          "DestinationWaypointID": 2,
+          "DestinationWayPointID": 2,
           "UavIsActive": false
         }
       ]
@@ -295,74 +295,74 @@
     {
       "ID": 2,
       "Speed": null,
-      "StartingWaypointId": 2,
+      "StartingWayPointId": 2,
       "Navigations": [
         {
-          "DestinationWaypointID": 3,
+          "DestinationWayPointID": 3,
           "UavIsActive": true
         },
         {
-          "DestinationWaypointID": 4,
+          "DestinationWayPointID": 4,
           "UavIsActive": true
         },
         {
-          "DestinationWaypointID": 5,
+          "DestinationWayPointID": 5,
           "UavIsActive": true
         },
         {
-          "DestinationWaypointID": 6,
+          "DestinationWayPointID": 6,
           "UavIsActive": false
         },
         {
-          "DestinationWaypointID": 7,
+          "DestinationWayPointID": 7,
           "UavIsActive": true
         },
         {
-          "DestinationWaypointID": 8,
+          "DestinationWayPointID": 8,
           "UavIsActive": true
         },
         {
-          "DestinationWaypointID": 9,
+          "DestinationWayPointID": 9,
           "UavIsActive": true
         },
         {
-          "DestinationWaypointID": 10,
+          "DestinationWayPointID": 10,
           "UavIsActive": true
         },
         {
-          "DestinationWaypointID": 11,
+          "DestinationWayPointID": 11,
           "UavIsActive": false
         },
         {
-          "DestinationWaypointID": 12,
+          "DestinationWayPointID": 12,
           "UavIsActive": true
         },
         {
-          "DestinationWaypointID": 13,
+          "DestinationWayPointID": 13,
           "UavIsActive": true
         },
         {
-          "DestinationWaypointID": 14,
+          "DestinationWayPointID": 14,
           "UavIsActive": true
         },
         {
-          "DestinationWaypointID": 15,
+          "DestinationWayPointID": 15,
           "UavIsActive": true
         },
         {
-          "DestinationWaypointID": 0,
+          "DestinationWayPointID": 0,
           "UavIsActive": true
         },
         {
-          "DestinationWaypointID": 1,
+          "DestinationWayPointID": 1,
           "UavIsActive": true
         },
         {
-          "DestinationWaypointID": 2,
+          "DestinationWayPointID": 2,
           "UavIsActive": false
         },
         {
-          "DestinationWaypointID": 3,
+          "DestinationWayPointID": 3,
           "UavIsActive": false
         }
       ]

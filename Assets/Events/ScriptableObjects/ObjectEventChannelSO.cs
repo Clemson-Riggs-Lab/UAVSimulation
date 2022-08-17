@@ -14,7 +14,7 @@ namespace Events.ScriptableObjects
 	{
 		public UnityAction<object> OnEventRaised;
 	
-		public void RaiseEvent(Object value)
+		public void RaiseEvent(object value)
 		{
 			if (OnEventRaised != null)
 				OnEventRaised.Invoke(value);

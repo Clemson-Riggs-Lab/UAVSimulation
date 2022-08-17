@@ -1,13 +1,13 @@
 using System;
 using Unity.VisualScripting;
 using UnityEngine;
-using Waypoints;
+using WayPoints;
 
 namespace VisualObjects
 {
     public class VisualObject:MonoBehaviour
     {
-        [NonSerialized] private Waypoints.Waypoint _waypoint;
+        [NonSerialized] private WayPoints.WayPoint _wayPoint;
         [NonSerialized] private Transform _transform;
         [NonSerialized] public string Type;
         void  Start()

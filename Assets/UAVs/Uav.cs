@@ -4,9 +4,10 @@ using Events.ScriptableObjects;
 using HelperScripts;
 using IOHandlers;
 using IOHandlers.Records;
+using UAVs.Navigation;
 using Unity.VisualScripting;
 using UnityEngine;
-using Waypoints;
+using WayPoints;
 
 namespace UAVs
 {
@@ -18,9 +19,8 @@ namespace UAVs
 		[SerializeField] public ObjectEventChannelSO uavCreatedChannel;
 		[SerializeField] public ObjectEventChannelSO uavDestroyedChannel;
 
-		[NonSerialized] public List<Path> Paths = new();
-		[NonSerialized] public Path CurrentPath;
-		[NonSerialized] public Waypoint LastWaypointVisited;
+		[NonSerialized] public WayPoint startingWaypoint;
+		
 		[NonSerialized] public bool isVisuallyEnabled;
 		private Renderer _renderer;
 
@@ -34,20 +34,20 @@ namespace UAVs
 		{
 			_renderer = GetComponent<Renderer>();
 		}
+		
 
-		private void Start()
+		public void Initialize(int id, WayPoint wayPoint)
 		{
-			if(uavCreatedChannel != null)
-				uavCreatedChannel.RaiseEvent(this);
-		}
-
-		public void Initialize(int id, Waypoint waypoint)
-		{
+			gameObject.name = "UAV " + id;
 			this.ID = id;
-			transform.localPosition =
-				waypoint.transform.position; // TODO: check if just position is enough instead of local position
-			LastWaypointVisited = waypoint;
+			
+			startingWaypoint = wayPoint;
+			transform.position = startingWaypoint.transform.position; // TODO: check if just position is enough or should I use local position
+			
 			this.isVisuallyEnabled = false;
+			
+			if(uavCreatedChannel != null) 
+				uavCreatedChannel.RaiseEvent(this);
 			
 		}
 
@@ -59,60 +59,8 @@ namespace UAVs
 			codeName = NatoAlphabetConverter.LettersToName(abbrvName);
 			
 		}
-
-		public void Navigate()
-		{
-			isVisuallyEnabled = true;
-
-			if (CurrentPath == null)
-			{
-				if (Paths.Count == 0)
-				{
-					Debug.LogError("No paths found");
-					return;
-				}
-				else
-				{
-					
-					CurrentPath = Paths[0];
-					isVisuallyEnabled = CurrentPath.isUavVisuallyEnabled;
-					CurrentPath.PathActivated();
-				}
-			}
-		}
-
-		//while paths are not empty, check if current path is finished, if it is, then start the next path
-		public void Update()
-		{
-
-
-			if (Paths.Count == 0) return;
-
-			//move uav towards next waypoint
-			if (CurrentPath != null)
-			{
-				transform.position = Vector3.MoveTowards(transform.position,
-					CurrentPath.DestinationWaypoint.Transform.position, Time.deltaTime * CurrentPath.speed);
-
-				//check if uav is close to waypoint
-				if (Vector3.Distance(transform.position, CurrentPath.DestinationWaypoint.Transform.position) < 0.1f)
-				{
-					LastWaypointVisited = CurrentPath.DestinationWaypoint;
-					CurrentPath.PathCompleted();
-					Paths.Remove(CurrentPath);
-					if (Paths.Count > 0)
-					{
-						CurrentPath = Paths[0];
-						CurrentPath.PathActivated();
-					}
-					else
-					{
-						CurrentPath = null;
-						isVisuallyEnabled = false;
-					}
-				}
-			}
-		}
+		
+		
 		private void OnDisable()
 		{
 			if(uavDestroyedChannel != null)

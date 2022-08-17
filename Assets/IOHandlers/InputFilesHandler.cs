@@ -16,7 +16,7 @@ namespace IOHandlers
     /// InputFiles directory is within the Application.dataPath directory. (i.e., Application.dataPath/InputFiles.)
     /// The class requires a console to provide feedback to the user ( e.g., if a file is not found, if the directory is empty,etc.)
     /// The class should be attached to a gameObject.
-    /// The class by default has the functionality for getting a base input file which should contain all the basic input and settings (i.e., waypoints, uavs, navigations, etc.)
+    /// The class by default has the functionality for getting a base input file which should contain all the basic input and settings (i.e., wayPoints, uavs, navigations, etc.)
     ///     Additional input settings should be ideally appended to the base input file, however, if you decide to go with multiple input files (e.g., tactor feedback is provided in a separate input file)
     ///     Then you should update the FilesType enum to include the new type of input files, and also implement the corresponding methods in the GetFilesInfo method.
     /// It is highly recommended that all Input File handling be done in this class (i.e., setting file folders, setting file types, etc.)

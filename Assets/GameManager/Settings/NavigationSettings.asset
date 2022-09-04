@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: New Settings
   m_EditorClassIdentifier: 
   navigationType: 3
-  speedMode: 0
-  fixedSpeed: 15.42
+  speedMode: 1
+  fixedSpeed: 15
   pathDuration: 15
   followingType: 2
   rotationDuration: 2

@@ -1,21 +1,17 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using System.IO;
-using Chat;
-using Chat.ScriptableObjects;
+using Prompts;
 using HelperScripts;
 using Newtonsoft.Json;
 using UAVs;
-using UAVs.Fuel;
-using UAVs.Fuel.ScriptableObjects;
 using UAVs.Navigation;
 using UAVs.Navigation.ScriptableObjects;
+using UAVs.Sub_Modules.Fuel;
 using UnityEngine;
 using WayPoints;
 
 public class GameManager : MonoBehaviour
-    {
+{
         public static GameManager Instance { get; private set; }
         
         [SerializeField] public GameObject wayPointsContainer;
@@ -34,19 +30,27 @@ public class GameManager : MonoBehaviour
         [SerializeField] public FuelAndHealthManager fuelAndHealthManager;
         
         [Space(20)]
-        [SerializeField] public ChatManager chatManager;
+        [SerializeField] public PromptsManager promptsManager;
+        
+        [Space(20)]
+        [SerializeField] public ChannelsDatabase channelsDatabase;
+        [SerializeField] public PrefabsDatabase prefabsDatabase;
+        [SerializeField] public SettingsDatabase settingsDatabase;
         
         private bool _generateFromRecords = true;
         private void OnValidate()
         {
-            MyDebug.AssertComponentReferencedInEditor(wayPointsContainer,this,this.gameObject);
-            MyDebug.AssertComponentReferencedInEditor(uavsContainer,this,this.gameObject);
-            MyDebug.AssertComponentReferencedInEditor(wayPointsManager,this,this.gameObject);
-            MyDebug.AssertComponentReferencedInEditor(uavsManager,this,this.gameObject);
-            MyDebug.AssertComponentReferencedInEditor(navigationManager,this,this.gameObject);
-            MyDebug.AssertComponentReferencedInEditor(fuelAndHealthManager,this,this.gameObject);
-            MyDebug.AssertComponentReferencedInEditor(chatManager,this,this.gameObject);
-            MyDebug.AssertComponentReferencedInEditor(jsonSerializerTest,this,this.gameObject);
+            AssertionHelper.AssertComponentReferencedInEditor(wayPointsContainer,this,this.gameObject);
+            AssertionHelper.AssertComponentReferencedInEditor(uavsContainer,this,this.gameObject);
+            AssertionHelper.AssertComponentReferencedInEditor(wayPointsManager,this,this.gameObject);
+            AssertionHelper.AssertComponentReferencedInEditor(uavsManager,this,this.gameObject);
+            AssertionHelper.AssertComponentReferencedInEditor(navigationManager,this,this.gameObject);
+            AssertionHelper.AssertComponentReferencedInEditor(fuelAndHealthManager,this,this.gameObject);
+            AssertionHelper.AssertComponentReferencedInEditor(promptsManager,this,this.gameObject);
+            AssertionHelper.AssertComponentReferencedInEditor(jsonSerializerTest,this,this.gameObject);
+            AssertionHelper.AssertComponentReferencedInEditor(channelsDatabase,this,this.gameObject);
+            AssertionHelper.AssertComponentReferencedInEditor(prefabsDatabase,this,this.gameObject);
+            AssertionHelper.AssertComponentReferencedInEditor(settingsDatabase,this,this.gameObject);
         }
 
         private void Awake() 
@@ -79,26 +83,26 @@ public class GameManager : MonoBehaviour
         {
             
             if (!_generateFromRecords)
-            {
-                wayPointsManager.GenerateWayPoints();
-               uavsManager.GenerateUavs();
-               navigationManager.GeneratePaths();
-               navigationManager.NavigateAll();
+            { 
+                wayPointsManager.GenerateWayPoints(); 
+                uavsManager.GenerateUavs(); 
+                navigationManager.GeneratePaths(); 
+                navigationManager.NavigateAll();
             }
             else
             {
-                
-             wayPointsManager.GenerateWayPoints(jsonSerializerTest.rootObject.WayPointsRecords);
-             yield return new WaitForSeconds(0.5f);
-             uavsManager.GenerateUavs(jsonSerializerTest.rootObject.UavsRecords);
-             yield return new WaitForSeconds(0.5f);
-             navigationManager.GeneratePaths();
-             yield return new WaitForSeconds(0.5f);
-             navigationManager.NavigateAll();
-             yield return new WaitForSeconds(0.5f);
-             fuelAndHealthManager.Initialize();
-             yield return new WaitForSeconds(0.5f);
-             chatManager.Initialize();
+                wayPointsManager.Initialize();
+                wayPointsManager.GenerateWayPoints(jsonSerializerTest.rootObject.WayPointsRecords);
+                yield return new WaitForSeconds(0.5f); 
+                uavsManager.GenerateUavs(jsonSerializerTest.rootObject.UavsRecords);
+                yield return new WaitForSeconds(0.5f);
+                navigationManager.GeneratePaths();
+                yield return new WaitForSeconds(0.5f);
+                navigationManager.NavigateAll();
+                yield return new WaitForSeconds(0.5f);
+                fuelAndHealthManager.Initialize();
+                yield return new WaitForSeconds(0.5f);
+                promptsManager.Initialize();
             }
 
             

@@ -10,8 +10,8 @@ namespace Logging
 	public class LoggingManager:MonoBehaviour
 	{		
 		public static LoggingManager Instance { get; private set; }
-		private static List<Log> Logs { get; set; }
-		[SerializeField] public LogEventChannelSO loggingChannel;
+		private static List<Log> Logs { get; set; } = new ();
+		private LogEventChannelSO logEventChannel;
 
 		
 		
@@ -32,13 +32,30 @@ namespace Logging
 		
 		private void Start()
 		{
-
-			if(loggingChannel!=null)
+			logEventChannel = GameManager.Instance.channelsDatabase.logEventChannel;
+			
+			if(logEventChannel!=null)
 			{
-				loggingChannel.Subscribe(OnLogReceived);
+				logEventChannel.Subscribe(OnLogReceived);
+			}
+			
+			InitializeLogHandlers();
+
+		}
+
+		private void InitializeLogHandlers()
+		{
+			if (true) // todo get these from configs e.g.
+			{
+				var promptLogHandler = gameObject.AddComponent<PromptLogHandler>();
+				promptLogHandler.Initialize();
 			}
 
-			Logs = new();
+			if (true) //other logger
+			{
+				
+			}
+			//.... 
 		}
 
 		private void OnLogReceived(Log log)
@@ -48,9 +65,9 @@ namespace Logging
 
 		private void OnDisable()
 		{
-			if(loggingChannel!=null)
+			if(logEventChannel!=null)
 			{
-				loggingChannel.Unsubscribe(OnLogReceived);
+				logEventChannel.Unsubscribe(OnLogReceived);
 			}
 
 			WriteLogsToFile();

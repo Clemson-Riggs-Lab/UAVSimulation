@@ -11,25 +11,25 @@ namespace Menu
 { 
 	public class TypeWriterEffect : MonoBehaviour
 	{
-		[SerializeField] public float durationOfSingleCharacterAnimation = 0.02f;
 		[SerializeField] public TextMeshProUGUI mTextMeshPro;
-		private void OnValidate()
-		{
-			MyDebug.CheckIfReferenceExistsOrComponentExistsInGameObject(mTextMeshPro,this, this.gameObject);
-		}
-		
+		private float DurationOfSingleCharacterAnimation => 1f/GameManager.Instance.settingsDatabase.promptSettings.textAnimationSpeed;
+
 		public IEnumerator AnimateAll()
 
 		{
 			mTextMeshPro.ForceMeshUpdate();
 			var totalCharacters = mTextMeshPro.textInfo.characterCount;
-			yield return StartCoroutine(AnimateText(0, totalCharacters));
+			yield return StartCoroutine(AnimateText(0, totalCharacters,DurationOfSingleCharacterAnimation));
 			yield return null;
 		}
 
-		public IEnumerator AddAnimatedText(string textToAdd)
+		public IEnumerator AddAnimatedText(string textToAdd,float duration=0 )
 		{
-
+			if(duration==0) //if no value provided, then default to the value set in the settings database
+			{
+				duration = DurationOfSingleCharacterAnimation;
+			}
+			
 			// getting the start and end positions of the animation (which characters to animate)
 			var startAnimationPosition = mTextMeshPro.textInfo.characterCount;
 			mTextMeshPro.text += textToAdd; //append the text
@@ -38,18 +38,18 @@ namespace Menu
 
 			//getting animation duration
 			var totalCharacters = endAnimationPosition - startAnimationPosition;
-			var animationDuration = totalCharacters * durationOfSingleCharacterAnimation;
+			var animationDuration = totalCharacters * duration;
 			
-			var animateTextCoroutine = AnimateText(startAnimationPosition, endAnimationPosition);
+			var animateTextCoroutine = AnimateText(startAnimationPosition, endAnimationPosition,duration);
 			StartCoroutine(animateTextCoroutine);
 			
 			yield return new WaitForSeconds(animationDuration);
 		}
 		
-		private IEnumerator AnimateText(int startCharPos, int endCharPos)
+		private IEnumerator AnimateText(int startCharPos, int endCharPos,float durationOfSingleCharAnimation)
 		{
 			int visibleCount = startCharPos;
-			var delayBetweenLetters = new WaitForSeconds(durationOfSingleCharacterAnimation);
+			var delayBetweenLetters = new WaitForSeconds(durationOfSingleCharAnimation);
 
 			while (visibleCount < endCharPos)
 			{

@@ -22,7 +22,7 @@ public class JsonSerializerTest : MonoBehaviour
     public bool AddDefaultChatRecords { get; set; } = true;
     private void OnValidate()
     {
-       //  MyDebug.CheckIfReferenceExistsOrComponentExistsInGameObject(consoleTextHandler, this, this.gameObject);
+       //  AssertionHelper.CheckIfReferenceExistsOrComponentExistsInGameObject(consoleTextHandler, this, this.gameObject);
     }
 
     // Start is called before the first frame update
@@ -33,7 +33,7 @@ public class JsonSerializerTest : MonoBehaviour
         if (AddDefaultUavRecords == true) rootObject.UavsRecords = DefaultRecordsCreator.AddDefaultUavRecords();
         if (AddDefaultFuelLeaksRecord == true) rootObject.FuelLeaksRecord = DefaultRecordsCreator.AddDefaultFuelLeaksRecord();
 		if (AddDefaultUavPathsRecords == true) rootObject.UavPathsRecords = DefaultRecordsCreator.AddDefaultUavPathsRecords();
-		rootObject.ChatMessages = DefaultRecordsCreator.GetDefaultChatMessages();
+		rootObject.ChatMessages = DefaultRecordsCreator.GetDefaultPrompts();
 		string json = JsonConvert.SerializeObject(rootObject, Formatting.Indented);
         //  consoleTextHandler.AddTextToConsole(json);
 

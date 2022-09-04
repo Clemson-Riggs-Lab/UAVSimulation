@@ -12,7 +12,11 @@ MonoImporter:
   - jsonSerializerTest: {instanceID: 0}
   - navigationManager: {instanceID: 0}
   - navigationSettings: {fileID: 11400000, guid: 46d8f6855e5e8794f81560bb096a53f3, type: 2}
-  executionOrder: 0
+  - fuelAndHealthManager: {instanceID: 0}
+  - chatManager: {instanceID: 0}
+  - prefabsDatabase: {fileID: 11400000, guid: fc516381544051d4098d5ee6889169c9, type: 2}
+  - settingsDatabase: {fileID: 11400000, guid: ace421cb0e63d7241afed200b91bb258, type: 2}
+  executionOrder: 300
   icon: {instanceID: 0}
   userData: 
   assetBundleName: 

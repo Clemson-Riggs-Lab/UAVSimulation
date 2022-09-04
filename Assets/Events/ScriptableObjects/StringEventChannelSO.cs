@@ -6,7 +6,7 @@ using Object = UnityEngine.Object;
 namespace Events.ScriptableObjects
 {
 	[CreateAssetMenu(menuName = "Events/String Event Channel")]
-	public class StringEventChannelSo:ScriptableObject
+	public class StringEventChannelSO:ScriptableObject
 	{
 		public UnityAction<string> OnEventRaised;
 	

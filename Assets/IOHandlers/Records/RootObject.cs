@@ -1,6 +1,6 @@
 using System;
 using System.Collections.Generic;
-using Chat;
+using Prompts;
 
 namespace IOHandlers.Records
 {
@@ -11,7 +11,7 @@ namespace IOHandlers.Records
 		public List<UavRecord> UavsRecords { get; set; }= new List<UavRecord>();
 		public List<UavPathsRecord> UavPathsRecords { get; set; } = new List<UavPathsRecord>();
 		public List<UavFuelLeaksRecord> FuelLeaksRecord { get; set; }= new List<UavFuelLeaksRecord>();
-		public List<ChatMessage> ChatMessages { get; set; } = new List<ChatMessage>();
+		public List<Prompt> ChatMessages { get; set; } = new List<Prompt>();
 	}
 
 	

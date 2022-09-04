@@ -11,29 +11,32 @@ using UnityEngine;
 
 namespace WayPoints
 {
-    //TODO change so that it listens to wayPoint creation event and automatically adds it to the list
     public class WayPointsManager : MonoBehaviour
     {
         [SerializeField] public GameObject wayPointsContainer;
         [SerializeField] public WayPointsGenerator wayPointsGenerator;
         
-        [SerializeField] private ObjectEventChannelSO wayPointCreatedChannel;
-        [SerializeField] private ObjectEventChannelSO wayPointDisabledChannel;
+        [SerializeField] private ObjectEventChannelSO wayPointCreatedEventChannel;
+        [SerializeField] private ObjectEventChannelSO wayPointDisabledEventChannel;
         
-        [DoNotSerialize] public List<WayPoint> wayPoints = new List<WayPoint>();
+        [DoNotSerialize] public List<WayPoint> wayPoints = new ();
         
 
         private void OnValidate()
         {
-            MyDebug.AssertComponentReferencedInEditor(wayPointsContainer, this, this.gameObject);
-            MyDebug.CheckIfReferenceExistsOrComponentExistsInGameObject(wayPointsGenerator,this,this.gameObject);
+            AssertionHelper.AssertComponentReferencedInEditor(wayPointsContainer, this, this.gameObject);
+            AssertionHelper.CheckIfReferenceExistsOrComponentExistsInGameObject(wayPointsGenerator,this,this.gameObject);
         }
-        private void OnEnable()
+        public void Initialize()
+        { 
+            GetSettingsFromGameManager(); 
+            SubscribeToChannels();
+        }
+
+        private void GetSettingsFromGameManager()
         {
-            if(wayPointCreatedChannel != null)
-                wayPointCreatedChannel.Subscribe(OnWayPointCreated);// subscribing to get each wayPoint that is created 
-            if(wayPointDisabledChannel != null)
-                wayPointDisabledChannel.Subscribe(OnWayPointDisabled);
+            wayPointCreatedEventChannel = GameManager.Instance.channelsDatabase.wayPointCreatedEventChannel;
+            wayPointDisabledEventChannel = GameManager.Instance.channelsDatabase.wayPointDisabledEventChannel;
         }
 
 
@@ -89,16 +92,40 @@ namespace WayPoints
         private void OnWayPointCreated(object wayPoint)
         {
             wayPoints.Add((WayPoint)wayPoint);
-            Debug.Log("WayPoint created, call from wayPoints manager");
         }
-
         
         private void OnWayPointDisabled(object wayPoint)
         {
             wayPoints.Remove((WayPoint)wayPoint);
         }
 
-      
+        
+        private void OnDisable()
+        {
+            UnsubscribeFromChannels();
+        }
+        
+        private void OnDestroy()
+        {
+            UnsubscribeFromChannels();
+        }
+        
+        private void SubscribeToChannels()
+        {
+            if(wayPointCreatedEventChannel != null)
+                wayPointCreatedEventChannel.Subscribe(OnWayPointCreated);
+            if(wayPointDisabledEventChannel != null)
+                wayPointDisabledEventChannel.Subscribe(OnWayPointDisabled);
+        }
+        
+        private void UnsubscribeFromChannels()
+        {
+            if(wayPointCreatedEventChannel != null)
+                wayPointCreatedEventChannel.Unsubscribe(OnWayPointCreated);
+            if(wayPointDisabledEventChannel != null)
+                wayPointDisabledEventChannel.Unsubscribe(OnWayPointDisabled);
+        }
+
     }
 }
 

@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using Events.ScriptableObjects;
 using HelperScripts;
 using Menu;
 using Unity.VisualScripting;
@@ -14,23 +15,19 @@ namespace IOHandlers
     /// <summary>
     /// This class provides functionalities for getting all the input files from the input files directory
     /// InputFiles directory is within the Application.dataPath directory. (i.e., Application.dataPath/InputFiles.)
-    /// The class requires a console to provide feedback to the user ( e.g., if a file is not found, if the directory is empty,etc.)
     /// The class should be attached to a gameObject.
-    /// The class by default has the functionality for getting a base input file which should contain all the basic input and settings (i.e., wayPoints, uavs, navigations, etc.)
-    ///     Additional input settings should be ideally appended to the base input file, however, if you decide to go with multiple input files (e.g., tactor feedback is provided in a separate input file)
-    ///     Then you should update the FilesType enum to include the new type of input files, and also implement the corresponding methods in the GetFilesInfo method.
     /// It is highly recommended that all Input File handling be done in this class (i.e., setting file folders, setting file types, etc.)
     /// </summary>
     public class InputFilesHandler:MonoBehaviour
     {
-        [SerializeField]public ConsoleTextHandler consoleTextHandler;
-        [SerializeField] public SettingsReviewManager settingsReviewManager;
-
-        private static string _inputFolder;
+        [SerializeField] private ConsoleMessageEventChannelSO writeMessageToConsoleChannel;
+        [SerializeField] private StringEventChannelSO inputFileSelectedChannel;
+        
         private const string InputFilesExtension = "json";
         
         [Header("Input Folders Names within the /InputFiles directory")]
-        [SerializeField] public string baseInputFolderName ="baseInput"; //base input folder contains base input files which contain t
+        [SerializeField] public string baseInputFolderName =FilesType.SettingsAndConfigs.ToString(); //base input folder contains base input files which contain t
+        
         private string _baseInputFolderPath;
         private FileInfo _selectedBaseInputFileInfo=null;
         
@@ -40,55 +37,35 @@ namespace IOHandlers
             get => _selectedBaseInputFileInfo;
             set
             {
-                _selectedBaseInputFileInfo = value;
-                settingsReviewManager.SetKeyValuePair("Input File:", value.Name,
-                    valueMessageType: MessageType.Info);
                 Debug.Log(value.FullName);
+                _selectedBaseInputFileInfo = value;
+                if (inputFileSelectedChannel != null)
+                {
+                    inputFileSelectedChannel.RaiseEvent(value.FullName);
+                }
             }
         }
         public enum FilesType
         {
-            Base,
-            Other
+            SettingsAndConfigs,
+            Settings,
+            Configs
         }
-        private void OnValidate()
-        {
-            MyDebug.AssertComponentReferencedInEditor(consoleTextHandler,this,this.gameObject);
-            MyDebug.AssertComponentReferencedInEditor(settingsReviewManager,this,this.gameObject);
-        }
-
+        
         public  void OnEnable()
         {
-            _inputFolder = Application.dataPath + "/InputFiles/";
-            _baseInputFolderPath = _inputFolder + baseInputFolderName+"/";
+            var inputFolder = Application.dataPath + "/InputFiles/";
+            _baseInputFolderPath = inputFolder + baseInputFolderName+"/";
 
             // Create Directory if it doesnt Exist
-            if (!Directory.Exists(_inputFolder)) Directory.CreateDirectory(_inputFolder);
+            if (!Directory.Exists(inputFolder)) Directory.CreateDirectory(inputFolder);
             if (!Directory.Exists(_baseInputFolderPath)) Directory.CreateDirectory(_baseInputFolderPath);
         }
         
-        public List<FileInfo> GetFilesInfo(FilesType filesType)
+        public List<FileInfo> GetFilesInfoFromWorkDir(FilesType filesType)
         {
-            TRes Call<TRes>(Func<TRes> f) => f();
-
-            return filesType switch
-            {
-                FilesType.Base => GetListOfBaseInputFilesInDirectory(),
-                FilesType.Other => Call(()=> {RaiseError("File  type not implemented"); return new List<FileInfo>(); }),
-                _  => Call(()=> {RaiseError("File type not supported"); return new List<FileInfo>(); })
-            };
-        }
-
-        private List<FileInfo> GetListOfBaseInputFilesInDirectory()
-        {
-            return GetSortedListOfFilesInfoInDirectory(_baseInputFolderPath, "*." + InputFilesExtension);
-        }
-
-
-        private List<FileInfo> GetSortedListOfFilesInfoInDirectory(string directory, string searchPattern)
-        {
-            DirectoryInfo directoryInfo = new DirectoryInfo(directory);
-            FileInfo[] fileInfos = directoryInfo.GetFiles(searchPattern);
+            DirectoryInfo directoryInfo = new DirectoryInfo(_baseInputFolderPath);
+            FileInfo[] fileInfos = directoryInfo.GetFiles("*."+filesType.ToString()+"." + InputFilesExtension);
             
             if (fileInfos.Length != 0)
             {
@@ -97,7 +74,7 @@ namespace IOHandlers
             }
             else
             {
-                RaiseError("No files found in: " + directoryInfo.FullName, MessageType.Warning);
+                RaiseError("No files of type "+ filesType.ToString()+"  found in: " + directoryInfo.FullName);
                 return new List<FileInfo>();
             }
         }
@@ -112,11 +89,10 @@ namespace IOHandlers
             }
         }
 
-        private void RaiseError(string errorText, MessageType messageType =MessageType.Error)
+        private void RaiseError(string errorText)
         {
-            consoleTextHandler.AddTextToConsole(errorText,messageType, doAnimate:true);
+            if(writeMessageToConsoleChannel != null)
+            writeMessageToConsoleChannel.RaiseEvent("",new() {text= errorText,color = "red"});
         }
-
-      
     }
 }

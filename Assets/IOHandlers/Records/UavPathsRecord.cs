@@ -10,8 +10,8 @@ namespace IOHandlers.Records
 		public class PathRecord
 		{
 			public int DestinationWayPointID { get; set; }
-			public bool? UavVisuallyEnabled { get; set; }
-			public bool? TargetIsPresent { get; set; }
+			public bool? UavVisuallyEnabled { get; set; } = true;
+			public bool? TargetIsPresent { get; set; } = false;
 		}
 	}
 }

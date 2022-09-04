@@ -817,7 +817,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.5}
+  m_AnchoredPosition: {x: 0, y: -0.49999905}
   m_SizeDelta: {x: -20, y: -13}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &121362177
@@ -1187,7 +1187,7 @@ MonoBehaviour:
   inputFilesType: 0
   dropdown: {fileID: 150345279}
   inputFilesHandler: {fileID: 1045195031}
-  consoleTextHandler: {fileID: 1266965310}
+  writeMessageToConsoleChannel: {fileID: 0}
 --- !u!1 &157503142
 GameObject:
   m_ObjectHideFlags: 0
@@ -4184,7 +4184,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.5}
+  m_AnchoredPosition: {x: 0, y: -0.49999905}
   m_SizeDelta: {x: -20, y: -13}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &526543304
@@ -5885,6 +5885,8 @@ GameObject:
   m_Component:
   - component: {fileID: 686717052}
   - component: {fileID: 686717053}
+  - component: {fileID: 686717055}
+  - component: {fileID: 686717054}
   m_Layer: 5
   m_Name: Consol Panel
   m_TagString: Untagged
@@ -5940,6 +5942,34 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &686717054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 686717051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e3ee63c4f5da554b89b3cb8c35861e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mTextMeshPro: {fileID: 1266965307}
+--- !u!114 &686717055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 686717051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 593be30f0e9845ea9de2659af95c5988, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animateAllAtStart: 1
+  consoleTextMeshProUGUI: {fileID: 1266965307}
+  writeMessageToConsoleChannel: {fileID: 11400000, guid: 502a2607491241c40b797163fc8a2296, type: 2}
 --- !u!1 &695001430
 GameObject:
   m_ObjectHideFlags: 0
@@ -6971,8 +7001,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 570897948}
   m_HandleRect: {fileID: 570897947}
   m_Direction: 0
-  m_Value: 0.53691614
-  m_Size: 0.9982774
+  m_Value: 290.80188
+  m_Size: 0.99827766
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -8340,8 +8370,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 845acbe2fdf00b841a8fc22062b3d331, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reviewSettingsContainer: {fileID: 0}
+  reviewSettingsContainer: {fileID: 934522083}
   keyValuePairPrefab: {fileID: 7325418971208255881, guid: 7fa5bfb4a23aefe46a523eba7a138178, type: 3}
+  inputFileSelectedChannel: {fileID: 11400000, guid: faa7208fb7b727b4f80db31c914b52b0, type: 2}
 --- !u!1 &937716501
 GameObject:
   m_ObjectHideFlags: 0
@@ -9558,9 +9589,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d136a27963e94d3f825028885ac1829f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  consoleTextHandler: {fileID: 1266965310}
-  settingsReviewManager: {fileID: 934522090}
-  baseInputFolderName: baseInput
+  writeMessageToConsoleChannel: {fileID: 0}
+  inputFileSelectedChannel: {fileID: 11400000, guid: faa7208fb7b727b4f80db31c914b52b0, type: 2}
+  baseInputFolderName: SettingsAndConfigs
 --- !u!4 &1045195032
 Transform:
   m_ObjectHideFlags: 0
@@ -10813,8 +10844,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1266965305}
   - component: {fileID: 1266965309}
-  - component: {fileID: 1266965310}
-  - component: {fileID: 1266965308}
   - component: {fileID: 1266965307}
   - component: {fileID: 1266965306}
   m_Layer: 5
@@ -10841,7 +10870,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -0.026565552, y: 0}
+  m_AnchoredPosition: {x: -209, y: 0}
   m_SizeDelta: {x: 418, y: 0}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &1266965306
@@ -10978,20 +11007,6 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!114 &1266965308
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1266965304}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e3ee63c4f5da554b89b3cb8c35861e9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  durationOfSingleCharacterAnimation: 0.001
-  mTextMeshPro: {fileID: 1266965307}
 --- !u!222 &1266965309
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -11000,22 +11015,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1266965304}
   m_CullTransparentMesh: 1
---- !u!114 &1266965310
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1266965304}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f60bae0154bce8d47a0516d8f87ff95e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  forceNewLine: 1
-  animateAllAtStart: 1
-  mTextMeshPro: {fileID: 1266965307}
-  typeWriterEffectScript: {fileID: 1266965308}
 --- !u!1 &1276479104
 GameObject:
   m_ObjectHideFlags: 0
@@ -11051,7 +11050,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.5}
+  m_AnchoredPosition: {x: 0, y: -0.50000095}
   m_SizeDelta: {x: -20, y: -13}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1276479106
@@ -15548,7 +15547,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.5}
+  m_AnchoredPosition: {x: 0, y: -0.50000095}
   m_SizeDelta: {x: -20, y: -13}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1868809859

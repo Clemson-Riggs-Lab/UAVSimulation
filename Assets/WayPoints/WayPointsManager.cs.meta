@@ -3,7 +3,11 @@ guid: d222847d53a04fe5a8fab08a776d8031
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - wayPointsContainer: {instanceID: 0}
+  - wayPointsGenerator: {instanceID: 0}
+  - wayPointCreatedChannel: {fileID: 11400000, guid: 434256939b0e424438067ae5888d92c6, type: 2}
+  - wayPointDisabledChannel: {fileID: 11400000, guid: ee622e049e3d02449b0fab8df64e091e, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

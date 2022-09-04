@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66f27c77324647c1bf6aca55a6289e8e, type: 3}
+  m_Name: SettingsDatabase
+  m_EditorClassIdentifier: 
+  promptSettings: {fileID: 11400000, guid: fbcedd838ecf53a468311f88ef0be652, type: 2}
+  targetDetectionSettings: {fileID: 11400000, guid: ba05e28a9b6fa5148a3a0b76e7408e0f, type: 2}
+  uavSettings: {fileID: 11400000, guid: a12b0fc27010f55478c915a4b4e95fa2, type: 2}

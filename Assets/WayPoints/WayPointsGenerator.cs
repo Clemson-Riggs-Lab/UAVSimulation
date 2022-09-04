@@ -16,20 +16,25 @@ namespace WayPoints
         private GameObject _wayPointPrefab=null;
         private GameObject _wayPointsContainer;
         private GameObject _terrainContainer;
-        float gridXDim;// TODO:LowPriority consider moving to inside the generator function
-        float gridZDim;// TODO:LowPriority consider moving to inside the generator function
-        
+
         private void Start()
-        {
+        { 
+            GetSettingsFromGameManager(); 
+            AssertReferencesNotNull();
+ 
+        }
+
+        private void GetSettingsFromGameManager()
+        { 
             _wayPointsContainer = GameManager.Instance.wayPointsContainer;
             _terrainContainer = GameManager.Instance.terrainContainer;
-            _wayPointPrefab = PrefabsManager.Instance.waypointPrefab;
-            
-            MyDebug.AssertObjectReferenceObtainedFromGameManager(_wayPointsContainer, this, gameObject);
-            MyDebug.AssertObjectReferenceObtainedFromGameManager(_terrainContainer, this, gameObject);
-            MyDebug.AssertPrefabReferenceObtainedFromPrefabsManager(_wayPointPrefab,"waypointPrefab", this, gameObject);
-            
-            
+            _wayPointPrefab = GameManager.Instance.prefabsDatabase.waypointPrefab;
+        }
+        private void AssertReferencesNotNull()
+        {
+            AssertionHelper.AssertObjectReferenceObtainedFromGameManager(_wayPointsContainer, this, gameObject);
+            AssertionHelper.AssertObjectReferenceObtainedFromGameManager(_terrainContainer, this, gameObject);
+            AssertionHelper.AssertPrefabReferenceObtainedFromPrefabsManager(_wayPointPrefab,"waypointPrefab", this, gameObject);
         }
 
         public void GenerateWayPointsUniformOverPlane(int numOfWayPoints, int numOfCols, int numOfRows)
@@ -39,9 +44,9 @@ namespace WayPoints
             _wayPointsContainer.transform.position = _terrainContainer.transform.position;
             var terrain = _terrainContainer.GetComponentInChildren<Terrain>();
             var wayPointMesh = _wayPointPrefab.GetComponent<MeshFilter>().sharedMesh;
-        
-            gridXDim =  terrain.terrainData.size.x;
-            gridZDim =  terrain.terrainData.size.z ;
+
+            var gridXDim = terrain.terrainData.size.x;
+            var gridZDim = terrain.terrainData.size.z;
             var wayPointElevation = 100;//TODO change from fixed to dynamic height
 
             for (int z=0; z<numOfCols; ++z)
@@ -67,7 +72,16 @@ namespace WayPoints
                 GenerateWayPoint(wayPointRecord.Id??=0,position);
             }
         }
-
+        private void GenerateWayPoint(int id,Vector3 position)
+        {
+            var  wayPointGameObject = Instantiate(_wayPointPrefab,  _wayPointsContainer.transform);
+            wayPointGameObject.transform.localPosition = position;
+            var wayPoint= wayPointGameObject.GetComponent<WayPoint>();
+            wayPoint.Initialize(id,position);
+            wayPoint.Id = id;
+        }
+        
+        
         private void HandleNullValues(List<WayPointRecord> wayPointsRecords)
         {
             //if any wayPoint has a null id, we need to assign it a new id.
@@ -84,13 +98,6 @@ namespace WayPoints
             
         }
 
-        private void GenerateWayPoint(int id,Vector3 position)
-        {
-            var  wayPointGameObject = Instantiate(_wayPointPrefab,  _wayPointsContainer.transform);
-            wayPointGameObject.transform.localPosition = position;
-            var wayPoint= wayPointGameObject.GetComponent<WayPoint>();
-            wayPoint.Initialize(id,position);
-            wayPoint.Id = id;
-        }
+
     }
 }

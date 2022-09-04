@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 07c1671e7c0e4c23b9733fdc587bfde2
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - newPromptEventChannel: {fileID: 11400000, guid: 5a505d80c53cff24b99a2e9515741cbe, type: 2}
+  - responseReceivedChannel: {fileID: 11400000, guid: 88d889fda608e684db4ee772f9e5777c, type: 2}
+  - WriteTextToConsoleChannel: {fileID: 11400000, guid: 502a2607491241c40b797163fc8a2296, type: 2}
+  - responsesContainer: {instanceID: 0}
+  - responseButtonPrefab: {fileID: 5394739573003395823, guid: 52720c39627fc1e478ecd6344d32f3a8, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

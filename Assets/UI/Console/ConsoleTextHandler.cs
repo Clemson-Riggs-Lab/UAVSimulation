@@ -1,67 +1,78 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
+using Prompts;
+using Events.ScriptableObjects;
 using HelperScripts;
+using Menu;
 using TMPro;
 using Unity.VisualScripting;
-using UnityEditor;
 using UnityEngine;
-using static HelperScripts.NatoAlphabetConverter;
 
-namespace Menu
+namespace UI.Console
 {
 	public class ConsoleTextHandler : MonoBehaviour
 	{
-		[SerializeField] private bool forceNewLine = true;
 		[SerializeField] private bool animateAllAtStart = true;
-		[DoNotSerialize] private const bool DoAnimateByDefault = true;// change to false to disable animation by default
 		
-		[SerializeField] private TextMeshProUGUI mTextMeshPro;
+		[SerializeField] private TextMeshProUGUI consoleTextMeshProUGUI;
+
+		[SerializeField] private ConsoleMessageEventChannelSO writeMessageToConsoleChannel;
 		
-		[SerializeField]public TypeWriterEffect typeWriterEffectScript;
-		[DoNotSerialize]private   QueueManager _animationQueue; 
-	
+		[DoNotSerialize] private TypeWriterEffect _typeWriterEffect;
+		[DoNotSerialize] private QueueManager _animationQueue;
+
 		private void OnValidate()
 		{
-			MyDebug.CheckIfReferenceExistsOrComponentExistsInGameObject(mTextMeshPro,this, this.gameObject);
-			MyDebug.CheckIfReferenceExistsOrComponentExistsInGameObject(typeWriterEffectScript,this, this.gameObject);
+			AssertionHelper.CheckIfReferenceExistsOrComponentExistsInGameObject(consoleTextMeshProUGUI, this, this.gameObject);
 		}
 
 		private void Awake()
 		{
-			_animationQueue= gameObject.AddComponent<QueueManager>();
+			if (writeMessageToConsoleChannel != null)
+				writeMessageToConsoleChannel.OnEventRaised += AddTextToConsole;
 		}
-
+		
 		private void Start()
 		{
-			if (animateAllAtStart)
-				_animationQueue.AddToQueue(typeWriterEffectScript.AnimateAll());
-		}
-
-		public void AddTextToConsole(string textToAdd, MessageType messageType = MessageType.None, bool doAnimate = DoAnimateByDefault)
-		{
-			if (forceNewLine) textToAdd = Environment.NewLine + textToAdd; //adding newline to the beginning;
-			var textWithColor = TextManipulation.AddColorToText(textToAdd, messageType);
+			InitializeAnimationQueueAndSettings();
 			
-			if (doAnimate) _animationQueue.AddToQueue(typeWriterEffectScript.AddAnimatedText(textWithColor));
-			else _animationQueue.AddToQueue(AddTextWithoutAnimation(textWithColor));
+			if (animateAllAtStart)
+				_animationQueue.AddToQueue(_typeWriterEffect.AnimateAll());
 		}
 
+		private void InitializeAnimationQueueAndSettings()
+		{
+			_typeWriterEffect = gameObject.AddComponent<TypeWriterEffect>();
+			_typeWriterEffect.mTextMeshPro = consoleTextMeshProUGUI;
+			
+			consoleTextMeshProUGUI.fontSize = GameManager.Instance.settingsDatabase.promptSettings.textFontSize;
+			
+			_animationQueue= gameObject.AddComponent<QueueManager>();
+		}
+		
+		private void AddTextToConsole(string prefix, ConsoleMessage message)
+		{
+			var textToAdd = Environment.NewLine+ prefix + message.text;
+			if(message.color != null)
+				textToAdd=  TextManipulation.AddColorToText(textToAdd, message.color);
+			
+			var animate= message.doAnimate;
+			_animationQueue.AddToQueue(animate ? _typeWriterEffect.AddAnimatedText(textToAdd) : AddTextWithoutAnimation(textToAdd));
+	
+		}
+		
 		private IEnumerator AddTextWithoutAnimation(string textToAdd)
 		{
-			mTextMeshPro.text += textToAdd;
-			mTextMeshPro.maxVisibleCharacters = mTextMeshPro.textInfo.characterCount;
+			consoleTextMeshProUGUI.text += textToAdd;
+			consoleTextMeshProUGUI.maxVisibleCharacters = consoleTextMeshProUGUI.textInfo.characterCount;
 			yield return null;
 		}
-
-		////testing function to make sure that the typewriter effect works
-		// public void AddTextLoop(int iterations)
-		// {
-		// 	for (int i = 0; i <= iterations; i++)
-		// 	{
-		// 		AddTextToConsole(IntToLetters(i),MessageType.Info,true); 
-		// 		AddTextToConsole(LettersToName(IntToLetters(i)),MessageType.Info,true);
-		// 	}     
-		// }
+		
+		
+		private void OnDisable()
+		{
+			if (writeMessageToConsoleChannel != null)
+				writeMessageToConsoleChannel.OnEventRaised -= AddTextToConsole;
+		}
 	}
 }

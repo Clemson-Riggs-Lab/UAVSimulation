@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9e25a48181444a2a22f57953713afbc, type: 3}
+  m_Name: ChannelsDatabase
+  m_EditorClassIdentifier: 
+  newConsoleMessageChannel: {fileID: 11400000, guid: 502a2607491241c40b797163fc8a2296, type: 2}
+  logEventChannel: {fileID: 11400000, guid: 739cddf0c4cda4247b88f0807f3720cd, type: 2}
+  promptChannels: {fileID: 11400000, guid: bf6264f0eaecece4cb44bb363aa2813e, type: 2}
+  uavChannels: {fileID: 11400000, guid: 1436dd1f7e3fbf74cba42add2abb17aa, type: 2}
+  wayPointCreatedEventChannel: {fileID: 11400000, guid: 434256939b0e424438067ae5888d92c6, type: 2}
+  wayPointDisabledEventChannel: {fileID: 11400000, guid: ee622e049e3d02449b0fab8df64e091e, type: 2}

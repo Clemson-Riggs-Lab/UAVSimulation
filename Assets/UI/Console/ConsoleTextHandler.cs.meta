@@ -1,9 +1,11 @@
 fileFormatVersion: 2
-guid: f60bae0154bce8d47a0516d8f87ff95e
+guid: 593be30f0e9845ea9de2659af95c5988
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - consoleTextMeshProUGUI: {instanceID: 0}
+  - writeTextToConsoleChannel: {fileID: 11400000, guid: 3f50f9fd472b13448a10fbf6e8942dbc, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

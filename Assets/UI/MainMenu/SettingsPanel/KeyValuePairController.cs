@@ -1,7 +1,5 @@
-using System;
 using HelperScripts;
 using TMPro;
-using UnityEditor;
 using UnityEngine;
 
 namespace Menu
@@ -17,14 +15,14 @@ namespace Menu
 			AssertionHelper.AssertComponentReferencedInEditor(valueText,this, this.gameObject);
 		}
 
-		public void SetKeyText(string text, MessageType messageType)
+		public void SetKeyText(string text, string color)
 		{
-			keyText.text = TextManipulation.AddColorToText(text, messageType);
+			keyText.text = TextManipulation.AddColorToText(text, color);
 		}
 
-		public void SetValueText(string text, MessageType messageType)
+		public void SetValueText(string text, string color)
 		{
-			valueText.text = TextManipulation.AddColorToText(text, messageType);
+			valueText.text = TextManipulation.AddColorToText(text, color);
 		}
 
 		public string GetKeyText()

@@ -1,9 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Events.ScriptableObjects;
 using HelperScripts;
 using IOHandlers.Records;
+using ScriptableObjects.EventChannels;
 using UnityEngine;
 using WayPoints;
 
@@ -16,8 +16,8 @@ namespace UAVs
          private WayPointsManager _wayPointsManager;
          private UavsGenerator _uavsGenerator;
          
-         private ObjectEventChannelSO uavCreatedEventChannel = null;
-         private ObjectEventChannelSO uavDestroyedEventChannel = null;
+         private UavEventChannelSO uavCreatedEventChannel = null;
+         private UavEventChannelSO uavDestroyedEventChannel = null;
          
          public List<Uav> uavs = new (); //automatically updated by listening to the uavCreatedEventChannel
         
@@ -42,7 +42,7 @@ namespace UAVs
                 uavCreatedEventChannel.Subscribe(OnUavCreated);// subscribing to get each uav that is created 
            
             if(uavDestroyedEventChannel != null)
-                uavDestroyedEventChannel.Subscribe(OnUavDisabled);
+                uavDestroyedEventChannel.Subscribe(OnUavDestroyed);
         }
         private void GetSettingsFromGameManager()
         {
@@ -61,15 +61,15 @@ namespace UAVs
         }
 
       
-        private void OnUavDisabled(object uav)
+        private void OnUavDestroyed(Uav uav)
         {
-            uavs.Remove((Uav)uav);
+            uavs.Remove(uav);
         }
 
-        private void OnUavCreated(object uav)
+        private void OnUavCreated(Uav uav)
         {
-            uavs.Add((Uav)uav);
-            Debug.Log("UAV created"+((Uav)uav).CodeName,((Uav)uav).gameObject);
+            uavs.Add(uav);
+            Debug.Log("UAV created"+uav.CodeName,uav.gameObject);
         }
 
         private void ClearUavs()
@@ -105,6 +105,8 @@ namespace UAVs
         {
             if(uavCreatedEventChannel != null)
                 uavCreatedEventChannel.Unsubscribe(OnUavCreated);
+            if(uavDestroyedEventChannel != null)
+                uavDestroyedEventChannel.Unsubscribe(OnUavDestroyed);
         }
 
        

@@ -1,6 +1,6 @@
 using System;
 using System.Collections.Generic;
-using Events.ScriptableObjects;
+using ScriptableObjects.EventChannels;
 using TargetDetection;
 using UnityEngine;
 

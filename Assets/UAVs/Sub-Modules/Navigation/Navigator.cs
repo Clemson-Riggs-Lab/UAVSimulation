@@ -2,18 +2,18 @@ using System;
 using System.Collections.Generic;
 using DG.Tweening;
 using HelperScripts;
-using UAVs.Navigation;
-using UAVs.Navigation.ScriptableObjects;
+using ScriptableObjects.UAVs.Navigation;
 using UnityEngine;
 
 namespace UAVs.Sub_Modules.Navigation
 {
 	public class Navigator : MonoBehaviour
 	{
-	
-		
-		[SerializeField] public NavigationManager navigationManager;
-		[SerializeField] public NavigationSettingsSO navigationSettings;
+		private NavigationManager navigationManager;
+		private NavigationSettingsSO navigationSettings;
+
+		private UavPathEventChannelSO uavStartedNewPathEventChannel;
+		private UavPathEventChannelSO uavArrivedAtDestinationEventChannel;
 		
 		
 		public Uav uav;
@@ -37,7 +37,7 @@ namespace UAVs.Sub_Modules.Navigation
 		public float hoverAngle;
 		public float hoverSpeed;
 			
-		public Sequence DOTweenSequence;
+		private Sequence DOTweenSequence;
 
 		private Vector3 _targetPosition;
 		private Path _currentPath;
@@ -56,21 +56,35 @@ namespace UAVs.Sub_Modules.Navigation
             	Destroy(this);
                 return;
             }
+
+            InitializeReferences();
+            InitializeSettings();
             
-			navigationManager= GameManager.Instance.navigationManager;
-			navigationSettings= GameManager.Instance.navigationSettings;
-			AssertionHelper.AssertObjectReferenceObtainedFromGameManager(navigationManager, this, gameObject);
-			AssertionHelper.AssertObjectReferenceObtainedFromGameManager(navigationSettings, this, gameObject);
-			
-			// Fix rigidbody rotation
+            // Fix rigidbody rotation
             if (GetComponent<Rigidbody>())
                 GetComponent<Rigidbody>().freezeRotation = true;
             
-            InitializeSettingsFromSO();
+            
+            
             DOTweenSequence = DOTween.Sequence();
 		}
 
-		private void InitializeSettingsFromSO()
+		private void InitializeReferences()
+		{
+			navigationManager= GameManager.Instance.navigationManager;
+			navigationSettings= GameManager.Instance.navigationSettings;
+			
+			uavStartedNewPathEventChannel = GameManager.Instance.channelsDatabase.uavChannels.navigationChannels.uavStartedNewPathEventChannel;
+			uavArrivedAtDestinationEventChannel = GameManager.Instance.channelsDatabase.uavChannels.navigationChannels.uavArrivedAtDestinationEventChannel;
+			
+			AssertionHelper.AssertObjectReferenceObtainedFromGameManager(navigationManager, this, gameObject);
+			AssertionHelper.AssertObjectReferenceObtainedFromGameManager(navigationSettings, this, gameObject);
+			AssertionHelper.AssertObjectReferenceObtainedFromGameManager(uavStartedNewPathEventChannel, this, gameObject);
+			AssertionHelper.AssertObjectReferenceObtainedFromGameManager(uavArrivedAtDestinationEventChannel, this, gameObject);
+			
+		}
+
+		private void InitializeSettings()
 		{
 			speedMode = navigationSettings.speedMode;
 			fixedSpeed = navigationSettings.fixedSpeed;
@@ -123,11 +137,12 @@ namespace UAVs.Sub_Modules.Navigation
 			_targetPosition = IgnoreWaypointPositionByAxis(_currentPath.DestinationWayPoint.transform.position);
 			DOTweenSequence = DOTween.Sequence();
 			AddDOTweenNavigationAndRotation();
+			uavStartedNewPathEventChannel.RaiseEvent(uav, _currentPath);
 			if (waypointHoveringType != NavigationSettingsSO.WaypointHoveringType.None)
 			{
 				AddHoveringTween();
 			}
-			DOTweenSequence.AppendCallback(()=>navigationManager.RaiseUavArrivedToWaypointEvent(uav, _currentPath.destinationWayPointID));
+			DOTweenSequence.AppendCallback(()=>uavArrivedAtDestinationEventChannel.RaiseEvent(uav, _currentPath));
 			DOTweenSequence.AppendCallback(UpdateDestination);
 			DOTweenSequence.OnComplete(UpdateNavigation);
 			

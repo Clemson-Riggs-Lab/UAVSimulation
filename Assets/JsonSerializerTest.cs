@@ -6,7 +6,7 @@ using IOHandlers;
 using IOHandlers.Records;
 using Menu;
 using Newtonsoft.Json;
-using UAVs.Navigation.ScriptableObjects;
+using ScriptableObjects.UAVs.Navigation;
 using UnityEngine;
 
 public class JsonSerializerTest : MonoBehaviour

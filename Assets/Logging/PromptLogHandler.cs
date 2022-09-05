@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Prompts;
 using Prompts.ScriptableObjects;
-using Events.ScriptableObjects;
+using ScriptableObjects.EventChannels;
 using UnityEngine;
 
 namespace Logging

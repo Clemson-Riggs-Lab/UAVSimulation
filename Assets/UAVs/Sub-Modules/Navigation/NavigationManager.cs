@@ -1,13 +1,12 @@
 using System;
 using System.Collections.Generic;
-using HelperScripts;
 using IOHandlers.Records;
-using UAVs.Navigation.ScriptableObjects;
-using UAVs.Sub_Modules.Navigation;
+using ScriptableObjects.UAVs.Navigation;
+using UAVs.Navigation;
 using UnityEngine;
 using WayPoints;
 
-namespace UAVs.Navigation
+namespace UAVs.Sub_Modules.Navigation
 {
 	public class NavigationManager: MonoBehaviour
 	{
@@ -72,14 +71,5 @@ namespace UAVs.Navigation
 			}
 		}
 		
-		public void RaiseUavArrivedToWaypointEvent(Uav uav,int currentWaypointID)
-		{
-			Debug.Log("UAV " + uav.name + " arrived to waypoint " + currentWaypointID + "at time " + Time.time);
-		}
-
-		public void RaiseUavLeavingWaypointEvent(Uav uav, int previousWaypointID)
-		{
-			//throw new System.NotImplementedException();
-		}
 	}
 }

@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 951c694f1d7c48b0bc0baf8eaec6222c, type: 3}
   m_Name: UavChannelsSO
   m_EditorClassIdentifier: 
-  uavCreatedEventChannel: {fileID: 11400000, guid: 2c0ad8844cd507c478486ac89803b222, type: 2}
-  uavDestroyedEventChannel: {fileID: 11400000, guid: c90c6554f88adea46867419e8399f102, type: 2}
-  uavHiddenEventChannel: {fileID: 11400000, guid: fe15182812d2aa34284f3c8fdeeadc0d, type: 2}
-  uavVisibleEventChannel: {fileID: 11400000, guid: aa3069b0c0fff7645b7fe65b8bfed719, type: 2}
-  uavShotDownChannel: {fileID: 11400000, guid: 1d895530fd4f5454f9efab19dd38cfff, type: 2}
+  uavCreatedEventChannel: {fileID: 11400000, guid: 863622cd8197251479b2f543d4f973fe, type: 2}
+  uavDestroyedEventChannel: {fileID: 11400000, guid: c94db342f08c9694fbcc17b1b87f105e, type: 2}
+  uavHiddenEventChannel: {fileID: 11400000, guid: bea5aad569054b542af6693b45df4e24, type: 2}
+  uavVisibleEventChannel: {fileID: 11400000, guid: ad3bcd76bd68b0944a728def143c79cc, type: 2}
+  uavShotDownChannel: {fileID: 11400000, guid: 9d8a22d4640ac5a4d8123b5b6dc3ab56, type: 2}
   navigationChannels: {fileID: 11400000, guid: 151f90e4022d0b546b2939ee1af83df7, type: 2}

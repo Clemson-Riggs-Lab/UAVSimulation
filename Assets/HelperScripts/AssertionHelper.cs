@@ -1,5 +1,4 @@
 using System;
-using Events.ScriptableObjects;
 using UAVs.Navigation;
 using UnityEngine;
 

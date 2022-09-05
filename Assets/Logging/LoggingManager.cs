@@ -1,8 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using Events.ScriptableObjects;
 using Newtonsoft.Json;
+using ScriptableObjects.EventChannels;
 using UnityEngine;
 
 namespace Logging

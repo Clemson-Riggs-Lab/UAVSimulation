@@ -1,4 +1,4 @@
-using Events.ScriptableObjects;
+using ScriptableObjects.EventChannels;
 using UnityEngine;
 
 namespace HelperScripts

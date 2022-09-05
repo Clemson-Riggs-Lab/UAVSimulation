@@ -3,10 +3,14 @@ using System.IO;
 using Prompts;
 using HelperScripts;
 using Newtonsoft.Json;
+using ScriptableObjects;
+using ScriptableObjects.Databases;
+using ScriptableObjects.UAVs.Navigation;
+using TargetDetection;
 using UAVs;
 using UAVs.Navigation;
-using UAVs.Navigation.ScriptableObjects;
 using UAVs.Sub_Modules.Fuel;
+using UAVs.Sub_Modules.Navigation;
 using UnityEngine;
 using WayPoints;
 
@@ -33,9 +37,12 @@ public class GameManager : MonoBehaviour
         [SerializeField] public PromptsManager promptsManager;
         
         [Space(20)]
-        [SerializeField] public ChannelsDatabase channelsDatabase;
-        [SerializeField] public PrefabsDatabase prefabsDatabase;
-        [SerializeField] public SettingsDatabase settingsDatabase;
+        [SerializeField] public TargetsManager targetsManager;
+        
+        [Space(20)]
+        [SerializeField] public ChannelsDatabaseSO channelsDatabase;
+        [SerializeField] public PrefabsDatabaseSO prefabsDatabase;
+        [SerializeField] public SettingsDatabaseSO settingsDatabase;
         
         private bool _generateFromRecords = true;
         private void OnValidate()
@@ -91,18 +98,21 @@ public class GameManager : MonoBehaviour
             }
             else
             {
+                
                 wayPointsManager.Initialize();
                 wayPointsManager.GenerateWayPoints(jsonSerializerTest.rootObject.WayPointsRecords);
-                yield return new WaitForSeconds(0.5f); 
+                yield return new WaitForSeconds(0.1f); 
                 uavsManager.GenerateUavs(jsonSerializerTest.rootObject.UavsRecords);
-                yield return new WaitForSeconds(0.5f);
+                yield return new WaitForSeconds(0.1f);
                 navigationManager.GeneratePaths();
-                yield return new WaitForSeconds(0.5f);
+                yield return new WaitForSeconds(0.1f);
                 navigationManager.NavigateAll();
-                yield return new WaitForSeconds(0.5f);
+                yield return new WaitForSeconds(0.1f);
                 fuelAndHealthManager.Initialize();
-                yield return new WaitForSeconds(0.5f);
+                yield return new WaitForSeconds(0.1f);
                 promptsManager.Initialize();
+                yield return new WaitForSeconds(0.1f);
+                
             }
 
             

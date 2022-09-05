@@ -1,9 +1,9 @@
 using System;
 using System.Collections;
 using Prompts;
-using Events.ScriptableObjects;
 using HelperScripts;
 using Menu;
+using ScriptableObjects.EventChannels;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -29,7 +29,7 @@ namespace UI.Console
 		private void Awake()
 		{
 			if (writeMessageToConsoleChannel != null)
-				writeMessageToConsoleChannel.OnEventRaised += AddTextToConsole;
+				writeMessageToConsoleChannel.Subscribe(AddTextToConsole);
 		}
 		
 		private void Start()
@@ -72,7 +72,7 @@ namespace UI.Console
 		private void OnDisable()
 		{
 			if (writeMessageToConsoleChannel != null)
-				writeMessageToConsoleChannel.OnEventRaised -= AddTextToConsole;
+				writeMessageToConsoleChannel.Unsubscribe( AddTextToConsole);
 		}
 	}
 }

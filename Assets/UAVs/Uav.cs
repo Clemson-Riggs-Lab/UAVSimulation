@@ -1,6 +1,6 @@
 using System;
-using Events.ScriptableObjects;
 using HelperScripts;
+using ScriptableObjects.EventChannels;
 using UnityEngine;
 using WayPoints;
 
@@ -13,8 +13,8 @@ namespace UAVs
 		public string CodeName => NatoAlphabetConverter.LettersToName(AbbreviatedName);
 		
 
-		 private ObjectEventChannelSO uavCreatedEventChannel;
-		 private ObjectEventChannelSO uavDestroyedEventChannel;
+		 private UavEventChannelSO uavCreatedEventChannel;
+		 private UavEventChannelSO uavDestroyedEventChannel;
 
 		[NonSerialized] public WayPoint startingWaypoint;
 		
@@ -39,7 +39,7 @@ namespace UAVs
 		{
 			gameObject.name = "UAV " + id;
 			this.ID = id;
-			
+			transform.SetLayerRecursively(LayerMask.NameToLayer("UAV"+id));//set layer to UAV1, UAV2, UAV3, etc.. including all children, based on ID
 			startingWaypoint = wayPoint;
 			transform.position = startingWaypoint.transform.position;
 			

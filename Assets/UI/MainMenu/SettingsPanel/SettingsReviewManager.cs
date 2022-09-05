@@ -1,9 +1,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using Events.ScriptableObjects;
 using HelperScripts;
 using Menu;
+using ScriptableObjects.EventChannels;
 using UnityEditor;
 using UnityEngine;
 
@@ -52,22 +52,22 @@ public class SettingsReviewManager : MonoBehaviour
 		}
 	}
 
-	public void SetKeyValuePair(string keyText, string valueText,
-		MessageType keyMessageType = MessageType.None,
-		MessageType valueMessageType = MessageType.None)
-	{
-		KeyValuePairController kvpcScript = null;
-		if (!_settingsDatabase.TryGetValue(keyText, out kvpcScript)) //if the key is not in the dictionary, create a new pair (object) and add them to the dictionary
-		{
-			var keyValuePairGameObject = Instantiate(keyValuePairPrefab, reviewSettingsContainer.transform);
-			kvpcScript = keyValuePairGameObject.GetComponent<KeyValuePairController>();
-			_settingsDatabase.Add(keyText, kvpcScript);
-		}
-
-		//setting the key and the value of the new or previously existing key-value pair
-		kvpcScript.SetKeyText(keyText, keyMessageType);
-		kvpcScript.SetValueText(valueText, valueMessageType);
-	}
+	// public void SetKeyValuePair(string keyText, string valueText,
+	// 	MessageType keyMessageType = MessageType.None,
+	// 	MessageType valueMessageType = MessageType.None)
+	// {
+	// 	KeyValuePairController kvpcScript = null;
+	// 	if (!_settingsDatabase.TryGetValue(keyText, out kvpcScript)) //if the key is not in the dictionary, create a new pair (object) and add them to the dictionary
+	// 	{
+	// 		var keyValuePairGameObject = Instantiate(keyValuePairPrefab, reviewSettingsContainer.transform);
+	// 		kvpcScript = keyValuePairGameObject.GetComponent<KeyValuePairController>();
+	// 		_settingsDatabase.Add(keyText, kvpcScript);
+	// 	}
+	//
+	// 	//setting the key and the value of the new or previously existing key-value pair
+	// 	kvpcScript.SetKeyText(keyText, keyMessageType);
+	// 	kvpcScript.SetValueText(valueText, valueMessageType);
+	// }
 	
 	private void OnDisable()
 	{

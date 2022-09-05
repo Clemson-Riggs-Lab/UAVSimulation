@@ -2,10 +2,10 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using Events.ScriptableObjects;
 using HelperScripts;
 using IOHandlers;
 using IOHandlers.Records;
+using ScriptableObjects.EventChannels;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -46,7 +46,7 @@ namespace WayPoints
            else
             {
                 Debug.LogError("WayPoints Generator not found in the game object, couldn't continue program", this.gameObject);
-                PlatformDependentScriptsHelper.Quit();
+                return;
             }
         }
 

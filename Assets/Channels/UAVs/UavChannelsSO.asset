@@ -19,3 +19,5 @@ MonoBehaviour:
   uavShotDownChannel: {fileID: 11400000, guid: 9d8a22d4640ac5a4d8123b5b6dc3ab56, type: 2}
   navigationChannels: {fileID: 11400000, guid: 151f90e4022d0b546b2939ee1af83df7, type: 2}
   fuelAndHealthChannels: {fileID: 11400000, guid: 343280c0547c3704bac7c23e1a3e1bec, type: 2}
+  uavReroutedEventChannel: {fileID: 11400000, guid: 7d4ea134ef14bee4c9a75a0ecd04a58c, type: 2}
+  reroutingOptionsRequestedChannel: {fileID: 11400000, guid: 430b50f90ffdc7344abaf8b5085f1127, type: 2}

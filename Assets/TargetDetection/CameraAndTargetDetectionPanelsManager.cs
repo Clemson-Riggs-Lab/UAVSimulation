@@ -43,9 +43,18 @@ namespace UAVs.Sub_Modules.Camera
         {
             InitializeChannels();
             SubscribeToChannels();
+            ClearPanels();
         }
-       
-       
+
+        private void ClearPanels()
+        {
+            foreach (Transform child in transform)
+            {
+                Destroy(child.gameObject);
+            }
+        }
+
+
         private void OnUavDisabled(Uav uav)
         {
             RemovePanelOfUav( uav);

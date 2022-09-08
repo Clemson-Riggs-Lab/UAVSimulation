@@ -37,7 +37,11 @@ MonoBehaviour:
     videoArtifacts: 2
     centerText: ' UAV Lost'
     bottomText: 
-  disabledUavCameraAndTargetDetectionConfigs:
+  hoveringUavCameraAndTargetDetectionConfigs:
+    videoArtifacts: 1
+    centerText: 
+    bottomText: 
+  visuallyDisabledUavCameraAndTargetDetectionConfigs:
     videoArtifacts: 1
     centerText: 
     bottomText: 

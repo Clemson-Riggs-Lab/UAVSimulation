@@ -109,8 +109,6 @@ public class GameManager : MonoBehaviour
                 yield return new WaitForSeconds(0.1f);
                 navigationManager.NavigateAll();
                 yield return new WaitForSeconds(0.1f);
-                fuelAndHealthManager.Initialize();
-                yield return new WaitForSeconds(0.1f);
                 promptsManager.Initialize();
                 yield return new WaitForSeconds(0.1f);
                 

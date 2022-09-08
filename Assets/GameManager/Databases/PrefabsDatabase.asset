@@ -19,3 +19,5 @@ MonoBehaviour:
   uavCameraPrefab: {fileID: 7691152332323138015, guid: fe88d0fb2da55da4cb9d2c12019d17cf, type: 3}
   chatBoxPanelPrefab: {fileID: 6486393343344454430, guid: 9d3a9d0e8da7c924c931e11ffc239767, type: 3}
   responseButtonPrefab: {fileID: 5394739573003395823, guid: 52720c39627fc1e478ecd6344d32f3a8, type: 3}
+  rerouteButtonPrefab: {fileID: 845953431251370643, guid: 9a3b963fd9cd57c4da4d529440bf3a7b, type: 3}
+  reroutingOptionsPanelsPrefab: {fileID: 1512632744822560, guid: dc6a954ae9938d949ba2fdd407e4cb5b, type: 3}

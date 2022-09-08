@@ -1,6 +1,6 @@
 using System;
 using System.Collections.Generic;
-using DefaultNamespace;
+using ScriptableObjects.EventChannels;
 using ScriptableObjects.UAVs.FuelAndHealth;
 using UAVs.Sub_Modules.Fuel;
 using Unity.VisualScripting;
@@ -13,40 +13,63 @@ namespace UAVs.Sub_Modules.FuelAndHealth
 	{
 		private UavsManager _uavsManager;
 		private FuelAndHealthSettingsSO _fuelAndHealthSettings;
-		private Dictionary<Uav , FuelAndHealthController> _fuelAndHealthControllersDictionary = new ();
-		private Dictionary<Uav , StatusPanelController> _fuelAndHealthPanelControllersDictionary = new ();
 		private FuelAndHealthSettingsSO.FuelStatusAndHealthBarPositioning _fuelStatusAndHealthBarPositioning = FuelStatusAndHealthBarVisibleInSeparatePanel;
+
+		private UavEventChannelSO uavCreatedEventChannel;
+		private UavEventChannelSO uavDestroyedEventChannel;
+		
 		void Start()
 		{
-			_uavsManager= GameManager.Instance.uavsManager;
-			_fuelAndHealthSettings = GameManager.Instance.settingsDatabase.uavSettings.fuelAndHealthSettings;
+			GetReferencesFromGameManager();
+			SubscribeToChannels();
+			ClearPanels();
 			_fuelStatusAndHealthBarPositioning = _fuelAndHealthSettings.fuelStatusAndHealthBarPositioning;
 		}
 
-		public void Initialize()
+		private void ClearPanels()
 		{
-			var uavs= _uavsManager.uavs;
-			foreach (var uav in uavs)
+			foreach (Transform child in transform)
 			{
-				var fuelAndHealthController = uav.AddComponent<FuelAndHealthController>() as FuelAndHealthController;
-				_fuelAndHealthControllersDictionary.Add(uav, fuelAndHealthController);
-				fuelAndHealthController.Initialize();
-				AddFuelAndHealthPanel(fuelAndHealthController,uav);
-				fuelAndHealthController.Begin();
+				Destroy(child.gameObject);
 			}
 		}
-		
+
+
+		private void OnUavDestroyed(Uav uav)
+		{
+
+			//remove panel
+			var panel = transform.Find("UAV " +uav.ID + " Fuel And Health Panel");
+			if(panel != null)
+				Destroy(panel.gameObject);
+		}
+
+		private void OnUavCreated(Uav uav)
+		{
+			var fuelAndHealthController = uav.AddComponent<FuelAndHealthController>() as FuelAndHealthController;
+			fuelAndHealthController.Initialize();
+			AddFuelAndHealthPanel(fuelAndHealthController,uav);
+			fuelAndHealthController.Begin();
+		}
+
+		private void GetReferencesFromGameManager()
+		{
+			_uavsManager= GameManager.Instance.uavsManager;
+			_fuelAndHealthSettings = GameManager.Instance.settingsDatabase.uavSettings.fuelAndHealthSettings;
+			uavCreatedEventChannel = GameManager.Instance.channelsDatabase.uavChannels.uavCreatedEventChannel;
+			uavDestroyedEventChannel = GameManager.Instance.channelsDatabase.uavChannels.uavDestroyedEventChannel;
+		}
+
 		private void AddFuelAndHealthPanel(FuelAndHealthController fuelAndHealthController, Uav uav)
 		{
 			switch (_fuelStatusAndHealthBarPositioning)
 			{
 				case FuelStatusAndHealthBarVisibleInSeparatePanel:
 				{
-					var panel = Instantiate(GameManager.Instance.prefabsDatabase.fuelAndHealthPanelPrefab,
-						CanvasManager.Instance.fuelAndHealthPanel.transform);
+					var panel = Instantiate(GameManager.Instance.prefabsDatabase.fuelAndHealthPanelPrefab, transform);
+					panel.name="UAV " + uav.ID + " Fuel And Health Panel";
 					var panelController= panel.GetComponent<StatusPanelController>();
 					panelController.Initialize(fuelAndHealthController);
-					_fuelAndHealthPanelControllersDictionary.Add(uav, panelController);
 					break;
 				}
 				
@@ -60,5 +83,37 @@ namespace UAVs.Sub_Modules.FuelAndHealth
 			}
 		}
 
+
+		private void OnDestroy()
+		{
+			UnsubscribeFromChannels();
+		}
+
+		private void SubscribeToChannels()
+		{
+			if (uavCreatedEventChannel != null)
+			{
+				uavCreatedEventChannel.Subscribe(OnUavCreated);
+			}
+			
+			if (uavDestroyedEventChannel != null)
+			{
+				uavDestroyedEventChannel.Subscribe(OnUavDestroyed);
+			}
+			
+		}
+		
+		private void UnsubscribeFromChannels()
+		{
+			if (uavCreatedEventChannel != null)
+			{
+				uavCreatedEventChannel.Unsubscribe(OnUavCreated);
+			}
+			
+			if (uavDestroyedEventChannel != null)
+			{
+				uavDestroyedEventChannel.Unsubscribe(OnUavDestroyed);
+			}
+		}
 	}
 }

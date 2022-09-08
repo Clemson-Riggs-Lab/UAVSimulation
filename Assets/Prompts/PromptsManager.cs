@@ -49,9 +49,13 @@ namespace Prompts
 				{
 					yield return new WaitForSeconds(deltaTime);
 				}
+				else if (deltaTime < -0.1) // if the prompt is very late 
+				{
+					Debug.Log("Prompt was sent after it's time");
+				}
 				CurrentPrompt= prompt;
 				SendPrompt(CurrentPrompt);
-				Debug.Log("Prompt was sent after it's time");
+				
 			}
 		}
 

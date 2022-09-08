@@ -9,7 +9,7 @@ using static ScriptableObjects.UAVs.FuelAndHealth.FuelAndHealthSettingsSO;
 
 namespace UAVs.Sub_Modules.Fuel
 {
-    public class StatusPanelController : MonoBehaviour
+    public class StatusPanelController : MonoBehaviour //TODO change to FuelAndHealthStatusPanelController
     {
         // Start is called before the first frame update
         public TextMeshProUGUI idText;
@@ -20,28 +20,28 @@ namespace UAVs.Sub_Modules.Fuel
         public Image healthButtonImage;
 
         private FuelAndHealthController _fuelAndHealthController;
-        FuelAndHealthSettingsSO _fuelAndHealthSettings;
-        private PanelSettings _panelSettings;
+        private FuelAndHealthSettingsSO _fuelAndHealthSettings;
+        private FuelAndHealthPanelSettings fuelAndHealthPanelSettings;
 
-        public PanelSettings PanelSettings
+        public FuelAndHealthPanelSettings FuelAndHealthPanelSettings
         {
-            get => _panelSettings;
+            get => fuelAndHealthPanelSettings;
             set
             {
-                _panelSettings = value;
+                fuelAndHealthPanelSettings = value;
                 UpdateUIElements();
             }
         }
 
         private void UpdateUIElements()
         {
-            healthButtonText.text = _panelSettings.panelVisualSettings.healthButtonText;
-            healthButton.interactable = _panelSettings.healthButtonInteractable;
-            healthButtonText.color = ColorHelper.StringToColor(_panelSettings.panelVisualSettings.healthButtonTextColor);
+            healthButtonText.text = fuelAndHealthPanelSettings.fuelAndHealthPanelVisualSettings.healthButtonText;
+            healthButton.interactable = fuelAndHealthPanelSettings.healthButtonInteractable;
+            healthButtonText.color = ColorHelper.StringToColor(fuelAndHealthPanelSettings.fuelAndHealthPanelVisualSettings.healthButtonTextColor);
             
-            fuelSliderImage.color = ColorHelper.StringToColor(_panelSettings.panelVisualSettings.fuelSliderColor);
-            healthButtonImage.color = ColorHelper.StringToColor(_panelSettings.panelVisualSettings.healthButtonColor);
-            if (_panelSettings.healthButtonInteractable == true)
+            fuelSliderImage.color = ColorHelper.StringToColor(fuelAndHealthPanelSettings.fuelAndHealthPanelVisualSettings.fuelSliderColor);
+            healthButtonImage.color = ColorHelper.StringToColor(fuelAndHealthPanelSettings.fuelAndHealthPanelVisualSettings.healthButtonColor);
+            if (fuelAndHealthPanelSettings.healthButtonInteractable == true)
             {
                 StartCoroutine(ButtonInteractableDurationTimer());
             }
@@ -58,8 +58,8 @@ namespace UAVs.Sub_Modules.Fuel
             _fuelAndHealthSettings= GameManager.Instance.settingsDatabase.uavSettings.fuelAndHealthSettings;
             
             _fuelAndHealthController = fuelAndHealthController;
-            idText.text = _fuelAndHealthController.uavId.ToString();
-            fuelSlider.maxValue = _fuelAndHealthController.StartingFuelLevel;
+            idText.text = (_fuelAndHealthController.uav.ID+1).ToString();
+            fuelSlider.maxValue = _fuelAndHealthController.GetStartingFuelLevel();
 
             // listen to events from fuelAndHealthController
             _fuelAndHealthController.FuelLevelChanged += UpdateFuelLevel;
@@ -72,32 +72,31 @@ namespace UAVs.Sub_Modules.Fuel
         
         public void UpdateFuelLevel()
         {
-            fuelSlider.value = _fuelAndHealthController.FuelLevel;
+            fuelSlider.value = _fuelAndHealthController.GetFuelLevel();
         }
         
     
         public void UpdateHealthControllerCondition()
         {
-            PanelSettings = _fuelAndHealthController.HealthCondition switch
+            FuelAndHealthPanelSettings = _fuelAndHealthController.GetUavHealthCondition() switch //set FuelAndHealthPanelSettings based on the current health condition
             {
-                HealthConditions.Healthy => _fuelAndHealthSettings.healthyPanelSettings,
-                HealthConditions.Unavailable => _fuelAndHealthSettings.uavUnavailablePanelSettings,
-                HealthConditions.Lost => _fuelAndHealthSettings.uavLostPanelSettings,
+                UavHealthConditions.Healthy => _fuelAndHealthSettings.healthyUavFuelAndHealthPanelSettings,
+                UavHealthConditions.Lost => _fuelAndHealthSettings.uavLostFuelAndHealthPanelSettings,
                 _ => throw new ArgumentOutOfRangeException()
             };
         }
         public void UpdateFuelCondition()
         {
-            if (_fuelAndHealthController.HealthCondition != HealthConditions.Healthy)
+            if (_fuelAndHealthController.GetUavHealthCondition() != UavHealthConditions.Healthy)
                 return;
             else
             {
-                PanelSettings = _fuelAndHealthController.fuelCondition switch
+                FuelAndHealthPanelSettings = _fuelAndHealthController.GetFuelCondition() switch
                 {
-                    FuelConditions.Normal => _fuelAndHealthSettings.healthyPanelSettings,
-                    FuelConditions.Leaking => _fuelAndHealthSettings.fuelLeakPanelSettings,
-                    FuelConditions.FatalLeak => _fuelAndHealthSettings.fatalLeakPanelSettings,
-                    FuelConditions.Empty => _fuelAndHealthSettings.fuelEmptyPanelSettings,
+                    FuelConditions.Normal => _fuelAndHealthSettings.healthyUavFuelAndHealthPanelSettings,
+                    FuelConditions.Leaking => _fuelAndHealthSettings.fuelLeakFuelAndHealthPanelSettings,
+                    FuelConditions.FatalLeak => _fuelAndHealthSettings.fatalLeakFuelAndHealthPanelSettings,
+                    FuelConditions.Empty => _fuelAndHealthSettings.fuelEmptyFuelAndHealthPanelSettings,
                     _ => throw new ArgumentOutOfRangeException()
                 };
             }

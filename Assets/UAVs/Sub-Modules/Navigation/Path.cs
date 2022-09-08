@@ -15,7 +15,7 @@ namespace UAVs.Sub_Modules.Navigation
         [HideInInspector] public Uav Uav;
         [HideInInspector] public int id;
         [HideInInspector] public bool isActive;
-        [HideInInspector] public bool isUavVisuallyEnabled;
+        [HideInInspector] public bool uavIsVisuallyEnabled;
         [HideInInspector] public bool TargetIsPresent;
         [HideInInspector] public bool isFinished;
         [HideInInspector] public float speed=1f;
@@ -46,8 +46,8 @@ namespace UAVs.Sub_Modules.Navigation
             
             StartTime = DateTime.Now;
             isActive = true;
-            Uav.isVisuallyEnabled = isUavVisuallyEnabled;
-            Uav.SetUavVisuallyEnabled(isUavVisuallyEnabled == true);
+            Uav.isVisuallyEnabled = uavIsVisuallyEnabled;
+            Uav.SetUavVisuallyEnabled(uavIsVisuallyEnabled == true);
            
             Debug.Log("Path " + id + " activated" + "by UAV " + Uav.ID + "from " + StartingWayPoint.Id + " to " + DestinationWayPoint.Id);
             
@@ -63,7 +63,7 @@ namespace UAVs.Sub_Modules.Navigation
 
         public void Initialize(UavPathsRecord.PathRecord record)
         {
-           this.isUavVisuallyEnabled= record.UavVisuallyEnabled??false;
+           this.uavIsVisuallyEnabled= record.UavVisuallyEnabled??false;
            this.TargetIsPresent = record.TargetIsPresent??false;
         }
     }

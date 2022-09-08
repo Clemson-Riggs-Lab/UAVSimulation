@@ -39,7 +39,7 @@ namespace UAVs.Sub_Modules.Navigation
 			
 		private Sequence DOTweenSequence;
 
-		private Vector3 _targetPosition;
+		private Vector3 TargetPosition => IgnoreWaypointPositionByAxis(_currentPath.DestinationWayPoint.transform.position);
 		private Path _currentPath;
 		private Path _nextPath;
 		private int _pathsIteratorIndex = 0;
@@ -111,10 +111,9 @@ namespace UAVs.Sub_Modules.Navigation
 			else
 			{
 				_currentPath = Paths[0];
+				
 				_nextPath = Paths[1];
 				transform.position=_currentPath.StartingWayPoint.transform.position;
-				
-				//Debug.Log("UAV: " + uav.ID + "Started a new path #: " + _pathsIteratorIndex + "  at time " + Time.time);
 				UpdateNavigation();
 			}
 		}
@@ -133,16 +132,18 @@ namespace UAVs.Sub_Modules.Navigation
 		}
 
 		private void UpdateNavigation()
-		{	
-			_targetPosition = IgnoreWaypointPositionByAxis(_currentPath.DestinationWayPoint.transform.position);
+		{	uav.currentPath = _currentPath;
+			_currentPath.StartTime= DateTime.Now;
 			DOTweenSequence = DOTween.Sequence();
 			AddDOTweenNavigationAndRotation();
 			uavStartedNewPathEventChannel.RaiseEvent(uav, _currentPath);
+			uav.currentPath = _currentPath;
+			DOTweenSequence.AppendCallback(()=>uavArrivedAtDestinationEventChannel.RaiseEvent(uav, _currentPath));
 			if (waypointHoveringType != NavigationSettingsSO.WaypointHoveringType.None)
 			{
 				AddHoveringTween();
 			}
-			DOTweenSequence.AppendCallback(()=>uavArrivedAtDestinationEventChannel.RaiseEvent(uav, _currentPath));
+			
 			DOTweenSequence.AppendCallback(UpdateDestination);
 			DOTweenSequence.OnComplete(UpdateNavigation);
 			
@@ -153,12 +154,12 @@ namespace UAVs.Sub_Modules.Navigation
 			switch (waypointHoveringType)
 			{
 				case NavigationSettingsSO.WaypointHoveringType.UseAngle:
-					DOTweenSequence.Append(transform.DORotate(new Vector3(0,hoverAngle,0), hoverDurationOnWaypoint, RotateMode.WorldAxisAdd));
+					DOTweenSequence.Append(transform.DORotate(new Vector3(0,hoverAngle,0), hoverDurationOnWaypoint, RotateMode.WorldAxisAdd).SetEase(Ease.Linear));
 					break;
 				case NavigationSettingsSO.WaypointHoveringType.UseSpeed:
 					//calculate angles to rotate based on speed and hover duration on waypoint
 					var dynamicHoverAngle = hoverDurationOnWaypoint*hoverSpeed;
-					DOTweenSequence.Append(transform.DORotate(new Vector3(0,dynamicHoverAngle,0), hoverDurationOnWaypoint, RotateMode.WorldAxisAdd));
+					DOTweenSequence.Append(transform.DORotate(new Vector3(0,dynamicHoverAngle,0), hoverDurationOnWaypoint, RotateMode.WorldAxisAdd).SetEase(Ease.Linear));
 					break;
 				case NavigationSettingsSO.WaypointHoveringType.FaceNextWaypoint:
 					var nextPath = GetPathByIndex(_pathsIteratorIndex + 1);
@@ -166,7 +167,7 @@ namespace UAVs.Sub_Modules.Navigation
 					{
 						var nextDestination =nextPath.DestinationWayPoint.transform.position;
 						var target= IgnoreWaypointPositionByAxis(nextDestination);
-						DOTweenSequence.Append(transform.DOLookAt(target, hoverDurationOnWaypoint));
+						DOTweenSequence.Append(transform.DOLookAt(target, hoverDurationOnWaypoint).SetEase(Ease.Linear));
 					}
 					break;
 				
@@ -195,15 +196,15 @@ namespace UAVs.Sub_Modules.Navigation
 		
 		private Path GetPathByIndex(int pathIndex)
 		{
-			if (pathIndex % (Paths.Count-1)!=0)
+			if (pathIndex % (Paths.Count-1)!=0) //if we are not at the end of the path list
 				return Paths[pathIndex%(Paths.Count-1)];
-			switch (loopingType)
+			switch (loopingType) // if we are at the end of the path list
 				{
 					case NavigationSettingsSO.LoopType.Once:
 					default:
 						return null;
-					case NavigationSettingsSO.LoopType.SeveralTimes:
-						return pathIndex>=numberOfLoops*Paths.Count ? Paths[pathIndex%(Paths.Count-1)] : null;
+					case NavigationSettingsSO.LoopType.SeveralTimes: 
+						return pathIndex>=numberOfLoops*Paths.Count ? Paths[pathIndex%(Paths.Count-1)] : null; // checking if we have not exceeded the number of loops
 					case NavigationSettingsSO.LoopType.Cycled:
 						return Paths[pathIndex%(Paths.Count-1)];
 				}
@@ -219,29 +220,29 @@ namespace UAVs.Sub_Modules.Navigation
 				// Look at and dampen the rotation
 				case NavigationSettingsSO.FollowType.SmoothFacing:
 				default: 
-					DOTweenSequence.Append(transform.DOMove(_targetPosition , navigationDuration));
-					DOTweenSequence.Join(transform.DOLookAt(_targetPosition, rotationDuration));
+					DOTweenSequence.Append(transform.DOMove(TargetPosition , navigationDuration).SetEase(Ease.Linear));
+					DOTweenSequence.Join(transform.DOLookAt(TargetPosition, rotationDuration).SetEase(Ease.Linear));
 					break;
 				
 				// Just Look at	
 				case NavigationSettingsSO.FollowType.Facing:
-					DOTweenSequence.Append(transform.DOMove(_targetPosition , navigationDuration));
-					DOTweenSequence.Join(transform.DOLookAt(_targetPosition, 0.1f));//Quick Rotation
+					DOTweenSequence.Append(transform.DOMove(TargetPosition , navigationDuration).SetEase(Ease.Linear));
+					DOTweenSequence.Join(transform.DOLookAt(TargetPosition, 0.1f).SetEase(Ease.Linear));//Quick Rotation
 					break;
 				
 				// Move without rotation
 				case NavigationSettingsSO.FollowType.Simple:
-					DOTweenSequence.Append(transform.DOMove(_targetPosition , navigationDuration));
+					DOTweenSequence.Append(transform.DOMove(TargetPosition , navigationDuration).SetEase(Ease.Linear));
 					break;
 
 				case NavigationSettingsSO.FollowType.Teleport:
-					transform.position = _targetPosition;
+					transform.position = TargetPosition;
 					break;
 				
 				// Move and rotate to face the target, with damping 
 				case NavigationSettingsSO.FollowType.SmoothDamping:
-					DOTweenSequence.Append(transform.DOMove(_targetPosition , navigationDuration).SetEase(Ease.Linear));
-					DOTweenSequence.Join(transform.DOLookAt(_targetPosition, rotationDuration).SetEase(Ease.Linear));
+					DOTweenSequence.Append(transform.DOMove(TargetPosition , navigationDuration).SetEase(Ease.Linear));
+					DOTweenSequence.Join(transform.DOLookAt(TargetPosition, rotationDuration).SetEase(Ease.Linear));
 					break;
 			}
 			
@@ -254,7 +255,7 @@ namespace UAVs.Sub_Modules.Navigation
 			switch (speedMode)
 			{
 				case NavigationSettingsSO.SpeedMode.FixedSpeed:
-					var distance = Vector3.Distance(transform.position, _targetPosition);
+					var distance = Vector3.Distance(transform.position, TargetPosition);
 					navigationDuration = distance / fixedSpeed;
 					break;
 				

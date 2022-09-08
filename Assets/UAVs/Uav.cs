@@ -1,6 +1,8 @@
 using System;
 using HelperScripts;
 using ScriptableObjects.EventChannels;
+using ScriptableObjects.UAVs.Navigation;
+using UAVs.Sub_Modules.Navigation;
 using UnityEngine;
 using WayPoints;
 
@@ -11,11 +13,13 @@ namespace UAVs
 		public int ID { get; private set; }
 		public string AbbreviatedName =>NatoAlphabetConverter.IntToLetters(ID);
 		public string CodeName => NatoAlphabetConverter.LettersToName(AbbreviatedName);
-		
+
+		public Path currentPath;
 
 		 private UavEventChannelSO uavCreatedEventChannel;
 		 private UavEventChannelSO uavDestroyedEventChannel;
-
+		
+		 
 		[NonSerialized] public WayPoint startingWaypoint;
 		
 		[NonSerialized] public bool isVisuallyEnabled;
@@ -28,7 +32,8 @@ namespace UAVs
 			SetChannelsReferences();
 			_renderer = GetComponent<Renderer>();
 		}
-
+		
+		
 		private void SetChannelsReferences()
 		{
 			uavCreatedEventChannel= GameManager.Instance.channelsDatabase.uavChannels.uavCreatedEventChannel;

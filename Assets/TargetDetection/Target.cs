@@ -7,12 +7,14 @@ namespace TargetDetection
         public int WayPointId{ get; set; }
         public ObjectType ObjectType { get; set; } = ObjectType.Box;
         
-        public void Initialize(int waypointId, ObjectType objectType, Vector3 position)
+        public void Initialize(int waypointId, ObjectType objectType, Vector3 position, int gameObjectLayer)
         {
             WayPointId = waypointId;
             ObjectType=objectType;
             transform.position = position;
-            gameObject.name="Target "+waypointId;
+            var o = gameObject;
+            o.name="Target "+waypointId;
+            o.layer = gameObjectLayer;
         }
     }
     

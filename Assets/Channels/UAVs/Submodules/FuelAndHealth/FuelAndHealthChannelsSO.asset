@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9fe4c3fae3c4c25928a70f35052694d, type: 3}
+  m_Name: FuelAndHealthChannelsSO
+  m_EditorClassIdentifier: 
+  uavLostEventChannel: {fileID: 11400000, guid: fba4445e94929d14780a664876aac3a2, type: 2}
+  uavHealthyEventChannel: {fileID: 11400000, guid: b6978d7fa9df56f46b2c1ddaded09ee6, type: 2}
+  uavFuelEmptyEventChannel: {fileID: 11400000, guid: 4e90eb16f0add6d44a868ae0124ce253, type: 2}
+  uavFuelLeakingEventChannel: {fileID: 11400000, guid: e03b82ca9d5cf294e8e7aa4c81e54214, type: 2}
+  uavFuelLeakFixedEventChannel: {fileID: 11400000, guid: d2fa78bab2a63264d8c6a50a55fbabbf, type: 2}
+  uavFatalFuelLeakEventChannel: {fileID: 11400000, guid: bc1d86f723f273d429ecfc538c45cc0e, type: 2}
+  uavFuelConditionChangedEventChannel: {fileID: 11400000, guid: 9a3123567f3f1244c9b845214c59e56a, type: 2}
+  uavHealthConditionChangedEventChannel: {fileID: 11400000, guid: bb90a4438f8f70a408f2951515e423fa, type: 2}

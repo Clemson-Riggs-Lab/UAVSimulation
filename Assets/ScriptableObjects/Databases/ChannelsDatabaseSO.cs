@@ -1,7 +1,9 @@
 using HelperScripts;
 using ScriptableObjects.EventChannels;
 using ScriptableObjects.Prompts;
+using ScriptableObjects.TargetDetection;
 using ScriptableObjects.UAVs;
+using ScriptableObjects.UAVs.Navigation;
 using UnityEngine;
 
 namespace ScriptableObjects.Databases
@@ -16,7 +18,9 @@ namespace ScriptableObjects.Databases
 		public LogEventChannelSO logEventChannel;
 		public PromptChannelsSO promptChannels;
 		public UavChannelsSO uavChannels;
-	
+
+		public TargetDetectionChannelsSO targetDetectionChannels;
+		
 		public ObjectEventChannelSO wayPointCreatedEventChannel;
 		public ObjectEventChannelSO wayPointDisabledEventChannel;
 	
@@ -31,6 +35,10 @@ namespace ScriptableObjects.Databases
 			AssertionHelper.AssertAssetReferenced(logEventChannel,this);
 			AssertionHelper.AssertAssetReferenced(promptChannels,this);
 			AssertionHelper.AssertAssetReferenced(uavChannels,this);
+			AssertionHelper.AssertAssetReferenced(targetDetectionChannels,this);
+			AssertionHelper.AssertAssetReferenced(wayPointCreatedEventChannel,this);
+			AssertionHelper.AssertAssetReferenced(wayPointDisabledEventChannel,this);
+			
 		
 		}
 	}

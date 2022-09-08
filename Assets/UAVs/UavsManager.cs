@@ -4,6 +4,8 @@ using System.Linq;
 using HelperScripts;
 using IOHandlers.Records;
 using ScriptableObjects.EventChannels;
+using ScriptableObjects.UAVs.Navigation;
+using UAVs.Sub_Modules.Navigation;
 using UnityEngine;
 using WayPoints;
 
@@ -18,7 +20,8 @@ namespace UAVs
          
          private UavEventChannelSO uavCreatedEventChannel = null;
          private UavEventChannelSO uavDestroyedEventChannel = null;
-         
+         private UavPathEventChannelSO uavStartedNewPathEventChannel;
+
          public List<Uav> uavs = new (); //automatically updated by listening to the uavCreatedEventChannel
         
         private void Start()
@@ -35,6 +38,8 @@ namespace UAVs
         {
             uavCreatedEventChannel= GameManager.Instance.channelsDatabase.uavChannels.uavCreatedEventChannel;
             uavDestroyedEventChannel= GameManager.Instance.channelsDatabase.uavChannels.uavDestroyedEventChannel;
+            uavStartedNewPathEventChannel= GameManager.Instance.channelsDatabase.uavChannels.navigationChannels.uavStartedNewPathEventChannel;
+
         }
         private void SubscribeToChannels()
         {
@@ -43,7 +48,17 @@ namespace UAVs
            
             if(uavDestroyedEventChannel != null)
                 uavDestroyedEventChannel.Subscribe(OnUavDestroyed);
+            if (uavStartedNewPathEventChannel != null)
+            {
+                uavStartedNewPathEventChannel.Subscribe(SetUavPath);
+            }
         }
+
+        private void SetUavPath(Uav uav, Path path)
+        {
+            
+        }
+
         private void GetSettingsFromGameManager()
         {
             _wayPointsContainer = GameManager.Instance.wayPointsContainer;
@@ -56,8 +71,6 @@ namespace UAVs
             AssertionHelper.CheckIfReferenceExistsOrComponentExistsInGameObject(_wayPointsContainer,this, this.gameObject);
             AssertionHelper.CheckIfReferenceExistsOrComponentExistsInGameObject(_wayPointsManager,this, this.gameObject);
             AssertionHelper.CheckIfReferenceExistsOrComponentExistsInGameObject(_uavsContainer,this, this.gameObject);
-            AssertionHelper.AssertAssetReferenced(uavCreatedEventChannel,this);
-            AssertionHelper.AssertAssetReferenced(uavDestroyedEventChannel,this);
         }
 
       

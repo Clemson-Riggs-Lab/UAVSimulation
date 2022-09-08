@@ -16,7 +16,7 @@ namespace TargetDetection
 		private UavPathEventChannelSO uavStartedNewPathEventChannel;
 		private UavEventChannelSO uavCreatedEventChannel;
 		private UavEventChannelSO uavDestroyedEventChannel;
-		private UavTargetsPairEventChannelSO uavTargetsAddedEventChannel;
+		private Uav_TargetsEventChannelSO uavTargetsAddedEventChannel;
 		private Dictionary<Uav, List<GameObject>> _uavTargetsDictionary=new();
 
 		
@@ -49,19 +49,13 @@ namespace TargetDetection
 			
 			if (path.TargetIsPresent) 
 			{
-				var target = GenerateTargetAtWaypoint(path.DestinationWayPoint);
-				target.layer = uav.gameObject.layer;
+				var target= Instantiate(GameManager.Instance.prefabsDatabase.targetBoxPrefab,  path.DestinationWayPoint.transform);
+				target.GetComponent<Target>().Initialize(path.DestinationWayPoint.Id,ObjectType.Box,path.DestinationWayPoint.transform.position,uav.gameObject.layer);
 				_uavTargetsDictionary[uav].Add(target);
 			}
 			
 		}
-		private GameObject GenerateTargetAtWaypoint(WayPoint waypoint)
-		{
-			var target= Instantiate(GameManager.Instance.prefabsDatabase.targetBoxPrefab,  waypoint.transform);
-			target.GetComponent<Target>().Initialize(waypoint.Id,ObjectType.Box,waypoint.transform.position);
-			return target;
-		}
-
+		
 		private void ClearTargets(Uav uav)
 		{
 			if (_uavTargetsDictionary.ContainsKey(uav))

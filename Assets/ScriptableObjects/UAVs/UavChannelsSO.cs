@@ -1,5 +1,6 @@
 using HelperScripts;
 using ScriptableObjects.EventChannels;
+using ScriptableObjects.UAVs.FuelAndHealth;
 using ScriptableObjects.UAVs.Navigation;
 using UnityEngine;
 
@@ -18,6 +19,7 @@ namespace ScriptableObjects.UAVs
 		[SerializeField] public UavEventChannelSO uavShotDownChannel;
 
 		[SerializeField] public NavigationChannelsSO navigationChannels;
+		[SerializeField] public FuelAndHealthChannelsSO fuelAndHealthChannels;
 		private void OnEnable()
 		{
 			AssertAllReferencesAreNotNull();
@@ -30,6 +32,8 @@ namespace ScriptableObjects.UAVs
 			AssertionHelper.AssertAssetReferenced(uavHiddenEventChannel,this);
 			AssertionHelper.AssertAssetReferenced(uavVisibleEventChannel,this);
 			AssertionHelper.AssertAssetReferenced(uavShotDownChannel,this);
+			AssertionHelper.AssertAssetReferenced(navigationChannels,this);
+			AssertionHelper.AssertAssetReferenced(fuelAndHealthChannels,this);
 		}
 	}
 }

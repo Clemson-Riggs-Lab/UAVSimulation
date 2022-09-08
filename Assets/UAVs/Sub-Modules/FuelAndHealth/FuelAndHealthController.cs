@@ -2,25 +2,24 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using ScriptableObjects.EventChannels;
 using ScriptableObjects.UAVs.FuelAndHealth;
 using ScriptableObjects.UAVs.Navigation;
-using UAVs.Navigation;
 using UAVs.Sub_Modules.Navigation;
 using UnityEngine;
 using static ScriptableObjects.UAVs.FuelAndHealth.FuelAndHealthSettingsSO;
 using static ScriptableObjects.UAVs.FuelAndHealth.FuelAndHealthSettingsSO.FuelComputationType;
 using static ScriptableObjects.UAVs.FuelAndHealth.FuelAndHealthSettingsSO.FuelConditions;
 using static ScriptableObjects.UAVs.FuelAndHealth.FuelAndHealthSettingsSO.FuelLeaksTypes;
-using static ScriptableObjects.UAVs.FuelAndHealth.FuelAndHealthSettingsSO.HealthConditions;
+using static ScriptableObjects.UAVs.FuelAndHealth.FuelAndHealthSettingsSO.UavHealthConditions;
 
 namespace UAVs.Sub_Modules.Fuel
 {
     public class FuelAndHealthController : MonoBehaviour
     {
         [NonSerialized]public Uav uav;
-        public int uavId;
         private FuelAndHealthSettingsSO _fuelAndHealthSettings;
-        private HealthConditions _healthCondition= Healthy;
+        private UavHealthConditions uavHealthCondition= Healthy;
         private FuelConditions _fuelCondition = Normal;
         
         private float _startingFuelLevel;
@@ -30,75 +29,127 @@ namespace UAVs.Sub_Modules.Fuel
         
         private bool _simulationActive =false;
         
-
-        public bool IsConsumingFuel { get; set; } = true;
-        public float StartingFuelLevel
-        {
-            get => _startingFuelLevel;
-            set
-            { 
-                _startingFuelLevel = value;
-                //also change the current fuel level to match the starting fuel level
-                FuelLevel = value;
-            }
-        }
-
-        public float FuelLevel
-        {
-            get => _fuelLevel;
-            set
-            {
-                if (value <= 0)
-                {
-                    _fuelLevel= 0;
-                    fuelCondition = Empty;
-                }
-                _fuelLevel = value;
-                FuelLevelChanged?.Invoke();
-            }
-        }
-        public HealthConditions HealthCondition
-        {
-            get => _healthCondition;
-            set
-            {
-                _healthCondition = value;
-                HealthConditionChanged?.Invoke();
-            }
-        }
-
-        public FuelConditions fuelCondition
-        {
-            get => _fuelCondition;
-            set
-            {
-                _fuelCondition = value;
-                FuelConditionChanged?.Invoke();
-
-            }
-        }
-        
-        private float FuelConsumptionRate
-        {
-            get
-            {
-                var multiplier = fuelCondition switch
-                {
-                    Normal => 1,
-                    Empty => 0,
-                    Leaking => _fuelAndHealthSettings.fuelConsumptionMultiplierOnLeak,
-                    FatalLeak => _fuelAndHealthSettings.fuelConsumptionMultiplierOnFatalLeak,
-                    _ => 0
-                };
-                return _fuelConsumptionPerSecond * multiplier;
-            }
-        }
-
-
+        // these events are used to communicate with the UI only
         public event Action FuelLevelChanged;
         public event Action FuelConditionChanged;
         public event Action HealthConditionChanged;
-       
+
+        //these Channels are used to communicate with the other modules
+
+        public UavEventChannelSO uavLostEventChannel;
+        public UavEventChannelSO uavHealthyEventChannel;
+        
+        public UavEventChannelSO uavFuelEmptyEventChannel;
+        public UavEventChannelSO uavFuelLeakingEventChannel;
+        public UavEventChannelSO uavFuelLeakFixedEventChannel;
+        public UavEventChannelSO uavFatalFuelLeakEventChannel;
+        
+        private Uav_FuelConditionEventChannelSO uavFuelConditionChangedEventChannel;
+        private Uav_UavHealthConditionEventChannelSO uavHealthConditionChangedEventChannel;
+        
+        
+        public bool IsConsumingFuel { get; set; } = true;
+
+        public float GetStartingFuelLevel() => _startingFuelLevel;
+
+        public void SetStartingFuelLevel(float value)
+        {
+            _startingFuelLevel = value;
+            //also change the current fuel level to match the starting fuel level
+            SetFuelLevel(value);
+        }
+
+        public float GetFuelLevel() => _fuelLevel;
+
+        public void SetFuelLevel(float value)
+        {
+            if (value <= 0)
+            {
+                _fuelLevel = 0;
+                SetFuelCondition(Empty);
+            }
+
+            _fuelLevel = value;
+            FuelLevelChanged?.Invoke();
+        }
+
+        public UavHealthConditions GetUavHealthCondition() => uavHealthCondition;
+
+        public void SetUavHealthCondition(UavHealthConditions value)
+        {
+            uavHealthCondition = value;
+            RaiseHealthConditionChanged();
+        }
+
+
+        public FuelConditions GetFuelCondition() => _fuelCondition;
+
+        public void SetFuelCondition(FuelConditions value)
+        {
+            _fuelCondition = value;
+            RaiseFuelConditionChanged();
+        }
+
+
+        private float GetFuelConsumptionRate()
+        {
+            var multiplier = GetFuelCondition() switch
+            {
+                Normal => 1,
+                Empty => 0,
+                Leaking => _fuelAndHealthSettings.fuelConsumptionMultiplierOnLeak,
+                FatalLeak => _fuelAndHealthSettings.fuelConsumptionMultiplierOnFatalLeak,
+                _ => 0
+            };
+            return _fuelConsumptionPerSecond * multiplier;
+        }
+
+        private void RaiseHealthConditionChanged()
+        {
+            HealthConditionChanged?.Invoke();
+            
+            if(uavHealthConditionChangedEventChannel!=null)
+                uavHealthConditionChangedEventChannel.RaiseEvent(uav, uavHealthCondition);
+            
+            switch (GetUavHealthCondition())
+            {
+                case Healthy:
+                    if (uavHealthyEventChannel != null) uavHealthyEventChannel.RaiseEvent(uav);
+                    break;
+                case Lost:
+                    if (uavLostEventChannel != null) uavLostEventChannel.RaiseEvent(uav);
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException();
+            }
+            
+            
+        }
+     
+        private void RaiseFuelConditionChanged()
+        {
+            FuelConditionChanged?.Invoke();
+            
+            if(uavFuelConditionChangedEventChannel!=null)
+                uavFuelConditionChangedEventChannel.RaiseEvent(uav, GetFuelCondition());
+            
+            switch (GetFuelCondition())
+            {
+                case Empty:
+                    if (uavFuelEmptyEventChannel != null) uavFuelEmptyEventChannel.RaiseEvent(uav);
+                    break;
+                case FatalLeak:
+                    if (uavFatalFuelLeakEventChannel != null) uavFatalFuelLeakEventChannel.RaiseEvent(uav);
+                    break;
+                case Leaking:
+                    if (uavFuelLeakingEventChannel != null) uavFuelLeakingEventChannel.RaiseEvent(uav);
+                    break;
+                case Normal:
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException();
+            }
+        }
         
         private void Awake()
         {
@@ -109,25 +160,31 @@ namespace UAVs.Sub_Modules.Fuel
                     gameObject);
                 Destroy(gameObject); // a fuel manager should only be attached to a game object that has a uav script
             }
-
-            uavId = uav.ID;
             _fuelAndHealthSettings = GameManager.Instance.settingsDatabase.uavSettings.fuelAndHealthSettings;
         }
 
-        private void Update()
+        private void OnEnable()
         {
-            if(!_simulationActive || !IsConsumingFuel)
-                return;
-            FuelLevel -= FuelConsumptionRate * Time.deltaTime;
+            InitializeChannels();
+        }
+
+        private void InitializeChannels()
+        {
+            uavLostEventChannel = GameManager.Instance.channelsDatabase.uavChannels.fuelAndHealthChannels.uavLostEventChannel;
+            uavHealthyEventChannel = GameManager.Instance.channelsDatabase.uavChannels.fuelAndHealthChannels.uavHealthyEventChannel;
+            uavFuelEmptyEventChannel = GameManager.Instance.channelsDatabase.uavChannels.fuelAndHealthChannels.uavFuelEmptyEventChannel;
+            uavFuelLeakingEventChannel = GameManager.Instance.channelsDatabase.uavChannels.fuelAndHealthChannels.uavFuelLeakingEventChannel;
+            uavFuelLeakFixedEventChannel = GameManager.Instance.channelsDatabase.uavChannels.fuelAndHealthChannels.uavFuelLeakFixedEventChannel;
+            uavFatalFuelLeakEventChannel = GameManager.Instance.channelsDatabase.uavChannels.fuelAndHealthChannels.uavFatalFuelLeakEventChannel;
             
+            uavFuelConditionChangedEventChannel = GameManager.Instance.channelsDatabase.uavChannels.fuelAndHealthChannels.uavFuelConditionChangedEventChannel;
+            uavHealthConditionChangedEventChannel = GameManager.Instance.channelsDatabase.uavChannels.fuelAndHealthChannels.uavHealthConditionChangedEventChannel;
             
         }
 
-       
-
         public void Initialize()
         {
-            InitializeVariables();
+            InitializeSettings();
 
             if (_fuelAndHealthSettings.fuelLeaksType != Disabled)
             {
@@ -136,16 +193,16 @@ namespace UAVs.Sub_Modules.Fuel
             
         }
 
-        private void InitializeVariables()
+        private void InitializeSettings()
         {
             switch (_fuelAndHealthSettings.fuelComputationType)
             {
                 case Duration:
-                    StartingFuelLevel=_fuelAndHealthSettings.fuelDuration;
+                    SetStartingFuelLevel(_fuelAndHealthSettings.fuelDuration);
                     _fuelConsumptionPerSecond = 1f;
                     break;
                 case Consumption:
-                    StartingFuelLevel = _fuelAndHealthSettings.fuelCapacity;
+                    SetStartingFuelLevel(_fuelAndHealthSettings.fuelCapacity);
                     _fuelConsumptionPerSecond = _fuelAndHealthSettings.fuelConsumptionPerSecond;
                     break;
 
@@ -155,16 +212,30 @@ namespace UAVs.Sub_Modules.Fuel
                 
             }
 
-            HealthCondition = _fuelAndHealthSettings.healthCondition;
+            SetUavHealthCondition(_fuelAndHealthSettings.startingUavUavHealthCondition);
         }
         
         public void Begin()
         {
             _simulationActive = true;
+            // coroutine that updates the fuel level every second
+            StartCoroutine(UpdateFuelLevel());
         }
-        
 
-      
+        private IEnumerator UpdateFuelLevel()
+        {
+            while ( IsConsumingFuel)
+            {
+                if (_simulationActive)
+                    SetFuelLevel(GetFuelLevel() - GetFuelConsumptionRate());
+               
+                if (GetFuelLevel() <= 0)
+                    IsConsumingFuel = false;
+                
+                yield return new WaitForSeconds(1f);
+            }
+        }
+
 
         private void PopulateFuelLeaks()
         {
@@ -208,15 +279,15 @@ namespace UAVs.Sub_Modules.Fuel
                 if (deltaTime > 0)
                 {
                     yield return new WaitForSeconds(deltaTime); 
-                    fuelCondition = Leaking;
+                    SetFuelCondition(Leaking);
                     Debug.Log("Fuel leak at time: " + fuelLeakTime);
                     yield return new WaitForSeconds(_fuelAndHealthSettings.fuelLeakDuration);
                                                                               
-                    if(fuelCondition == Normal)
+                    if(GetFuelCondition() == Normal)
                         continue;
                     else
                     {
-                        fuelCondition = FatalLeak;
+                        SetFuelCondition(FatalLeak);
                     }
                 }
                 else
@@ -226,10 +297,6 @@ namespace UAVs.Sub_Modules.Fuel
                
             }
         }
-
-    
-        
-       
         
         
         private void CalculateFuelLevelAndConsumptionBasedOnPathsDurations()
@@ -245,22 +312,27 @@ namespace UAVs.Sub_Modules.Fuel
                 _fuelConsumptionPerSecond = 1f;
                 if (navigator.speedMode == NavigationSettingsSO.SpeedMode.FixedPathDuration)
                 {
-                    StartingFuelLevel = navigator.Paths.Count * navigator.pathDuration;
+                    SetStartingFuelLevel(navigator.Paths.Count * navigator.pathDuration);
                             
                 }
                 else
                 {
-                    StartingFuelLevel = navigator.Paths.Count * 20;
-                    Debug.LogWarning("couldn't calculate fuel level based on paths duration since navigation speed mode is set to fixed speed. assuming 20 second per path");
+                    SetStartingFuelLevel(navigator.Paths.Count * 20);
+                    Debug.LogWarning("couldn't calculate fuel level based on paths duration since navigation speed mode is set to fixed speed. assuming 20 seconds per path");
                 }
             }
         }
 
         public void OnHealthButtonClicked(string buttonText)
         {
-            if (buttonText == _fuelAndHealthSettings.fuelLeakPanelSettings.panelVisualSettings.healthButtonText &&  fuelCondition== Leaking)
+            if (buttonText == _fuelAndHealthSettings.fuelLeakFuelAndHealthPanelSettings.fuelAndHealthPanelVisualSettings.healthButtonText &&  GetFuelCondition()== Leaking)
             {
-                fuelCondition = Normal;
+                SetFuelCondition(Normal);
+                
+                if (uavFuelLeakFixedEventChannel != null)
+                {
+                    uavFuelLeakFixedEventChannel.RaiseEvent(uav);
+                }
             }
             else
             {
@@ -268,5 +340,6 @@ namespace UAVs.Sub_Modules.Fuel
             }
             
         }
+        
     }
 }

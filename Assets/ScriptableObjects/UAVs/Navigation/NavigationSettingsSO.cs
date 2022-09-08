@@ -87,7 +87,7 @@ namespace ScriptableObjects.UAVs.Navigation
 	    
 	    [Header("How the UAV should hover over waypoints")]
 	    [JsonConverter(typeof(StringEnumConverter))]
-	    public  WaypointHoveringType waypointHoveringType= WaypointHoveringType.None; // Choose one of hovering type to use
+	    public  WaypointHoveringType waypointHoveringType= WaypointHoveringType.FaceNextWaypoint; // Choose one of hovering type to use
 	    [Tooltip("Neglected if hovering type is set to None")]
 	    public float hoverDurationOnWaypoint = 4;// Duration of hovering on waypoint (in seconds), set to 0 to disable hovering
 	    [Tooltip("Neglected if hovering type not set to UseAngle")]

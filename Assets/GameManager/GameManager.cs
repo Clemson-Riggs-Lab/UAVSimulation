@@ -10,6 +10,7 @@ using TargetDetection;
 using UAVs;
 using UAVs.Navigation;
 using UAVs.Sub_Modules.Fuel;
+using UAVs.Sub_Modules.FuelAndHealth;
 using UAVs.Sub_Modules.Navigation;
 using UnityEngine;
 using WayPoints;
@@ -77,7 +78,7 @@ public class GameManager : MonoBehaviour
         private void Start()
         {
             var json = File.ReadAllText(@"D:\mytest2.json");
-            JsonConvert.PopulateObject(json, navigationSettings);
+           // JsonConvert.PopulateObject(json, navigationSettings);
             
 
             wayPointsManager = wayPointsContainer.GetComponent<WayPointsManager>();

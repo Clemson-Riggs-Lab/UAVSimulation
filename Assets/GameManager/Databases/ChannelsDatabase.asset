@@ -16,5 +16,6 @@ MonoBehaviour:
   logEventChannel: {fileID: 11400000, guid: 739cddf0c4cda4247b88f0807f3720cd, type: 2}
   promptChannels: {fileID: 11400000, guid: bf6264f0eaecece4cb44bb363aa2813e, type: 2}
   uavChannels: {fileID: 11400000, guid: 1436dd1f7e3fbf74cba42add2abb17aa, type: 2}
+  targetDetectionChannels: {fileID: 11400000, guid: 27322ddbfd8ffc848a8569068d84e503, type: 2}
   wayPointCreatedEventChannel: {fileID: 11400000, guid: 434256939b0e424438067ae5888d92c6, type: 2}
   wayPointDisabledEventChannel: {fileID: 11400000, guid: ee622e049e3d02449b0fab8df64e091e, type: 2}

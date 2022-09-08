@@ -11,44 +11,11 @@ namespace ScriptableObjects.UAVs.FuelAndHealth
    [CreateAssetMenu(fileName = "FuelAndHealthSettings", menuName = "Settings/FuelAndHealthSettings")]
    public class FuelAndHealthSettingsSO : ScriptableObject
    {
-      public enum FuelComputationType
-      {
-         Duration,
-         Consumption
-      }
-
-      public enum FuelLeaksTypes
-      {
-         Disabled,
-         RandomLeaks,
-         FromFile
-      }
-      public enum FuelStatusAndHealthBarPositioning
-      {
-         FuelStatusAndHealthBarVisibleInSeparatePanel,
-         FuelStatusOnlyVisibleInSeparatePanel,
-         HealthBarOnlyVisibleInSeparatePanel,
-         FuelStatusAndHealthBarVisibleInCameraWindow,
-         FuelStatusOnlyVisibleInCameraWindow,
-         HealthBarOnlyVisibleInCameraWindow
-      }
-      public enum HealthConditions
-      {
-         Healthy,
-         Unavailable,
-         Lost
-      }
-      public enum FuelConditions
-      {
-         Normal,
-         Leaking,
-         FatalLeak,
-         Empty
-      }
+     
       
       [Header("Health Settings")]
       [JsonConverter(typeof(StringEnumConverter))]
-      public HealthConditions healthCondition = HealthConditions.Healthy;
+      public UavHealthConditions startingUavUavHealthCondition = UavHealthConditions.Healthy;
       
 
       [Header("Fuel Consumption calculation method: Based on duration or based on consumption per second")]
@@ -59,31 +26,6 @@ namespace ScriptableObjects.UAVs.FuelAndHealth
       public float fuelCapacity=950f;//in gallons
       [Tooltip("Not used in Duration mode")]
       public float fuelConsumptionPerSecond=1f;//in gallons per second
-
-      [Space(20)]
-   
-      public FuelStatusAndHealthBarPositioning fuelStatusAndHealthBarPositioning = FuelStatusAndHealthBarVisibleInSeparatePanel;
-
-      [Space(20)] 
-      [Header("Healthy UAV Settings")]
-      public PanelSettings healthyPanelSettings = new()
-      {
-         healthButtonInteractable = false,
-         uavCondition = Flying,
-         videoArtifacts = None,
-         
-         panelVisualSettings = new()
-         {
-            healthButtonText = "",
-            healthButtonColor = "Green",
-            fuelSliderColor = "Green"
-         },
-      };
-         
-
-      public string damagedUavColor="Orange";
-      public string deadUavColor="Black";
-   
       [Space(20)]
 
       [Header("Fuel Leak Settings")]
@@ -92,14 +34,35 @@ namespace ScriptableObjects.UAVs.FuelAndHealth
       public float fuelConsumptionMultiplierOnLeak=5;
       public float fuelLeakDuration=10;
       public float fuelLeakButtonInteractionDurationBeforeFatalLeak=10f;  
-      
-      public PanelSettings fuelLeakPanelSettings= new()
+      public float fuelConsumptionMultiplierOnFatalLeak=20;
+
+      [Space(20)]
+   
+      public FuelStatusAndHealthBarPositioning fuelStatusAndHealthBarPositioning = FuelStatusAndHealthBarVisibleInSeparatePanel;
+
+      [Space(20)] 
+      public FuelAndHealthPanelSettings healthyUavFuelAndHealthPanelSettings = new()
+      {
+         healthButtonInteractable = false,
+         uavCondition = Flying,
+         videoArtifacts = None,
+         
+         fuelAndHealthPanelVisualSettings = new()
+         {
+            healthButtonText = "",
+            healthButtonColor = "Green",
+            fuelSliderColor = "Green"
+         },
+      };
+
+      [Space(20)]
+      public FuelAndHealthPanelSettings fuelLeakFuelAndHealthPanelSettings= new()
       {
          healthButtonInteractable = true,
          uavCondition=Flying,
-         videoArtifacts=Shake,
+         videoArtifacts=None,
          
-         panelVisualSettings = new()
+         fuelAndHealthPanelVisualSettings = new()
          {
          healthButtonText = "Fix Leak",
          healthButtonTextColor="Black",
@@ -109,18 +72,14 @@ namespace ScriptableObjects.UAVs.FuelAndHealth
         
       };
       
-      
-      [Space(20)] 
-      [Header("Fatal Leak Settings")]
-      public float fuelConsumptionMultiplierOnFatalLeak=20;
-
-       public PanelSettings fatalLeakPanelSettings= new()
+      [Space(20)]
+      public FuelAndHealthPanelSettings fatalLeakFuelAndHealthPanelSettings= new()
        { 
           healthButtonInteractable=false, 
           uavCondition=Descending,
-          videoArtifacts=Noise,
+          videoArtifacts=None,
           
-          panelVisualSettings = new()
+          fuelAndHealthPanelVisualSettings = new()
          {
             healthButtonText = "Fatal Leak",
             healthButtonTextColor="Black",
@@ -130,14 +89,13 @@ namespace ScriptableObjects.UAVs.FuelAndHealth
        };
        
        [Space(20)] 
-       [Header("Fuel Empty Settings")]
-         public PanelSettings fuelEmptyPanelSettings= new()
+         public FuelAndHealthPanelSettings fuelEmptyFuelAndHealthPanelSettings= new()
          {
             healthButtonInteractable=false,
             uavCondition=FallAndCrash,
-            videoArtifacts=AllNoise,
+            videoArtifacts=BlackScreen,
             
-            panelVisualSettings = new()
+            fuelAndHealthPanelVisualSettings = new()
             {
                healthButtonText = "Uav Lost",
                healthButtonTextColor="Red",
@@ -148,33 +106,13 @@ namespace ScriptableObjects.UAVs.FuelAndHealth
          };
 
          [Space(20)] 
-         [Header("Uav Unavailable Settings")]
-         public PanelSettings uavUnavailablePanelSettings= new()
-         {
-            healthButtonInteractable=false,
-            uavCondition=UavConditions.Flying,
-            videoArtifacts=ConnectionIssues,
-            
-            panelVisualSettings = new()
-            {
-               
-               healthButtonText = "Uav Unavailable",
-               healthButtonTextColor= "White",
-               healthButtonColor="Black",
-               fuelSliderColor="Red"
-            },
-          
-         };
-         
-         [Space(20)] 
-         [Header("Uav Lost Settings")]
-         public PanelSettings uavLostPanelSettings= new()
+         public FuelAndHealthPanelSettings uavLostFuelAndHealthPanelSettings= new()
          {
             healthButtonInteractable=false,
             uavCondition= UavConditions.Disabled,
             videoArtifacts=BlackScreen,
             
-            panelVisualSettings = new()
+            fuelAndHealthPanelVisualSettings = new()
             {
                
                healthButtonText = "Uav Lost",
@@ -185,22 +123,58 @@ namespace ScriptableObjects.UAVs.FuelAndHealth
 
                
          };
+         
+         
+         
+         public enum FuelComputationType
+         {
+            Duration,
+            Consumption
+         }
+
+         public enum FuelLeaksTypes
+         {
+            Disabled,
+            RandomLeaks,
+            FromFile
+         }
+         public enum FuelStatusAndHealthBarPositioning
+         {
+            FuelStatusAndHealthBarVisibleInSeparatePanel,
+            FuelStatusOnlyVisibleInSeparatePanel,
+            HealthBarOnlyVisibleInSeparatePanel,
+            FuelStatusAndHealthBarVisibleInCameraWindow,
+            FuelStatusOnlyVisibleInCameraWindow,
+            HealthBarOnlyVisibleInCameraWindow
+         }
+         public enum UavHealthConditions
+         {
+            Healthy,
+            Lost
+         }
+         public enum FuelConditions
+         {
+            Normal,
+            Leaking,
+            FatalLeak,
+            Empty
+         }
 
    }
 
    [System.Serializable]
-   public class PanelSettings
+   public class FuelAndHealthPanelSettings
    {
       public bool healthButtonInteractable= false;
       [JsonConverter(typeof(StringEnumConverter))]
       public UavConditions uavCondition= Flying;
       [JsonConverter(typeof(StringEnumConverter))]
       public UavVideoArtifacts videoArtifacts= None;
-      public PanelVisualSettings panelVisualSettings;
-
+      public FuelAndHealthPanelVisualSettings fuelAndHealthPanelVisualSettings;
    }
+   
    [System.Serializable]
-   public class PanelVisualSettings
+   public class FuelAndHealthPanelVisualSettings
    {
       public string healthButtonText="";
       public string healthButtonTextColor="Black";

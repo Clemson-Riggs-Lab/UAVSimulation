@@ -12,3 +12,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab0e505320e34b2f9e7456af61a5a7c2, type: 3}
   m_Name: UavCameraSettings
   m_EditorClassIdentifier: 
+  renderTextureWidth: 255
+  renderTextureHeight: 255
+  renderTextureDepth: 24
+  rotationX: 10
+  fieldOfView: 60
+  healthyUavCameraAndTargetDetectionConfigs:
+    videoArtifacts: 0
+    centerText: 
+    bottomText: 
+  fuelLeakCameraAndTargetDetectionConfigs:
+    videoArtifacts: 3
+    centerText: Fuel Leaking
+    bottomText: 
+  fatalLeakCameraAndTargetDetectionConfigs:
+    videoArtifacts: 0
+    centerText: 
+    bottomText: Fatal Fuel Leak
+  emptyFuelCameraAndTargetDetectionConfigs:
+    videoArtifacts: 2
+    centerText: 
+    bottomText: Fuel Empty
+  lostUavCameraAndTargetDetectionConfigs:
+    videoArtifacts: 2
+    centerText: ' UAV Lost'
+    bottomText: 
+  disabledUavCameraAndTargetDetectionConfigs:
+    videoArtifacts: 1
+    centerText: 
+    bottomText: 

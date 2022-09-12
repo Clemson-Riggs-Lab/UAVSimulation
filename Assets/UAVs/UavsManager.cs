@@ -13,34 +13,18 @@ namespace UAVs
 {
     public class UavsManager : MonoBehaviour
     {
-         private GameObject _uavsContainer;
-         private GameObject _wayPointsContainer;
-         private WayPointsManager _wayPointsManager;
-         private UavsGenerator _uavsGenerator;
-         
-         private UavEventChannelSO uavCreatedEventChannel = null;
-         private UavEventChannelSO uavDestroyedEventChannel = null;
-         private UavPathEventChannelSO uavStartedNewPathEventChannel;
-
-         public List<Uav> uavs = new (); //automatically updated by listening to the uavCreatedEventChannel
+        private UavsGenerator _uavsGenerator;
+        private UavEventChannelSO uavCreatedEventChannel = null;
+        private UavEventChannelSO uavDestroyedEventChannel = null;
+        public List<Uav> uavs = new (); //automatically updated by listening to the uavCreatedEventChannel
         
         private void Start()
         {
-            InitializeChannels();
+            GetReferencesFromGameManager();
             SubscribeToChannels();
-            GetSettingsFromGameManager();
-            AssertReferencesNotNull();
-   
             _uavsGenerator = gameObject.AddComponent<UavsGenerator>();
         }
-
-        private void InitializeChannels()
-        {
-            uavCreatedEventChannel= GameManager.Instance.channelsDatabase.uavChannels.uavCreatedEventChannel;
-            uavDestroyedEventChannel= GameManager.Instance.channelsDatabase.uavChannels.uavDestroyedEventChannel;
-            uavStartedNewPathEventChannel= GameManager.Instance.channelsDatabase.uavChannels.navigationChannels.uavStartedNewPathEventChannel;
-
-        }
+        
         private void SubscribeToChannels()
         {
             if(uavCreatedEventChannel != null)
@@ -48,31 +32,17 @@ namespace UAVs
            
             if(uavDestroyedEventChannel != null)
                 uavDestroyedEventChannel.Subscribe(OnUavDestroyed);
-            if (uavStartedNewPathEventChannel != null)
-            {
-                uavStartedNewPathEventChannel.Subscribe(SetUavPath);
-            }
+
         }
 
-        private void SetUavPath(Uav uav, Path path)
+
+
+        private void GetReferencesFromGameManager()
         {
-            
+            uavCreatedEventChannel= GameManager.Instance.channelsDatabase.uavChannels.uavCreatedEventChannel;
+            uavDestroyedEventChannel= GameManager.Instance.channelsDatabase.uavChannels.uavDestroyedEventChannel;
         }
-
-        private void GetSettingsFromGameManager()
-        {
-            _wayPointsContainer = GameManager.Instance.wayPointsContainer;
-            _wayPointsManager = GameManager.Instance.wayPointsManager;
-            _uavsContainer= GameManager.Instance.uavsContainer;
-        }
-
-        private void AssertReferencesNotNull()
-        {
-            AssertionHelper.CheckIfReferenceExistsOrComponentExistsInGameObject(_wayPointsContainer,this, this.gameObject);
-            AssertionHelper.CheckIfReferenceExistsOrComponentExistsInGameObject(_wayPointsManager,this, this.gameObject);
-            AssertionHelper.CheckIfReferenceExistsOrComponentExistsInGameObject(_uavsContainer,this, this.gameObject);
-        }
-
+        
       
         private void OnUavDestroyed(Uav uav)
         {
@@ -82,7 +52,7 @@ namespace UAVs
         private void OnUavCreated(Uav uav)
         {
             uavs.Add(uav);
-            Debug.Log("UAV created"+uav.CodeName,uav.gameObject);
+            Debug.Log(uav.uavName + " Created",uav.gameObject);
         }
 
         private void ClearUavs()
@@ -93,14 +63,6 @@ namespace UAVs
             }
         }
 
-        public List<Uav> GetUavs(bool includeInactive)
-        {
-            if(includeInactive) 
-                return uavs;
-            else 
-                return uavs.Select(uav => uav).Where(uav => uav.isVisuallyEnabled).ToList();
-        }
-        
         public void GenerateUavs()
         {
             ClearUavs();

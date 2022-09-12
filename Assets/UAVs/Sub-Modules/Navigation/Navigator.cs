@@ -2,54 +2,38 @@ using System;
 using System.Collections.Generic;
 using DG.Tweening;
 using HelperScripts;
+using ScriptableObjects.EventChannels;
 using ScriptableObjects.UAVs.Navigation;
+using Unity.VisualScripting;
 using UnityEngine;
+using Sequence = DG.Tweening.Sequence;
 
 namespace UAVs.Sub_Modules.Navigation
 {
 	public class Navigator : MonoBehaviour
 	{
-		private NavigationManager navigationManager;
-		private NavigationSettingsSO navigationSettings;
+		[DoNotSerialize] private NavigationManager navigationManager;
+		[DoNotSerialize] public NavigationSettingsSO navigationSettings;
 
-		private UavPathEventChannelSO uavStartedNewPathEventChannel;
-		private UavPathEventChannelSO uavArrivedAtDestinationEventChannel;
-		
-		
-		public Uav uav;
-		public List<Path> Paths { get; private set; } =new();
-		
-		//check NavigationSettings for description of below variables
-		public NavigationSettingsSO.SpeedMode speedMode;
-		public float fixedSpeed;
-		public float pathDuration;
-		
-		public NavigationSettingsSO.FollowType followingType; 
-		public float rotationDuration;
-		 
-		public NavigationSettingsSO.LoopType loopingType; 
-		public int numberOfLoops; 
-		
-		public NavigationSettingsSO.UsedAxis ignorePositionAtAxis;
-		
-		public NavigationSettingsSO.WaypointHoveringType waypointHoveringType;
-		public float hoverDurationOnWaypoint;
-		public float hoverAngle;
-		public float hoverSpeed;
-			
-		private Sequence DOTweenSequence;
+		[DoNotSerialize] private UavPathEventChannelSO uavStartedNewPathEventChannel;
+		[DoNotSerialize] private UavPathEventChannelSO uavArrivedAtDestinationEventChannel;
 
-		private Vector3 TargetPosition => IgnoreWaypointPositionByAxis(_currentPath.DestinationWayPoint.transform.position);
-		private Path _currentPath;
-		private Path _nextPath;
-		private int _pathsIteratorIndex = 0;
-		private float _pathStartTime;
+		[DoNotSerialize] private Uav uav;
+		[DoNotSerialize] private GameObject uavBody;
+		[DoNotSerialize] public List<Path> Paths { get; private set; } =new();
+		
+		[DoNotSerialize] private Sequence doTweenSequence;
+
+		[DoNotSerialize] private Vector3 TargetPosition => IgnoreWaypointPositionByAxis(_currentPath.destinationWayPoint.transform.position);
+		[DoNotSerialize] private Path _currentPath;
+		[DoNotSerialize] private float _pathStartTime;
 
 
 
 		private void Start()
 		{
 			uav = gameObject.GetComponent<Uav>();
+			uavBody = uav.uavBody;
             if (uav == null)
             {
             	Debug.LogError("Navigator: UAV is not attached to the game object on which this script is attached");
@@ -58,7 +42,6 @@ namespace UAVs.Sub_Modules.Navigation
             }
 
             InitializeReferences();
-            InitializeSettings();
             
             // Fix rigidbody rotation
             if (GetComponent<Rigidbody>())
@@ -66,44 +49,24 @@ namespace UAVs.Sub_Modules.Navigation
             
             
             
-            DOTweenSequence = DOTween.Sequence();
+            doTweenSequence = DOTween.Sequence();
 		}
 
 		private void InitializeReferences()
 		{
 			navigationManager= GameManager.Instance.navigationManager;
-			navigationSettings= GameManager.Instance.navigationSettings;
+			navigationSettings= GameManager.Instance.settingsDatabase.uavSettings.navigationSettings;
 			
 			uavStartedNewPathEventChannel = GameManager.Instance.channelsDatabase.uavChannels.navigationChannels.uavStartedNewPathEventChannel;
 			uavArrivedAtDestinationEventChannel = GameManager.Instance.channelsDatabase.uavChannels.navigationChannels.uavArrivedAtDestinationEventChannel;
-			
-			AssertionHelper.AssertObjectReferenceObtainedFromGameManager(navigationManager, this, gameObject);
-			AssertionHelper.AssertObjectReferenceObtainedFromGameManager(navigationSettings, this, gameObject);
-			AssertionHelper.AssertObjectReferenceObtainedFromGameManager(uavStartedNewPathEventChannel, this, gameObject);
-			AssertionHelper.AssertObjectReferenceObtainedFromGameManager(uavArrivedAtDestinationEventChannel, this, gameObject);
-			
-		}
 
-		private void InitializeSettings()
-		{
-			speedMode = navigationSettings.speedMode;
-			fixedSpeed = navigationSettings.fixedSpeed;
-			pathDuration = navigationSettings.pathDuration;
-			followingType = navigationSettings.followingType;
-			rotationDuration = navigationSettings.rotationDuration;
-			loopingType = navigationSettings.loopingType;
-			numberOfLoops = navigationSettings.numberOfLoops;
-			ignorePositionAtAxis = navigationSettings.ignorePositionAtAxis;
-			waypointHoveringType = navigationSettings.waypointHoveringType;
-			hoverDurationOnWaypoint = navigationSettings.hoverDurationOnWaypoint;
-			hoverAngle = navigationSettings.hoverAngle;
-			hoverSpeed = navigationSettings.hoverSpeed;
 		}
+		
 		
 
 		public void StartNavigation()
 		{
-			if (Paths == null || Paths.Count == 0)
+			if (Paths.Count == 0)
 			{
 				Debug.LogWarning("No paths attached to UAV" + gameObject.name+ "Navigator Destroyed", gameObject);
 				Destroy(this);
@@ -111,9 +74,6 @@ namespace UAVs.Sub_Modules.Navigation
 			else
 			{
 				_currentPath = Paths[0];
-				
-				_nextPath = Paths[1];
-				transform.position=_currentPath.StartingWayPoint.transform.position;
 				UpdateNavigation();
 			}
 		}
@@ -122,78 +82,57 @@ namespace UAVs.Sub_Modules.Navigation
 		private Vector3 IgnoreWaypointPositionByAxis(Vector3 transformPosition)
 		{ //current position on axis if axis is ignored, otherwise transform position 
 			var result = transformPosition;
-			if (ignorePositionAtAxis.x)
+			if (navigationSettings.ignorePositionAtAxis.x)
 				result.x = transform.position.x;
-			if (ignorePositionAtAxis.y)
+			if (navigationSettings.ignorePositionAtAxis.y)
 				result.y = transform.position.y;
-			if (ignorePositionAtAxis.z)
+			if (navigationSettings.ignorePositionAtAxis.z)
 				result.z = transform.position.z;
 			return result;
 		}
 
 		/// <summary>
 		/// This method is called when we want to change the current path to a new destination (e.g., when we are re-routing the UAV)
-		/// It bypasses the UpdateDestination method and directly sets the new destination, meaning that the _pathStartTime is not updated
+		/// It bypasses the GetNextDestination method and directly sets the new destination, meaning that the _pathStartTime is not updated
 		/// This allows us to keep all uavs in sync even when we reroute one of them.
 		/// </summary>
 		/// <param name="newPath"></param>
 		public void Reroute(Path newPath)
 		{
 			_currentPath = newPath;
+			doTweenSequence.Kill();
 			UpdateNavigation();
 		}
 		
 		private void UpdateNavigation()
 		{	uav.currentPath = _currentPath;
-			_currentPath.StartTime= DateTime.Now;
-			DOTweenSequence = DOTween.Sequence();
-			AddDOTweenNavigationAndRotation();
+			_currentPath.startTime= DateTime.Now;
 			uavStartedNewPathEventChannel.RaiseEvent(uav, _currentPath);
-			DOTweenSequence.AppendCallback(()=>uavArrivedAtDestinationEventChannel.RaiseEvent(uav, _currentPath));
-			if (waypointHoveringType != NavigationSettingsSO.WaypointHoveringType.None)
+			doTweenSequence = DOTween.Sequence();
+			AddDOTweenNavigationAndRotation();
+			doTweenSequence.AppendCallback(()=>uavArrivedAtDestinationEventChannel.RaiseEvent(uav, _currentPath));
+			if (navigationSettings.waypointHoveringType != NavigationSettingsSO.WaypointHoveringType.None)
 			{
 				AddHoveringTween();
 			}
 			
-			DOTweenSequence.AppendCallback(UpdateDestination);
-			DOTweenSequence.OnComplete(UpdateNavigation);
+			doTweenSequence.AppendCallback(GetNextDestination);
+			doTweenSequence.OnComplete(UpdateNavigation);
 			
 		}
 		
-		private void UpdateDestination()
+		private void GetNextDestination()
 		{
-			var nextPathIndex= _pathsIteratorIndex+1; 
-			var nextPath = GetPathByIndex(nextPathIndex);
-			
-			if(nextPath == null)
+			_currentPath= _currentPath.nextPath;
+
+			if(_currentPath == null) // we have reached the end 
 				//TODO raise event that uav finished navigation
 				Destroy(this);
 			else
 			{
-				_pathsIteratorIndex++;
-				_currentPath = nextPath;
 				_pathStartTime = Time.time;
 			}
 			
-		}
-		
-		/// <summary>
-		/// Returns path by index, if index is out of range, returns null, if looping is enabled, returns path by index modulo paths count
-		/// </summary>
-		private Path GetPathByIndex(int pathIndex)
-		{
-			if (pathIndex % (Paths.Count-1)!=0) //if we are not at the end of the path list
-				return Paths[pathIndex%(Paths.Count-1)];
-			switch (loopingType) // if we are at the end of the path list
-				{
-					case NavigationSettingsSO.LoopType.Once:
-					default:
-						return null;
-					case NavigationSettingsSO.LoopType.SeveralTimes: 
-						return pathIndex>=numberOfLoops*Paths.Count ? Paths[pathIndex%(Paths.Count-1)] : null; // checking if we have not exceeded the number of loops
-					case NavigationSettingsSO.LoopType.Cycled:
-						return Paths[pathIndex%(Paths.Count-1)];
-				}
 		}
 		
 		/// <summary>
@@ -205,24 +144,24 @@ namespace UAVs.Sub_Modules.Navigation
 			var navigationDuration = GetNavigationDuration();
 
 			//Choose or update rotation/facing according to facingType
-			switch (followingType)
+			switch (navigationSettings.followingType)
 			{
 				// Look at and dampen the rotation
 				case NavigationSettingsSO.FollowType.SmoothFacing:
 				default: 
-					DOTweenSequence.Append(transform.DOMove(TargetPosition , navigationDuration).SetEase(Ease.Linear));
-					DOTweenSequence.Join(transform.DOLookAt(TargetPosition, rotationDuration).SetEase(Ease.Linear));
+					doTweenSequence.Append(transform.DOMove(TargetPosition , navigationDuration).SetEase(Ease.Linear));
+					doTweenSequence.Join(uavBody.transform.DOLookAt(TargetPosition, navigationSettings.rotationDuration).SetEase(Ease.Linear));
 					break;
 				
 				// Just Look at	
 				case NavigationSettingsSO.FollowType.Facing:
-					DOTweenSequence.Append(transform.DOMove(TargetPosition , navigationDuration).SetEase(Ease.Linear));
-					DOTweenSequence.Join(transform.DOLookAt(TargetPosition, 0.1f).SetEase(Ease.Linear));//Quick Rotation
+					doTweenSequence.Append(transform.DOMove(TargetPosition , navigationDuration).SetEase(Ease.Linear));
+					doTweenSequence.Join(uavBody.transform.DOLookAt(TargetPosition, 0.1f).SetEase(Ease.Linear));//Quick Rotation
 					break;
 				
 				// Move without rotation
 				case NavigationSettingsSO.FollowType.Simple:
-					DOTweenSequence.Append(transform.DOMove(TargetPosition , navigationDuration).SetEase(Ease.Linear));
+					doTweenSequence.Append(transform.DOMove(TargetPosition , navigationDuration).SetEase(Ease.Linear));
 					break;
 
 				case NavigationSettingsSO.FollowType.Teleport:
@@ -231,8 +170,8 @@ namespace UAVs.Sub_Modules.Navigation
 				
 				// Move and rotate to face the target, with damping 
 				case NavigationSettingsSO.FollowType.SmoothDamping:
-					DOTweenSequence.Append(transform.DOMove(TargetPosition , navigationDuration).SetEase(Ease.Linear));
-					DOTweenSequence.Join(transform.DOLookAt(TargetPosition, rotationDuration).SetEase(Ease.Linear));
+					doTweenSequence.Append(transform.DOMove(TargetPosition , navigationDuration).SetEase(Ease.Linear));
+					doTweenSequence.Join(uavBody.transform.DOLookAt(TargetPosition, navigationSettings.rotationDuration).SetEase(Ease.Linear));
 					break;
 			}
 			
@@ -242,29 +181,27 @@ namespace UAVs.Sub_Modules.Navigation
 		///  Adds tweens to the DOTween sequence for rotating the UAV while it is over the waypoint
 		/// This method does not  modify anything related to the path or the destination
 		/// </summary>
-		/// <exception cref="ArgumentOutOfRangeException"></exception>
 		private void AddHoveringTween()
 		{
-			switch (waypointHoveringType)
+			switch (navigationSettings.waypointHoveringType)
 			{
 				case NavigationSettingsSO.WaypointHoveringType.UseAngle:
-					DOTweenSequence.Append(transform.DORotate(new Vector3(0,hoverAngle,0), hoverDurationOnWaypoint, RotateMode.WorldAxisAdd).SetEase(Ease.Linear));
+					doTweenSequence.Append(uavBody.transform.DORotate(new Vector3(0,navigationSettings.hoverAngle,0), navigationSettings.hoverDurationOnWaypoint, RotateMode.WorldAxisAdd).SetEase(Ease.Linear));
 					break;
 				case NavigationSettingsSO.WaypointHoveringType.UseSpeed:
 					//calculate angles to rotate based on speed and hover duration on waypoint
-					var dynamicHoverAngle = hoverDurationOnWaypoint*hoverSpeed;
-					DOTweenSequence.Append(transform.DORotate(new Vector3(0,dynamicHoverAngle,0), hoverDurationOnWaypoint, RotateMode.WorldAxisAdd).SetEase(Ease.Linear));
+					var dynamicHoverAngle = navigationSettings.hoverDurationOnWaypoint*navigationSettings.hoverSpeed;
+					doTweenSequence.Append(uavBody.transform.DORotate(new Vector3(0,dynamicHoverAngle,0), navigationSettings.hoverDurationOnWaypoint, RotateMode.WorldAxisAdd).SetEase(Ease.Linear));
 					break;
-				case NavigationSettingsSO.WaypointHoveringType.FaceNextWaypoint:
-					var nextPath = GetPathByIndex(_pathsIteratorIndex + 1);
-					if (nextPath != null) // else if it is null then we do not have to rotate anymore as there is no next waypoint to face
+				case NavigationSettingsSO.WaypointHoveringType.FaceNextWaypoint :
+					if (_currentPath.nextPath != null) // else if it is null then we do not have to rotate anymore as there is no next waypoint to face
 					{
-						var nextDestination =nextPath.DestinationWayPoint.transform.position;
-						var target= IgnoreWaypointPositionByAxis(nextDestination);
-						DOTweenSequence.Append(transform.DOLookAt(target, hoverDurationOnWaypoint).SetEase(Ease.Linear));
+						var target= IgnoreWaypointPositionByAxis(_currentPath.nextPath.destinationWayPoint.transform.position);
+						
+							doTweenSequence.Append(uavBody.transform.DOLookAt(target, navigationSettings.hoverDurationOnWaypoint).SetEase(Ease.Linear));
 					}
 					break;
-				
+					
 				case NavigationSettingsSO.WaypointHoveringType.None:
 				default:
 					throw new ArgumentOutOfRangeException();
@@ -297,20 +234,26 @@ namespace UAVs.Sub_Modules.Navigation
 		{
 			var navigationDuration = 0f;
 			
-			switch (speedMode)
+			switch (navigationSettings.speedMode)
 			{
 				case NavigationSettingsSO.SpeedMode.FixedSpeed:
 					var distance = Vector3.Distance(transform.position, TargetPosition);
-					navigationDuration = distance / fixedSpeed;
+					navigationDuration = distance / navigationSettings.fixedSpeed;
 					break;
 				
 				case NavigationSettingsSO.SpeedMode.FixedPathDuration:
 				default:
-					navigationDuration = _pathStartTime+ pathDuration- Time.time;
+					navigationDuration = _pathStartTime+ navigationSettings.pathDuration- Time.time;
 					break;
 				
 			}
 			return navigationDuration;
+		}
+
+		private void OnDestroy()
+		{
+			if(doTweenSequence!=null)
+				doTweenSequence.Kill();
 		}
 	}
 }

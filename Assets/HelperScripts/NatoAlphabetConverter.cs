@@ -8,10 +8,10 @@ namespace HelperScripts
 		static Dictionary<char, string> dDict = new Dictionary<char, string>()
 		{
 			{ 'a', "Alfa" }, { 'b', "Bravo" }, { 'c', "Charlie" },
-			{ 'd', "Delta" }, { 'e', "Echo" }, { 'f', "Foxtrot" },
+			{ 'd', "Delta" }, { 'e', "Echo" }, { 'f', "Frank" },
 			{ 'g', "Golf" }, { 'h', "Hotel" }, { 'i', "India" },
-			{ 'j', "Juliet" }, { 'k', "Kilo" }, { 'l', "Lima" },
-			{ 'm', "Mike" }, { 'n', "November" }, { 'o', "Oscar" },
+			{ 'j', "John" }, { 'k', "Kilo" }, { 'l', "Lima" },
+			{ 'm', "Mike" }, { 'n', "Nectar" }, { 'o', "Oscar" },
 			{ 'p', "Papa" }, { 'q', "Quebec" }, { 'r', "Romeo" },
 			{ 's', "Sierra" }, { 't', "Tango" }, { 'u', "Uniform" },
 			{ 'v', "Victor" }, { 'w', "Whiskey" }, { 'x', "X-Ray" },

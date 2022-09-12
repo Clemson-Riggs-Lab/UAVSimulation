@@ -1,4 +1,5 @@
 using HelperScripts;
+using ScriptableObjects.EventChannels;
 using UnityEngine;
 
 namespace ScriptableObjects.UAVs.Navigation
@@ -12,6 +13,8 @@ namespace ScriptableObjects.UAVs.Navigation
 		[SerializeField] public UavPathEventChannelSO uavStartedNewPathEventChannel;
 		[SerializeField] public UavPathEventChannelSO uavArrivedAtDestinationEventChannel;
 		[SerializeField] public UavPathEventChannelSO uavReroutedEventChannel;
+		[SerializeField] public UavPathEventChannelSO uavReroutePreviewEventChannel;
+		[SerializeField] public UavEventChannelSO reroutingOptionsRequestedChannel;
 	
 
 		private void OnEnable()
@@ -24,6 +27,9 @@ namespace ScriptableObjects.UAVs.Navigation
 			AssertionHelper.AssertAssetReferenced(uavStartedNewPathEventChannel,this);
 			AssertionHelper.AssertAssetReferenced(uavArrivedAtDestinationEventChannel,this);
 			AssertionHelper.AssertAssetReferenced(uavReroutedEventChannel,this);
+			AssertionHelper.AssertAssetReferenced(uavReroutePreviewEventChannel,this);
+			AssertionHelper.AssertAssetReferenced(reroutingOptionsRequestedChannel,this);
+			
 
 		}
 	}

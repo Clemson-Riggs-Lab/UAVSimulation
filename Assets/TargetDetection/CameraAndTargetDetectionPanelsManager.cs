@@ -63,7 +63,7 @@ namespace UAVs.Sub_Modules.Camera
 
         private void RemovePanelOfUav(Uav uav)
         {
-            var panel = cameraAndTargetDetectionPanels.FirstOrDefault(x => x.gameObject.name == "UAVCameraPanel " + uav.ID);
+            var panel = cameraAndTargetDetectionPanels.FirstOrDefault(x => x.gameObject.name == "UAVCameraPanel " + uav.uavName);
             if (panel != null) 
             {
                 cameraAndTargetDetectionPanels.Remove(panel);
@@ -73,7 +73,7 @@ namespace UAVs.Sub_Modules.Camera
         }
         private void OnUavStartedNewPath(Uav uav, Path path)
         {
-            var panelController = cameraAndTargetDetectionPanels.FirstOrDefault(x => x.gameObject.name == "UAVCameraPanel " + uav.ID);
+            var panelController = cameraAndTargetDetectionPanels.FirstOrDefault(x => x.gameObject.name == "UAVCameraPanel " + uav.uavName);
             if (panelController != null) 
             {
                 panelController.UavStartedNewPath(uav, path);
@@ -81,7 +81,7 @@ namespace UAVs.Sub_Modules.Camera
         }
         private void OnUavHealthConditionChanged(Uav uav, UavHealthConditions healthCondition)
         {
-            var panelController = cameraAndTargetDetectionPanels.FirstOrDefault(x => x.gameObject.name == "UAVCameraPanel " + uav.ID);
+            var panelController = cameraAndTargetDetectionPanels.FirstOrDefault(x => x.gameObject.name == "UAVCameraPanel " + uav.uavName);
             if (panelController != null)
             {
                 panelController.UavHealthConditionChanged(uav, healthCondition);
@@ -90,7 +90,7 @@ namespace UAVs.Sub_Modules.Camera
 
         private void OnUavFuelConditionChanged(Uav uav, FuelConditions fuelCondition)
         {
-            var panelController = cameraAndTargetDetectionPanels.FirstOrDefault(x => x.gameObject.name == "UAVCameraPanel " + uav.ID);
+            var panelController = cameraAndTargetDetectionPanels.FirstOrDefault(x => x.gameObject.name == "UAVCameraPanel " + uav.uavName);
             if (panelController != null)
             {
                 panelController.UavFuelConditionChanged(uav, fuelCondition);
@@ -98,7 +98,7 @@ namespace UAVs.Sub_Modules.Camera
         }
         private void ApplyHoveringConfigs(Uav uav, Path path)
         {
-            var panelController = cameraAndTargetDetectionPanels.FirstOrDefault(x => x.gameObject.name == "UAVCameraPanel " + uav.ID);
+            var panelController = cameraAndTargetDetectionPanels.FirstOrDefault(x => x.gameObject.name == "UAVCameraPanel " + uav.uavName);
             if (panelController != null) 
             {
                 panelController.ApplyHoveringConfigs();

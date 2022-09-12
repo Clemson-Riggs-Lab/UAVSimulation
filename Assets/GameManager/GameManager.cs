@@ -3,6 +3,7 @@ using System.IO;
 using Prompts;
 using HelperScripts;
 using Newtonsoft.Json;
+using NoFlyZone;
 using ScriptableObjects;
 using ScriptableObjects.Databases;
 using ScriptableObjects.UAVs.Navigation;
@@ -22,6 +23,7 @@ public class GameManager : MonoBehaviour
         [SerializeField] public GameObject wayPointsContainer;
         [SerializeField] public GameObject uavsContainer;
         [SerializeField] public GameObject terrainContainer;
+        [SerializeField] public GameObject nfzsContainer;
         [Space(20)]
         [SerializeField] public WayPointsManager wayPointsManager;
         [SerializeField] public UavsManager uavsManager;
@@ -29,14 +31,14 @@ public class GameManager : MonoBehaviour
         [SerializeField] public JsonSerializerTest jsonSerializerTest;
         [Space(20)]
         [SerializeField] public NavigationManager navigationManager;
-        [SerializeField] public NavigationSettingsSO navigationSettings;
         
         [Space(20)]
         [SerializeField] public FuelAndHealthManager fuelAndHealthManager;
         
         [Space(20)]
         [SerializeField] public PromptsManager promptsManager;
-        
+        [Space(20)]
+        [SerializeField] public NFZsManager nfzsManager;
         [Space(20)]
         [SerializeField] public TargetsManager targetsManager;
         
@@ -46,10 +48,14 @@ public class GameManager : MonoBehaviour
         [SerializeField] public SettingsDatabaseSO settingsDatabase;
         
         private bool _generateFromRecords = true;
+        
+
         private void OnValidate()
         {
             AssertionHelper.AssertComponentReferencedInEditor(wayPointsContainer,this,this.gameObject);
             AssertionHelper.AssertComponentReferencedInEditor(uavsContainer,this,this.gameObject);
+            AssertionHelper.AssertComponentReferencedInEditor(terrainContainer,this,this.gameObject);
+            AssertionHelper.AssertComponentReferencedInEditor(nfzsContainer,this,this.gameObject);
             AssertionHelper.AssertComponentReferencedInEditor(wayPointsManager,this,this.gameObject);
             AssertionHelper.AssertComponentReferencedInEditor(uavsManager,this,this.gameObject);
             AssertionHelper.AssertComponentReferencedInEditor(navigationManager,this,this.gameObject);
@@ -59,6 +65,9 @@ public class GameManager : MonoBehaviour
             AssertionHelper.AssertComponentReferencedInEditor(channelsDatabase,this,this.gameObject);
             AssertionHelper.AssertComponentReferencedInEditor(prefabsDatabase,this,this.gameObject);
             AssertionHelper.AssertComponentReferencedInEditor(settingsDatabase,this,this.gameObject);
+            AssertionHelper.AssertComponentReferencedInEditor(nfzsManager,this,this.gameObject);
+            AssertionHelper.AssertComponentReferencedInEditor(targetsManager,this,this.gameObject);
+            
         }
 
         private void Awake() 
@@ -111,6 +120,7 @@ public class GameManager : MonoBehaviour
                 yield return new WaitForSeconds(0.1f);
                 promptsManager.Initialize();
                 yield return new WaitForSeconds(0.1f);
+                nfzsManager.Initialize();
                 
             }
 

@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b1352ef275f4404ac13be97749977d3, type: 3}
   m_Name: UavSettings
   m_EditorClassIdentifier: 
+  namingScheme: 2
   uavCameraSettings: {fileID: 11400000, guid: f07e667d47718ed40b6759051faa7ad6, type: 2}
   navigationSettings: {fileID: 11400000, guid: 46d8f6855e5e8794f81560bb096a53f3, type: 2}
   fuelAndHealthSettings: {fileID: 11400000, guid: 4baf70806eae0f34b9f6c9e7f86312e9, type: 2}
+  pathsRenderingSettings: {fileID: 11400000, guid: 7d8c20d3daa22814f81180b3fca0fbb3, type: 2}

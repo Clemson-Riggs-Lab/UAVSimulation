@@ -29,12 +29,13 @@ namespace WayPoints
         }
         public void Initialize()
         { 
-            GetSettingsFromGameManager(); 
+            GetReferencesFromGameManager(); 
             SubscribeToChannels();
         }
 
-        private void GetSettingsFromGameManager()
+        private void GetReferencesFromGameManager()
         {
+            wayPointsContainer= GameManager.Instance.wayPointsContainer;
             wayPointCreatedEventChannel = GameManager.Instance.channelsDatabase.wayPointCreatedEventChannel;
             wayPointDisabledEventChannel = GameManager.Instance.channelsDatabase.wayPointDisabledEventChannel;
         }
@@ -49,11 +50,7 @@ namespace WayPoints
                 return;
             }
         }
-
-        private void Start()
-        {
-            wayPointsContainer= GameManager.Instance.wayPointsContainer;
-        }
+        
 
         public bool TryGetWayPoint(int wayPointID, out WayPoint wayPoint)
         {
@@ -105,10 +102,6 @@ namespace WayPoints
             UnsubscribeFromChannels();
         }
         
-        private void OnDestroy()
-        {
-            UnsubscribeFromChannels();
-        }
         
         private void SubscribeToChannels()
         {

@@ -1,13 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Dynamic;
 using System.IO;
 using HelperScripts;
 using IOHandlers;
 using IOHandlers.Records;
 using Menu;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
 using ScriptableObjects.UAVs.Navigation;
 using UnityEngine;
+using YamlDotNet.Serialization;
+using YamlDotNet.Serialization.NamingConventions;
 
 public class JsonSerializerTest : MonoBehaviour
 {		
@@ -19,12 +23,9 @@ public class JsonSerializerTest : MonoBehaviour
     public bool AddDefaultUavRecords { get; set; } = true;
     public bool AddDefaultFuelLeaksRecord { get; set; } = true;
     public bool AddDefaultUavPathsRecords { get; set; } = true;
-    public bool AddDefaultChatRecords { get; set; } = true;
-    private void OnValidate()
-    {
-       //  AssertionHelper.CheckIfReferenceExistsOrComponentExistsInGameObject(consoleTextHandler, this, this.gameObject);
-    }
-
+    public bool AddDefaultPromptRecords { get; set; } = true;
+    public bool AddDefaultNFZRecords { get; set; } = true;
+   
     // Start is called before the first frame update
     void Start()
     {
@@ -33,7 +34,11 @@ public class JsonSerializerTest : MonoBehaviour
         if (AddDefaultUavRecords == true) rootObject.UavsRecords = DefaultRecordsCreator.AddDefaultUavRecords();
         if (AddDefaultFuelLeaksRecord == true) rootObject.FuelLeaksRecord = DefaultRecordsCreator.AddDefaultFuelLeaksRecord();
 		if (AddDefaultUavPathsRecords == true) rootObject.UavPathsRecords = DefaultRecordsCreator.AddDefaultUavPathsRecords();
-		rootObject.ChatMessages = DefaultRecordsCreator.GetDefaultPrompts();
+		if(AddDefaultPromptRecords==true) rootObject.Prompts = DefaultRecordsCreator.AddDefaultPromptRecords();
+		if(AddDefaultNFZRecords==true) rootObject.NFZRecords = DefaultRecordsCreator.AddDefaultNFZRecords();
+		
+		
+		
 		string json = JsonConvert.SerializeObject(rootObject, Formatting.Indented);
         //  consoleTextHandler.AddTextToConsole(json);
 
@@ -41,7 +46,14 @@ public class JsonSerializerTest : MonoBehaviour
         JsonSerializer serializer = new JsonSerializer();
         file.Write(json);
         
-        navigationSettings= GameManager.Instance.navigationSettings;
+        var expConverter = new ExpandoObjectConverter();
+        dynamic deserializedObject = JsonConvert.DeserializeObject<ExpandoObject>(json, expConverter);
+        var serializer2 = new YamlDotNet.Serialization.Serializer();
+        string yaml = serializer2.Serialize(deserializedObject);
+        using StreamWriter file2 = File.CreateText(@"D:\mytest4.json");
+        file2.Write(yaml);
+        file2.Close();
+        navigationSettings= GameManager.Instance.settingsDatabase.uavSettings.navigationSettings;
         string json1 = JsonConvert.SerializeObject(navigationSettings, Formatting.Indented);
         using StreamWriter file1 = File.CreateText(@"D:\mytest1.json");
         JsonSerializer serializer1= new JsonSerializer();

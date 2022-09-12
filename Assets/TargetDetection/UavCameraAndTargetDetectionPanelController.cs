@@ -70,7 +70,7 @@ namespace TargetDetection
         {
             this.uav = uav;
             uavCameraController = cameraController;
-            gameObject.name = "UAVCameraPanel " + uav.ID;
+            gameObject.name = "UAVCameraPanel " + uav.uavName;
         }
 
 

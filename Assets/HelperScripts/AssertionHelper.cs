@@ -26,46 +26,7 @@ namespace HelperScripts
 			}
 		}
 
-		/// <summary>
-		/// This function is called on objects after trying to get their reference from the Game Manager script to make sure that the object is referenced in the game manager 
-		/// </summary>
-		/// <param name="field"></param>
-		/// <param name="containingScript"></param>
-		/// <param name="go"></param>
-		/// <typeparam name="T1"></typeparam> 
-		/// <typeparam name="T2"></typeparam> the calling script
-		public static void AssertObjectReferenceObtainedFromGameManager<T1,T2>(T1 field,T2 containingScript, GameObject go) where T2 : class
-		{
-			if (field == null)
-			{
-				var debugString =
-					$"The reference to ({typeof(T1).Name}) in script {typeof(T2).Name} is `null` in the GameObject ({go.name}) since it couldn't find it in the GameManager script" +
-					$"{Environment.NewLine} Please add a valid reference to a ({typeof(T1).Name}) in the Game Manager script then clear debugger Errors";
-				Debug.LogError(debugString, GameManager.Instance.gameObject);
-			}
-		}
-		
-		/// <summary>
-		/// This function is called on a prefab reference after trying to get it from the Prefabs Manager script to make sure that the object is referenced in the prefabs manager 
-		/// </summary>
-		/// <param name="field"></param>
-		/// <param name="name"></param>
-		/// <param name="containingScript"></param>
-		/// <param name="go"></param>
-		/// <typeparam name="T1"></typeparam> 
-		/// <typeparam name="T2"></typeparam> the calling script
-		public static void AssertPrefabReferenceObtainedFromPrefabsManager<T1,T2>(T1 field,string name,T2 containingScript, GameObject go) where T2 : class
-		{
-			if (field == null)
-			{
-				var debugString =
-					$"The reference to ({name}) prefab in script {typeof(T2).Name} is `null` in the GameObject ({go.name}) since it couldn't find it in the PrefabManager script" +
-					$"{Environment.NewLine} Please add a valid reference to a ({typeof(T1).Name}) in the Prefab Manager script then clear debugger Errors";
-				Debug.LogError(debugString, GameManager.Instance.prefabsDatabase);
-			}
-		}
-		
-		
+
 		/// <summary>
 		/// Similar to above but also trys to find the component in the containing game object,
 		/// if found it will return the component, if not it will return an error
@@ -94,8 +55,7 @@ namespace HelperScripts
 			}
 			
 		}
-		
-		
+
 		public static void AssertAssetReferenced<T1,T2>(T1 field, T2 containingScript) where T2 : class
 		{
 			if (field != null) return;
@@ -103,6 +63,7 @@ namespace HelperScripts
 			var debugString =
 				$"The reference to ({typeof(T1).Name}) in asset {typeof(T2).Name} is `null` ";
 				Debug.LogError(debugString);
+				
 		}
 	}
 }

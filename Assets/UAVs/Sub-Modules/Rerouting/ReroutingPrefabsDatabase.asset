@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c044e0ea304d42b48f6dc00b779773bb, type: 3}
+  m_Name: ReroutingPrefabsDatabase
+  m_EditorClassIdentifier: 
+  rerouteButtonPrefab: {fileID: 845953431251370643, guid: 9a3b963fd9cd57c4da4d529440bf3a7b, type: 3}
+  reroutingOptionsPanelPrefab: {fileID: 1512632744822560, guid: dc6a954ae9938d949ba2fdd407e4cb5b, type: 3}
+  reroutingOptionRowPrefab: {fileID: 5588755970684703371, guid: 035adb93053e36446bd85b0ddbaf28d0, type: 3}

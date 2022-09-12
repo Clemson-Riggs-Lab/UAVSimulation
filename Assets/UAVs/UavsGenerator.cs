@@ -22,12 +22,11 @@ namespace UAVs
 
         private void Start()
         {
-            GetSettingsFromGameManager();
-            AssertReferencesNotNull();
+            GetReferencesFromGameManager();
             _uavsContainer.transform.position = _wayPointsContainer.transform.position;//centering both on top of each other to avoid any offset due to local positioning
         }
         
-        private void GetSettingsFromGameManager()
+        private void GetReferencesFromGameManager()
         {
             _wayPointsManager =GameManager.Instance.wayPointsManager;
             _uavsManager = GameManager.Instance.uavsManager;
@@ -35,15 +34,7 @@ namespace UAVs
             _wayPointsContainer = GameManager.Instance.wayPointsContainer;
             _uavPrefab = GameManager.Instance.prefabsDatabase.uavPrefab;
         }
-        private void AssertReferencesNotNull()
-        {
-            AssertionHelper.AssertPrefabReferenceObtainedFromPrefabsManager( _uavPrefab,"uav Prefab",this,gameObject);
-            AssertionHelper.AssertObjectReferenceObtainedFromGameManager( _wayPointsManager,this,gameObject);
-            AssertionHelper.AssertObjectReferenceObtainedFromGameManager( _uavsManager,this,gameObject);
-            AssertionHelper.AssertObjectReferenceObtainedFromGameManager( _uavsContainer,this,gameObject);
-            AssertionHelper.AssertObjectReferenceObtainedFromGameManager( _wayPointsContainer,this,gameObject);
-        }
-        
+
         public void GenerateOneUAVOnEachWayPoint()
         {
             var idIterator= 0;
@@ -75,7 +66,7 @@ namespace UAVs
         
         private void GenerateUav(int id, WayPoint wayPoint, bool enabledOnStart=true)
         {
-            var  uav = Instantiate(_uavPrefab,  _uavsContainer.transform).GetComponent<Uav>();
+            var  uav = Instantiate(_uavPrefab,wayPoint.transform.position, Quaternion.Euler(0,90,0),  _uavsContainer.transform).GetComponent<Uav>();
             uav.Initialize(id, wayPoint,enabledOnStart);
         }
    

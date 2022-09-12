@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - NFZ
+  - UAV
   layers:
   - Default
   - TransparentFX
@@ -13,8 +15,8 @@ TagManager:
   - UI
   - UAVs
   - Waypoints
-  - 
-  - 
+  - LineRenderers
+  - NFZ
   - UAV0
   - UAV1
   - UAV2

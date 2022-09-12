@@ -39,7 +39,7 @@ namespace UAVs.Sub_Modules.FuelAndHealth
 		{
 
 			//remove panel
-			var panel = transform.Find("UAV " +uav.ID + " Fuel And Health Panel");
+			var panel = transform.Find("UAV " +uav.uavName + " Fuel And Health Panel");
 			if(panel != null)
 				Destroy(panel.gameObject);
 		}
@@ -67,7 +67,7 @@ namespace UAVs.Sub_Modules.FuelAndHealth
 				case FuelStatusAndHealthBarVisibleInSeparatePanel:
 				{
 					var panel = Instantiate(GameManager.Instance.prefabsDatabase.fuelAndHealthPanelPrefab, transform);
-					panel.name="UAV " + uav.ID + " Fuel And Health Panel";
+					panel.name="UAV " + uav.uavName + " Fuel And Health Panel";
 					var panelController= panel.GetComponent<StatusPanelController>();
 					panelController.Initialize(fuelAndHealthController);
 					break;

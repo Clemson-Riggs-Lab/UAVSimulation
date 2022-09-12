@@ -31,11 +31,11 @@ namespace TargetDetection
 				Instance = this; 
 			} 
 			
-			InitializeFromGameManager();
+			GetReferencesFromGameManager();
 			SubscribeToChannels();
 		}
 
-		private void InitializeFromGameManager()
+		private void GetReferencesFromGameManager()
 		{
 			_settings = GameManager.Instance.settingsDatabase.targetDetectionSettings;
 			uavStartedNewPathEventChannel = GameManager.Instance.channelsDatabase.uavChannels.navigationChannels.uavStartedNewPathEventChannel;
@@ -47,10 +47,10 @@ namespace TargetDetection
 		{
 			ClearTargets(uav);
 			
-			if (path.TargetIsPresent) 
+			if (path.targetIsPresent) 
 			{
-				var target= Instantiate(GameManager.Instance.prefabsDatabase.targetBoxPrefab,  path.DestinationWayPoint.transform);
-				target.GetComponent<Target>().Initialize(path.DestinationWayPoint.Id,ObjectType.Box,path.DestinationWayPoint.transform.position,uav.gameObject.layer);
+				var target= Instantiate(GameManager.Instance.prefabsDatabase.targetBoxPrefab,  path.destinationWayPoint.transform);
+				target.GetComponent<Target>().Initialize(path.destinationWayPoint.Id,ObjectType.Box,path.destinationWayPoint.transform.position,uav.gameObject.layer);
 				_uavTargetsDictionary[uav].Add(target);
 			}
 			

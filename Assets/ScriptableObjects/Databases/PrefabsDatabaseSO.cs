@@ -1,4 +1,5 @@
 using HelperScripts;
+using ScriptableObjects.UAVs.Navigation.Rerouting;
 using UnityEngine;
 
 namespace ScriptableObjects.Databases
@@ -14,9 +15,10 @@ namespace ScriptableObjects.Databases
 		public GameObject uavCameraPrefab;
 		public GameObject chatBoxPanelPrefab;
 		public GameObject responseButtonPrefab;
-		public GameObject rerouteButtonPrefab;
-		public GameObject reroutingOptionsPanelsPrefab;
-		
+		public ReroutingPrefabsDatabaseSO reroutingPrefabsDatabase;
+		public GameObject uavPathRendererPrefab;
+		public GameObject nfzPrefab;
+
 		private void OnEnable()
 		{
 			AssertAllReferencesAreNotNull();
@@ -24,14 +26,16 @@ namespace ScriptableObjects.Databases
 
 		private void AssertAllReferencesAreNotNull()
 		{
+			AssertionHelper.AssertAssetReferenced(uavPrefab, this);
 			AssertionHelper.AssertAssetReferenced(waypointPrefab,this);
 			AssertionHelper.AssertAssetReferenced(targetBoxPrefab,this);
 			AssertionHelper.AssertAssetReferenced(fuelAndHealthPanelPrefab,this);
 			AssertionHelper.AssertAssetReferenced(uavCameraPrefab,this);
 			AssertionHelper.AssertAssetReferenced(chatBoxPanelPrefab,this);
 			AssertionHelper.AssertAssetReferenced(responseButtonPrefab,this);
-			AssertionHelper.AssertAssetReferenced(rerouteButtonPrefab,this);
-			AssertionHelper.AssertAssetReferenced(reroutingOptionsPanelsPrefab,this);
+			AssertionHelper.AssertAssetReferenced(reroutingPrefabsDatabase,this);
+			AssertionHelper.AssertAssetReferenced(uavPathRendererPrefab,this);
+			AssertionHelper.AssertAssetReferenced(nfzPrefab,this);
 		}
 	}
 }

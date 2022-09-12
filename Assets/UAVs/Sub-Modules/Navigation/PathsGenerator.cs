@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using HelperScripts;
 using IOHandlers.Records;
+using ScriptableObjects.UAVs.Navigation;
 using UAVs.Sub_Modules.Navigation;
 using UnityEngine;
 using WayPoints;
@@ -14,94 +15,89 @@ namespace UAVs.Navigation
 
         [SerializeField]public UavsManager uavsManager;
         [SerializeField]public WayPointsManager wayPointsManager;
+        private NavigationSettingsSO navigationSettings;
+
 
         private void Start()
         {
             uavsManager= GameManager.Instance.uavsManager;
             wayPointsManager= GameManager.Instance.wayPointsManager;
-            AssertionHelper.AssertObjectReferenceObtainedFromGameManager(uavsManager,this, gameObject);
-            AssertionHelper.AssertObjectReferenceObtainedFromGameManager(wayPointsManager,this, gameObject);
-            
+            navigationSettings= GameManager.Instance.settingsDatabase.uavSettings.navigationSettings;
         }
-
-        public List<Navigator> GenerateSequentialNavigationPaths(int numberOfIterations)
-        { 
-            
-            // this is the travelling salesman problem, However, for now I have hardcoded the path based on a grid of 4x4 WayPoints.
-            //move in the following order: 0,1,2,3,7,11,15,14,13,12,8,9,10,6,5,4,0, repeat
-            
-            //Temporary code: //TODO make better algorithm
-            List<int> wayPointsOrderedList = new List<int>(){ 0, 1, 2, 3, 7, 11, 15, 14, 13, 12, 8, 9, 10, 6, 5, 4 };
-            var countOfWayPoints = wayPointsOrderedList.Count;
-            
-            var navigators= new List<Navigator>();
-            foreach (var uav in uavsManager.uavs)
-            {
-                var navigator = AddNavigatorScript(uav);
-                navigators.Add(navigator);
-                
-                var uavPaths = new List<Path>();
-                WayPoints.WayPoint startingWayPoint, endingWayPoint = null;
-                
-                startingWayPoint = uav.startingWaypoint; //setting the starting WayPoint to the last WayPoint visited by the uav
-                var startingWayPointIDIndex = wayPointsOrderedList.IndexOf(startingWayPoint.Id);
-                wayPointsManager.TryGetWayPoint(wayPointsOrderedList[(startingWayPointIDIndex+1)% countOfWayPoints], out  endingWayPoint ); //setting the ending WayPoint to the next WayPoint in the list
-               
-                var pathIdIterator = 0;
-                for (var i = startingWayPointIDIndex; i < numberOfIterations + startingWayPointIDIndex; i++)
-                {
-                    var path = new Path(pathIdIterator,uav,startingWayPoint, endingWayPoint);
-                    wayPointsManager.TryGetWayPoint(wayPointsOrderedList[(i + 1) % countOfWayPoints], out endingWayPoint);
-                    uavPaths.Add(path);
-                    pathIdIterator++;
-                    startingWayPoint = endingWayPoint;
-                }
-                navigator.Paths.AddRange(uavPaths);
-                
-            }
-            return navigators;
-        }
-
-       private Navigator AddNavigatorScript(Uav uav)
+        
+       public Dictionary<Uav,Navigator> GeneratePaths( List<UavPathsRecord> uavPathsRecords)
        {
-              var navigator = uav.gameObject.AddComponent<Navigator>();
-              return navigator;
-       }
-
-
-       public List<Navigator> GeneratePaths( List<UavPathsRecord> uavPathsRecords)
-       {
-           var navigators = new List<Navigator>();
+           var navigators = new Dictionary<Uav,Navigator>();
               foreach (var uavPathsRecord in uavPathsRecords)
               { 
-                var uav = uavsManager.uavs.FirstOrDefault(x => x.ID == uavPathsRecord.UavId);
+                var uav = uavsManager.uavs.FirstOrDefault(x => x.id == uavPathsRecord.UavId);
                 
                 if (uav == null)
                 {
                     Debug.LogError("UAV not found while initializing paths from uavPathsRecords");
                     continue; //returning because the uav was not found (this should not happen)
                 }
-                var navigator= AddNavigatorScript(uav);
+                
+                if(!uav.gameObject.TryGetComponent(out Navigator navigator))
+                    navigator = uav.gameObject.AddComponent<Navigator>();
+                navigators[uav]=navigator;
                 
                 var paths = new List<Path>();
                 var pathID = 0;
-                var startingWayPoint = uav.startingWaypoint;
                 foreach (var record in uavPathsRecord.PathRecords)
                 {
-                     
-                     wayPointsManager.TryGetWayPoint(record.DestinationWayPointID, out WayPoints.WayPoint endingWayPoint);
-                     var path = new Path(pathID, uav, startingWayPoint, endingWayPoint);
-                     path.Initialize(record);
-                     paths.Add(path);
-                     pathID++;
-                     startingWayPoint = endingWayPoint;
+                    if( wayPointsManager.TryGetWayPoint(record.DestinationWayPointID, out WayPoints.WayPoint destinationWayPoint)) //else we can't create the path since the destination waypoint could not be found
+                    {
+                        var path = new Path(pathID, uav, destinationWayPoint, record.UavVisuallyEnabled ?? false, record.TargetIsPresent ?? false);
+                        
+                        if (paths.Count > 0) // if the paths list is not empty, set the next path of the last item to this path, and the previous path of this path to the last item
+                        {
+                            paths.Last().nextPath = path;
+                            path.previousPath = paths.Last();
+                        }
+                        paths.Add(path);
+                        pathID++;
+                    }
                 }
+                
+                if(navigationSettings.loopingType!= NavigationSettingsSO.LoopType.Once)
+                    paths=AddLoopingPaths(paths);
+                
                 navigator.Paths.AddRange(paths);
-                navigators.Add(navigator);
+                
                 
               }
           
            return navigators;
+       }
+
+       private List<Path> AddLoopingPaths(List<Path> paths)
+       {
+           if(paths.Count==0) // null check
+               return paths;
+           
+           switch (navigationSettings.loopingType) 
+           {
+               case NavigationSettingsSO.LoopType.Once:
+               default:
+                   return paths;
+               
+               case NavigationSettingsSO.LoopType.Cycled: // we just add a reference to the first path in the last path
+                   paths.Last().nextPath = paths.First();
+                   paths.First().previousPath =  paths.Last();
+                   return paths;
+               
+               case NavigationSettingsSO.LoopType.SeveralTimes:
+                   var allPaths = new List<Path>(paths);
+                   for (var i = 0; i < navigationSettings.numberOfLoops; i++)
+                   {
+                       var newPaths= new List<Path>(paths); //creating copy of the original paths list
+                       allPaths.Last().nextPath = newPaths.First(); 
+                       newPaths.First().previousPath = allPaths.Last();
+                       allPaths.AddRange(paths);
+                   }
+                   return allPaths;
+           }
        }
     }
 }

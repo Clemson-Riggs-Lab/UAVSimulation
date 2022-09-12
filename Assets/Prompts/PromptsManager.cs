@@ -21,7 +21,7 @@ namespace Prompts
 		public void Initialize()
 		{
 			GameManager.Instance.promptsManager = this; //telling the game manager that I am the prompt manager
-			GetSettingsFromGameManager();
+			GetReferencesFromGameManager();
 			
 			if (promptSettings.promptsSource != Disabled)
 			{
@@ -34,7 +34,7 @@ namespace Prompts
 			StartCoroutine(StartPromptsTimerCoroutine());
 		}
 
-		private void GetSettingsFromGameManager()
+		private void GetReferencesFromGameManager()
 		{
 			promptSettings = GameManager.Instance.settingsDatabase.promptSettings;
 			newPromptEventChannel= GameManager.Instance.channelsDatabase.promptChannels.newPromptEventChannel;
@@ -86,7 +86,7 @@ namespace Prompts
 		
 		private void LoadPromptsFromDefaultRecords()
 		{
-			var promptsRecords = DefaultRecordsCreator.GetDefaultPrompts();
+			var promptsRecords = DefaultRecordsCreator.AddDefaultPromptRecords();
 			if (promptsRecords == null)
 			{
 				Debug.LogWarning("No Prompts were found in the file");
@@ -102,7 +102,7 @@ namespace Prompts
 		{
 			//TODO change to dynamically get records from external serialized file.
 			//placeholder code below
-			var promptsRecords = DefaultRecordsCreator.GetDefaultPrompts();
+			var promptsRecords = DefaultRecordsCreator.AddDefaultPromptRecords();
 			if (promptsRecords == null)
 			{
 				Debug.LogWarning("No Prompts were found in the file");

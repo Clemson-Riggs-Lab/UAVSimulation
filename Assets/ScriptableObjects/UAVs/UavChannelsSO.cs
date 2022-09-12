@@ -20,8 +20,7 @@ namespace ScriptableObjects.UAVs
 
 		[SerializeField] public NavigationChannelsSO navigationChannels;
 		[SerializeField] public FuelAndHealthChannelsSO fuelAndHealthChannels;
-		[SerializeField] public UavPathEventChannelSO uavReroutedEventChannel;
-		[SerializeField] public UavEventChannelSO reroutingOptionsRequestedChannel;
+		
 
 		private void OnEnable()
 		{
@@ -37,7 +36,8 @@ namespace ScriptableObjects.UAVs
 			AssertionHelper.AssertAssetReferenced(uavShotDownChannel,this);
 			AssertionHelper.AssertAssetReferenced(navigationChannels,this);
 			AssertionHelper.AssertAssetReferenced(fuelAndHealthChannels,this);
-			AssertionHelper.AssertAssetReferenced(uavReroutedEventChannel,this);
+
+			
 		}
 	}
 }

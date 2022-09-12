@@ -1,42 +1,595 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="SCOPE_TYPE" value="3" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="2a31bee8-77bd-4176-b786-4bd852df0b13" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Channels/UAVs/Submodules/Rerouting.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Channels/UAVs/Submodules/Rerouting/uavReroutedEventChannel.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Channels/UAVs/Submodules/Rerouting/uavReroutedEventChannel.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Channels/UAVs/reroutingOptionsRequestedChannel.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Channels/UAVs/reroutingOptionsRequestedChannel.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/DoIt.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/DoIt.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/UAVs/Sub-Modules/Rerouting.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/UAVs/Sub-Modules/Rerouting/Prefabs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/UAVs/Sub-Modules/Rerouting/Prefabs/Button.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/UAVs/Sub-Modules/Rerouting/Prefabs/Button.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/UAVs/Sub-Modules/Rerouting/ReroutingButtonsContainerManager.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/UAVs/Sub-Modules/Rerouting/ReroutingButtonsContainerManager.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/UAVs/Sub-Modules/Rerouting/ReroutingManager.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/UAVs/Sub-Modules/Rerouting/ReroutingManager.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/UAVs/Sub-Modules/Rerouting/ReroutingPanelController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/UAVs/Sub-Modules/Rerouting/ReroutingPanelController.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/UAVs/Sub-Modules/Rerouting/ReroutingPanelsManager.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/UAVs/Sub-Modules/Rerouting/ReroutingPanelsManager.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Channels/UAVs/Submodules/Navigation/reroutingOptionsRequestedChannel.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Channels/UAVs/Submodules/Navigation/reroutingOptionsRequestedChannel.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Channels/UAVs/Submodules/Navigation/uavReroutePreviewEventChannel.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Channels/UAVs/Submodules/Navigation/uavReroutePreviewEventChannel.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Channels/UAVs/Submodules/Navigation/uavReroutedEventChannel.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Channels/UAVs/Submodules/Navigation/uavReroutedEventChannel.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/HelperScripts/OrderedDictionary.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/HelperScripts/OrderedDictionary.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/IOHandlers/Records/NFZRecord.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/IOHandlers/Records/NFZRecord.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/MiniMap/RouteRenderer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/MiniMap/RouteRenderer.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/NoFlyZone.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/NoFlyZone/NFZController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/NoFlyZone/NFZController.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/NoFlyZone/NFZSettings.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/NoFlyZone/NFZSettings.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/NoFlyZone/NFZsManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/NoFlyZone/NFZsManager.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/NoFlyZone/Prefabs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/NoFlyZone/Prefabs/NFZMaterial.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/NoFlyZone/Prefabs/NFZMaterial.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/NoFlyZone/Prefabs/NFZPrefab.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/NoFlyZone/Prefabs/NFZPrefab.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/NoFlyZone.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/NoFlyZone/NFZSettingsSO.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/NoFlyZone/NFZSettingsSO.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/UAVs/Navigation/PathsRendering.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/UAVs/Navigation/PathsRendering/PathsRenderingSettingsSO.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/UAVs/Navigation/PathsRendering/PathsRenderingSettingsSO.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/UAVs/Navigation/Rerouting.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/UAVs/Navigation/Rerouting/ReroutingPrefabsDatabaseSO.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/UAVs/Navigation/Rerouting/ReroutingPrefabsDatabaseSO.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/UAVs/Navigation/Rerouting/ReroutingSettingsSO.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/UAVs/Navigation/Rerouting/ReroutingSettingsSO.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UAVs/Sub-Modules/Navigation/Paths Rendering.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UAVs/Sub-Modules/Navigation/Paths Rendering/Path Rendering Settings.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UAVs/Sub-Modules/Navigation/Paths Rendering/Path Rendering Settings.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UAVs/Sub-Modules/Navigation/Paths Rendering/PathRenderer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UAVs/Sub-Modules/Navigation/Paths Rendering/PathRenderer.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UAVs/Sub-Modules/Navigation/Paths Rendering/PathsRenderersManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UAVs/Sub-Modules/Navigation/Paths Rendering/PathsRenderersManager.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UAVs/Sub-Modules/Navigation/Paths Rendering/Prefabs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UAVs/Sub-Modules/Navigation/Paths Rendering/Prefabs/PathRender.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UAVs/Sub-Modules/Navigation/Paths Rendering/Prefabs/PathRender.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UAVs/Sub-Modules/Rerouting/Panel.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UAVs/Sub-Modules/Rerouting/Panel/Prefabs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UAVs/Sub-Modules/Rerouting/Panel/Prefabs/Row.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UAVs/Sub-Modules/Rerouting/Panel/Prefabs/Row.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UAVs/Sub-Modules/Rerouting/Panel/Prefabs/reroutingOptionsPanelsPrefab.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UAVs/Sub-Modules/Rerouting/Panel/Prefabs/reroutingOptionsPanelsPrefab.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UAVs/Sub-Modules/Rerouting/Panel/ReroutingOptionRowController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UAVs/Sub-Modules/Rerouting/Panel/ReroutingOptionRowController.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UAVs/Sub-Modules/Rerouting/Panel/ReroutingOptionsPanelController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UAVs/Sub-Modules/Rerouting/Panel/ReroutingOptionsPanelController.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UAVs/Sub-Modules/Rerouting/Panel/ReroutingPanelsContainerController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UAVs/Sub-Modules/Rerouting/Panel/ReroutingPanelsContainerController.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UAVs/Sub-Modules/Rerouting/ReroutingButtonsContainerController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UAVs/Sub-Modules/Rerouting/ReroutingPrefabsDatabase.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UAVs/Sub-Modules/Rerouting/ReroutingPrefabsDatabase.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UAVs/Sub-Modules/Rerouting/ReroutingSettings.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UAVs/Sub-Modules/Rerouting/ReroutingSettings.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/AnchorName.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/AnchorName.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/AnchorNotFoundException.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/AnchorNotFoundException.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/CharacterAnalyzer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/CharacterAnalyzer.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/Constants.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/Constants.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/Cursor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/Cursor.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/Emitter.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/Emitter.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/EmitterSettings.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/EmitterSettings.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/EmitterState.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/EmitterState.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/Events.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/Events/AnchorAlias.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/Events/AnchorAlias.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/Events/Comment.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/Events/Comment.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/Events/DocumentEnd.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/Events/DocumentEnd.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/Events/DocumentStart.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/Events/DocumentStart.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/Events/EventType.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/Events/EventType.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/Events/IParsingEventVisitor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/Events/IParsingEventVisitor.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/Events/MappingEnd.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/Events/MappingEnd.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/Events/MappingStart.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/Events/MappingStart.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/Events/MappingStyle.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/Events/MappingStyle.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/Events/NodeEvent.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/Events/NodeEvent.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/Events/ParsingEvent.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/Events/ParsingEvent.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/Events/Scalar.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/Events/Scalar.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/Events/SequenceEnd.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/Events/SequenceEnd.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/Events/SequenceStart.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/Events/SequenceStart.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/Events/SequenceStyle.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/Events/SequenceStyle.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/Events/StreamEnd.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/Events/StreamEnd.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/Events/StreamStart.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/Events/StreamStart.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/ForwardAnchorNotSupportedException.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/ForwardAnchorNotSupportedException.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/HashCode.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/HashCode.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/IEmitter.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/IEmitter.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/ILookAheadBuffer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/ILookAheadBuffer.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/IParser.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/IParser.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/IScanner.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/IScanner.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/InsertionQueue.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/InsertionQueue.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/LookAheadBuffer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/LookAheadBuffer.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/Mark.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/Mark.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/MaximumRecursionLevelReachedException.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/MaximumRecursionLevelReachedException.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/MergingParser.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/MergingParser.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/Parser.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/Parser.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/ParserExtensions.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/ParserExtensions.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/ParserState.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/ParserState.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/RecursionLevel.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/RecursionLevel.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/ScalarStyle.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/ScalarStyle.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/Scanner.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/Scanner.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/SemanticErrorException.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/SemanticErrorException.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/SimpleKey.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/SimpleKey.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/StringLookAheadBuffer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/StringLookAheadBuffer.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/SyntaxErrorException.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/SyntaxErrorException.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/TagDirectiveCollection.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/TagDirectiveCollection.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/TagName.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/TagName.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/Tokens.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/Tokens/Anchor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/Tokens/Anchor.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/Tokens/AnchorAlias.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/Tokens/AnchorAlias.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/Tokens/BlockEnd.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/Tokens/BlockEnd.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/Tokens/BlockEntry.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/Tokens/BlockEntry.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/Tokens/BlockMappingStart.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/Tokens/BlockMappingStart.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/Tokens/BlockSequenceStart.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/Tokens/BlockSequenceStart.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/Tokens/Comment.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/Tokens/Comment.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/Tokens/DocumentEnd.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/Tokens/DocumentEnd.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/Tokens/DocumentStart.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/Tokens/DocumentStart.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/Tokens/Error.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/Tokens/Error.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/Tokens/FlowEntry.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/Tokens/FlowEntry.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/Tokens/FlowMappingEnd.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/Tokens/FlowMappingEnd.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/Tokens/FlowMappingStart.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/Tokens/FlowMappingStart.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/Tokens/FlowSequenceEnd.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/Tokens/FlowSequenceEnd.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/Tokens/FlowSequenceStart.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/Tokens/FlowSequenceStart.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/Tokens/Key.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/Tokens/Key.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/Tokens/Scalar.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/Tokens/Scalar.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/Tokens/StreamEnd.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/Tokens/StreamEnd.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/Tokens/StreamStart.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/Tokens/StreamStart.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/Tokens/Tag.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/Tokens/Tag.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/Tokens/TagDirective.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/Tokens/TagDirective.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/Tokens/Token.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/Tokens/Token.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/Tokens/Value.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/Tokens/Value.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/Tokens/VersionDirective.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/Tokens/VersionDirective.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/Version.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/Version.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/YamlException.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Core/YamlException.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Examples.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Examples.unity" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Examples.unity.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Examples/ConvertYamlToJson.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Examples/ConvertYamlToJson.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Examples/DeserializeObjectGraph.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Examples/DeserializeObjectGraph.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Examples/DeserializingMultipleDocuments.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Examples/DeserializingMultipleDocuments.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Examples/Helpers.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Examples/Helpers/ExampleRunner.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Examples/Helpers/ExampleRunner.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Examples/Helpers/ITestOutputHelper.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Examples/Helpers/ITestOutputHelper.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Examples/Helpers/SampleAttribute.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Examples/Helpers/SampleAttribute.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Examples/LoadingAYamlStream.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Examples/LoadingAYamlStream.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Examples/SerializeObjectGraph.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Examples/SerializeObjectGraph.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Examples/YamlDotNet.Examples.asmdef" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Examples/YamlDotNet.Examples.asmdef.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Helpers.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Helpers/ExpressionExtensions.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Helpers/ExpressionExtensions.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Helpers/GenericCollectionToNonGenericAdapter.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Helpers/GenericCollectionToNonGenericAdapter.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Helpers/GenericDictionaryToNonGenericAdapter.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Helpers/GenericDictionaryToNonGenericAdapter.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Helpers/IOrderedDictionary.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Helpers/IOrderedDictionary.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Helpers/NumberExtensions.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Helpers/NumberExtensions.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Helpers/OrderedDictionary.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Helpers/OrderedDictionary.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Portability.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Portability/NullableReferences.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Portability/NullableReferences.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Portability/netstandard1.3.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Portability/netstandard1.3/CultureInfoAdapter.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Portability/netstandard1.3/CultureInfoAdapter.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Portability/netstandard1.3/ReflectionExtensions.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Portability/netstandard1.3/ReflectionExtensions.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Portability/unitysubset3.5.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Portability/unitysubset3.5/PropertyInfoExtensions.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Portability/unitysubset3.5/PropertyInfoExtensions.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Portability/unitysubset3.5/StandardRegexOptions.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Portability/unitysubset3.5/StandardRegexOptions.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Readme.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Readme.txt.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/RepresentationModel.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/RepresentationModel/DocumentLoadingState.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/RepresentationModel/DocumentLoadingState.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/RepresentationModel/EmitterState.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/RepresentationModel/EmitterState.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/RepresentationModel/IYamlVisitor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/RepresentationModel/IYamlVisitor.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/RepresentationModel/LibYamlEventStream.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/RepresentationModel/LibYamlEventStream.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/RepresentationModel/YamlAliasNode.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/RepresentationModel/YamlAliasNode.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/RepresentationModel/YamlDocument.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/RepresentationModel/YamlDocument.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/RepresentationModel/YamlMappingNode.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/RepresentationModel/YamlMappingNode.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/RepresentationModel/YamlNode.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/RepresentationModel/YamlNode.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/RepresentationModel/YamlNodeIdentityEqualityComparer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/RepresentationModel/YamlNodeIdentityEqualityComparer.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/RepresentationModel/YamlNodeType.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/RepresentationModel/YamlNodeType.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/RepresentationModel/YamlScalarNode.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/RepresentationModel/YamlScalarNode.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/RepresentationModel/YamlSequenceNode.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/RepresentationModel/YamlSequenceNode.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/RepresentationModel/YamlStream.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/RepresentationModel/YamlStream.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/RepresentationModel/YamlVisitor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/RepresentationModel/YamlVisitor.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/RepresentationModel/YamlVisitorBase.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/RepresentationModel/YamlVisitorBase.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/BuilderSkeleton.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/BuilderSkeleton.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/Converters.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/Converters/DateTimeConverter.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/Converters/DateTimeConverter.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/Converters/GuidConverter.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/Converters/GuidConverter.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/Converters/SystemTypeConverter.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/Converters/SystemTypeConverter.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/DefaultValuesHandling.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/DefaultValuesHandling.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/Deserializer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/Deserializer.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/DeserializerBuilder.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/DeserializerBuilder.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/EmissionPhaseObjectGraphVisitorArgs.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/EmissionPhaseObjectGraphVisitorArgs.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/EventEmitters.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/EventEmitters/ChainedEventEmitter.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/EventEmitters/ChainedEventEmitter.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/EventEmitters/JsonEventEmitter.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/EventEmitters/JsonEventEmitter.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/EventEmitters/TypeAssigningEventEmitter.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/EventEmitters/TypeAssigningEventEmitter.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/EventEmitters/WriterEventEmitter.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/EventEmitters/WriterEventEmitter.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/EventInfo.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/EventInfo.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/IAliasProvider.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/IAliasProvider.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/IDeserializer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/IDeserializer.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/IEventEmitter.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/IEventEmitter.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/INamingConvention.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/INamingConvention.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/INodeDeserializer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/INodeDeserializer.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/INodeTypeResolver.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/INodeTypeResolver.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/IObjectDescriptor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/IObjectDescriptor.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/IObjectFactory.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/IObjectFactory.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/IObjectGraphTraversalStrategy.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/IObjectGraphTraversalStrategy.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/IObjectGraphVisitor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/IObjectGraphVisitor.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/IPropertyDescriptor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/IPropertyDescriptor.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/IRegistrationLocationSelectionSyntax.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/IRegistrationLocationSelectionSyntax.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/ISerializer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/ISerializer.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/ITypeInspector.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/ITypeInspector.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/ITypeResolver.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/ITypeResolver.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/IValueDeserializer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/IValueDeserializer.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/IValuePromise.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/IValuePromise.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/IValueSerializer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/IValueSerializer.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/IYamlConvertible.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/IYamlConvertible.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/IYamlSerializable.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/IYamlSerializable.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/IYamlTypeConverter.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/IYamlTypeConverter.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/LazyComponentRegistrationList.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/LazyComponentRegistrationList.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/LazyComponentRegistrationListExtensions.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/LazyComponentRegistrationListExtensions.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/NamingConventions.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/NamingConventions/CamelCaseNamingConvention.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/NamingConventions/CamelCaseNamingConvention.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/NamingConventions/HyphenatedNamingConvention.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/NamingConventions/HyphenatedNamingConvention.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/NamingConventions/LowerCaseNamingConvention.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/NamingConventions/LowerCaseNamingConvention.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/NamingConventions/NullNamingConvention.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/NamingConventions/NullNamingConvention.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/NamingConventions/PascalCaseNamingConvention.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/NamingConventions/PascalCaseNamingConvention.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/NamingConventions/UnderscoredNamingConvention.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/NamingConventions/UnderscoredNamingConvention.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/NodeDeserializers.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/NodeDeserializers/ArrayNodeDeserializer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/NodeDeserializers/ArrayNodeDeserializer.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/NodeDeserializers/CollectionNodeDeserializer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/NodeDeserializers/CollectionNodeDeserializer.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/NodeDeserializers/DictionaryNodeDeserializer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/NodeDeserializers/DictionaryNodeDeserializer.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/NodeDeserializers/EnumerableNodeDeserializer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/NodeDeserializers/EnumerableNodeDeserializer.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/NodeDeserializers/NullNodeDeserializer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/NodeDeserializers/NullNodeDeserializer.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/NodeDeserializers/ObjectNodeDeserializer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/NodeDeserializers/ObjectNodeDeserializer.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/NodeDeserializers/ScalarNodeDeserializer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/NodeDeserializers/ScalarNodeDeserializer.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/NodeDeserializers/TypeConverterNodeDeserializer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/NodeDeserializers/TypeConverterNodeDeserializer.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/NodeDeserializers/YamlConvertibleNodeDeserializer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/NodeDeserializers/YamlConvertibleNodeDeserializer.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/NodeDeserializers/YamlSerializableNodeDeserializer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/NodeDeserializers/YamlSerializableNodeDeserializer.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/NodeTypeResolvers.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/NodeTypeResolvers/DefaultContainersNodeTypeResolver.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/NodeTypeResolvers/DefaultContainersNodeTypeResolver.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/NodeTypeResolvers/MappingNodeTypeResolver.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/NodeTypeResolvers/MappingNodeTypeResolver.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/NodeTypeResolvers/RejectUnknownTagsNodeTypeResolver.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/NodeTypeResolvers/RejectUnknownTagsNodeTypeResolver.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/NodeTypeResolvers/TagNodeTypeResolver.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/NodeTypeResolvers/TagNodeTypeResolver.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/NodeTypeResolvers/TypeNameInTagNodeTypeResolver.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/NodeTypeResolvers/TypeNameInTagNodeTypeResolver.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/NodeTypeResolvers/YamlConvertibleTypeResolver.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/NodeTypeResolvers/YamlConvertibleTypeResolver.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/NodeTypeResolvers/YamlSerializableTypeResolver.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/NodeTypeResolvers/YamlSerializableTypeResolver.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/Nothing.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/Nothing.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/ObjectDescriptor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/ObjectDescriptor.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/ObjectFactories.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/ObjectFactories/DefaultObjectFactory.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/ObjectFactories/DefaultObjectFactory.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/ObjectFactories/LambdaObjectFactory.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/ObjectFactories/LambdaObjectFactory.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/ObjectGraphTraversalStrategies.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/ObjectGraphTraversalStrategies/FullObjectGraphTraversalStrategy.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/ObjectGraphTraversalStrategies/FullObjectGraphTraversalStrategy.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/ObjectGraphTraversalStrategies/RoundtripObjectGraphTraversalStrategy.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/ObjectGraphTraversalStrategies/RoundtripObjectGraphTraversalStrategy.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/ObjectGraphTraversalStrategyFactory.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/ObjectGraphTraversalStrategyFactory.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/ObjectGraphVisitors.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/ObjectGraphVisitors/AnchorAssigner.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/ObjectGraphVisitors/AnchorAssigner.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/ObjectGraphVisitors/AnchorAssigningObjectGraphVisitor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/ObjectGraphVisitors/AnchorAssigningObjectGraphVisitor.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/ObjectGraphVisitors/ChainedObjectGraphVisitor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/ObjectGraphVisitors/ChainedObjectGraphVisitor.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/ObjectGraphVisitors/CommentsObjectGraphVisitor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/ObjectGraphVisitors/CommentsObjectGraphVisitor.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/ObjectGraphVisitors/CustomSerializationObjectGraphVisitor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/ObjectGraphVisitors/CustomSerializationObjectGraphVisitor.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/ObjectGraphVisitors/DefaultExclusiveObjectGraphVisitor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/ObjectGraphVisitors/DefaultExclusiveObjectGraphVisitor.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/ObjectGraphVisitors/DefaultValuesObjectGraphVisitor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/ObjectGraphVisitors/DefaultValuesObjectGraphVisitor.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/ObjectGraphVisitors/EmittingObjectGraphVisitor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/ObjectGraphVisitors/EmittingObjectGraphVisitor.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/ObjectGraphVisitors/PreProcessingPhaseObjectGraphVisitorSkeleton.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/ObjectGraphVisitors/PreProcessingPhaseObjectGraphVisitorSkeleton.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/PropertyDescriptor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/PropertyDescriptor.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/Schemas.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/Schemas/FailsafeSchema.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/Schemas/FailsafeSchema.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/Serializer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/Serializer.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/SerializerBuilder.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/SerializerBuilder.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/StreamFragment.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/StreamFragment.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/TagMappings.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/TagMappings.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/TypeInspectors.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/TypeInspectors/CachedTypeInspector.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/TypeInspectors/CachedTypeInspector.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/TypeInspectors/CompositeTypeInspector.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/TypeInspectors/CompositeTypeInspector.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/TypeInspectors/NamingConventionTypeInspector.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/TypeInspectors/NamingConventionTypeInspector.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/TypeInspectors/ReadableAndWritablePropertiesTypeInspector.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/TypeInspectors/ReadableAndWritablePropertiesTypeInspector.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/TypeInspectors/ReadableFieldsTypeInspector.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/TypeInspectors/ReadableFieldsTypeInspector.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/TypeInspectors/ReadablePropertiesTypeInspector.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/TypeInspectors/ReadablePropertiesTypeInspector.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/TypeInspectors/TypeInspectorSkeleton.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/TypeInspectors/TypeInspectorSkeleton.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/TypeResolvers.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/TypeResolvers/DynamicTypeResolver.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/TypeResolvers/DynamicTypeResolver.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/TypeResolvers/StaticTypeResolver.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/TypeResolvers/StaticTypeResolver.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/Utilities.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/Utilities/IPostDeserializationCallback.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/Utilities/IPostDeserializationCallback.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/Utilities/ObjectAnchorCollection.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/Utilities/ObjectAnchorCollection.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/Utilities/ReflectionUtility.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/Utilities/ReflectionUtility.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/Utilities/SerializerState.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/Utilities/SerializerState.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/Utilities/StringExtensions.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/Utilities/StringExtensions.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/Utilities/TypeConverter.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/Utilities/TypeConverter.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/ValueDeserializers.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/ValueDeserializers/AliasValueDeserializer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/ValueDeserializers/AliasValueDeserializer.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/ValueDeserializers/NodeValueDeserializer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/ValueDeserializers/NodeValueDeserializer.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/YamlAttributeOverrides.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/YamlAttributeOverrides.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/YamlAttributeOverridesInspector.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/YamlAttributeOverridesInspector.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/YamlAttributesTypeInspector.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/YamlAttributesTypeInspector.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/YamlFormatter.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/YamlFormatter.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/YamlIgnoreAttribute.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/YamlIgnoreAttribute.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/YamlMemberAttribute.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/Serialization/YamlMemberAttribute.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/YamlDotNet.asmdef" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/YamlDotNet.asmdef.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/YamlDotNet.license.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/YamlDotNet.license.txt.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/csc.rsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/YamlDotNet/csc.rsp.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.UAVSimulation/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UAVSimulation/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Channels/UAVs/Submodules/Navigation/uavReroutedEventChannel.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Channels/UAVs/Submodules/Navigation/uavReroutedEventChannel.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Channels/UAVs/UavChannelsSO.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Channels/UAVs/UavChannelsSO.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameManager/CanvasManager.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameManager/CanvasManager.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Channels/UAVs/Submodules/Navigation/NavigationChannels.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Channels/UAVs/Submodules/Navigation/NavigationChannels.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Channels/UAVs/reroutingOptionsRequestedChannel.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Channels/UAVs/reroutingOptionsRequestedChannel.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DoIt.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DoIt.cs.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/GameManager/Databases/PrefabsDatabase.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameManager/Databases/PrefabsDatabase.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameManager/Databases/SettingsDatabase.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameManager/Databases/SettingsDatabase.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/GameManager/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameManager/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameManager/Settings/FuelAndHealthSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameManager/Settings/FuelAndHealthSettings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/GameManager/Settings/NavigationSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameManager/Settings/NavigationSettings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/GameManager/Settings/UavCameraSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameManager/Settings/UavCameraSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HelperScripts/AssertionHelper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HelperScripts/AssertionHelper.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HelperScripts/ColorHelper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HelperScripts/ColorHelper.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HelperScripts/NatoAlphabetConverter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HelperScripts/NatoAlphabetConverter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/IOHandlers/Records/DefaultRecordsCreator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/IOHandlers/Records/DefaultRecordsCreator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/IOHandlers/Records/RootObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/IOHandlers/Records/RootObject.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/JsonSerializerTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/JsonSerializerTest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/New Terrain.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/New Terrain.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Sprites/EmojiOne.json" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Sprites/EmojiOne.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prompts/PromptsManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prompts/PromptsManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SimulationScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SimulationScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Databases/PrefabsDatabaseSO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Databases/PrefabsDatabaseSO.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Databases/SettingsDatabaseSO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Databases/SettingsDatabaseSO.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/EventChannels/IntEventChannelSO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/EventChannels/IntEventChannelSO.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/UAVs/Navigation/NavigationChannelsSO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/UAVs/Navigation/NavigationChannelsSO.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/UAVs/Navigation/NavigationSettingsSO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/UAVs/Navigation/NavigationSettingsSO.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/UAVs/UavChannelsSO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/UAVs/UavChannelsSO.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/UAVs/UavSettingsSO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/UAVs/UavSettingsSO.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/TargetDetection/CameraAndTargetDetectionPanelsManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TargetDetection/CameraAndTargetDetectionPanelsManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TargetDetection/Prefabs/TargetBoxPrefab.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TargetDetection/Prefabs/TargetBoxPrefab.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TargetDetection/Target.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TargetDetection/Target.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TargetDetection/TargetsManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TargetDetection/TargetsManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TargetDetection/UavCameraAndTargetDetectionPanelController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TargetDetection/UavCameraAndTargetDetectionPanelController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UAVs/Prefabs/UAV.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UAVs/Prefabs/UAV.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UAVs/Sub-Modules/FuelAndHealth/FuelAndHealthController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UAVs/Sub-Modules/FuelAndHealth/FuelAndHealthController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/UAVs/Sub-Modules/FuelAndHealth/FuelAndHealthManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UAVs/Sub-Modules/FuelAndHealth/FuelAndHealthManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UAVs/Sub-Modules/FuelAndHealth/StatusPanelController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UAVs/Sub-Modules/FuelAndHealth/StatusPanelController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UAVs/Sub-Modules/FuelAndHealth/fuelIndicatorPanelPrefab.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UAVs/Sub-Modules/FuelAndHealth/fuelIndicatorPanelPrefab.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/UAVs/Sub-Modules/Navigation/NavigationManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UAVs/Sub-Modules/Navigation/NavigationManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/UAVs/Sub-Modules/Navigation/Navigator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UAVs/Sub-Modules/Navigation/Navigator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UAVs/Sub-Modules/Navigation/Path.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UAVs/Sub-Modules/Navigation/Path.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UAVs/Sub-Modules/Navigation/PathsGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UAVs/Sub-Modules/Navigation/PathsGenerator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UAVs/Sub-Modules/Rerouting/Prefabs/rerouteButtonPrefab.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UAVs/Sub-Modules/Rerouting/Prefabs/rerouteButtonPrefab.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UAVs/Sub-Modules/Rerouting/Prefabs/reroutingOptionsPanelsPrefab.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UAVs/Sub-Modules/Rerouting/Prefabs/reroutingOptionsPanelsPrefab.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UAVs/Sub-Modules/Rerouting/ReroutingButtonsContainerManager.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UAVs/Sub-Modules/Rerouting/ReroutingButtonsContainerManager.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UAVs/Sub-Modules/Rerouting/ReroutingButtonsContainerController.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UAVs/Sub-Modules/Rerouting/ReroutingManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UAVs/Sub-Modules/Rerouting/ReroutingManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UAVs/Sub-Modules/Rerouting/ReroutingPanelController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UAVs/Sub-Modules/Rerouting/ReroutingPanelController.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UAVs/Sub-Modules/Rerouting/ReroutingPanelsManager.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UAVs/Sub-Modules/Rerouting/ReroutingPanelsManager.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UAVs/Uav.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UAVs/Uav.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UAVs/UavSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UAVs/UavSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UAVs/UavsGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UAVs/UavsGenerator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UAVs/UavsManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UAVs/UavsManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/WayPoints/WayPointsGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/WayPoints/WayPointsGenerator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/WayPoints/WayPointsManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/WayPoints/WayPointsManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,6 +602,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/IL/de1f8ef4975b4eacbeb0accc1b22c9b02a000/45/4c3b411a/0200001A.il" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/IL/f1212ad1dec44ce7b7147976b91869c3157800/95/d3da7fef/0200023D.il" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/a7509b77b76148bb9ed287939126002744800/9a/d53c713a/02000025pdb54.il" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/36f62d8e760b48f7af5d32916f997ce1811400/14/83dfea2b/MessageType.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/599ef6b6d50f4e488ca73e2010b5243610fc00/70/b1ad8dee/Enumerable.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/599ef6b6d50f4e488ca73e2010b5243610fc00/a1/8b60134a/Enumerable.cs" root0="SKIP_HIGHLIGHTING" />
@@ -56,13 +610,18 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/880832f2c4e2458090401bbb74a86b24a8a00/68/17f2568f/JsonConverterAttribute.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/92528fbd7e224e579bebcb5f422062386c00/e0/8d649a7c/Canvas.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/93f0c732886d4c2abb63604e73b3380322600/ed/d1a8ee25/NavigationManager.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/986bc431530c4e10a9a66db75ccf7a921a000/5e/9d21c6c2/Collision.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/986bc431530c4e10a9a66db75ccf7a921a000/b5/dcb13cdc/Physics.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/c4094ec9f20d4e6cb51937772ba9fb623a00/49/cb18bd77/NativeInputSystem.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d4cde64232cf45659d86aafa597faa7746a800/00/8ec6e158/SystemException.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d4cde64232cf45659d86aafa597faa7746a800/1f/a446b034/Array.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d4cde64232cf45659d86aafa597faa7746a800/27/af136265/IntPtr.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d4cde64232cf45659d86aafa597faa7746a800/48/9dc09a1f/SystemException.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d4cde64232cf45659d86aafa597faa7746a800/49/aae2e0c0/Queue`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d4cde64232cf45659d86aafa597faa7746a800/5d/7eca01a0/String.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d4cde64232cf45659d86aafa597faa7746a800/63/4dc66c55/Nullable`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d4cde64232cf45659d86aafa597faa7746a800/7b/991b1fec/List`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d4cde64232cf45659d86aafa597faa7746a800/a2/7b84ebdc/List`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d4cde64232cf45659d86aafa597faa7746a800/c7/54acb411/NullReferenceException.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d4cde64232cf45659d86aafa597faa7746a800/da/14d4ac4d/EqualityComparer`1.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d4cde64232cf45659d86aafa597faa7746a800/ec/66e5778e/Dictionary`2.cs" root0="SKIP_HIGHLIGHTING" />
@@ -77,22 +636,26 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f1212ad1dec44ce7b7147976b91869c3157800/13/ae77c4fe/SetupCoroutine.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f1212ad1dec44ce7b7147976b91869c3157800/1a/1e1257ce/UnityEvent.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f1212ad1dec44ce7b7147976b91869c3157800/1c/a49fbe88/Gizmos.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f1212ad1dec44ce7b7147976b91869c3157800/2d/901cf46b/InvokableCall.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f1212ad1dec44ce7b7147976b91869c3157800/30/45b57533/RenderTexture.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f1212ad1dec44ce7b7147976b91869c3157800/3f/2c30821a/Object.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f1212ad1dec44ce7b7147976b91869c3157800/45/673bb8a6/MonoBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f1212ad1dec44ce7b7147976b91869c3157800/45/d031f111/Debug.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f1212ad1dec44ce7b7147976b91869c3157800/4d/2e53ff8f/MonoBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f1212ad1dec44ce7b7147976b91869c3157800/8a/5ef523ab/Debug.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f1212ad1dec44ce7b7147976b91869c3157800/8a/baf9f097/Object.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f1212ad1dec44ce7b7147976b91869c3157800/92/c455cae0/GameObject.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f1212ad1dec44ce7b7147976b91869c3157800/99/87e139da/Component.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f1212ad1dec44ce7b7147976b91869c3157800/9a/796bcb36/SetupCoroutine.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f1212ad1dec44ce7b7147976b91869c3157800/aa/38a78eba/UnityEvent`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f1212ad1dec44ce7b7147976b91869c3157800/b7/438f1536/Transform.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f1212ad1dec44ce7b7147976b91869c3157800/da/659c28cd/UnityEvent.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f1212ad1dec44ce7b7147976b91869c3157800/ec/c3b064a0/Time.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f1212ad1dec44ce7b7147976b91869c3157800/f1/bded1bd7/Component.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/feb81fc2099144119a27e7f371fd14074cde00/53/86a9b8e3/ClientConnectionPool.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/5377ac4e788cc4f8c6545362cee39859969c7b346233bb3bdcf6191179ada9/System.Drawing.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/5995835e2565222bd845851833bf32626f8a8e23753c86c8cc54d6f22587cd6a/System.Globalization.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/d44b17e136d09081da1e8fd0e8c83fde60e11818b9f2442d7ed8cb733fae895e/System.Collections.Generic.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/DoIt.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/IOHandlers/FileManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/IOHandlers/InputFilesHandler.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/IOHandlers/Records/Coordinates.cs" root0="FORCE_HIGHLIGHTING" />
@@ -104,6 +667,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/ScriptableObjects/EventChannels/Uav_TargetsEventChannelSO.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/ScriptableObjects/TargetDetection/TargetDetectionChannelsSO.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/TargetDetection/UavCameraAndTargetDetectionPanelController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/UAVs/Sub-Modules/Navigation/Paths Rendering/PathRenderer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.cinemachine@2.8.3/Editor/Impulse/CinemachineImpulseChannels.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.cinemachine@2.8.3/Editor/Utility/VcamStageEditor.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.cinemachine@2.8.3/Runtime/Behaviours/CinemachineBlendListCamera.cs" root0="SKIP_HIGHLIGHTING" />
@@ -121,7 +685,9 @@
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/UI/Core/Graphic.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/UI/Core/Layout/HorizontalLayoutGroup.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/UI/Core/Layout/HorizontalOrVerticalLayoutGroup.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/UI/Core/Layout/LayoutElement.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/UI/Core/Layout/LayoutGroup.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/UI/Core/Layout/VerticalLayoutGroup.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/UI/Core/RawImage.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Tests/Editor/InputField/ContentValidation.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/Button/ButtonTests.cs" root0="SKIP_HIGHLIGHTING" />
@@ -132,6 +698,7 @@
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/TextEditor/TextEditorTests.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.visualscripting@1.7.8/Runtime/VisualScripting.Core/Utilities/ComponentHolderProtocol.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../UAV_Sim/Assets/Scripts/CustomNetworkManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../UAV_Sim/Assets/Scripts/DrawRoutes.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../UAV_Sim/Assets/Scripts/EyeTracker.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../UAV_Sim/Assets/Scripts/GazepointClient.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../UAV_Sim/Assets/Scripts/Initializer.cs" root0="SKIP_HIGHLIGHTING" />
@@ -163,7 +730,7 @@
     "XThreadsFramesViewSplitterKey": "0.50076336",
     "last_opened_file_path": "C:/Users/abdel/OneDrive - University of Virginia/UVA/Research/UAV/UAVSimulation",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.sourceCode.C#",
+    "settings.editor.selected.configurable": "CodeCleanupOptionsPage",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -194,10 +761,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="21680">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="28396">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="21680" />
+      <option name="pid" value="28396" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -252,7 +819,10 @@
       <workItem from="1662325649016" duration="15587000" />
       <workItem from="1662347557813" duration="3125000" />
       <workItem from="1662398580349" duration="22308000" />
-      <workItem from="1662446390864" duration="43711000" />
+      <workItem from="1662446390864" duration="48279000" />
+      <workItem from="1662692140095" duration="3741000" />
+      <workItem from="1662702390949" duration="26483000" />
+      <workItem from="1662813479990" duration="60994000" />
     </task>
     <servers />
   </component>

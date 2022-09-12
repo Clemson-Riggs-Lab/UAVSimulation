@@ -58,7 +58,7 @@ namespace UAVs.Sub_Modules.Fuel
             _fuelAndHealthSettings= GameManager.Instance.settingsDatabase.uavSettings.fuelAndHealthSettings;
             
             _fuelAndHealthController = fuelAndHealthController;
-            idText.text = (_fuelAndHealthController.uav.ID+1).ToString();
+            idText.text = _fuelAndHealthController.uav.uavName;
             fuelSlider.maxValue = _fuelAndHealthController.GetStartingFuelLevel();
 
             // listen to events from fuelAndHealthController

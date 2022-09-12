@@ -19,23 +19,16 @@ namespace WayPoints
 
         private void Start()
         { 
-            GetSettingsFromGameManager(); 
-            AssertReferencesNotNull();
- 
+            GetReferencesFromGameManager();
         }
 
-        private void GetSettingsFromGameManager()
+        private void GetReferencesFromGameManager()
         { 
             _wayPointsContainer = GameManager.Instance.wayPointsContainer;
             _terrainContainer = GameManager.Instance.terrainContainer;
             _wayPointPrefab = GameManager.Instance.prefabsDatabase.waypointPrefab;
         }
-        private void AssertReferencesNotNull()
-        {
-            AssertionHelper.AssertObjectReferenceObtainedFromGameManager(_wayPointsContainer, this, gameObject);
-            AssertionHelper.AssertObjectReferenceObtainedFromGameManager(_terrainContainer, this, gameObject);
-            AssertionHelper.AssertPrefabReferenceObtainedFromPrefabsManager(_wayPointPrefab,"waypointPrefab", this, gameObject);
-        }
+        
 
         public void GenerateWayPointsUniformOverPlane(int numOfWayPoints, int numOfCols, int numOfRows)
         {

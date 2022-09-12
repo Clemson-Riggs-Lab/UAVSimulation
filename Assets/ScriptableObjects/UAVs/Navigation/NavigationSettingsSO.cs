@@ -11,7 +11,7 @@ namespace ScriptableObjects.UAVs.Navigation
 
 	    public enum NavigationType 
 	    {
-		    Random, Sequential, BasedOnInputFile, BasedOnDefaultInputFile
+		    BasedOnInputFile, BasedOnDefaultInputFile
 	    }
 	    
 	    public enum FollowType

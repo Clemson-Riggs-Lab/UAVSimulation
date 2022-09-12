@@ -11,7 +11,8 @@ namespace IOHandlers.Records
 		public List<UavRecord> UavsRecords { get; set; }= new List<UavRecord>();
 		public List<UavPathsRecord> UavPathsRecords { get; set; } = new List<UavPathsRecord>();
 		public List<UavFuelLeaksRecord> FuelLeaksRecord { get; set; }= new List<UavFuelLeaksRecord>();
-		public List<Prompt> ChatMessages { get; set; } = new List<Prompt>();
+		public List<Prompt> Prompts { get; set; } = new List<Prompt>();
+		public List<NFZRecord> NFZRecords { get; set; } = new List<NFZRecord>();
 	}
 
 	

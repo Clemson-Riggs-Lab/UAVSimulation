@@ -246,10 +246,10 @@ namespace UAVs.Sub_Modules.Fuel
                 case FromFile:
                 {
                     //select using linq where uav id = uav id
-                    var fuelLeakRecord = GameManager.Instance.jsonSerializerTest.rootObject.FuelLeaksRecord.FirstOrDefault(x => x.UavID == uav.ID);//TODO move records to their own SO
+                    var fuelLeakRecord = GameManager.Instance.jsonSerializerTest.rootObject.FuelLeaksRecord.FirstOrDefault(x => x.UavID == uav.id);//TODO move records to their own SO
                     if (fuelLeakRecord == null)
                     {
-                        Debug.LogWarning("No fuel leak record found for UAV with ID: " + uav.ID);
+                        Debug.LogWarning("No fuel leak record found for UAV with UavName: " + uav.uavName);
                         return;
                     }
                     else
@@ -276,6 +276,11 @@ namespace UAVs.Sub_Modules.Fuel
             foreach (var fuelLeakTime in _fuelLeakTimes)
             {
                 var deltaTime = fuelLeakTime - Time.time;
+                if (uavHealthCondition == Lost)
+                {
+                    Debug.Log("UAV is lost, no fuel leaks will be simulated");
+                    yield break;
+                }
                 if (deltaTime > 0)
                 {
                     yield return new WaitForSeconds(deltaTime); 
@@ -304,15 +309,15 @@ namespace UAVs.Sub_Modules.Fuel
             var navigator = uav.GetComponent<Navigator>();
             if (navigator == null)
             {
-                Debug.LogWarning("No navigator found on UAV with ID: " + uav.ID+". couldn't compute fuel starting level based on paths");
+                Debug.LogWarning("No navigator found on UAV with UavName: " + uav.uavName+". couldn't compute fuel starting level based on paths");
                 return;
             }
             else
             {
                 _fuelConsumptionPerSecond = 1f;
-                if (navigator.speedMode == NavigationSettingsSO.SpeedMode.FixedPathDuration)
+                if (navigator.navigationSettings.speedMode == NavigationSettingsSO.SpeedMode.FixedPathDuration)
                 {
-                    SetStartingFuelLevel(navigator.Paths.Count * navigator.pathDuration);
+                    SetStartingFuelLevel(navigator.Paths.Count * navigator.navigationSettings.pathDuration);
                             
                 }
                 else

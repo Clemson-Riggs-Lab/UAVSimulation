@@ -22,9 +22,9 @@ MonoBehaviour:
     centerText: 
     bottomText: 
   fuelLeakCameraAndTargetDetectionConfigs:
-    videoArtifacts: 3
+    videoArtifacts: 0
     centerText: Fuel Leaking
-    bottomText: 
+    bottomText: Fix leak in  panel below
   fatalLeakCameraAndTargetDetectionConfigs:
     videoArtifacts: 0
     centerText: 

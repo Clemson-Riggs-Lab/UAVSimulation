@@ -7,64 +7,39 @@ namespace UAVs.Sub_Modules.Navigation
 {
     public class Path
     {
-        [HideInInspector] public WayPoint StartingWayPoint;
-        [HideInInspector] public WayPoint DestinationWayPoint;
+        [HideInInspector] public WayPoint destinationWayPoint;
         
-        [HideInInspector] public int startingWayPointID;
-        [HideInInspector] public int destinationWayPointID;
-        [HideInInspector] public Uav Uav;
         [HideInInspector] public int id;
-        [HideInInspector] public bool isActive;
+        [HideInInspector] public Uav uav;
         [HideInInspector] public bool uavIsVisuallyEnabled;
-        [HideInInspector] public bool TargetIsPresent;
-        [HideInInspector] public bool isFinished;
-        [HideInInspector] public float speed=1f;
+        [HideInInspector] public bool targetIsPresent;
+        
+        public Path previousPath;
+        public Path nextPath;
         
         //fields below are set when the path becomes active and when it is completed.
-        [NonSerialized] public DateTime StartTime;
-        [NonSerialized] public DateTime EndTime;
-        
+        [NonSerialized] public DateTime startTime;
+        [NonSerialized] public DateTime endTime;
         
 
-        public Path(int id, Uav uav,WayPoint startingWayPoint, WayPoint destinationWayPoint)
+        public Path(int id, Uav uav, WayPoint destinationWayPoint, bool visuallyEnabled, bool targetIsPresent)
         {
             this.id = id;
-            this.Uav = uav;
-            this.StartingWayPoint = startingWayPoint;
-            this.DestinationWayPoint = destinationWayPoint;
-            
-            startingWayPointID = startingWayPoint.Id;
-            destinationWayPointID = destinationWayPoint.Id;
-            
-            isActive = false;
-        }
-        
-        public void PathActivated()
-        {
-            var pathDuration = 10f;
-           speed = (DestinationWayPoint.transform.position - StartingWayPoint.transform.position).magnitude / pathDuration;
-            
-            StartTime = DateTime.Now;
-            isActive = true;
-            Uav.isVisuallyEnabled = uavIsVisuallyEnabled;
-            Uav.SetUavVisuallyEnabled(uavIsVisuallyEnabled == true);
-           
-            Debug.Log("Path " + id + " activated" + "by UAV " + Uav.ID + "from " + StartingWayPoint.Id + " to " + DestinationWayPoint.Id);
-            
-        }   
-        
-        public void PathCompleted()
-        {
-            EndTime = DateTime.Now;
-            isActive = false;
-            isFinished = true;
+            this.uav = uav;
+            this.destinationWayPoint = destinationWayPoint;
+            this.uavIsVisuallyEnabled = visuallyEnabled;
+            this.targetIsPresent = targetIsPresent;
         }
 
-
-        public void Initialize(UavPathsRecord.PathRecord record)
+        public Path(Path path)
         {
-           this.uavIsVisuallyEnabled= record.UavVisuallyEnabled??false;
-           this.TargetIsPresent = record.TargetIsPresent??false;
+            this.id = path.id;
+            this.uav = path.uav;
+            this.destinationWayPoint = path.destinationWayPoint;
+            this.uavIsVisuallyEnabled = path.uavIsVisuallyEnabled;
+            this.targetIsPresent = path.targetIsPresent;
+            this.previousPath = path.previousPath;
+            this.nextPath = path.nextPath;
         }
     }
 }

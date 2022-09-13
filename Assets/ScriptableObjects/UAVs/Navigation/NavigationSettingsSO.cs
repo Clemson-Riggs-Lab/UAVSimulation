@@ -2,6 +2,8 @@ using System;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using UnityEngine;
+using static HelperScripts.Enums;
+using static HelperScripts.Enums.InputRecordsSource;
 
 namespace ScriptableObjects.UAVs.Navigation
 {
@@ -9,10 +11,7 @@ namespace ScriptableObjects.UAVs.Navigation
     public class NavigationSettingsSO:ScriptableObject
     {
 
-	    public enum NavigationType 
-	    {
-		    BasedOnInputFile, BasedOnDefaultInputFile
-	    }
+	  
 	    
 	    public enum FollowType
 	    {
@@ -50,7 +49,7 @@ namespace ScriptableObjects.UAVs.Navigation
 	    
 	    [Space(20)]
 	    [JsonConverter(typeof(StringEnumConverter))]
-	    public NavigationType navigationType = NavigationType.BasedOnDefaultInputFile;
+	    public InputRecordsSource navigationRecordsSource = FromInputFile;
 	   
 	    [Space(20)]
 	   
@@ -81,7 +80,7 @@ namespace ScriptableObjects.UAVs.Navigation
 	    [Space(20)]
 	    
 	    [Tooltip("Ignore waypoint position on selected axis")]
-	    public UsedAxis ignorePositionAtAxis; // Ignore waypoint position along those axis
+	    public UsedAxis ignoreWaypointPositionOnAxis; // Ignore waypoint position along those axis
 	    
 	    [Space(20)]
 	    

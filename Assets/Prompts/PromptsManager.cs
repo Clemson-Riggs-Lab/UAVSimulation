@@ -2,12 +2,13 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using HelperScripts;
 using IOHandlers.Records;
 using Menu;
 using Prompts.ScriptableObjects;
 using ScriptableObjects.EventChannels;
 using UnityEngine;
-using static Prompts.ScriptableObjects.PromptSettingsSO.PromptsSource;
+using static HelperScripts.Enums.InputRecordsSource;
 
 namespace Prompts
 {
@@ -20,18 +21,8 @@ namespace Prompts
 		
 		public void Initialize()
 		{
-			GameManager.Instance.promptsManager = this; //telling the game manager that I am the prompt manager
 			GetReferencesFromGameManager();
-			
-			if (promptSettings.promptsSource != Disabled)
-			{
-				LoadPrompts();
-			}
-			else
-			{
-				Destroy(this);
-			}
-			StartCoroutine(StartPromptsTimerCoroutine());
+			LoadPrompts();
 		}
 
 		private void GetReferencesFromGameManager()
@@ -40,11 +31,19 @@ namespace Prompts
 			newPromptEventChannel= GameManager.Instance.channelsDatabase.promptChannels.newPromptEventChannel;
 		}
 		
-		private IEnumerator StartPromptsTimerCoroutine()
+		public IEnumerator StartPromptsTimerCoroutine(float simulationStartTime)
 		{
+			if (prompts.Count == 0)
+			{
+				Debug.LogError("No prompts found");
+				yield break;
+			}
+			
+			yield return new WaitForSeconds(simulationStartTime-Time.time);
+			
 			foreach (var prompt in prompts)
 			{
-				var deltaTime = prompt.timeToPresent - Time.time;
+				var deltaTime = prompt.timeToPresent +GameManager.Instance.simulationStartTime - Time.time;
 				if (deltaTime > 0)
 				{
 					yield return new WaitForSeconds(deltaTime);
@@ -65,54 +64,16 @@ namespace Prompts
 		}
 		
 		
-		private void LoadPrompts()
+		public void LoadPrompts()
 		{
-			switch (promptSettings.promptsSource)
+			prompts = promptSettings.promptsSource switch
 			{
-				case FromDefaultRecords:
-					LoadPromptsFromDefaultRecords();
-					break;
-				case FromFile:
-					LoadPromptsFromFile();
-					break;
-				case RandomMessages:
-					throw new NotImplementedException();
-				case Disabled:
-				default:
-					Debug.LogWarning("Prompts source is not set");
-					break;
-			}
+				FromInputFile => GameManager.Instance.inputRecordsDatabase.Prompts,
+				FromDefaultRecords => DefaultRecordsCreator.AddDefaultPromptRecords(),
+				_ => throw new ArgumentOutOfRangeException()
+			};
 		}
 		
-		private void LoadPromptsFromDefaultRecords()
-		{
-			var promptsRecords = DefaultRecordsCreator.AddDefaultPromptRecords();
-			if (promptsRecords == null)
-			{
-				Debug.LogWarning("No Prompts were found in the file");
-				return;
-			}
-			else
-			{
-				prompts= promptsRecords;
-			}
-		}
-
-		private void LoadPromptsFromFile()
-		{
-			//TODO change to dynamically get records from external serialized file.
-			//placeholder code below
-			var promptsRecords = DefaultRecordsCreator.AddDefaultPromptRecords();
-			if (promptsRecords == null)
-			{
-				Debug.LogWarning("No Prompts were found in the file");
-				return;
-			}
-			else
-			{
-				prompts= promptsRecords;
-			}
-		}
 		
 		private void OnDisable()
 		{

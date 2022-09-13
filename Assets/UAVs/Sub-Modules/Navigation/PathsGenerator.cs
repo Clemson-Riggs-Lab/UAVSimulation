@@ -22,7 +22,7 @@ namespace UAVs.Navigation
         {
             uavsManager= GameManager.Instance.uavsManager;
             wayPointsManager= GameManager.Instance.wayPointsManager;
-            navigationSettings= GameManager.Instance.settingsDatabase.uavSettings.navigationSettings;
+            navigationSettings= GameManager.Instance.settingsDatabase.uavSettingsDatabase.navigationSettings;
         }
         
        public Dictionary<Uav,Navigator> GeneratePaths( List<UavPathsRecord> uavPathsRecords)

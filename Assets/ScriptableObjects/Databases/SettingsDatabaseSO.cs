@@ -5,6 +5,7 @@ using ScriptableObjects.TargetDetection;
 using ScriptableObjects.UAVs;
 using ScriptableObjects.UAVs.Navigation;
 using ScriptableObjects.UAVs.Navigation.Rerouting;
+using ScriptableObjects.Waypoints;
 using UnityEngine;
 
 namespace ScriptableObjects.Databases
@@ -13,10 +14,11 @@ namespace ScriptableObjects.Databases
 
 	public class SettingsDatabaseSO:ScriptableObject
 	{
-
+		
+		public WaypointSettingsSO waypointSettings;
 		public PromptSettingsSO promptSettings;
 		public TargetDetectionSettingsSO targetDetectionSettings;
-		public UavSettingsSO uavSettings;
+		public UavSettingsDatabaseSO uavSettingsDatabase;
 		public ReroutingSettingsSO reroutingSettings;
 		public NFZSettingsSO nfzSettings;
 		private void OnEnable()
@@ -26,9 +28,10 @@ namespace ScriptableObjects.Databases
 
 		private void AssertAllReferencesAreNotNull()
 		{
+			AssertionHelper.AssertAssetReferenced(waypointSettings,this);
 			AssertionHelper.AssertAssetReferenced(promptSettings,this);
 			AssertionHelper.AssertAssetReferenced(targetDetectionSettings,this);
-			AssertionHelper.AssertAssetReferenced(uavSettings,this);
+			AssertionHelper.AssertAssetReferenced(uavSettingsDatabase,this);
 			AssertionHelper.AssertAssetReferenced(reroutingSettings,this);
 			AssertionHelper.AssertAssetReferenced(nfzSettings,this);
 		}

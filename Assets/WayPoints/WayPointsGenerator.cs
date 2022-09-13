@@ -11,13 +11,11 @@ namespace WayPoints
 {
     public class WayPointsGenerator:MonoBehaviour
     {
-        public int gridLength=4;
-        public int gridWidth=4;
         private GameObject _wayPointPrefab=null;
         private GameObject _wayPointsContainer;
         private GameObject _terrainContainer;
 
-        private void Start()
+        public void Initialize()
         { 
             GetReferencesFromGameManager();
         }
@@ -29,32 +27,6 @@ namespace WayPoints
             _wayPointPrefab = GameManager.Instance.prefabsDatabase.waypointPrefab;
         }
         
-
-        public void GenerateWayPointsUniformOverPlane(int numOfWayPoints, int numOfCols, int numOfRows)
-        {
-            
-            // moving the wayPoint container's position to align with the plane
-            _wayPointsContainer.transform.position = _terrainContainer.transform.position;
-            var terrain = _terrainContainer.GetComponentInChildren<Terrain>();
-            var wayPointMesh = _wayPointPrefab.GetComponent<MeshFilter>().sharedMesh;
-
-            var gridXDim = terrain.terrainData.size.x;
-            var gridZDim = terrain.terrainData.size.z;
-            var wayPointElevation = 100;//TODO change from fixed to dynamic height
-
-            for (int z=0; z<numOfCols; ++z)
-            {
-                for (int x=0; x<numOfRows; ++x)
-                {
-                    var id = z * numOfCols + x;
-                    var xpos =  (x+1) * ( gridXDim) / (gridLength+1);
-                    var zpos= (z+1) * ( gridZDim) / (gridWidth+1);
-                    var position = new Vector3(xpos, wayPointElevation, zpos);
-                    GenerateWayPoint(id,position);
-                }
-            }
-        }
-
 
         public void GenerateWayPointsFromRecords(List<WayPointRecord> wayPointsRecords)
         {

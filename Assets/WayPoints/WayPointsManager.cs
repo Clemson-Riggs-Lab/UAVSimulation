@@ -6,6 +6,7 @@ using HelperScripts;
 using IOHandlers;
 using IOHandlers.Records;
 using ScriptableObjects.EventChannels;
+using ScriptableObjects.Waypoints;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -13,44 +14,29 @@ namespace WayPoints
 {
     public class WayPointsManager : MonoBehaviour
     {
-        [SerializeField] public GameObject wayPointsContainer;
-        [SerializeField] public WayPointsGenerator wayPointsGenerator;
-        
-        [SerializeField] private ObjectEventChannelSO wayPointCreatedEventChannel;
-        [SerializeField] private ObjectEventChannelSO wayPointDisabledEventChannel;
-        
-        [DoNotSerialize] public List<WayPoint> wayPoints = new ();
-        
-
-        private void OnValidate()
-        {
-            AssertionHelper.AssertComponentReferencedInEditor(wayPointsContainer, this, this.gameObject);
-            AssertionHelper.CheckIfReferenceExistsOrComponentExistsInGameObject(wayPointsGenerator,this,this.gameObject);
-        }
+         private GameObject wayPointsContainer;
+         private WayPointsGenerator wayPointsGenerator;
+         private ObjectEventChannelSO wayPointCreatedEventChannel;
+         private ObjectEventChannelSO wayPointDisabledEventChannel;
+         private WaypointSettingsSO waypointSettings;
+         [DoNotSerialize] public List<WayPoint> wayPoints = new ();
+         
         public void Initialize()
         { 
-            GetReferencesFromGameManager(); 
+            GetReferencesFromGameManager();
+            wayPointsGenerator = gameObject.AddComponent<WayPointsGenerator>();
+            wayPointsGenerator.Initialize();
             SubscribeToChannels();
         }
 
         private void GetReferencesFromGameManager()
         {
             wayPointsContainer= GameManager.Instance.wayPointsContainer;
+            waypointSettings = GameManager.Instance.settingsDatabase.waypointSettings;
             wayPointCreatedEventChannel = GameManager.Instance.channelsDatabase.wayPointCreatedEventChannel;
             wayPointDisabledEventChannel = GameManager.Instance.channelsDatabase.wayPointDisabledEventChannel;
         }
 
-
-        private void Awake()
-        {
-            if (wayPointsGenerator != null) return; //if wayPointsGenerator is already set, don't do anything
-           else
-            {
-                Debug.LogError("WayPoints Generator not found in the game object, couldn't continue program", this.gameObject);
-                return;
-            }
-        }
-        
 
         public bool TryGetWayPoint(int wayPointID, out WayPoint wayPoint)
         {
@@ -64,16 +50,21 @@ namespace WayPoints
             return true;
         }
         
-        public void GenerateWayPoints()
+         public void GenerateWayPoints()
         {
             ClearWayPoints(); //clear placeholders
-            wayPointsGenerator.GenerateWayPointsUniformOverPlane(16,4,4);
-        }
-        
-        public void GenerateWayPoints(List<WayPointRecord> wayPointsRecords)
-        {
-            ClearWayPoints(); //clear placeholders
-            wayPointsGenerator.GenerateWayPointsFromRecords(wayPointsRecords); //generate wayPoints from records
+            
+            switch(waypointSettings.waypointsRecordsSource)
+            {
+                case Enums.InputRecordsSource.FromInputFile:
+                    wayPointsGenerator.GenerateWayPointsFromRecords(GameManager.Instance.inputRecordsDatabase.WayPointsRecords);
+                    break;
+                case Enums.InputRecordsSource.FromDefaultRecords:
+                    wayPointsGenerator.GenerateWayPointsFromRecords(DefaultRecordsCreator.GetDefaultWayPointsRecords());
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException();
+            }
         } 
         
         

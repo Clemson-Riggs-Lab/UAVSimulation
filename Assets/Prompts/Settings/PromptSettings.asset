@@ -12,24 +12,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3d928ab50ec40dc8f22fc33b88b08bb, type: 3}
   m_Name: PromptSettings
   m_EditorClassIdentifier: 
+  promptsSource: 1
   enableTextAnimation: 1
   textAnimationSpeed: 100
   textFontSize: 18
-  chatMessagesPrefix: '- [Message from HQ]: '
+  promptsPrefix: '- [Message from HQ]: '
   addResponsesToChatBox: 1
-  responsesPrefix: '---[ Response from Controller]: '
-  chatMessagesSource: 2
+  promptResponsesPrefix: '---[ Response from Controller]: '
   shuffleResponses: 1
   giveFeedbackAboutResponsesOnButtons: 1
   giveFeedbackAboutResponsesInChatBox: 1
   durationAfterResponseBeforeHidingButtons: 2
   correctResponseColor: Green
   wrongResponseColor: Red
-  logChatMessages: 1
-  logChatMessage: 1
+  logPrompts: 1
   logAllowedResponseTime: 1
   logCorrectResponseOptions: 1
-  logAllResponseOptions: 1
+  logAllPromptResponseOptions: 1
   logReceivedResponses: 1
   logCorrectness: 1
-  logResponses: 1

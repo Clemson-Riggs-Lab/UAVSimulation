@@ -1,29 +1,36 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using ScriptableObjects.EventChannels;
 using ScriptableObjects.UAVs.FuelAndHealth;
 using UAVs.Sub_Modules.Fuel;
 using Unity.VisualScripting;
 using UnityEngine;
-using static ScriptableObjects.UAVs.FuelAndHealth.FuelAndHealthSettingsSO.FuelStatusAndHealthBarPositioning;
 
 namespace UAVs.Sub_Modules.FuelAndHealth
 {
 	public class FuelAndHealthManager:MonoBehaviour
 	{
-		private UavsManager _uavsManager;
 		private FuelAndHealthSettingsSO _fuelAndHealthSettings;
-		private FuelAndHealthSettingsSO.FuelStatusAndHealthBarPositioning _fuelStatusAndHealthBarPositioning = FuelStatusAndHealthBarVisibleInSeparatePanel;
-
 		private UavEventChannelSO uavCreatedEventChannel;
 		private UavEventChannelSO uavDestroyedEventChannel;
 		
-		void Start()
+		Dictionary<Uav,FuelAndHealthController> _uavToFuelAndHealthControllerDictionary = new Dictionary<Uav, FuelAndHealthController>();
+		
+		public void Initialize()
 		{
 			GetReferencesFromGameManager();
 			SubscribeToChannels();
 			ClearPanels();
-			_fuelStatusAndHealthBarPositioning = _fuelAndHealthSettings.fuelStatusAndHealthBarPositioning;
+			CreatePanelsForUavs();
+		}
+
+		private void CreatePanelsForUavs()
+		{
+			foreach (var uav in GameManager.Instance.uavsManager.uavs)
+			{
+				OnUavCreated(uav);
+			}
 		}
 
 		private void ClearPanels()
@@ -33,10 +40,15 @@ namespace UAVs.Sub_Modules.FuelAndHealth
 				Destroy(child.gameObject);
 			}
 		}
-
-
+		
 		private void OnUavDestroyed(Uav uav)
 		{
+			
+			if (_uavToFuelAndHealthControllerDictionary.ContainsKey(uav))
+			{
+				Destroy(_uavToFuelAndHealthControllerDictionary[uav].gameObject);
+				_uavToFuelAndHealthControllerDictionary.Remove(uav);
+			}
 
 			//remove panel
 			var panel = transform.Find("UAV " +uav.uavName + " Fuel And Health Panel");
@@ -46,41 +58,37 @@ namespace UAVs.Sub_Modules.FuelAndHealth
 
 		private void OnUavCreated(Uav uav)
 		{
-			var fuelAndHealthController = uav.AddComponent<FuelAndHealthController>() as FuelAndHealthController;
-			fuelAndHealthController.Initialize();
+			var fuelAndHealthController = uav.AddComponent<FuelAndHealthController>();
+			fuelAndHealthController.Initialize(uav);
 			AddFuelAndHealthPanel(fuelAndHealthController,uav);
-			fuelAndHealthController.Begin();
+			_uavToFuelAndHealthControllerDictionary.Add(uav,fuelAndHealthController);
+		}
+
+		public IEnumerator StartFuelAndHealthControllers(float simulationStartTime)
+		{
+			yield return new WaitForSeconds( simulationStartTime- Time.time);
+			
+			foreach (var uav in _uavToFuelAndHealthControllerDictionary.Keys)
+			{
+				_uavToFuelAndHealthControllerDictionary[uav].Begin();
+			}
+
+			yield return null;
 		}
 
 		private void GetReferencesFromGameManager()
 		{
-			_uavsManager= GameManager.Instance.uavsManager;
-			_fuelAndHealthSettings = GameManager.Instance.settingsDatabase.uavSettings.fuelAndHealthSettings;
+			_fuelAndHealthSettings = GameManager.Instance.settingsDatabase.uavSettingsDatabase.fuelAndHealthSettings;
 			uavCreatedEventChannel = GameManager.Instance.channelsDatabase.uavChannels.uavCreatedEventChannel;
 			uavDestroyedEventChannel = GameManager.Instance.channelsDatabase.uavChannels.uavDestroyedEventChannel;
 		}
 
 		private void AddFuelAndHealthPanel(FuelAndHealthController fuelAndHealthController, Uav uav)
 		{
-			switch (_fuelStatusAndHealthBarPositioning)
-			{
-				case FuelStatusAndHealthBarVisibleInSeparatePanel:
-				{
-					var panel = Instantiate(GameManager.Instance.prefabsDatabase.fuelAndHealthPanelPrefab, transform);
-					panel.name="UAV " + uav.uavName + " Fuel And Health Panel";
-					var panelController= panel.GetComponent<StatusPanelController>();
-					panelController.Initialize(fuelAndHealthController);
-					break;
-				}
-				
-				case FuelStatusOnlyVisibleInSeparatePanel:
-				case HealthBarOnlyVisibleInSeparatePanel:
-				case FuelStatusAndHealthBarVisibleInCameraWindow:
-				case FuelStatusOnlyVisibleInCameraWindow:
-				case HealthBarOnlyVisibleInCameraWindow:
-				default:
-					throw  new NotImplementedException();//TODO
-			}
+			var panel = Instantiate(GameManager.Instance.prefabsDatabase.fuelAndHealthPanelPrefab, transform);
+			panel.name="UAV " + uav.uavName + " Fuel And Health Panel";
+			var panelController= panel.GetComponent<StatusPanelController>();
+			panelController.Initialize(fuelAndHealthController);
 		}
 
 

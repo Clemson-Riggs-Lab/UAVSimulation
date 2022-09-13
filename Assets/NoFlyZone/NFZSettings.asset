@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 140827127f61433d92e230e48ff54404, type: 3}
   m_Name: NFZSettings
   m_EditorClassIdentifier: 
-  nfzRecordsSource: 2
+  nfzRecordsSource: 1
   animateNFZGrowOnStart: 1
   nfzGrowthAnimationDuration: 3
   nfzCountdownText: No Fly Zone Will Be Active In

@@ -1,10 +1,11 @@
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using UnityEngine;
-using static ScriptableObjects.UAVs.Camera.UavCameraSettingsSO;
-using static ScriptableObjects.UAVs.Camera.UavCameraSettingsSO.UavConditions;
-using static ScriptableObjects.UAVs.Camera.UavCameraSettingsSO.UavVideoArtifacts;
-using static ScriptableObjects.UAVs.FuelAndHealth.FuelAndHealthSettingsSO.FuelStatusAndHealthBarPositioning;
+using static HelperScripts.Enums;
+using static HelperScripts.Enums.InputRecordsSource;
+using static ScriptableObjects.UAVs.Camera.UavCameraPanelSettingsSO;
+using static ScriptableObjects.UAVs.Camera.UavCameraPanelSettingsSO.UavConditions;
+using static ScriptableObjects.UAVs.Camera.UavCameraPanelSettingsSO.UavVideoArtifacts;
 
 namespace ScriptableObjects.UAVs.FuelAndHealth
 {
@@ -30,15 +31,12 @@ namespace ScriptableObjects.UAVs.FuelAndHealth
 
       [Header("Fuel Leak Settings")]
       [JsonConverter(typeof(StringEnumConverter))]
-      public FuelLeaksTypes fuelLeaksType= FuelLeaksTypes.FromFile;
+      public InputRecordsSource fuelLeaksRecordsSource= FromInputFile;
       public float fuelConsumptionMultiplierOnLeak=5;
       public float fuelLeakDuration=10;
       public float fuelLeakButtonInteractionDurationBeforeFatalLeak=10f;  
       public float fuelConsumptionMultiplierOnFatalLeak=20;
 
-      [Space(20)]
-   
-      public FuelStatusAndHealthBarPositioning fuelStatusAndHealthBarPositioning = FuelStatusAndHealthBarVisibleInSeparatePanel;
 
       [Space(20)] 
       public FuelAndHealthPanelSettings healthyUavFuelAndHealthPanelSettings = new()
@@ -131,22 +129,7 @@ namespace ScriptableObjects.UAVs.FuelAndHealth
             Duration,
             Consumption
          }
-
-         public enum FuelLeaksTypes
-         {
-            Disabled,
-            RandomLeaks,
-            FromFile
-         }
-         public enum FuelStatusAndHealthBarPositioning
-         {
-            FuelStatusAndHealthBarVisibleInSeparatePanel,
-            FuelStatusOnlyVisibleInSeparatePanel,
-            HealthBarOnlyVisibleInSeparatePanel,
-            FuelStatusAndHealthBarVisibleInCameraWindow,
-            FuelStatusOnlyVisibleInCameraWindow,
-            HealthBarOnlyVisibleInCameraWindow
-         }
+         
          public enum UavHealthConditions
          {
             Healthy,

@@ -12,3 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d7615cef2334d9d864ebe8e6910307a, type: 3}
   m_Name: TargetDetectionSettings
   m_EditorClassIdentifier: 
+  defaultTargetType: 0

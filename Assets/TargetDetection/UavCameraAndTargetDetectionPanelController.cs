@@ -9,7 +9,7 @@ using UAVs.Sub_Modules.Camera;
 using UAVs.Sub_Modules.Navigation;
 using UnityEngine;
 using UnityEngine.UI;
-using static ScriptableObjects.UAVs.Camera.UavCameraSettingsSO.UavVideoArtifacts;
+using static ScriptableObjects.UAVs.Camera.UavCameraPanelSettingsSO.UavVideoArtifacts;
 using static ScriptableObjects.UAVs.FuelAndHealth.FuelAndHealthSettingsSO;
 
 namespace TargetDetection
@@ -18,7 +18,7 @@ namespace TargetDetection
     {
         public Uav uav;
         
-        private UavCameraSettingsSO _uavCameraSettings;
+        private UavCameraPanelSettingsSO uavCameraPanelSettings;
        
         public UavCameraController uavCameraController;
         
@@ -38,11 +38,11 @@ namespace TargetDetection
         private UavHealthConditions uavHealthCondition = UavHealthConditions.Healthy;
         private bool UavVisuallyEnabled = true;
         
-        private UavCameraAndTargetDetectionConfigs panelConfigs=new();
+        private UavCameraPanelConfigs panelConfigs=new();
         
         private void Start()
         {
-            _uavCameraSettings = GameManager.Instance.settingsDatabase.uavSettings.uavCameraSettings;
+            uavCameraPanelSettings = GameManager.Instance.settingsDatabase.uavSettingsDatabase.uavCameraPanelSettings;
             InitializeChannels();
         }
 
@@ -108,7 +108,7 @@ namespace TargetDetection
         }
         public void ApplyHoveringConfigs() // this is called to set the configs when the uav is hovering over the waypoint (rotating to get to the destination)
         {
-            UpdatePanelConfigs(_uavCameraSettings.hoveringUavCameraAndTargetDetectionConfigs); 
+            UpdatePanelConfigs(uavCameraPanelSettings.hoveringUavCameraPanelConfigs); 
             UpdateUIElements();
         }
         
@@ -117,33 +117,33 @@ namespace TargetDetection
             targetDetectedToggle.isOn = false;
             targetNotDetectedToggle.isOn = true;
         }
-        private void UpdatePanelConfigs(UavCameraAndTargetDetectionConfigs configs=null)
+        private void UpdatePanelConfigs(UavCameraPanelConfigs configs=null)
         {
-            configs ??= _uavCameraSettings.healthyUavCameraAndTargetDetectionConfigs;
+            configs ??= uavCameraPanelSettings.healthyUavCameraPanelConfigs;
             
           panelConfigs = configs;
           panelConfigs = new();
             var healthConfigs = uavHealthCondition switch
             {
-                UavHealthConditions.Healthy =>  _uavCameraSettings.healthyUavCameraAndTargetDetectionConfigs,
-                UavHealthConditions.Lost =>  _uavCameraSettings.lostUavCameraAndTargetDetectionConfigs,
+                UavHealthConditions.Healthy =>  uavCameraPanelSettings.healthyUavCameraPanelConfigs,
+                UavHealthConditions.Lost =>  uavCameraPanelSettings.lostUavCameraPanelConfigs,
                 _ => throw new ArgumentOutOfRangeException()
             };
             
             var fuelLeakConfigs = uavFuelCondition switch
             {
-                FuelConditions.Normal => _uavCameraSettings.healthyUavCameraAndTargetDetectionConfigs,
-                FuelConditions.Leaking => _uavCameraSettings.fuelLeakCameraAndTargetDetectionConfigs,
-                FuelConditions.FatalLeak => _uavCameraSettings.fatalLeakCameraAndTargetDetectionConfigs,
-                FuelConditions.Empty => _uavCameraSettings.emptyFuelCameraAndTargetDetectionConfigs,
+                FuelConditions.Normal => uavCameraPanelSettings.healthyUavCameraPanelConfigs,
+                FuelConditions.Leaking => uavCameraPanelSettings.fuelLeakCameraPanelConfigs,
+                FuelConditions.FatalLeak => uavCameraPanelSettings.fatalLeakCameraPanelConfigs,
+                FuelConditions.Empty => uavCameraPanelSettings.emptyFuelCameraPanelConfigs,
                 _ => throw new ArgumentOutOfRangeException()
             };
             
             
             var visibilityConfigs = UavVisuallyEnabled switch
             {
-                true => _uavCameraSettings.healthyUavCameraAndTargetDetectionConfigs,
-                false => _uavCameraSettings.visuallyDisabledUavCameraAndTargetDetectionConfigs,
+                true => uavCameraPanelSettings.healthyUavCameraPanelConfigs,
+                false => uavCameraPanelSettings.visuallyDisabledUavCameraPanelConfigs,
             };
             
             

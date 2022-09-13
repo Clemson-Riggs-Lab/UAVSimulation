@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using IOHandlers.Records;
 using ScriptableObjects.EventChannels;
@@ -6,6 +7,8 @@ using ScriptableObjects.UAVs.Navigation;
 using UAVs.Navigation;
 using UnityEngine;
 using WayPoints;
+using static HelperScripts.Enums;
+using static HelperScripts.Enums.InputRecordsSource;
 
 namespace UAVs.Sub_Modules.Navigation
 {
@@ -25,34 +28,13 @@ namespace UAVs.Sub_Modules.Navigation
 		 private UavEventChannelSO uavDestroyedEventChannel;
 		 private UavEventChannelSO uavLostEventChannel;
 		
-		private void Start()
+		public void Initialize()
 		{
 			GetReferencesFromGameManager();
 			_pathsGenerator = gameObject.AddComponent<PathsGenerator>();
 			SubscribeToChannels();
 		}
-
-		// Below is testing code to check if rerouting works
-		// public bool gotpath = false;
-		// public bool rerouted = false;
-		// Path testPath;
-		// private void Update()
-		// {
-		// 	if (Time.time > 5 && !gotpath)
-		// 	{
-		// 		gotpath = true;
-		// 		testPath = navigators[0].uav.currentPath;
-		// 	}
-		//
-		// 	if (Time.time > 15 && !rerouted)
-		// 	{
-		// 		rerouted = true;
-		// 		_UavReroutedEventChannel.RaiseEvent(navigators[0].uav, testPath);
-		//
-		// 	}
-		// }
-
-	
+		
 
 		private void OnUavDestroyed(Uav uav)
 		{
@@ -88,18 +70,20 @@ namespace UAVs.Sub_Modules.Navigation
 
 		public void GeneratePaths()
 		{
-			switch(_navigationSettings.navigationType)
+			
+			switch(_navigationSettings.navigationRecordsSource)
 			{
 				
-				case NavigationSettingsSO.NavigationType.BasedOnDefaultInputFile:
+				case FromDefaultRecords:
 				{
-					_uavPathsRecord= GameManager.Instance.jsonSerializerTest.rootObject.UavPathsRecords;
+					_uavPathsRecord= DefaultRecordsCreator.GetDefaultUavPathsRecords();
 					navigators= _pathsGenerator.GeneratePaths(_uavPathsRecord);
 					break;
 				}
-				case NavigationSettingsSO.NavigationType.BasedOnInputFile:
+				case FromInputFile:
 				{
-					//throw new NotImplementedException();
+					_uavPathsRecord= GameManager.Instance.inputRecordsDatabase.UavPathsRecords;
+					navigators= _pathsGenerator.GeneratePaths(_uavPathsRecord);
 					break;
 				}
 				default:
@@ -110,8 +94,9 @@ namespace UAVs.Sub_Modules.Navigation
 		
 		}
 
-		public void NavigateAll()
+		public IEnumerator NavigateAll(float simulationStartTime)
 		{
+			yield return new WaitForSeconds(simulationStartTime-Time.time);
 			foreach (var navigator in navigators.Values)
 			{
 				navigator.StartNavigation();
@@ -120,7 +105,7 @@ namespace UAVs.Sub_Modules.Navigation
 		
 		private void GetReferencesFromGameManager()
 		{
-			_navigationSettings= GameManager.Instance.settingsDatabase.uavSettings.navigationSettings;
+			_navigationSettings= GameManager.Instance.settingsDatabase.uavSettingsDatabase.navigationSettings;
 			_wayPointsManager= GameManager.Instance.wayPointsManager;
 			_uavsManager= GameManager.Instance.uavsManager;
 			uavReroutedEventChannel = GameManager.Instance.channelsDatabase.uavChannels.navigationChannels.uavReroutedEventChannel;

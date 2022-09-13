@@ -13,7 +13,7 @@ namespace UAVs
 {
 	public class Uav : MonoBehaviour
 	{
-		private UavSettingsSO uavSettings;
+		private UavSettingsDatabaseSO uavSettingsDatabase;
 		private UavEventChannelSO uavCreatedEventChannel;
 		private UavEventChannelSO uavDestroyedEventChannel;
 		
@@ -38,7 +38,7 @@ namespace UAVs
 		{
 			uavCreatedEventChannel= GameManager.Instance.channelsDatabase.uavChannels.uavCreatedEventChannel;
 			uavDestroyedEventChannel= GameManager.Instance.channelsDatabase.uavChannels.uavDestroyedEventChannel;
-			uavSettings= GameManager.Instance.settingsDatabase.uavSettings;
+			uavSettingsDatabase= GameManager.Instance.settingsDatabase.uavSettingsDatabase;
 		}
 
 		public void Initialize(int id, WayPoint wayPoint,bool enabledOnStart)
@@ -53,9 +53,10 @@ namespace UAVs
 			startingWaypoint = wayPoint;
 			transform.position = startingWaypoint.transform.position;
 			
-			//set material color based on id
-			uavRenderer.material.color = uavColor;
-			//set label name based on id
+			if(uavSettingsDatabase.uavGeneralSettings.colorUavLikePath)
+				uavRenderer.material.color = uavColor;//set material color based on uavcolor
+			
+			//set label name based on name
 			label.text = uavName;
 			label.color = uavColor;
 			
@@ -66,14 +67,14 @@ namespace UAVs
 
 		private void SetUavName()
 		{
-			uavName = uavSettings.namingScheme switch
+			uavName = uavSettingsDatabase.uavGeneralSettings.namingScheme switch
 			{
-				UavSettingsSO.UavNamingScheme.UavAndNumber => "UAV " + id,
-				UavSettingsSO.UavNamingScheme.UavAndNumberOffsetZero => "UAV " + (id + 1),
-				UavSettingsSO.UavNamingScheme.HashtagNumber => "# " + (id),
-				UavSettingsSO.UavNamingScheme.HashtagNumberOffsetZero =>  "# " + (id + 1),
-				UavSettingsSO.UavNamingScheme.Letter =>  NatoAlphabetConverter.IntToLetters(id),
-				UavSettingsSO.UavNamingScheme.NatoName =>  NatoAlphabetConverter.LettersToName(NatoAlphabetConverter.IntToLetters(id))
+				UavSettingsDatabaseSO.UavNamingScheme.UavAndNumber => "UAV " + id,
+				UavSettingsDatabaseSO.UavNamingScheme.UavAndNumberOffsetZero => "UAV " + (id + 1),
+				UavSettingsDatabaseSO.UavNamingScheme.HashtagNumber => "# " + (id),
+				UavSettingsDatabaseSO.UavNamingScheme.HashtagNumberOffsetZero =>  "# " + (id + 1),
+				UavSettingsDatabaseSO.UavNamingScheme.Letter =>  NatoAlphabetConverter.IntToLetters(id),
+				UavSettingsDatabaseSO.UavNamingScheme.NatoName =>  NatoAlphabetConverter.LettersToName(NatoAlphabetConverter.IntToLetters(id))
 				,
 				_ => throw new ArgumentOutOfRangeException()
 			};

@@ -13,14 +13,16 @@ namespace Menu
 	public class FileBrowser : MonoBehaviour
 	{
 		[SerializeField] public Button button;
-		[SerializeField] public InputFilesDropDownManager dropDownManager;
-		[SerializeField] public InputFilesHandler inputFilesHandler;
-
+		[SerializeField] public ConfigFilesDropDownManager dropDownManager;
+		[SerializeField] public ConfigFilesHandler configFilesHandler;
+		[SerializeField] public string fileExtension;
+		[SerializeField] public ConfigFilesHandler.FilesType fileType;
+		
 		private void OnValidate()
 		{
 			AssertionHelper.AssertComponentReferencedInEditor(button, this,this.gameObject);
 			AssertionHelper.AssertComponentReferencedInEditor(dropDownManager, this,this.gameObject);
-			AssertionHelper.AssertComponentReferencedInEditor(inputFilesHandler, this,this.gameObject);
+			AssertionHelper.AssertComponentReferencedInEditor(configFilesHandler, this,this.gameObject);
 		}
 
 		void Start()
@@ -37,14 +39,21 @@ namespace Menu
 		private void ShowBrowseFileDialog()
 		{ 
 			//open file dialog without blocking the main thread
+			var paths = StandaloneFileBrowser.OpenFilePanel("Select " + fileType.ToString() + " file",
+				Environment.GetFolderPath(Environment.SpecialFolder.Desktop), fileExtension, false);
 			
-			var paths =  StandaloneFileBrowser.OpenFilePanel("Open File",
-				Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "json", true);
 			var filesInfo = paths.Select(path => new FileInfo(path)).ToList();
-			if (paths.Length == 1) //only one file selected, then the user probably wants this input file, and there is no need to do the extra step of selecting it from the Dropdown menu.
-				inputFilesHandler.SelectedBaseInputFileInfo = filesInfo[0];
 
-			dropDownManager.PopulateDatabaseAndDropdown(filesInfo);
+			if (filesInfo.Count > 0 && filesInfo[0].FullName.Contains("." + fileType.ToString() + "." + fileExtension))  //check if the file is of the correct type
+			{
+				dropDownManager.AddItemsToDatabaseAndDropdown(filesInfo);
+				configFilesHandler.SelectFile(filesInfo[0], fileType);
+			}
+			else
+			{
+				configFilesHandler.WriteToConsole("File type is not " + fileType.ToString() + "!","red");
+			}
+
 		}
 	}
 }

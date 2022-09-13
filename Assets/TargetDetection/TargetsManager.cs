@@ -65,8 +65,6 @@ namespace TargetDetection
 					Destroy(target.gameObject);
 				}
 				_uavTargetsDictionary[uav].Clear();
-				
-				
 			}
 		}
 

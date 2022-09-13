@@ -17,12 +17,11 @@ MonoBehaviour:
   fuelDuration: 950
   fuelCapacity: 950
   fuelConsumptionPerSecond: 1
-  fuelLeaksType: 2
+  fuelLeaksRecordsSource: 0
   fuelConsumptionMultiplierOnLeak: 5
   fuelLeakDuration: 10
   fuelLeakButtonInteractionDurationBeforeFatalLeak: 10
   fuelConsumptionMultiplierOnFatalLeak: 20
-  fuelStatusAndHealthBarPositioning: 0
   healthyUavFuelAndHealthPanelSettings:
     healthButtonInteractable: 0
     uavCondition: 0

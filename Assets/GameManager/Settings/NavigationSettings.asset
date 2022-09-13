@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33a1ecd88f753b148972edec27d8f0cd, type: 3}
   m_Name: NavigationSettings
   m_EditorClassIdentifier: 
-  navigationType: 1
+  navigationRecordsSource: 0
   speedMode: 1
   fixedSpeed: 15
   pathDuration: 10
@@ -20,7 +20,7 @@ MonoBehaviour:
   rotationDuration: 1
   loopingType: 0
   numberOfLoops: 0
-  ignorePositionAtAxis:
+  ignoreWaypointPositionOnAxis:
     x: 0
     y: 0
     z: 0

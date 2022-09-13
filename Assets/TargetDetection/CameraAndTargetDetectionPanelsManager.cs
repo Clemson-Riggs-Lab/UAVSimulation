@@ -18,7 +18,7 @@ namespace UAVs.Sub_Modules.Camera
     {
         public bool addAllPanelsDirectly = true;//TODO make not static (get from settings)
 
-        private UavCameraSettingsSO _uavCameraSettings;
+        private UavCameraPanelSettingsSO uavCameraPanelSettings;
         [SerializeField] public GameObject camerasContainerPanel;
         [SerializeField] public GameObject cameraAndTargetDetectionPanelPrefab;
          private UavEventChannelSO uavCreatedEventChannel;
@@ -119,7 +119,7 @@ namespace UAVs.Sub_Modules.Camera
             var panelController = panelGO.GetComponent<UavCameraAndTargetDetectionPanelController>();
             cameraAndTargetDetectionPanels.Add(panelController); 
             
-            var cameraController =Instantiate(GameManager.Instance.prefabsDatabase.uavCameraPrefab, uav.transform).GetComponent<UavCameraController>();
+            var cameraController =Instantiate(GameManager.Instance.prefabsDatabase.uavCameraPrefab, uav.uavBody.transform).GetComponent<UavCameraController>();
             cameraController.InitializeCamera(out RenderTexture renderTexture,uav.gameObject.layer);
            
             panelGO.GetComponentInChildren<RawImage>().texture = renderTexture;
@@ -132,7 +132,7 @@ namespace UAVs.Sub_Modules.Camera
         }
         private void InitializeChannels()
         {
-            _uavCameraSettings = GameManager.Instance.settingsDatabase.uavSettings.uavCameraSettings;
+            uavCameraPanelSettings = GameManager.Instance.settingsDatabase.uavSettingsDatabase.uavCameraPanelSettings;
             uavCreatedEventChannel= GameManager.Instance.channelsDatabase.uavChannels.uavCreatedEventChannel;
             uavDestroyedEventChannel= GameManager.Instance.channelsDatabase.uavChannels.uavDestroyedEventChannel;
             uavArrivedAtDestinationEventChannel= GameManager.Instance.channelsDatabase.uavChannels.navigationChannels.uavArrivedAtDestinationEventChannel;

@@ -6,15 +6,13 @@ namespace UAVs.Sub_Modules.Camera
 {
     public class UavCameraController : MonoBehaviour
     {
-    
-        public bool DisableWhenUavIsNotVisible = true; //TODO make not static (get from settings)
-    
-        private UavCameraSettingsSO _settings;
+        
+        private UavCameraPanelSettingsSO panelSettings;
         private UnityEngine.Camera uavCamera;
     
-        private UavCameraAndTargetDetectionConfigs cameraConfigs;
+        private UavCameraPanelConfigs cameraConfigs;
 
-        public UavCameraAndTargetDetectionConfigs Configs
+        public UavCameraPanelConfigs Configs
         {
             get=> cameraConfigs;
             set
@@ -26,16 +24,16 @@ namespace UAVs.Sub_Modules.Camera
         
         public void InitializeCamera(out RenderTexture renderTexture, int gameObjectLayer)// we send out the render texture so that the panel can use it to display the camera feed
         {
-            _settings = GameManager.Instance.settingsDatabase.uavSettings.uavCameraSettings;
+            panelSettings = GameManager.Instance.settingsDatabase.uavSettingsDatabase.uavCameraPanelSettings;
             uavCamera=gameObject.GetComponent<UnityEngine.Camera>();
             uavCamera.cullingMask = (1 << gameObjectLayer)|(1<<LayerMask.NameToLayer("Default")); // Only render this uav's layer and the default layer
-            var targetTexture = new RenderTexture(_settings.renderTextureWidth, _settings.renderTextureHeight, _settings.renderTextureDepth);
+            var targetTexture = new RenderTexture(panelSettings.renderTextureWidth, panelSettings.renderTextureHeight, panelSettings.renderTextureDepth);
             targetTexture.Create();
             uavCamera.targetTexture= targetTexture;
             renderTexture = targetTexture;
         
-            uavCamera.fieldOfView = _settings.fieldOfView;
-            uavCamera.transform.localEulerAngles = new Vector3(_settings.rotationX, 0, 0);
+            uavCamera.fieldOfView = panelSettings.cameraFieldOfView;
+            uavCamera.transform.localEulerAngles = new Vector3(panelSettings.cameraDownwardTilt, 0, 0);
         }
         
         
@@ -44,9 +42,9 @@ namespace UAVs.Sub_Modules.Camera
             //TODO 
             switch (cameraConfigs.videoArtifacts)
             {
-                case UavCameraSettingsSO.UavVideoArtifacts.None:
+                case UavCameraPanelSettingsSO.UavVideoArtifacts.None:
                     break;
-                case UavCameraSettingsSO.UavVideoArtifacts.BlackScreen:
+                case UavCameraPanelSettingsSO.UavVideoArtifacts.BlackScreen:
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();

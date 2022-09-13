@@ -55,7 +55,7 @@ namespace UAVs.Sub_Modules.Fuel
 
         public void Initialize(FuelAndHealthController fuelAndHealthController)
         {
-            _fuelAndHealthSettings= GameManager.Instance.settingsDatabase.uavSettings.fuelAndHealthSettings;
+            _fuelAndHealthSettings= GameManager.Instance.settingsDatabase.uavSettingsDatabase.fuelAndHealthSettings;
             
             _fuelAndHealthController = fuelAndHealthController;
             idText.text = _fuelAndHealthController.uav.uavName;
@@ -102,10 +102,6 @@ namespace UAVs.Sub_Modules.Fuel
             }
 
         }
-
-        private void UpdateSliderAndButtonTextAndColors()
-        {
-            throw new System.NotImplementedException();
-        }
+        
     }
 }

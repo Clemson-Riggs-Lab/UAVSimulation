@@ -26,7 +26,7 @@ namespace MiniMap
             //
             // //The angle between the camera and the top point of the triangle is half the field of view.
             // //The tangent of this angle equals the length of the opposing triangle side over the desired distance between the camera and the object's front.
-            // float desiredDistance = Vector3.Distance(triangleUpPoint, objectFrontCenter) / Mathf.Tan(Mathf.Deg2Rad * camera.GetComponent<Camera>().fieldOfView / 2);
+            // float desiredDistance = Vector3.Distance(triangleUpPoint, objectFrontCenter) / Mathf.Tan(Mathf.Deg2Rad * camera.GetComponent<Camera>().cameraFieldOfView / 2);
             //
             // camera.transform.position = -camera.transform.forward * desiredDistance + objectFrontCenter;
         }

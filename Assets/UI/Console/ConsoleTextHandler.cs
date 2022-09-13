@@ -3,6 +3,7 @@ using System.Collections;
 using Prompts;
 using HelperScripts;
 using Menu;
+using ScriptableObjects.Databases;
 using ScriptableObjects.EventChannels;
 using TMPro;
 using Unity.VisualScripting;
@@ -17,9 +18,10 @@ namespace UI.Console
 		[SerializeField] private TextMeshProUGUI consoleTextMeshProUGUI;
 
 		[SerializeField] private ConsoleMessageEventChannelSO writeMessageToConsoleChannel;
-		
+		[SerializeField] public SettingsDatabaseSO settingsDatabase;
 		[DoNotSerialize] private TypeWriterEffect _typeWriterEffect;
 		[DoNotSerialize] private QueueManager _animationQueue;
+		
 
 		private void OnValidate()
 		{
@@ -28,26 +30,39 @@ namespace UI.Console
 
 		private void Awake()
 		{
+			
+			InitializeAnimationQueueAndSettings();
 			if (writeMessageToConsoleChannel != null)
 				writeMessageToConsoleChannel.Subscribe(AddTextToConsole);
 		}
 		
 		private void Start()
 		{
-			InitializeAnimationQueueAndSettings();
 			
-			if (animateAllAtStart)
-				_animationQueue.AddToQueue(_typeWriterEffect.AnimateAll());
+			
 		}
 
 		private void InitializeAnimationQueueAndSettings()
 		{
-			_typeWriterEffect = gameObject.AddComponent<TypeWriterEffect>();
+			if (settingsDatabase == null)
+				settingsDatabase = GameManager.Instance.settingsDatabase;
+			
+			if (!TryGetComponent(out _typeWriterEffect))
+
+			{
+				_typeWriterEffect = gameObject.AddComponent<TypeWriterEffect>();
+				_typeWriterEffect.settingsDatabase = settingsDatabase;
+			}
+			
 			_typeWriterEffect.mTextMeshPro = consoleTextMeshProUGUI;
 			
-			consoleTextMeshProUGUI.fontSize = GameManager.Instance.settingsDatabase.promptSettings.textFontSize;
+			consoleTextMeshProUGUI.fontSize = settingsDatabase.promptSettings.textFontSize;
+			if (!TryGetComponent(out _animationQueue))
+				_animationQueue = gameObject.AddComponent<QueueManager>();
 			
-			_animationQueue= gameObject.AddComponent<QueueManager>();
+			if (animateAllAtStart)
+				_animationQueue.AddToQueue(_typeWriterEffect.AnimateAll());
+			
 		}
 		
 		private void AddTextToConsole(string prefix, ConsoleMessage message)
@@ -73,6 +88,7 @@ namespace UI.Console
 		{
 			if (writeMessageToConsoleChannel != null)
 				writeMessageToConsoleChannel.Unsubscribe( AddTextToConsole);
+			_animationQueue.ClearQueue();
 		}
 	}
 }

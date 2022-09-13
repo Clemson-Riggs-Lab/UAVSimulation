@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using HelperScripts;
+using ScriptableObjects.Databases;
 using TMPro;
 using UnityEngine;
 using static HelperScripts.NatoAlphabetConverter;
@@ -12,7 +13,10 @@ namespace Menu
 	public class TypeWriterEffect : MonoBehaviour
 	{
 		[SerializeField] public TextMeshProUGUI mTextMeshPro;
-		private float DurationOfSingleCharacterAnimation => 1f/GameManager.Instance.settingsDatabase.promptSettings.textAnimationSpeed;
+		[SerializeField] public SettingsDatabaseSO settingsDatabase;
+		private float DurationOfSingleCharacterAnimation => 1f/settingsDatabase.promptSettings.textAnimationSpeed;
+		private Coroutine _coroutine;
+		
 
 		public IEnumerator AnimateAll()
 
@@ -41,8 +45,7 @@ namespace Menu
 			var animationDuration = totalCharacters * duration;
 			
 			var animateTextCoroutine = AnimateText(startAnimationPosition, endAnimationPosition,duration);
-			StartCoroutine(animateTextCoroutine);
-			
+			_coroutine=StartCoroutine(animateTextCoroutine);
 			yield return new WaitForSeconds(animationDuration);
 		}
 		
@@ -57,6 +60,12 @@ namespace Menu
 				mTextMeshPro.maxVisibleCharacters = visibleCount;
 				yield return delayBetweenLetters;
 			}
+		}
+
+		private void OnDisable()
+		{
+			if(_coroutine!=null)
+				StopCoroutine(_coroutine);
 		}
 	}
 }

@@ -2,6 +2,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using HelperScripts;
+using IOHandlers.Records;
 using ScriptableObjects.EventChannels;
 using ScriptableObjects.UAVs.FuelAndHealth;
 using ScriptableObjects.UAVs.Navigation;
@@ -10,7 +12,6 @@ using UnityEngine;
 using static ScriptableObjects.UAVs.FuelAndHealth.FuelAndHealthSettingsSO;
 using static ScriptableObjects.UAVs.FuelAndHealth.FuelAndHealthSettingsSO.FuelComputationType;
 using static ScriptableObjects.UAVs.FuelAndHealth.FuelAndHealthSettingsSO.FuelConditions;
-using static ScriptableObjects.UAVs.FuelAndHealth.FuelAndHealthSettingsSO.FuelLeaksTypes;
 using static ScriptableObjects.UAVs.FuelAndHealth.FuelAndHealthSettingsSO.UavHealthConditions;
 
 namespace UAVs.Sub_Modules.Fuel
@@ -80,8 +81,7 @@ namespace UAVs.Sub_Modules.Fuel
             uavHealthCondition = value;
             RaiseHealthConditionChanged();
         }
-
-
+        
         public FuelConditions GetFuelCondition() => _fuelCondition;
 
         public void SetFuelCondition(FuelConditions value)
@@ -122,8 +122,6 @@ namespace UAVs.Sub_Modules.Fuel
                 default:
                     throw new ArgumentOutOfRangeException();
             }
-            
-            
         }
      
         private void RaiseFuelConditionChanged()
@@ -151,23 +149,6 @@ namespace UAVs.Sub_Modules.Fuel
             }
         }
         
-        private void Awake()
-        {
-            gameObject.TryGetComponent(out uav);
-            if (uav == null)
-            {
-                Debug.Log("Game object was destroyed because the attached fuel manager requires an attached UAV script",
-                    gameObject);
-                Destroy(gameObject); // a fuel manager should only be attached to a game object that has a uav script
-            }
-            _fuelAndHealthSettings = GameManager.Instance.settingsDatabase.uavSettings.fuelAndHealthSettings;
-        }
-
-        private void OnEnable()
-        {
-            InitializeChannels();
-        }
-
         private void InitializeChannels()
         {
             uavLostEventChannel = GameManager.Instance.channelsDatabase.uavChannels.fuelAndHealthChannels.uavLostEventChannel;
@@ -182,18 +163,18 @@ namespace UAVs.Sub_Modules.Fuel
             
         }
 
-        public void Initialize()
+        public void Initialize(Uav uav)
         {
-            InitializeSettings();
+            _fuelAndHealthSettings = GameManager.Instance.settingsDatabase.uavSettingsDatabase.fuelAndHealthSettings;
+            this.uav = uav;
+            InitializeChannels();
+            SetConsumptionRate();
+            SetUavHealthCondition(_fuelAndHealthSettings.startingUavUavHealthCondition);
+            PopulateFuelLeaks();
 
-            if (_fuelAndHealthSettings.fuelLeaksType != Disabled)
-            {
-                PopulateFuelLeaks();
-            }
-            
         }
 
-        private void InitializeSettings()
+        private void SetConsumptionRate()
         {
             switch (_fuelAndHealthSettings.fuelComputationType)
             {
@@ -207,19 +188,16 @@ namespace UAVs.Sub_Modules.Fuel
                     break;
 
                 default:
-                    CalculateFuelLevelAndConsumptionBasedOnPathsDurations();
-                    break;
-                
+                    throw new ArgumentOutOfRangeException();
             }
-
-            SetUavHealthCondition(_fuelAndHealthSettings.startingUavUavHealthCondition);
         }
-        
+
         public void Begin()
         {
             _simulationActive = true;
             // coroutine that updates the fuel level every second
             StartCoroutine(UpdateFuelLevel());
+            StartCoroutine(StartFuelLeaksTimerCoroutine());
         }
 
         private IEnumerator UpdateFuelLevel()
@@ -235,47 +213,31 @@ namespace UAVs.Sub_Modules.Fuel
                 yield return new WaitForSeconds(1f);
             }
         }
-
-
         private void PopulateFuelLeaks()
         {
-            
-            switch (_fuelAndHealthSettings.fuelLeaksType)
+            var record = _fuelAndHealthSettings.fuelLeaksRecordsSource switch
             {
-                
-                case FromFile:
-                {
-                    //select using linq where uav id = uav id
-                    var fuelLeakRecord = GameManager.Instance.jsonSerializerTest.rootObject.FuelLeaksRecord.FirstOrDefault(x => x.UavID == uav.id);//TODO move records to their own SO
-                    if (fuelLeakRecord == null)
-                    {
-                        Debug.LogWarning("No fuel leak record found for UAV with UavName: " + uav.uavName);
-                        return;
-                    }
-                    else
-                    {
-                        _fuelLeakTimes = fuelLeakRecord.FuelLeakTimes.OrderBy(x => x).ToList();
-                        StartCoroutine(StartFuelLeaksTimerCoroutine());
-                    }
-
-                    break;
-                }
-                case RandomLeaks:
-                    throw new NotImplementedException(); //TODO
-                
-                case Disabled:
-                    break;
-                default:
-                    throw new ArgumentOutOfRangeException();
-            }
+                Enums.InputRecordsSource.FromInputFile => GameManager.Instance.inputRecordsDatabase.FuelLeaksRecord.FirstOrDefault(x => x.UavID == uav.id),
+                Enums.InputRecordsSource.FromDefaultRecords => DefaultRecordsCreator.GetDefaultFuelLeaksRecord().FirstOrDefault(x => x.UavID == uav.id),
+                _ => throw new ArgumentOutOfRangeException()
+            };
             
+            if (record == null)
+            {
+                Debug.LogWarning("No fuel leak record found for UAV with UavName: " + uav.uavName);
+                return;
+            }
+            else
+            {
+                _fuelLeakTimes = record.FuelLeakTimes.OrderBy(x => x).ToList();
+            }
         }
 
         private IEnumerator StartFuelLeaksTimerCoroutine()
         {
             foreach (var fuelLeakTime in _fuelLeakTimes)
             {
-                var deltaTime = fuelLeakTime - Time.time;
+                var deltaTime = fuelLeakTime +GameManager.Instance.simulationStartTime - Time.time;
                 if (uavHealthCondition == Lost)
                 {
                     Debug.Log("UAV is lost, no fuel leaks will be simulated");
@@ -303,31 +265,6 @@ namespace UAVs.Sub_Modules.Fuel
             }
         }
         
-        
-        private void CalculateFuelLevelAndConsumptionBasedOnPathsDurations()
-        {
-            var navigator = uav.GetComponent<Navigator>();
-            if (navigator == null)
-            {
-                Debug.LogWarning("No navigator found on UAV with UavName: " + uav.uavName+". couldn't compute fuel starting level based on paths");
-                return;
-            }
-            else
-            {
-                _fuelConsumptionPerSecond = 1f;
-                if (navigator.navigationSettings.speedMode == NavigationSettingsSO.SpeedMode.FixedPathDuration)
-                {
-                    SetStartingFuelLevel(navigator.Paths.Count * navigator.navigationSettings.pathDuration);
-                            
-                }
-                else
-                {
-                    SetStartingFuelLevel(navigator.Paths.Count * 20);
-                    Debug.LogWarning("couldn't calculate fuel level based on paths duration since navigation speed mode is set to fixed speed. assuming 20 seconds per path");
-                }
-            }
-        }
-
         public void OnHealthButtonClicked(string buttonText)
         {
             if (buttonText == _fuelAndHealthSettings.fuelLeakFuelAndHealthPanelSettings.fuelAndHealthPanelVisualSettings.healthButtonText &&  GetFuelCondition()== Leaking)

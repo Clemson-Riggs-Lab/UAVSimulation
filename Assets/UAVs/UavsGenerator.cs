@@ -20,7 +20,7 @@ namespace UAVs
          private UavsManager _uavsManager;
          
 
-        private void Start()
+        public void Initialize()
         {
             GetReferencesFromGameManager();
             _uavsContainer.transform.position = _wayPointsContainer.transform.position;//centering both on top of each other to avoid any offset due to local positioning
@@ -34,16 +34,7 @@ namespace UAVs
             _wayPointsContainer = GameManager.Instance.wayPointsContainer;
             _uavPrefab = GameManager.Instance.prefabsDatabase.uavPrefab;
         }
-
-        public void GenerateOneUAVOnEachWayPoint()
-        {
-            var idIterator= 0;
-            foreach (var wayPoint in _wayPointsManager.wayPoints)
-            {
-                GenerateUav(idIterator, wayPoint);
-                idIterator++;
-            }
-        }
+        
         public void GenerateUavsFromRecords(List<UavRecord> uavsRecords)
         {
             uavsRecords= UavRecord.HandleNullValues(uavsRecords);

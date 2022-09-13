@@ -92,9 +92,9 @@ namespace NoFlyZone
 
 		private IEnumerator AddCountdownToText(NFZRecord nfzRecord)
 		{
-			while (Time.time < nfzRecord.NFZCountdownTimer+ nfzRecord.NFZStartTime)
+			while (Time.time < nfzRecord.NFZCountdownTimer+ nfzRecord.NFZStartTime+GameManager.Instance.simulationStartTime)
 			{
-				textMeshPro.text = settings.nfzCountdownText + " "+ (nfzRecord.NFZCountdownTimer+ nfzRecord.NFZStartTime - Time.time).ToString("F0");
+				textMeshPro.text = settings.nfzCountdownText + " "+ (nfzRecord.NFZCountdownTimer+ nfzRecord.NFZStartTime+GameManager.Instance.simulationStartTime - Time.time).ToString("F0");
 				yield return new WaitForSeconds(1);
 			}
 		}
@@ -103,7 +103,7 @@ namespace NoFlyZone
 		{
 			nfzColorAlpha= cube.GetComponent<Renderer>().material.color.a;// getting a reference to the initial transparency level so we can reset it after the animation
 			var doTweenSequence = DOTween.Sequence();
-			if (Time.time < nfzRecord.NFZCountdownTimer + nfzRecord.NFZStartTime)
+			if (Time.time < nfzRecord.NFZCountdownTimer + nfzRecord.NFZStartTime+GameManager.Instance.simulationStartTime)
 			{
 				doTweenSequence.Append(cube.GetComponent<Renderer>().material.DOFade(0, settings.nfzBlinkInterval));
 				doTweenSequence.SetLoops(-1, LoopType.Yoyo);
@@ -117,9 +117,9 @@ namespace NoFlyZone
 
 		public IEnumerator RemoveNFZ()
 		{
-			if (Time.time < endTime)
+			if (Time.time < endTime+GameManager.Instance.simulationStartTime)
 			{
-				yield return new WaitForSeconds(endTime - Time.time);
+				yield return new WaitForSeconds(endTime+GameManager.Instance.simulationStartTime - Time.time);
 			}
 			Destroy(gameObject);
 			

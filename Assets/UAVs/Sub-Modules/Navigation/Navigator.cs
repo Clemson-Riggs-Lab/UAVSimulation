@@ -55,7 +55,7 @@ namespace UAVs.Sub_Modules.Navigation
 		private void InitializeReferences()
 		{
 			navigationManager= GameManager.Instance.navigationManager;
-			navigationSettings= GameManager.Instance.settingsDatabase.uavSettings.navigationSettings;
+			navigationSettings= GameManager.Instance.settingsDatabase.uavSettingsDatabase.navigationSettings;
 			
 			uavStartedNewPathEventChannel = GameManager.Instance.channelsDatabase.uavChannels.navigationChannels.uavStartedNewPathEventChannel;
 			uavArrivedAtDestinationEventChannel = GameManager.Instance.channelsDatabase.uavChannels.navigationChannels.uavArrivedAtDestinationEventChannel;
@@ -74,6 +74,7 @@ namespace UAVs.Sub_Modules.Navigation
 			else
 			{
 				_currentPath = Paths[0];
+				_pathStartTime = Time.time;
 				UpdateNavigation();
 			}
 		}
@@ -82,11 +83,11 @@ namespace UAVs.Sub_Modules.Navigation
 		private Vector3 IgnoreWaypointPositionByAxis(Vector3 transformPosition)
 		{ //current position on axis if axis is ignored, otherwise transform position 
 			var result = transformPosition;
-			if (navigationSettings.ignorePositionAtAxis.x)
+			if (navigationSettings.ignoreWaypointPositionOnAxis.x)
 				result.x = transform.position.x;
-			if (navigationSettings.ignorePositionAtAxis.y)
+			if (navigationSettings.ignoreWaypointPositionOnAxis.y)
 				result.y = transform.position.y;
-			if (navigationSettings.ignorePositionAtAxis.z)
+			if (navigationSettings.ignoreWaypointPositionOnAxis.z)
 				result.z = transform.position.z;
 			return result;
 		}
@@ -243,7 +244,7 @@ namespace UAVs.Sub_Modules.Navigation
 				
 				case NavigationSettingsSO.SpeedMode.FixedPathDuration:
 				default:
-					navigationDuration = _pathStartTime+ navigationSettings.pathDuration- Time.time;
+					navigationDuration = navigationSettings.pathDuration+_pathStartTime-Time.time;
 					break;
 				
 			}

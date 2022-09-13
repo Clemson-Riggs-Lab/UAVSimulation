@@ -18,7 +18,7 @@ public class PathRenderer : MonoBehaviour
 
     public void Initialize(Uav uav)
     {
-        pathsRenderingSettings = GameManager.Instance.settingsDatabase.uavSettings.pathsRenderingSettings;
+        pathsRenderingSettings = GameManager.Instance.settingsDatabase.uavSettingsDatabase.pathsRenderingSettings;
 
         if (!TryGetComponent(out lineRenderer))
         {

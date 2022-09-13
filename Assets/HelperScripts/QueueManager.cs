@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,11 +8,14 @@ namespace HelperScripts
 	public class QueueManager : MonoBehaviour
 	{
 		private readonly Queue<IEnumerator> _coroutineQueue = new Queue<IEnumerator>();
+		private Coroutine _coroutine;
+
 		public void AddToQueue(IEnumerator coroutine)
 		{
 			_coroutineQueue.Enqueue(coroutine);
-			if (_coroutineQueue.Count==1) //no previous elements in queue
-				StartCoroutine(CoroutineCoordinator());
+			if (_coroutineQueue.Count == 1) //no previous elements in queue
+				_coroutine = StartCoroutine(CoroutineCoordinator());
+			
 		}
 
 		private IEnumerator CoroutineCoordinator()
@@ -28,6 +32,17 @@ namespace HelperScripts
 					yield break;
 			}
 		}
-		
+
+		public void ClearQueue()
+		{
+			_coroutineQueue.Clear();
+			if (_coroutine != null)
+				StopCoroutine(_coroutine);
+		}
+
+		private void OnDisable()
+		{
+			ClearQueue();
+		}
 	}
 }

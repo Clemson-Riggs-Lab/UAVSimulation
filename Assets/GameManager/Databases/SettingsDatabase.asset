@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66f27c77324647c1bf6aca55a6289e8e, type: 3}
   m_Name: SettingsDatabase
   m_EditorClassIdentifier: 
+  waypointSettings: {fileID: 11400000, guid: 37af04ed970010d4f86051abf0d2d07b, type: 2}
   promptSettings: {fileID: 11400000, guid: fbcedd838ecf53a468311f88ef0be652, type: 2}
   targetDetectionSettings: {fileID: 11400000, guid: ba05e28a9b6fa5148a3a0b76e7408e0f, type: 2}
-  uavSettings: {fileID: 11400000, guid: a12b0fc27010f55478c915a4b4e95fa2, type: 2}
+  uavSettingsDatabase: {fileID: 11400000, guid: a12b0fc27010f55478c915a4b4e95fa2, type: 2}
   reroutingSettings: {fileID: 11400000, guid: 692140c0d3e3f8f4c8f9343ed11a0b03, type: 2}
   nfzSettings: {fileID: 11400000, guid: 87a900a130e8b6740816b8f0a480de23, type: 2}

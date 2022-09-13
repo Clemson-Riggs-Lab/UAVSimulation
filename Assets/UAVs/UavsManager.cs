@@ -16,13 +16,16 @@ namespace UAVs
         private UavsGenerator _uavsGenerator;
         private UavEventChannelSO uavCreatedEventChannel = null;
         private UavEventChannelSO uavDestroyedEventChannel = null;
+        private UavGeneralSettingsSO _uavSettings;
         public List<Uav> uavs = new (); //automatically updated by listening to the uavCreatedEventChannel
         
-        private void Start()
+        public void Initialize()
         {
             GetReferencesFromGameManager();
             SubscribeToChannels();
             _uavsGenerator = gameObject.AddComponent<UavsGenerator>();
+            _uavsGenerator.Initialize();
+            
         }
         
         private void SubscribeToChannels()
@@ -41,6 +44,7 @@ namespace UAVs
         {
             uavCreatedEventChannel= GameManager.Instance.channelsDatabase.uavChannels.uavCreatedEventChannel;
             uavDestroyedEventChannel= GameManager.Instance.channelsDatabase.uavChannels.uavDestroyedEventChannel;
+            _uavSettings = GameManager.Instance.settingsDatabase.uavSettingsDatabase.uavGeneralSettings;
         }
         
       
@@ -62,16 +66,21 @@ namespace UAVs
                 Destroy(uav.gameObject);
             }
         }
-
+        
         public void GenerateUavs()
         {
             ClearUavs();
-            _uavsGenerator.GenerateOneUAVOnEachWayPoint();
-        }
-        public void GenerateUavs(List<UavRecord> rootObjectUavsRecords)
-        {
-            ClearUavs();
-            _uavsGenerator.GenerateUavsFromRecords(rootObjectUavsRecords);
+            switch (_uavSettings.uavRecordsSource)
+            {
+                case Enums.InputRecordsSource.FromInputFile:
+                    _uavsGenerator.GenerateUavsFromRecords(GameManager.Instance.inputRecordsDatabase.UavsRecords);
+                    break;
+                case Enums.InputRecordsSource.FromDefaultRecords:
+                    _uavsGenerator.GenerateUavsFromRecords(DefaultRecordsCreator.GetDefaultUavRecords());
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException();
+            }
         }
         
        

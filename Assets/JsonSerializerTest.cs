@@ -8,16 +8,27 @@ using IOHandlers.Records;
 using Menu;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
+using Prompts.ScriptableObjects;
+using ScriptableObjects.Databases;
+using ScriptableObjects.NoFlyZone;
+using ScriptableObjects.UAVs;
+using ScriptableObjects.UAVs.Camera;
 using ScriptableObjects.UAVs.Navigation;
 using UnityEngine;
-using YamlDotNet.Serialization;
-using YamlDotNet.Serialization.NamingConventions;
+
 
 public class JsonSerializerTest : MonoBehaviour
 {		
-  //  [SerializeField] public ConsoleTextHandler consoleTextHandler;
-    public RootObject rootObject = new RootObject();
-    public NavigationSettingsSO navigationSettings;
+    public InputRecordsDatabaseSO inputRecordsDatabaseSO;
+    private NavigationSettingsSO navigationSettings;
+    private UavGeneralSettingsSO uavGeneralSettings;
+    private PromptSettingsSO promptSettings;
+    private NFZSettingsSO nfzSettings;
+    private UavCameraPanelSettingsSO uavCameraPanelSettings;
+    private UavSettingsDatabaseSO uavSettingsDatabase;
+    
+    private SettingsDatabaseSO settingsDatabase;
+    
     public bool GetDefaultSettings { get; set; }= true;
     public bool AddDefaultWayPointsRecords { get; set; } = true;
     public bool AddDefaultUavRecords { get; set; } = true;
@@ -27,43 +38,86 @@ public class JsonSerializerTest : MonoBehaviour
     public bool AddDefaultNFZRecords { get; set; } = true;
    
     // Start is called before the first frame update
-    void Start()
-    {
-        if (GetDefaultSettings == true) rootObject.Settings = DefaultRecordsCreator.GetDefaultSettings();
-        if (AddDefaultWayPointsRecords == true) rootObject.WayPointsRecords = DefaultRecordsCreator.AddDefaultWayPointsRecords();
-        if (AddDefaultUavRecords == true) rootObject.UavsRecords = DefaultRecordsCreator.AddDefaultUavRecords();
-        if (AddDefaultFuelLeaksRecord == true) rootObject.FuelLeaksRecord = DefaultRecordsCreator.AddDefaultFuelLeaksRecord();
-		if (AddDefaultUavPathsRecords == true) rootObject.UavPathsRecords = DefaultRecordsCreator.AddDefaultUavPathsRecords();
-		if(AddDefaultPromptRecords==true) rootObject.Prompts = DefaultRecordsCreator.AddDefaultPromptRecords();
-		if(AddDefaultNFZRecords==true) rootObject.NFZRecords = DefaultRecordsCreator.AddDefaultNFZRecords();
-		
-		
-		
-		string json = JsonConvert.SerializeObject(rootObject, Formatting.Indented);
-        //  consoleTextHandler.AddTextToConsole(json);
-
-        using StreamWriter file = File.CreateText(@"D:\mytest.json");
-        JsonSerializer serializer = new JsonSerializer();
-        file.Write(json);
-        
-        var expConverter = new ExpandoObjectConverter();
-        dynamic deserializedObject = JsonConvert.DeserializeObject<ExpandoObject>(json, expConverter);
-        var serializer2 = new YamlDotNet.Serialization.Serializer();
-        string yaml = serializer2.Serialize(deserializedObject);
-        using StreamWriter file2 = File.CreateText(@"D:\mytest4.json");
-        file2.Write(yaml);
-        file2.Close();
-        navigationSettings= GameManager.Instance.settingsDatabase.uavSettings.navigationSettings;
-        string json1 = JsonConvert.SerializeObject(navigationSettings, Formatting.Indented);
-        using StreamWriter file1 = File.CreateText(@"D:\mytest1.json");
-        JsonSerializer serializer1= new JsonSerializer();
-        file1.Write(json1);
-        file1.Close();
-        // readfile to string
-        // string json2 = File.ReadAllText(@"D:\mytest2.json");
-        // JsonUtility.FromJsonOverwrite(json2, navigationSettings);
-       // NavigationSettings navigationSettings1 = (NavigationSettings)serializer1.Deserialize(new JsonTextReader(new StringReader(json2)), typeof(NavigationSettings));
-       // Debug.Log(navigationSettings1.fixedSpeed+"gaddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd");
-    }
-    
+  //   void Start()
+  //   {
+  //       if (AddDefaultWayPointsRecords == true) inputRecordsDatabaseSO.WayPointsRecords = DefaultRecordsCreator.GetDefaultWayPointsRecords();
+  //       if (AddDefaultUavRecords == true) inputRecordsDatabaseSO.UavsRecords = DefaultRecordsCreator.GetDefaultUavRecords();
+  //       if (AddDefaultFuelLeaksRecord == true) inputRecordsDatabaseSO.FuelLeaksRecord = DefaultRecordsCreator.GetDefaultFuelLeaksRecord();
+		// if (AddDefaultUavPathsRecords == true) inputRecordsDatabaseSO.UavPathsRecords = DefaultRecordsCreator.GetDefaultUavPathsRecords();
+		// if(AddDefaultPromptRecords==true) inputRecordsDatabaseSO.Prompts = DefaultRecordsCreator.AddDefaultPromptRecords();
+		// if(AddDefaultNFZRecords==true) inputRecordsDatabaseSO.NFZRecords = DefaultRecordsCreator.GetDefaultNFZRecords();
+		//
+		//
+		//
+		// string json = JsonConvert.SerializeObject(inputRecordsDatabaseSO, Formatting.Indented);
+  //       //  consoleTextHandler.AddTextToConsole(json);
+  //
+  //       using StreamWriter file = File.CreateText(@"D:\mytest.json");
+  //       JsonSerializer serializer = new JsonSerializer();
+  //       file.Write(json);
+  //       
+  //       var expConverter = new ExpandoObjectConverter();
+  //       dynamic deserializedObject = JsonConvert.DeserializeObject<ExpandoObject>(json, expConverter);
+  //      // var serializer2 = new YamlDotNet.Serialization.Serializer();
+  //       //string yaml = serializer2.Serialize(deserializedObject);
+  //      // using StreamWriter file2 = File.CreateText(@"D:\mytest4.json");
+  //      // file2.Write(yaml);
+  //       //file2.Close();
+  //       navigationSettings= GameManager.Instance.settingsDatabase.uavSettingsDatabase.navigationSettings;
+  //       uavGeneralSettings = GameManager.Instance.settingsDatabase.uavSettingsDatabase.uavGeneralSettings;
+  //       promptSettings = GameManager.Instance.settingsDatabase.promptSettings;
+  //       nfzSettings = GameManager.Instance.settingsDatabase.nfzSettings;
+  //       uavCameraPanelSettings = GameManager.Instance.settingsDatabase.uavSettingsDatabase.uavCameraPanelSettings;
+  //       uavSettingsDatabase = GameManager.Instance.settingsDatabase.uavSettingsDatabase;
+  //       settingsDatabase = GameManager.Instance.settingsDatabase;
+  //       
+  //       string json1 = JsonConvert.SerializeObject(navigationSettings, Formatting.Indented);
+  //       using StreamWriter file1 = File.CreateText(@"D:\mytest1.json");
+  //       file1.Write(json1);
+  //       file1.Close();
+  //       
+  //       string json2 = JsonConvert.SerializeObject(uavGeneralSettings, Formatting.Indented);
+  //       using StreamWriter file3 = File.CreateText(@"D:\UavGeneralSettings.json");
+  //       
+  //       file3.Write(json2);
+  //       file3.Close();
+  //       
+  //       string json3 = JsonConvert.SerializeObject(promptSettings, Formatting.Indented);
+  //       using StreamWriter file4 = File.CreateText(@"D:\PromptSettings.json");
+  //       
+  //       file4.Write(json3);
+  //       file4.Close();
+  //       
+  //       string json4 = JsonConvert.SerializeObject(nfzSettings, Formatting.Indented);
+  //       using StreamWriter file5 = File.CreateText(@"D:\NFZSettings.json");
+  //       
+  //       file5.Write(json4);
+  //       file5.Close();
+  //       
+  //       string json5 = JsonConvert.SerializeObject(uavCameraPanelSettings, Formatting.Indented);
+  //       using StreamWriter file6 = File.CreateText(@"D:\UavCameraAndTargetDetectionSettings.json");
+  //       
+  //       file6.Write(json5);
+  //       file6.Close();
+  //       
+  //       string json6 = JsonConvert.SerializeObject(uavSettingsDatabase, Formatting.Indented);
+  //       using StreamWriter file7 = File.CreateText(@"D:\UavSettingsDatabase.json");
+  //       
+  //       file7.Write(json6);
+  //       file7.Close();
+  //       
+  //       string json7 = JsonConvert.SerializeObject(settingsDatabase, Formatting.Indented);
+  //       using StreamWriter file8 = File.CreateText(@"D:\SettingsDatabase.json");
+  //       
+  //       file8.Write(json7);
+	 //    file8.Close();   
+  //
+  //       JsonSerializer serializer1= new JsonSerializer();
+  //       // readfile to string
+  //       // string json2 = File.ReadAllText(@"D:\mytest2.json");
+  //       // JsonUtility.FromJsonOverwrite(json2, navigationSettings);
+  //      // NavigationSettings navigationSettings1 = (NavigationSettings)serializer1.Deserialize(new JsonTextReader(new StringReader(json2)), typeof(NavigationSettings));
+  //      // Debug.Log(navigationSettings1.fixedSpeed+"gaddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd");
+  //   }
+  //   
 }

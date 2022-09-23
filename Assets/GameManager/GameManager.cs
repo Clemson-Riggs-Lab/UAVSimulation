@@ -1,19 +1,19 @@
 using System;
 using System.Collections;
 using System.IO;
-using Prompts;
+using Databases.ScriptableObjects;
 using HelperScripts;
 using IOHandlers;
+using IOHandlers.Settings.ScriptableObjects;
+using Modules.FuelAndHealth;
+using Modules.Navigation;
+using Modules.Navigation.Submodules.Rerouting;
+using Modules.NoFlyZone;
+using Modules.Prompts;
+using Modules.TargetDetection;
 using Newtonsoft.Json;
-using NoFlyZone;
-using ScriptableObjects.Databases;
-using ScriptableObjects.InputFiles;
-using ScriptableObjects.UAVs.Navigation;
-using TargetDetection;
 using UAVs;
-using UAVs.Sub_Modules.FuelAndHealth;
-using UAVs.Sub_Modules.Navigation;
-using Unity.VisualScripting;
+using UI;
 using UnityEngine;
 using WayPoints;
 using static HelperScripts.Enums;
@@ -28,25 +28,17 @@ public class GameManager : MonoBehaviour
         [SerializeField] public GameObject nfzsContainer;
         [Space(20)]
         
-        [SerializeField] public ConfigFilesDatabaseSO configFilesDatabase;
+        [SerializeField] public ConfigFilesSettingsSO configFilesSettings;
         
         [Space(20)]
         [SerializeField] public WayPointsManager wayPointsManager;
         [SerializeField] public UavsManager uavsManager;
-        [Space(20)]
-     //   [SerializeField] public JsonSerializerTest jsonSerializerTest;
-        [Space(20)]
         [SerializeField] public NavigationManager navigationManager;
-        
-        [Space(20)]
-        [SerializeField] public FuelAndHealthManager fuelAndHealthManager;
-        
-        [Space(20)]
+        [SerializeField] public ReroutingManager reroutingManager;
+        [SerializeField] public FuelManager fuelManager;
         [SerializeField] public PromptsManager promptsManager;
-        [Space(20)]
         [SerializeField] public NFZsManager nfzsManager;
-        [Space(20)]
-        [SerializeField] public TargetsManager targetsManager;
+        [SerializeField] public TargetsDetectionManager targetsDetectionManager;
         
         [Space(20)]
         [SerializeField] public InputRecordsDatabaseSO inputRecordsDatabase;
@@ -65,20 +57,20 @@ public class GameManager : MonoBehaviour
             AssertionHelper.AssertComponentReferencedInEditor(uavsContainer,this,this.gameObject);
             AssertionHelper.AssertComponentReferencedInEditor(terrainContainer,this,this.gameObject);
             AssertionHelper.AssertComponentReferencedInEditor(nfzsContainer,this,this.gameObject);
-            AssertionHelper.AssertComponentReferencedInEditor(configFilesDatabase,this,this.gameObject);
+            AssertionHelper.AssertComponentReferencedInEditor(configFilesSettings,this,this.gameObject);
             AssertionHelper.AssertComponentReferencedInEditor(wayPointsManager,this,this.gameObject);
             AssertionHelper.AssertComponentReferencedInEditor(uavsManager,this,this.gameObject);
             AssertionHelper.AssertComponentReferencedInEditor(navigationManager,this,this.gameObject);
-            AssertionHelper.AssertComponentReferencedInEditor(fuelAndHealthManager,this,this.gameObject);
+            AssertionHelper.AssertComponentReferencedInEditor(reroutingManager,this,this.gameObject);
+            AssertionHelper.AssertComponentReferencedInEditor(fuelManager,this,this.gameObject);
             AssertionHelper.AssertComponentReferencedInEditor(promptsManager,this,this.gameObject);
-            //AssertionHelper.AssertComponentReferencedInEditor(jsonSerializerTest,this,this.gameObject);
             
             AssertionHelper.AssertComponentReferencedInEditor(inputRecordsDatabase,this,this.gameObject);
             AssertionHelper.AssertComponentReferencedInEditor(channelsDatabase,this,this.gameObject);
             AssertionHelper.AssertComponentReferencedInEditor(prefabsDatabase,this,this.gameObject);
             AssertionHelper.AssertComponentReferencedInEditor(settingsDatabase,this,this.gameObject);
             AssertionHelper.AssertComponentReferencedInEditor(nfzsManager,this,this.gameObject);
-            AssertionHelper.AssertComponentReferencedInEditor(targetsManager,this,this.gameObject);
+            AssertionHelper.AssertComponentReferencedInEditor(targetsDetectionManager,this,this.gameObject);
             
             AssertionHelper.AssertComponentReferencedInEditor(blockingPanelController,this,this.gameObject);
             
@@ -100,10 +92,11 @@ public class GameManager : MonoBehaviour
         
         private void Start()
         {
-            if(configFilesDatabase.settingsFileFullFilePath != "")
+            SubscribeToChannels();
+            if(configFilesSettings.settingsFileFullFilePath != "")
             {try
                 {
-                    var settings = File.ReadAllText(configFilesDatabase.settingsFileFullFilePath);
+                    var settings = File.ReadAllText(configFilesSettings.settingsFileFullFilePath);
                     JsonConvert.PopulateObject(settings, settingsDatabase);
                 }
                 catch (Exception e)
@@ -113,11 +106,11 @@ public class GameManager : MonoBehaviour
                     _forceGenerateFromRecords = true;
                 }}
 
-            if (configFilesDatabase.settingsFileFullFilePath != "")
+            if (configFilesSettings.settingsFileFullFilePath != "")
             {
                 try
                 {
-                    var inputRecords = File.ReadAllText(configFilesDatabase.inputFileFullFilePath);
+                    var inputRecords = File.ReadAllText(configFilesSettings.inputFileFullFilePath);
                     JsonConvert.PopulateObject(inputRecords, inputRecordsDatabase);
                 }
                 catch (Exception e)
@@ -131,11 +124,15 @@ public class GameManager : MonoBehaviour
             else _forceGenerateFromRecords = true;
             StartCoroutine(InitializeSimulation());
 
-            MonitorSimulationEnd();
+        }
 
+        private void SubscribeToChannels()
+        {
+            channelsDatabase.simulationEndedEventChannel.Subscribe(OnSimulationEndEvent);
         }
 
       
+
 
         private IEnumerator InitializeSimulation()
         {
@@ -144,15 +141,15 @@ public class GameManager : MonoBehaviour
             navigationManager.Initialize();
             nfzsManager.Initialize();
             promptsManager.Initialize();
-            fuelAndHealthManager.Initialize();
+            fuelManager.Initialize();
             
-            if (!_forceGenerateFromRecords)
+            if (_forceGenerateFromRecords)
             {
-                settingsDatabase.uavSettingsDatabase.navigationSettings.navigationRecordsSource = InputRecordsSource.FromDefaultRecords;
-                settingsDatabase.uavSettingsDatabase.uavGeneralSettings.uavRecordsSource = InputRecordsSource.FromDefaultRecords;
+                settingsDatabase.navigationSettings.navigationRecordsSource = InputRecordsSource.FromDefaultRecords;
+                settingsDatabase.uavSettings.uavRecordsSource = InputRecordsSource.FromDefaultRecords;
                 settingsDatabase.waypointSettings.waypointsRecordsSource = InputRecordsSource.FromDefaultRecords;
                 settingsDatabase.nfzSettings.nfzRecordsSource = InputRecordsSource.FromDefaultRecords;
-                settingsDatabase.uavSettingsDatabase.fuelAndHealthSettings.fuelLeaksRecordsSource = InputRecordsSource.FromDefaultRecords;
+                settingsDatabase.fuelSettings.fuelLeaksRecordsSource = InputRecordsSource.FromDefaultRecords;
                 
                 
             }
@@ -176,20 +173,14 @@ public class GameManager : MonoBehaviour
             StartCoroutine( navigationManager.NavigateAll(simulationStartTime));
             StartCoroutine( nfzsManager.StartNFZsTimerCoroutine(simulationStartTime));
             StartCoroutine( promptsManager.StartPromptsTimerCoroutine(simulationStartTime));
-            StartCoroutine( fuelAndHealthManager.StartFuelAndHealthControllers(simulationStartTime));
+            StartCoroutine( fuelManager.StartFuelControllers(simulationStartTime));
             
         }
         
-        private void MonitorSimulationEnd()
-        { 
-            channelsDatabase.uavChannels.fuelAndHealthChannels.uavLostEventChannel.Subscribe(OnUavLost);
-        }
-
-        private int _uavsLost = 0;
-        private void OnUavLost(Uav arg0)
+        
+        
+        private void OnSimulationEndEvent()
         {
-            _uavsLost++;
-           if(_uavsLost==uavsManager.uavs.Count)
-               blockingPanelController.ClosingView();
+            blockingPanelController.ClosingView();
         }
 }

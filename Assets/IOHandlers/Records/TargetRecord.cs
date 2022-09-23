@@ -1,6 +1,6 @@
 using JetBrains.Annotations;
 
-namespace IOHandlers.Records
+namespace IOHandlers
 {
 	public class TargetRecord
 	{

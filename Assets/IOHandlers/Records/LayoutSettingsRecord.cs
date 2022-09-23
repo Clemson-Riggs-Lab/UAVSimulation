@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using Newtonsoft.Json;
 
-namespace IOHandlers.Records
+namespace IOHandlers
 { 
 	//TODO: Complete this class, then add the functionalities to make the layout dynamic based on a settings input file
 	// We want to do this so that adding modules and removing them wouldn't require coding and a recompile of the program.
@@ -10,16 +10,9 @@ namespace IOHandlers.Records
 	
 	public class LayoutSettingsRecord
 	{
-		public List<PanelRecord> Panels { get; set; }
-		
-		public float TimePeriodDurationInSecs { get; set; } = 10;
-		
-		
+
 		[JsonProperty(NullValueHandling=NullValueHandling.Ignore)]
 		public Range TargetSpawnBufferRange { get; set; } = new Range(){ Min = 0, Max = 0 };
-		
-		[JsonProperty(NullValueHandling=NullValueHandling.Ignore)]
-		public bool BlankCamerasBetweenNavigations { get; set; } = false; //TODO implement in camera handler
 
 		[JsonProperty(NullValueHandling=NullValueHandling.Ignore)]
 		public Range VariationInCameraBlankDurations { get; set; } = new Range() { Min = 0, Max = 0 };

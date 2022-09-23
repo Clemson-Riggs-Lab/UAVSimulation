@@ -6,5 +6,13 @@ namespace HelperScripts
 		{
 			FromInputFile, FromDefaultRecords
 		}
+		
+		public enum UavCondition
+		{
+			Enabled,
+			Hidden,
+			Finished,
+			Lost
+		}
 	}
 }

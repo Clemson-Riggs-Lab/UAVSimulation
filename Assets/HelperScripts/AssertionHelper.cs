@@ -1,5 +1,4 @@
 using System;
-using UAVs.Navigation;
 using UnityEngine;
 
 namespace HelperScripts
@@ -23,6 +22,7 @@ namespace HelperScripts
 					$"The reference to ({typeof(T1).Name}) in script {typeof(T2).Name} is `null` in the GameObject ({go.name}) in the scene" +
 					$"{Environment.NewLine} Please add a valid reference to a ({typeof(T1).Name}) in {go.name} then clear debugger Errors";
 				Debug.LogError(debugString, go);
+				
 			}
 		}
 

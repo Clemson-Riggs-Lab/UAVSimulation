@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace IOHandlers.Records
+namespace IOHandlers
 {
 	public class UavRecord
 	{

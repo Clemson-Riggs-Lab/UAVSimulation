@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b90119638f711624aac2e4a6f742482a, type: 3}
+  m_Name: NavigationChannels
+  m_EditorClassIdentifier: 
+  uavStartedNewPathEventChannel: {fileID: 11400000, guid: 418f864cb9a9ce9498450b2f3efaabdf, type: 2}
+  uavArrivedAtDestinationEventChannel: {fileID: 11400000, guid: ad8d30432ce1e1e4aa86b0b01cd35c1a, type: 2}
+  uavReroutedEventChannel: {fileID: 11400000, guid: 5fe3995b2fb70434aa78482e3e58cd77, type: 2}
+  uavReroutePreviewEventChannel: {fileID: 11400000, guid: 20147766f0047d94eaaa4e585bdeafbe, type: 2}
+  reroutingOptionsRequestedChannel: {fileID: 11400000, guid: 986a23ff3e19460419bef169ba5bf0aa, type: 2}

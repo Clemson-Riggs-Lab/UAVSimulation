@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace IOHandlers.Records
+namespace IOHandlers
 {
 	public class UavFuelLeaksRecord
 	{

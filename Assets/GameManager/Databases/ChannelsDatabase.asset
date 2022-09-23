@@ -13,9 +13,12 @@ MonoBehaviour:
   m_Name: ChannelsDatabase
   m_EditorClassIdentifier: 
   newConsoleMessageChannel: {fileID: 11400000, guid: 502a2607491241c40b797163fc8a2296, type: 2}
+  simulationEndedEventChannel: {fileID: 11400000, guid: 9d668c8a63d90974e83efb6679df55f0, type: 2}
   logEventChannel: {fileID: 11400000, guid: 739cddf0c4cda4247b88f0807f3720cd, type: 2}
   promptChannels: {fileID: 11400000, guid: bf6264f0eaecece4cb44bb363aa2813e, type: 2}
   uavChannels: {fileID: 11400000, guid: 1436dd1f7e3fbf74cba42add2abb17aa, type: 2}
+  navigationChannels: {fileID: 11400000, guid: f597b3ec26d78554ab50bd7ea0ecb28d, type: 2}
+  fuelChannels: {fileID: 11400000, guid: 0cf40bb74cf344b42a2e70d98b308b7e, type: 2}
   targetDetectionChannels: {fileID: 11400000, guid: 27322ddbfd8ffc848a8569068d84e503, type: 2}
-  wayPointCreatedEventChannel: {fileID: 11400000, guid: 434256939b0e424438067ae5888d92c6, type: 2}
-  wayPointDisabledEventChannel: {fileID: 11400000, guid: ee622e049e3d02449b0fab8df64e091e, type: 2}
+  wayPointCreatedEventChannel: {fileID: 11400000, guid: 4f382b37e5fe55f42887f7758c7d1f14, type: 2}
+  wayPointDisabledEventChannel: {fileID: 11400000, guid: 55c8594ff3d651e408c8f15a32baddb3, type: 2}

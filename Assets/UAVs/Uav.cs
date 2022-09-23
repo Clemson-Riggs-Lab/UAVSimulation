@@ -1,33 +1,36 @@
 using System;
 using HelperScripts;
+using Modules.Navigation;
 using ScriptableObjects.EventChannels;
-using ScriptableObjects.UAVs;
-using ScriptableObjects.UAVs.Navigation;
 using TMPro;
-using UAVs.Sub_Modules.Navigation;
+using UAVs.Channels.ScriptableObjects;
+using UAVs.Settings.ScriptableObjects;
 using Unity.VisualScripting;
 using UnityEngine;
 using WayPoints;
+using static HelperScripts.Enums;
 
 namespace UAVs
 {
 	public class Uav : MonoBehaviour
 	{
-		private UavSettingsDatabaseSO uavSettingsDatabase;
-		private UavEventChannelSO uavCreatedEventChannel;
-		private UavEventChannelSO uavDestroyedEventChannel;
+		private UavEventChannelSO _uavCreatedEventChannel;
+		private UavEventChannelSO _uavDestroyedEventChannel;
+		private UavSettingsSO _uavSettings;
 		
-		[DoNotSerialize]public string uavName;
-		[DoNotSerialize]public int id;
-		[DoNotSerialize]public Path currentPath;
-		[DoNotSerialize]public Color uavColor;
-		[NonSerialized] public WayPoint startingWaypoint;
+		[NonSerialized]public string uavName;
+		[NonSerialized]public int id;
+		[NonSerialized]public Path currentPath;
+		[NonSerialized]public UavCondition uavCondition;
+		[NonSerialized]public Color uavColor;
+		[NonSerialized]public WayPoint startingWaypoint;
 		
 		public TextMeshPro label;
 		public GameObject uavBody;
 		public Renderer uavRenderer;
 		
-		
+
+
 		private void OnEnable()
 		{
 			GetReferencesFromGameManager();
@@ -36,9 +39,9 @@ namespace UAVs
 		
 		private void GetReferencesFromGameManager()
 		{
-			uavCreatedEventChannel= GameManager.Instance.channelsDatabase.uavChannels.uavCreatedEventChannel;
-			uavDestroyedEventChannel= GameManager.Instance.channelsDatabase.uavChannels.uavDestroyedEventChannel;
-			uavSettingsDatabase= GameManager.Instance.settingsDatabase.uavSettingsDatabase;
+			_uavCreatedEventChannel= GameManager.Instance.channelsDatabase.uavChannels.uavCreatedEventChannel;
+			_uavDestroyedEventChannel= GameManager.Instance.channelsDatabase.uavChannels.uavDestroyedEventChannel;
+			_uavSettings= GameManager.Instance.settingsDatabase.uavSettings;
 		}
 
 		public void Initialize(int id, WayPoint wayPoint,bool enabledOnStart)
@@ -53,28 +56,28 @@ namespace UAVs
 			startingWaypoint = wayPoint;
 			transform.position = startingWaypoint.transform.position;
 			
-			if(uavSettingsDatabase.uavGeneralSettings.colorUavLikePath)
+			if(_uavSettings.colorUavLikePath)
 				uavRenderer.material.color = uavColor;//set material color based on uavcolor
 			
 			//set label name based on name
 			label.text = uavName;
 			label.color = uavColor;
 			
-			if(uavCreatedEventChannel != null) 
-				uavCreatedEventChannel.RaiseEvent(this);
+			if(_uavCreatedEventChannel != null) 
+				_uavCreatedEventChannel.RaiseEvent(this);
 			
 		}
 
 		private void SetUavName()
 		{
-			uavName = uavSettingsDatabase.uavGeneralSettings.namingScheme switch
+			uavName = _uavSettings.namingScheme switch
 			{
-				UavSettingsDatabaseSO.UavNamingScheme.UavAndNumber => "UAV " + id,
-				UavSettingsDatabaseSO.UavNamingScheme.UavAndNumberOffsetZero => "UAV " + (id + 1),
-				UavSettingsDatabaseSO.UavNamingScheme.HashtagNumber => "# " + (id),
-				UavSettingsDatabaseSO.UavNamingScheme.HashtagNumberOffsetZero =>  "# " + (id + 1),
-				UavSettingsDatabaseSO.UavNamingScheme.Letter =>  NatoAlphabetConverter.IntToLetters(id),
-				UavSettingsDatabaseSO.UavNamingScheme.NatoName =>  NatoAlphabetConverter.LettersToName(NatoAlphabetConverter.IntToLetters(id))
+				UavNamingScheme.UavAndNumber => "UAV " + id,
+				UavNamingScheme.UavAndNumberOffsetZero => "UAV " + (id + 1),
+				UavNamingScheme.HashtagNumber => "# " + (id),
+				UavNamingScheme.HashtagNumberOffsetZero =>  "# " + (id + 1),
+				UavNamingScheme.Letter =>  NatoAlphabetConverter.IntToLetters(id),
+				UavNamingScheme.NatoName =>  NatoAlphabetConverter.LettersToName(NatoAlphabetConverter.IntToLetters(id))
 				,
 				_ => throw new ArgumentOutOfRangeException()
 			};
@@ -82,9 +85,23 @@ namespace UAVs
 
 		private void OnDisable()
 		{
-			if(uavDestroyedEventChannel != null)
-				uavDestroyedEventChannel.RaiseEvent(this);
+			if(_uavDestroyedEventChannel != null)
+				_uavDestroyedEventChannel.RaiseEvent(this);
 		}
-		
+
+		public void SetVisibility(bool visibility)
+		{
+			uavBody.transform.SetLayerRecursively(LayerMask.NameToLayer(visibility ? "UAV"+id : "UAVHidden"));
+			label.transform.SetLayerRecursively(LayerMask.NameToLayer(visibility ? "UAV"+id : "UAVHidden"));
+			// the minimap camera is set to cull the UAVHidden layer, so the UAVs are not visible on the minimap if they are placed in the UAVHidden layer
+		}
+
+		public void SetCollisions(bool collisions)
+		{
+			//set tag to UAV or UAVNoCollisions based on collisions status
+			// if tag is set to UAVNoCollisions, the NFZ will not register a collision since it only checks for UAV tag
+			uavBody.gameObject.tag = collisions ? "UAV" : "UAVNoCollisions";
+		}
+	
 	}
 }

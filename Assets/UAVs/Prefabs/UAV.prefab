@@ -182,7 +182,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4540565744229459926}
   - component: {fileID: 1273371307578138613}
-  - component: {fileID: 3668603367828401715}
+  - component: {fileID: 4612493914961200634}
   m_Layer: 0
   m_Name: UAV
   m_TagString: UAV
@@ -221,11 +221,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uavName: 
   id: 0
+  uavCondition: 0
   uavColor: {r: 0, g: 0, b: 0, a: 0}
+  startingWaypoint: {fileID: 0}
   label: {fileID: 1877801405154813579}
   uavBody: {fileID: 6958896719786651566}
   uavRenderer: {fileID: 5008431971366055888}
---- !u!114 &3668603367828401715
+--- !u!114 &4612493914961200634
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -234,7 +236,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6774625031947282769}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 923140d726074cd799169462c0ea03d1, type: 3}
+  m_Script: {fileID: 11500000, guid: 1999f4b0d07573f4f857d155f00d0141, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   navigationSettings: {fileID: 0}
@@ -351,5 +353,5 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 1
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0

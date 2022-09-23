@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using HelperScripts;
-using Menu;
+using IOHandlers.Settings.ScriptableObjects;
 using ScriptableObjects.EventChannels;
-using ScriptableObjects.InputFiles;
+using UI.Console.Channels.ScriptableObjects;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
@@ -22,12 +22,12 @@ namespace IOHandlers
     public class ConfigFilesHandler:MonoBehaviour
     {
         [SerializeField] private ConsoleMessageEventChannelSO writeMessageToConsoleChannel;
-        [SerializeField] public ConfigFilesDatabaseSO configFilesDatabase;
+        [SerializeField] public ConfigFilesSettingsSO configFilesSettings;
         private const string ConfigFilesExtension = "json";
         
         [Header("Folders Names within the /InputFiles directory")]
-        [SerializeField] public string inputFolderName =FilesType.input.ToString(); // input folder contains input files
-        [SerializeField] public string settingsFolderName =FilesType.settings.ToString(); // settings folder contains settings files
+        [SerializeField] public string inputFolderName =FilesType.Input.ToString(); // input folder contains input files
+        [SerializeField] public string settingsFolderName =FilesType.Settings.ToString(); // settings folder contains settings files
         
         private string _inputFolderPath;
         private string _settingsFolderPath;
@@ -36,8 +36,8 @@ namespace IOHandlers
 
         public enum FilesType
         {
-            input,
-            settings,
+            Input,
+            Settings,
             
         }
         
@@ -56,7 +56,7 @@ namespace IOHandlers
         public List<FileInfo> GetFilesInfoFromWorkDir(FilesType filesType)
         {
             DirectoryInfo directoryInfo = null;
-            if(filesType == FilesType.input)
+            if(filesType == FilesType.Input)
                 directoryInfo = new DirectoryInfo(_inputFolderPath);
             else
             {
@@ -88,12 +88,12 @@ namespace IOHandlers
             switch (fileType)
             {
                 //else select file in database
-                case FilesType.input:
-                    configFilesDatabase.inputFileFullFilePath = fileInfo.FullName;
+                case FilesType.Input:
+                    configFilesSettings.inputFileFullFilePath = fileInfo.FullName;
                     break;
                 
-                case FilesType.settings:
-                    configFilesDatabase.settingsFileFullFilePath = fileInfo.FullName;
+                case FilesType.Settings:
+                    configFilesSettings.settingsFileFullFilePath = fileInfo.FullName;
                     break;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(fileType), fileType, null);

@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using HelperScripts;
 using IOHandlers;
-using IOHandlers.Records;
 using Unity.VisualScripting;
 using UnityEngine;
 using WayPoints;
@@ -41,7 +40,7 @@ namespace UAVs
             
             foreach (var uavRecord in uavsRecords)
             {
-                var wayPoint = _wayPointsManager.wayPoints.FirstOrDefault(w => w.Id == uavRecord.StartingWayPointId);
+                var wayPoint = _wayPointsManager.wayPoints.FirstOrDefault(w => w.id == uavRecord.StartingWayPointId);
                 if (wayPoint != null)
                 { 
                     var id = uavRecord.Id ??= 0;

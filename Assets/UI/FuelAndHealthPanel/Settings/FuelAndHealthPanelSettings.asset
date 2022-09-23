@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13bd501e0f7c48f78b37bab7d2fe8777, type: 3}
+  m_Name: FuelAndHealthPanelSettings
+  m_EditorClassIdentifier: 
+  enabledUavFuelAndHealthPanelConfigs:
+    healthButtonInteractable: 0
+    isVisibile: 1
+    healthButtonText: 
+    healthButtonTextColor: Black
+    healthButtonColor: Green
+    fuelSliderColor: Green
+  hiddenUavFuelAndHealthPanelConfigs:
+    healthButtonInteractable: 0
+    isVisibile: 0
+    healthButtonText: 
+    healthButtonTextColor: Black
+    healthButtonColor: Green
+    fuelSliderColor: Green
+  fuelLeakFuelAndHealthPanelConfigs:
+    healthButtonInteractable: 1
+    isVisibile: 1
+    healthButtonText: Fix Leak
+    healthButtonTextColor: Black
+    healthButtonColor: Orange
+    fuelSliderColor: Green
+  fatalLeakFuelAndHealthPanelConfigs:
+    healthButtonInteractable: 0
+    isVisibile: 1
+    healthButtonText: Fatal Leak
+    healthButtonTextColor: Black
+    healthButtonColor: Red
+    fuelSliderColor: Red
+  fuelEmptyFuelAndHealthPanelConfigs:
+    healthButtonInteractable: 0
+    isVisibile: 1
+    healthButtonText: Uav Lost
+    healthButtonTextColor: Red
+    healthButtonColor: Black
+    fuelSliderColor: Red
+  lostUavFuelAndHealthPanelConfigs:
+    healthButtonInteractable: 0
+    isVisibile: 0
+    healthButtonText: Uav Lost
+    healthButtonTextColor: Red
+    healthButtonColor: Gray
+    fuelSliderColor: Red

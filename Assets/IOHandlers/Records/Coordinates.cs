@@ -1,4 +1,4 @@
-namespace IOHandlers.Records
+namespace IOHandlers
 {
 	public class Coordinates
 	{

@@ -5,7 +5,7 @@ namespace HelperScripts
 {
 	public static class NatoAlphabetConverter
 	{
-		static Dictionary<char, string> dDict = new Dictionary<char, string>()
+		static Dictionary<char, string> _dDict = new Dictionary<char, string>()
 		{
 			{ 'a', "Alfa" }, { 'b', "Bravo" }, { 'c', "Charlie" },
 			{ 'd', "Delta" }, { 'e', "Echo" }, { 'f', "Frank" },
@@ -20,7 +20,7 @@ namespace HelperScripts
 
 		public static string LettersToName(string abbrvName)
 		{
-			string result = string.Join(" ", abbrvName.Select(x => dDict[char.ToLower(x)]));
+			string result = string.Join(" ", abbrvName.Select(x => _dDict[char.ToLower(x)]));
 			return result;
 		}
 

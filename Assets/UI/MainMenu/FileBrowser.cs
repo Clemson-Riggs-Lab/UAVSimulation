@@ -3,12 +3,12 @@ using System.IO;
 using System.Linq;
 using HelperScripts;
 using IOHandlers;
-using SFB;
-using TMPro;
+using Plugins.StandaloneFileBrowser;
+using UI.MainMenu.DropDown;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Menu
+namespace UI.MainMenu
 {
 	public class FileBrowser : MonoBehaviour
 	{

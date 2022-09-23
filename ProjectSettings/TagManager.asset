@@ -6,6 +6,8 @@ TagManager:
   tags:
   - NFZ
   - UAV
+  - Ground
+  - UAVNoCollisions
   layers:
   - Default
   - TransparentFX
@@ -38,7 +40,7 @@ TagManager:
   - UAV18
   - UAV19
   - UAV20
-  - 
+  - UAVHidden
   m_SortingLayers:
   - name: Default
     uniqueID: 0

@@ -1,25 +1,25 @@
-using ScriptableObjects.EventChannels;
-using ScriptableObjects.InputFiles;
+using IOHandlers.Settings.ScriptableObjects;
+using UI.Console.Channels.ScriptableObjects;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace UI
+namespace UI.MainMenu
 {
     public class SceneLoader : MonoBehaviour
     {
-        public ConfigFilesDatabaseSO configFilesDatabaseSO;
-        public ConsoleMessageEventChannelSO WriteMessageToConsoleChannel;
+        public ConfigFilesSettingsSO configFilesSettingsSO;
+        public ConsoleMessageEventChannelSO writeMessageToConsoleChannel;
         public void LoadScene(string sceneName)
         {
             
-            if (configFilesDatabaseSO.inputFileFullFilePath=="")
+            if (configFilesSettingsSO.inputFileFullFilePath=="")
             {
-                WriteMessageToConsoleChannel.RaiseEvent("", new(){color = "red",doAnimate = true,text="\n Please select an input file first"});
+                writeMessageToConsoleChannel.RaiseEvent("", new(){color = "red",doAnimate = true,text="\n Please select an input file first"});
                 return;
             }
-            else if (configFilesDatabaseSO.settingsFileFullFilePath=="")
+            else if (configFilesSettingsSO.settingsFileFullFilePath=="")
             {
-                WriteMessageToConsoleChannel.RaiseEvent("", new(){color = "red",doAnimate = true,text="\n Please select a settings file first"});
+                writeMessageToConsoleChannel.RaiseEvent("", new(){color = "red",doAnimate = true,text="\n Please select a settings file first"});
                 return;
             }
             else 

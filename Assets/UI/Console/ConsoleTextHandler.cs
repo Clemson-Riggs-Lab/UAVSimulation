@@ -1,11 +1,11 @@
 using System;
 using System.Collections;
-using Prompts;
+using Databases.ScriptableObjects;
 using HelperScripts;
-using Menu;
-using ScriptableObjects.Databases;
+using Modules.Prompts;
 using ScriptableObjects.EventChannels;
 using TMPro;
+using UI.Console.Channels.ScriptableObjects;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -18,9 +18,9 @@ namespace UI.Console
 		[SerializeField] private TextMeshProUGUI consoleTextMeshProUGUI;
 
 		[SerializeField] private ConsoleMessageEventChannelSO writeMessageToConsoleChannel;
-		[SerializeField] public SettingsDatabaseSO settingsDatabase;
-		[DoNotSerialize] private TypeWriterEffect _typeWriterEffect;
-		[DoNotSerialize] private QueueManager _animationQueue;
+		[NonSerialized] public SettingsDatabaseSO settingsDatabase;
+		[NonSerialized] private TypeWriterEffect _typeWriterEffect;
+		[NonSerialized] private QueueManager _animationQueue;
 		
 
 		private void OnValidate()

@@ -1,16 +1,12 @@
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using HelperScripts;
 using IOHandlers;
-using ScriptableObjects.EventChannels;
 using TMPro;
-using Unity.VisualScripting;
-using UnityEditor;
 using UnityEngine;
 
-namespace Menu
+namespace UI.MainMenu.DropDown
 {
 	public class ConfigFilesDropDownManager : MonoBehaviour
 	{
@@ -34,6 +30,8 @@ namespace Menu
 
 		public void AddItemsToDatabaseAndDropdown(List<FileInfo> filesInfo)
 		{
+			if (filesInfo == null || filesInfo.Count == 0) return;
+			
 			var selectedOptionDropdownIndex = int.MinValue;
 
 			foreach (var fileInfo in filesInfo)

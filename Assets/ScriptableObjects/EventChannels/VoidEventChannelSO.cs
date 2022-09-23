@@ -10,12 +10,22 @@ namespace ScriptableObjects.EventChannels
 	[CreateAssetMenu(menuName = "Events/Void Event Channel")]
 	public class VoidEventChannelSO : ScriptableObject
 	{
-		private UnityAction onEventRaised;
+		private UnityAction _onEventRaised;
 
 		public void RaiseEvent()
 		{
-			if (onEventRaised != null)
-				onEventRaised.Invoke();
+			if (_onEventRaised != null)
+				_onEventRaised.Invoke();
+		}
+		
+		public void Subscribe(UnityAction action)
+		{
+			_onEventRaised += action;
+		}
+
+		public void Unsubscribe(UnityAction action)
+		{
+			_onEventRaised -= action;
 		}
 	}
 }

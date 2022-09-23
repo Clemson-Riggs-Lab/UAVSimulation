@@ -15,6 +15,12 @@ MonoBehaviour:
   waypointSettings: {fileID: 11400000, guid: 37af04ed970010d4f86051abf0d2d07b, type: 2}
   promptSettings: {fileID: 11400000, guid: fbcedd838ecf53a468311f88ef0be652, type: 2}
   targetDetectionSettings: {fileID: 11400000, guid: ba05e28a9b6fa5148a3a0b76e7408e0f, type: 2}
-  uavSettingsDatabase: {fileID: 11400000, guid: a12b0fc27010f55478c915a4b4e95fa2, type: 2}
-  reroutingSettings: {fileID: 11400000, guid: 692140c0d3e3f8f4c8f9343ed11a0b03, type: 2}
+  uavSettings: {fileID: 11400000, guid: f81166df05f9ff44482250160169281b, type: 2}
+  reroutingSettings: {fileID: 11400000, guid: e0446ba325de1d5458e06cab68ea7545, type: 2}
+  reroutingPanelSettings: {fileID: 11400000, guid: 692140c0d3e3f8f4c8f9343ed11a0b03, type: 2}
   nfzSettings: {fileID: 11400000, guid: 87a900a130e8b6740816b8f0a480de23, type: 2}
+  uavCameraAndTargetDetectionPanelSettings: {fileID: 11400000, guid: f07e667d47718ed40b6759051faa7ad6, type: 2}
+  fuelAndHealthPanelSettings: {fileID: 11400000, guid: 1a2790112ae5c7041b090454a6b64ab1, type: 2}
+  navigationSettings: {fileID: 11400000, guid: 7daf49b1266dfe8488b93e6ef871b795, type: 2}
+  fuelSettings: {fileID: 11400000, guid: 10d8429633c2c8549858095f7bdb6021, type: 2}
+  pathsRenderingSettings: {fileID: 11400000, guid: 7d8c20d3daa22814f81180b3fca0fbb3, type: 2}

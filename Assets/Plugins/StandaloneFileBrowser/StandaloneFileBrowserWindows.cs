@@ -2,11 +2,11 @@
 
 using System;
 using System.IO;
-using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using System.Windows.Forms;
 using Ookii.Dialogs;
 
-namespace SFB {
+namespace Plugins.StandaloneFileBrowser {
     // For fullscreen support
     // - WindowWrapper class and GetActiveWindow() are required for modal file dialog.
     // - "PlayerSettings/Visible In Background" should be enabled, otherwise when file dialog opened app window minimizes automatically.
@@ -79,7 +79,7 @@ namespace SFB {
             if (extensions != null) {
                 fd.Filter = GetFilterFromFileExtensionList(extensions);
                 fd.FilterIndex = 1;
-                fd.DefaultExt = extensions[0].Extensions[0];
+                fd.DefaultExt = extensions[0].extensions[0];
                 fd.AddExtension = true;
             }
             else {
@@ -102,16 +102,16 @@ namespace SFB {
         private static string GetFilterFromFileExtensionList(ExtensionFilter[] extensions) {
             var filterString = "";
             foreach (var filter in extensions) {
-                filterString += filter.Name + "(";
+                filterString += filter.name + "(";
 
-                foreach (var ext in filter.Extensions) {
+                foreach (var ext in filter.extensions) {
                     filterString += "*." + ext + ",";
                 }
 
                 filterString = filterString.Remove(filterString.Length - 1);
                 filterString += ") |";
 
-                foreach (var ext in filter.Extensions) {
+                foreach (var ext in filter.extensions) {
                     filterString += "*." + ext + "; ";
                 }
 

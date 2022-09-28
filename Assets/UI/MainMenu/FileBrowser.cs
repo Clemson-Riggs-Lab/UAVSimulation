@@ -44,7 +44,7 @@ namespace UI.MainMenu
 			
 			var filesInfo = paths.Select(path => new FileInfo(path)).ToList();
 
-			if (filesInfo.Count > 0 && filesInfo[0].FullName.Contains("." + fileType.ToString() + "." + fileExtension))  //check if the file is of the correct type
+			if (filesInfo.Count > 0 && filesInfo[0].FullName.Contains("." + fileType.ToString() + "." + fileExtension,StringComparison.OrdinalIgnoreCase))  //check if the file is of the correct type
 			{
 				dropDownManager.AddItemsToDatabaseAndDropdown(filesInfo);
 				configFilesHandler.SelectFile(filesInfo[0], fileType);

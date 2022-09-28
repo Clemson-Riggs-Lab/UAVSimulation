@@ -28,8 +28,8 @@ namespace UI.UavCameraAndTargetDetectionPanel
         public Image darkScreenOverlay;
         public Image blackScreenOverlay;
         
-        public UavPathEventChannelSO targetDetectedButtonClickedEventChannel;
-        public UavPathEventChannelSO targetNotDetectedButtonClickedEventChannel;
+        private UavPathEventChannelSO _targetDetectedButtonClickedEventChannel;
+        private UavPathEventChannelSO _targetNotDetectedButtonClickedEventChannel;
     
         private FuelCondition _uavFuelCondition = FuelCondition.Normal;
         private UavCondition _uavCondition = UavCondition.Enabled;
@@ -44,22 +44,29 @@ namespace UI.UavCameraAndTargetDetectionPanel
         private void GetReferencesFromGameManager()
         {
             _uavCameraAndTargetDetectionPanelSettings = GameManager.Instance.settingsDatabase.uavCameraAndTargetDetectionPanelSettings;
-            targetDetectedButtonClickedEventChannel = GameManager.Instance.channelsDatabase.targetDetectionChannels.targetDetectedEventChannel;
-            targetNotDetectedButtonClickedEventChannel = GameManager.Instance.channelsDatabase.targetDetectionChannels.targetNotDetectedEventChannel;
+            _targetDetectedButtonClickedEventChannel = GameManager.Instance.channelsDatabase.targetDetectionChannels.targetDetectedEventChannel;
+            _targetNotDetectedButtonClickedEventChannel = GameManager.Instance.channelsDatabase.targetDetectionChannels.targetNotDetectedEventChannel;
         }
         
-        public void OnTargetDetectedToggleClicked()
+        public void OnTargetDetectedToggleClicked(bool clicked)
         {
-            if(targetDetectedButtonClickedEventChannel != null)
-                targetDetectedButtonClickedEventChannel.RaiseEvent(uav, uav.currentPath);
+            if (!clicked) return;
+          
+            ResetToggleState(true);
+            if(_targetDetectedButtonClickedEventChannel != null)
+                _targetDetectedButtonClickedEventChannel.RaiseEvent(uav, uav.currentPath);
         
         }
-        public void OnTargetNotDetectedToggleClicked()
+        public void OnTargetNotDetectedToggleClicked(bool clicked)
         {
-            if(targetNotDetectedButtonClickedEventChannel != null)
-                targetNotDetectedButtonClickedEventChannel.RaiseEvent(uav, uav.currentPath);
+            if (!clicked) return;
+            
+            ResetToggleState(false);
+            if(_targetNotDetectedButtonClickedEventChannel != null)
+                _targetNotDetectedButtonClickedEventChannel.RaiseEvent(uav, uav.currentPath);
         }
 
+        
         public void Initialize(Uav uav , RenderTexture renderTexture)
         {
             this.uav = uav;
@@ -104,10 +111,14 @@ namespace UI.UavCameraAndTargetDetectionPanel
             UpdateUIElements();
         }
         
-        public void ResetToggleState()
+        public void ResetToggleState(bool targetDetected = false)
         {
-            targetDetectedToggle.isOn = false;
-            targetNotDetectedToggle.isOn = true;
+          
+            targetDetectedToggle.SetIsOnWithoutNotify(targetDetected);
+            targetNotDetectedToggle.interactable = targetDetected;
+            
+            targetNotDetectedToggle.SetIsOnWithoutNotify(!targetDetected);
+            targetDetectedToggle.interactable = !targetDetected;
         }
         private void UpdatePanelConfigs(UavCameraPanelConfigs configs=null)
         {

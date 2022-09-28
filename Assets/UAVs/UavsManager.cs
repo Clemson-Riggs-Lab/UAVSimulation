@@ -31,13 +31,15 @@ namespace UAVs
         {
             GetReferencesFromGameManager();
             SubscribeToChannels();
-            _uavsGenerator = gameObject.GetOrAddComponent<UavsGenerator>();
-            _uavsGenerator.Initialize();
             
             //logging
             var uavLogHandler = gameObject.GetOrAddComponent<UavLogHandler>();
             uavLogHandler.Initialize();
             
+            //uav generator
+            _uavsGenerator = gameObject.GetOrAddComponent<UavsGenerator>();
+            _uavsGenerator.Initialize();
+            GenerateUavs();
         }
         private void SubscribeToChannels()
         {
@@ -48,14 +50,14 @@ namespace UAVs
                 _uavDestroyedEventChannel.Subscribe(OnUavDestroyed);
             
             if(_uavConditionChangedEventChannel != null)
-                _uavConditionChangedEventChannel.Subscribe(OnUavHealthConditionChanged);
+                _uavConditionChangedEventChannel.Subscribe(OnUavConditionChanged);
             
             if(_uavStartedNewPathEventChannel != null)
                 _uavStartedNewPathEventChannel.Subscribe(OnUavStartedNewPath);
 
         }
 
-        private void OnUavHealthConditionChanged(Uav uav, UavCondition uavCondition)
+        private void OnUavConditionChanged(Uav uav, UavCondition uavCondition)
         {
             if (!uavs.Contains(uav))
             {
@@ -170,7 +172,7 @@ namespace UAVs
             if(_uavDestroyedEventChannel != null)
                 _uavDestroyedEventChannel.Unsubscribe(OnUavDestroyed);
             if(_uavConditionChangedEventChannel != null)
-                _uavConditionChangedEventChannel.Unsubscribe(OnUavHealthConditionChanged);
+                _uavConditionChangedEventChannel.Unsubscribe(OnUavConditionChanged);
             if(_uavStartedNewPathEventChannel != null)
                 _uavStartedNewPathEventChannel.Unsubscribe(OnUavStartedNewPath);
         }

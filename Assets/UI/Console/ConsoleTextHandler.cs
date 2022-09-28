@@ -18,7 +18,7 @@ namespace UI.Console
 		[SerializeField] private TextMeshProUGUI consoleTextMeshProUGUI;
 
 		[SerializeField] private ConsoleMessageEventChannelSO writeMessageToConsoleChannel;
-		[NonSerialized] public SettingsDatabaseSO settingsDatabase;
+		[SerializeField] public SettingsDatabaseSO settingsDatabase;
 		[NonSerialized] private TypeWriterEffect _typeWriterEffect;
 		[NonSerialized] private QueueManager _animationQueue;
 		
@@ -32,16 +32,13 @@ namespace UI.Console
 		{
 			
 			InitializeAnimationQueueAndSettings();
+			if (writeMessageToConsoleChannel == null)
+				writeMessageToConsoleChannel = GameManager.Instance.channelsDatabase.newConsoleMessageChannel;
+			
 			if (writeMessageToConsoleChannel != null)
 				writeMessageToConsoleChannel.Subscribe(AddTextToConsole);
 		}
 		
-		private void Start()
-		{
-			
-			
-		}
-
 		private void InitializeAnimationQueueAndSettings()
 		{
 			if (settingsDatabase == null)

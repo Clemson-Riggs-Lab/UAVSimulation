@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using IOHandlers;
@@ -11,15 +12,15 @@ namespace Modules.Navigation
     public class PathsGenerator : MonoBehaviour
     {
 
-        [SerializeField]public UavsManager uavsManager;
-        [SerializeField]public WayPointsManager wayPointsManager;
-        private NavigationSettingsSO _navigationSettings;
+        [NonSerialized] private UavsManager _uavsManager;
+        [NonSerialized] private WayPointsManager _wayPointsManager;
+        [NonSerialized] private NavigationSettingsSO _navigationSettings;
 
 
-        private void Start()
+        public void Initialize()
         {
-            uavsManager= GameManager.Instance.uavsManager;
-            wayPointsManager= GameManager.Instance.wayPointsManager;
+            _uavsManager= GameManager.Instance.uavsManager;
+            _wayPointsManager= GameManager.Instance.wayPointsManager;
             _navigationSettings= GameManager.Instance.settingsDatabase.navigationSettings;
         }
         
@@ -28,7 +29,7 @@ namespace Modules.Navigation
            var navigators = new Dictionary<Uav,Navigator>();
               foreach (var uavPathsRecord in uavPathsRecords)
               { 
-                var uav = uavsManager.uavs.FirstOrDefault(x => x.id == uavPathsRecord.UavId);
+                var uav = _uavsManager.uavs.FirstOrDefault(x => x.id == uavPathsRecord.UavId);
                 
                 if (uav == null)
                 {
@@ -44,7 +45,7 @@ namespace Modules.Navigation
                 var pathID = 0;
                 foreach (var record in uavPathsRecord.PathRecords)
                 {
-                    if( wayPointsManager.TryGetWayPoint(record.DestinationWayPointID, out WayPoints.WayPoint destinationWayPoint)) //else we can't create the path since the destination waypoint could not be found
+                    if( _wayPointsManager.TryGetWayPoint(record.DestinationWayPointID, out WayPoints.WayPoint destinationWayPoint)) //else we can't create the path since the destination waypoint could not be found
                     {
                         var path = new Path(pathID, uav, destinationWayPoint, record.UavVisuallyEnabled ?? false, record.TargetIsPresent ?? false);
                         
@@ -52,6 +53,10 @@ namespace Modules.Navigation
                         {
                             paths.Last().nextPath = path;
                             path.previousPath = paths.Last();
+                        }
+                        else
+                        {
+                            path.previousPath = path; //if this is the first path, set the previous path to itself 
                         }
                         paths.Add(path);
                         pathID++;

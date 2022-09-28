@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13bd501e0f7c48f78b37bab7d2fe8777, type: 3}
   m_Name: FuelAndHealthPanelSettings
   m_EditorClassIdentifier: 
+  showFuelLeakConditionWhenUavHidden: 1
   enabledUavFuelAndHealthPanelConfigs:
     healthButtonInteractable: 0
     isVisibile: 1
@@ -21,7 +22,7 @@ MonoBehaviour:
     fuelSliderColor: Green
   hiddenUavFuelAndHealthPanelConfigs:
     healthButtonInteractable: 0
-    isVisibile: 0
+    isVisibile: 1
     healthButtonText: 
     healthButtonTextColor: Black
     healthButtonColor: Green
@@ -49,7 +50,7 @@ MonoBehaviour:
     fuelSliderColor: Red
   lostUavFuelAndHealthPanelConfigs:
     healthButtonInteractable: 0
-    isVisibile: 0
+    isVisibile: 1
     healthButtonText: Uav Lost
     healthButtonTextColor: Red
     healthButtonColor: Gray

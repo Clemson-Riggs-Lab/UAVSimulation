@@ -9,7 +9,7 @@ namespace UI.Console
 	{
 		[SerializeField] public TextMeshProUGUI mTextMeshPro;
 		[SerializeField] public SettingsDatabaseSO settingsDatabase;
-		private float DurationOfSingleCharacterAnimation => 1f/settingsDatabase.promptSettings.textAnimationSpeed;
+		private float DurationOfSingleCharacterAnimation => 1f/100f;
 		private Coroutine _coroutine;
 		
 

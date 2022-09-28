@@ -5,574 +5,92 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2a31bee8-77bd-4176-b786-4bd852df0b13" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/GameManager/Channels.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/GameManager/Channels/SimulationEndedEventChannel.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/GameManager/Channels/SimulationEndedEventChannel.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/GameManager/Databases/ScriptableObjects.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/HelperScripts/Extensions.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/IOHandlers/Settings.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/IOHandlers/Settings/ScriptableObjects.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Modules/Fuel/Channels.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Modules/Fuel/Channels/FuelChannels.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Modules/Fuel/Channels/FuelChannels.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Modules/Fuel/Channels/ScriptableObjects.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Modules/Fuel/Channels/ScriptableObjects/FuelChannelsSO.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Modules/Fuel/Channels/ScriptableObjects/FuelChannelsSO.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Modules/Fuel/Channels/ScriptableObjects/UavFuelConditionEventChannelSO.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Modules/Fuel/Channels/ScriptableObjects/UavFuelConditionEventChannelSO.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Modules/Fuel/Channels/UavFuelConditionEventChannel.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Modules/Fuel/Channels/UavFuelConditionEventChannel.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Modules/Fuel/Channels/uavFuelLevelChangedEventChannel.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Modules/Fuel/Channels/uavFuelLevelChangedEventChannel.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Modules/Fuel/FuelController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Modules/Fuel/FuelController.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Modules/Fuel/FuelLogHandler.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Modules/Fuel/FuelLogHandler.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Modules/Fuel/FuelManager.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Modules/Fuel/FuelManager.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Modules/Fuel/Settings.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Modules/Fuel/Settings/FueSettings.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Modules/Fuel/Settings/FueSettings.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Modules/Fuel/Settings/ScriptableObjects.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Modules/Fuel/Settings/ScriptableObjects/FuelSettingsSO.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Modules/Logging/Channels.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Modules/Logging/Channels/ScriptableObjects.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Modules/MiniMap/MiniMapCameraPositioning.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Modules/MiniMap/MiniMapCameraRenderTexture.renderTexture" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Modules/MiniMap/MiniMapCameraRenderTexture.renderTexture.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Modules/Navigation/Channels.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Modules/Navigation/Channels/ScriptableObjects.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Modules/Navigation/Channels/ScriptableObjects/NavigationChannelsSO.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Modules/Navigation/Channels/ScriptableObjects/UavPathEventChannelSO.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Modules/Navigation/NavigationManager.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Modules/Navigation/NavigationManager.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Modules/Navigation/Navigator.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Modules/Navigation/Path.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Modules/Navigation/PathsGenerator.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Modules/Navigation/Settings.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Modules/Navigation/Settings/ScriptableObjects.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Modules/Navigation/Submodules.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Modules/Navigation/Submodules/Rerouting.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Modules/Navigation/Submodules/Rerouting/Channels.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Modules/Navigation/Submodules/Rerouting/ReroutingLogHandler.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Modules/Navigation/Submodules/Rerouting/ReroutingManager.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Modules/Navigation/Submodules/Rerouting/Settings.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Modules/Navigation/Submodules/Rerouting/Settings/ReroutingSettings.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Modules/Navigation/Submodules/Rerouting/Settings/ScriptableObjects.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Modules/Navigation/Submodules/Rerouting/Settings/ScriptableObjects/ReroutingSettingsSO.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Modules/Navigation/Submodules/Rerouting/Settings/ScriptableObjects/ReroutingSettingsSO.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Modules/NoFlyZone/NFZController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Modules/NoFlyZone/Settings.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Modules/NoFlyZone/Settings/NFZLogHandler.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Modules/NoFlyZone/Settings/NFZLogHandler.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Modules/NoFlyZone/Settings/ScriptableObjects.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Modules/Prompts/Channels.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Modules/Prompts/Channels/ScriptableObjects.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Modules/Prompts/Channels/ScriptableObjects/PromptEventChannelSO.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Modules/Prompts/Channels/ScriptableObjects/PromptEventChannelSO.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Modules/Prompts/Channels/ScriptableObjects/ResponseOptionEventChannelSO.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Modules/Prompts/Channels/ScriptableObjects/ResponseOptionEventChannelSO.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Modules/Prompts/Settings/ScriptableObjects.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Modules/TargetDetection/Channels.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Modules/TargetDetection/Channels/ScriptableObjects.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Modules/TargetDetection/Channels/TargetDetectedEventChannel 3.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Modules/TargetDetection/Channels/TargetDetectedEventChannel 3.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Modules/TargetDetection/Channels/TargetNotDetectedEventChannel.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Modules/TargetDetection/Settings.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Modules/TargetDetection/Settings/ScriptableObjects.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Modules/TargetDetection/TargetDetectionLogHandler.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Modules/TargetDetection/TargetsDetectionManager.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Modules/TargetDetection/TargetsDetectionManager.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Modules/TargetDetection/UavCameraController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Modules/WayPoints/Channels.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Modules/WayPoints/Channels/ScriptableObjects.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Modules/WayPoints/Channels/ScriptableObjects/WaypointEventChannelSO.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Modules/WayPoints/Channels/ScriptableObjects/WaypointEventChannelSO.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Modules/WayPoints/Channels/wayPointCreatedChannel.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Modules/WayPoints/Channels/wayPointCreatedChannel.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Modules/WayPoints/Channels/wayPointDisabledChannel.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Modules/WayPoints/Channels/wayPointDisabledChannel.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Modules/WayPoints/Prefabs/WayPointPrefab.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Modules/WayPoints/Settings.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Modules/WayPoints/Settings/ScriptableObjects.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Modules/WayPoints/Settings/ScriptableObjects/WaypointSettingsSO.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Modules/WayPoints/WayPoint.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Modules/WayPoints/WayPoint.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Modules/WayPoints/WayPointsGenerator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Modules/WayPoints/WayPointsGenerator.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Modules/WayPoints/WayPointsManager.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Modules/WayPoints/WayPointsManager.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/UAVs/Channels.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/UAVs/Channels/ScriptableObjects.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/UAVs/Channels/ScriptableObjects/UavConditionEventChannelSO.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/UAVs/Channels/ScriptableObjects/UavFloatEventChannelSO.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/UAVs/Channels/ScriptableObjects/UavFloatEventChannelSO.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/UAVs/Channels/ScriptableObjects/UavStringEventChannelSO.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/UAVs/Channels/ScriptableObjects/UavStringEventChannelSO.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/UAVs/Settings/ScriptableObjects.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/UAVs/Settings/UavSettings.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/UAVs/Settings/UavSettings.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/UAVs/UavLogHandler.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/UAVs/UavLogHandler.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/UI/Console/Channels.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/UI/Console/Channels/ScriptableObjects.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/UI/FuelAndHealthPanel.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/UI/FuelAndHealthPanel/Channels.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/UI/FuelAndHealthPanel/Channels/ScriptableObjects.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/UI/FuelAndHealthPanel/Channels/UavHealthButtonClickedEventChannel.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/UI/FuelAndHealthPanel/Channels/UavHealthButtonClickedEventChannel.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/UI/FuelAndHealthPanel/FuelAndHealthStatusPanelController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/UI/FuelAndHealthPanel/FuelAndHealthStatusPanelsManager.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/UI/FuelAndHealthPanel/FuelAndHealthStatusPanelsManager.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/UI/FuelAndHealthPanel/Prefabs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/UI/FuelAndHealthPanel/Prefabs/Sprites.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/UI/FuelAndHealthPanel/Prefabs/Sprites/fuel_icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/UI/FuelAndHealthPanel/Prefabs/Sprites/fuel_icon.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/UI/FuelAndHealthPanel/Prefabs/Sprites/heart.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/UI/FuelAndHealthPanel/Prefabs/Sprites/heart.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/UI/FuelAndHealthPanel/Settings.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/UI/FuelAndHealthPanel/Settings/FuelAndHealthPanelSettings.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/UI/FuelAndHealthPanel/Settings/FuelAndHealthPanelSettings.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/UI/FuelAndHealthPanel/Settings/ScriptableObjects.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/UI/FuelAndHealthPanel/Settings/ScriptableObjects/FuelAndHealthPanelSettingsSO.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/UI/FuelAndHealthPanel/Settings/ScriptableObjects/FuelAndHealthPanelSettingsSO.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/UI/MainMenu/Sprites.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/UI/MainMenu/Sprites/Full_Logo_Clemson_Medium.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/UI/MainMenu/Sprites/Full_Logo_Clemson_Medium.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/UI/MainMenu/Sprites/uavHeader.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/UI/MainMenu/Sprites/uavHeader.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/UI/Paths Rendering/PathRenderer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/UI/Paths Rendering/PathsRenderersManager.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/UI/Paths Rendering/Settings.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/UI/Paths Rendering/Settings/ScriptableObjects.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/UI/Paths Rendering/Settings/ScriptableObjects/PathsRenderingSettingsSO.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/UI/ReroutingPanel.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/UI/ReroutingPanel/Prefabs/ScriptableObjects.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/UI/ReroutingPanel/ReroutingButtonsContainerController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/UI/ReroutingPanel/ReroutingPanelsContainerController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/UI/ReroutingPanel/Settings.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/UI/ReroutingPanel/Settings/ReroutingPanelSettings.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/UI/ReroutingPanel/Settings/ScriptableObjects.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/UI/UavCameraAndTargetDetectionPanel.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/UI/UavCameraAndTargetDetectionPanel/CameraAndTargetDetectionPanelsManager.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/UI/UavCameraAndTargetDetectionPanel/Prefabs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/UI/UavCameraAndTargetDetectionPanel/Prefabs/Sprites.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/UI/UavCameraAndTargetDetectionPanel/Prefabs/Sprites/White_square.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/UI/UavCameraAndTargetDetectionPanel/Prefabs/Sprites/White_square.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/UI/UavCameraAndTargetDetectionPanel/Prefabs/Textures.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/UI/UavCameraAndTargetDetectionPanel/Prefabs/Textures/targetnotseen.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/UI/UavCameraAndTargetDetectionPanel/Prefabs/Textures/targetnotseen.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/UI/UavCameraAndTargetDetectionPanel/Prefabs/Textures/targetseen.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/UI/UavCameraAndTargetDetectionPanel/Prefabs/Textures/targetseen.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/UI/UavCameraAndTargetDetectionPanel/Prefabs/UAV Camera and Target Detection Panel Container.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/UI/UavCameraAndTargetDetectionPanel/Settings.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/UI/UavCameraAndTargetDetectionPanel/Settings/ScriptableObjects.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UI/Prompts.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UI/Prompts/Prefabs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UI/Prompts/Prefabs/ChatBox Panel Container.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UI/Prompts/Prefabs/ChatBox Panel Container.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UI/Prompts/Prefabs/ResponseButton.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UI/Prompts/Prefabs/ResponseButton.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/0001-01-01 00-00-00.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/0001-01-01 00-00-00.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2022-09-28 09-54-18.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2022-09-28 09-54-18.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2022-09-28 09-55-50.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2022-09-28 09-55-50.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2022-09-28 09-59-29.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2022-09-28 09-59-29.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2022-09-28 09-59-55.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2022-09-28 09-59-55.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2022-09-28 10-42-20.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2022-09-28 10-42-20.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2022-09-28 10-45-15.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2022-09-28 10-45-15.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2022-09-28 10-47-57.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2022-09-28 10-47-57.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2022-09-28 10-51-10.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2022-09-28 10-51-10.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2022-09-28 10-56-06.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2022-09-28 10-56-06.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2022-09-28 10-58-31.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2022-09-28 10-58-31.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2022-09-28 11-00-32.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2022-09-28 11-00-32.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2022-09-28 11-02-19.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2022-09-28 11-02-19.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2022-09-28 11-03-44.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2022-09-28 11-03-44.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2022-09-28 11-06-28.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2022-09-28 11-06-28.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2022-09-28 11-19-33.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2022-09-28 11-19-33.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2022-09-28 11-24-39.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.UAVSimulation/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UAVSimulation/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ChannelsSettingAndDatabases.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ChannelsSettingAndDatabases/IOHandlers.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ChannelsSettingAndDatabases/IOHandlers/ConfigFilesDatabase.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/IOHandlers/Settings/ConfigFilesSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ChannelsSettingAndDatabases/IOHandlers/ConfigFilesDatabase.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/IOHandlers/Settings/ConfigFilesSettings.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ChannelsSettingAndDatabases/InputRecords.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameManager/Databases/InputRecordsDatabase.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ChannelsSettingAndDatabases/InputRecords.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameManager/Databases/InputRecordsDatabase.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ChannelsSettingAndDatabases/Logging.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ChannelsSettingAndDatabases/Logging/LogEventChannel SO.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Logging/Channels/LogEventChannel SO.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ChannelsSettingAndDatabases/Logging/LogEventChannel SO.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Logging/Channels/LogEventChannel SO.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ChannelsSettingAndDatabases/Prompts.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ChannelsSettingAndDatabases/Prompts/NewPromptEventChannel.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Prompts/Channels/NewPromptEventChannel.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ChannelsSettingAndDatabases/Prompts/NewPromptEventChannel.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Prompts/Channels/NewPromptEventChannel.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ChannelsSettingAndDatabases/Prompts/PromptChannelsSO.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Prompts/Channels/PromptChannelsSO.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ChannelsSettingAndDatabases/Prompts/PromptChannelsSO.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Prompts/Channels/PromptChannelsSO.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ChannelsSettingAndDatabases/Prompts/promptResponseReceivedEventChannel.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Prompts/Channels/promptResponseReceivedEventChannel.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ChannelsSettingAndDatabases/Prompts/promptResponseReceivedEventChannel.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Prompts/Channels/promptResponseReceivedEventChannel.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ChannelsSettingAndDatabases/TargetDetection.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ChannelsSettingAndDatabases/TargetDetection/TargetDetectionChannelsSO.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/TargetDetection/Channels/TargetDetectionChannelsSO.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ChannelsSettingAndDatabases/TargetDetection/TargetDetectionChannelsSO.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/TargetDetection/Channels/TargetDetectionChannelsSO.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ChannelsSettingAndDatabases/TargetDetection/UavTargetDetectedEventChannel.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ChannelsSettingAndDatabases/TargetDetection/UavTargetDetectedEventChannel.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ChannelsSettingAndDatabases/TargetDetection/UavTargetNotDetectedEventChannel.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ChannelsSettingAndDatabases/TargetDetection/UavTargetNotDetectedEventChannel.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/TargetDetection/Channels/TargetNotDetectedEventChannel.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ChannelsSettingAndDatabases/TargetDetection/UavTargetsAddedEventChannel.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ChannelsSettingAndDatabases/TargetDetection/UavTargetsAddedEventChannel.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ChannelsSettingAndDatabases/UAVs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ChannelsSettingAndDatabases/UAVs/Submodules.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ChannelsSettingAndDatabases/UAVs/Submodules/FuelAndHealth.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ChannelsSettingAndDatabases/UAVs/Submodules/FuelAndHealth/FuelAndHealthChannelsSO.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ChannelsSettingAndDatabases/UAVs/Submodules/FuelAndHealth/FuelAndHealthChannelsSO.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ChannelsSettingAndDatabases/UAVs/Submodules/FuelAndHealth/UavFuelConditionChangedEventChannel.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Fuel/Channels/UavFuelConditionChangedEventChannel.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ChannelsSettingAndDatabases/UAVs/Submodules/FuelAndHealth/UavFuelConditionChangedEventChannel.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Fuel/Channels/UavFuelConditionChangedEventChannel.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ChannelsSettingAndDatabases/UAVs/Submodules/FuelAndHealth/UavHealthConditionChangedEventChannel.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UAVs/Channels/UavConditionChangedEventChannel.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ChannelsSettingAndDatabases/UAVs/Submodules/FuelAndHealth/UavHealthConditionChangedEventChannel.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UAVs/Channels/UavConditionChangedEventChannel.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ChannelsSettingAndDatabases/UAVs/Submodules/FuelAndHealth/uavFatalFuelLeakEventChannel.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Fuel/Channels/uavFatalFuelLeakEventChannel.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ChannelsSettingAndDatabases/UAVs/Submodules/FuelAndHealth/uavFatalFuelLeakEventChannel.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Fuel/Channels/uavFatalFuelLeakEventChannel.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ChannelsSettingAndDatabases/UAVs/Submodules/FuelAndHealth/uavFuelEmptyEventChannel.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Fuel/Channels/uavFuelEmptyEventChannel.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ChannelsSettingAndDatabases/UAVs/Submodules/FuelAndHealth/uavFuelEmptyEventChannel.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Fuel/Channels/uavFuelEmptyEventChannel.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ChannelsSettingAndDatabases/UAVs/Submodules/FuelAndHealth/uavFuelLeakFixedEventChannel.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Fuel/Channels/uavFuelLeakFixedEventChannel.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ChannelsSettingAndDatabases/UAVs/Submodules/FuelAndHealth/uavFuelLeakFixedEventChannel.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Fuel/Channels/uavFuelLeakFixedEventChannel.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ChannelsSettingAndDatabases/UAVs/Submodules/FuelAndHealth/uavFuelLeakingEventChannel.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Fuel/Channels/uavFuelLeakingEventChannel.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ChannelsSettingAndDatabases/UAVs/Submodules/FuelAndHealth/uavFuelLeakingEventChannel.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Fuel/Channels/uavFuelLeakingEventChannel.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ChannelsSettingAndDatabases/UAVs/Submodules/FuelAndHealth/uavHealthyEventChannel.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ChannelsSettingAndDatabases/UAVs/Submodules/FuelAndHealth/uavHealthyEventChannel.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ChannelsSettingAndDatabases/UAVs/Submodules/FuelAndHealth/uavLostEventChannel.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UAVs/Channels/uavLostEventChannel.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ChannelsSettingAndDatabases/UAVs/Submodules/FuelAndHealth/uavLostEventChannel.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UAVs/Channels/uavLostEventChannel.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ChannelsSettingAndDatabases/UAVs/Submodules/Navigation.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ChannelsSettingAndDatabases/UAVs/Submodules/Navigation/NavigationChannels.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Navigation/Channels/NavigationChannels.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ChannelsSettingAndDatabases/UAVs/Submodules/Navigation/NavigationChannels.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Navigation/Channels/NavigationChannels.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ChannelsSettingAndDatabases/UAVs/Submodules/Navigation/reroutingOptionsRequestedChannel.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Navigation/Submodules/Rerouting/Channels/reroutingOptionsRequestedChannel.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ChannelsSettingAndDatabases/UAVs/Submodules/Navigation/reroutingOptionsRequestedChannel.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Navigation/Submodules/Rerouting/Channels/reroutingOptionsRequestedChannel.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ChannelsSettingAndDatabases/UAVs/Submodules/Navigation/uavArrivedAtDestinationEventChannel.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Navigation/Channels/uavArrivedAtDestinationEventChannel.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ChannelsSettingAndDatabases/UAVs/Submodules/Navigation/uavArrivedAtDestinationEventChannel.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Navigation/Channels/uavArrivedAtDestinationEventChannel.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ChannelsSettingAndDatabases/UAVs/Submodules/Navigation/uavReroutePreviewEventChannel.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Navigation/Submodules/Rerouting/Channels/uavReroutePreviewEventChannel.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ChannelsSettingAndDatabases/UAVs/Submodules/Navigation/uavReroutePreviewEventChannel.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Navigation/Submodules/Rerouting/Channels/uavReroutePreviewEventChannel.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ChannelsSettingAndDatabases/UAVs/Submodules/Navigation/uavReroutedEventChannel.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Navigation/Submodules/Rerouting/Channels/uavReroutedEventChannel.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ChannelsSettingAndDatabases/UAVs/Submodules/Navigation/uavReroutedEventChannel.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Navigation/Submodules/Rerouting/Channels/uavReroutedEventChannel.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ChannelsSettingAndDatabases/UAVs/Submodules/Navigation/uavStartedNewPathEventChannel.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Navigation/Channels/uavStartedNewPathEventChannel.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ChannelsSettingAndDatabases/UAVs/Submodules/Navigation/uavStartedNewPathEventChannel.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Navigation/Channels/uavStartedNewPathEventChannel.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ChannelsSettingAndDatabases/UAVs/Submodules/Rerouting.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Fuel.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ChannelsSettingAndDatabases/UAVs/Submodules/Rerouting/uavReroutedEventChannel.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ChannelsSettingAndDatabases/UAVs/Submodules/Rerouting/uavReroutedEventChannel.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ChannelsSettingAndDatabases/UAVs/UavChannelsSO.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UAVs/Channels/UavChannelsSO.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ChannelsSettingAndDatabases/UAVs/UavChannelsSO.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UAVs/Channels/UavChannelsSO.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ChannelsSettingAndDatabases/UAVs/uavCreatedEventChannel.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UAVs/Channels/uavCreatedEventChannel.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ChannelsSettingAndDatabases/UAVs/uavCreatedEventChannel.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UAVs/Channels/uavCreatedEventChannel.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ChannelsSettingAndDatabases/UAVs/uavDestroyedEventChannel.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UAVs/Channels/uavDestroyedEventChannel.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ChannelsSettingAndDatabases/UAVs/uavDestroyedEventChannel.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UAVs/Channels/uavDestroyedEventChannel.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ChannelsSettingAndDatabases/UAVs/uavHiddenEventChannel.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ChannelsSettingAndDatabases/UAVs/uavHiddenEventChannel.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ChannelsSettingAndDatabases/UAVs/uavShotDownChannel.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UAVs/Channels/uavShotDownChannel.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ChannelsSettingAndDatabases/UAVs/uavShotDownChannel.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UAVs/Channels/uavShotDownChannel.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ChannelsSettingAndDatabases/UAVs/uavVisibleEventChannel.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ChannelsSettingAndDatabases/UAVs/uavVisibleEventChannel.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ChannelsSettingAndDatabases/UI.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ChannelsSettingAndDatabases/UI/Console.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ChannelsSettingAndDatabases/UI/Console/WriteTextToConsoleEventChannel.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/Console/Channels/WriteTextToConsoleEventChannel.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ChannelsSettingAndDatabases/UI/Console/WriteTextToConsoleEventChannel.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/Console/Channels/WriteTextToConsoleEventChannel.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ChannelsSettingAndDatabases/Waypoints.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ChannelsSettingAndDatabases/Waypoints/WaypointSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/WayPoints/Settings/WaypointSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ChannelsSettingAndDatabases/Waypoints/WaypointSettings.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/WayPoints/Settings/WaypointSettings.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ChannelsSettingAndDatabases/Waypoints/wayPointCreatedChannel.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ChannelsSettingAndDatabases/Waypoints/wayPointCreatedChannel.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ChannelsSettingAndDatabases/Waypoints/wayPointDisabledChannel.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ChannelsSettingAndDatabases/Waypoints/wayPointDisabledChannel.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameManager/Databases/ChannelsDatabase.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameManager/Databases/ChannelsDatabase.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameManager/Databases/PrefabsDatabase.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameManager/Databases/PrefabsDatabase.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameManager/Databases/SettingsDatabase.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameManager/Databases/SettingsDatabase.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameManager/Databases/InputRecordsDatabase.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameManager/Databases/InputRecordsDatabase.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/GameManager/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameManager/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameManager/Settings.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameManager/Settings/FuelAndHealthSettings.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameManager/Settings/FuelAndHealthSettings.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameManager/Settings/NavigationSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Navigation/Settings/NavigationSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameManager/Settings/NavigationSettings.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Navigation/Settings/NavigationSettings.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameManager/Settings/UavCameraAndTargetDetectionSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/UavCameraAndTargetDetectionPanel/Settings/UavCameraAndTargetDetectionSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameManager/Settings/UavCameraAndTargetDetectionSettings.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/UavCameraAndTargetDetectionPanel/Settings/UavCameraAndTargetDetectionSettings.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HelperScripts/AssertionHelper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HelperScripts/AssertionHelper.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HelperScripts/ColorHelper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HelperScripts/ColorHelper.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HelperScripts/ConsoleDebug.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HelperScripts/ConsoleDebug.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HelperScripts/Enums.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HelperScripts/Enums.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HelperScripts/NatoAlphabetConverter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HelperScripts/NatoAlphabetConverter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HelperScripts/OrderedDictionary.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HelperScripts/OrderedDictionary.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/IOHandlers/ConfigFilesHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/IOHandlers/ConfigFilesHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/IOHandlers/FileManager.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/IOHandlers/FileManager.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/IOHandlers/Records/Coordinates.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/IOHandlers/Records/Coordinates.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/IOHandlers/Records/DefaultRecordsCreator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/IOHandlers/DefaultRecordsCreator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/IOHandlers/Records/DefaultRecordsCreator.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/IOHandlers/DefaultRecordsCreator.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/IOHandlers/Records/InputRecordsDatabaseSO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameManager/Databases/ScriptableObjects/InputRecordsDatabaseSO.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/IOHandlers/Records/InputRecordsDatabaseSO.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameManager/Databases/ScriptableObjects/InputRecordsDatabaseSO.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/IOHandlers/Records/LayoutSettingsRecord.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/IOHandlers/Records/LayoutSettingsRecord.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/IOHandlers/Records/NFZRecord.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/IOHandlers/Records/NFZRecord.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/IOHandlers/Records/Range.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/IOHandlers/Records/Range.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/IOHandlers/Records/TargetRecord.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/IOHandlers/Records/TargetRecord.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/IOHandlers/Records/UavFuelLeaksRecord.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/IOHandlers/Records/UavFuelLeaksRecord.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/IOHandlers/Records/UavPathsRecord.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/IOHandlers/Records/UavPathsRecord.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/IOHandlers/Records/UavRecord.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/IOHandlers/Records/UavRecord.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/IOHandlers/Records/WaypointRecord.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/IOHandlers/Records/WaypointRecord.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/InputFiles.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/MiniMap.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/InputFiles/Old To New UAV Input File conversion template.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/configFiles/Old To New UAV Input File conversion template.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/InputFiles/Old To New UAV Input File conversion template.xlsx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/configFiles/Old To New UAV Input File conversion template.xlsx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/InputFiles/SettingsAndConfigs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/WayPoints.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/InputFiles/SettingsAndConfigs/DefaultInput.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/InputFiles/SettingsAndConfigs/DefaultInput.json.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/InputFiles/SettingsAndConfigs/Input 1.json" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HelperScripts/Extensions.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/InputFiles/SettingsAndConfigs/Input 1.json.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/InputFiles/SettingsAndConfigs/Input 2.json" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Navigation/Submodules/Rerouting/ReroutingLogHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/InputFiles/SettingsAndConfigs/Input 2.json.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/FuelAndHealthPanel/Prefabs/fuelAndHealthPanelPrefab.prefab.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/InputFiles/SettingsAndConfigs/Input 3.json" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/TargetDetection/TargetDetectionLogHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/InputFiles/SettingsAndConfigs/Input 3.json.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/UavCameraAndTargetDetectionPanel/Prefabs/UAV Camera and Target Detection Panel Container.prefab.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/InputFiles/SettingsAndConfigs/Input 4.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/InputFiles/SettingsAndConfigs/Input 4.json.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/InputFiles/SettingsAndConfigs/Input 5.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/InputFiles/SettingsAndConfigs/Input 5.json.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/InputFiles/baseInput.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/WayPoints/Prefabs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/JsonSerializerTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/JsonSerializerTest.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Logging.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Logging.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Logging/Log.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Logging/Log.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Logging/Log.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Logging/Log.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Logging/LoggingManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Logging/LoggingManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Logging/LoggingManager.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Logging/LoggingManager.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Logging/PromptLogHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Prompts/PromptLogHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Logging/PromptLogHandler.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Prompts/PromptLogHandler.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MiniMap.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MiniMap/MiniMapCameraPositioning.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MiniMap/MiniMapCameraPositioning.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MiniMap/MiniMapCameraRenderTexture.renderTexture" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MiniMap/MiniMapCameraRenderTexture.renderTexture.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MiniMap/RouteRenderer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MiniMap/RouteRenderer.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NoFlyZone.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/NoFlyZone.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NoFlyZone/NFZController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NoFlyZone/NFZController.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/NoFlyZone/NFZController.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NoFlyZone/NFZSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/NoFlyZone/Settings/NFZSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NoFlyZone/NFZSettings.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/NoFlyZone/Settings/NFZSettings.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NoFlyZone/NFZsManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/NoFlyZone/NFZsManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NoFlyZone/NFZsManager.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/NoFlyZone/NFZsManager.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NoFlyZone/Prefabs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/NoFlyZone/Prefabs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NoFlyZone/Prefabs/NFZMaterial.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/NoFlyZone/Prefabs/NFZMaterial.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NoFlyZone/Prefabs/NFZMaterial.mat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/NoFlyZone/Prefabs/NFZMaterial.mat.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NoFlyZone/Prefabs/NFZPrefab.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/NoFlyZone/Prefabs/NFZPrefab.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NoFlyZone/Prefabs/NFZPrefab.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/NoFlyZone/Prefabs/NFZPrefab.prefab.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/DOTween.XML" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/DOTween.XML" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/DOTween.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/DOTween.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Editor/DOTweenEditor.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Editor/DOTweenEditor.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Modules/DOTweenModuleEPOOutline.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Modules/DOTweenModuleEPOOutline.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Modules/DOTweenModuleUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Modules/DOTweenModuleUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StandaloneFileBrowser/IStandaloneFileBrowser.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/StandaloneFileBrowser/IStandaloneFileBrowser.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StandaloneFileBrowser/StandaloneFileBrowser.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/StandaloneFileBrowser/StandaloneFileBrowser.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StandaloneFileBrowser/StandaloneFileBrowserEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/StandaloneFileBrowser/StandaloneFileBrowserEditor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StandaloneFileBrowser/StandaloneFileBrowserWindows.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/StandaloneFileBrowser/StandaloneFileBrowserWindows.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Standard Assets/Terrain Assets/Trees Ambient-Occlusion/Palm/Materials/palmbark.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Standard Assets/Terrain Assets/Trees Ambient-Occlusion/Palm/Materials/palmbark.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Standard Assets/Terrain Assets/Trees Ambient-Occlusion/Palm/Materials/palmbranch.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Standard Assets/Terrain Assets/Trees Ambient-Occlusion/Palm/Materials/palmbranch.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Standard Assets/Water (Basic)/Sources/Scripts/WaterSimple.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Standard Assets/Water (Basic)/Sources/Scripts/WaterSimple.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prompts.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Prompts.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prompts/Prefabs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Prompts/Prefabs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prompts/Prefabs/ChatBox Panel Container.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Prompts/Prefabs/ChatBox Panel Container.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prompts/Prefabs/ChatBox Panel Container.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Prompts/Prefabs/ChatBox Panel Container.prefab.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prompts/Prefabs/ResponseButton.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Prompts/Prefabs/ResponseButton.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prompts/Prefabs/ResponseButton.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Prompts/Prefabs/ResponseButton.prefab.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prompts/Prompt.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Prompts/Prompt.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prompts/Prompt.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Prompts/Prompt.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prompts/PromptsAndResponsesHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Prompts/PromptsAndResponsesHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prompts/PromptsAndResponsesHandler.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Prompts/PromptsAndResponsesHandler.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prompts/PromptsManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Prompts/PromptsManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prompts/PromptsManager.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Prompts/PromptsManager.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prompts/Settings.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Prompts/Settings.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prompts/Settings/PromptSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Prompts/Settings/PromptSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prompts/Settings/PromptSettings.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Prompts/Settings/PromptSettings.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prompts/Settings/PromptSettingsSO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Prompts/Settings/ScriptableObjects/PromptSettingsSO.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prompts/Settings/PromptSettingsSO.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Prompts/Settings/ScriptableObjects/PromptSettingsSO.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/DOTweenSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/DOTweenSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SaveLoad.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SaveLoad/Scripts.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainMenu.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HelperScripts/Extensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HelperScripts/Extensions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Modules/Fuel/FuelLogHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Fuel/FuelLogHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Modules/Fuel/Settings/FueSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Fuel/Settings/FueSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Modules/Logging/Log.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Logging/Log.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Modules/Logging/LoggingManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Logging/LoggingManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Modules/Navigation/NavigationManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Navigation/NavigationManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Modules/Navigation/Navigator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Navigation/Navigator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Modules/Navigation/Path.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Navigation/Path.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Modules/Navigation/PathsGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Navigation/PathsGenerator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Modules/Navigation/Submodules/Rerouting/ReroutingLogHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Navigation/Submodules/Rerouting/ReroutingLogHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Modules/Navigation/Submodules/Rerouting/ReroutingManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Navigation/Submodules/Rerouting/ReroutingManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Modules/NoFlyZone/NFZsManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/NoFlyZone/NFZsManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Modules/NoFlyZone/Settings/NFZSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/NoFlyZone/Settings/NFZSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Modules/Prompts/Prefabs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Modules/Prompts/Prefabs/ChatBox Panel Container.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Modules/Prompts/Prefabs/ChatBox Panel Container.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Modules/Prompts/Prefabs/ResponseButton.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Modules/Prompts/Prefabs/ResponseButton.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Modules/Prompts/PromptLogHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Prompts/PromptLogHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Modules/Prompts/PromptsAndResponsesHandler.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Modules/Prompts/PromptsAndResponsesHandler.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Modules/Prompts/PromptsManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Prompts/PromptsManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Modules/Prompts/Settings/PromptSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Prompts/Settings/PromptSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Modules/TargetDetection/Channels/TargetDetectionChannelsSO.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/TargetDetection/Channels/TargetDetectionChannelsSO.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Modules/TargetDetection/Settings/TargetDetectionSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/TargetDetection/Settings/TargetDetectionSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Modules/TargetDetection/TargetDetectionLogHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/TargetDetection/TargetDetectionLogHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Modules/WayPoints/WayPointsManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/WayPoints/WayPointsManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainMenu/LightingData.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainMenu/LightingData.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainMenu/ReflectionProbe-0.exr" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainMenu/ReflectionProbe-0.exr.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SimulationScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SimulationScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/TestScene.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/TestScene.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Databases.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Databases/ChannelsDatabaseSO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameManager/Databases/ScriptableObjects/ChannelsDatabaseSO.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Databases/ChannelsDatabaseSO.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameManager/Databases/ScriptableObjects/ChannelsDatabaseSO.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Databases/PrefabsDatabaseSO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameManager/Databases/ScriptableObjects/PrefabsDatabaseSO.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Databases/PrefabsDatabaseSO.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameManager/Databases/ScriptableObjects/PrefabsDatabaseSO.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Databases/SettingsDatabaseSO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameManager/Databases/ScriptableObjects/SettingsDatabaseSO.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Databases/SettingsDatabaseSO.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameManager/Databases/ScriptableObjects/SettingsDatabaseSO.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/EventChannels/ConsoleMessageEventChannelSO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/Console/Channels/ScriptableObjects/ConsoleMessageEventChannelSO.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/EventChannels/ConsoleMessageEventChannelSO.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/Console/Channels/ScriptableObjects/ConsoleMessageEventChannelSO.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/EventChannels/IntEventChannelSO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/EventChannels/IntEventChannelSO.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/EventChannels/LogEventChannelSO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Logging/Channels/ScriptableObjects/LogEventChannelSO.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/EventChannels/LogEventChannelSO.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Logging/Channels/ScriptableObjects/LogEventChannelSO.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/EventChannels/ObjectEventChannelSO.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/EventChannels/ObjectEventChannelSO.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/EventChannels/StringEventChannelSO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/EventChannels/StringEventChannelSO.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/EventChannels/UavEventChannelSO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UAVs/Channels/ScriptableObjects/UavEventChannelSO.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/EventChannels/UavEventChannelSO.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UAVs/Channels/ScriptableObjects/UavEventChannelSO.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/EventChannels/Uav_FuelConditionEventChannelSO.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/EventChannels/Uav_FuelConditionEventChannelSO.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/EventChannels/Uav_TargetsEventChannelSO.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/EventChannels/Uav_TargetsEventChannelSO.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/EventChannels/Uav_UavHealthConditionEventChannelSO.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/EventChannels/Uav_UavHealthConditionEventChannelSO.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UAVs/Channels/ScriptableObjects/UavConditionEventChannelSO.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/EventChannels/VoidEventChannelSO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/EventChannels/VoidEventChannelSO.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/InputFiles.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/InputFiles/ConfigFilesDatabaseSO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/IOHandlers/Settings/ScriptableObjects/ConfigFilesSettingsSO.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/InputFiles/ConfigFilesDatabaseSO.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/IOHandlers/Settings/ScriptableObjects/ConfigFilesSettingsSO.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/NoFlyZone.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/NoFlyZone/NFZSettingsSO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/NoFlyZone/Settings/ScriptableObjects/NFZSettingsSO.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/NoFlyZone/NFZSettingsSO.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/NoFlyZone/Settings/ScriptableObjects/NFZSettingsSO.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Prompts.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Prompts/PromptChannelsSO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Prompts/Channels/ScriptableObjects/PromptChannelsSO.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Prompts/PromptChannelsSO.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Prompts/Channels/ScriptableObjects/PromptChannelsSO.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/TargetDetection.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/TargetDetection/TargetDetectionChannelsSO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/TargetDetection/Channels/ScriptableObjects/TargetDetectionChannelsSO.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/TargetDetection/TargetDetectionChannelsSO.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/TargetDetection/Channels/ScriptableObjects/TargetDetectionChannelsSO.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/TargetDetection/TargetDetectionSettingsSO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/TargetDetection/Settings/ScriptableObjects/TargetDetectionSettingsSO.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/TargetDetection/TargetDetectionSettingsSO.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/TargetDetection/Settings/ScriptableObjects/TargetDetectionSettingsSO.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/UAVs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/UAVs/Camera.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/UAVs/Camera/UavCameraPanelSettingsSO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/UavCameraAndTargetDetectionPanel/Settings/ScriptableObjects/UavCameraAndTargetDetectionPanelSettingsSO.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/UAVs/Camera/UavCameraPanelSettingsSO.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/UavCameraAndTargetDetectionPanel/Settings/ScriptableObjects/UavCameraAndTargetDetectionPanelSettingsSO.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/UAVs/FuelAndHealth.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/UAVs/FuelAndHealth/FuelAndHealthChannelsSO.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/UAVs/FuelAndHealth/FuelAndHealthChannelsSO.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/UAVs/FuelAndHealth/FuelAndHealthSettingsSO.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/UAVs/FuelAndHealth/FuelAndHealthSettingsSO.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/UAVs/Navigation.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/UAVs/Navigation/NavigationChannelsSO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Navigation/Channels/ScriptableObjects/NavigationChannelsSO.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/UAVs/Navigation/NavigationChannelsSO.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/UAVs/Navigation/NavigationSettingsSO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Navigation/Settings/ScriptableObjects/NavigationSettingsSO.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/UAVs/Navigation/NavigationSettingsSO.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Navigation/Settings/ScriptableObjects/NavigationSettingsSO.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/UAVs/Navigation/PathsRendering.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/UAVs/Navigation/PathsRendering/PathsRenderingSettingsSO.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/UAVs/Navigation/PathsRendering/PathsRenderingSettingsSO.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/Paths Rendering/Settings/ScriptableObjects/PathsRenderingSettingsSO.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/UAVs/Navigation/Rerouting.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/UAVs/Navigation/Rerouting/ReroutingPrefabsDatabaseSO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/ReroutingPanel/Prefabs/ScriptableObjects/ReroutingPrefabsDatabaseSO.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/UAVs/Navigation/Rerouting/ReroutingPrefabsDatabaseSO.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/ReroutingPanel/Prefabs/ScriptableObjects/ReroutingPrefabsDatabaseSO.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/UAVs/Navigation/Rerouting/ReroutingSettingsSO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/ReroutingPanel/Settings/ScriptableObjects/ReroutingPanelSettingsSO.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/UAVs/Navigation/Rerouting/ReroutingSettingsSO.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/ReroutingPanel/Settings/ScriptableObjects/ReroutingPanelSettingsSO.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/UAVs/Navigation/UavPathEventChannelSO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Navigation/Channels/ScriptableObjects/UavPathEventChannelSO.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/UAVs/Navigation/UavPathEventChannelSO.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/UAVs/UavChannelsSO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UAVs/Channels/ScriptableObjects/UavChannelsSO.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/UAVs/UavChannelsSO.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UAVs/Channels/ScriptableObjects/UavChannelsSO.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/UAVs/UavGeneralSettingsSO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UAVs/Settings/ScriptableObjects/UavSettingsSO.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/UAVs/UavGeneralSettingsSO.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UAVs/Settings/ScriptableObjects/UavSettingsSO.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/UAVs/UavSettingsDatabaseSO.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/UAVs/UavSettingsDatabaseSO.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Waypoints.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Waypoints/WaypointSettingsSO.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Waypoints/WaypointSettingsSO.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/WayPoints/Settings/ScriptableObjects/WaypointSettingsSO.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Full_Logo_Clemson_Medium.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Full_Logo_Clemson_Medium.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/White_square.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/White_square.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/fuel_icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/fuel_icon.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/heart.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/heart.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/uavHeader.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/uavHeader.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TargetDetection.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/TargetDetection.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TargetDetection/CameraAndTargetDetectionPanelsManager.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TargetDetection/CameraAndTargetDetectionPanelsManager.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/UavCameraAndTargetDetectionPanel/CameraAndTargetDetectionPanelsManager.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TargetDetection/Prefabs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/TargetDetection/Prefabs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TargetDetection/Prefabs/New Material.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/TargetDetection/Prefabs/New Material.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TargetDetection/Prefabs/New Material.mat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/TargetDetection/Prefabs/New Material.mat.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TargetDetection/Prefabs/TargetBoxPrefab.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/TargetDetection/Prefabs/TargetBoxPrefab.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TargetDetection/Prefabs/TargetBoxPrefab.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/TargetDetection/Prefabs/TargetBoxPrefab.prefab.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TargetDetection/Prefabs/UAV Camera and Target Detection Panel Container.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TargetDetection/Prefabs/UAV Camera and Target Detection Panel Container.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TargetDetection/Prefabs/UAVCamera.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/TargetDetection/Prefabs/UAVCamera.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TargetDetection/Prefabs/UAVCamera.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/TargetDetection/Prefabs/UAVCamera.prefab.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TargetDetection/Target.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/TargetDetection/Target.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TargetDetection/Target.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/TargetDetection/Target.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TargetDetection/TargetDetectionSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/TargetDetection/Settings/TargetDetectionSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TargetDetection/TargetDetectionSettings.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/TargetDetection/Settings/TargetDetectionSettings.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TargetDetection/TargetsManager.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TargetDetection/TargetsManager.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TargetDetection/Textures.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TargetDetection/Textures/targetnotseen.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TargetDetection/Textures/targetnotseen.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TargetDetection/Textures/targetseen.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TargetDetection/Textures/targetseen.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TargetDetection/UavCameraAndTargetDetectionPanelController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/UavCameraAndTargetDetectionPanel/UavCameraAndTargetDetectionPanelController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TargetDetection/UavCameraAndTargetDetectionPanelController.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/UavCameraAndTargetDetectionPanel/UavCameraAndTargetDetectionPanelController.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TargetDetection/UavCameraController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TargetDetection/UavCameraController.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/TargetDetection/UavCameraController.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UAVs/Prefabs/UAV.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UAVs/Prefabs/UAV.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UAVs/Sub-Modules.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UAVs/Sub-Modules/FuelAndHealth.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UAVs/Sub-Modules/FuelAndHealth/FuelAndHealthController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UAVs/Sub-Modules/FuelAndHealth/FuelAndHealthController.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UAVs/Sub-Modules/FuelAndHealth/FuelAndHealthManager.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UAVs/Sub-Modules/FuelAndHealth/FuelAndHealthManager.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UAVs/Sub-Modules/FuelAndHealth/StatusPanelController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UAVs/Sub-Modules/FuelAndHealth/StatusPanelController.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/FuelAndHealthPanel/FuelAndHealthStatusPanelController.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UAVs/Sub-Modules/FuelAndHealth/fuelIndicatorPanelPrefab.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/FuelAndHealthPanel/Prefabs/fuelAndHealthPanelPrefab.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UAVs/Sub-Modules/FuelAndHealth/fuelIndicatorPanelPrefab.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UAVs/Sub-Modules/Navigation.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Navigation.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UAVs/Sub-Modules/Navigation/NavigationManager.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UAVs/Sub-Modules/Navigation/NavigationManager.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UAVs/Sub-Modules/Navigation/Navigator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Navigation/Navigator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UAVs/Sub-Modules/Navigation/Navigator.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UAVs/Sub-Modules/Navigation/Path.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Navigation/Path.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UAVs/Sub-Modules/Navigation/Path.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UAVs/Sub-Modules/Navigation/Paths Rendering.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/Paths Rendering.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UAVs/Sub-Modules/Navigation/Paths Rendering/Path Rendering Settings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/Paths Rendering/Settings/Path Rendering Settings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UAVs/Sub-Modules/Navigation/Paths Rendering/Path Rendering Settings.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/Paths Rendering/Settings/Path Rendering Settings.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UAVs/Sub-Modules/Navigation/Paths Rendering/PathRenderer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UAVs/Sub-Modules/Navigation/Paths Rendering/PathRenderer.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/Paths Rendering/PathRenderer.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UAVs/Sub-Modules/Navigation/Paths Rendering/PathsRenderersManager.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UAVs/Sub-Modules/Navigation/Paths Rendering/PathsRenderersManager.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/Paths Rendering/PathsRenderersManager.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UAVs/Sub-Modules/Navigation/Paths Rendering/Prefabs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/Paths Rendering/Prefabs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UAVs/Sub-Modules/Navigation/Paths Rendering/Prefabs/PathRender.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/Paths Rendering/Prefabs/PathRender.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UAVs/Sub-Modules/Navigation/Paths Rendering/Prefabs/PathRender.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/Paths Rendering/Prefabs/PathRender.prefab.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UAVs/Sub-Modules/Navigation/PathsGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Navigation/PathsGenerator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UAVs/Sub-Modules/Navigation/PathsGenerator.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UAVs/Sub-Modules/Rerouting.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UAVs/Sub-Modules/Rerouting/Panel.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UAVs/Sub-Modules/Rerouting/Panel/Prefabs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/ReroutingPanel/Prefabs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UAVs/Sub-Modules/Rerouting/Panel/Prefabs/Row.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/ReroutingPanel/Prefabs/Row.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UAVs/Sub-Modules/Rerouting/Panel/Prefabs/Row.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/ReroutingPanel/Prefabs/Row.prefab.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UAVs/Sub-Modules/Rerouting/Panel/Prefabs/reroutingOptionsPanelsPrefab.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/ReroutingPanel/Prefabs/reroutingOptionsPanelsPrefab.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UAVs/Sub-Modules/Rerouting/Panel/Prefabs/reroutingOptionsPanelsPrefab.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/ReroutingPanel/Prefabs/reroutingOptionsPanelsPrefab.prefab.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UAVs/Sub-Modules/Rerouting/Panel/ReroutingOptionRowController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/ReroutingPanel/ReroutingOptionRowController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UAVs/Sub-Modules/Rerouting/Panel/ReroutingOptionRowController.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/ReroutingPanel/ReroutingOptionRowController.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UAVs/Sub-Modules/Rerouting/Panel/ReroutingOptionsPanelController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/ReroutingPanel/ReroutingOptionsPanelController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UAVs/Sub-Modules/Rerouting/Panel/ReroutingOptionsPanelController.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/ReroutingPanel/ReroutingOptionsPanelController.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UAVs/Sub-Modules/Rerouting/Panel/ReroutingPanelsContainerController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UAVs/Sub-Modules/Rerouting/Panel/ReroutingPanelsContainerController.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/ReroutingPanel/ReroutingPanelsContainerController.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UAVs/Sub-Modules/Rerouting/Prefabs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UAVs/Sub-Modules/Rerouting/Prefabs/rerouteButtonPrefab.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/ReroutingPanel/Prefabs/rerouteButtonPrefab.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UAVs/Sub-Modules/Rerouting/Prefabs/rerouteButtonPrefab.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/ReroutingPanel/Prefabs/rerouteButtonPrefab.prefab.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UAVs/Sub-Modules/Rerouting/ReroutingButtonsContainerController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UAVs/Sub-Modules/Rerouting/ReroutingButtonsContainerController.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/ReroutingPanel/ReroutingButtonsContainerController.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UAVs/Sub-Modules/Rerouting/ReroutingManager.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UAVs/Sub-Modules/Rerouting/ReroutingManager.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Navigation/Submodules/Rerouting/ReroutingManager.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UAVs/Sub-Modules/Rerouting/ReroutingPrefabsDatabase.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/ReroutingPanel/Prefabs/ReroutingPrefabsDatabase.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UAVs/Sub-Modules/Rerouting/ReroutingPrefabsDatabase.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/ReroutingPanel/Prefabs/ReroutingPrefabsDatabase.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UAVs/Sub-Modules/Rerouting/ReroutingSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Navigation/Submodules/Rerouting/Settings/ReroutingSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UAVs/Sub-Modules/Rerouting/ReroutingSettings.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/ReroutingPanel/Settings/ReroutingPanelSettings.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UAVs/Uav.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UAVs/Uav.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UAVs/UavGeneralSettings.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UAVs/UavGeneralSettings.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UAVs/UavSettingsDatabase.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UAVs/UavSettingsDatabase.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UAVs/UavsGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UAVs/UavsGenerator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UAVs/Settings/UavSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UAVs/Settings/UavSettings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/UAVs/UavsManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UAVs/UavsManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UI/BlockingPanelController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/BlockingPanelController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/UI/Console/ConsoleTextHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/Console/ConsoleTextHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UI/Console/ScrollRectExtensions.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UI/Console/ScrollRectExtensions.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Fuel/Settings/ScriptableObjects/FuelSettingsSO.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UI/Console/ConsoleTextHandler.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/Console/ConsoleTextHandler.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/UI/Console/TypeWriterEffect.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/Console/TypeWriterEffect.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UI/FlexibleGridLayout.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HelperScripts/FlexibleGridLayout.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UI/FlexibleGridLayout.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HelperScripts/FlexibleGridLayout.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UI/MainMenu/DropDown/ConfigFilesDropDownManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/MainMenu/DropDown/ConfigFilesDropDownManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UI/FuelAndHealthPanel/Settings/FuelAndHealthPanelSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/FuelAndHealthPanel/Settings/FuelAndHealthPanelSettings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/UI/MainMenu/FileBrowser.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/MainMenu/FileBrowser.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UI/MainMenu/SceneLoader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/MainMenu/SceneLoader.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UI/MainMenu/SettingsPanel.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UI/MainMenu/SettingsPanel/KeyValuePairController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UI/MainMenu/SettingsPanel/KeyValuePairController.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/MiniMap/MiniMapCameraPositioning.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UI/MainMenu/SettingsPanel/Setting Key Value Pair Panel.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UI/MainMenu/SettingsPanel/Setting Key Value Pair Panel.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/WayPoints/Prefabs/WayPointPrefab.prefab.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UI/MainMenu/SettingsPanel/SettingsReviewManager.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UI/MainMenu/SettingsPanel/SettingsReviewManager.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/WayPoints.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/WayPoints/Prefabs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/WayPoints/Prefabs/WayPointPrefab.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/WayPoints/Prefabs/WayPointPrefab.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/WayPoints/WayPoint.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/WayPoints/WayPoint.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/WayPoints/WayPointsGenerator.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/WayPoints/WayPointsGenerator.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/WayPoints/WayPointsManager.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/WayPoints/WayPointsManager.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UI/Paths Rendering/Settings/Path Rendering Settings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/Paths Rendering/Settings/Path Rendering Settings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UI/ReroutingPanel/ReroutingButtonsContainerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/ReroutingPanel/ReroutingButtonsContainerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UI/ReroutingPanel/ReroutingPanelsContainerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/ReroutingPanel/ReroutingPanelsContainerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UI/ReroutingPanel/Settings/ReroutingPanelSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/ReroutingPanel/Settings/ReroutingPanelSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UI/UavCameraAndTargetDetectionPanel/Prefabs/UAV Camera and Target Detection Panel Container.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/UavCameraAndTargetDetectionPanel/Prefabs/UAV Camera and Target Detection Panel Container.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UI/UavCameraAndTargetDetectionPanel/Settings/UavCameraAndTargetDetectionSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/UavCameraAndTargetDetectionPanel/Settings/UavCameraAndTargetDetectionSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UI/UavCameraAndTargetDetectionPanel/UavCameraAndTargetDetectionPanelController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/UavCameraAndTargetDetectionPanel/UavCameraAndTargetDetectionPanelController.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -590,6 +108,8 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/599ef6b6d50f4e488ca73e2010b5243610fc00/70/b1ad8dee/Enumerable.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/599ef6b6d50f4e488ca73e2010b5243610fc00/a1/8b60134a/Enumerable.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5a41d6b7189842eca409fd0b1c3e3dcf17bf78/8f/6daf9f6c/Void.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/81426fb2f082419eb14e96c5244705f02aa00/59/d76eed38/AxisConstraint.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/81426fb2f082419eb14e96c5244705f02aa00/9f/444a6e08/ShortcutExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/880832f2c4e2458090401bbb74a86b24a8a00/09/4a87c44b/JsonConverterAttribute.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/880832f2c4e2458090401bbb74a86b24a8a00/4d/5576058d/JsonSerializer.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/880832f2c4e2458090401bbb74a86b24a8a00/50/5c290803/JsonConvert.cs" root0="SKIP_HIGHLIGHTING" />
@@ -625,6 +145,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d4cde64232cf45659d86aafa597faa7746a800/a9/980d516c/CultureInfo.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d4cde64232cf45659d86aafa597faa7746a800/be/4c099bef/GC.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d4cde64232cf45659d86aafa597faa7746a800/c7/54acb411/NullReferenceException.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d4cde64232cf45659d86aafa597faa7746a800/d2/92e9ef98/DateTime.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d4cde64232cf45659d86aafa597faa7746a800/d5/546342d9/StringWriter.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d4cde64232cf45659d86aafa597faa7746a800/da/14d4ac4d/EqualityComparer`1.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d4cde64232cf45659d86aafa597faa7746a800/eb/4d3476ca/File.cs" root0="SKIP_HIGHLIGHTING" />
@@ -639,6 +160,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/de1f8ef4975b4eacbeb0accc1b22c9b02a000/e6/15a75a68/Tween.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f1212ad1dec44ce7b7147976b91869c3157800/00/2d1d74b9/Transform.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f1212ad1dec44ce7b7147976b91869c3157800/00/a09aa413/InvokableCall.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f1212ad1dec44ce7b7147976b91869c3157800/03/0f73672c/InvokableCall`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f1212ad1dec44ce7b7147976b91869c3157800/13/ae77c4fe/SetupCoroutine.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f1212ad1dec44ce7b7147976b91869c3157800/1a/1e1257ce/UnityEvent.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f1212ad1dec44ce7b7147976b91869c3157800/1c/a49fbe88/Gizmos.cs" root0="SKIP_HIGHLIGHTING" />
@@ -665,6 +187,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/5377ac4e788cc4f8c6545362cee39859969c7b346233bb3bdcf6191179ada9/System.Drawing.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/5995835e2565222bd845851833bf32626f8a8e23753c86c8cc54d6f22587cd6a/System.Globalization.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/d44b17e136d09081da1e8fd0e8c83fde60e11818b9f2442d7ed8cb733fae895e/System.Collections.Generic.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/GameManager/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/IOHandlers/ConfigFilesHandler.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/IOHandlers/Records/Coordinates.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/IOHandlers/Records/TargetRecord.cs" root0="FORCE_HIGHLIGHTING" />
@@ -678,6 +201,8 @@
     <setting file="file://$PROJECT_DIR$/Assets/UI/ReroutingPanel/ReroutingButtonsContainerController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/UI/UavCameraAndTargetDetectionPanel/UavCameraAndTargetDetectionPanelController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.terrain-tools@4.0.3/Shaders/NoiseLib/Implementation/RidgeImpl.hlsl" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.test-framework@1.1.31/UnityEditor.TestRunner/TestRun/TestJobData.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.test-framework@1.1.31/UnityEngine.TestRunner/NUnitExtensions/Attributes/UnityTestAttribute.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.textmeshpro@3.0.6/Scripts/Editor/TMP_BaseEditorPanel.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.textmeshpro@3.0.6/Scripts/Editor/TMP_GlyphPairAdjustmentRecordPropertyDrawer.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.textmeshpro@3.0.6/Scripts/Runtime/TMP_InputField.cs" root0="SKIP_HIGHLIGHTING" />
@@ -724,6 +249,9 @@
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.visualscripting@1.7.8/Runtime/VisualScripting.Core/Dependencies/FullSerializer/fsSerializer.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.visualscripting@1.7.8/Runtime/VisualScripting.Core/Unity/LudiqBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.visualscripting@1.7.8/Runtime/VisualScripting.Core/Utilities/ComponentHolderProtocol.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.visualscripting@1.7.8/Runtime/VisualScripting.Flow/Framework/Events/Physics/OnCollisionEnter.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.visualscripting@1.7.8/Runtime/VisualScripting.Flow/Framework/Events/Physics/OnCollisionExit.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.visualscripting@1.7.8/Runtime/VisualScripting.Flow/Framework/Events/Physics/OnCollisionStay.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../UAV_Sim/Assets/Scripts/CustomNetworkManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../UAV_Sim/Assets/Scripts/DrawRoutes.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../UAV_Sim/Assets/Scripts/EyeTracker.cs" root0="FORCE_HIGHLIGHTING" />
@@ -737,7 +265,7 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="SWEA" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="2A4RxRq3yJaRDp59EPxNvDCfGTB" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -754,10 +282,10 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;XThreadsFramesViewSplitterKey&quot;: &quot;0.50076336&quot;,
+    &quot;XThreadsFramesViewSplitterKey&quot;: &quot;0.2870229&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/abdel/OneDrive - University of Virginia/UVA/Research/UAV/UAVSimulation&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -788,10 +316,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="22704">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="19800">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="22704" />
+      <option name="pid" value="19800" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -858,7 +386,10 @@
       <workItem from="1663907967056" duration="4247000" />
       <workItem from="1663912983512" duration="133000" />
       <workItem from="1663914479793" duration="5052000" />
-      <workItem from="1663919740843" duration="13324000" />
+      <workItem from="1663919740843" duration="24430000" />
+      <workItem from="1664230064156" duration="17153000" />
+      <workItem from="1664370475718" duration="182000" />
+      <workItem from="1664370714597" duration="7159000" />
     </task>
     <servers />
   </component>
@@ -939,41 +470,47 @@
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/WayPoints/WayPointsManager.cs</url>
           <line>56</line>
-          <properties documentPath="C:\Users\abdel\OneDrive - University of Virginia\UVA\Research\UAV\UAVSimulation\Assets\WayPoints\WayPointsManager.cs" initialLine="56" containingFunctionPresentation="method 'GenerateWayPoints'">
-            <startOffsets>
-              <option value="2114" />
-            </startOffsets>
-            <endOffsets>
-              <option value="2162" />
-            </endOffsets>
-          </properties>
+          <properties documentPath="C:\Users\abdel\OneDrive - University of Virginia\UVA\Research\UAV\UAVSimulation\Assets\WayPoints\WayPointsManager.cs" initialLine="56" containingFunctionPresentation="method 'GenerateWayPoints'" />
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Modules/Navigation/Submodules/Rerouting/ReroutingLogHandler.cs</url>
-          <line>130</line>
-          <properties documentPath="C:\Users\abdel\OneDrive - University of Virginia\UVA\Research\UAV\UAVSimulation\Assets\Modules\Navigation\Submodules\Rerouting\ReroutingLogHandler.cs" initialLine="119" containingFunctionPresentation="method 'LogTimeOfPathStart'">
+          <url>file://$PROJECT_DIR$/Assets/Modules/Fuel/FuelController.cs</url>
+          <line>172</line>
+          <properties documentPath="C:\Users\abdel\OneDrive - University of Virginia\UVA\Research\UAV\UAVSimulation\Assets\Modules\Fuel\FuelController.cs" initialLine="172" containingFunctionPresentation="method 'OnHealthButtonClicked'">
             <startOffsets>
-              <option value="4335" />
+              <option value="6850" />
             </startOffsets>
             <endOffsets>
-              <option value="4415" />
+              <option value="6851" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="5" />
+          <option name="timeStamp" value="27" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Modules/Navigation/Submodules/Rerouting/ReroutingLogHandler.cs</url>
-          <line>57</line>
-          <properties documentPath="C:\Users\abdel\OneDrive - University of Virginia\UVA\Research\UAV\UAVSimulation\Assets\Modules\Navigation\Submodules\Rerouting\ReroutingLogHandler.cs" initialLine="57" containingFunctionPresentation="method 'LogReroutingEvent'">
+          <url>file://$PROJECT_DIR$/Assets/UI/MainMenu/FileBrowser.cs</url>
+          <line>47</line>
+          <properties documentPath="C:\Users\abdel\OneDrive - University of Virginia\UVA\Research\UAV\UAVSimulation\Assets\UI\MainMenu\FileBrowser.cs" initialLine="47" containingFunctionPresentation="method 'ShowBrowseFileDialog'">
             <startOffsets>
-              <option value="2352" />
+              <option value="1696" />
             </startOffsets>
             <endOffsets>
-              <option value="2410" />
+              <option value="1697" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="6" />
+          <option name="timeStamp" value="30" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/UI/MainMenu/FileBrowser.cs</url>
+          <line>46</line>
+          <properties documentPath="C:\Users\abdel\OneDrive - University of Virginia\UVA\Research\UAV\UAVSimulation\Assets\UI\MainMenu\FileBrowser.cs" initialLine="46" containingFunctionPresentation="method 'ShowBrowseFileDialog'">
+            <startOffsets>
+              <option value="1506" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1648" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="31" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -983,5 +520,9 @@
         <PinnedItemInfo parentTag="Type#Menu.TypeWriterEffect" memberName="mTextMeshPro" />
       </pinned-members>
     </pin-to-top-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

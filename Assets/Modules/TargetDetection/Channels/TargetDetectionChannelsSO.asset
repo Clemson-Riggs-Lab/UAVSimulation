@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 821cd649de17cd347815765daa0b88cc, type: 3}
   m_Name: TargetDetectionChannelsSO
   m_EditorClassIdentifier: 
-  targetDetectedButtonClickedEventChannel: {fileID: 11400000, guid: 0438251bf52c9624c8a365a98dd31571, type: 2}
-  targetNotDetectedButtonClickedEventChannel: {fileID: 11400000, guid: f5f75635a314d1a4db85d66e43aecbb3, type: 2}
+  targetDetectedEventChannel: {fileID: 11400000, guid: 589e3974260eefc4c906732351478756, type: 2}
+  targetNotDetectedEventChannel: {fileID: 11400000, guid: d04e7b73c363d924697b0d17c2b15e0c, type: 2}

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f553aa334de4edd8620cf4a36046b17, type: 3}
   m_Name: Path Rendering Settings
   m_EditorClassIdentifier: 
-  showPathWhenUavIsHidden: 0
+  showPathWhenUavIsHidden: 1
   pathWidthNormal: 5
   pathWidthReroutingOption: 8
   numberOfWaypointsAheadToDraw: 1

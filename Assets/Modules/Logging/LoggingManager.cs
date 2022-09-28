@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.IO;
 using Modules.Logging.Channels.ScriptableObjects;
@@ -11,6 +12,7 @@ namespace Modules.Logging
 	{		
 		private static List<Log> Logs { get; set; } = new ();
 		private LogEventChannelSO _logEventChannel;
+		private DateTime _startTime; 
 		
 		
 		private void Start()
@@ -21,6 +23,7 @@ namespace Modules.Logging
 			{
 				_logEventChannel.Subscribe(OnLogReceived);
 			}
+			_startTime = DateTime.Now;
 		}
 		
 
@@ -51,9 +54,11 @@ namespace Modules.Logging
 
 		private void WriteLogsToFile()
 		{
+			var logFolder = Application.dataPath + "/logFiles/";
+			if (!Directory.Exists(logFolder)) Directory.CreateDirectory(logFolder);
+			
 			string json = JsonConvert.SerializeObject(Logs, Formatting.Indented);
-			using StreamWriter file = File.CreateText(@"D:\ChatLogs.json");
-			JsonSerializer serializer = new JsonSerializer();
+			using StreamWriter file = File.CreateText(logFolder+ _startTime.ToString("yyyy-MM-dd HH-mm-ss") +".json");
 			file.Write(json);
 		}
 	}

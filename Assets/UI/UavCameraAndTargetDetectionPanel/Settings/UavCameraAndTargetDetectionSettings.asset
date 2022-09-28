@@ -17,35 +17,35 @@ MonoBehaviour:
   renderTextureDepth: 24
   cameraDownwardTilt: 10
   cameraFieldOfView: 60
-  enabledUavPanelConfigs:
-    videoArtifacts: 0
+  enabledUavCameraAndTargetDetectionPanelConfigs:
+    cameraAndTargetDetectionPanelState: 0
     centerText: 
     bottomText: 
-  hiddenUavPanelConfigs:
-    videoArtifacts: 3
+  hiddenUavCameraAndTargetDetectionPanelConfigs:
+    cameraAndTargetDetectionPanelState: 1
     centerText: 
     bottomText: 
-  finishedUavPanelConfigs:
-    videoArtifacts: 1
+  finishedUavCameraAndTargetDetectionPanelConfigs:
+    cameraAndTargetDetectionPanelState: 1
     centerText: Uav Finished Mission
     bottomText: 
-  fuelLeakPanelConfigs:
-    videoArtifacts: 0
-    centerText: Fuel Leaking
-    bottomText: 
-  fatalLeakPanelConfigs:
-    videoArtifacts: 0
-    centerText: 
-    bottomText: Fatal Fuel Leak
-  emptyFuelPanelConfigs:
-    videoArtifacts: 2
-    centerText: 
-    bottomText: Fuel Empty
-  lostUavPanelConfigs:
-    videoArtifacts: 2
+  lostUavCameraAndTargetDetectionPanelConfigs:
+    cameraAndTargetDetectionPanelState: 2
     centerText: ' UAV Lost'
     bottomText: 
-  hoveringUavPanelConfigs:
-    videoArtifacts: 1
+  hoveringUavCameraAndTargetDetectionPanelConfigs:
+    cameraAndTargetDetectionPanelState: 1
     centerText: 
     bottomText: 
+  fuelLeakCameraAndTargetDetectionPanelConfigs:
+    cameraAndTargetDetectionPanelState: 0
+    centerText: Fuel Leaking
+    bottomText: 
+  fatalLeakCameraAndTargetDetectionPanelConfigs:
+    cameraAndTargetDetectionPanelState: 0
+    centerText: 
+    bottomText: Fatal Fuel Leak
+  emptyFuelCameraAndTargetDetectionPanelConfigs:
+    cameraAndTargetDetectionPanelState: 2
+    centerText: 
+    bottomText: Fuel Empty

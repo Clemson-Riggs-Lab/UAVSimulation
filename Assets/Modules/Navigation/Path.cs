@@ -17,9 +17,7 @@ namespace Modules.Navigation
         public Path previousPath;
         public Path nextPath;
         
-        //fields below are set when the path becomes active and when it is completed.
         [NonSerialized] public DateTime startTime;
-        [NonSerialized] public DateTime endTime;
         
 
         public Path(int id, Uav uav, WayPoint destinationWayPoint, bool visuallyEnabled, bool targetIsPresent)
@@ -40,6 +38,7 @@ namespace Modules.Navigation
             this.targetIsPresent = path.targetIsPresent;
             this.previousPath = path.previousPath;
             this.nextPath = path.nextPath;
+            this.startTime = path.startTime;
         }
     }
 }

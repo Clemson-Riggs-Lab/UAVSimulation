@@ -24,9 +24,11 @@ namespace WayPoints
          public void Initialize()
         { 
             GetReferencesFromGameManager();
+            SubscribeToChannels();
+            
             _wayPointsGenerator = gameObject.AddComponent<WayPointsGenerator>();
             _wayPointsGenerator.Initialize();
-            SubscribeToChannels();
+            GenerateWayPoints();
         }
 
         private void GetReferencesFromGameManager()

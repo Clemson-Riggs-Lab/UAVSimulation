@@ -63,7 +63,7 @@ namespace Modules.Navigation.Submodules.Rerouting
 				{
 					var newPath = new Path(path)
 					{
-						destinationWayPoint = waypoint
+						destinationWayPoint = waypoint // same as original path, just with a different destination
 					};
 
 					//linecast from uav to waypoint, and check if it hits an object in layer "NFZ"

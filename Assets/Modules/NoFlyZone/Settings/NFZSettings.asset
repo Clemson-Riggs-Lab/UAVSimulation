@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 140827127f61433d92e230e48ff54404, type: 3}
   m_Name: NFZSettings
   m_EditorClassIdentifier: 
-  nfzRecordsSource: 1
+  nfzRecordsSource: 0
   animateNFZGrowOnStart: 0
   nfzGrowthAnimationDuration: 0
   nfzCountdownText: 
   nfzAddCountdownCounterToText: 0
   blinkNFZOnCountdownCounter: 0
   nfzBlinkInterval: 0
+  logNFZCollisions: 1

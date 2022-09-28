@@ -32,16 +32,16 @@ namespace Modules.Prompts
 		
 		private void SubscribeToChannels()
 		{
-			if(_newPromptEventChannel!=null && _promptSettings.logPrompts==true) _newPromptEventChannel.Subscribe(OnChatMessageSent);
+			if(_newPromptEventChannel!=null && _promptSettings.logPrompts==true) _newPromptEventChannel.Subscribe(OnPromptMessageSent);
 			if(_promptResponseReceivedEventChannel!=null && _promptSettings.logReceivedResponses==true) _promptResponseReceivedEventChannel.Subscribe(OnResponseReceived);
 		}
 		
-		private void OnChatMessageSent(Prompt chatMessage)
+		private void OnPromptMessageSent(Prompt chatMessage)
 		{
 			var log = new Log
 			{
-				logType = "Chat",
-				eventType = "ChatMessageSent",
+				logType = "Prompts",
+				eventType = "PromptMessageSent",
 				logMessages = ComposeMessageLogString(chatMessage)
 			};
 			_logEventChannel.RaiseEvent(log);
@@ -51,7 +51,7 @@ namespace Modules.Prompts
 		{	
 			var log = new Log
 			{
-				logType = "Chat",
+				logType = "Prompts",
 				eventType = "ResponseReceived",
 				logMessages = ComposeResponseLogString(responseOption)
 			};
@@ -64,7 +64,7 @@ namespace Modules.Prompts
 			var logMessages = new List<string>();
 			if (_promptSettings.logPrompts)
 			{
-				logMessages.Add("Chat Message: " + prompt.consoleMessage);
+				logMessages.Add("Prompt Message: " + prompt.consoleMessage.text);
 			}
 
 			if (_promptSettings.logAllowedResponseTime)
@@ -118,7 +118,7 @@ namespace Modules.Prompts
 
 		private void OnDisable()
 		{
-			if(_newPromptEventChannel!=null) _newPromptEventChannel.Unsubscribe(OnChatMessageSent);
+			if(_newPromptEventChannel!=null) _newPromptEventChannel.Unsubscribe(OnPromptMessageSent);
 			if(_promptResponseReceivedEventChannel!=null) _promptResponseReceivedEventChannel.Unsubscribe(OnResponseReceived);
 		}
 	}

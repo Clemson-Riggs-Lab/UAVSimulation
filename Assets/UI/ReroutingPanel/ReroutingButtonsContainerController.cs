@@ -54,9 +54,9 @@ namespace UI.ReroutingPanel
 		{
 			if(!_uavsToButtonsDictionary.ContainsKey(uav)) return;
 			
-			var interactable = condition switch
+			var disabled = condition switch
 			{
-				Enabled => true,
+				Enabled => false,
 				Hidden => _reroutingPanelSettings.disableButtonsForHiddenUavs,
 				Finished => _reroutingPanelSettings.disableButtonsForFinishedUavs,
 				Lost => _reroutingPanelSettings.disableButtonsForLostUavs,
@@ -74,7 +74,8 @@ namespace UI.ReroutingPanel
 			
 			var button = _uavsToButtonsDictionary[uav];
 			
-			button.interactable = interactable;
+			button.interactable = !disabled;
+
 
 			if (hidden)
 			{
@@ -86,10 +87,8 @@ namespace UI.ReroutingPanel
 				button.transform.localScale = Vector3.one;
 				button.GetComponent<LayoutElement>().ignoreLayout = false;
 			}
-			
 		}
 
-		
 		
 		private void ClearButtons()
 		{

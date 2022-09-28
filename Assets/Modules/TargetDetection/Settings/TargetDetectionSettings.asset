@@ -13,3 +13,6 @@ MonoBehaviour:
   m_Name: TargetDetectionSettings
   m_EditorClassIdentifier: 
   defaultTargetType: 0
+  logTargetDetection: 1
+  logTargetDetectionCorrectness: 1
+  logTimeSinceStartOfPathWhenTargetDetectionOccured: 1

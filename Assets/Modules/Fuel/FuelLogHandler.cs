@@ -51,6 +51,7 @@ namespace Modules.Fuel
 				eventType = "Fuel Leak Fixed",
 				logMessages = new() { $"UAV {uav.uavName} fuel leak fixed" }
 			};
+			_logEventChannel.RaiseEvent(log);
 		}
 		
 		

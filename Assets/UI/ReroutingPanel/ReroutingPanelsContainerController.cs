@@ -125,7 +125,7 @@ namespace UI.ReroutingPanel
 			}
 			var panelController = Instantiate(_panelPrefab,transform).GetComponent<ReroutingOptionsPanelController>();
 			panelController.Initialize(uav,this,_reroutingManager);
-			
+			panelController.transform.localScale = Vector3.zero;
 			switch (_reroutingPanelSettings.newPanelPosition) //setting the position of the newly added panel 
 			{
 				case ReroutingPanelSettingsSO.NewPanelPosition.PlaceAtTheBeginning:
@@ -136,7 +136,7 @@ namespace UI.ReroutingPanel
 					panelController.transform.SetAsLastSibling();
 					break;
 			}
-			
+			panelController.transform.localScale = Vector3.one;
 			_uavReroutingOptionsPanelControllerDictionary[uav]=panelController;
 			HighlightPanel(uav);
 		}

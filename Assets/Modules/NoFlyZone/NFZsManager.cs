@@ -22,9 +22,12 @@ namespace Modules.NoFlyZone
 		{
 			GetReferencesFromGameManager();
 			ClearNFZs();
-
+			LoadNFZs();
+			
 			var nfzLogHandler = gameObject.GetOrAddComponent<NFZLogHandler>();
 			nfzLogHandler.Initialize();
+			
+			
 		}
 
 		private void GetReferencesFromGameManager()

@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a099ecb7066477098a33f73dc1c3cfe, type: 3}
   m_Name: ReroutingPanelSettings
   m_EditorClassIdentifier: 
-  hideButtonsForHiddenUavs: 1
-  hideButtonsForFinishedUavs: 1
-  hideButtonsForLostUavs: 1
+  hideButtonsForHiddenUavs: 0
+  hideButtonsForFinishedUavs: 0
+  hideButtonsForLostUavs: 0
   disableButtonsForHiddenUavs: 1
   disableButtonsForFinishedUavs: 1
   disableButtonsForLostUavs: 1
-  closePanelsForHiddenUavs: 1
+  closePanelsForHiddenUavs: 0
   closePanelsForFinishedUavs: 1
   closePanelsForLostUavs: 1
   numberOfReroutingOptionsToPresent: 3

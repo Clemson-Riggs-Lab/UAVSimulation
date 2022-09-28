@@ -21,46 +21,7 @@ MonoBehaviour:
   fuelLeakDuration: 10
   fuelLeakButtonInteractionDurationBeforeFatalLeak: 10
   fuelConsumptionMultiplierOnFatalLeak: 20
-  showFuelLeakConditionWhenUavHidden: 0
-  enabledUavFuelAndHealthPanelConfigs:
-    healthButtonInteractable: 0
-    isVisibile: 1
-    healthButtonText: 
-    healthButtonTextColor: Black
-    healthButtonColor: Green
-    fuelSliderColor: Green
-  hiddenUavFuelAndHealthPanelConfigs:
-    healthButtonInteractable: 0
-    isVisibile: 0
-    healthButtonText: 
-    healthButtonTextColor: Black
-    healthButtonColor: Green
-    fuelSliderColor: Green
-  fuelLeakFuelAndHealthPanelConfigs:
-    healthButtonInteractable: 1
-    isVisibile: 1
-    healthButtonText: Fix Leak
-    healthButtonTextColor: Black
-    healthButtonColor: Orange
-    fuelSliderColor: Green
-  fatalLeakFuelAndHealthPanelConfigs:
-    healthButtonInteractable: 0
-    isVisibile: 1
-    healthButtonText: Fatal Leak
-    healthButtonTextColor: Black
-    healthButtonColor: Red
-    fuelSliderColor: Red
-  fuelEmptyFuelAndHealthPanelConfigs:
-    healthButtonInteractable: 0
-    isVisibile: 1
-    healthButtonText: Uav Lost
-    healthButtonTextColor: Red
-    healthButtonColor: Black
-    fuelSliderColor: Red
-  lostUavFuelAndHealthPanelConfigs:
-    healthButtonInteractable: 0
-    isVisibile: 0
-    healthButtonText: Uav Lost
-    healthButtonTextColor: Red
-    healthButtonColor: Gray
-    fuelSliderColor: Red
+  logFuelLeakEvents: 1
+  logFuelLeakFixEvents: 1
+  logFatalFuelLeakEvents: 1
+  logFuelEmptyEvents: 1

@@ -128,9 +128,9 @@ namespace Modules.Navigation.Submodules.Rerouting
 		{
 			try
 			{
-				log.logMessages.Add($"Path start time: {path.previousPath.nextPath.startTime}");
+				log.logMessages.Add($"Path start time: {path.startTime.ToString("MM/dd/yyyy HH:mm:ss.ffffff")}");
 			}
-			catch (NullReferenceException e)
+			catch 
 			{
 				log.logMessages.Add($"Path start time could not be logged, probably because it is the first path");
 			}

@@ -5,7 +5,8 @@ MonoImporter:
   serializedVersion: 2
   defaultReferences:
   - consoleTextMeshProUGUI: {instanceID: 0}
-  - writeTextToConsoleChannel: {fileID: 11400000, guid: 3f50f9fd472b13448a10fbf6e8942dbc, type: 2}
+  - writeMessageToConsoleChannel: {fileID: 11400000, guid: 502a2607491241c40b797163fc8a2296, type: 2}
+  - settingsDatabase: {fileID: 11400000, guid: ace421cb0e63d7241afed200b91bb258, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

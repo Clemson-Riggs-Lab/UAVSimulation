@@ -31,11 +31,10 @@ namespace Modules.Prompts
 
 		private void Start()
 		{
-
+			GetSettingsFromGameManager();
+			
 			if (newPromptEventChannel != null)
 				newPromptEventChannel.Subscribe(OnNewPromptReceivedEvent);
-			
-			GetSettingsFromGameManager();
 		}
 
 		private void GetSettingsFromGameManager()

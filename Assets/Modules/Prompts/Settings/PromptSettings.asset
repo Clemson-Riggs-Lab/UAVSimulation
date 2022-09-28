@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3d928ab50ec40dc8f22fc33b88b08bb, type: 3}
   m_Name: PromptSettings
   m_EditorClassIdentifier: 
-  promptsSource: 1
+  promptsSource: 0
   enableTextAnimation: 1
   textAnimationSpeed: 100
   textFontSize: 18

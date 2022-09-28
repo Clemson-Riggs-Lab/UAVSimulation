@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 6486393343060331789}
   - component: {fileID: 6486393343060331790}
   - component: {fileID: 6486393343060331787}
-  - component: {fileID: 6694177106751819047}
   m_Layer: 5
   m_Name: Response Panel
   m_TagString: Untagged
@@ -126,23 +125,6 @@ MonoBehaviour:
   fitX: 1
   fitY: 1
   nudgeLastItemsOver: 1
---- !u!114 &6694177106751819047
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6486393343060331776}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07c1671e7c0e4c23b9733fdc587bfde2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  newPromptEventChannel: {fileID: 11400000, guid: 5a505d80c53cff24b99a2e9515741cbe, type: 2}
-  responseReceivedChannel: {fileID: 11400000, guid: 88d889fda608e684db4ee772f9e5777c, type: 2}
-  writeMessageToConsoleChannel: {fileID: 11400000, guid: 502a2607491241c40b797163fc8a2296, type: 2}
-  responsesContainer: {fileID: 6486393343060331791}
-  responseButtonPrefab: {fileID: 5394739573003395823, guid: 52720c39627fc1e478ecd6344d32f3a8, type: 3}
 --- !u!1 &6486393343220936407
 GameObject:
   m_ObjectHideFlags: 0
@@ -220,8 +202,7 @@ GameObject:
   - component: {fileID: 6486393343344454426}
   - component: {fileID: 6486393343344454427}
   - component: {fileID: 6486393343344454428}
-  - component: {fileID: 7002161887184949367}
-  - component: {fileID: 8275621862909746913}
+  - component: {fileID: 8548520786965130405}
   m_Layer: 5
   m_Name: ChatBox Panel Container
   m_TagString: Untagged
@@ -308,7 +289,7 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: 2
   m_LayoutPriority: 1
---- !u!114 &7002161887184949367
+--- !u!114 &8548520786965130405
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -317,27 +298,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 6486393343344454430}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 758305a3a2cf4d839de37d757ffbb557, type: 3}
+  m_Script: {fileID: 11500000, guid: 07c1671e7c0e4c23b9733fdc587bfde2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  writeMessageToConsoleChannel: {fileID: 0}
-  chatMessageSentChannel: {fileID: 11400000, guid: 5a505d80c53cff24b99a2e9515741cbe, type: 2}
-  responseReceivedChannel: {fileID: 11400000, guid: 88d889fda608e684db4ee772f9e5777c, type: 2}
---- !u!114 &8275621862909746913
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6486393343344454430}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3c5a5cd76824d139b45768f2a9263ef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  chatMessageSentChannel: {fileID: 11400000, guid: 5a505d80c53cff24b99a2e9515741cbe, type: 2}
-  responseReceivedChannel: {fileID: 11400000, guid: 88d889fda608e684db4ee772f9e5777c, type: 2}
-  loggingChannel: {fileID: 0}
+  responsesContainer: {fileID: 6486393343060331791}
+  responseButtonPrefab: {fileID: 5394739573003395823, guid: 52720c39627fc1e478ecd6344d32f3a8, type: 3}
 --- !u!1 &6486393343523657882
 GameObject:
   m_ObjectHideFlags: 0
@@ -557,8 +522,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8402207198266818456}
   m_HandleRect: {fileID: 8402207198266818463}
   m_Direction: 0
-  m_Value: 0
-  m_Size: 0.9999999
+  m_Value: 0.5
+  m_Size: 0
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -898,8 +863,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8402207199207773436}
   m_HandleRect: {fileID: 8402207199207773427}
   m_Direction: 2
-  m_Value: 1
-  m_Size: 1
+  m_Value: 0.000000022398515
+  m_Size: 0.24317475
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1280,6 +1245,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mTextMeshPro: {fileID: 8402207199986651839}
+  settingsDatabase: {fileID: 0}
 --- !u!114 &1486568037993195493
 MonoBehaviour:
   m_ObjectHideFlags: 0

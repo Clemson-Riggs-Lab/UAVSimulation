@@ -67,6 +67,8 @@ namespace Modules.TargetDetection
 			
 			if(_targetDetectionSettings.logTimeSinceStartOfPathWhenTargetDetectionOccured)
 				log.logMessages.Add($"Time since start of path: {DateTime.Now- path.startTime}");
+			
+			_logEventChannel.RaiseEvent(log);
 		}
 
 		private void OnDisable()

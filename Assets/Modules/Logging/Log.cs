@@ -8,8 +8,8 @@ namespace Modules.Logging
 	[Serializable]
 	public class Log
 	{
-		public DateTime timestamp=DateTime.Now;
-		public string simulationTimeStamp= Time.time.ToString(CultureInfo.InvariantCulture);
+		public string timestamp=DateTime.Now.ToString("MM/dd/yyyy HH:mm:ss.ffffff");
+		public string simulationTimeStamp= Time.time.ToString();
 		public string logType;
 		public string eventType;
 		public List<string> logMessages;

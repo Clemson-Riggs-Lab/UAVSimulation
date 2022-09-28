@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using HelperScripts;
 using IOHandlers;
 using Modules.Prompts.Channels.ScriptableObjects;
 using Modules.Prompts.Settings.ScriptableObjects;
@@ -20,6 +21,9 @@ namespace Modules.Prompts
 		{
 			GetReferencesFromGameManager();
 			LoadPrompts();
+			
+			var promptsLogHandler = gameObject.GetOrAddComponent<PromptLogHandler>();
+			promptsLogHandler.Initialize();
 		}
 
 		private void GetReferencesFromGameManager()

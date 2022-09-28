@@ -28,7 +28,7 @@ namespace Modules.Navigation
 
 		 private Vector3 TargetPosition => IgnoreWaypointPositionByAxis(_currentPath.destinationWayPoint.transform.position);
 		[NonSerialized] private Path _currentPath;
-		[NonSerialized] private float _pathStartTime;
+		[NonSerialized] private float _pathStartTime; // this is used instead of _currentPath.startTime because this records simulation time and not real time ( seconds hours date month year etc )
 
 
 
@@ -42,6 +42,8 @@ namespace Modules.Navigation
 		{
 			_uav = gameObject.GetComponent<Uav>();
 			_uavBody = _uav.uavBody;
+			if (GetComponent<Rigidbody>())
+				GetComponent<Rigidbody>().freezeRotation = true;
 			if (_uav == null)
 			{
 				Debug.LogError("Navigator: UAV is not attached to the game object on which this script is attached");
@@ -69,6 +71,7 @@ namespace Modules.Navigation
 			else
 			{
 				_currentPath = paths[0];
+				_currentPath.startTime = DateTime.Now;
 				_pathStartTime = Time.time;
 				UpdateNavigation();
 			}
@@ -104,7 +107,6 @@ namespace Modules.Navigation
 		{
 			if(_uav.uavCondition== Lost) return; //we stop the navigation if the UAV is lost, since this is called recursively, this suffices to stop the navigation.
 			//also note that the above is just a safety check, since the navigator should be destroyed by the navigation manager when the UAV is lost.
-			_currentPath.startTime= DateTime.Now;
 			_uavStartedNewPathEventChannel.RaiseEvent(_uav, _currentPath);
 			_doTweenSequence = DOTween.Sequence();
 			AddDOTweenNavigationAndRotation();
@@ -119,7 +121,8 @@ namespace Modules.Navigation
 		private void GetNextDestination()
 		{
 			_currentPath= _currentPath.nextPath;
-
+			_currentPath.startTime= DateTime.Now;
+			
 			if(_currentPath == null) // we have reached the end 
 			{
 				Destroy(this);
@@ -148,13 +151,13 @@ namespace Modules.Navigation
 				case NavigationSettingsSO.FollowType.SmoothFacing:
 				default: 
 					_doTweenSequence.Append(transform.DOMove(TargetPosition , navigationDuration).SetEase(Ease.Linear));
-					_doTweenSequence.Join(_uavBody.transform.DOLookAt(TargetPosition, navigationSettings.rotationDuration).SetEase(Ease.Linear));
+					_doTweenSequence.Join(_uavBody.transform.DOLookAt(TargetPosition, navigationSettings.rotationDuration, AxisConstraint.Y).SetEase(Ease.Linear));
 					break;
 				
 				// Just Look at	
 				case NavigationSettingsSO.FollowType.Facing:
 					_doTweenSequence.Append(transform.DOMove(TargetPosition , navigationDuration).SetEase(Ease.Linear));
-					_doTweenSequence.Join(_uavBody.transform.DOLookAt(TargetPosition, 0.1f).SetEase(Ease.Linear));//Quick Rotation
+					_doTweenSequence.Join(_uavBody.transform.DOLookAt(TargetPosition, 0.1f, AxisConstraint.Y).SetEase(Ease.Linear));//Quick Rotation
 					break;
 				
 				// Move without rotation
@@ -169,7 +172,7 @@ namespace Modules.Navigation
 				// Move and rotate to face the target, with damping 
 				case NavigationSettingsSO.FollowType.SmoothDamping:
 					_doTweenSequence.Append(transform.DOMove(TargetPosition , navigationDuration).SetEase(Ease.Linear));
-					_doTweenSequence.Join(_uavBody.transform.DOLookAt(TargetPosition, navigationSettings.rotationDuration).SetEase(Ease.Linear));
+					_doTweenSequence.Join(_uavBody.transform.DOLookAt(TargetPosition, navigationSettings.rotationDuration, AxisConstraint.Y).SetEase(Ease.Linear));
 					break;
 			}
 			
@@ -195,8 +198,9 @@ namespace Modules.Navigation
 					if (_currentPath.nextPath != null) // else if it is null then we do not have to rotate anymore as there is no next waypoint to face
 					{
 						var target= IgnoreWaypointPositionByAxis(_currentPath.nextPath.destinationWayPoint.transform.position);
-						
-							_doTweenSequence.Append(_uavBody.transform.DOLookAt(target, navigationSettings.hoverDurationOnWaypoint).SetEase(Ease.Linear));
+						// use dotween Dorotate  to rotate the UAV to face the target
+						_doTweenSequence.Append(_uavBody.transform.DOLookAt(target, navigationSettings.hoverDurationOnWaypoint, AxisConstraint.Y, Vector3.up ).SetEase(Ease.Linear));
+						//TODO fix this so that we dont have wobbly rotation
 					}
 					break;
 					

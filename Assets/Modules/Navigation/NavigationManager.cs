@@ -27,8 +27,12 @@ namespace Modules.Navigation
 		public void Initialize()
 		{
 			GetReferencesFromGameManager();
-			_pathsGenerator = gameObject.AddComponent<PathsGenerator>();
 			SubscribeToChannels();
+			
+			// paths generator
+			_pathsGenerator = gameObject.AddComponent<PathsGenerator>();
+			_pathsGenerator.Initialize();
+			GeneratePaths();
 		}
 		
 

@@ -3,7 +3,6 @@ using System.Collections;
 using System.IO;
 using Databases.ScriptableObjects;
 using HelperScripts;
-using IOHandlers;
 using IOHandlers.Settings.ScriptableObjects;
 using Modules.FuelAndHealth;
 using Modules.Navigation;
@@ -26,8 +25,8 @@ public class GameManager : MonoBehaviour
         [SerializeField] public GameObject uavsContainer;
         [SerializeField] public GameObject terrainContainer;
         [SerializeField] public GameObject nfzsContainer;
+       
         [Space(20)]
-        
         [SerializeField] public ConfigFilesSettingsSO configFilesSettings;
         
         [Space(20)]
@@ -46,31 +45,34 @@ public class GameManager : MonoBehaviour
         [SerializeField] public PrefabsDatabaseSO prefabsDatabase;
         [SerializeField] public SettingsDatabaseSO settingsDatabase;
         
-        private bool _forceGenerateFromRecords = true;
-       [NonSerialized] public float simulationStartTime;
-
        [SerializeField] public BlockingPanelController blockingPanelController;
 
+       [NonSerialized] private bool _forceGenerateFromRecords = false;
+       [NonSerialized] public float simulationStartTime;
+       
+       
         private void OnValidate()
         {
             AssertionHelper.AssertComponentReferencedInEditor(wayPointsContainer,this,this.gameObject);
             AssertionHelper.AssertComponentReferencedInEditor(uavsContainer,this,this.gameObject);
             AssertionHelper.AssertComponentReferencedInEditor(terrainContainer,this,this.gameObject);
             AssertionHelper.AssertComponentReferencedInEditor(nfzsContainer,this,this.gameObject);
+            
             AssertionHelper.AssertComponentReferencedInEditor(configFilesSettings,this,this.gameObject);
+           
             AssertionHelper.AssertComponentReferencedInEditor(wayPointsManager,this,this.gameObject);
             AssertionHelper.AssertComponentReferencedInEditor(uavsManager,this,this.gameObject);
             AssertionHelper.AssertComponentReferencedInEditor(navigationManager,this,this.gameObject);
             AssertionHelper.AssertComponentReferencedInEditor(reroutingManager,this,this.gameObject);
             AssertionHelper.AssertComponentReferencedInEditor(fuelManager,this,this.gameObject);
             AssertionHelper.AssertComponentReferencedInEditor(promptsManager,this,this.gameObject);
+            AssertionHelper.AssertComponentReferencedInEditor(nfzsManager,this,this.gameObject);
+            AssertionHelper.AssertComponentReferencedInEditor(targetsDetectionManager,this,this.gameObject);
             
             AssertionHelper.AssertComponentReferencedInEditor(inputRecordsDatabase,this,this.gameObject);
             AssertionHelper.AssertComponentReferencedInEditor(channelsDatabase,this,this.gameObject);
             AssertionHelper.AssertComponentReferencedInEditor(prefabsDatabase,this,this.gameObject);
             AssertionHelper.AssertComponentReferencedInEditor(settingsDatabase,this,this.gameObject);
-            AssertionHelper.AssertComponentReferencedInEditor(nfzsManager,this,this.gameObject);
-            AssertionHelper.AssertComponentReferencedInEditor(targetsDetectionManager,this,this.gameObject);
             
             AssertionHelper.AssertComponentReferencedInEditor(blockingPanelController,this,this.gameObject);
             
@@ -94,7 +96,8 @@ public class GameManager : MonoBehaviour
         {
             SubscribeToChannels();
             if(configFilesSettings.settingsFileFullFilePath != "")
-            {try
+            {
+                try
                 {
                     var settings = File.ReadAllText(configFilesSettings.settingsFileFullFilePath);
                     JsonConvert.PopulateObject(settings, settingsDatabase);
@@ -104,7 +107,9 @@ public class GameManager : MonoBehaviour
                     Debug.LogError(e);
                     Debug.LogError("Error while reading settings file:, defaulted to default settings");
                     _forceGenerateFromRecords = true;
-                }}
+                }
+                
+            }
 
             if (configFilesSettings.settingsFileFullFilePath != "")
             {
@@ -130,18 +135,10 @@ public class GameManager : MonoBehaviour
         {
             channelsDatabase.simulationEndedEventChannel.Subscribe(OnSimulationEndEvent);
         }
-
-      
-
+        
 
         private IEnumerator InitializeSimulation()
         {
-            wayPointsManager.Initialize();
-            uavsManager.Initialize();
-            navigationManager.Initialize();
-            nfzsManager.Initialize();
-            promptsManager.Initialize();
-            fuelManager.Initialize();
             
             if (_forceGenerateFromRecords)
             {
@@ -150,33 +147,35 @@ public class GameManager : MonoBehaviour
                 settingsDatabase.waypointSettings.waypointsRecordsSource = InputRecordsSource.FromDefaultRecords;
                 settingsDatabase.nfzSettings.nfzRecordsSource = InputRecordsSource.FromDefaultRecords;
                 settingsDatabase.fuelSettings.fuelLeaksRecordsSource = InputRecordsSource.FromDefaultRecords;
-                
-                
             }
             
             simulationStartTime = Time.time+ 5f;
-            
             blockingPanelController.LoadingView(simulationStartTime);
             
-            wayPointsManager.GenerateWayPoints(); 
-            yield return new WaitForSeconds(0.1f);
-            uavsManager.GenerateUavs(); 
-            yield return new WaitForSeconds(0.1f);
-            navigationManager.GeneratePaths(); 
-            yield return new WaitForSeconds(0.1f);
-            nfzsManager.LoadNFZs();
-            yield return new WaitForSeconds(0.1f);
-            promptsManager.LoadPrompts();
+            wayPointsManager.Initialize();
             yield return new WaitForSeconds(0.1f);
             
+            uavsManager.Initialize();
+            yield return new WaitForSeconds(0.1f);
             
+            navigationManager.Initialize();
+            yield return new WaitForSeconds(0.1f);
+
+            nfzsManager.Initialize();
+            yield return new WaitForSeconds(0.1f);
+            
+            promptsManager.Initialize();
+            yield return new WaitForSeconds(0.1f);
+           
+            fuelManager.Initialize();
+
+
             StartCoroutine( navigationManager.NavigateAll(simulationStartTime));
             StartCoroutine( nfzsManager.StartNFZsTimerCoroutine(simulationStartTime));
             StartCoroutine( promptsManager.StartPromptsTimerCoroutine(simulationStartTime));
             StartCoroutine( fuelManager.StartFuelControllers(simulationStartTime));
             
         }
-        
         
         
         private void OnSimulationEndEvent()

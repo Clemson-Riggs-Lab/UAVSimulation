@@ -1,0 +1,251 @@
+{
+  "waypointSettings": {
+    "waypointsRecordsSource": "FromInputFile", // possible options: "FromInputFile" and "FromDefaultRecords"  // the options are case sensitive and must be in quotes. be cautious when editing the file
+    "name": "WaypointSettings", // every "name" and "hideFlags" field must be left alone
+    "hideFlags": 0//so this should also be left alone
+  },
+  "promptSettings": {
+    "promptsSource": "FromInputFile", // possible options: "FromInputFile" and "FromDefaultRecords"  // the options are case sensitive and must be in quotes. be cautious when editing the file
+    "enableTextAnimation": true, //should the text be animated by default
+    "textAnimationSpeed": 100, //how fast the text should be animated. feel free to adjust this and see how it looks
+    "textFontSize": 18, //the size of the text in the chat box (we call it console)
+    "promptsPrefix": "- [Message from HQ]: ", // for each of the prompts present in the input file, the prompt will be prefixed with this string
+    "addResponsesToChatBox": true, //when the user responds, should we type down thier response in the chat box? (we can modify settings below to give feedback this way, where the color of the text would be set for one color if the response is correct an another color if the response is incorrect)
+    "promptResponsesPrefix": "---[ Response from Controller]: ", //if we are adding responses to the chatbox, then we are adding this prefix. feel free to change any prefix, as long as it is in quotes
+    "shuffleResponses": true, //should the responses be shuffled? if true, then the order in which the responses are present in the input file will be ignored. this can be useful if we want to make the task harder (e.g., which uav had a fuel leak, with 16 randomly positioned options)
+    "giveFeedbackAboutResponsesOnButtons": true, //this means that the feedback (change in color) is presented at the button. so the button color will change to green for example if the response is correct and red if the response is incorrect, before they disapear
+    "giveFeedbackAboutResponsesInChatBox": true, // color of text in chatbox will reflect the correctness of the response
+    "durationAfterResponseBeforeHidingButtons": 2.0, //if we are not accepting multiple responses, then the buttons will disapear after this time from the moment the user clicks on a button
+    "correctResponseColor": "Green", //this is the color that is used for correct responses (color of text, color of button, or both)
+    "wrongResponseColor": "Red",// for incorrect responses
+    "logPrompts": true, //should we log the prompts to the output file?
+    "logAllowedResponseTime": true, //should we log the allowed response time when we log the prompt
+    "logCorrectResponseOptions": true, //log the correct response options
+    "logAllPromptResponseOptions": true, //and/or log all response options
+    "logReceivedResponses": true, // log which response was received (which buttons were clicked)
+    "logCorrectness": true, // log if the response was correct or not 
+    "name": "PromptSettings", //do not alter this
+    "hideFlags": 0// do not alter this
+  },
+  "targetDetectionSettings": {
+    "defaultTargetType": "Box", // this is the only possible option for now
+    "TargetSpawnBufferRange": { //also these are not yet implemented, but they should reflect a variance in how long after the uav path starts before the target spawns
+      "Min": 0.0,// min and max are in seconds
+      "Max": 0.0
+    },
+    "logTargetDetection": true, // should target detection be logged to the output file?
+    "logTargetDetectionCorrectness": true, // should we log if the target was detected correctly or not?
+    "logTimeSinceStartOfPathWhenTargetDetectionOccured": true, // should we log the time since the start of the path when the target was detected?
+    "name": "TargetDetectionSettings", //do not alter this
+    "hideFlags": 0 //do not alter this
+  },
+  "uavSettings": {
+    "hideUavInMapWhenHidden": false, //self explanatory (hide uav in minimap)
+    "hideUavInMapWhenLostOrFinished": false, //same as above but for other conditions
+    "disableCollisionWithNFZWhenHidden": false, //should the uav be able to fly through the no fly zones when the uav is hidden?
+    "uavRecordsSource": "FromDefaultRecords",
+    "namingScheme": "NatoName", //possible options are :HashtagNumber , UavAndNumber , HashtagNumberOffsetZero , UavAndNumberOffsetZero , Letter , NatoName //// feel free to try each out . the name is reflected everywhere in the scene
+    "colorUavLikePath": true,//the body of the uav would be colored with the same color as the path
+    "logUavCreationEvents": true, //should we log the creation of the uav to the output file?
+    "logUavDestroyEvents": true, //should we log the destruction of the uav to the output file?
+    "logUavConditionChangedEvents": true, //should we log the condition change of the uav to the output file? (when a uav condition changes, it means that the uav is either hidden, lost, or finished, or enabled after being hidden)
+    "name": "UavSettings",
+    "hideFlags": 0
+  },
+  "reroutingSettings": {
+    "logReroutingEvents": true, //should we log the rerouting events to the output file?
+    "logIfReroutingWasNeeded": true,    //should we log if rerouting was needed or not?
+    "logIfNewRouteIsGoodOrBad": true, //should we log if the new route is good or bad?
+    "logTimeOfPathStart": true, //should we log the time when the path starts?
+    "logReroutingOptionsRequested": true, //should we log when rerouting options  are requested? ( clicked on the button that corresponds to the uav)
+    "logReroutingOptionPreview": true, //should we log when a rerouting option is previewed? ( clicked on the one of the path preview buttons inside the panel that corresponds to the uav)
+    "logIfPreviewedRouteIsGoodOrBad": true, //should we log if the previewed route is good or bad?
+    "name": "ReroutingSettings",
+    "hideFlags": 0
+  },
+  "reroutingPanelSettings": {
+    "hideButtonsForHiddenUavs": false,  //should the rerouting buttons for hidden uavs be hidden?
+    "hideButtonsForFinishedUavs": false, //should the rerouting buttons for finished uavs be hidden?
+    "hideButtonsForLostUavs": false,  //should the rerouting buttons for lost uavs be hidden?
+    "disableButtonsForHiddenUavs": true, //should the rerouting buttons for hidden uavs be disabled? note that enabling the hidden option above overrides this option, and same for the ones below
+    "disableButtonsForFinishedUavs": true, //should the rerouting buttons for finished uavs be disabled?
+    "disableButtonsForLostUavs": true, //should the rerouting buttons for lost uavs be disabled?
+    "closePanelsForHiddenUavs": false, //should the rerouting panel be closed when the uav is hidden?
+    "closePanelsForFinishedUavs": true, //should the rerouting panel be closed when the uav is finished?
+    "closePanelsForLostUavs": true, //should the rerouting panel be closed when the uav is lost?
+    "numberOfReroutingOptionsToPresent": 3, //how many rerouting options should be presented to the user when they request rerouting options?
+    "numberOfBadReroutingOptionsToPresent": 1, //how many bad rerouting options should be presented to the user when they request rerouting options? (at most. if there are not enough bad options, then the number of bad options presented will be less than this number)
+    "selectShortestPathsAsReroutingOptions": true,//if this is true, the shortest paths will be selected as rerouting options. if this is false, the length of the options will be random. if you want to maintain a low speed for the uavs, you should set this to true, otherwise the uavs will go very fast in some scenarios
+    "maximumNumberOfReroutingOptionsPanels": 4,// number of panels that can be open at the same time.
+    "numberOfReroutingOptionsPanelsGridRows": 2, //how they are distributed in the grid
+    "numberOfReroutingOptionsPanelsGridColumns": 2, // how they are distributed in the grid
+    "newPanelPosition": "PlaceAtTheBeginning", // possible options are PlaceAtTheBeginning and PlaceAtTheEnd. this is the position of the new panel when a new one is created. play around and see how they are added and removed
+    "name": "ReroutingPanelSettings", //do not alter this
+    "hideFlags": 0 //do not alter this
+  },
+  "nfzSettings": {
+    "nfzRecordsSource": "FromInputFile", //possible options: FromInputFile and FromDefaultRecords. if you want to use the default records, you should use the default records file that is provided with the package. if you want to use your own records, you should use the FromInputFile option and provide the path to your file in the nfzRecordsFilePath field
+    "animateNFZGrowOnStart": true, //if this is true, the nfz will grow on start. if this is false, the nfz will pop into existence
+    "nfzGrowthAnimationDuration": 3.0, //this is the duration of the nfz growth animation if it is enabled
+    "nfzCountdownText": "No Fly Zone Will Be Active In", //this is the text that will be shown on the nfz during the countdown
+    "nfzAddCountdownCounterToText": true, // if this is true, the nfz countdown counter will be added to the nfz countdown text
+    "blinkNFZOnCountdownCounter": true, // if this is true, the nfz will change between transparent and its color while the countdown is happening
+    "nfzBlinkInterval": 0.5, // this is the interval at which the nfz will blink if the blinkNFZOnCountdownCounter is true
+    "name": "NFZSettings",  //do not alter this
+    "hideFlags": 0 //do not alter this
+  },
+  "uavCameraAndTargetDetectionPanelSettings": {
+    "renderTextureWidth": 255, //the width of the render texture that is used to display the camera feed, in other words, more means higher resolution of camera feed
+    "renderTextureHeight": 255, //same as above, but for height
+    "renderTextureDepth": 24, //same as above, but for depth
+    "cameraDownwardTilt": 10, //the camera is tilted downward by this angle (90 degrees for example is straight down)
+    "cameraFieldOfView": 60, //how wide is the camera field of view, or how much of the scene is visible to the camera. 60 degrees is a good value, feel free to try other values
+    "enabledUavCameraAndTargetDetectionPanelConfigs": { //this and the ones below are configurations for the camera panel when the uav is at a certain state. 
+      "cameraAndTargetDetectionPanelState": "None",//current possible options for cameraAndTargetDetectionPanelState are: None, DarkScreen , BlackScreen , Hide  //remember the qoutes
+      "centerText": "",
+      "bottomText": ""
+    },
+    "hiddenUavCameraAndTargetDetectionPanelConfigs": {
+      "cameraAndTargetDetectionPanelState": "DarkScreen",
+      "centerText": "", //text in the center
+      "bottomText": "" //text at the bottom
+    },
+    "finishedUavCameraAndTargetDetectionPanelConfigs": {
+      "cameraAndTargetDetectionPanelState": "DarkScreen", //partially tint the screen
+      "centerText": "Uav Finished Mission",
+      "bottomText": ""
+    },
+    "lostUavCameraAndTargetDetectionPanelConfigs": {
+      "cameraAndTargetDetectionPanelState": "BlackScreen",//fully blocked camera feed
+      "centerText": " UAV Lost",
+      "bottomText": ""
+    },
+    "hoveringUavCameraAndTargetDetectionPanelConfigs": {
+      "cameraAndTargetDetectionPanelState": "DarkScreen",
+      "centerText": "",
+      "bottomText": ""
+    },
+    "fuelLeakCameraAndTargetDetectionPanelConfigs": {
+      "cameraAndTargetDetectionPanelState": "None",
+      "centerText": "Fuel Leaking",
+      "bottomText": ""
+    },
+    "fatalLeakCameraAndTargetDetectionPanelConfigs": {
+      "cameraAndTargetDetectionPanelState": "None",
+      "centerText": "",
+      "bottomText": "Fatal Fuel Leak"
+    },
+    "emptyFuelCameraAndTargetDetectionPanelConfigs": {
+      "cameraAndTargetDetectionPanelState": "BlackScreen",
+      "centerText": "",
+      "bottomText": "Fuel Empty"
+    },
+    "CameraBlankDurationBetweenPaths": {// not yet implemented, but this means that between paths, the camera feed will be blank for this amount of time
+      "Min": 0.0,
+      "Max": 0.0
+    },
+    "name": "UavCameraAndTargetDetectionSettings",
+    "hideFlags": 0
+  },
+  "fuelAndHealthPanelSettings": {
+    "showFuelLeakConditionWhenUavHidden": true, //should the fuel leak condition be shown when the uav is hidden?
+    "enabledUavFuelAndHealthPanelConfigs": {// this and the following are the settings for the fuel and health panel at different uav conditions, like the ones above for the camera panel
+      "healthButtonInteractable": false, // this means that the user will not be able to click the button 
+      "isVisibile": true, // this means that the panel will be visible
+      "healthButtonText": "", // this is the text that will be shown on the button
+      "healthButtonTextColor": "Black", // this is the color of the text on the button
+      "healthButtonColor": "Green", // this is the color of the button
+      "fuelSliderColor": "Green" // this is the color of the fuel slider
+    },
+    "hiddenUavFuelAndHealthPanelConfigs": { //for hidden uav
+      "healthButtonInteractable": false,
+      "isVisibile": true,
+      "healthButtonText": "",
+      "healthButtonTextColor": "Black",
+      "healthButtonColor": "Green",
+      "fuelSliderColor": "Green"
+    },
+    "fuelLeakFuelAndHealthPanelConfigs": { //for fuel leak
+      "healthButtonInteractable": true,
+      "isVisibile": true,
+      "healthButtonText": "Fix Leak",
+      "healthButtonTextColor": "Black",
+      "healthButtonColor": "Orange",
+      "fuelSliderColor": "Green"
+    },
+    "fatalLeakFuelAndHealthPanelConfigs": { //for fatal leak
+      "healthButtonInteractable": false,
+      "isVisibile": true,
+      "healthButtonText": "Fatal Leak",
+      "healthButtonTextColor": "Black",
+      "healthButtonColor": "Red",
+      "fuelSliderColor": "Red"
+    },
+    "fuelEmptyFuelAndHealthPanelConfigs": { //for fuel empty
+      "healthButtonInteractable": false,
+      "isVisibile": true,
+      "healthButtonText": "Uav Lost",
+      "healthButtonTextColor": "Red",
+      "healthButtonColor": "Black",
+      "fuelSliderColor": "Red"
+    },
+    "lostUavFuelAndHealthPanelConfigs": { //for lost uav
+      "healthButtonInteractable": false,
+      "isVisibile": true,
+      "healthButtonText": "Uav Lost",
+      "healthButtonTextColor": "Red",
+      "healthButtonColor": "Gray",
+      "fuelSliderColor": "Red"
+    },
+    "name": "FuelAndHealthPanelSettings", //do not alter this
+    "hideFlags": 0 //do not alter this
+  },
+  "navigationSettings": {
+    "navigationRecordsSource": "FromInputFile",//possible options: "FromInputFile" and "FromDefaultRecords"
+    "speedMode": "FixedPathDuration", //possible options: "FixedPathDuration" and "FixedSpeed" // fixed speed means that the uav will always move in a fixed speed, while fixed path duration means that all uavs will move in sync and finish their paths at the same time, even if rerouted. therefore some might be moving much faster than thers
+    "fixedSpeed": 15.0, //this is the speed that the uav will move at if the speed mode is fixed speed, if the speed mode is fixed path duration, this value is ignored
+    "pathDuration": 10.0, //this is the duration of the path if the speed mode is fixed path duration, if the speed mode is fixed speed, this value is ignored
+    "followingType": "SmoothFacing", //possible options: "Simple" and "SmoothFacing", "SmoothDamping", and "Teleport". feel free to try each and notice how the uav moves // smooth facing means that the uav will always face the direction of the next waypoint, while instant facing means that the uav will face the direction of the next waypoint only when it reaches it
+    "rotationDuration": 1.0, //this is the duration of the rotation if the following type is smooth damping or smooth facing. it will take the uav 1 second for example to rotate (while moving towards the next waypoint) to face the next waypoint
+    "loopingType": "Once", //possible options: "Once" and "Cycled" and   "SeveralTimes" // please note the qoutes and the case sensitivity
+    "numberOfLoops": 0, // if the looping type is several times, this is the number of times the uav will loop the path
+    "ignoreWaypointPositionOnAxis": { //this selects the axis that the uav will ignore when moving towards the destination
+        "x": false, //so if y is true, then the uav will not try to match the y coordinate of the waypoint, but will still try to match the x and z coordinates.
+        "y": false,
+        "z": false
+      },
+    "waypointHoveringType": "FaceNextWaypoint", // None, UseAngle, UseSpeed, FaceNextWaypoint  these are the possible options. feel free to try each. face next waypoint means it will rotate to become facing the next waypoint before moving from the current waypoint
+    "hoverDurationOnWaypoint": 1.0, //this is the duration of the hovering on the waypoint if the hovering type is not none. 
+    "hoverAngle": 360.0, //this means that if the hovering type is use angle, the uav will rotate around the waypoint by this many degrees. 360 means it will make a full rotation
+    "hoverSpeed": 1.0, //this means that if the hovering type is use speed, the uav will rotate around the waypoint by this much speed. 
+    "name": "NavigationSettings", //do not alter this
+    "hideFlags": 0 //do not alter this
+    },
+  "fuelSettings": {
+    "fuelComputationType": "Duration", // possible options: "Duration" and "Consumption"
+    "fuelDuration": 950.0, //duration means that without fuel leaks, the uav will last for this many seconds
+    "fuelCapacity": 950.0, //fuel capacity is used if we are using fuel consumption. it means that the uav will have this much fuel at the start of the scenario, and the lose fuel at a constant rate
+    "fuelConsumptionPerSecond": 1.0, //this is the rate
+    "fuelLeaksRecordsSource": "FromInputFile", //possible options: "FromInputFile" and "FromDefaultRecords"
+    "fuelConsumptionMultiplierOnLeak": 5.0, // this is the multiplier that will be applied to the fuel consumption rate when the uav has a fuel leak
+    "fuelLeakDuration": 10.0, //this is the duration of the fuel leak
+    "fuelLeakButtonInteractionDurationBeforeFatalLeak": 10.0, // this is the duration that the user will be able to click the button to fix the fuel leak before it becomes fatal
+    "fuelConsumptionMultiplierOnFatalLeak": 20.0, // this is the multiplier that will be applied to the fuel consumption rate when the uav has a fatal fuel leak
+    "logFuelLeakEvents": true, //should the fuel leak events be logged
+    "logFuelLeakFixEvents": true, //should the fuel leak fix events be logged
+    "logFatalFuelLeakEvents": true, //should the fatal fuel leak events be logged
+    "logFuelEmptyEvents": true, //should the fuel empty events be logged
+    "name": "FueSettings", //do not alter this
+    "hideFlags": 0 //do not alter this
+  },
+  "pathsRenderingSettings": {
+    "pathWidthNormal": 5.0, //the normal width of the path 
+    "pathWidthReroutingOption": 8.0, //the width of the path when we are previewing a rerouting option
+    "numberOfWaypointsAheadToDraw": 1, //this is the number of waypoints ahead of the current waypoint that will be drawn on the minimap. either 1 or 2 should be good options, but feel free to try other values
+    "updateLineInterval": 0.1, //this is the interval at which the path render will be updated on the minimap, in seconds. it really doesnt matter much, but if you find it to be stuttering, you can decrease the value
+    "name": "Path Rendering Settings", //do not alter this
+    "hideFlags": 0 //do not alter this
+  },
+  "name": "SettingsDatabase", //do not alter this
+  "hideFlags": 0 //do not alter this
+}

@@ -10,6 +10,7 @@ using Modules.Navigation.Submodules.Rerouting;
 using Modules.NoFlyZone;
 using Modules.Prompts;
 using Modules.TargetDetection;
+using Multiplayer;
 using Newtonsoft.Json;
 using UAVs;
 using UI;
@@ -75,7 +76,6 @@ public class GameManager : MonoBehaviour
             AssertionHelper.AssertComponentReferencedInEditor(settingsDatabase,this,this.gameObject);
             
             AssertionHelper.AssertComponentReferencedInEditor(blockingPanelController,this,this.gameObject);
-            
         }
 
         private void Awake() 

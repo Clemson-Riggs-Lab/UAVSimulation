@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using Modules.Navigation.Submodules.Rerouting;
+using Multiplayer;
 using TMPro;
 using UAVs;
 using UI.ReroutingPanel.Settings.ScriptableObjects;
@@ -87,6 +88,8 @@ namespace UI.ReroutingPanel
 		}
 		private void OnConfirmButtonClicked(int optionNumber)
 		{
+			GameplayNetworkCallsHandler.Instance.ReroutingUAVOnServerRpc(new GameplayNetworkCallsData.ReroutingDataStruct(_uav.id, optionNumber));
+
 			_manager.RerouteUav(_uav,optionNumber);
 			_containerController.RemovePanel(_uav);
 		}

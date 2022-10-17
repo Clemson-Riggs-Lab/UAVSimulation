@@ -9,12 +9,13 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using WayPoints.Channels.ScriptableObjects;
+using static Multiplayer.GameplayNetworkCallsData;
 
 namespace Multiplayer
 {
-    public class MainMenuNetworkCallsHandler : NetworkBehaviour
+    public class GameplayNetworkCallsHandler : NetworkBehaviour
     {
-        public static MainMenuNetworkCallsHandler Instance { get; private set; }
+        public static GameplayNetworkCallsHandler Instance { get; private set; }
 
         private void Awake()
         {
@@ -30,16 +31,15 @@ namespace Multiplayer
         }
 
         [ServerRpc(RequireOwnership = false)]
-        public void LoadSimulationServerRpc()
+        public void ReroutingUAVOnServerRpc(ReroutingDataStruct reroutingDataStruct)
         {
-            LoadSimulationClientRpc();
+            ReroutingUAVOnClientRpc(reroutingDataStruct);
         }
 
         [ClientRpc]
-        public void LoadSimulationClientRpc()
+        public void ReroutingUAVOnClientRpc(ReroutingDataStruct reroutingDataStruct)
         {
-            if (IsServer)
-                NetworkManager.SceneManager.LoadScene("SimulationScene", LoadSceneMode.Single);
+            Debug.Log("UAV ID: " + reroutingDataStruct.UAVId + " , " + "Option No: " + reroutingDataStruct.OptionNo);
         }
     }
 }

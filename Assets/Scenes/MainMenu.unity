@@ -7619,7 +7619,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 2045320567}
   m_Direction: 2
   m_Value: 0
-  m_Size: 1
+  m_Size: 0.88381773
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -8028,8 +8028,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2019542857}
-  - component: {fileID: 2019542856}
   - component: {fileID: 2019542855}
+  - component: {fileID: 2019542856}
   - component: {fileID: 2019542858}
   m_Layer: 0
   m_Name: MainMenuNetworkCalls

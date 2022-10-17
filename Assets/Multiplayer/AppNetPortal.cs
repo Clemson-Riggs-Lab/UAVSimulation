@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using ScriptableObjects.EventChannels;
 using SyedAli.Main;
+using UI.Console.Channels.ScriptableObjects;
 using Unity.Netcode;
 using Unity.Netcode.Transports.UNET;
 using Unity.VisualScripting;
@@ -13,10 +14,12 @@ namespace Multiplayer
     public class ClientConnectedEventArgs : EventArgs
     {
         public readonly ulong ClientId;
+        public readonly int NumberOfClients;
 
-        public ClientConnectedEventArgs(ulong clientId)
+        public ClientConnectedEventArgs(ulong clientId, int numberOfClients)
         {
             ClientId = clientId;
+            NumberOfClients = numberOfClients;
         }
     }
 
@@ -36,6 +39,11 @@ namespace Multiplayer
         public event EventHandler<ClientDisconnectedEventArgs> ClientDisconnected_EventHandler;
 
         [SerializeField] NetworkManager _networkManager;
+
+        [Space(10)]
+        [SerializeField] ConsoleMessageEventChannelSO writeMessageToConsoleChannel;
+
+        private int _numberOfClients = 0;
 
         public NetworkManager NetworkManager { get => _networkManager; }
 
@@ -64,9 +72,15 @@ namespace Multiplayer
             uNT.ServerListenPort = portNumber;
 
             if (_networkManager.StartHost())
+            {
+                writeMessageToConsoleChannel.RaiseEvent("", new() { color = "green", doAnimate = true, text = "\n Host Started. Waiting for Other Client" });
                 return 1;
+            }
             else
+            {
+                writeMessageToConsoleChannel.RaiseEvent("", new() { color = "red", doAnimate = true, text = "\n Unable to start Host" });
                 return 0;
+            }
         }
 
         public int StartClient(string ipAddress, int portNumber)
@@ -77,24 +91,47 @@ namespace Multiplayer
             uNT.ServerListenPort = portNumber;
 
             if (_networkManager.StartClient())
+            {
+                writeMessageToConsoleChannel.RaiseEvent("", new() { color = "green", doAnimate = true, text = "\n Client Started" });
                 return 1;
+            }
             else
+            {
+                writeMessageToConsoleChannel.RaiseEvent("", new() { color = "red", doAnimate = true, text = "\n Unable to Join" });
                 return 0;
+            }
         }
 
         public int StopClient()
         {
             _networkManager.Shutdown();
+            writeMessageToConsoleChannel.RaiseEvent("", new() { color = "green", doAnimate = true, text = "\n Client Stopped Successfully" });
             return 1;
+        }
+
+        public string GetDefaultIpAddr()
+        {
+            UNetTransport uNT = (UNetTransport)NetworkManager.Singleton.NetworkConfig.NetworkTransport;
+            return uNT.ConnectAddress;
+        }
+
+        public int GetDefaultPortNo()
+        {
+            UNetTransport uNT = (UNetTransport)NetworkManager.Singleton.NetworkConfig.NetworkTransport;
+            return uNT.ConnectPort;
         }
 
         private void OnClientConnected(ulong obj)
         {
-            ClientConnected_EventHandler?.Invoke(this, new ClientConnectedEventArgs(obj));
+            _numberOfClients++;
+            writeMessageToConsoleChannel.RaiseEvent("", new() { color = "green", doAnimate = true, text = "\n Client Connected With Id: " + obj });
+            ClientConnected_EventHandler?.Invoke(this, new ClientConnectedEventArgs(obj, _numberOfClients));
         }
 
         private void OnClientDisconnected(ulong obj)
         {
+            _numberOfClients--;
+            writeMessageToConsoleChannel.RaiseEvent("", new() { color = "green", doAnimate = true, text = "\n Client Disconnected With Id: " + obj });
             ClientDisconnected_EventHandler?.Invoke(this, new ClientDisconnectedEventArgs(obj));
         }
     }

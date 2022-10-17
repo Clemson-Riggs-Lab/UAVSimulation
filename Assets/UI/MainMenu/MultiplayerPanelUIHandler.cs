@@ -1,8 +1,10 @@
 using IOHandlers.Settings.ScriptableObjects;
 using Modules.Prompts;
+using Multiplayer;
 using System;
 using TMPro;
 using UI.Console.Channels.ScriptableObjects;
+using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -19,9 +21,11 @@ namespace UI.MainMenu
         [SerializeField] TMP_InputField _portIF;
         [SerializeField] Button _startHostBtn;
         [SerializeField] Button _startClientBtn;
+        [SerializeField] Button _stopBtn;
 
         [Space(10)]
         [SerializeField] ConsoleMessageEventChannelSO writeMessageToConsoleChannel;
+        [SerializeField] ConfigFilesSettingsSO configFilesSettingsSO;
 
         private void Start()
         {
@@ -33,6 +37,9 @@ namespace UI.MainMenu
             _multiplayerBtn.onClick.AddListener(OnClickMultiplayerBtn);
             _startHostBtn.onClick.AddListener(OnClickStartHostBtn);
             _startClientBtn.onClick.AddListener(OnClickStartClientBtn);
+            _stopBtn.onClick.AddListener(OnClickStopBtn);
+
+            AppNetPortal.Instance.ClientConnected_EventHandler += OnClientConnected;
         }
 
         private void OnDisable()
@@ -40,18 +47,45 @@ namespace UI.MainMenu
             _multiplayerBtn.onClick.RemoveListener(OnClickMultiplayerBtn);
             _startHostBtn.onClick.RemoveListener(OnClickStartHostBtn);
             _startClientBtn.onClick.RemoveListener(OnClickStartClientBtn);
+            _stopBtn.onClick.RemoveListener(OnClickStopBtn);
+
+            AppNetPortal.Instance.ClientConnected_EventHandler -= OnClientConnected;
         }
 
         private void OnClickMultiplayerBtn()
         {
-            _multiplayerSettingsGo.SetActive(true);
+            if (configFilesSettingsSO.inputFileFullFilePath == "")
+            {
+                writeMessageToConsoleChannel.RaiseEvent("", new() { color = "red", doAnimate = true, text = "\n Please select an input file first" });
+                return;
+            }
+            else if (configFilesSettingsSO.settingsFileFullFilePath == "")
+            {
+                writeMessageToConsoleChannel.RaiseEvent("", new() { color = "red", doAnimate = true, text = "\n Please select a settings file first" });
+                return;
+            }
+            else
+            {
+                _multiplayerSettingsGo.SetActive(true);
+                _ipAddIF.text = AppNetPortal.Instance.GetDefaultIpAddr();
+                _portIF.text = AppNetPortal.Instance.GetDefaultPortNo().ToString();
+
+                _startHostBtn.interactable = true;
+                _startClientBtn.interactable = true;
+                _stopBtn.interactable = false;
+            }
         }
 
         private void OnClickStartHostBtn()
         {
             if (_ipAddIF.text != "" && _portIF.text != "")
             {
-
+                if (AppNetPortal.Instance.StartHost(_ipAddIF.text, Int32.Parse(_portIF.text)) == 1)
+                {
+                    _startHostBtn.interactable = false;
+                    _startClientBtn.interactable = false;
+                    _stopBtn.interactable = true;
+                }
             }
             else if (_ipAddIF.text == "")
             {
@@ -65,9 +99,14 @@ namespace UI.MainMenu
 
         private void OnClickStartClientBtn()
         {
-            if (_ipAddIF.text != null && _portIF.text != null)
+            if (_ipAddIF.text != "" && _portIF.text != "")
             {
-
+                if (AppNetPortal.Instance.StartClient(_ipAddIF.text, Int32.Parse(_portIF.text)) == 1)
+                {
+                    _startHostBtn.interactable = false;
+                    _startClientBtn.interactable = false;
+                    _stopBtn.interactable = true;
+                }
             }
             else if (_ipAddIF.text == "")
             {
@@ -76,6 +115,24 @@ namespace UI.MainMenu
             else if (_portIF.text == "")
             {
                 writeMessageToConsoleChannel.RaiseEvent("", new() { color = "red", doAnimate = true, text = "\n Please Input Port Number" });
+            }
+        }
+
+        private void OnClickStopBtn()
+        {
+            if (AppNetPortal.Instance.StopClient() == 1)
+            {
+                _startHostBtn.interactable = true;
+                _startClientBtn.interactable = true;
+                _stopBtn.interactable = false;
+            }
+        }
+
+        private void OnClientConnected(object sender, ClientConnectedEventArgs e)
+        {
+            if (NetworkManager.Singleton.IsServer && e.NumberOfClients == 2)
+            {
+                MainMenuNetworkCallsHandler.Instance.LoadSimulationServerRpc();
             }
         }
     }

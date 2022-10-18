@@ -1,9 +1,12 @@
+using Multiplayer;
 using System;
 using System.Collections.Generic;
 using TMPro;
 using UAVs;
 using UAVs.Channels.ScriptableObjects;
 using UI.ReroutingPanel.Settings.ScriptableObjects;
+using Unity.Netcode;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 using static HelperScripts.Enums;
@@ -20,15 +23,35 @@ namespace UI.ReroutingPanel
 		private UavConditionEventChannelSO _uavConditionChangedEventChannel;
 		private UavEventChannelSO _reroutingOptionsRequestedChannel;
 		private Dictionary<Uav, Button> _uavsToButtonsDictionary = new();
+		private UavsManager _uavsManager;
 
-		private void Start()
+		private void OnDisable()
+        {
+            UnsubscribeFromChannels();
+        }
+
+        private void Start()
 		{
 			GetReferencesFromGameManager();
 			SubscribeToChannels();
 			ClearButtons();
 			CreateButtons();
 
-		}
+			if (AppNetPortal.Instance.IsMultiplayerMode())
+			{
+				GameplayNetworkCallsHandler.Instance.ReroutePanelOpen_NetworkEventHandler += OnReroutePanelOpenNetworkEventHandler;
+				GameplayNetworkCallsHandler.Instance.ReroutePanelClose_NetworkEventHandler += OnReroutePanelCloseNetworkEventHandler;
+			}
+        }
+
+		private void OnDestroy()
+		{
+            if (AppNetPortal.Instance.IsMultiplayerMode())
+            {
+                GameplayNetworkCallsHandler.Instance.ReroutePanelOpen_NetworkEventHandler -= OnReroutePanelOpenNetworkEventHandler;
+                GameplayNetworkCallsHandler.Instance.ReroutePanelClose_NetworkEventHandler -= OnReroutePanelCloseNetworkEventHandler;
+            }
+        }
 
 		private void CreateButtons()
 		{
@@ -106,14 +129,15 @@ namespace UI.ReroutingPanel
 			_uavDestroyedEventChannel = GameManager.Instance.channelsDatabase.uavChannels.uavDestroyedEventChannel;
 			_uavConditionChangedEventChannel = GameManager.Instance.channelsDatabase.uavChannels.uavConditionChangedEventChannel;
 			_reroutingOptionsRequestedChannel = GameManager.Instance.channelsDatabase.navigationChannels.reroutingOptionsRequestedChannel;
-		}
+			_uavsManager = GameManager.Instance.uavsManager;
+        }
 
 		public void CreateButton(Uav uav)
 		{
 			var button=Instantiate(_buttonPrefab, transform);
 			button.GetComponentInChildren<TextMeshProUGUI>().text = uav.uavName;
 			button.name = "UAV "+uav.uavName+ "Reroute Options Request Button";
-			button.GetComponent<Button>().onClick.AddListener(() => { _reroutingOptionsRequestedChannel.RaiseEvent(uav);} );
+			button.GetComponent<Button>().onClick.AddListener(() => { OnClickButton(uav); } );
 			_uavsToButtonsDictionary[uav]= button.GetComponent<Button>();
 		}
 		
@@ -124,14 +148,15 @@ namespace UI.ReroutingPanel
 				Destroy(_uavsToButtonsDictionary[uav].gameObject);
 				_uavsToButtonsDictionary.Remove(uav);
 			}
-
 		}
 
+		private void OnClickButton(Uav uav)
+        {
+            if (AppNetPortal.Instance.IsMultiplayerMode())
+                GameplayNetworkCallsHandler.Instance.ReroutePanelOpenServerRpc(AppNetPortal.Instance.NetworkManager.LocalClientId, uav.id);
 
-		private void OnDisable()
-		{
-			UnsubscribeFromChannels();
-		}
+	        _reroutingOptionsRequestedChannel.RaiseEvent(uav);
+        }
 
 		private void UnsubscribeFromChannels()
 		{
@@ -144,6 +169,21 @@ namespace UI.ReroutingPanel
 			if (_uavDestroyedEventChannel != null)
 				_uavDestroyedEventChannel.Unsubscribe(RemoveButton);
 		}
-	}
 
+        private void OnReroutePanelOpenNetworkEventHandler(object sender, int uavId)
+        {
+            Uav uav = _uavsManager.GetUAVAgainstId(uavId);
+
+            Button btn = _uavsToButtonsDictionary[uav].GetComponent<Button>();
+			btn.GetComponent<Image>().color = uav.uavColor;
+        }
+
+        private void OnReroutePanelCloseNetworkEventHandler(object sender, int uavId)
+        {
+            Uav uav = _uavsManager.GetUAVAgainstId(uavId);
+
+            Button btn = _uavsToButtonsDictionary[uav].GetComponent<Button>();
+            btn.GetComponent<Image>().color = new Color(1,1,1,1);
+        }
+    }
 }

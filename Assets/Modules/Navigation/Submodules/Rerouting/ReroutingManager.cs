@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using HelperScripts;
 using Modules.Navigation.Channels.ScriptableObjects;
+using Multiplayer;
 using UAVs;
 using UAVs.Channels.ScriptableObjects;
 using UI.ReroutingPanel.Settings.ScriptableObjects;
@@ -21,25 +22,31 @@ namespace Modules.Navigation.Submodules.Rerouting
 		private UavPathEventChannelSO _uavReroutePreviewEventChannel;
 		
 		private ReroutingPanelSettingsSO _reroutingPanelSettings;
-		
-		private void Start()
+		private UavsManager _uavsManager;
+
+        private void Start()
 		{
 			GetReferencesFromGameManager();
 			SubscribeToChannels();
 			
 			var reroutingLogHandler = gameObject.GetOrAddComponent<ReroutingLogHandler>();
 			reroutingLogHandler.Initialize();
-		}
+
+            if (AppNetPortal.Instance.IsMultiplayerMode())
+                GameplayNetworkCallsHandler.Instance.ReroutingUAV_NetworkEventHandler += OnReroutingUAVNetworkEventHandler;
+        }
 
 
 		private void OnDestroy()
 		{
 			UnsubscribeFromChannels();
-		}
+
+            if (AppNetPortal.Instance.IsMultiplayerMode())
+                GameplayNetworkCallsHandler.Instance.ReroutingUAV_NetworkEventHandler -= OnReroutingUAVNetworkEventHandler;
+        }
 
 		private void SubscribeToChannels()
 		{
-
 			if (_uavDestroyedEventChannel != null)
 				_uavDestroyedEventChannel.Subscribe(RemoveUavPanelAndOptions);
 			if (_uavArrivedAtDestinationEventChannel != null)
@@ -140,9 +147,10 @@ namespace Modules.Navigation.Submodules.Rerouting
 			_uavArrivedAtDestinationEventChannel = GameManager.Instance.channelsDatabase.navigationChannels.uavArrivedAtDestinationEventChannel;
 			_uavReroutedEventChannel = GameManager.Instance.channelsDatabase.navigationChannels.uavReroutedEventChannel;
 			_uavReroutePreviewEventChannel = GameManager.Instance.channelsDatabase.navigationChannels.uavReroutePreviewEventChannel;
-		}
+            _uavsManager = GameManager.Instance.uavsManager;
+        }
 
-		private void UnsubscribeFromChannels()
+        private void UnsubscribeFromChannels()
 		{
 
 			if (_uavDestroyedEventChannel != null)
@@ -154,5 +162,15 @@ namespace Modules.Navigation.Submodules.Rerouting
 			if (_reroutingOptionsRequestedChannel != null)
 				_reroutingOptionsRequestedChannel.Unsubscribe(PopulateReroutingOptions);
 		}
-	}
+
+        private void OnReroutingUAVNetworkEventHandler(object sender, ReroutingUAVEventArgs e)
+        {
+            Uav uav = _uavsManager.GetUAVAgainstId(e.UavId);
+            
+			if (reroutingOptions.ContainsKey(uav) == false)
+                PopulateReroutingOptions(uav);
+
+			RerouteUav(uav, e.OptionIndex);
+        }
+    }
 }

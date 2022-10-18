@@ -2,7 +2,9 @@ using System;
 using System.Collections.Generic;
 using ScriptableObjects.EventChannels;
 using SyedAli.Main;
+using UAVs;
 using UI.Console.Channels.ScriptableObjects;
+using Unity.Collections;
 using Unity.Netcode;
 using Unity.Netcode.Transports.UNET;
 using Unity.VisualScripting;
@@ -11,24 +13,47 @@ using WayPoints.Channels.ScriptableObjects;
 
 namespace Multiplayer
 {
+    public class ReroutingUAVEventArgs : EventArgs
+    {
+        public readonly int UavId;
+        public readonly int OptionIndex;
+
+        public ReroutingUAVEventArgs(int uavId, int optionIndex)
+        {
+            UavId = uavId;
+            OptionIndex = optionIndex;
+        }
+    }    
+    
+    public class FixLeakEventArgs : EventArgs
+    {
+        public readonly int UavId;
+        public readonly string ButtonText;
+
+        public FixLeakEventArgs(int uavId, string buttonText)
+        {
+            UavId = uavId;
+            ButtonText = buttonText;
+        }
+    }
+
     public class GameplayNetworkCallsData : NetworkBehaviour
     {
-        public struct ReroutingDataStruct : INetworkSerializable
+        public struct NetworkString : INetworkSerializable
         {
-            public int UAVId;
-            public int OptionNo;
-
-            public ReroutingDataStruct(int uavId, int optionNo)
-            {
-                UAVId = uavId;
-                OptionNo = optionNo;
-            }
-
+            private FixedString32Bytes info;
             public void NetworkSerialize<T>(BufferSerializer<T> serializer) where T : IReaderWriter
             {
-                serializer.SerializeValue(ref UAVId);
-                serializer.SerializeValue(ref OptionNo);
+                serializer.SerializeValue(ref info);
             }
+
+            public override string ToString()
+            {
+                return info.ToString();
+            }
+
+            public static implicit operator string(NetworkString s) => s.ToString();
+            public static implicit operator NetworkString(string s) => new NetworkString() { info = new FixedString32Bytes(s) };
         }
     }
 }

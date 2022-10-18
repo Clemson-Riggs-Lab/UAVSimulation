@@ -176,6 +176,11 @@ namespace UAVs
             if(_uavStartedNewPathEventChannel != null)
                 _uavStartedNewPathEventChannel.Unsubscribe(OnUavStartedNewPath);
         }
+
+        public Uav GetUAVAgainstId(int uavId)
+        {
+            return uavs.Find(x => x.id == uavId);
+        }
     }
 }
 

@@ -1,0 +1,820 @@
+[
+  {
+    "timestamp": "10/19/2022 00:25:59.128382",
+    "simulationTimeStamp": "16.70747",
+    "logType": "Uav",
+    "eventType": "Created",
+    "logMessages": [
+      "Uav Alfa created"
+    ]
+  },
+  {
+    "timestamp": "10/19/2022 00:25:59.136380",
+    "simulationTimeStamp": "16.70747",
+    "logType": "Uav",
+    "eventType": "Created",
+    "logMessages": [
+      "Uav Bravo created"
+    ]
+  },
+  {
+    "timestamp": "10/19/2022 00:25:59.139381",
+    "simulationTimeStamp": "16.70747",
+    "logType": "Uav",
+    "eventType": "Created",
+    "logMessages": [
+      "Uav Charlie created"
+    ]
+  },
+  {
+    "timestamp": "10/19/2022 00:25:59.142539",
+    "simulationTimeStamp": "16.70747",
+    "logType": "Uav",
+    "eventType": "Created",
+    "logMessages": [
+      "Uav Delta created"
+    ]
+  },
+  {
+    "timestamp": "10/19/2022 00:25:59.145382",
+    "simulationTimeStamp": "16.70747",
+    "logType": "Uav",
+    "eventType": "Created",
+    "logMessages": [
+      "Uav Echo created"
+    ]
+  },
+  {
+    "timestamp": "10/19/2022 00:25:59.147383",
+    "simulationTimeStamp": "16.70747",
+    "logType": "Uav",
+    "eventType": "Created",
+    "logMessages": [
+      "Uav Frank created"
+    ]
+  },
+  {
+    "timestamp": "10/19/2022 00:25:59.150383",
+    "simulationTimeStamp": "16.70747",
+    "logType": "Uav",
+    "eventType": "Created",
+    "logMessages": [
+      "Uav Golf created"
+    ]
+  },
+  {
+    "timestamp": "10/19/2022 00:25:59.153384",
+    "simulationTimeStamp": "16.70747",
+    "logType": "Uav",
+    "eventType": "Created",
+    "logMessages": [
+      "Uav Hotel created"
+    ]
+  },
+  {
+    "timestamp": "10/19/2022 00:25:59.156384",
+    "simulationTimeStamp": "16.70747",
+    "logType": "Uav",
+    "eventType": "Created",
+    "logMessages": [
+      "Uav India created"
+    ]
+  },
+  {
+    "timestamp": "10/19/2022 00:25:59.159386",
+    "simulationTimeStamp": "16.70747",
+    "logType": "Uav",
+    "eventType": "Created",
+    "logMessages": [
+      "Uav John created"
+    ]
+  },
+  {
+    "timestamp": "10/19/2022 00:25:59.162385",
+    "simulationTimeStamp": "16.70747",
+    "logType": "Uav",
+    "eventType": "Created",
+    "logMessages": [
+      "Uav Kilo created"
+    ]
+  },
+  {
+    "timestamp": "10/19/2022 00:25:59.165386",
+    "simulationTimeStamp": "16.70747",
+    "logType": "Uav",
+    "eventType": "Created",
+    "logMessages": [
+      "Uav Lima created"
+    ]
+  },
+  {
+    "timestamp": "10/19/2022 00:25:59.168387",
+    "simulationTimeStamp": "16.70747",
+    "logType": "Uav",
+    "eventType": "Created",
+    "logMessages": [
+      "Uav Mike created"
+    ]
+  },
+  {
+    "timestamp": "10/19/2022 00:25:59.171388",
+    "simulationTimeStamp": "16.70747",
+    "logType": "Uav",
+    "eventType": "Created",
+    "logMessages": [
+      "Uav Nectar created"
+    ]
+  },
+  {
+    "timestamp": "10/19/2022 00:25:59.173389",
+    "simulationTimeStamp": "16.70747",
+    "logType": "Uav",
+    "eventType": "Created",
+    "logMessages": [
+      "Uav Oscar created"
+    ]
+  },
+  {
+    "timestamp": "10/19/2022 00:25:59.176389",
+    "simulationTimeStamp": "16.70747",
+    "logType": "Uav",
+    "eventType": "Created",
+    "logMessages": [
+      "Uav Papa created"
+    ]
+  },
+  {
+    "timestamp": "10/19/2022 00:26:04.015730",
+    "simulationTimeStamp": "21.61022",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Alfa condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "10/19/2022 00:26:04.020730",
+    "simulationTimeStamp": "21.61022",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Bravo condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "10/19/2022 00:26:04.020730",
+    "simulationTimeStamp": "21.61022",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Charlie condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "10/19/2022 00:26:04.020730",
+    "simulationTimeStamp": "21.61022",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Delta condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "10/19/2022 00:26:04.021731",
+    "simulationTimeStamp": "21.61022",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Echo condition changed to Enabled"
+    ]
+  },
+  {
+    "timestamp": "10/19/2022 00:26:04.021731",
+    "simulationTimeStamp": "21.61022",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Frank condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "10/19/2022 00:26:04.021731",
+    "simulationTimeStamp": "21.61022",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Golf condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "10/19/2022 00:26:04.022731",
+    "simulationTimeStamp": "21.61022",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Hotel condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "10/19/2022 00:26:04.022731",
+    "simulationTimeStamp": "21.61022",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav India condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "10/19/2022 00:26:04.022731",
+    "simulationTimeStamp": "21.61022",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav John condition changed to Enabled"
+    ]
+  },
+  {
+    "timestamp": "10/19/2022 00:26:04.022731",
+    "simulationTimeStamp": "21.61022",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Kilo condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "10/19/2022 00:26:04.022731",
+    "simulationTimeStamp": "21.61022",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Lima condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "10/19/2022 00:26:04.023731",
+    "simulationTimeStamp": "21.61022",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Mike condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "10/19/2022 00:26:04.023731",
+    "simulationTimeStamp": "21.61022",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Nectar condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "10/19/2022 00:26:04.023731",
+    "simulationTimeStamp": "21.61022",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Oscar condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "10/19/2022 00:26:04.023731",
+    "simulationTimeStamp": "21.61022",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Papa condition changed to Enabled"
+    ]
+  },
+  {
+    "timestamp": "10/19/2022 00:26:04.027732",
+    "simulationTimeStamp": "21.61022",
+    "logType": "Prompts",
+    "eventType": "PromptMessageSent",
+    "logMessages": [
+      "Prompt Message: beginning Mission",
+      "Allowed Response Time: 0.0"
+    ]
+  },
+  {
+    "timestamp": "10/19/2022 00:26:13.250377",
+    "simulationTimeStamp": "30.85136",
+    "logType": "TargetDetection",
+    "eventType": "TargetDetected",
+    "logMessages": [
+      "Target detected",
+      "Responded correctly: True",
+      "Time since start of path: 00:00:09.2306468"
+    ]
+  },
+  {
+    "timestamp": "10/19/2022 00:26:18.009945",
+    "simulationTimeStamp": "35.61078",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Alfa condition changed to Enabled"
+    ]
+  },
+  {
+    "timestamp": "10/19/2022 00:26:18.009945",
+    "simulationTimeStamp": "35.61078",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Bravo condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "10/19/2022 00:26:18.010946",
+    "simulationTimeStamp": "35.61078",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Charlie condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "10/19/2022 00:26:18.010946",
+    "simulationTimeStamp": "35.61078",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Delta condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "10/19/2022 00:26:18.010946",
+    "simulationTimeStamp": "35.61078",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Echo condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "10/19/2022 00:26:18.010946",
+    "simulationTimeStamp": "35.61078",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Frank condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "10/19/2022 00:26:18.011945",
+    "simulationTimeStamp": "35.61078",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Golf condition changed to Enabled"
+    ]
+  },
+  {
+    "timestamp": "10/19/2022 00:26:18.011945",
+    "simulationTimeStamp": "35.61078",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Hotel condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "10/19/2022 00:26:18.011945",
+    "simulationTimeStamp": "35.61078",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav India condition changed to Enabled"
+    ]
+  },
+  {
+    "timestamp": "10/19/2022 00:26:18.011945",
+    "simulationTimeStamp": "35.61078",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav John condition changed to Enabled"
+    ]
+  },
+  {
+    "timestamp": "10/19/2022 00:26:18.011945",
+    "simulationTimeStamp": "35.61078",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Kilo condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "10/19/2022 00:26:18.011945",
+    "simulationTimeStamp": "35.61078",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Lima condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "10/19/2022 00:26:18.011945",
+    "simulationTimeStamp": "35.61078",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Mike condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "10/19/2022 00:26:18.012946",
+    "simulationTimeStamp": "35.61078",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Nectar condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "10/19/2022 00:26:18.012946",
+    "simulationTimeStamp": "35.61078",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Oscar condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "10/19/2022 00:26:18.012946",
+    "simulationTimeStamp": "35.61078",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Papa condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "10/19/2022 00:26:19.009478",
+    "simulationTimeStamp": "36.60389",
+    "logType": "Prompts",
+    "eventType": "PromptMessageSent",
+    "logMessages": [
+      "Prompt Message: Which UAV/s had a bad projected route?",
+      "Allowed Response Time: 0.0",
+      "Correct Response Options:  | #10",
+      "Wrong Response Options:  | #0 | #1 | #2 | #3 | #4 | #5 | #6 | #7 | #8 | #9 | #11 | #12 | #13 | #14 | #15"
+    ]
+  },
+  {
+    "timestamp": "10/19/2022 00:26:20.243113",
+    "simulationTimeStamp": "37.84436",
+    "logType": "TargetDetection",
+    "eventType": "TargetDetected",
+    "logMessages": [
+      "Target detected",
+      "Responded correctly: True",
+      "Time since start of path: 00:00:02.2311675"
+    ]
+  },
+  {
+    "timestamp": "10/19/2022 00:26:22.105170",
+    "simulationTimeStamp": "39.70733",
+    "logType": "TargetDetection",
+    "eventType": "TargetDetected",
+    "logMessages": [
+      "Target detected",
+      "Responded correctly: False",
+      "Time since start of path: 00:00:04.0942246"
+    ]
+  },
+  {
+    "timestamp": "10/19/2022 00:26:24.106431",
+    "simulationTimeStamp": "41.70773",
+    "logType": "TargetDetection",
+    "eventType": "TargetDetected",
+    "logMessages": [
+      "Target detected",
+      "Responded correctly: False",
+      "Time since start of path: 00:00:06.0944855"
+    ]
+  },
+  {
+    "timestamp": "10/19/2022 00:26:25.199842",
+    "simulationTimeStamp": "42.80111",
+    "logType": "TargetDetection",
+    "eventType": "TargetDetected",
+    "logMessages": [
+      "Target detected",
+      "Responded correctly: False",
+      "Time since start of path: 00:00:07.1898962"
+    ]
+  },
+  {
+    "timestamp": "10/19/2022 00:26:26.014659",
+    "simulationTimeStamp": "43.61351",
+    "logType": "Prompts",
+    "eventType": "PromptMessageSent",
+    "logMessages": [
+      "Prompt Message: Detecting UAV 6 flying away from NFZ?",
+      "Allowed Response Time: 10.0",
+      "Correct Response Options:  | Confirm",
+      "Wrong Response Options:  | Deny"
+    ]
+  },
+  {
+    "timestamp": "10/19/2022 00:26:32.013487",
+    "simulationTimeStamp": "49.61423",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Alfa condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "10/19/2022 00:26:32.013487",
+    "simulationTimeStamp": "49.61423",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Bravo condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "10/19/2022 00:26:32.013487",
+    "simulationTimeStamp": "49.61423",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Charlie condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "10/19/2022 00:26:32.013487",
+    "simulationTimeStamp": "49.61423",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Delta condition changed to Enabled"
+    ]
+  },
+  {
+    "timestamp": "10/19/2022 00:26:32.013487",
+    "simulationTimeStamp": "49.61423",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Echo condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "10/19/2022 00:26:32.013487",
+    "simulationTimeStamp": "49.61423",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Frank condition changed to Enabled"
+    ]
+  },
+  {
+    "timestamp": "10/19/2022 00:26:32.014487",
+    "simulationTimeStamp": "49.61423",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Golf condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "10/19/2022 00:26:32.014487",
+    "simulationTimeStamp": "49.61423",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Hotel condition changed to Enabled"
+    ]
+  },
+  {
+    "timestamp": "10/19/2022 00:26:32.014487",
+    "simulationTimeStamp": "49.61423",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav India condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "10/19/2022 00:26:32.014487",
+    "simulationTimeStamp": "49.61423",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav John condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "10/19/2022 00:26:32.014487",
+    "simulationTimeStamp": "49.61423",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Kilo condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "10/19/2022 00:26:32.014487",
+    "simulationTimeStamp": "49.61423",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Lima condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "10/19/2022 00:26:32.015487",
+    "simulationTimeStamp": "49.61423",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Mike condition changed to Enabled"
+    ]
+  },
+  {
+    "timestamp": "10/19/2022 00:26:32.015487",
+    "simulationTimeStamp": "49.61423",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Nectar condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "10/19/2022 00:26:32.015487",
+    "simulationTimeStamp": "49.61423",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Oscar condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "10/19/2022 00:26:32.015487",
+    "simulationTimeStamp": "49.61423",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Papa condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "10/19/2022 00:26:46.024625",
+    "simulationTimeStamp": "63.6255",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Alfa condition changed to Enabled"
+    ]
+  },
+  {
+    "timestamp": "10/19/2022 00:26:46.024625",
+    "simulationTimeStamp": "63.6255",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Bravo condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "10/19/2022 00:26:46.024625",
+    "simulationTimeStamp": "63.6255",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Charlie condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "10/19/2022 00:26:46.024625",
+    "simulationTimeStamp": "63.6255",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Delta condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "10/19/2022 00:26:46.025625",
+    "simulationTimeStamp": "63.6255",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Echo condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "10/19/2022 00:26:46.025625",
+    "simulationTimeStamp": "63.6255",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Frank condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "10/19/2022 00:26:46.025625",
+    "simulationTimeStamp": "63.6255",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Golf condition changed to Enabled"
+    ]
+  },
+  {
+    "timestamp": "10/19/2022 00:26:46.025625",
+    "simulationTimeStamp": "63.6255",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Hotel condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "10/19/2022 00:26:46.025625",
+    "simulationTimeStamp": "63.6255",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav India condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "10/19/2022 00:26:46.025625",
+    "simulationTimeStamp": "63.6255",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav John condition changed to Enabled"
+    ]
+  },
+  {
+    "timestamp": "10/19/2022 00:26:46.026625",
+    "simulationTimeStamp": "63.6255",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Kilo condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "10/19/2022 00:26:46.026625",
+    "simulationTimeStamp": "63.6255",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Lima condition changed to Enabled"
+    ]
+  },
+  {
+    "timestamp": "10/19/2022 00:26:46.026625",
+    "simulationTimeStamp": "63.6255",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Mike condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "10/19/2022 00:26:46.026625",
+    "simulationTimeStamp": "63.6255",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Nectar condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "10/19/2022 00:26:46.026625",
+    "simulationTimeStamp": "63.6255",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Oscar condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "10/19/2022 00:26:46.026625",
+    "simulationTimeStamp": "63.6255",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Papa condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "10/19/2022 00:26:48.007821",
+    "simulationTimeStamp": "65.60793",
+    "logType": "Fuel",
+    "eventType": "Fuel Condition Changed",
+    "logMessages": [
+      "UAV Nectar fuel leak event started"
+    ]
+  }
+]

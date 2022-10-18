@@ -121,6 +121,14 @@ namespace Multiplayer
             return uNT.ConnectPort;
         }
 
+        public bool IsMultiplayerMode()
+        {
+            if (_networkManager.IsClient || _networkManager.IsServer)
+                return true;
+            else
+                return false;
+        }
+
         private void OnClientConnected(ulong obj)
         {
             _numberOfClients++;

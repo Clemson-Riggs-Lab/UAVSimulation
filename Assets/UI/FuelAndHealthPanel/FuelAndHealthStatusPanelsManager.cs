@@ -1,6 +1,8 @@
+using System;
 using System.Collections.Generic;
 using Modules.FuelAndHealth.Channels.ScriptableObjects;
 using Modules.FuelAndHealth.Settings.ScriptableObjects;
+using Multiplayer;
 using UAVs;
 using UAVs.Channels.ScriptableObjects;
 using UnityEngine;
@@ -19,7 +21,9 @@ namespace UI.FuelAndHealthPanel
 		private UavConditionEventChannelSO _uavConditionChangedEventChannel;
 		private UavFloatEventChannelSO _uavFuelLevelChangedEventChannel;
 		private UavStringEventChannelSO _uavHealthButtonClickedEventChannel;
-		
+
+		private UavsManager _uavsManager;
+
 		Dictionary<Uav,FuelAndHealthStatusPanelController> _uavToPanelController = new ();
 
 		public void Start()
@@ -28,9 +32,19 @@ namespace UI.FuelAndHealthPanel
 			CreatePanelsForUavs();
 			SubscribeToChannels();
 			ClearPanels();
-			
-		}
-		
+
+            if (AppNetPortal.Instance.IsMultiplayerMode())	  
+				GameplayNetworkCallsHandler.Instance.FixLeak_NetworkEventHandler += OnFixLeakNetworkEventHandler;           
+        }
+
+		public void OnDestroy()
+		{
+            if (AppNetPortal.Instance.IsMultiplayerMode())
+                GameplayNetworkCallsHandler.Instance.FixLeak_NetworkEventHandler -= OnFixLeakNetworkEventHandler;
+
+			UnsubscribeFromChannels();
+        }
+
 		private void CreatePanelsForUavs()
 		{
 			foreach (var uav in GameManager.Instance.uavsManager.uavs)
@@ -46,6 +60,7 @@ namespace UI.FuelAndHealthPanel
 				Destroy(child.gameObject);
 			}
 		}
+
 		private void GetReferencesFromGameManager()
 		{
 			_fuelSettings = GameManager.Instance.settingsDatabase.fuelSettings;
@@ -56,12 +71,12 @@ namespace UI.FuelAndHealthPanel
 			_uavFuelConditionChangedEventChannel = GameManager.Instance.channelsDatabase.fuelChannels.uavFuelConditionChangedEventChannel;
 			_uavFuelLevelChangedEventChannel = GameManager.Instance.channelsDatabase.fuelChannels.uavFuelLevelChangedEventChannel;
 			_uavHealthButtonClickedEventChannel = GameManager.Instance.channelsDatabase.fuelChannels.uavHealthButtonClickedEventChannel;
-			
+
+			_uavsManager = GameManager.Instance.uavsManager;
 		}
 
 		private void OnUavDestroyed(Uav uav)
 		{
-			
 			if (_uavToPanelController.ContainsKey(uav))
 			{
 				Destroy(_uavToPanelController[uav].gameObject);
@@ -83,8 +98,6 @@ namespace UI.FuelAndHealthPanel
 			panelController.Initialize(uav,this);
 			return panelController;
 		}
-		
-		
 		
 		private void OnUavConditionChanged(Uav uav, UavCondition uavCondition)
 		{
@@ -108,7 +121,6 @@ namespace UI.FuelAndHealthPanel
 			if (_uavHealthButtonClickedEventChannel != null) 
 				_uavHealthButtonClickedEventChannel.RaiseEvent(uav, text);
 		}
-		private void OnDestroy() => UnsubscribeFromChannels();
 
 		private void SubscribeToChannels()
 		{
@@ -147,7 +159,11 @@ namespace UI.FuelAndHealthPanel
 				_uavConditionChangedEventChannel.Unsubscribe(OnUavConditionChanged);
 
 		}
+        private void OnFixLeakNetworkEventHandler(object sender, FixLeakEventArgs e)
+        {
+            Uav uav = _uavsManager.GetUAVAgainstId(e.UavId);
 
-	
-	}
+			OnHealthButtonClicked(uav, e.ButtonText);
+        }
+    }
 }

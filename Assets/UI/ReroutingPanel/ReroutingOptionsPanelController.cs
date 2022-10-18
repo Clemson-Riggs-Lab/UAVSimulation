@@ -4,6 +4,7 @@ using Multiplayer;
 using TMPro;
 using UAVs;
 using UI.ReroutingPanel.Settings.ScriptableObjects;
+using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -72,6 +73,9 @@ namespace UI.ReroutingPanel
 		{
 			_manager.RemoveUavPanelAndOptions(_uav);//remove panel and stop rerouting manager from calculating rerouting options for this path.
 			_containerController.RemovePanel(_uav);
+
+			if (AppNetPortal.Instance.IsMultiplayerMode())
+				GameplayNetworkCallsHandler.Instance.ReroutePanelCloseServerRpc(AppNetPortal.Instance.NetworkManager.LocalClientId, _uav.id);
 		}
 		
 		private void OnPreviewButtonClicked(int optionNumber)
@@ -88,9 +92,14 @@ namespace UI.ReroutingPanel
 		}
 		private void OnConfirmButtonClicked(int optionNumber)
 		{
-			GameplayNetworkCallsHandler.Instance.ReroutingUAVOnServerRpc(new GameplayNetworkCallsData.ReroutingDataStruct(_uav.id, optionNumber));
+            if (AppNetPortal.Instance.IsMultiplayerMode())
+			{
+                GameplayNetworkCallsHandler.Instance.ReroutePanelCloseServerRpc(AppNetPortal.Instance.NetworkManager.LocalClientId, _uav.id);
+                GameplayNetworkCallsHandler.Instance.ReroutingUAVOnServerRpc(_uav.id, optionNumber);
+			}
+			else
+                _manager.RerouteUav(_uav, optionNumber);
 
-			_manager.RerouteUav(_uav,optionNumber);
 			_containerController.RemovePanel(_uav);
 		}
 
@@ -108,9 +117,6 @@ namespace UI.ReroutingPanel
 				row.Highlight(false);
 			}
 		}
-		
-
-	
 
 		public void Highlight(bool b)
 		{

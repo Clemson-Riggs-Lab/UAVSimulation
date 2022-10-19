@@ -1,18 +1,7 @@
 using System;
-using System.Collections.Generic;
-using Modules.Navigation.Submodules.Rerouting;
-using ScriptableObjects.EventChannels;
-using SyedAli.Main;
-using UAVs;
-using UI.Console.Channels.ScriptableObjects;
 using Unity.Netcode;
-using Unity.Netcode.Transports.UNET;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using WayPoints.Channels.ScriptableObjects;
 using static Multiplayer.GameplayNetworkCallsData;
-using static UnityEditor.Progress;
 
 namespace Multiplayer
 {
@@ -46,9 +35,9 @@ namespace Multiplayer
 
         #region Rerouting Related
         [ServerRpc(RequireOwnership = false)]
-        public void ReroutingUAVOnServerRpc(int uavId, int optionNo)
+        public void ReroutingUAVOnServerRpc(int uavId, int optionIndex, string lastReroutOptLsOrderBase)
         {
-            ReroutingUAVOnClientRpc(uavId, optionNo);
+            ReroutingUAVOnClientRpc(uavId, optionIndex, lastReroutOptLsOrderBase);
         }
 
         [ServerRpc(RequireOwnership = false)]
@@ -64,11 +53,9 @@ namespace Multiplayer
         }
 
         [ClientRpc]
-        private void ReroutingUAVOnClientRpc(int uavId, int optionIndex)
+        private void ReroutingUAVOnClientRpc(int uavId, int optionIndex, string lastReroutOptLsOrderBase)
         {
-            Debug.Log("UAV ID: " + uavId + " , " + "Option No: " + optionIndex);
-
-            ReroutingUAV_NetworkEventHandler?.Invoke(this, new ReroutingUAVEventArgs(uavId, optionIndex));
+            ReroutingUAV_NetworkEventHandler?.Invoke(this, new ReroutingUAVEventArgs(uavId, optionIndex, lastReroutOptLsOrderBase));
         }
 
         [ClientRpc]

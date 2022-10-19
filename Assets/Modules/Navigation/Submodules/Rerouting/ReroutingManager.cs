@@ -24,6 +24,10 @@ namespace Modules.Navigation.Submodules.Rerouting
 		private ReroutingPanelSettingsSO _reroutingPanelSettings;
 		private UavsManager _uavsManager;
 
+		private Guid _lastReroutOptLsOrderBase;
+
+        public Guid LastReroutOptLsOrderBase { get => _lastReroutOptLsOrderBase; }
+
         private void Start()
 		{
 			GetReferencesFromGameManager();
@@ -35,7 +39,6 @@ namespace Modules.Navigation.Submodules.Rerouting
             if (AppNetPortal.Instance.IsMultiplayerMode())
                 GameplayNetworkCallsHandler.Instance.ReroutingUAV_NetworkEventHandler += OnReroutingUAVNetworkEventHandler;
         }
-
 
 		private void OnDestroy()
 		{
@@ -83,15 +86,14 @@ namespace Modules.Navigation.Submodules.Rerouting
 			if (_reroutingPanelSettings.selectShortestPathsAsReroutingOptions)
 			{
 				//order the paths in each list by distance (between uav and waypoint) using linq
-				possiblePathsWithNoNFZ = possiblePathsWithNoNFZ.OrderBy(p =>
-					Vector3.Distance(uav.transform.position, p.destinationWayPoint.transform.position)).ToList();
-				possiblePathsWithNFZ = possiblePathsWithNFZ.OrderBy(p =>
-					Vector3.Distance(uav.transform.position, p.destinationWayPoint.transform.position)).ToList();
+				//possiblePathsWithNoNFZ = possiblePathsWithNoNFZ.OrderBy(p => Vector3.Distance(uav.transform.position, p.destinationWayPoint.transform.position)).ToList();
+				//possiblePathsWithNFZ = possiblePathsWithNFZ.OrderBy(p => Vector3.Distance(uav.transform.position, p.destinationWayPoint.transform.position)).ToList();
 			}
 			else //shuffle randomly
 			{
-				possiblePathsWithNFZ = possiblePathsWithNFZ.OrderBy(p => Guid.NewGuid()).ToList();
-				possiblePathsWithNoNFZ = possiblePathsWithNoNFZ.OrderBy(p => Guid.NewGuid()).ToList();
+				_lastReroutOptLsOrderBase = Guid.NewGuid();
+				possiblePathsWithNFZ = possiblePathsWithNFZ.OrderBy(p => _lastReroutOptLsOrderBase).ToList();
+				possiblePathsWithNoNFZ = possiblePathsWithNoNFZ.OrderBy(p => _lastReroutOptLsOrderBase).ToList();
 			}
 
 			//checking how many good/bad paths to add
@@ -109,8 +111,10 @@ namespace Modules.Navigation.Submodules.Rerouting
 			//add the paths with no NFZ to the list of rerouting options
 			for (var i = 0; i < numberOfGoodReroutingOptionsToPresent; i++)
 				reroutingOptions[uav].Add(possiblePathsWithNoNFZ[i]);
+
 			//shuffle the list of rerouting options
-			reroutingOptions[uav] = reroutingOptions[uav].OrderBy(x => Guid.NewGuid()).ToList();
+			_lastReroutOptLsOrderBase = Guid.NewGuid();
+            reroutingOptions[uav] = reroutingOptions[uav].OrderBy(x => _lastReroutOptLsOrderBase).ToList();
 		}
 
 		public void PreviewPath(Uav uav, int optionIndex) 
@@ -123,7 +127,6 @@ namespace Modules.Navigation.Submodules.Rerouting
 			{
 				_uavReroutePreviewEventChannel.RaiseEvent(uav,reroutingOptions[uav][optionIndex]);
 			}
-			
 		}
 
 		public void RerouteUav(Uav uav, int optionIndex)
@@ -170,7 +173,10 @@ namespace Modules.Navigation.Submodules.Rerouting
 			if (reroutingOptions.ContainsKey(uav) == false)
                 PopulateReroutingOptions(uav);
 
-			RerouteUav(uav, e.OptionIndex);
+			_lastReroutOptLsOrderBase = new Guid(e.LastReroutOptLsOrderBase);
+            reroutingOptions[uav].OrderBy(x => _lastReroutOptLsOrderBase).ToList();
+
+            RerouteUav(uav, e.OptionIndex);
         }
     }
 }

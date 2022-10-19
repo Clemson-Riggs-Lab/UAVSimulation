@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Modules.Navigation;
 using Modules.Navigation.Submodules.Rerouting;
 using Multiplayer;
 using TMPro;
@@ -90,15 +91,16 @@ namespace UI.ReroutingPanel
 			this.Highlight(false);
 			_manager.PreviewPath(_uav, -1);
 		}
-		private void OnConfirmButtonClicked(int optionNumber)
+		private void OnConfirmButtonClicked(int optionIndex)
 		{
             if (AppNetPortal.Instance.IsMultiplayerMode())
 			{
                 GameplayNetworkCallsHandler.Instance.ReroutePanelCloseServerRpc(AppNetPortal.Instance.NetworkManager.LocalClientId, _uav.id);
-                GameplayNetworkCallsHandler.Instance.ReroutingUAVOnServerRpc(_uav.id, optionNumber);
+
+                GameplayNetworkCallsHandler.Instance.ReroutingUAVOnServerRpc(_uav.id, optionIndex, _manager.LastReroutOptLsOrderBase.ToString());
 			}
 			else
-                _manager.RerouteUav(_uav, optionNumber);
+                _manager.RerouteUav(_uav, optionIndex);
 
 			_containerController.RemovePanel(_uav);
 		}

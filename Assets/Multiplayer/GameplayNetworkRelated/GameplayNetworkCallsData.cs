@@ -17,11 +17,13 @@ namespace Multiplayer
     {
         public readonly int UavId;
         public readonly int OptionIndex;
+        public readonly string LastReroutOptLsOrderBase;
 
-        public ReroutingUAVEventArgs(int uavId, int optionIndex)
+        public ReroutingUAVEventArgs(int uavId, int optionIndex, string lastReroutOptLsOrderBase)
         {
             UavId = uavId;
             OptionIndex = optionIndex;
+            LastReroutOptLsOrderBase = lastReroutOptLsOrderBase;
         }
     }    
     

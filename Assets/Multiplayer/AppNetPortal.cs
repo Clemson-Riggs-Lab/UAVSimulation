@@ -150,6 +150,12 @@ namespace Multiplayer
             }
             else
                 ClientConnected_EventHandler?.Invoke(this, new ClientConnectedEventArgs(obj));
+
+            if (_networkManager.IsServer)
+            {
+                UNetTransport uNT = (UNetTransport)_networkManager.NetworkConfig.NetworkTransport;
+                writeMessageToConsoleChannel.RaiseEvent("", new() { color = "green", doAnimate = true, text = "\n Kindly Enter IP Address: " + uNT.ConnectAddress + " & Port: " + uNT.ConnectPort  + " on other computer"});
+            }
         }
 
         private void OnClientDisconnected(ulong obj)

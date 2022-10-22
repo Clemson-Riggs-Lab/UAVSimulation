@@ -3223,7 +3223,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 570897948}
   m_HandleRect: {fileID: 570897947}
   m_Direction: 0
-  m_Value: 2.722434
+  m_Value: 2.7223883
   m_Size: 0.9976093
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -5139,7 +5139,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.59}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -2.2224274, y: -382.45856}
+  m_AnchoredPosition: {x: -2.2224274, y: -382.8517}
   m_SizeDelta: {x: 1, y: 0}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &1266965306
@@ -5194,6 +5194,10 @@ MonoBehaviour:
 
     3.
     When everything looks right, press the start button below to begin the simulation.
+
+
+    4.
+    To shift between Full Screen and Windowed Screen, press Alt + Enter.
 
     __________________________
 
@@ -8263,7 +8267,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 2045320567}
   m_Direction: 2
   m_Value: 0
-  m_Size: 0.9999933
+  m_Size: 0.8996596
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:

@@ -63,7 +63,7 @@ namespace Multiplayer
         {
             Debug.Log("UAV ID: " + uavId);
 
-            if (AppNetPortal.Instance.NetworkManager.LocalClientId != localClientId)
+            if (AppNetPortal.Instance.LocalClientId != localClientId)
                 ReroutePanelOpen_NetworkEventHandler?.Invoke(this, uavId);
         }
 
@@ -72,7 +72,7 @@ namespace Multiplayer
         {
             Debug.Log("UAV ID: " + uavId);
 
-            if (AppNetPortal.Instance.NetworkManager.LocalClientId != localClientId)
+            if (AppNetPortal.Instance.LocalClientId != localClientId)
                 ReroutePanelClose_NetworkEventHandler?.Invoke(this, uavId);
         }
         #endregion

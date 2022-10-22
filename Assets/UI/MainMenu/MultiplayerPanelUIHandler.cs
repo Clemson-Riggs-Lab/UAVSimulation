@@ -11,6 +11,8 @@ using UnityEngine.UI;
 
 namespace UI.MainMenu
 {
+    public enum PanelState { FirstTimeShow, Waiting, Stopped, Ready }
+
     public class MultiplayerPanelUIHandler : MonoBehaviour
     {
         [SerializeField] Button _multiplayerBtn;
@@ -22,6 +24,7 @@ namespace UI.MainMenu
         [SerializeField] Button _startHostBtn;
         [SerializeField] Button _startClientBtn;
         [SerializeField] Button _stopBtn;
+        [SerializeField] Button _startSimulationBtn;
 
         [Space(10)]
         [SerializeField] ConsoleMessageEventChannelSO writeMessageToConsoleChannel;
@@ -38,8 +41,10 @@ namespace UI.MainMenu
             _startHostBtn.onClick.AddListener(OnClickStartHostBtn);
             _startClientBtn.onClick.AddListener(OnClickStartClientBtn);
             _stopBtn.onClick.AddListener(OnClickStopBtn);
+            _startSimulationBtn.onClick.AddListener(OnClickStartSimulationBtn);
 
             AppNetPortal.Instance.ClientConnected_EventHandler += OnClientConnected;
+            AppNetPortal.Instance.ClientDisconnected_EventHandler += OnClientDisconnected;
         }
 
         private void OnDisable()
@@ -48,8 +53,10 @@ namespace UI.MainMenu
             _startHostBtn.onClick.RemoveListener(OnClickStartHostBtn);
             _startClientBtn.onClick.RemoveListener(OnClickStartClientBtn);
             _stopBtn.onClick.RemoveListener(OnClickStopBtn);
+            _startSimulationBtn.onClick.RemoveListener(OnClickStartSimulationBtn);
 
             AppNetPortal.Instance.ClientConnected_EventHandler -= OnClientConnected;
+            AppNetPortal.Instance.ClientDisconnected_EventHandler -= OnClientDisconnected;
         }
 
         private void OnClickMultiplayerBtn()
@@ -67,12 +74,10 @@ namespace UI.MainMenu
             else
             {
                 _multiplayerSettingsGo.SetActive(true);
-                _ipAddIF.text = AppNetPortal.Instance.GetDefaultIpAddr();
+                _ipAddIF.text = AppNetPortal.Instance.GetLocalIPAddress();
                 _portIF.text = AppNetPortal.Instance.GetDefaultPortNo().ToString();
 
-                _startHostBtn.interactable = true;
-                _startClientBtn.interactable = true;
-                _stopBtn.interactable = false;
+                HandleBtns(PanelState.FirstTimeShow);
             }
         }
 
@@ -82,9 +87,7 @@ namespace UI.MainMenu
             {
                 if (AppNetPortal.Instance.StartHost(_ipAddIF.text, Int32.Parse(_portIF.text)) == 1)
                 {
-                    _startHostBtn.interactable = false;
-                    _startClientBtn.interactable = false;
-                    _stopBtn.interactable = true;
+                    HandleBtns(PanelState.Waiting);
                 }
             }
             else if (_ipAddIF.text == "")
@@ -103,9 +106,7 @@ namespace UI.MainMenu
             {
                 if (AppNetPortal.Instance.StartClient(_ipAddIF.text, Int32.Parse(_portIF.text)) == 1)
                 {
-                    _startHostBtn.interactable = false;
-                    _startClientBtn.interactable = false;
-                    _stopBtn.interactable = true;
+                    HandleBtns(PanelState.Waiting);
                 }
             }
             else if (_ipAddIF.text == "")
@@ -122,17 +123,65 @@ namespace UI.MainMenu
         {
             if (AppNetPortal.Instance.StopClient() == 1)
             {
-                _startHostBtn.interactable = true;
-                _startClientBtn.interactable = true;
-                _stopBtn.interactable = false;
+                HandleBtns(PanelState.Stopped);
             }
+        }
+
+        private void OnClickStartSimulationBtn()
+        {
+            MainMenuNetworkCallsHandler.Instance.LoadSimulationServerRpc();
         }
 
         private void OnClientConnected(object sender, ClientConnectedEventArgs e)
         {
-            if (NetworkManager.Singleton.IsServer && e.NumberOfClients == 2)
+            if (AppNetPortal.Instance.IsServer)
             {
-                MainMenuNetworkCallsHandler.Instance.LoadSimulationServerRpc();
+                if (AppNetPortal.Instance.ConnectedClientCount == 2)
+                    HandleBtns(PanelState.Ready);
+            }
+        }
+
+        private void OnClientDisconnected(object sender, ClientDisconnectedEventArgs e)
+        {
+            if (AppNetPortal.Instance.IsServer)
+            {
+                if (AppNetPortal.Instance.LocalClientId == e.ClientId)
+                    HandleBtns(PanelState.Stopped);
+                else
+                    HandleBtns(PanelState.Waiting);
+            }
+            else
+                HandleBtns(PanelState.Stopped);
+        }
+
+        private void HandleBtns(PanelState panelState)
+        {
+            switch(panelState)
+            {
+                case PanelState.FirstTimeShow:
+                    _startHostBtn.interactable = true;
+                    _startClientBtn.interactable = true;
+                    _stopBtn.interactable = false;
+                    _startSimulationBtn.interactable = false;
+                    break;
+                case PanelState.Waiting:
+                    _startHostBtn.interactable = false;
+                    _startClientBtn.interactable = false;
+                    _stopBtn.interactable = true;
+                    _startSimulationBtn.interactable = false;
+                    break;
+                case PanelState.Stopped:
+                    _startHostBtn.interactable = true;
+                    _startClientBtn.interactable = true;
+                    _stopBtn.interactable = false;
+                    _startSimulationBtn.interactable = false;
+                    break;
+                case PanelState.Ready:
+                    _startHostBtn.interactable = false;
+                    _startClientBtn.interactable = false;
+                    _stopBtn.interactable = true;
+                    _startSimulationBtn.interactable = true;
+                    break;
             }
         }
     }

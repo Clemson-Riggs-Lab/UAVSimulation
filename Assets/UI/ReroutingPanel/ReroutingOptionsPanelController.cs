@@ -76,7 +76,7 @@ namespace UI.ReroutingPanel
 			_containerController.RemovePanel(_uav);
 
 			if (AppNetPortal.Instance.IsMultiplayerMode())
-				GameplayNetworkCallsHandler.Instance.ReroutePanelCloseServerRpc(AppNetPortal.Instance.NetworkManager.LocalClientId, _uav.id);
+				GameplayNetworkCallsHandler.Instance.ReroutePanelCloseServerRpc(AppNetPortal.Instance.LocalClientId, _uav.id);
 		}
 		
 		private void OnPreviewButtonClicked(int optionNumber)
@@ -95,7 +95,7 @@ namespace UI.ReroutingPanel
 		{
             if (AppNetPortal.Instance.IsMultiplayerMode())
 			{
-                GameplayNetworkCallsHandler.Instance.ReroutePanelCloseServerRpc(AppNetPortal.Instance.NetworkManager.LocalClientId, _uav.id);
+                GameplayNetworkCallsHandler.Instance.ReroutePanelCloseServerRpc(AppNetPortal.Instance.LocalClientId, _uav.id);
 
                 GameplayNetworkCallsHandler.Instance.ReroutingUAVOnServerRpc(_uav.id, optionIndex, _manager.LastReroutOptLsOrderBase.ToString());
 			}

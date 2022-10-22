@@ -43,6 +43,7 @@ namespace IOHandlers
         
         public void OnEnable()
         {
+            Debug.Log(Application.dataPath);
             var configsFolder = Application.dataPath + "/configFiles/"; 
             _inputFolderPath = configsFolder + inputFolderName+"/";
             _settingsFolderPath = configsFolder + settingsFolderName+ "/";

@@ -153,7 +153,7 @@ namespace UI.ReroutingPanel
 		private void OnClickButton(Uav uav)
         {
             if (AppNetPortal.Instance.IsMultiplayerMode())
-                GameplayNetworkCallsHandler.Instance.ReroutePanelOpenServerRpc(AppNetPortal.Instance.NetworkManager.LocalClientId, uav.id);
+                GameplayNetworkCallsHandler.Instance.ReroutePanelOpenServerRpc(AppNetPortal.Instance.LocalClientId, uav.id);
 
 	        _reroutingOptionsRequestedChannel.RaiseEvent(uav);
         }

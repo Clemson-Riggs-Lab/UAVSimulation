@@ -1,5 +1,8 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Net;
+using System.Net.Sockets;
 using ScriptableObjects.EventChannels;
 using SyedAli.Main;
 using UI.Console.Channels.ScriptableObjects;
@@ -14,12 +17,10 @@ namespace Multiplayer
     public class ClientConnectedEventArgs : EventArgs
     {
         public readonly ulong ClientId;
-        public readonly int NumberOfClients;
 
-        public ClientConnectedEventArgs(ulong clientId, int numberOfClients)
+        public ClientConnectedEventArgs(ulong clientId)
         {
             ClientId = clientId;
-            NumberOfClients = numberOfClients;
         }
     }
 
@@ -43,9 +44,9 @@ namespace Multiplayer
         [Space(10)]
         [SerializeField] ConsoleMessageEventChannelSO writeMessageToConsoleChannel;
 
-        private int _numberOfClients = 0;
-
-        public NetworkManager NetworkManager { get => _networkManager; }
+        public ulong LocalClientId { get => _networkManager.LocalClientId; }
+        public int ConnectedClientCount { get => _networkManager.ConnectedClientsList.Count; }
+        public bool IsServer { get => _networkManager.IsServer; }
 
         protected override void Awake()
         {
@@ -56,17 +57,19 @@ namespace Multiplayer
         {
             _networkManager.OnClientConnectedCallback += OnClientConnected;
             _networkManager.OnClientDisconnectCallback += OnClientDisconnected;
+            _networkManager.OnTransportFailure += OnTransportFailure;
         }
 
         private void OnDestroy()
         {
             _networkManager.OnClientConnectedCallback -= OnClientConnected;
             _networkManager.OnClientDisconnectCallback -= OnClientDisconnected;
+            _networkManager.OnTransportFailure -= OnTransportFailure;
         }
 
         public int StartHost(string ipAddress, int portNumber)
         {
-            UNetTransport uNT = (UNetTransport)NetworkManager.Singleton.NetworkConfig.NetworkTransport;
+            UNetTransport uNT = (UNetTransport)_networkManager.NetworkConfig.NetworkTransport;
             uNT.ConnectAddress = ipAddress;
             uNT.ConnectPort = portNumber;
             uNT.ServerListenPort = portNumber;
@@ -85,10 +88,9 @@ namespace Multiplayer
 
         public int StartClient(string ipAddress, int portNumber)
         {
-            UNetTransport uNT = (UNetTransport)NetworkManager.Singleton.NetworkConfig.NetworkTransport;
+            UNetTransport uNT = (UNetTransport)_networkManager.NetworkConfig.NetworkTransport;
             uNT.ConnectAddress = ipAddress;
             uNT.ConnectPort = portNumber;
-            uNT.ServerListenPort = portNumber;
 
             if (_networkManager.StartClient())
             {
@@ -109,10 +111,26 @@ namespace Multiplayer
             return 1;
         }
 
-        public string GetDefaultIpAddr()
+        public bool IsMultiplayerMode()
         {
-            UNetTransport uNT = (UNetTransport)NetworkManager.Singleton.NetworkConfig.NetworkTransport;
-            return uNT.ConnectAddress;
+            if (_networkManager.IsClient || _networkManager.IsServer)
+                return true;
+            else
+                return false;
+        }
+        
+        public string GetLocalIPAddress()
+        {
+            var host = Dns.GetHostEntry(Dns.GetHostName());
+            foreach (var ip in host.AddressList)
+            {
+                if (ip.AddressFamily == AddressFamily.InterNetwork)
+                {
+                    return ip.ToString();
+                }
+            }
+
+            return null;
         }
 
         public int GetDefaultPortNo()
@@ -121,26 +139,32 @@ namespace Multiplayer
             return uNT.ConnectPort;
         }
 
-        public bool IsMultiplayerMode()
-        {
-            if (_networkManager.IsClient || _networkManager.IsServer)
-                return true;
-            else
-                return false;
-        }
-
         private void OnClientConnected(ulong obj)
         {
-            _numberOfClients++;
             writeMessageToConsoleChannel.RaiseEvent("", new() { color = "green", doAnimate = true, text = "\n Client Connected With Id: " + obj });
-            ClientConnected_EventHandler?.Invoke(this, new ClientConnectedEventArgs(obj, _numberOfClients));
+
+            if (_networkManager.IsServer && _networkManager.ConnectedClientsList.Count > 2)
+            {
+                _networkManager.DisconnectClient(obj);
+                writeMessageToConsoleChannel.RaiseEvent("", new() { color = "green", doAnimate = true, text = "\n Max Client Limit Reached. Connection Refused: " + obj });
+            }
+            else
+                ClientConnected_EventHandler?.Invoke(this, new ClientConnectedEventArgs(obj));
         }
 
         private void OnClientDisconnected(ulong obj)
         {
-            _numberOfClients--;
             writeMessageToConsoleChannel.RaiseEvent("", new() { color = "green", doAnimate = true, text = "\n Client Disconnected With Id: " + obj });
-            ClientDisconnected_EventHandler?.Invoke(this, new ClientDisconnectedEventArgs(obj));
+
+            if (_networkManager.IsClient && !_networkManager.IsServer)
+                ClientDisconnected_EventHandler?.Invoke(this, new ClientDisconnectedEventArgs(obj));
+            else if (_networkManager.IsServer && _networkManager.ConnectedClientsList.ToList().Exists(x => x.ClientId == obj))
+                ClientDisconnected_EventHandler?.Invoke(this, new ClientDisconnectedEventArgs(obj));
+        }
+
+        private void OnTransportFailure()
+        {
+            writeMessageToConsoleChannel.RaiseEvent("", new() { color = "green", doAnimate = true, text = "\n Transport Failure Happens "});
         }
     }
 }

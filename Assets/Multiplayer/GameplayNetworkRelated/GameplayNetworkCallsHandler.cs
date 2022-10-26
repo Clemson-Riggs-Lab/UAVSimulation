@@ -18,6 +18,8 @@ namespace Multiplayer
 
         public event EventHandler<NetworkString> ChatResponseClicked_NetworkEventHandler;
 
+        public event EventHandler<bool> PauseBehaviour_NetworkEventHandler;
+
         public static GameplayNetworkCallsHandler Instance { get; private set; }
 
         private void Awake()
@@ -130,6 +132,21 @@ namespace Multiplayer
             ChatResponseClicked_NetworkEventHandler?.Invoke(this, responseText);
         }
         #endregion
+
+        #region Simulation Controls Related
+        [ServerRpc(RequireOwnership = false)]
+        public void PauseBehaviourServerRpc(bool pauseBehaviour)
+        {
+            PauseBehaviourClientRpc(pauseBehaviour);
+        }
+
+        [ClientRpc]
+        private void PauseBehaviourClientRpc(bool pauseBehaviour)
+        {
+            PauseBehaviour_NetworkEventHandler?.Invoke(this, pauseBehaviour);
+        }
+        #endregion
+
     }
 }
 

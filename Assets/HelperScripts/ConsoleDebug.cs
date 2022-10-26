@@ -14,5 +14,4 @@ namespace HelperScripts
 				_writeMessageToConsoleChannel.RaiseEvent("",new() {text= errorText,color = "red"});
 		}
 	}
-	
 }

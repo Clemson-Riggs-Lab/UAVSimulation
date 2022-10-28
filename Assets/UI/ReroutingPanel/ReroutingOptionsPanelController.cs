@@ -97,7 +97,7 @@ namespace UI.ReroutingPanel
 			{
                 GameplayNetworkCallsHandler.Instance.ReroutePanelCloseServerRpc(AppNetPortal.Instance.LocalClientId, _uav.id);
 
-                GameplayNetworkCallsHandler.Instance.ReroutingUAVOnServerRpc(_uav.id, optionIndex, _manager.LastReroutOptLsOrderBase.ToString());
+                GameplayNetworkCallsHandler.Instance.ReroutingUAVOnServerRpc(AppNetPortal.Instance.IsThisHost ? CallerType.Host : CallerType.Client, _uav.id, optionIndex, _manager.LastReroutOptLsOrderBase.ToString());
 			}
 			else
                 _manager.RerouteUav(_uav, optionIndex);

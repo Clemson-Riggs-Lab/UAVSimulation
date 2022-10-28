@@ -13,7 +13,6 @@ namespace Modules.Logging
 		public string logType;
 		public string eventType;
 		public List<string> logMessages;
-		
-		
+		public string logGenerator;
 	}
 }

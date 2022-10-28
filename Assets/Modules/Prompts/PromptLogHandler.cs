@@ -4,6 +4,7 @@ using Modules.Logging;
 using Modules.Logging.Channels.ScriptableObjects;
 using Modules.Prompts.Channels.ScriptableObjects;
 using Modules.Prompts.Settings.ScriptableObjects;
+using Multiplayer;
 using UnityEngine;
 
 namespace Modules.Prompts
@@ -44,6 +45,9 @@ namespace Modules.Prompts
 				eventType = "PromptMessageSent",
 				logMessages = ComposeMessageLogString(chatMessage)
 			};
+
+			log.logGenerator = CallerType.None.ToString();
+
 			_logEventChannel.RaiseEvent(log);
 		}
 		
@@ -55,7 +59,13 @@ namespace Modules.Prompts
 				eventType = "ResponseReceived",
 				logMessages = ComposeResponseLogString(responseOption)
 			};
-			_logEventChannel.RaiseEvent(log);
+
+            if (AppNetPortal.Instance.IsMultiplayerMode())
+                log.logGenerator = GameplayNetworkCallsHandler.Instance.GetCallerType(CallType.ChatResponseClicked).ToString();
+            else
+                log.logGenerator = CallerType.None.ToString();
+
+            _logEventChannel.RaiseEvent(log);
 		}
 		
 

@@ -134,7 +134,7 @@ namespace UI.FuelAndHealthPanel
         private void OnHealthButtonClicked(FuelAndHealthStatusPanelsManager manager, Uav uav, string buttonText)
         {
             if (AppNetPortal.Instance.IsMultiplayerMode())
-                GameplayNetworkCallsHandler.Instance.FixLeakServerRpc(uav.id, buttonText);
+                GameplayNetworkCallsHandler.Instance.FixLeakServerRpc(AppNetPortal.Instance.IsThisHost ? CallerType.Host : CallerType.Client, uav.id, buttonText);
             else
                 manager.OnHealthButtonClicked(uav, buttonText);
         }

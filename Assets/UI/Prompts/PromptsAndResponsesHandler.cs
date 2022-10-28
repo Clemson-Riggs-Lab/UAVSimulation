@@ -115,7 +115,7 @@ namespace Modules.Prompts
 		{
 			if (AppNetPortal.Instance.IsMultiplayerMode())
 			{
-				GameplayNetworkCallsHandler.Instance.ChatReponseClickedServerRpc(response.buttonText);
+				GameplayNetworkCallsHandler.Instance.ChatReponseClickedServerRpc(AppNetPortal.Instance.IsThisHost ? CallerType.Host : CallerType.Client, response.buttonText);
 			}
 			else
 			{

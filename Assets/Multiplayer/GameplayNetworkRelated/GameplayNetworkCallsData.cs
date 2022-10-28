@@ -13,6 +13,16 @@ using WayPoints.Channels.ScriptableObjects;
 
 namespace Multiplayer
 {
+    public enum CallerType
+    {
+        None, Host, Client
+    }
+
+    public enum CallType
+    {
+        ReroutingUAV, ReroutePanelOpen, ReroutePanelClose, LeakFixed, TargetDetectClicked, TargetNotDetectedClicked, ChatResponseClicked, PauseBehaviour
+    }
+
     public class ReroutingUAVEventArgs : EventArgs
     {
         public readonly int UavId;

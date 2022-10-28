@@ -48,6 +48,8 @@ namespace Multiplayer
         public int ConnectedClientCount { get => _networkManager.ConnectedClientsList.Count; }
         public bool IsServer { get => _networkManager.IsServer; }
 
+        public bool IsThisHost { get => _networkManager.IsHost; }
+
         protected override void Awake()
         {
             base.Awake();

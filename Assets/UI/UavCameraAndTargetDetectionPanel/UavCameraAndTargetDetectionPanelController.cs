@@ -54,7 +54,7 @@ namespace UI.UavCameraAndTargetDetectionPanel
             if (!clicked) return;
 
             if (AppNetPortal.Instance.IsMultiplayerMode())
-                GameplayNetworkCallsHandler.Instance.TargetDetectClickedServerRpc(uav.id);
+                GameplayNetworkCallsHandler.Instance.TargetDetectClickedServerRpc(AppNetPortal.Instance.IsThisHost ? CallerType.Host : CallerType.Client, uav.id);
             else
                 TargetDetectClickedAction();  
         }
@@ -63,7 +63,7 @@ namespace UI.UavCameraAndTargetDetectionPanel
             if (!clicked) return;
 
             if (AppNetPortal.Instance.IsMultiplayerMode())
-                GameplayNetworkCallsHandler.Instance.TargetNotDetectClickedServerRpc(uav.id);
+                GameplayNetworkCallsHandler.Instance.TargetNotDetectClickedServerRpc(AppNetPortal.Instance.IsThisHost ? CallerType.Host : CallerType.Client, uav.id);
             else
                 TargetNotDetectClickedAction();
         }

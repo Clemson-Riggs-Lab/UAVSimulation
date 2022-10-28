@@ -3,6 +3,7 @@ using Modules.Logging;
 using Modules.Logging.Channels.ScriptableObjects;
 using Modules.Navigation.Channels.ScriptableObjects;
 using Modules.Navigation.Submodules.Rerouting.Settings.ScriptableObjects;
+using Multiplayer;
 using UAVs;
 using UAVs.Channels.ScriptableObjects;
 using UnityEngine;
@@ -50,6 +51,12 @@ namespace Modules.Navigation.Submodules.Rerouting
 			log.logType = "Rerouting";
 			log.eventType = "Rerouting Event";
 			log.logMessages = new() { $"Uav {uav.uavName}  rerouted"};
+
+			if (AppNetPortal.Instance.IsMultiplayerMode())
+				log.logGenerator = GameplayNetworkCallsHandler.Instance.GetCallerType(CallType.ReroutingUAV).ToString();
+			else
+				log.logGenerator = CallerType.None.ToString();
+
 			if (_reroutingSettings.logIfReroutingWasNeeded)
 			{
 				try
@@ -62,8 +69,6 @@ namespace Modules.Navigation.Submodules.Rerouting
 				{
 					log.logMessages.Add("Rerouting could not be determined, since the original path was not found");
 				}
-				
-				
 			}
 
 			if (_reroutingSettings.logTimeOfPathStart)
@@ -77,18 +82,19 @@ namespace Modules.Navigation.Submodules.Rerouting
 				log.logMessages.Add(isHeadingToNFZ ? "New route is bad" : "New route is good");
 			}
 				
-			_logEventChannel.RaiseEvent(log);	
-			
+			_logEventChannel.RaiseEvent(log);			
 		}
 		
-
 		private void LogReroutingOptionPreviewed(Uav uav, Path path)
 		{
 			var log = new Log();
 			log.logType = "Rerouting";
 			log.eventType = "Rerouting Option Previewed";
 			log.logMessages = new() { $"Rerouting option previewed for Uav {uav.uavName} "};
-			if (_reroutingSettings.logTimeOfPathStart)
+
+            log.logGenerator = CallerType.None.ToString();
+
+            if (_reroutingSettings.logTimeOfPathStart)
 			{
 				LogTimeOfPathStart(log, uav, path);
 			}
@@ -109,7 +115,9 @@ namespace Modules.Navigation.Submodules.Rerouting
 			log.eventType = "Rerouting Options Requested";
 			log.logMessages = new() { $" requested rerouting options for uav {uav.uavName}"};
 
-			if (_reroutingSettings.logTimeOfPathStart)
+            log.logGenerator = CallerType.None.ToString();
+
+            if (_reroutingSettings.logTimeOfPathStart)
 			{
 				LogTimeOfPathStart(log, uav, uav.currentPath);
 			}

@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using Unity.Netcode;
 using UnityEngine;
 using static Multiplayer.GameplayNetworkCallsData;
@@ -22,6 +23,8 @@ namespace Multiplayer
 
         public static GameplayNetworkCallsHandler Instance { get; private set; }
 
+        private Dictionary<CallType, CallerType> _callCallerTypeDict = new Dictionary<CallType, CallerType>();
+
         private void Awake()
         {
             Instance = this;
@@ -35,11 +38,16 @@ namespace Multiplayer
             }
         }
 
+        public CallerType GetCallerType(CallType callType)
+        {
+            return _callCallerTypeDict[callType];
+        }
+
         #region Rerouting Related
         [ServerRpc(RequireOwnership = false)]
-        public void ReroutingUAVOnServerRpc(int uavId, int optionIndex, string lastReroutOptLsOrderBase)
+        public void ReroutingUAVOnServerRpc(CallerType callerType, int uavId, int optionIndex, string lastReroutOptLsOrderBase)
         {
-            ReroutingUAVOnClientRpc(uavId, optionIndex, lastReroutOptLsOrderBase);
+            ReroutingUAVOnClientRpc(callerType, uavId, optionIndex, lastReroutOptLsOrderBase);
         }
 
         [ServerRpc(RequireOwnership = false)]
@@ -55,9 +63,13 @@ namespace Multiplayer
         }
 
         [ClientRpc]
-        private void ReroutingUAVOnClientRpc(int uavId, int optionIndex, string lastReroutOptLsOrderBase)
+        private void ReroutingUAVOnClientRpc(CallerType callerType, int uavId, int optionIndex, string lastReroutOptLsOrderBase)
         {
+            _callCallerTypeDict.Add(CallType.ReroutingUAV, callerType);
+
             ReroutingUAV_NetworkEventHandler?.Invoke(this, new ReroutingUAVEventArgs(uavId, optionIndex, lastReroutOptLsOrderBase));
+
+            _callCallerTypeDict.Remove(CallType.ReroutingUAV);
         }
 
         [ClientRpc]
@@ -81,55 +93,63 @@ namespace Multiplayer
 
         #region FixLeak Related
         [ServerRpc(RequireOwnership = false)]
-        public void FixLeakServerRpc(int uavId, NetworkString buttonText)
+        public void FixLeakServerRpc(CallerType callerType, int uavId, NetworkString buttonText)
         {
-            FixLeakClientRpc(uavId, buttonText);
+            FixLeakClientRpc(callerType, uavId, buttonText);
         }
 
         [ClientRpc]
-        private void FixLeakClientRpc(int uavId, NetworkString buttonText)
+        private void FixLeakClientRpc(CallerType callerType, int uavId, NetworkString buttonText)
         {
+            _callCallerTypeDict.Add(CallType.LeakFixed, callerType);
             FixLeak_NetworkEventHandler?.Invoke(this, new FixLeakEventArgs(uavId, buttonText));
+            _callCallerTypeDict.Remove(CallType.LeakFixed);
         }
         #endregion
 
         #region Target Detection Related
         [ServerRpc(RequireOwnership = false)]
-        public void TargetDetectClickedServerRpc(int uavId)
+        public void TargetDetectClickedServerRpc(CallerType callerType, int uavId)
         {
-            TargetDetectClickedClientRpc(uavId);
+            TargetDetectClickedClientRpc(callerType, uavId);
         }
 
         [ServerRpc(RequireOwnership = false)]
-        public void TargetNotDetectClickedServerRpc(int uavId)
+        public void TargetNotDetectClickedServerRpc(CallerType callerType, int uavId)
         {
-            TargetNotDetectClickedClientRpc(uavId);
+            TargetNotDetectClickedClientRpc(callerType, uavId);
         }
 
         [ClientRpc]
-        private void TargetDetectClickedClientRpc(int uavId)
+        private void TargetDetectClickedClientRpc(CallerType callerType, int uavId)
         {
+            _callCallerTypeDict.Add(CallType.TargetDetectClicked, callerType);
             TargetDetectClicked_NetworkEventHandler?.Invoke(this, uavId);
+            _callCallerTypeDict.Remove(CallType.TargetDetectClicked);
         }
 
         [ClientRpc]
-        private void TargetNotDetectClickedClientRpc(int uavId)
+        private void TargetNotDetectClickedClientRpc(CallerType callerType, int uavId)
         {
+            _callCallerTypeDict.Add(CallType.TargetNotDetectedClicked, callerType);
             TargetNotDetectClicked_NetworkEventHandler?.Invoke(this, uavId);
+            _callCallerTypeDict.Remove(CallType.TargetNotDetectedClicked);
         }
         #endregion
 
         #region Chat Message Response Related
         [ServerRpc(RequireOwnership = false)]
-        public void ChatReponseClickedServerRpc(NetworkString responseText)
+        public void ChatReponseClickedServerRpc(CallerType callerType, NetworkString responseText)
         {
-            ChatReponseClickedClientRpc(responseText);
+            ChatReponseClickedClientRpc(callerType, responseText);
         }
 
         [ClientRpc]
-        private void ChatReponseClickedClientRpc(NetworkString responseText)
+        private void ChatReponseClickedClientRpc(CallerType callerType, NetworkString responseText)
         {
+            _callCallerTypeDict.Add(CallType.ChatResponseClicked, callerType);
             ChatResponseClicked_NetworkEventHandler?.Invoke(this, responseText);
+            _callCallerTypeDict.Remove(CallType.ChatResponseClicked);
         }
         #endregion
 
@@ -146,7 +166,6 @@ namespace Multiplayer
             PauseBehaviour_NetworkEventHandler?.Invoke(this, pauseBehaviour);
         }
         #endregion
-
     }
 }
 

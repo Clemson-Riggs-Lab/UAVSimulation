@@ -2,6 +2,7 @@ using System;
 using Modules.Logging;
 using Modules.Logging.Channels.ScriptableObjects;
 using Modules.NoFlyZone.Settings.ScriptableObjects;
+using Multiplayer;
 using UAVs;
 using UAVs.Channels.ScriptableObjects;
 using UnityEngine;
@@ -45,7 +46,9 @@ namespace Modules.NoFlyZone.Settings
 			log.logType = "NFZ";
 			log.eventType = " NFZ Collision";
 			log.logMessages = new() { $"UAV {arg0.name}is lost due to NFZ collision" };
-			
+
+			log.logGenerator = CallerType.None.ToString();
+
 			_logEventChannel.RaiseEvent(log);
 		}
 

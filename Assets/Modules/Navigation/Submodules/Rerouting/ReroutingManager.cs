@@ -40,14 +40,6 @@ namespace Modules.Navigation.Submodules.Rerouting
                 GameplayNetworkCallsHandler.Instance.ReroutingUAV_NetworkEventHandler += OnReroutingUAVNetworkEventHandler;
         }
 
-		private void OnDestroy()
-		{
-			UnsubscribeFromChannels();
-
-            if (AppNetPortal.Instance.IsMultiplayerMode())
-                GameplayNetworkCallsHandler.Instance.ReroutingUAV_NetworkEventHandler -= OnReroutingUAVNetworkEventHandler;
-        }
-
 		private void SubscribeToChannels()
 		{
 			if (_uavDestroyedEventChannel != null)

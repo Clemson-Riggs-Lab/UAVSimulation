@@ -39,9 +39,6 @@ namespace UI.FuelAndHealthPanel
 
 		public void OnDestroy()
 		{
-            if (AppNetPortal.Instance.IsMultiplayerMode())
-                GameplayNetworkCallsHandler.Instance.FixLeak_NetworkEventHandler -= OnFixLeakNetworkEventHandler;
-
 			UnsubscribeFromChannels();
         }
 

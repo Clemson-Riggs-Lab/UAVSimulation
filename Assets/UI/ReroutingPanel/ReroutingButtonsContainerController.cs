@@ -44,15 +44,6 @@ namespace UI.ReroutingPanel
 			}
         }
 
-		private void OnDestroy()
-		{
-            if (AppNetPortal.Instance.IsMultiplayerMode())
-            {
-                GameplayNetworkCallsHandler.Instance.ReroutePanelOpen_NetworkEventHandler -= OnReroutePanelOpenNetworkEventHandler;
-                GameplayNetworkCallsHandler.Instance.ReroutePanelClose_NetworkEventHandler -= OnReroutePanelCloseNetworkEventHandler;
-            }
-        }
-
 		private void CreateButtons()
 		{
 			foreach (var uav in GameManager.Instance.uavsManager.uavs)

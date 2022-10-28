@@ -60,13 +60,6 @@ namespace Multiplayer
             _networkManager.OnTransportFailure += OnTransportFailure;
         }
 
-        private void OnDestroy()
-        {
-            _networkManager.OnClientConnectedCallback -= OnClientConnected;
-            _networkManager.OnClientDisconnectCallback -= OnClientDisconnected;
-            _networkManager.OnTransportFailure -= OnTransportFailure;
-        }
-
         public int StartHost(string ipAddress, int portNumber)
         {
             UNetTransport uNT = (UNetTransport)_networkManager.NetworkConfig.NetworkTransport;

@@ -52,15 +52,6 @@ namespace UI.UavCameraAndTargetDetectionPanel
             }
         }
 
-        private void OnDestroy()
-        {
-            if (AppNetPortal.Instance.IsMultiplayerMode())
-            {
-                GameplayNetworkCallsHandler.Instance.TargetDetectClicked_NetworkEventHandler -= OnTargetDetectClickedNetworkEventHandler;
-                GameplayNetworkCallsHandler.Instance.TargetNotDetectClicked_NetworkEventHandler -= OnTargetNotDetectClickedNetworkEventHandler;
-            }
-        }
-
         private void ClearPanels()
         {
             foreach (Transform child in transform)

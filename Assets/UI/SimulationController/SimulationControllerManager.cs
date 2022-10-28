@@ -3,6 +3,7 @@ using System.Collections;
 using Databases.ScriptableObjects;
 using Multiplayer;
 using TMPro;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -33,14 +34,15 @@ namespace UI.Console
 			GameplayNetworkCallsHandler.Instance.PauseBehaviour_NetworkEventHandler += OnPauseBehaviourNetworkEventHandler;
 		}
 
-		private void OnDestroy()
-		{
-            GameplayNetworkCallsHandler.Instance.PauseBehaviour_NetworkEventHandler -= OnPauseBehaviourNetworkEventHandler;
-        }
-
 		private void OnClickPause()
 		{
-			GameplayNetworkCallsHandler.Instance.PauseBehaviourServerRpc(GameManager.Instance.PauseStatus ? false : true);
+			if (AppNetPortal.Instance.IsMultiplayerMode())
+				GameplayNetworkCallsHandler.Instance.PauseBehaviourServerRpc(GameManager.Instance.PauseStatus ? false : true);
+			else
+			{
+                GameManager.Instance.ChangePauseStatus(GameManager.Instance.PauseStatus ? false : true);
+                _pauseBtnTxt.text = GameManager.Instance.PauseStatus ? _pauseBtnTxt.text = "Resume" : _pauseBtnTxt.text = "Pause";
+            }
         }
 
         private void OnPauseBehaviourNetworkEventHandler(object sender, bool pauseStatus)

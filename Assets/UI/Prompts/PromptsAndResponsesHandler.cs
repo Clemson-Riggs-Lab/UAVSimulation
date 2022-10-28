@@ -43,12 +43,6 @@ namespace Modules.Prompts
 				GameplayNetworkCallsHandler.Instance.ChatResponseClicked_NetworkEventHandler += OnChatResponseClickedNetworkEventHandler;
 		}
 
-		private void OnDestroy()
-		{
-			if (AppNetPortal.Instance.IsMultiplayerMode())
-				GameplayNetworkCallsHandler.Instance.ChatResponseClicked_NetworkEventHandler -= OnChatResponseClickedNetworkEventHandler;
-		}
-
 		private void GetSettingsFromGameManager()
 		{
 			_promptSettings = GameManager.Instance.settingsDatabase.promptSettings;

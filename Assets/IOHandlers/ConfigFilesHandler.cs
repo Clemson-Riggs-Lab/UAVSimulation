@@ -115,7 +115,7 @@ namespace IOHandlers
 
             if (fileInfoLs == null || fileInfoLs.Count == 0)
             {
-                File.WriteAllText(_inputFolderPath + _inputFileName + "." + FilesType.Input.ToString() + "." + ConfigFilesExtension, newJsonStr);
+                File.WriteAllText(configFilesSettings.inputFileFullFilePath, newJsonStr);
             }
             else
             {
@@ -134,7 +134,7 @@ namespace IOHandlers
 
             if (fileInfoLs == null || fileInfoLs.Count == 0)
             {
-                File.WriteAllText(_settingsFolderPath + _settingsFileName + "." + FilesType.Settings.ToString() + "." + ConfigFilesExtension, newJsonStr);
+                File.WriteAllText(configFilesSettings.settingsFileFullFilePath, newJsonStr);
             }
             else
             {

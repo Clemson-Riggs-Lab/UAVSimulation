@@ -11,6 +11,7 @@ using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using static IOHandlers.ConfigFilesHandler;
 
 namespace UI.MainMenu
 {
@@ -95,7 +96,7 @@ namespace UI.MainMenu
 
         private void OnClickStartHostBtn()
         {
-            if (configFilesSettingsSO.inputFileFullFilePath != "" && configFilesSettingsSO.settingsFileFullFilePath != "" && _ipAddIF.text != "" && _portIF.text != "")
+            if (_configFilesHandler.GetFilesInfoFromWorkDir(FilesType.Input).Count != 0 && _configFilesHandler.GetFilesInfoFromWorkDir(FilesType.Settings).Count != 0 && _ipAddIF.text != "" && _portIF.text != "")
             {
                 if (AppNetPortal.Instance.StartHost(_ipAddIF.text, Int32.Parse(_portIF.text)) == 1)
                 {
@@ -186,6 +187,7 @@ namespace UI.MainMenu
 
         private void OnBothFilesCompletelySentNetworkEventHandler(object sender, EventArgs e)
         {
+            writeMessageToConsoleChannel.RaiseEvent("", new() { color = "green", doAnimate = true, text = "\n Input and Settings Files Downloaded From Host" });
             HandleBtns(PanelState.Ready);
         }        
 

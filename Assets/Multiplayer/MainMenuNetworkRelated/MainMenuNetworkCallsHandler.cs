@@ -117,6 +117,9 @@ namespace Multiplayer
                 Debug.Log(_inputJsonString);
                 NewInputFileReceived_NetworkEventHandler?.Invoke(this, _inputJsonString);
             }
+
+            if (IsHost)
+                BothFilesCompletelySent_NetworkEventHandler?.Invoke(this, new EventArgs());
         }
         #endregion
 
@@ -176,9 +179,6 @@ namespace Multiplayer
                 Debug.Log(_settingsJsonString);
                 NewSettingsFileReceived_NetworkEventHandler?.Invoke(this, _settingsJsonString);
             }
-
-            if (IsHost)
-                BothFilesCompletelySent_NetworkEventHandler?.Invoke(this, new EventArgs());
         }
         #endregion
 

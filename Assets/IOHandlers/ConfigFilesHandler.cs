@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using HelperScripts;
 using IOHandlers.Settings.ScriptableObjects;
+using Multiplayer;
 using ScriptableObjects.EventChannels;
 using UI.Console.Channels.ScriptableObjects;
 using Unity.VisualScripting;
@@ -53,7 +54,12 @@ namespace IOHandlers
             if (!Directory.Exists(_inputFolderPath)) Directory.CreateDirectory(_inputFolderPath);
             if (!Directory.Exists(configsFolder + settingsFolderName+"/")) Directory.CreateDirectory(configsFolder + settingsFolderName+"/");
         }
-        
+
+        private void Start()
+        {
+            MainMenuNetworkCallsHandler.Instance.NewInputFileReceived_NetworkEventHandler += OnNewInputFieldReceviedNetworkEventHandler;
+        }
+
         public List<FileInfo> GetFilesInfoFromWorkDir(FilesType filesType)
         {
             DirectoryInfo directoryInfo = null;
@@ -98,6 +104,17 @@ namespace IOHandlers
                     break;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(fileType), fileType, null);
+            }
+        }
+
+        private void OnNewInputFieldReceviedNetworkEventHandler(object sender, string newJsonStr)
+        {
+            List<FileInfo> fileInfoLs = GetFilesInfoFromWorkDir(ConfigFilesHandler.FilesType.Input);
+            string oldJsonStr = File.ReadAllText(fileInfoLs[0].FullName);
+
+            if (oldJsonStr.Equals(newJsonStr) == false)
+            {
+                File.WriteAllText(fileInfoLs[0].FullName, newJsonStr);
             }
         }
     }

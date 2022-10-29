@@ -1,10 +1,14 @@
+using IOHandlers;
 using IOHandlers.Settings.ScriptableObjects;
 using Modules.Prompts;
 using Multiplayer;
 using System;
+using System.Collections.Generic;
+using System.IO;
 using TMPro;
 using UI.Console.Channels.ScriptableObjects;
 using Unity.Netcode;
+using UnityEditor.Build.Content;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -30,9 +34,14 @@ namespace UI.MainMenu
         [SerializeField] ConsoleMessageEventChannelSO writeMessageToConsoleChannel;
         [SerializeField] ConfigFilesSettingsSO configFilesSettingsSO;
 
+        [Space(10)]
+        [SerializeField] ConfigFilesHandler _configFilesHandler;
+
         private void Start()
         {
             _multiplayerSettingsGo.SetActive(false);
+
+            MainMenuNetworkCallsHandler.Instance.InputFileCompletelySent_NetworkEventHandler += OnInputFileCompletelySentNetworkEventHandler;
         }
 
         private void OnEnable()
@@ -145,7 +154,12 @@ namespace UI.MainMenu
             if (AppNetPortal.Instance.IsServer)
             {
                 if (AppNetPortal.Instance.ConnectedClientCount == 2)
-                    HandleBtns(PanelState.Ready);
+                {
+                    List<FileInfo> fileInfoLs = _configFilesHandler.GetFilesInfoFromWorkDir(ConfigFilesHandler.FilesType.Input);
+                    string jsonStr = File.ReadAllText(fileInfoLs[0].FullName);
+
+                    MainMenuNetworkCallsHandler.Instance.SendInputFile(jsonStr);
+                }
             }
         }
 
@@ -160,6 +174,11 @@ namespace UI.MainMenu
             }
             else
                 HandleBtns(PanelState.Stopped);
+        }
+
+        private void OnInputFileCompletelySentNetworkEventHandler(object sender, EventArgs e)
+        {
+            HandleBtns(PanelState.Ready);
         }
 
         private void HandleBtns(PanelState panelState)

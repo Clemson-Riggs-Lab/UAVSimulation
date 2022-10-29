@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using IOHandlers;
 using ScriptableObjects.EventChannels;
 using SyedAli.Main;
 using UI.Console.Channels.ScriptableObjects;
@@ -20,9 +21,12 @@ namespace Multiplayer
     {
         public event EventHandler<string> NewInputFileReceived_NetworkEventHandler;
         public event EventHandler<string> NewSettingsFileReceived_NetworkEventHandler;
-        public event EventHandler BothFilesCompletelySent_NetworkEventHandler;
+        public event EventHandler InputFileCompletelySent_NetworkEventHandler;
+        public event EventHandler SettingFileCompletelySent_NetworkEventHandler;
 
         [SerializeField] NetworkTransmitter _networkTransmitter;
+
+        [SerializeField] ConsoleMessageEventChannelSO writeMessageToConsoleChannel;
 
         private string _inputJsonString = "";
         private string _settingsJsonString = "";
@@ -119,7 +123,7 @@ namespace Multiplayer
             }
 
             if (IsHost)
-                BothFilesCompletelySent_NetworkEventHandler?.Invoke(this, new EventArgs());
+                InputFileCompletelySent_NetworkEventHandler?.Invoke(this, new EventArgs());
         }
         #endregion
 
@@ -178,7 +182,12 @@ namespace Multiplayer
                 Debug.Log("Settings File Full Received");
                 Debug.Log(_settingsJsonString);
                 NewSettingsFileReceived_NetworkEventHandler?.Invoke(this, _settingsJsonString);
+
+                writeMessageToConsoleChannel.RaiseEvent("", new() { color = "green", doAnimate = true, text = "\n Input and Settings Files Downloaded From Host" });
             }
+
+            if (IsHost)
+                SettingFileCompletelySent_NetworkEventHandler?.Invoke(this, new EventArgs());
         }
         #endregion
 

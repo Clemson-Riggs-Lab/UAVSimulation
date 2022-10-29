@@ -41,7 +41,8 @@ namespace UI.MainMenu
         {
             _multiplayerSettingsGo.SetActive(false);
 
-            MainMenuNetworkCallsHandler.Instance.BothFilesCompletelySent_NetworkEventHandler += OnBothFilesCompletelySentNetworkEventHandler;
+            MainMenuNetworkCallsHandler.Instance.InputFileCompletelySent_NetworkEventHandler += OnInputFileCompletelySentNetworkEventHandler;
+            MainMenuNetworkCallsHandler.Instance.SettingFileCompletelySent_NetworkEventHandler += OnSettingFileCompletelySentNetworkEventHandler;
         }
 
         private void OnEnable()
@@ -163,11 +164,6 @@ namespace UI.MainMenu
                     string inputJsonStr = File.ReadAllText(inputFileInfoLs[0].FullName);
 
                     MainMenuNetworkCallsHandler.Instance.SendInputFile(inputJsonStr);
-
-                    List<FileInfo> settingsFileInfoLs = _configFilesHandler.GetFilesInfoFromWorkDir(ConfigFilesHandler.FilesType.Settings);
-                    string settingsJsonStr = File.ReadAllText(settingsFileInfoLs[0].FullName);
-
-                    MainMenuNetworkCallsHandler.Instance.SendSettingsFile(settingsJsonStr);
                 }
             }
         }
@@ -185,9 +181,22 @@ namespace UI.MainMenu
                 HandleBtns(PanelState.Stopped);
         }
 
-        private void OnBothFilesCompletelySentNetworkEventHandler(object sender, EventArgs e)
+        private void OnInputFileCompletelySentNetworkEventHandler(object sender, EventArgs e)
         {
-            writeMessageToConsoleChannel.RaiseEvent("", new() { color = "green", doAnimate = true, text = "\n Input and Settings Files Downloaded From Host" });
+            if (AppNetPortal.Instance.IsServer)
+            {
+                if (AppNetPortal.Instance.ConnectedClientCount == 2)
+                {
+                    List<FileInfo> settingsFileInfoLs = _configFilesHandler.GetFilesInfoFromWorkDir(ConfigFilesHandler.FilesType.Settings);
+                    string settingsJsonStr = File.ReadAllText(settingsFileInfoLs[0].FullName);
+
+                    MainMenuNetworkCallsHandler.Instance.SendSettingsFile(settingsJsonStr);
+                }
+            }
+        }
+
+        private void OnSettingFileCompletelySentNetworkEventHandler(object sender, EventArgs e)
+        {
             HandleBtns(PanelState.Ready);
         }        
 

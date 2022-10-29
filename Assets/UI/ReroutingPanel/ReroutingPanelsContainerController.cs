@@ -4,6 +4,7 @@ using HelperScripts;
 using Modules.Navigation;
 using Modules.Navigation.Channels.ScriptableObjects;
 using Modules.Navigation.Submodules.Rerouting;
+using Multiplayer;
 using UAVs;
 using UAVs.Channels.ScriptableObjects;
 using UI.ReroutingPanel.Settings.ScriptableObjects;
@@ -106,21 +107,23 @@ namespace UI.ReroutingPanel
 			_uavConditionChangedEventChannel = GameManager.Instance.channelsDatabase.uavChannels.uavConditionChangedEventChannel;
 			_reroutingOptionsRequestedChannel = GameManager.Instance.channelsDatabase.navigationChannels.reroutingOptionsRequestedChannel;
 			_uavArrivedAtDestinationEventChannel = GameManager.Instance.channelsDatabase.navigationChannels.uavArrivedAtDestinationEventChannel;
-
 		}
-		
 		
 		public void AddPanel (Uav uav)
 		{
 			if (_uavReroutingOptionsPanelControllerDictionary.ContainsKey(uav))
-			{
-				HighlightPanel(uav);
+            {
+                HighlightPanel(uav);
 				return; // panel already exists
 			}
 			if(_uavReroutingOptionsPanelControllerDictionary.Count >= _reroutingPanelSettings.maximumNumberOfReroutingOptionsPanels) //if we have more panels than the limit, we need to remove one before adding the new one.
-			{ 
-				var panelToRemove= _uavReroutingOptionsPanelControllerDictionary.First();
-				RemovePanel(panelToRemove.Key);
+			{
+                var panelToRemove = _uavReroutingOptionsPanelControllerDictionary.First();
+
+                if (AppNetPortal.Instance.IsMultiplayerMode())
+                    GameplayNetworkCallsHandler.Instance.ReroutePanelCloseServerRpc(AppNetPortal.Instance.LocalClientId, panelToRemove.Key.id);
+
+                RemovePanel(panelToRemove.Key);
 
 			}
 			var panelController = Instantiate(_panelPrefab,transform).GetComponent<ReroutingOptionsPanelController>();
@@ -138,7 +141,11 @@ namespace UI.ReroutingPanel
 			}
 			panelController.transform.localScale = Vector3.one;
 			_uavReroutingOptionsPanelControllerDictionary[uav]=panelController;
-			HighlightPanel(uav);
+
+            if (AppNetPortal.Instance.IsMultiplayerMode())
+                GameplayNetworkCallsHandler.Instance.ReroutePanelOpenServerRpc(AppNetPortal.Instance.LocalClientId, uav.id);
+
+            HighlightPanel(uav);
 		}
 		
 		public void RemovePanel(Uav uav)

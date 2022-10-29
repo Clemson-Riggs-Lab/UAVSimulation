@@ -19,11 +19,13 @@ namespace Multiplayer
     public class MainMenuNetworkCallsHandler : NetworkBehaviour
     {
         public event EventHandler<string> NewInputFileReceived_NetworkEventHandler;
-        public event EventHandler InputFileCompletelySent_NetworkEventHandler;
+        public event EventHandler<string> NewSettingsFileReceived_NetworkEventHandler;
+        public event EventHandler BothFilesCompletelySent_NetworkEventHandler;
 
         [SerializeField] NetworkTransmitter _networkTransmitter;
 
         private string _inputJsonString = "";
+        private string _settingsJsonString = "";
 
         public static MainMenuNetworkCallsHandler Instance { get; private set; }
 
@@ -59,12 +61,13 @@ namespace Multiplayer
                 NetworkManager.SceneManager.LoadScene("SimulationScene", LoadSceneMode.Single);
         }
 
+        #region Input File Related
         public void SendInputFile(string jsonStr)
         {
-            StartCoroutine(SendDataInChunks(jsonStr));
+            StartCoroutine(SendInputDataInChunks(jsonStr));
         }
 
-        private IEnumerator SendDataInChunks(string jsonStr)
+        private IEnumerator SendInputDataInChunks(string jsonStr)
         {
             byte[] bytes = Encoding.UTF8.GetBytes(jsonStr);
 
@@ -89,7 +92,7 @@ namespace Multiplayer
                     chunk[j] = bytes[i++];
                     j++;
                 }
-                _networkTransmitter.SendBytesToClientsOnServerRpc(1, chunk);
+                _networkTransmitter.SendBytesToClientsOnServerRpc(1, chunk); // 1 is for Input File
 
                 yield return new WaitForSeconds(0.1f);
             }
@@ -97,20 +100,6 @@ namespace Multiplayer
             InputFileCompletelySentOnServerRpc();
 
             yield return null;
-        }
-
-        private void OnDataChunkCompletelySent(int arg0, byte[] arg1)
-        {
-            Debug.Log("Data Completely Sent");
-        }
-
-        private void OnDataChunkCompletelyReceived(int arg0, byte[] arg1)
-        {
-            if (IsHost == false)
-            {
-                string jsonStr = Encoding.UTF8.GetString(arg1);
-                _inputJsonString = _inputJsonString + jsonStr;
-            }
         }
 
         [ServerRpc(RequireOwnership = false)]
@@ -122,14 +111,97 @@ namespace Multiplayer
         [ClientRpc]
         private void InputFileCompletelySentOnClientRpc()
         {
-            if (IsHost)
-                InputFileCompletelySent_NetworkEventHandler?.Invoke(this, new EventArgs());
-
             if (IsHost == false)
             {
                 Debug.Log("Input File Full Received");
                 Debug.Log(_inputJsonString);
                 NewInputFileReceived_NetworkEventHandler?.Invoke(this, _inputJsonString);
+            }
+        }
+        #endregion
+
+        #region Settings File Related
+        public void SendSettingsFile(string jsonStr)
+        {
+            StartCoroutine(SendSettingsDataInChunks(jsonStr));
+        }
+
+        private IEnumerator SendSettingsDataInChunks(string jsonStr)
+        {
+            byte[] bytes = Encoding.UTF8.GetBytes(jsonStr);
+
+            int leftOverLen = bytes.Length;
+            int chunkSize = 10000;
+
+            for (int i = 0; i < bytes.Length;)
+            {
+                int len;
+                if (leftOverLen > chunkSize)
+                {
+                    len = chunkSize;
+                    leftOverLen = leftOverLen - chunkSize;
+                }
+                else
+                    len = leftOverLen;
+
+                int j = 0;
+                byte[] chunk = new byte[len];
+                while (j < chunk.Length && i < bytes.Length)
+                {
+                    chunk[j] = bytes[i++];
+                    j++;
+                }
+                _networkTransmitter.SendBytesToClientsOnServerRpc(2, chunk); // 2 -> TranmissionId for Settings File
+
+                yield return new WaitForSeconds(0.1f);
+            }
+
+            SettingsFileCompletelySentOnServerRpc();
+
+            yield return null;
+        }
+
+        [ServerRpc(RequireOwnership = false)]
+        public void SettingsFileCompletelySentOnServerRpc()
+        {
+            SettingsFileCompletelySentOnClientRpc();
+        }
+
+        [ClientRpc]
+        private void SettingsFileCompletelySentOnClientRpc()
+        {
+            if (IsHost == false)
+            {
+                Debug.Log("Settings File Full Received");
+                Debug.Log(_settingsJsonString);
+                NewSettingsFileReceived_NetworkEventHandler?.Invoke(this, _settingsJsonString);
+            }
+
+            if (IsHost)
+                BothFilesCompletelySent_NetworkEventHandler?.Invoke(this, new EventArgs());
+        }
+        #endregion
+
+        private void OnDataChunkCompletelySent(int transmissionId, byte[] data)
+        {
+            Debug.Log("Data Completely Sent For Tranmission Id: " + transmissionId);
+        }
+
+        private void OnDataChunkCompletelyReceived(int transmissionId, byte[] data)
+        {
+            if (IsHost == false)
+            {
+                if (transmissionId == 1) // 1 -> Transmission Id for Input File
+                {
+                    string jsonStr = Encoding.UTF8.GetString(data);
+                    _inputJsonString = _inputJsonString + jsonStr;
+                }
+
+                if (transmissionId == 2) // 2 -> Transmission Id for Settings File
+                {
+                    string jsonStr = Encoding.UTF8.GetString(data);
+                    _settingsJsonString = _settingsJsonString + jsonStr;
+                }
             }
         }
     }

@@ -8,7 +8,6 @@ using System.IO;
 using TMPro;
 using UI.Console.Channels.ScriptableObjects;
 using Unity.Netcode;
-using UnityEditor.Build.Content;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -41,7 +40,7 @@ namespace UI.MainMenu
         {
             _multiplayerSettingsGo.SetActive(false);
 
-            MainMenuNetworkCallsHandler.Instance.InputFileCompletelySent_NetworkEventHandler += OnInputFileCompletelySentNetworkEventHandler;
+            MainMenuNetworkCallsHandler.Instance.BothFilesCompletelySent_NetworkEventHandler += OnBothFilesCompletelySentNetworkEventHandler;
         }
 
         private void OnEnable()
@@ -75,21 +74,17 @@ namespace UI.MainMenu
                 if (configFilesSettingsSO.inputFileFullFilePath == "")
                 {
                     writeMessageToConsoleChannel.RaiseEvent("", new() { color = "red", doAnimate = true, text = "\n Please select an input file first" });
-                    return;
                 }
-                else if (configFilesSettingsSO.settingsFileFullFilePath == "")
+                if (configFilesSettingsSO.settingsFileFullFilePath == "")
                 {
                     writeMessageToConsoleChannel.RaiseEvent("", new() { color = "red", doAnimate = true, text = "\n Please select a settings file first" });
-                    return;
                 }
-                else
-                {
-                    _multiplayerSettingsGo.SetActive(true);
-                    _ipAddIF.text = AppNetPortal.Instance.GetLocalIPAddress();
-                    _portIF.text = AppNetPortal.Instance.GetDefaultPortNo().ToString();
 
-                    HandleBtns(PanelState.FirstTimeShow);
-                }
+                _multiplayerSettingsGo.SetActive(true);
+                _ipAddIF.text = AppNetPortal.Instance.GetLocalIPAddress();
+                _portIF.text = AppNetPortal.Instance.GetDefaultPortNo().ToString();
+
+                HandleBtns(PanelState.FirstTimeShow);
             }
             else
             {
@@ -100,12 +95,20 @@ namespace UI.MainMenu
 
         private void OnClickStartHostBtn()
         {
-            if (_ipAddIF.text != "" && _portIF.text != "")
+            if (configFilesSettingsSO.inputFileFullFilePath != "" && configFilesSettingsSO.settingsFileFullFilePath != "" && _ipAddIF.text != "" && _portIF.text != "")
             {
                 if (AppNetPortal.Instance.StartHost(_ipAddIF.text, Int32.Parse(_portIF.text)) == 1)
                 {
                     HandleBtns(PanelState.Waiting);
                 }
+            }
+            else if (configFilesSettingsSO.inputFileFullFilePath == "")
+            {
+                writeMessageToConsoleChannel.RaiseEvent("", new() { color = "red", doAnimate = true, text = "\n Please select an input file first" });
+            }
+            else if (configFilesSettingsSO.settingsFileFullFilePath == "")
+            {
+                writeMessageToConsoleChannel.RaiseEvent("", new() { color = "red", doAnimate = true, text = "\n Please select a settings file first" });
             }
             else if (_ipAddIF.text == "")
             {
@@ -155,10 +158,15 @@ namespace UI.MainMenu
             {
                 if (AppNetPortal.Instance.ConnectedClientCount == 2)
                 {
-                    List<FileInfo> fileInfoLs = _configFilesHandler.GetFilesInfoFromWorkDir(ConfigFilesHandler.FilesType.Input);
-                    string jsonStr = File.ReadAllText(fileInfoLs[0].FullName);
+                    List<FileInfo> inputFileInfoLs = _configFilesHandler.GetFilesInfoFromWorkDir(ConfigFilesHandler.FilesType.Input);
+                    string inputJsonStr = File.ReadAllText(inputFileInfoLs[0].FullName);
 
-                    MainMenuNetworkCallsHandler.Instance.SendInputFile(jsonStr);
+                    MainMenuNetworkCallsHandler.Instance.SendInputFile(inputJsonStr);
+
+                    List<FileInfo> settingsFileInfoLs = _configFilesHandler.GetFilesInfoFromWorkDir(ConfigFilesHandler.FilesType.Settings);
+                    string settingsJsonStr = File.ReadAllText(settingsFileInfoLs[0].FullName);
+
+                    MainMenuNetworkCallsHandler.Instance.SendSettingsFile(settingsJsonStr);
                 }
             }
         }
@@ -176,10 +184,10 @@ namespace UI.MainMenu
                 HandleBtns(PanelState.Stopped);
         }
 
-        private void OnInputFileCompletelySentNetworkEventHandler(object sender, EventArgs e)
+        private void OnBothFilesCompletelySentNetworkEventHandler(object sender, EventArgs e)
         {
             HandleBtns(PanelState.Ready);
-        }
+        }        
 
         private void HandleBtns(PanelState panelState)
         {

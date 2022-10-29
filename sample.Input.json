@@ -1,15 +1,13 @@
 {
-  /* starting with the waypoints. each waypoint should have a unique id so that the uav can refer to*/
-
   "WayPointsRecords": [
     {
       "Id": 0,
-      "Position": { // it also has an x, y, and z coordinates that correspond to the position of the waypoint in  the terrain.
+      "Position": {
         "X": 200.0,
         "Y": 100.0,
         "Z": 800.0
       }
-    }, // to create a new waypoint you can copy and paste a segment (e.g., b/w lines 13 and 20) and reuse them as many times as you want instead of rewriting everything from scratch. 
+    },
     {
       "Id": 1,
       "Position": {
@@ -17,7 +15,7 @@
         "Y": 100.0,
         "Z": 800.0
       }
-    },//p.s. remember to keep the comma at the end
+    },
     {
       "Id": 2,
       "Position": {
@@ -131,16 +129,13 @@
       }
     }
   ],
-  ///////////////////////////////////////////////////////////////////////////////////////
-  ////////////////////////Start of UAV records///////////////////////////////////////////
-  //////////////////////////////////////////////////////////////////////////////////////////
   "UavsRecords": [
     {
-      "Id": 0,// this is the id of the uav. it should be unique
-      "EnabledOnStart": false, // possible values are true and false. if true, the camera feed of the uav will be displayed on the screen. if false, the camera feed will not be displayed on the screen. (the behavior of the cameras can be configured in the settings file)
-      "StartingWayPointId": 4 // this is the id of the waypoint that the uav will start from.
+      "Id": 0,
+      "EnabledOnStart": false,
+      "StartingWayPointId": 4
     },
-    { //same as above and everything below, you can always copy paste and then modify instead of rewriting everything from scratch.
+    {
       "Id": 1,
       "EnabledOnStart": false,
       "StartingWayPointId": 7
@@ -211,30 +206,26 @@
       "StartingWayPointId": 14
     },
     {
-      "Id": 15, //we have added a total of 16 uavs. you can add as many as you want. you can also add as many waypoints as you want.
+      "Id": 15,
       "EnabledOnStart": true,
       "StartingWayPointId": 13
     }
   ],
-
-  ////////////////////////////Start of UAVs' Path records///////////////////////////////////////////
-  //this is the biggest part of the input file, but very simple. you specify the id of the uav, and then add as many paths as you want. 
-  // notice that the path records are nested within the uav path record. so you have below 16 uav path records, and each record has a list of 90 paths
   "UavPathsRecords": [
     {
       "UavId": 0,
       "PathRecords": [
         {
-          "DestinationWayPointID": 0, //this is the id of the destination waypoint. so for this example, the uav would be moving from waypoint 4 (see above in uav records) to waypoint 0
-          "UavVisuallyEnabled": false, //on the first path, the uav will not be visible.
+          "DestinationWayPointID": 0,
+          "UavVisuallyEnabled": false,
           "TargetIsPresent": false
         },
         {
-          "DestinationWayPointID": 1,//then will move from waypoint 0 to waypoint 1
+          "DestinationWayPointID": 1,
           "UavVisuallyEnabled": true,
-          "TargetIsPresent": false // no target will be present at waypoint 1 when the uav arrives there
+          "TargetIsPresent": false
         },
-        { //and so on
+        {
           "DestinationWayPointID": 2,
           "UavVisuallyEnabled": false,
           "TargetIsPresent": false
@@ -243,7 +234,7 @@
           "DestinationWayPointID": 10,
           "UavVisuallyEnabled": true,
           "TargetIsPresent": true
-        },/// since this will be repeating for too many lines, you can skip to line 677 where the record for the paths of the second uav starts
+        },
         {
           "DestinationWayPointID": 6,
           "UavVisuallyEnabled": false,
@@ -676,16 +667,14 @@
         }
       ]
     },
-    ///////////////////////////////////////////////////////////////////////
-    //////////////// here the records for the paths of the second uav begin
-    {///everything similar to above, and it is all a bunch of copy paste 
-      "UavId": 1, //notice that here as above, we start indexing from zero and not 1. this is the second uav, but it is indexed as 1. you can actually change it to whatever you want, but it is better to keep it consistent
+    {
+      "UavId": 1,
       "PathRecords": [
         {
           "DestinationWayPointID": 3,
           "UavVisuallyEnabled": false,
           "TargetIsPresent": false
-        },///////////// you can skip to line 7506.
+        },
         {
           "DestinationWayPointID": 2,
           "UavVisuallyEnabled": false,
@@ -7504,13 +7493,6 @@
       ]
     }
   ],
-  //////////// as you have obviously noticed, the file is quite lengthy, but we gain in clarity, readability, maintainability and ability to add as many features as we want.
-  ///Also since you would be just copy pasting, the added effort is not that much in comparision to a csv file for example.
-
-
-
-  ///////////////////////////////////////// Here are the fuel leaks records
-  //////////feel free to try to understand it on your own first to test if you have understood the previous parts well
   "FuelLeaksRecord": [
     {
       "UavID": 0,
@@ -7532,8 +7514,8 @@
       ]
     },
     {
-      "UavID": 4, //id of the uav
-      "FuelLeakTimes": [ // the times at which the fuel leaks occured, you can add as many as you want as long as they are comma separated between the two brackets
+      "UavID": 4,
+      "FuelLeakTimes": [
         693.0
       ]
     },
@@ -7576,24 +7558,17 @@
       ]
     }
   ],
-
-  ///////////////////////////////////////// Here are the prompts records. 
-  /// these are a bit more complex, but you can now appreciate the benefits of using a json file
-  /// we are able to add as many features as we want.
-
-  /// for example, we can add as many or as little number of options (buttons) for the user to choose from. 
-  //we also specify which ones are correct and which are wrong, and if we want to accept multiple correct answers or only one ( allow them to click multiple buttons or only one then disabling all buttons.)
   "Prompts": [
     {
-      "timeToPresent": 0.0, // the time at which the prompt will be presented
-      "durationToAcceptResponses": 0.0, // the duration during which the user can respond to the prompt, after this duration the buttons will disappear.
+      "timeToPresent": 0.0,
+      "durationToAcceptResponses": 0.0,
       "consoleMessage": {
-        "text": "beginning Mission", //what is the text to be displayed in the console
-        "color": "Yellow", //the color of the text, you can type in almost any named color and the program will automatically understand it and convert it to the corresponding color code in the system
-        "doAnimate": true// should the text be animated in a typewriter fashion or not
+        "text": "beginning Mission",
+        "color": "Yellow",
+        "doAnimate": true
       },
-      "acceptMultipleResponses": false, //are we accepting multiple responses or only one
-      "responseOptions": null// the options the user can choose from, we will see this later. for this prompt, null means that we are not presenting any options to the user, so no buttons will be displayed.
+      "acceptMultipleResponses": false,
+      "responseOptions": null
     },
     {
       "timeToPresent": 15.0,
@@ -7604,8 +7579,7 @@
         "doAnimate": true
       },
       "acceptMultipleResponses": true,
-      "responseOptions": [ //here you can see that we added below 16 options (buttons for the user to choose from). each button has its own text, color of text, and color of the button.
-      //these features are helpful if we for example want an "AI" to provide hints to the participant on which option is the correct one
+      "responseOptions": [
         {
           "buttonText": "#0",
           "textColor": "black",
@@ -7704,7 +7678,7 @@
         }
       ]
     },
-    { // here is the end of the last prompt and the beginning of the next one
+    {
       "timeToPresent": 22.0,
       "durationToAcceptResponses": 10.0,
       "consoleMessage": {
@@ -7727,9 +7701,7 @@
           "isCorrectResponse": false
         }
       ]
-    },  /////////feel free to skip till line 8116. 
-    /// also note that since we are providing the time at which the prompt should be presented, we do not have to list the prompts in order of time., the program automatically orders them and presents them in the appropriate order.
-    // so you can always add new prompts to the begining or the end without having to worry about anything. However I think it would be a better practice to not do this in order to have your input file maintainable for future iterations.
+    },
     {
       "timeToPresent": 129.0,
       "durationToAcceptResponses": 0.0,
@@ -8115,24 +8087,22 @@
       ]
     }
   ],
-  ////////////Start of the no fly zone records
   "NFZRecords": [
     {
-      "StartCoordinates": { //each no fly zone is a rectangle, with a start and end coordinate ( borders to the left and right, front back, and up and down)
+      "StartCoordinates": {
         "X": 0.0,
         "Y": 0.0,
         "Z": 350.0
       },
       "EndCoordinates": {
         "X": 100.0,
-        "Y": 300.0, // I would recommend trying out multiple values and checking how they are displayed in the simulator. but note that Y, which is up and down, should be a high value to collide with the UAVs, otherwise no collision would occure
+        "Y": 300.0,
         "Z": 750.0
       },
-      "TextOnNFZAfterCountdown": "No Fly Zone, Restricted Area, Reroute any UAVs", //the text that should be displayed on the no fly zone after the countdown (the text presented during the countdown is adjustable in the settings folder)
-      "NFZStartTime": 10.0, //when the NFZ should start
-      "NFZEndTime": 20.0, // when it should end. a zer value means that the NFZ will be active for the entire mission time
-      "NFZCountdownTimer": 10.0 //how long the countdown should be before the NFZ is active. during the countdown, the NFZ does not collide with the UAVs. 
-      //notice that in the example above, the NFZ will never collide with the UAVs, since the NFZStartTime is 10.0, and end time is 20.0, and the countdown is 10.0, so it will never be active, but will be visible
+      "TextOnNFZAfterCountdown": "No Fly Zone, Restricted Area, Reroute any UAVs",
+      "NFZStartTime": 10.0,
+      "NFZEndTime": 20.0,
+      "NFZCountdownTimer": 10.0
     },
     {
       "StartCoordinates": {
@@ -8167,6 +8137,6 @@
       "NFZCountdownTimer": 50.0
     }
   ],
-  "name": "InputRecords",// you should not change this
-  "hideFlags": 0// nor this one
+  "name": "FileRecords",
+  "hideFlags": 0
 }

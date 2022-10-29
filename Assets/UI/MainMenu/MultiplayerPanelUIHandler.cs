@@ -61,23 +61,31 @@ namespace UI.MainMenu
 
         private void OnClickMultiplayerBtn()
         {
-            if (configFilesSettingsSO.inputFileFullFilePath == "")
+            if (_multiplayerSettingsGo.activeSelf == false)
             {
-                writeMessageToConsoleChannel.RaiseEvent("", new() { color = "red", doAnimate = true, text = "\n Please select an input file first" });
-                return;
-            }
-            else if (configFilesSettingsSO.settingsFileFullFilePath == "")
-            {
-                writeMessageToConsoleChannel.RaiseEvent("", new() { color = "red", doAnimate = true, text = "\n Please select a settings file first" });
-                return;
+                if (configFilesSettingsSO.inputFileFullFilePath == "")
+                {
+                    writeMessageToConsoleChannel.RaiseEvent("", new() { color = "red", doAnimate = true, text = "\n Please select an input file first" });
+                    return;
+                }
+                else if (configFilesSettingsSO.settingsFileFullFilePath == "")
+                {
+                    writeMessageToConsoleChannel.RaiseEvent("", new() { color = "red", doAnimate = true, text = "\n Please select a settings file first" });
+                    return;
+                }
+                else
+                {
+                    _multiplayerSettingsGo.SetActive(true);
+                    _ipAddIF.text = AppNetPortal.Instance.GetLocalIPAddress();
+                    _portIF.text = AppNetPortal.Instance.GetDefaultPortNo().ToString();
+
+                    HandleBtns(PanelState.FirstTimeShow);
+                }
             }
             else
             {
-                _multiplayerSettingsGo.SetActive(true);
-                _ipAddIF.text = AppNetPortal.Instance.GetLocalIPAddress();
-                _portIF.text = AppNetPortal.Instance.GetDefaultPortNo().ToString();
-
-                HandleBtns(PanelState.FirstTimeShow);
+                OnClickStopBtn();
+                _multiplayerSettingsGo.SetActive(false);
             }
         }
 

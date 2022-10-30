@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using HelperScripts;
 using Modules.Prompts.Channels.ScriptableObjects;
 using Modules.Prompts.Settings.ScriptableObjects;
@@ -73,7 +74,7 @@ namespace Modules.Prompts
 
 			_responseOptions = responseOptions;
 
-			_durationToAcceptResponses = prompt.durationToAcceptResponses;
+            _durationToAcceptResponses = prompt.durationToAcceptResponses;
 			if (_durationToAcceptResponses > 0) //not set to default (i.e., there is a limit to how long the player can accept responses)
 			{
 				_removeButtonsTimerCoroutine = RemoveButtonsTimer(_durationToAcceptResponses);
@@ -129,7 +130,10 @@ namespace Modules.Prompts
 				responseReceivedChannel.RaiseEvent(response);
 
 			var button = _responseOptionsButtonDictionary.GetValueOrDefault(response);
-			button.GetComponent<Button>().interactable = false;
+			if (button != null && button.GetComponent<Button>() != null)
+				button.GetComponent<Button>().interactable = false;
+			else
+				return;
 
 			if (_promptSettings.giveFeedbackAboutResponsesOnButtons)
 			{
@@ -182,7 +186,7 @@ namespace Modules.Prompts
 			ClearResponsesAndButtons();
 		}
 
-        private void OnChatResponseClickedNetworkEventHandler(object sender, GameplayNetworkCallsData.NetworkString buttonText)
+        private async void OnChatResponseClickedNetworkEventHandler(object sender, GameplayNetworkCallsData.NetworkString buttonText)
         {
 			ResponseOption responseOption = _responseOptions.Find(x => x.buttonText.Equals(buttonText));
 

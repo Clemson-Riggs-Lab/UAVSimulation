@@ -189,7 +189,6 @@ public class GameManager : MonoBehaviour
 
     }
 
-
     private void OnSimulationEndEvent()
     {
         blockingPanelController.ClosingView();

@@ -31,6 +31,8 @@ namespace Multiplayer
         private string _inputJsonString = "";
         private string _settingsJsonString = "";
 
+        private float _delayTime = 0.5f;
+
         public static MainMenuNetworkCallsHandler Instance { get; private set; }
 
         private void Awake()
@@ -98,7 +100,7 @@ namespace Multiplayer
                 }
                 _networkTransmitter.SendBytesToClientsOnServerRpc(1, chunk); // 1 is for Input File
 
-                yield return new WaitForSeconds(0.1f);
+                yield return new WaitForSeconds(_delayTime);
             }
 
             InputFileCompletelySentOnServerRpc();
@@ -160,7 +162,7 @@ namespace Multiplayer
                 }
                 _networkTransmitter.SendBytesToClientsOnServerRpc(2, chunk); // 2 -> TranmissionId for Settings File
 
-                yield return new WaitForSeconds(0.1f);
+                yield return new WaitForSeconds(_delayTime);
             }
 
             SettingsFileCompletelySentOnServerRpc();

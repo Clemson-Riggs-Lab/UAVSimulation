@@ -22,8 +22,6 @@ namespace UI
 		
 			//start a coroutine to animate the text every 0.5 seconds
 			StartCoroutine(AnimateText(LoadingText,duration));
-		
-		
 		}
 
 		private IEnumerator AnimateText(string loadingText, float simulationStartTime)

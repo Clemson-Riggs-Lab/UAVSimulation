@@ -146,7 +146,7 @@ namespace UAVs
         private void OnUavCreated(Uav uav)
         {
             uavs.Add(uav);
-            Debug.Log(uav.uavName + " Created",uav.gameObject);
+            //Debug.Log(uav.uavName + " Created",uav.gameObject);
         }
 
         private void GetReferencesFromGameManager()

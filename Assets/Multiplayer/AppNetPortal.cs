@@ -10,6 +10,7 @@ using Unity.Netcode;
 using Unity.Netcode.Transports.UNET;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using WayPoints.Channels.ScriptableObjects;
 
 namespace Multiplayer
@@ -38,6 +39,7 @@ namespace Multiplayer
     {
         public event EventHandler<ClientConnectedEventArgs> ClientConnected_EventHandler;
         public event EventHandler<ClientDisconnectedEventArgs> ClientDisconnected_EventHandler;
+        public event EventHandler StartSimulationNotification_EventHandler;
 
         [SerializeField] NetworkManager _networkManager;
 
@@ -60,6 +62,46 @@ namespace Multiplayer
             _networkManager.OnClientConnectedCallback += OnClientConnected;
             _networkManager.OnClientDisconnectCallback += OnClientDisconnected;
             _networkManager.OnTransportFailure += OnTransportFailure;
+        }
+
+
+        [ServerRpc(RequireOwnership = false)]
+        public void LoadSimulationServerRpc()
+        {
+            LoadSimulationClientRpc();
+        }
+
+        [ClientRpc]
+        private void LoadSimulationClientRpc()
+        {
+            if (IsServer)
+            {
+                NetworkManager.SceneManager.OnLoadEventCompleted += OnAllSceneLoadComplete;
+                NetworkManager.SceneManager.LoadScene("SimulationScene", LoadSceneMode.Single);
+            }
+        }
+
+        private void OnAllSceneLoadComplete(string sceneName, LoadSceneMode loadSceneMode, List<ulong> clientsCompleted, List<ulong> clientsTimedOut)
+        {
+            if (IsServer)
+            {
+                StartSimulationNotificationServerRpc();
+            }
+        }
+
+        [ServerRpc(RequireOwnership = false)]
+        public void StartSimulationNotificationServerRpc()
+        {
+            StartSimulationNotificationClientRpc();
+        }
+
+        [ClientRpc]
+        private void StartSimulationNotificationClientRpc()
+        {
+            if (IsClient)
+            {
+                StartSimulationNotification_EventHandler?.Invoke(this, new EventArgs());
+            }
         }
 
         public int StartHost(string ipAddress, int portNumber)

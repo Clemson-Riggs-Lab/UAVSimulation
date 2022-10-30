@@ -54,18 +54,6 @@ namespace Multiplayer
             }
         }
 
-        [ServerRpc(RequireOwnership = false)]
-        public void LoadSimulationServerRpc()
-        {
-            LoadSimulationClientRpc();
-        }
-
-        [ClientRpc]
-        private void LoadSimulationClientRpc()
-        {
-            if (IsServer)
-                NetworkManager.SceneManager.LoadScene("SimulationScene", LoadSceneMode.Single);
-        }
 
         #region Input File Related
         public void SendInputFile(string jsonStr)

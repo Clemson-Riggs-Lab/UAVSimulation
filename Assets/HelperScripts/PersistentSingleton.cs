@@ -1,8 +1,9 @@
-﻿using UnityEngine;
+﻿using Unity.Netcode;
+using UnityEngine;
 
 namespace SyedAli.Main
 {
-    public class PersistentSingleton<T> : MonoBehaviour where T : Component
+    public class PersistentSingleton<T> : NetworkBehaviour where T : Component
     {
         protected static T _instance;
         protected bool _enabled;

@@ -151,7 +151,7 @@ namespace UI.MainMenu
 
         private void OnClickStartSimulationBtn()
         {
-            MainMenuNetworkCallsHandler.Instance.LoadSimulationServerRpc();
+            AppNetPortal.Instance.LoadSimulationServerRpc();
         }
 
         private void OnClientConnected(object sender, ClientConnectedEventArgs e)

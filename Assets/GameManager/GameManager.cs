@@ -54,6 +54,8 @@ public class GameManager : MonoBehaviour
 
     private bool _pauseStatus = false;
 
+    private bool _allClientReady = false;
+
     public void ChangePauseStatus(bool val)
     {
         _pauseStatus = val;
@@ -139,8 +141,10 @@ public class GameManager : MonoBehaviour
 
         }
         else _forceGenerateFromRecords = true;
-        StartCoroutine(InitializeSimulation());
 
+        AppNetPortal.Instance.StartSimulationNotification_EventHandler += OnStartSimulationNotificationEventHandler;
+
+        StartCoroutine(InitializeSimulation());
     }
 
     private void SubscribeToChannels()
@@ -151,6 +155,12 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator InitializeSimulation()
     {
+        blockingPanelController.ShowView();
+
+        if (AppNetPortal.Instance.IsMultiplayerMode())
+        {
+            yield return new WaitUntil(() => _allClientReady);
+        }
 
         if (_forceGenerateFromRecords)
         {
@@ -187,6 +197,11 @@ public class GameManager : MonoBehaviour
         StartCoroutine(promptsManager.StartPromptsTimerCoroutine(simulationStartTime));
         StartCoroutine(fuelManager.StartFuelControllers(simulationStartTime));
 
+    }
+
+    private void OnStartSimulationNotificationEventHandler(object sender, EventArgs e)
+    {
+        _allClientReady = true;
     }
 
     private void OnSimulationEndEvent()

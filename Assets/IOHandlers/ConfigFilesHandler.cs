@@ -4,12 +4,14 @@ using System.IO;
 using System.Linq;
 using HelperScripts;
 using IOHandlers.Settings.ScriptableObjects;
+using Multiplayer;
 using ScriptableObjects.EventChannels;
 using UI.Console.Channels.ScriptableObjects;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
+using static IOHandlers.ConfigFilesHandler;
 
 namespace IOHandlers
 {
@@ -31,28 +33,36 @@ namespace IOHandlers
         
         private string _inputFolderPath;
         private string _settingsFolderPath;
-      
-        
+
+
+        private string _inputFileName = "sample";
+        private string _settingsFileName = "sample";
 
         public enum FilesType
         {
             Input,
-            Settings,
-            
+            Settings, 
         }
         
         public void OnEnable()
         {
-            var configsFolder = Application.dataPath + "/configFiles/"; 
-            _inputFolderPath = configsFolder + inputFolderName+"/";
-            _settingsFolderPath = configsFolder + settingsFolderName+ "/";
+            Debug.Log(Application.dataPath);
+            var configsFolder = Application.dataPath + "/configFiles/";
+            _inputFolderPath = configsFolder + inputFolderName + "/";
+            _settingsFolderPath = configsFolder + settingsFolderName + "/";
 
             // Create Directory if it doesnt Exist
             if (!Directory.Exists(configsFolder)) Directory.CreateDirectory(configsFolder);
             if (!Directory.Exists(_inputFolderPath)) Directory.CreateDirectory(_inputFolderPath);
-            if (!Directory.Exists(configsFolder + settingsFolderName+"/")) Directory.CreateDirectory(configsFolder + settingsFolderName+"/");
+            if (!Directory.Exists(configsFolder + settingsFolderName+"/")) Directory.CreateDirectory(configsFolder + settingsFolderName + "/");
         }
-        
+
+        private void Start()
+        {
+            MainMenuNetworkCallsHandler.Instance.NewInputFileReceived_NetworkEventHandler += OnNewInputFileReceviedNetworkEventHandler;
+            MainMenuNetworkCallsHandler.Instance.NewSettingsFileReceived_NetworkEventHandler += OnNewSettingsFileReceviedNetworkEventHandler;
+        }
+
         public List<FileInfo> GetFilesInfoFromWorkDir(FilesType filesType)
         {
             DirectoryInfo directoryInfo = null;
@@ -91,12 +101,53 @@ namespace IOHandlers
                 case FilesType.Input:
                     configFilesSettings.inputFileFullFilePath = fileInfo.FullName;
                     break;
-                
                 case FilesType.Settings:
                     configFilesSettings.settingsFileFullFilePath = fileInfo.FullName;
                     break;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(fileType), fileType, null);
+            }
+        }
+
+        private void OnNewInputFileReceviedNetworkEventHandler(object sender, string newJsonStr)
+        {
+            List<FileInfo> fileInfoLs = GetFilesInfoFromWorkDir(FilesType.Input);
+
+            if (fileInfoLs == null || fileInfoLs.Count == 0)
+            {
+                File.WriteAllText(_inputFolderPath + _inputFileName + "." + FilesType.Input.ToString() + "." + ConfigFilesExtension, newJsonStr);
+                List<FileInfo> newFileInfoLs = GetFilesInfoFromWorkDir(FilesType.Input);
+                SelectFile(newFileInfoLs[0], FilesType.Input);
+            }
+            else
+            {
+                string oldJsonStr = File.ReadAllText(fileInfoLs[0].FullName);
+
+                if (oldJsonStr.Equals(newJsonStr) == false)
+                {
+                    File.WriteAllText(fileInfoLs[0].FullName, newJsonStr);
+                }
+            }
+        }        
+        
+        private void OnNewSettingsFileReceviedNetworkEventHandler(object sender, string newJsonStr)
+        {
+            List<FileInfo> fileInfoLs = GetFilesInfoFromWorkDir(FilesType.Settings);
+
+            if (fileInfoLs == null || fileInfoLs.Count == 0)
+            {
+                File.WriteAllText(_settingsFolderPath + _settingsFileName + "." + FilesType.Settings.ToString() + "." + ConfigFilesExtension, newJsonStr);
+                List<FileInfo> newFileInfoLs = GetFilesInfoFromWorkDir(FilesType.Settings);
+                SelectFile(newFileInfoLs[0], FilesType.Settings);
+            }
+            else
+            {
+                string oldJsonStr = File.ReadAllText(fileInfoLs[0].FullName);
+
+                if (oldJsonStr.Equals(newJsonStr) == false)
+                {
+                    File.WriteAllText(fileInfoLs[0].FullName, newJsonStr);
+                }
             }
         }
     }

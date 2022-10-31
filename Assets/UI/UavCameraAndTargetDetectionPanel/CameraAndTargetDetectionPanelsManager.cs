@@ -1,9 +1,11 @@
+using System;
 using System.Collections.Generic;
 using HelperScripts;
 using Modules.FuelAndHealth.Channels.ScriptableObjects;
 using Modules.Navigation;
 using Modules.Navigation.Channels.ScriptableObjects;
 using Modules.TargetDetection;
+using Multiplayer;
 using UAVs;
 using UAVs.Channels.ScriptableObjects;
 using UI.UavCameraAndTargetDetectionPanel.Settings.ScriptableObjects;
@@ -19,18 +21,19 @@ namespace UI.UavCameraAndTargetDetectionPanel
         private UavCameraAndTargetDetectionPanelSettingsSO _uavCameraAndTargetDetectionPanelSettings;
         [SerializeField] public GameObject targetDetectionPanelsContainer;
         [SerializeField] public GameObject cameraAndTargetDetectionPanelPrefab;
-         private UavEventChannelSO _uavCreatedEventChannel;
-         private UavEventChannelSO _uavDestroyedEventChannel;
-         private UavPathEventChannelSO _uavArrivedAtDestinationEventChannel;
-         private UavPathEventChannelSO _uavStartedNewPathEventChannel;
+        private UavEventChannelSO _uavCreatedEventChannel;
+        private UavEventChannelSO _uavDestroyedEventChannel;
+        private UavPathEventChannelSO _uavArrivedAtDestinationEventChannel;
+        private UavPathEventChannelSO _uavStartedNewPathEventChannel;
          
-         private UavFuelConditionEventChannelSO _uavFuelConditionChangedEventChannel;
-         private UavConditionEventChannelSO _uavConditionChangedEventChannel;
-        
-         
-         private Dictionary<Uav,UavCameraAndTargetDetectionPanelController> _uavPanelsDictionary = new ();
+        private UavFuelConditionEventChannelSO _uavFuelConditionChangedEventChannel;
+        private UavConditionEventChannelSO _uavConditionChangedEventChannel;
+
+        private UavsManager _uavsManager; 
+
+        private Dictionary<Uav,UavCameraAndTargetDetectionPanelController> _uavPanelsDictionary = new ();
        
-         private void OnValidate()
+        private void OnValidate()
         {
             AssertionHelper.AssertComponentReferencedInEditor(cameraAndTargetDetectionPanelPrefab, this, this.gameObject);
             AssertionHelper.AssertComponentReferencedInEditor(targetDetectionPanelsContainer, this, this.gameObject);
@@ -41,6 +44,12 @@ namespace UI.UavCameraAndTargetDetectionPanel
             GetReferencesFromGameManager();
             SubscribeToChannels();
             ClearPanels();
+
+            if (AppNetPortal.Instance.IsMultiplayerMode())
+            {
+                GameplayNetworkCallsHandler.Instance.TargetDetectClicked_NetworkEventHandler += OnTargetDetectClickedNetworkEventHandler;
+                GameplayNetworkCallsHandler.Instance.TargetNotDetectClicked_NetworkEventHandler += OnTargetNotDetectClickedNetworkEventHandler;
+            }
         }
 
         private void ClearPanels()
@@ -108,6 +117,7 @@ namespace UI.UavCameraAndTargetDetectionPanel
         {
            UnsubscribeFromChannels();
         }
+
         private void GetReferencesFromGameManager()
         {
             _uavCameraAndTargetDetectionPanelSettings = GameManager.Instance.settingsDatabase.uavCameraAndTargetDetectionPanelSettings;
@@ -118,6 +128,8 @@ namespace UI.UavCameraAndTargetDetectionPanel
             
             _uavFuelConditionChangedEventChannel= GameManager.Instance.channelsDatabase.fuelChannels.uavFuelConditionChangedEventChannel;
             _uavConditionChangedEventChannel= GameManager.Instance.channelsDatabase.uavChannels.uavConditionChangedEventChannel;
+
+            _uavsManager = GameManager.Instance.uavsManager;
 
         }
         private void SubscribeToChannels()
@@ -155,6 +167,18 @@ namespace UI.UavCameraAndTargetDetectionPanel
                 _uavFuelConditionChangedEventChannel.Unsubscribe(OnUavFuelConditionChanged);
             if(_uavConditionChangedEventChannel != null)
                 _uavConditionChangedEventChannel.Unsubscribe(OnUavHealthConditionChanged);
+        }
+
+        private void OnTargetDetectClickedNetworkEventHandler(object sender, int uavId)
+        {
+            Uav uav = _uavsManager.GetUAVAgainstId(uavId);
+            _uavPanelsDictionary[uav].TargetDetectClickedAction();
+        }
+
+        private void OnTargetNotDetectClickedNetworkEventHandler(object sender, int uavId)
+        {
+            Uav uav = _uavsManager.GetUAVAgainstId(uavId);
+            _uavPanelsDictionary[uav].TargetNotDetectClickedAction();
         }
     }
 }

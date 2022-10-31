@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using HelperScripts;
 using Modules.Navigation.Channels.ScriptableObjects;
+using Multiplayer;
 using UAVs;
 using UAVs.Channels.ScriptableObjects;
 using UI.ReroutingPanel.Settings.ScriptableObjects;
@@ -21,25 +22,26 @@ namespace Modules.Navigation.Submodules.Rerouting
 		private UavPathEventChannelSO _uavReroutePreviewEventChannel;
 		
 		private ReroutingPanelSettingsSO _reroutingPanelSettings;
-		
-		private void Start()
+		private UavsManager _uavsManager;
+
+		private Guid _lastReroutOptLsOrderBase;
+
+        public Guid LastReroutOptLsOrderBase { get => _lastReroutOptLsOrderBase; }
+
+        private void Start()
 		{
 			GetReferencesFromGameManager();
 			SubscribeToChannels();
 			
 			var reroutingLogHandler = gameObject.GetOrAddComponent<ReroutingLogHandler>();
 			reroutingLogHandler.Initialize();
-		}
 
-
-		private void OnDestroy()
-		{
-			UnsubscribeFromChannels();
-		}
+            if (AppNetPortal.Instance.IsMultiplayerMode())
+                GameplayNetworkCallsHandler.Instance.ReroutingUAV_NetworkEventHandler += OnReroutingUAVNetworkEventHandler;
+        }
 
 		private void SubscribeToChannels()
 		{
-
 			if (_uavDestroyedEventChannel != null)
 				_uavDestroyedEventChannel.Subscribe(RemoveUavPanelAndOptions);
 			if (_uavArrivedAtDestinationEventChannel != null)
@@ -76,15 +78,14 @@ namespace Modules.Navigation.Submodules.Rerouting
 			if (_reroutingPanelSettings.selectShortestPathsAsReroutingOptions)
 			{
 				//order the paths in each list by distance (between uav and waypoint) using linq
-				possiblePathsWithNoNFZ = possiblePathsWithNoNFZ.OrderBy(p =>
-					Vector3.Distance(uav.transform.position, p.destinationWayPoint.transform.position)).ToList();
-				possiblePathsWithNFZ = possiblePathsWithNFZ.OrderBy(p =>
-					Vector3.Distance(uav.transform.position, p.destinationWayPoint.transform.position)).ToList();
+				//possiblePathsWithNoNFZ = possiblePathsWithNoNFZ.OrderBy(p => Vector3.Distance(uav.transform.position, p.destinationWayPoint.transform.position)).ToList();
+				//possiblePathsWithNFZ = possiblePathsWithNFZ.OrderBy(p => Vector3.Distance(uav.transform.position, p.destinationWayPoint.transform.position)).ToList();
 			}
 			else //shuffle randomly
 			{
-				possiblePathsWithNFZ = possiblePathsWithNFZ.OrderBy(p => Guid.NewGuid()).ToList();
-				possiblePathsWithNoNFZ = possiblePathsWithNoNFZ.OrderBy(p => Guid.NewGuid()).ToList();
+				_lastReroutOptLsOrderBase = Guid.NewGuid();
+				possiblePathsWithNFZ = possiblePathsWithNFZ.OrderBy(p => _lastReroutOptLsOrderBase).ToList();
+				possiblePathsWithNoNFZ = possiblePathsWithNoNFZ.OrderBy(p => _lastReroutOptLsOrderBase).ToList();
 			}
 
 			//checking how many good/bad paths to add
@@ -102,8 +103,10 @@ namespace Modules.Navigation.Submodules.Rerouting
 			//add the paths with no NFZ to the list of rerouting options
 			for (var i = 0; i < numberOfGoodReroutingOptionsToPresent; i++)
 				reroutingOptions[uav].Add(possiblePathsWithNoNFZ[i]);
+
 			//shuffle the list of rerouting options
-			reroutingOptions[uav] = reroutingOptions[uav].OrderBy(x => Guid.NewGuid()).ToList();
+			_lastReroutOptLsOrderBase = Guid.NewGuid();
+            reroutingOptions[uav] = reroutingOptions[uav].OrderBy(x => _lastReroutOptLsOrderBase).ToList();
 		}
 
 		public void PreviewPath(Uav uav, int optionIndex) 
@@ -116,7 +119,6 @@ namespace Modules.Navigation.Submodules.Rerouting
 			{
 				_uavReroutePreviewEventChannel.RaiseEvent(uav,reroutingOptions[uav][optionIndex]);
 			}
-			
 		}
 
 		public void RerouteUav(Uav uav, int optionIndex)
@@ -140,9 +142,10 @@ namespace Modules.Navigation.Submodules.Rerouting
 			_uavArrivedAtDestinationEventChannel = GameManager.Instance.channelsDatabase.navigationChannels.uavArrivedAtDestinationEventChannel;
 			_uavReroutedEventChannel = GameManager.Instance.channelsDatabase.navigationChannels.uavReroutedEventChannel;
 			_uavReroutePreviewEventChannel = GameManager.Instance.channelsDatabase.navigationChannels.uavReroutePreviewEventChannel;
-		}
+            _uavsManager = GameManager.Instance.uavsManager;
+        }
 
-		private void UnsubscribeFromChannels()
+        private void UnsubscribeFromChannels()
 		{
 
 			if (_uavDestroyedEventChannel != null)
@@ -154,5 +157,18 @@ namespace Modules.Navigation.Submodules.Rerouting
 			if (_reroutingOptionsRequestedChannel != null)
 				_reroutingOptionsRequestedChannel.Unsubscribe(PopulateReroutingOptions);
 		}
-	}
+
+        private void OnReroutingUAVNetworkEventHandler(object sender, ReroutingUAVEventArgs e)
+        {
+            Uav uav = _uavsManager.GetUAVAgainstId(e.UavId);
+            
+			if (reroutingOptions.ContainsKey(uav) == false)
+                PopulateReroutingOptions(uav);
+
+			_lastReroutOptLsOrderBase = new Guid(e.LastReroutOptLsOrderBase);
+            reroutingOptions[uav].OrderBy(x => _lastReroutOptLsOrderBase).ToList();
+
+            RerouteUav(uav, e.OptionIndex);
+        }
+    }
 }

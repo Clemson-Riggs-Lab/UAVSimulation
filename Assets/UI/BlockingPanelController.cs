@@ -15,15 +15,16 @@ namespace UI
 		private const string ClosingText = "The Experiment is over, \n Thank you for participating! \n";
 
 
+		public void ShowView()
+		{
+            // make the panel visible by setting scale to 1
+            transform.localScale = Vector3.one;
+        }
+
 		public void LoadingView(float duration)
 		{
-			// make the panel visible by setting scale to 1
-			transform.localScale = Vector3.one;
-		
 			//start a coroutine to animate the text every 0.5 seconds
 			StartCoroutine(AnimateText(LoadingText,duration));
-		
-		
 		}
 
 		private IEnumerator AnimateText(string loadingText, float simulationStartTime)

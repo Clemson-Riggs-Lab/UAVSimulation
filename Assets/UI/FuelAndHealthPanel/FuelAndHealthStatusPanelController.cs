@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using HelperScripts;
 using Modules.FuelAndHealth.Settings.ScriptableObjects;
+using Multiplayer;
 using TMPro;
 using UAVs;
 using UI.FuelAndHealthPanel.Settings.ScriptableObjects;
@@ -28,7 +29,6 @@ namespace UI.FuelAndHealthPanel
         private FuelAndHealthPanelConfigs _panelConfigs;
         private FuelCondition _fuelCondition = FuelCondition.Normal;
         private UavCondition _uavCondition = UavCondition.Enabled;
-
         
         public void Initialize(Uav uav, FuelAndHealthStatusPanelsManager manager)
         {
@@ -38,7 +38,7 @@ namespace UI.FuelAndHealthPanel
             _uav = uav;
             idText.text = _uav.uavName;
             fuelSlider.maxValue = GetFuelCapacity();
-            healthButton.onClick.AddListener(() =>  manager.OnHealthButtonClicked(_uav,healthButtonText.text));
+            healthButton.onClick.AddListener(() =>  OnHealthButtonClicked(manager, _uav, healthButtonText.text));
             
             UpdatePanelConfigs();
             UpdateUIElements(); // initialize the UI
@@ -129,6 +129,14 @@ namespace UI.FuelAndHealthPanel
             _fuelCondition = condition;
             UpdatePanelConfigs();
             UpdateUIElements();
+        }
+
+        private void OnHealthButtonClicked(FuelAndHealthStatusPanelsManager manager, Uav uav, string buttonText)
+        {
+            if (AppNetPortal.Instance.IsMultiplayerMode())
+                GameplayNetworkCallsHandler.Instance.FixLeakServerRpc(AppNetPortal.Instance.IsThisHost ? CallerType.Host : CallerType.Client, uav.id, buttonText);
+            else
+                manager.OnHealthButtonClicked(uav, buttonText);
         }
     }
 }

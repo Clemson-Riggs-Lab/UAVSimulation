@@ -1,8 +1,11 @@
 using System.Collections.Generic;
+using Modules.Navigation;
 using Modules.Navigation.Submodules.Rerouting;
+using Multiplayer;
 using TMPro;
 using UAVs;
 using UI.ReroutingPanel.Settings.ScriptableObjects;
+using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -71,6 +74,9 @@ namespace UI.ReroutingPanel
 		{
 			_manager.RemoveUavPanelAndOptions(_uav);//remove panel and stop rerouting manager from calculating rerouting options for this path.
 			_containerController.RemovePanel(_uav);
+
+			if (AppNetPortal.Instance.IsMultiplayerMode())
+				GameplayNetworkCallsHandler.Instance.ReroutePanelCloseServerRpc(AppNetPortal.Instance.LocalClientId, _uav.id);
 		}
 		
 		private void OnPreviewButtonClicked(int optionNumber)
@@ -85,9 +91,17 @@ namespace UI.ReroutingPanel
 			this.Highlight(false);
 			_manager.PreviewPath(_uav, -1);
 		}
-		private void OnConfirmButtonClicked(int optionNumber)
+		private void OnConfirmButtonClicked(int optionIndex)
 		{
-			_manager.RerouteUav(_uav,optionNumber);
+            if (AppNetPortal.Instance.IsMultiplayerMode())
+			{
+                GameplayNetworkCallsHandler.Instance.ReroutePanelCloseServerRpc(AppNetPortal.Instance.LocalClientId, _uav.id);
+
+                GameplayNetworkCallsHandler.Instance.ReroutingUAVOnServerRpc(AppNetPortal.Instance.IsThisHost ? CallerType.Host : CallerType.Client, _uav.id, optionIndex, _manager.LastReroutOptLsOrderBase.ToString());
+			}
+			else
+                _manager.RerouteUav(_uav, optionIndex);
+
 			_containerController.RemovePanel(_uav);
 		}
 
@@ -105,9 +119,6 @@ namespace UI.ReroutingPanel
 				row.Highlight(false);
 			}
 		}
-		
-
-	
 
 		public void Highlight(bool b)
 		{

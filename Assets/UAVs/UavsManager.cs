@@ -146,7 +146,7 @@ namespace UAVs
         private void OnUavCreated(Uav uav)
         {
             uavs.Add(uav);
-            Debug.Log(uav.uavName + " Created",uav.gameObject);
+            //Debug.Log(uav.uavName + " Created",uav.gameObject);
         }
 
         private void GetReferencesFromGameManager()
@@ -175,6 +175,11 @@ namespace UAVs
                 _uavConditionChangedEventChannel.Unsubscribe(OnUavConditionChanged);
             if(_uavStartedNewPathEventChannel != null)
                 _uavStartedNewPathEventChannel.Unsubscribe(OnUavStartedNewPath);
+        }
+
+        public Uav GetUAVAgainstId(int uavId)
+        {
+            return uavs.Find(x => x.id == uavId);
         }
     }
 }

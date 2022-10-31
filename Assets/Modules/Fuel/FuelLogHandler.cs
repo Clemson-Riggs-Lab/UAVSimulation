@@ -3,6 +3,7 @@ using Modules.FuelAndHealth.Channels.ScriptableObjects;
 using Modules.FuelAndHealth.Settings.ScriptableObjects;
 using Modules.Logging;
 using Modules.Logging.Channels.ScriptableObjects;
+using Multiplayer;
 using UAVs;
 using UAVs.Channels.ScriptableObjects;
 using UnityEngine;
@@ -51,7 +52,13 @@ namespace Modules.Fuel
 				eventType = "Fuel Leak Fixed",
 				logMessages = new() { $"UAV {uav.uavName} fuel leak fixed" }
 			};
-			_logEventChannel.RaiseEvent(log);
+
+            if (AppNetPortal.Instance.IsMultiplayerMode())
+                log.logGenerator = GameplayNetworkCallsHandler.Instance.GetCallerType(CallType.LeakFixed).ToString();
+            else
+                log.logGenerator = CallerType.None.ToString();
+
+            _logEventChannel.RaiseEvent(log);
 		}
 		
 		
@@ -63,8 +70,10 @@ namespace Modules.Fuel
 				eventType = "Fuel Condition Changed",
 				logMessages = new() 
 			};
-			
-			switch (condition)
+
+            log.logGenerator = CallerType.None.ToString();
+
+            switch (condition)
 			{
 				case FuelCondition.Empty when _fuelSettings.logFuelEmptyEvents:
 					if (_fuelSettings.logFuelEmptyEvents)

@@ -4,6 +4,7 @@ using Modules.Logging.Channels.ScriptableObjects;
 using Modules.Navigation;
 using Modules.Navigation.Channels.ScriptableObjects;
 using Modules.TargetDetection.Settings.ScriptableObjects;
+using Multiplayer;
 using UAVs;
 using UnityEngine;
 using UnityEngine.Events;
@@ -56,13 +57,22 @@ namespace Modules.TargetDetection
 
 		private void AddTargetDetectionLog(Uav uav, Path path, bool isDetected)
 		{
-			
 			var log = new Log();
 			log.logType = "TargetDetection";
 			log.eventType = isDetected ? "TargetDetected" : "TargetNotDetected";
 			log.logMessages = new() { isDetected ? "Target detected" : "Target not detected" + " by " + uav.name + " on path " + path.id };
-			
-			if(_targetDetectionSettings.logTargetDetectionCorrectness)
+
+            if (AppNetPortal.Instance.IsMultiplayerMode())
+			{
+				if (isDetected)
+                    log.logGenerator = GameplayNetworkCallsHandler.Instance.GetCallerType(CallType.TargetDetectClicked).ToString();
+				else
+                    log.logGenerator = GameplayNetworkCallsHandler.Instance.GetCallerType(CallType.TargetNotDetectedClicked).ToString();
+            }
+            else
+                log.logGenerator = CallerType.None.ToString();
+
+            if (_targetDetectionSettings.logTargetDetectionCorrectness)
 				log.logMessages.Add($"Responded correctly: {isDetected == path.targetIsPresent}");
 			
 			if(_targetDetectionSettings.logTimeSinceStartOfPathWhenTargetDetectionOccured)

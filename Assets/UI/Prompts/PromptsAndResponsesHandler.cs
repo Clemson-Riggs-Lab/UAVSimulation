@@ -2,9 +2,11 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using HelperScripts;
 using Modules.Prompts.Channels.ScriptableObjects;
 using Modules.Prompts.Settings.ScriptableObjects;
+using Multiplayer;
 using TMPro;
 using UI.Console.Channels.ScriptableObjects;
 using UnityEngine;
@@ -29,12 +31,17 @@ namespace Modules.Prompts
 		[NonSerialized] private bool _allowMultipleResponses;
 		[NonSerialized] private float _durationToAcceptResponses;
 
+		private List<ResponseOption> _responseOptions = new List<ResponseOption>();
+
 		private void Start()
 		{
 			GetSettingsFromGameManager();
-			
+
 			if (newPromptEventChannel != null)
 				newPromptEventChannel.Subscribe(OnNewPromptReceivedEvent);
+
+			if (AppNetPortal.Instance.IsMultiplayerMode())
+				GameplayNetworkCallsHandler.Instance.ChatResponseClicked_NetworkEventHandler += OnChatResponseClickedNetworkEventHandler;
 		}
 
 		private void GetSettingsFromGameManager()
@@ -48,17 +55,16 @@ namespace Modules.Prompts
 
 		private void OnNewPromptReceivedEvent(Prompt prompt)
 		{
-
 			//WriteMessage to console
 			writeMessageToConsoleChannel.RaiseEvent(_promptSettings.promptsPrefix, prompt.consoleMessage);
-			
+
 			//Update responses and buttons
 			ClearResponsesAndButtons();
 
 			var responseOptions = prompt.responseOptions;
 			if (responseOptions == null)
 				return;
-			
+
 			_allowMultipleResponses = prompt.acceptMultipleResponses;
 
 			if (_promptSettings.shuffleResponses)
@@ -66,7 +72,9 @@ namespace Modules.Prompts
 
 			AddNewResponseOptions(responseOptions);
 
-			_durationToAcceptResponses = prompt.durationToAcceptResponses;
+			_responseOptions = responseOptions;
+
+            _durationToAcceptResponses = prompt.durationToAcceptResponses;
 			if (_durationToAcceptResponses > 0) //not set to default (i.e., there is a limit to how long the player can accept responses)
 			{
 				_removeButtonsTimerCoroutine = RemoveButtonsTimer(_durationToAcceptResponses);
@@ -74,13 +82,12 @@ namespace Modules.Prompts
 			}
 		}
 
-	
-
 		private void ClearResponsesAndButtons()
 		{
-			if(_removeButtonsTimerCoroutine != null) //if we have a removeButtonsTimerCoroutine, stop it
+			if (_removeButtonsTimerCoroutine != null) //if we have a removeButtonsTimerCoroutine, stop it
 				StopCoroutine(_removeButtonsTimerCoroutine);
-			
+
+			_responseOptions.Clear();
 			_responseOptionsButtonDictionary.Clear();
 			foreach (Transform child in responsesContainer)
 			{
@@ -100,19 +107,34 @@ namespace Modules.Prompts
 				var textMp = responseButton.GetComponentInChildren<TextMeshProUGUI>();
 				textMp.text = response.buttonText;
 				textMp.color = ColorHelper.StringToColor(response.textColor);
-				responseButton.name = "Option "+iterator.ToString();
+				responseButton.name = "Option " + iterator.ToString();
 				_responseOptionsButtonDictionary.Add(response, responseButton);
 			}
 		}
 
 		private void OnResponseButtonClicked(ResponseOption response)
 		{
+			if (AppNetPortal.Instance.IsMultiplayerMode())
+			{
+				GameplayNetworkCallsHandler.Instance.ChatReponseClickedServerRpc(AppNetPortal.Instance.IsThisHost ? CallerType.Host : CallerType.Client, response.buttonText);
+			}
+			else
+			{
+				ResponseButtonClickedBehaviour(response);
+			}
+		}
+
+		private void ResponseButtonClickedBehaviour(ResponseOption response)
+		{
 			if (responseReceivedChannel != null)
 				responseReceivedChannel.RaiseEvent(response);
 
 			var button = _responseOptionsButtonDictionary.GetValueOrDefault(response);
-			button.GetComponent<Button>().interactable = false;
-			
+			if (button != null && button.GetComponent<Button>() != null)
+				button.GetComponent<Button>().interactable = false;
+			else
+				return;
+
 			if (_promptSettings.giveFeedbackAboutResponsesOnButtons)
 			{
 				button.GetComponent<Image>().color = response.isCorrectResponse switch
@@ -125,16 +147,15 @@ namespace Modules.Prompts
 			{
 				var message = new ConsoleMessage
 				{
-					text =response.buttonText,
+					text = response.buttonText,
 				};
-				if(_promptSettings.giveFeedbackAboutResponsesInChatBox)
+				if (_promptSettings.giveFeedbackAboutResponsesInChatBox)
 					message.color = response.isCorrectResponse switch
 					{
 						true => _promptSettings.correctResponseColor,
 						false => _promptSettings.wrongResponseColor
 					};
-				writeMessageToConsoleChannel.RaiseEvent(_promptSettings.promptResponsesPrefix,message);
-				
+				writeMessageToConsoleChannel.RaiseEvent(_promptSettings.promptResponsesPrefix, message);
 			}
 
 			_responseOptionsButtonDictionary.Remove(response);
@@ -145,12 +166,10 @@ namespace Modules.Prompts
 				DisableAllButtons();//prevent further clicking
 				if (_promptSettings.durationAfterResponseBeforeHidingButtons > 0)
 				{
-					_removeButtonsTimerCoroutine =
-						RemoveButtonsTimer(_promptSettings.durationAfterResponseBeforeHidingButtons);
+					_removeButtonsTimerCoroutine = RemoveButtonsTimer(_promptSettings.durationAfterResponseBeforeHidingButtons);
 					StartCoroutine(_removeButtonsTimerCoroutine);
 				}
 			}
-			
 		}
 
 		private void DisableAllButtons()
@@ -161,12 +180,17 @@ namespace Modules.Prompts
 			}
 		}
 
-
 		private IEnumerator RemoveButtonsTimer(float timer)
 		{
 			yield return new WaitForSeconds(timer);
 			ClearResponsesAndButtons();
 		}
-		
-	}
+
+        private async void OnChatResponseClickedNetworkEventHandler(object sender, GameplayNetworkCallsData.NetworkString buttonText)
+        {
+			ResponseOption responseOption = _responseOptions.Find(x => x.buttonText.Equals(buttonText));
+
+			ResponseButtonClickedBehaviour(responseOption);
+        }
+    }
 }

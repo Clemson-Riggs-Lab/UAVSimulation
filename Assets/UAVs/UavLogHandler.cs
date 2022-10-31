@@ -1,5 +1,6 @@
 using Modules.Logging;
 using Modules.Logging.Channels.ScriptableObjects;
+using Multiplayer;
 using ScriptableObjects.EventChannels;
 using UAVs.Channels.ScriptableObjects;
 using UAVs.Settings.ScriptableObjects;
@@ -56,7 +57,9 @@ namespace UAVs
 				eventType = "ConditionChanged",
 				logMessages = new() { $"Uav {uav.uavName} condition changed to {condition}" }
 			};
-			_logEventChannel.RaiseEvent(log);
+            log.logGenerator = CallerType.None.ToString();
+
+            _logEventChannel.RaiseEvent(log);
 		}
 
 		private void OnUavDestroyed(Uav uav)
@@ -67,7 +70,8 @@ namespace UAVs
 				eventType = "Destroyed",
 				logMessages = new() { $"Uav {uav.uavName} destroyed" }
 			};
-			_logEventChannel.RaiseEvent(log);
+            log.logGenerator = CallerType.None.ToString();
+            _logEventChannel.RaiseEvent(log);
 		}
 
 		private void OnUavCreated(Uav uav)
@@ -78,7 +82,8 @@ namespace UAVs
 				eventType = "Created",
 				logMessages = new() { $"Uav {uav.uavName} created" }
 			};
-			_logEventChannel.RaiseEvent(log);
+            log.logGenerator = CallerType.None.ToString();
+            _logEventChannel.RaiseEvent(log);
 		}
 
 		private void OnDisable()

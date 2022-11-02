@@ -34,8 +34,6 @@ public class GameManager : MonoBehaviour
         [SerializeField] public UavsManager uavsManager;
         [SerializeField] public NavigationManager navigationManager;
         [SerializeField] public ReroutingManager reroutingManager;
-        [SerializeField] public FuelManager fuelManager;
-        [SerializeField] public PromptsManager promptsManager;
         [SerializeField] public NFZsManager nfzsManager;
         [SerializeField] public TargetsDetectionManager targetsDetectionManager;
         
@@ -57,23 +55,17 @@ public class GameManager : MonoBehaviour
             AssertionHelper.AssertComponentReferencedInEditor(uavsContainer,this,this.gameObject);
             AssertionHelper.AssertComponentReferencedInEditor(terrainContainer,this,this.gameObject);
             AssertionHelper.AssertComponentReferencedInEditor(nfzsContainer,this,this.gameObject);
-            
             AssertionHelper.AssertComponentReferencedInEditor(configFilesSettings,this,this.gameObject);
-           
             AssertionHelper.AssertComponentReferencedInEditor(wayPointsManager,this,this.gameObject);
             AssertionHelper.AssertComponentReferencedInEditor(uavsManager,this,this.gameObject);
             AssertionHelper.AssertComponentReferencedInEditor(navigationManager,this,this.gameObject);
             AssertionHelper.AssertComponentReferencedInEditor(reroutingManager,this,this.gameObject);
-            AssertionHelper.AssertComponentReferencedInEditor(fuelManager,this,this.gameObject);
-            AssertionHelper.AssertComponentReferencedInEditor(promptsManager,this,this.gameObject);
             AssertionHelper.AssertComponentReferencedInEditor(nfzsManager,this,this.gameObject);
             AssertionHelper.AssertComponentReferencedInEditor(targetsDetectionManager,this,this.gameObject);
-            
             AssertionHelper.AssertComponentReferencedInEditor(inputRecordsDatabase,this,this.gameObject);
             AssertionHelper.AssertComponentReferencedInEditor(channelsDatabase,this,this.gameObject);
             AssertionHelper.AssertComponentReferencedInEditor(prefabsDatabase,this,this.gameObject);
             AssertionHelper.AssertComponentReferencedInEditor(settingsDatabase,this,this.gameObject);
-            
             AssertionHelper.AssertComponentReferencedInEditor(blockingPanelController,this,this.gameObject);
             
         }
@@ -146,7 +138,6 @@ public class GameManager : MonoBehaviour
                 settingsDatabase.uavSettings.uavRecordsSource = InputRecordsSource.FromDefaultRecords;
                 settingsDatabase.waypointSettings.waypointsRecordsSource = InputRecordsSource.FromDefaultRecords;
                 settingsDatabase.nfzSettings.nfzRecordsSource = InputRecordsSource.FromDefaultRecords;
-                settingsDatabase.fuelSettings.fuelLeaksRecordsSource = InputRecordsSource.FromDefaultRecords;
             }
             
             simulationStartTime = Time.time+ 5f;
@@ -162,19 +153,12 @@ public class GameManager : MonoBehaviour
             yield return new WaitForSeconds(0.1f);
 
             nfzsManager.Initialize();
-            yield return new WaitForSeconds(0.1f);
             
-            promptsManager.Initialize();
-            yield return new WaitForSeconds(0.1f);
-           
-            fuelManager.Initialize();
+            
 
 
             StartCoroutine( navigationManager.NavigateAll(simulationStartTime));
             StartCoroutine( nfzsManager.StartNFZsTimerCoroutine(simulationStartTime));
-            StartCoroutine( promptsManager.StartPromptsTimerCoroutine(simulationStartTime));
-            StartCoroutine( fuelManager.StartFuelControllers(simulationStartTime));
-            
         }
         
         

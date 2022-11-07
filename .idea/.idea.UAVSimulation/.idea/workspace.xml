@@ -5,92 +5,352 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2a31bee8-77bd-4176-b786-4bd852df0b13" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/UI/Prompts.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/UI/Prompts/Prefabs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/UI/Prompts/Prefabs/ChatBox Panel Container.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/UI/Prompts/Prefabs/ChatBox Panel Container.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/UI/Prompts/Prefabs/ResponseButton.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/UI/Prompts/Prefabs/ResponseButton.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/logFiles.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/logFiles/0001-01-01 00-00-00.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/logFiles/0001-01-01 00-00-00.json.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2022-09-28 09-54-18.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2022-09-28 09-54-18.json.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2022-09-28 09-55-50.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2022-09-28 09-55-50.json.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2022-09-28 09-59-29.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2022-09-28 09-59-29.json.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2022-09-28 09-59-55.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2022-09-28 09-59-55.json.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2022-09-28 10-42-20.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2022-09-28 10-42-20.json.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2022-09-28 10-45-15.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2022-09-28 10-45-15.json.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2022-09-28 10-47-57.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2022-09-28 10-47-57.json.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2022-09-28 10-51-10.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2022-09-28 10-51-10.json.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2022-09-28 10-56-06.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2022-09-28 10-56-06.json.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2022-09-28 10-58-31.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2022-09-28 10-58-31.json.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2022-09-28 11-00-32.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2022-09-28 11-00-32.json.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2022-09-28 11-02-19.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2022-09-28 11-02-19.json.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2022-09-28 11-03-44.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2022-09-28 11-03-44.json.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2022-09-28 11-06-28.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2022-09-28 11-06-28.json.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2022-09-28 11-19-33.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2022-09-28 11-19-33.json.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2022-09-28 11-24-39.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Destroyed_city_FREE_Info.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Destroyed_city_FREE_Info.txt.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Models.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Models/Materials.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Models/Materials/beton_01.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Models/Materials/beton_01.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Models/Materials/otrepy.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Models/Materials/otrepy.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Models/Materials/wrak_zed.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Models/Materials/wrak_zed.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Models/bet_skelet.FBX" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Models/bet_skelet.FBX.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Models/otrepy.FBX" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Models/otrepy.FBX.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Models/troska_A.FBX" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Models/troska_A.FBX.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Models/wrak_steny.FBX" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Models/wrak_steny.FBX.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Prefabs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Prefabs/Light Flares.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Prefabs/Light Flares/Sun.flare" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Prefabs/Light Flares/Sun.flare.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Prefabs/wrak_budova.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Prefabs/wrak_budova.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Scenes.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Scenes/Map.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Scenes/Map.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Scenes/Terrain destroyed_city.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Scenes/Terrain destroyed_city.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Scenes/destroyed_city.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Scenes/destroyed_city.unity" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Scenes/destroyed_city.unity.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Scenes/destroyed_city/LightmapFar-0.exr" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Scenes/destroyed_city/LightmapFar-0.exr.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Scenes/destroyed_city/LightmapFar-1.exr" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Scenes/destroyed_city/LightmapFar-1.exr.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Scenes/destroyed_city/LightmapFar-10.exr" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Scenes/destroyed_city/LightmapFar-10.exr.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Scenes/destroyed_city/LightmapFar-11.exr" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Scenes/destroyed_city/LightmapFar-11.exr.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Scenes/destroyed_city/LightmapFar-12.exr" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Scenes/destroyed_city/LightmapFar-12.exr.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Scenes/destroyed_city/LightmapFar-13.exr" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Scenes/destroyed_city/LightmapFar-13.exr.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Scenes/destroyed_city/LightmapFar-14.exr" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Scenes/destroyed_city/LightmapFar-14.exr.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Scenes/destroyed_city/LightmapFar-15.exr" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Scenes/destroyed_city/LightmapFar-15.exr.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Scenes/destroyed_city/LightmapFar-16.exr" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Scenes/destroyed_city/LightmapFar-16.exr.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Scenes/destroyed_city/LightmapFar-17.exr" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Scenes/destroyed_city/LightmapFar-17.exr.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Scenes/destroyed_city/LightmapFar-2.exr" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Scenes/destroyed_city/LightmapFar-2.exr.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Scenes/destroyed_city/LightmapFar-3.exr" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Scenes/destroyed_city/LightmapFar-3.exr.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Scenes/destroyed_city/LightmapFar-4.exr" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Scenes/destroyed_city/LightmapFar-4.exr.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Scenes/destroyed_city/LightmapFar-5.exr" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Scenes/destroyed_city/LightmapFar-5.exr.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Scenes/destroyed_city/LightmapFar-6.exr" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Scenes/destroyed_city/LightmapFar-6.exr.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Scenes/destroyed_city/LightmapFar-7.exr" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Scenes/destroyed_city/LightmapFar-7.exr.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Scenes/destroyed_city/LightmapFar-8.exr" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Scenes/destroyed_city/LightmapFar-8.exr.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Scenes/destroyed_city/LightmapFar-9.exr" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Scenes/destroyed_city/LightmapFar-9.exr.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Scenes/destroyed_city/LightmapNear-0.exr" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Scenes/destroyed_city/LightmapNear-0.exr.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Scenes/destroyed_city/LightmapNear-1.exr" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Scenes/destroyed_city/LightmapNear-1.exr.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Scenes/destroyed_city/LightmapNear-10.exr" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Scenes/destroyed_city/LightmapNear-10.exr.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Scenes/destroyed_city/LightmapNear-11.exr" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Scenes/destroyed_city/LightmapNear-11.exr.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Scenes/destroyed_city/LightmapNear-12.exr" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Scenes/destroyed_city/LightmapNear-12.exr.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Scenes/destroyed_city/LightmapNear-13.exr" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Scenes/destroyed_city/LightmapNear-13.exr.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Scenes/destroyed_city/LightmapNear-14.exr" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Scenes/destroyed_city/LightmapNear-14.exr.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Scenes/destroyed_city/LightmapNear-15.exr" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Scenes/destroyed_city/LightmapNear-15.exr.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Scenes/destroyed_city/LightmapNear-16.exr" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Scenes/destroyed_city/LightmapNear-16.exr.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Scenes/destroyed_city/LightmapNear-17.exr" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Scenes/destroyed_city/LightmapNear-17.exr.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Scenes/destroyed_city/LightmapNear-2.exr" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Scenes/destroyed_city/LightmapNear-2.exr.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Scenes/destroyed_city/LightmapNear-3.exr" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Scenes/destroyed_city/LightmapNear-3.exr.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Scenes/destroyed_city/LightmapNear-4.exr" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Scenes/destroyed_city/LightmapNear-4.exr.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Scenes/destroyed_city/LightmapNear-5.exr" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Scenes/destroyed_city/LightmapNear-5.exr.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Scenes/destroyed_city/LightmapNear-6.exr" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Scenes/destroyed_city/LightmapNear-6.exr.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Scenes/destroyed_city/LightmapNear-7.exr" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Scenes/destroyed_city/LightmapNear-7.exr.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Scenes/destroyed_city/LightmapNear-8.exr" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Scenes/destroyed_city/LightmapNear-8.exr.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Scenes/destroyed_city/LightmapNear-9.exr" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Scenes/destroyed_city/LightmapNear-9.exr.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Scenes/destroyed_citySettings.lighting" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Scenes/destroyed_citySettings.lighting.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Shaders.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Shaders/AlphaTest-DiffuseDoubleSide.shader" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Shaders/AlphaTest-DiffuseDoubleSide.shader.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Standard Assets.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Standard Assets/Character Controllers.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Standard Assets/Character Controllers/First Person Controller.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Standard Assets/Character Controllers/First Person Controller.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Standard Assets/Character Controllers/Sources.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Standard Assets/Character Controllers/Sources/Scripts.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Standard Assets/Character Controllers/Sources/Scripts/CharacterMotor.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Standard Assets/Character Controllers/Sources/Scripts/CharacterMotor.js.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Standard Assets/Character Controllers/Sources/Scripts/FPSInputController.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Standard Assets/Character Controllers/Sources/Scripts/FPSInputController.js.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Standard Assets/Character Controllers/Sources/Scripts/MouseLook.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Standard Assets/Character Controllers/Sources/Scripts/MouseLook.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Standard Assets/Light Flares.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Standard Assets/Light Flares/Sources.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Standard Assets/Light Flares/Sources/Textures.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Standard Assets/Light Flares/Sources/Textures/50mmflare.psd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Standard Assets/Light Flares/Sources/Textures/50mmflare.psd.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Standard Assets/Skyboxes.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Standard Assets/Skyboxes/Sunny3 Skybox.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Standard Assets/Skyboxes/Sunny3 Skybox.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Standard Assets/Skyboxes/Textures.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Standard Assets/Skyboxes/Textures/Sunny3.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Standard Assets/Skyboxes/Textures/Sunny3/Sunny3_back.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Standard Assets/Skyboxes/Textures/Sunny3/Sunny3_back.tif.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Standard Assets/Skyboxes/Textures/Sunny3/Sunny3_down.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Standard Assets/Skyboxes/Textures/Sunny3/Sunny3_down.tif.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Standard Assets/Skyboxes/Textures/Sunny3/Sunny3_front.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Standard Assets/Skyboxes/Textures/Sunny3/Sunny3_front.tif.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Standard Assets/Skyboxes/Textures/Sunny3/Sunny3_left.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Standard Assets/Skyboxes/Textures/Sunny3/Sunny3_left.tif.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Standard Assets/Skyboxes/Textures/Sunny3/Sunny3_right.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Standard Assets/Skyboxes/Textures/Sunny3/Sunny3_right.tif.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Standard Assets/Skyboxes/Textures/Sunny3/Sunny3_up.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Standard Assets/Skyboxes/Textures/Sunny3/Sunny3_up.tif.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Standard Assets/Water (Pro Only).meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Standard Assets/Water (Pro Only)/Daylight Water.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Standard Assets/Water (Pro Only)/Daylight Water.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Standard Assets/Water (Pro Only)/Sources.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Standard Assets/Water (Pro Only)/Sources/Materials.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Standard Assets/Water (Pro Only)/Sources/Materials/Daylight Water.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Standard Assets/Water (Pro Only)/Sources/Materials/Daylight Water.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Standard Assets/Water (Pro Only)/Sources/Objects.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Standard Assets/Water (Pro Only)/Sources/Objects/Materials.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Standard Assets/Water (Pro Only)/Sources/Objects/Materials/water plane-lambert1.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Standard Assets/Water (Pro Only)/Sources/Objects/Materials/water plane-lambert1.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Standard Assets/Water (Pro Only)/Sources/Objects/Water Plane.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Standard Assets/Water (Pro Only)/Sources/Objects/Water Plane.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Standard Assets/Water (Pro Only)/Sources/Scripts.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Standard Assets/Water (Pro Only)/Sources/Scripts/Water.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Standard Assets/Water (Pro Only)/Sources/Scripts/Water.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Standard Assets/Water (Pro Only)/Sources/Shaders.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Standard Assets/Water (Pro Only)/Sources/Shaders/FX-Water.shader" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Standard Assets/Water (Pro Only)/Sources/Shaders/FX-Water.shader.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Standard Assets/Water (Pro Only)/Sources/Textures.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Standard Assets/Water (Pro Only)/Sources/Textures/Water Fresnel.psd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Standard Assets/Water (Pro Only)/Sources/Textures/Water Fresnel.psd.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Standard Assets/Water (Pro Only)/Sources/Textures/Water fallback.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Standard Assets/Water (Pro Only)/Sources/Textures/Water fallback.jpg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Standard Assets/Water (Pro Only)/Sources/Textures/Waterbump.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Standard Assets/Water (Pro Only)/Sources/Textures/Waterbump.jpg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Standard Assets/Water (Pro Only)/Sources/Textures/oceangradient.psd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Standard Assets/Water (Pro Only)/Sources/Textures/oceangradient.psd.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Standard Assets/Water (Pro Only)/Sources/Textures/oceangradientcube.psd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Standard Assets/Water (Pro Only)/Sources/Textures/oceangradientcube.psd.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Textures.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Textures/Ground 01.psd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Textures/Ground 01.psd.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Textures/PD_BnW.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Textures/PD_BnW.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Textures/Terrain Grass.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Textures/Terrain Grass/Grass.psd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Textures/Terrain Grass/Grass.psd.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Textures/beton_01.psd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Textures/beton_01.psd.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Textures/beton_01n.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Textures/beton_01n.jpg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Textures/black.psd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Textures/black.psd.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Textures/grassHR2 02.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Textures/grassHR2 02.jpg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Textures/ground_kaminky2.psd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Textures/ground_kaminky2.psd.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Textures/otrepy.tga" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Textures/otrepy.tga.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Textures/wrak_zed.psd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Textures/wrak_zed.psd.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Textures/wrak_zedn.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Textures/wrak_zedn.jpg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Trees.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Trees/Materials.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Trees/Materials/TreeBark_3.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Trees/Materials/TreeBark_3.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Trees/Materials/TreeBark_4.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Trees/Materials/TreeBark_4.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Trees/Materials/TreeLeaf_2.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Trees/Materials/TreeLeaf_2.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Trees/Prefabs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Trees/Prefabs/Bush_A.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Trees/Prefabs/Bush_A.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Trees/Prefabs/Bush_A_Textures.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Trees/Prefabs/Bush_A_Textures/diffuse.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Trees/Prefabs/Bush_A_Textures/diffuse.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Trees/Prefabs/Bush_A_Textures/normal_specular.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Trees/Prefabs/Bush_A_Textures/normal_specular.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Trees/Prefabs/Bush_A_Textures/shadow.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Trees/Prefabs/Bush_A_Textures/shadow.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Trees/Prefabs/Bush_A_Textures/translucency_gloss.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Trees/Prefabs/Bush_A_Textures/translucency_gloss.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Trees/Prefabs/Bush_B.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Trees/Prefabs/Bush_B.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Trees/Prefabs/Bush_B_Textures.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Trees/Prefabs/Bush_B_Textures/diffuse.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Trees/Prefabs/Bush_B_Textures/diffuse.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Trees/Prefabs/Bush_B_Textures/normal_specular.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Trees/Prefabs/Bush_B_Textures/normal_specular.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Trees/Prefabs/Bush_B_Textures/shadow.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Trees/Prefabs/Bush_B_Textures/shadow.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Trees/Prefabs/Bush_B_Textures/translucency_gloss.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Trees/Prefabs/Bush_B_Textures/translucency_gloss.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Trees/Prefabs/Tree_01.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Trees/Prefabs/Tree_01.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Trees/Prefabs/Tree_01_Textures.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Trees/Prefabs/Tree_01_Textures/diffuse.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Trees/Prefabs/Tree_01_Textures/diffuse.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Trees/Prefabs/Tree_01_Textures/normal_specular.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Trees/Prefabs/Tree_01_Textures/normal_specular.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Trees/Prefabs/Tree_01_Textures/shadow.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Trees/Prefabs/Tree_01_Textures/shadow.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Trees/Prefabs/Tree_01_Textures/translucency_gloss.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Trees/Prefabs/Tree_01_Textures/translucency_gloss.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Trees/Prefabs/Tree_09.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Trees/Prefabs/Tree_09.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Trees/Prefabs/Tree_09_Textures.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Trees/Prefabs/Tree_09_Textures/diffuse.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Trees/Prefabs/Tree_09_Textures/diffuse.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Trees/Prefabs/Tree_09_Textures/normal_specular.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Trees/Prefabs/Tree_09_Textures/normal_specular.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Trees/Prefabs/Tree_09_Textures/shadow.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Trees/Prefabs/Tree_09_Textures/shadow.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Trees/Prefabs/Tree_09_Textures/translucency_gloss.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Trees/Prefabs/Tree_09_Textures/translucency_gloss.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Trees/Textures.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Trees/Textures/TreeBark_3.psd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Trees/Textures/TreeBark_3.psd.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Trees/Textures/TreeBark_3_b.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Trees/Textures/TreeBark_3_b.jpg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Trees/Textures/TreeBark_4.psd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Trees/Textures/TreeBark_4.psd.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Trees/Textures/TreeBark_4_b.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Trees/Textures/TreeBark_4_b.jpg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Trees/Textures/TreeLeaf_2.psd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Trees/Textures/TreeLeaf_2.psd.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Trees/Textures/TreeLeaf_2_b.psd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Trees/Textures/TreeLeaf_2_b.psd.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Trees/Textures/TreeLeaf_2_g.psd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Destroyed_city_FREE/Trees/Textures/TreeLeaf_2_g.psd.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Map.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Map/Default Map.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Map/Default Map/Terrains.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Map/Default Map/Terrains/New Terrain.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Map/Default Map/Terrains/New Terrain.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Map/Default Map/Terrains/Terrain.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Map/Default Map/Terrains/Terrain.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Map/Default Map/Terrains/TerrainData_226f8a78-e036-46e9-ba61-d55744c28291.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Map/Default Map/Terrains/TerrainData_226f8a78-e036-46e9-ba61-d55744c28291.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Map/Default Map/Terrains/TerrainData_2e873962-402f-4aef-8191-d4684fc6a014.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Map/Default Map/Terrains/TerrainData_2e873962-402f-4aef-8191-d4684fc6a014.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Map/Default Map/Terrains/TerrainData_39fc2c8d-13fa-41eb-b447-4259f2885cc3.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Map/Default Map/Terrains/TerrainData_39fc2c8d-13fa-41eb-b447-4259f2885cc3.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Map/Default Map/Terrains/TerrainData_45f42e9a-e9bc-4946-b31e-b098f3bbca1b.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Map/Default Map/Terrains/TerrainData_45f42e9a-e9bc-4946-b31e-b098f3bbca1b.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Map/Default Map/Terrains/TerrainData_8b5ead7d-c736-4f0e-8579-d508b0dce606.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Map/Default Map/Terrains/TerrainData_8b5ead7d-c736-4f0e-8579-d508b0dce606.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Map/Default Map/Terrains/TerrainData_cdaf099d-740a-46dd-8544-c12030b56a70.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Map/Default Map/Terrains/TerrainData_cdaf099d-740a-46dd-8544-c12030b56a70.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Map/Default Map/Terrains/TerrainData_d156d956-d9aa-4ab2-bcbf-60476b838186.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Map/Default Map/Terrains/TerrainData_d156d956-d9aa-4ab2-bcbf-60476b838186.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Map/Default Map/Terrains/TerrainData_dea5d528-30cb-4b83-b1c7-5dfd8fe5e8a1.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Map/Default Map/Terrains/TerrainData_dea5d528-30cb-4b83-b1c7-5dfd8fe5e8a1.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Map/Default Map/Terrains/TerrainData_f6988511-5d80-4057-8853-f0d3aa22296c.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Map/Default Map/Terrains/TerrainData_f6988511-5d80-4057-8853-f0d3aa22296c.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Map/Ruins Map.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Map/Ruins Map/Map.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Map/Ruins Map/Map.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_TerrainAutoUpgrade/layer_Ground 01b956af97c33fc3d7.terrainlayer" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_TerrainAutoUpgrade/layer_Ground 01b956af97c33fc3d7.terrainlayer.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_TerrainAutoUpgrade/layer_grassHR2 023d3aba195e4d26ee.terrainlayer" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_TerrainAutoUpgrade/layer_grassHR2 023d3aba195e4d26ee.terrainlayer.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_TerrainAutoUpgrade/layer_ground_kaminky23d3aba195e4d26ee.terrainlayer" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_TerrainAutoUpgrade/layer_ground_kaminky23d3aba195e4d26ee.terrainlayer.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_TerrainAutoUpgrade/layer_wrak_zedb956af97c33fc3d7.terrainlayer" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_TerrainAutoUpgrade/layer_wrak_zedb956af97c33fc3d7.terrainlayer.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2022-11-02 12-43-25.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2022-11-02 12-43-25.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2022-11-02 12-43-53.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2022-11-02 12-43-53.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2022-11-02 12-48-49.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2022-11-02 12-48-49.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2022-11-02 12-53-21.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2022-11-02 12-53-21.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2022-11-02 12-56-13.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2022-11-02 12-56-13.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2022-11-02 12-56-48.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2022-11-02 12-56-48.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2022-11-02 12-56-59.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2022-11-02 12-56-59.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2022-11-02 12-58-10.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2022-11-02 12-58-10.json.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.UAVSimulation/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UAVSimulation/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameManager/Databases/InputRecordsDatabase.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameManager/Databases/InputRecordsDatabase.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameManager/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameManager/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HelperScripts/Extensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HelperScripts/Extensions.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Modules/Fuel/FuelLogHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Fuel/FuelLogHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Modules/Fuel/Settings/FueSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Fuel/Settings/FueSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Modules/Logging/Log.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Logging/Log.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Modules/Logging/LoggingManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Logging/LoggingManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Modules/Navigation/NavigationManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Navigation/NavigationManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Modules/Navigation/Navigator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Navigation/Navigator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Modules/Navigation/Path.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Navigation/Path.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Modules/Navigation/PathsGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Navigation/PathsGenerator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Modules/Navigation/Submodules/Rerouting/ReroutingLogHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Navigation/Submodules/Rerouting/ReroutingLogHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Modules/Navigation/Submodules/Rerouting/ReroutingManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Navigation/Submodules/Rerouting/ReroutingManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Modules/NoFlyZone/NFZsManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/NoFlyZone/NFZsManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Modules/NoFlyZone/Settings/NFZSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/NoFlyZone/Settings/NFZSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Modules/Prompts/Prefabs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Modules/Prompts/Prefabs/ChatBox Panel Container.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Modules/Prompts/Prefabs/ChatBox Panel Container.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Modules/Prompts/Prefabs/ResponseButton.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Modules/Prompts/Prefabs/ResponseButton.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Modules/Prompts/PromptLogHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Prompts/PromptLogHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Modules/Prompts/PromptsAndResponsesHandler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Modules/Prompts/PromptsAndResponsesHandler.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Modules/Prompts/PromptsManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Prompts/PromptsManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Modules/Prompts/Settings/PromptSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Prompts/Settings/PromptSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Modules/TargetDetection/Channels/TargetDetectionChannelsSO.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/TargetDetection/Channels/TargetDetectionChannelsSO.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Modules/TargetDetection/Settings/TargetDetectionSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/TargetDetection/Settings/TargetDetectionSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Modules/TargetDetection/TargetDetectionLogHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/TargetDetection/TargetDetectionLogHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Modules/WayPoints/WayPointsManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/WayPoints/WayPointsManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SimulationScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SimulationScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UAVs/Settings/UavSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UAVs/Settings/UavSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UAVs/UavsManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UAVs/UavsManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UI/Console/ConsoleTextHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/Console/ConsoleTextHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UI/Console/ConsoleTextHandler.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/Console/ConsoleTextHandler.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UI/Console/TypeWriterEffect.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/Console/TypeWriterEffect.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UI/FuelAndHealthPanel/Settings/FuelAndHealthPanelSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/FuelAndHealthPanel/Settings/FuelAndHealthPanelSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UI/MainMenu/FileBrowser.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/MainMenu/FileBrowser.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UI/Paths Rendering/Settings/Path Rendering Settings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/Paths Rendering/Settings/Path Rendering Settings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UI/ReroutingPanel/ReroutingButtonsContainerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/ReroutingPanel/ReroutingButtonsContainerController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UI/ReroutingPanel/ReroutingPanelsContainerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/ReroutingPanel/ReroutingPanelsContainerController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UI/ReroutingPanel/Settings/ReroutingPanelSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/ReroutingPanel/Settings/ReroutingPanelSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UI/UavCameraAndTargetDetectionPanel/Prefabs/UAV Camera and Target Detection Panel Container.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/UavCameraAndTargetDetectionPanel/Prefabs/UAV Camera and Target Detection Panel Container.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UI/UavCameraAndTargetDetectionPanel/Settings/UavCameraAndTargetDetectionSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/UavCameraAndTargetDetectionPanel/Settings/UavCameraAndTargetDetectionSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UI/UavCameraAndTargetDetectionPanel/UavCameraAndTargetDetectionPanelController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/UavCameraAndTargetDetectionPanel/UavCameraAndTargetDetectionPanelController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/DOTween.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/DOTween.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Editor/DOTweenEditor.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Editor/DOTweenEditor.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Terrains.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Terrains/New Terrain.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Terrains/New Terrain.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Terrains/Terrain.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Terrains/Terrain.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Terrains/TerrainData_226f8a78-e036-46e9-ba61-d55744c28291.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Terrains/TerrainData_226f8a78-e036-46e9-ba61-d55744c28291.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Terrains/TerrainData_2e873962-402f-4aef-8191-d4684fc6a014.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Terrains/TerrainData_2e873962-402f-4aef-8191-d4684fc6a014.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Terrains/TerrainData_39fc2c8d-13fa-41eb-b447-4259f2885cc3.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Terrains/TerrainData_39fc2c8d-13fa-41eb-b447-4259f2885cc3.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Terrains/TerrainData_45f42e9a-e9bc-4946-b31e-b098f3bbca1b.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Terrains/TerrainData_45f42e9a-e9bc-4946-b31e-b098f3bbca1b.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Terrains/TerrainData_8b5ead7d-c736-4f0e-8579-d508b0dce606.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Terrains/TerrainData_8b5ead7d-c736-4f0e-8579-d508b0dce606.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Terrains/TerrainData_cdaf099d-740a-46dd-8544-c12030b56a70.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Terrains/TerrainData_cdaf099d-740a-46dd-8544-c12030b56a70.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Terrains/TerrainData_d156d956-d9aa-4ab2-bcbf-60476b838186.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Terrains/TerrainData_d156d956-d9aa-4ab2-bcbf-60476b838186.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Terrains/TerrainData_dea5d528-30cb-4b83-b1c7-5dfd8fe5e8a1.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Terrains/TerrainData_dea5d528-30cb-4b83-b1c7-5dfd8fe5e8a1.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Terrains/TerrainData_f6988511-5d80-4057-8853-f0d3aa22296c.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Terrains/TerrainData_f6988511-5d80-4057-8853-f0d3aa22296c.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UI/FuelAndHealthPanel/Channels/ScriptableObjects.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -316,10 +576,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="19800">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="19800" />
+      <option name="pid" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -390,6 +650,7 @@
       <workItem from="1664230064156" duration="17153000" />
       <workItem from="1664370475718" duration="182000" />
       <workItem from="1664370714597" duration="7159000" />
+      <workItem from="1667404946124" duration="3188000" />
     </task>
     <servers />
   </component>
@@ -511,6 +772,19 @@
             </endOffsets>
           </properties>
           <option name="timeStamp" value="31" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/GameManager/GameManager.cs</url>
+          <line>118</line>
+          <properties documentPath="C:\Users\abdel\OneDrive - University of Virginia\UVA\Research\UAV\UAVSimulation\Assets\GameManager\GameManager.cs" initialLine="118" containingFunctionPresentation="method 'Start'">
+            <startOffsets>
+              <option value="5226" />
+            </startOffsets>
+            <endOffsets>
+              <option value="5289" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="33" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

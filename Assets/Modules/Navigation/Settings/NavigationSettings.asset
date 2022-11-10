@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f7b04ff4e0ab824f86c2c64a4e449d1, type: 3}
   m_Name: NavigationSettings
   m_EditorClassIdentifier: 
-  navigationRecordsSource: 0
+  navigationRecordsSource: 1
   speedMode: 1
   fixedSpeed: 15
-  pathDuration: 10
+  pathDuration: 1
   followingType: 2
   rotationDuration: 2
   loopingType: 0

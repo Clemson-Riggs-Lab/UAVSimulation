@@ -16,6 +16,8 @@ namespace UI.ReroutingPanel
 {
 	public class ReroutingButtonsContainerController:MonoBehaviour
 	{
+		public static event EventHandler<Uav> DirectLogRerouteRequested_EventHandler;
+
 		private GameObject _buttonPrefab;
 		private ReroutingPanelSettingsSO _reroutingPanelSettings;
 		private UavEventChannelSO _uavCreatedEventChannel;
@@ -25,7 +27,7 @@ namespace UI.ReroutingPanel
 		private Dictionary<Uav, Button> _uavsToButtonsDictionary = new();
 		private UavsManager _uavsManager;
 
-		private void OnDisable()
+        private void OnDisable()
         {
             UnsubscribeFromChannels();
         }
@@ -102,7 +104,6 @@ namespace UI.ReroutingPanel
 				button.GetComponent<LayoutElement>().ignoreLayout = false;
 			}
 		}
-
 		
 		private void ClearButtons()
 		{
@@ -144,9 +145,9 @@ namespace UI.ReroutingPanel
 		private void OnClickButton(Uav uav)
         {
 			if (AppNetPortal.Instance.IsMultiplayerMode())
-				GameplayNetworkCallsHandler.Instance.ReroutePanelOpenServerRpc(AppNetPortal.Instance.LocalClientId, uav.id);
-
-			_reroutingOptionsRequestedChannel.RaiseEvent(uav);
+				GameplayNetworkCallsHandler.Instance.ReroutePanelOpenServerRpc(AppNetPortal.Instance.IsThisHost ? CallerType.Host : CallerType.Client, AppNetPortal.Instance.LocalClientId, uav.id);
+			else
+				_reroutingOptionsRequestedChannel.RaiseEvent(uav);
         }
 
 		private void UnsubscribeFromChannels()
@@ -161,12 +162,21 @@ namespace UI.ReroutingPanel
 				_uavDestroyedEventChannel.Unsubscribe(RemoveButton);
 		}
 
-        private void OnReroutePanelOpenNetworkEventHandler(object sender, int uavId)
+		private void OnReroutePanelOpenNetworkEventHandler(object sender, ReroutingPanelOpenEventArgs e)
         {
-            Uav uav = _uavsManager.GetUAVAgainstId(uavId);
+            Uav uav = _uavsManager.GetUAVAgainstId(e.UavId);
 
-            Button btn = _uavsToButtonsDictionary[uav].GetComponent<Button>();
-			btn.GetComponent<Image>().color = uav.uavColor;
+            if (AppNetPortal.Instance.LocalClientId == e.LocalClientId)
+			{
+                _reroutingOptionsRequestedChannel.RaiseEvent(uav);
+            }
+			else
+			{
+                Button btn = _uavsToButtonsDictionary[uav].GetComponent<Button>();
+                btn.GetComponent<Image>().color = uav.uavColor;
+
+				DirectLogRerouteRequested_EventHandler?.Invoke(this, uav);
+            }
         }
 
         private void OnReroutePanelCloseNetworkEventHandler(object sender, int uavId)

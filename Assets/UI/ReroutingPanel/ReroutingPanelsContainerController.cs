@@ -127,7 +127,7 @@ namespace UI.ReroutingPanel
 
 			}
 			var panelController = Instantiate(_panelPrefab,transform).GetComponent<ReroutingOptionsPanelController>();
-			panelController.Initialize(uav,this,_reroutingManager);
+			panelController.Initialize(uav,this, GameManager.Instance.uavsManager);
 			panelController.transform.localScale = Vector3.zero;
 			switch (_reroutingPanelSettings.newPanelPosition) //setting the position of the newly added panel 
 			{
@@ -142,8 +142,8 @@ namespace UI.ReroutingPanel
 			panelController.transform.localScale = Vector3.one;
 			_uavReroutingOptionsPanelControllerDictionary[uav]=panelController;
 
-            if (AppNetPortal.Instance.IsMultiplayerMode())
-                GameplayNetworkCallsHandler.Instance.ReroutePanelOpenServerRpc(AppNetPortal.Instance.LocalClientId, uav.id);
+            //if (AppNetPortal.Instance.IsMultiplayerMode())
+            //    GameplayNetworkCallsHandler.Instance.ReroutePanelOpenServerRpc(AppNetPortal.Instance.IsThisHost ? CallerType.Host : CallerType.Client, AppNetPortal.Instance.LocalClientId, uav.id);
 
             HighlightPanel(uav);
 		}

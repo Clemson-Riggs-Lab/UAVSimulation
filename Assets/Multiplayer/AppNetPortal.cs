@@ -150,10 +150,16 @@ namespace Multiplayer
 
         public bool IsMultiplayerMode()
         {
-            if (_networkManager.IsClient || _networkManager.IsServer)
-                return true;
+            if (_networkManager != null)
+            {
+                if (_networkManager.IsClient || _networkManager.IsServer)
+                    return true;
+                else
+                    return false;
+            }
             else
                 return false;
+
         }
         
         public string GetLocalIPAddress()

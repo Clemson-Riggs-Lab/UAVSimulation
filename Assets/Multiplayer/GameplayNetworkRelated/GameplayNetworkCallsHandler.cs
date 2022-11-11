@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using UAVs;
 using Unity.Netcode;
 using UnityEngine;
 using static Multiplayer.GameplayNetworkCallsData;
@@ -8,9 +9,10 @@ namespace Multiplayer
 {
     public class GameplayNetworkCallsHandler : NetworkBehaviour
     {
-        public event EventHandler<int> ReroutePanelOpen_NetworkEventHandler;
+        public event EventHandler<ReroutingPanelOpenEventArgs> ReroutePanelOpen_NetworkEventHandler;
         public event EventHandler<int> ReroutePanelClose_NetworkEventHandler;
         public event EventHandler<ReroutingUAVEventArgs> ReroutingUAV_NetworkEventHandler;
+        public event EventHandler<ReroutePreviewEventArgs> ReroutePreview_NetworkEventHandler;
 
         public event EventHandler<FixLeakEventArgs> FixLeak_NetworkEventHandler;
 
@@ -51,15 +53,21 @@ namespace Multiplayer
         }
 
         [ServerRpc(RequireOwnership = false)]
-        public void ReroutePanelOpenServerRpc(ulong localClientId, int uavId)
+        public void ReroutePanelOpenServerRpc(CallerType callerType, ulong localClientId, int uavId)
         {
-            ReroutePanelOpenClientRpc(localClientId, uavId);
+            ReroutePanelOpenClientRpc(callerType, localClientId, uavId);
         }
 
         [ServerRpc(RequireOwnership = false)]
         public void ReroutePanelCloseServerRpc(ulong localClientId, int uavId)
         {
             ReroutePanelCloseClientRpc(localClientId, uavId);
+        }        
+        
+        [ServerRpc(RequireOwnership = false)]
+        public void ReroutePreviewServerRpc(CallerType callerType, ulong localClientId, int uavId, int optionNumber, string lastReroutOptLsOrderBase)
+        {
+            ReroutePreviewClientRpc(callerType, localClientId, uavId, optionNumber, lastReroutOptLsOrderBase);
         }
 
         [ClientRpc]
@@ -73,21 +81,30 @@ namespace Multiplayer
         }
 
         [ClientRpc]
-        private void ReroutePanelOpenClientRpc(ulong localClientId, int uavId)
+        private void ReroutePanelOpenClientRpc(CallerType callerType, ulong localClientId, int uavId)
         {
-            Debug.Log("UAV ID: " + uavId);
+            _callCallerTypeDict.Add(CallType.RerouteOptionRequested, callerType);
 
-            if (AppNetPortal.Instance.LocalClientId != localClientId)
-                ReroutePanelOpen_NetworkEventHandler?.Invoke(this, uavId);
+            ReroutePanelOpen_NetworkEventHandler?.Invoke(this, new ReroutingPanelOpenEventArgs(uavId, localClientId));
+
+            _callCallerTypeDict.Remove(CallType.RerouteOptionRequested);
         }
 
         [ClientRpc]
         private void ReroutePanelCloseClientRpc(ulong localClientId, int uavId)
         {
-            Debug.Log("UAV ID: " + uavId);
-
             if (AppNetPortal.Instance.LocalClientId != localClientId)
                 ReroutePanelClose_NetworkEventHandler?.Invoke(this, uavId);
+        }
+
+        [ClientRpc]
+        private void ReroutePreviewClientRpc(CallerType callerType, ulong localClientId, int uavId, int optionNumber, string lastReroutOptLsOrderBase)
+        {
+            _callCallerTypeDict.Add(CallType.RerouteOptionPreviewed, callerType);
+
+            ReroutePreview_NetworkEventHandler?.Invoke(this, new ReroutePreviewEventArgs(callerType, localClientId, uavId, optionNumber, lastReroutOptLsOrderBase));
+
+            _callCallerTypeDict.Remove(CallType.RerouteOptionPreviewed);
         }
         #endregion
 

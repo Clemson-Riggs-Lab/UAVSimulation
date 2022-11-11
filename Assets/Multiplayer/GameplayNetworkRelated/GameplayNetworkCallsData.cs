@@ -20,7 +20,7 @@ namespace Multiplayer
 
     public enum CallType
     {
-        ReroutingUAV, ReroutePanelOpen, ReroutePanelClose, LeakFixed, TargetDetectClicked, TargetNotDetectedClicked, ChatResponseClicked, PauseBehaviour
+        ReroutingUAV, RerouteOptionRequested, RerouteOptionPreviewed, LeakFixed, TargetDetectClicked, TargetNotDetectedClicked, ChatResponseClicked, PauseBehaviour
     }
 
     public class ReroutingUAVEventArgs : EventArgs
@@ -35,8 +35,20 @@ namespace Multiplayer
             OptionIndex = optionIndex;
             LastReroutOptLsOrderBase = lastReroutOptLsOrderBase;
         }
-    }    
-    
+    }
+
+    public class ReroutingPanelOpenEventArgs : EventArgs
+    {
+        public readonly int UavId;
+        public readonly ulong LocalClientId;
+
+        public ReroutingPanelOpenEventArgs(int uavId, ulong localClientId)
+        {
+            UavId = uavId;
+            LocalClientId = localClientId;
+        }
+    }
+
     public class FixLeakEventArgs : EventArgs
     {
         public readonly int UavId;
@@ -46,6 +58,24 @@ namespace Multiplayer
         {
             UavId = uavId;
             ButtonText = buttonText;
+        }
+    }
+
+    public class ReroutePreviewEventArgs : EventArgs
+    {
+        public readonly CallerType CallerType;
+        public readonly ulong LocalClientId;
+        public readonly int UavId;
+        public readonly int OptionNumber;
+        public readonly string LastReroutOptLsOrderBase;
+
+        public ReroutePreviewEventArgs(CallerType callerType, ulong localClientId, int uavId, int optionNumber, string lastReroutOptLsOrderBase)
+        {
+            CallerType = callerType;
+            LocalClientId = localClientId;
+            UavId = uavId;
+            OptionNumber = optionNumber;
+            LastReroutOptLsOrderBase = lastReroutOptLsOrderBase;
         }
     }
 

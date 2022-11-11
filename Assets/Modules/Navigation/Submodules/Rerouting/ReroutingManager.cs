@@ -6,14 +6,17 @@ using Modules.Navigation.Channels.ScriptableObjects;
 using Multiplayer;
 using UAVs;
 using UAVs.Channels.ScriptableObjects;
+using UI.ReroutingPanel;
 using UI.ReroutingPanel.Settings.ScriptableObjects;
 using UnityEngine;
 
 namespace Modules.Navigation.Submodules.Rerouting
 {
 	public class ReroutingManager : MonoBehaviour
-	{
-		public Dictionary<Uav, List<Path>> reroutingOptions = new();
+    {
+        public static event EventHandler<RerouteOptionPreviewedEventArgs> DirectLogRerouteOptionPreviewed_EventHandler;
+
+        public Dictionary<Uav, List<Path>> reroutingOptions = new();
 
 		private UavEventChannelSO _reroutingOptionsRequestedChannel;
 		private UavPathEventChannelSO _uavArrivedAtDestinationEventChannel;
@@ -37,7 +40,10 @@ namespace Modules.Navigation.Submodules.Rerouting
 			reroutingLogHandler.Initialize();
 
             if (AppNetPortal.Instance.IsMultiplayerMode())
+			{
                 GameplayNetworkCallsHandler.Instance.ReroutingUAV_NetworkEventHandler += OnReroutingUAVNetworkEventHandler;
+                GameplayNetworkCallsHandler.Instance.ReroutePreview_NetworkEventHandler += OnReroutePreviewNetworkEventHandler;
+            }
         }
 
 		private void SubscribeToChannels()
@@ -111,14 +117,21 @@ namespace Modules.Navigation.Submodules.Rerouting
 
 		public void PreviewPath(Uav uav, int optionIndex) 
 		{
-			if (optionIndex == -1) // -1 indicates that we want to cancel the preview
+			if (AppNetPortal.Instance.IsMultiplayerMode())
 			{
-				_uavReroutePreviewEventChannel.RaiseEvent(uav,uav.currentPath);
-			}
-			else //normal preview
+                GameplayNetworkCallsHandler.Instance.ReroutePreviewServerRpc(AppNetPortal.Instance.IsThisHost ? CallerType.Host : CallerType.Client, AppNetPortal.Instance.LocalClientId, uav.id, optionIndex, LastReroutOptLsOrderBase.ToString());
+            }
+			else
 			{
-				_uavReroutePreviewEventChannel.RaiseEvent(uav,reroutingOptions[uav][optionIndex]);
-			}
+                if (optionIndex == -1) // -1 indicates that we want to cancel the preview
+                {
+                    _uavReroutePreviewEventChannel.RaiseEvent(uav, uav.currentPath);
+                }
+                else //normal preview
+                {
+                    _uavReroutePreviewEventChannel.RaiseEvent(uav, reroutingOptions[uav][optionIndex]);
+                }
+            }
 		}
 
 		public void RerouteUav(Uav uav, int optionIndex)
@@ -131,8 +144,7 @@ namespace Modules.Navigation.Submodules.Rerouting
 		{
 			PreviewPath(uav, -1); // make sure to cancel a preview if it is active
 			reroutingOptions.Remove(uav);
-		}
-		
+		}	
 		
 		private void GetReferencesFromGameManager()
 		{
@@ -169,6 +181,33 @@ namespace Modules.Navigation.Submodules.Rerouting
             reroutingOptions[uav].OrderBy(x => _lastReroutOptLsOrderBase).ToList();
 
             RerouteUav(uav, e.OptionIndex);
+        }
+
+        private void OnReroutePreviewNetworkEventHandler(object sender, ReroutePreviewEventArgs e)
+        {
+            Uav uav = _uavsManager.GetUAVAgainstId(e.UavId);
+
+			if (AppNetPortal.Instance.LocalClientId == e.LocalClientId)
+            {
+                if (e.OptionNumber == -1) // -1 indicates that we want to cancel the preview
+                {
+                    _uavReroutePreviewEventChannel.RaiseEvent(uav, uav.currentPath);
+                }
+                else //normal preview
+                {
+                    _uavReroutePreviewEventChannel.RaiseEvent(uav, reroutingOptions[uav][e.OptionNumber]);
+                }              
+            }
+			else
+			{
+                if (reroutingOptions.ContainsKey(uav) == false)
+                    PopulateReroutingOptions(uav);
+
+                _lastReroutOptLsOrderBase = new Guid(e.LastReroutOptLsOrderBase);
+                reroutingOptions[uav].OrderBy(x => _lastReroutOptLsOrderBase).ToList();
+
+                DirectLogRerouteOptionPreviewed_EventHandler?.Invoke(this, new RerouteOptionPreviewedEventArgs(uav, e.OptionNumber == -1 ? uav.currentPath : reroutingOptions[uav][e.OptionNumber]));
+            }
         }
     }
 }

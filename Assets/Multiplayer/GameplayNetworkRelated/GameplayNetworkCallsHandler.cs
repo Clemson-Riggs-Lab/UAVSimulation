@@ -13,6 +13,7 @@ namespace Multiplayer
         public event EventHandler<int> ReroutePanelClose_NetworkEventHandler;
         public event EventHandler<ReroutingUAVEventArgs> ReroutingUAV_NetworkEventHandler;
         public event EventHandler<ReroutePreviewEventArgs> ReroutePreview_NetworkEventHandler;
+        public event EventHandler<ReroutePathMadeEventArgs> ReroutePathMade_NetworkEventHandler;
 
         public event EventHandler<FixLeakEventArgs> FixLeak_NetworkEventHandler;
 
@@ -47,9 +48,9 @@ namespace Multiplayer
 
         #region Rerouting Related
         [ServerRpc(RequireOwnership = false)]
-        public void ReroutingUAVOnServerRpc(CallerType callerType, int uavId, int optionIndex, string lastReroutOptLsOrderBase)
+        public void ReroutingUAVOnServerRpc(CallerType callerType, int uavId, int optionIndex, string lastReroutOptLsOrderBase, int pathId_0, int pathId_1, int pathId_2)
         {
-            ReroutingUAVOnClientRpc(callerType, uavId, optionIndex, lastReroutOptLsOrderBase);
+            ReroutingUAVOnClientRpc(callerType, uavId, optionIndex, lastReroutOptLsOrderBase, pathId_0, pathId_1, pathId_2);
         }
 
         [ServerRpc(RequireOwnership = false)]
@@ -65,17 +66,23 @@ namespace Multiplayer
         }        
         
         [ServerRpc(RequireOwnership = false)]
-        public void ReroutePreviewServerRpc(CallerType callerType, ulong localClientId, int uavId, int optionNumber, string lastReroutOptLsOrderBase)
+        public void ReroutePreviewServerRpc(CallerType callerType, ulong localClientId, int uavId, int optionNumber, string lastReroutOptLsOrderBase, int pathId_0, int pathId_1, int pathId_2)
         {
-            ReroutePreviewClientRpc(callerType, localClientId, uavId, optionNumber, lastReroutOptLsOrderBase);
+            ReroutePreviewClientRpc(callerType, localClientId, uavId, optionNumber, lastReroutOptLsOrderBase, pathId_0, pathId_1, pathId_2);
+        }
+
+        [ServerRpc(RequireOwnership = false)]
+        public void ReroutePathsMadeServerRpc(ulong localClientId, int uavId, string lastReroutOptLsOrderBase, int pathId_0, int pathId_1, int pathId_2)
+        {
+            ReroutePathsMadeClientRpc(localClientId, uavId, lastReroutOptLsOrderBase, pathId_0, pathId_1, pathId_2);
         }
 
         [ClientRpc]
-        private void ReroutingUAVOnClientRpc(CallerType callerType, int uavId, int optionIndex, string lastReroutOptLsOrderBase)
+        private void ReroutingUAVOnClientRpc(CallerType callerType, int uavId, int optionIndex, string lastReroutOptLsOrderBase, int pathId_0, int pathId_1, int pathId_2)
         {
             _callCallerTypeDict.Add(CallType.ReroutingUAV, callerType);
 
-            ReroutingUAV_NetworkEventHandler?.Invoke(this, new ReroutingUAVEventArgs(uavId, optionIndex, lastReroutOptLsOrderBase));
+            ReroutingUAV_NetworkEventHandler?.Invoke(this, new ReroutingUAVEventArgs(uavId, optionIndex, lastReroutOptLsOrderBase, pathId_0, pathId_1, pathId_2));
 
             _callCallerTypeDict.Remove(CallType.ReroutingUAV);
         }
@@ -98,13 +105,21 @@ namespace Multiplayer
         }
 
         [ClientRpc]
-        private void ReroutePreviewClientRpc(CallerType callerType, ulong localClientId, int uavId, int optionNumber, string lastReroutOptLsOrderBase)
+        private void ReroutePreviewClientRpc(CallerType callerType, ulong localClientId, int uavId, int optionNumber, string lastReroutOptLsOrderBase, int pathId_0, int pathId_1, int pathId_2)
         {
             _callCallerTypeDict.Add(CallType.RerouteOptionPreviewed, callerType);
 
-            ReroutePreview_NetworkEventHandler?.Invoke(this, new ReroutePreviewEventArgs(callerType, localClientId, uavId, optionNumber, lastReroutOptLsOrderBase));
+            ReroutePreview_NetworkEventHandler?.Invoke(this, new ReroutePreviewEventArgs(callerType, localClientId, uavId, optionNumber, lastReroutOptLsOrderBase, pathId_0, pathId_1, pathId_2));
 
             _callCallerTypeDict.Remove(CallType.RerouteOptionPreviewed);
+        }
+
+        [ClientRpc]
+        private void ReroutePathsMadeClientRpc(ulong localClientId, int uavId, string lastReroutOptLsOrderBase, int pathId_0, int pathId_1, int pathId_2)
+        {
+            if (AppNetPortal.Instance.LocalClientId != localClientId)
+                ReroutePathMade_NetworkEventHandler?.Invoke(this, new ReroutePathMadeEventArgs(localClientId, uavId, lastReroutOptLsOrderBase, pathId_0, pathId_1, pathId_2));
+
         }
         #endregion
 

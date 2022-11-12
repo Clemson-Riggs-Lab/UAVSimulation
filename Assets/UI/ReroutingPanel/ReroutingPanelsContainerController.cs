@@ -142,9 +142,6 @@ namespace UI.ReroutingPanel
 			panelController.transform.localScale = Vector3.one;
 			_uavReroutingOptionsPanelControllerDictionary[uav]=panelController;
 
-            //if (AppNetPortal.Instance.IsMultiplayerMode())
-            //    GameplayNetworkCallsHandler.Instance.ReroutePanelOpenServerRpc(AppNetPortal.Instance.IsThisHost ? CallerType.Host : CallerType.Client, AppNetPortal.Instance.LocalClientId, uav.id);
-
             HighlightPanel(uav);
 		}
 		

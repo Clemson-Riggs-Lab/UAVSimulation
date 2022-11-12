@@ -114,7 +114,8 @@ namespace UI.ReroutingPanel
             if (AppNetPortal.Instance.IsMultiplayerMode())
 			{
                 GameplayNetworkCallsHandler.Instance.ReroutePanelCloseServerRpc(AppNetPortal.Instance.LocalClientId, _uav.id);
-                GameplayNetworkCallsHandler.Instance.ReroutingUAVOnServerRpc(AppNetPortal.Instance.IsThisHost ? CallerType.Host : CallerType.Client, _uav.id, optionIndex, _manager.LastReroutOptLsOrderBase.ToString());
+                GameplayNetworkCallsHandler.Instance.ReroutingUAVOnServerRpc(AppNetPortal.Instance.IsThisHost ? CallerType.Host : CallerType.Client, _uav.id, optionIndex, _manager.LastReroutOptLsOrderBase.ToString(),
+					_manager.reroutingOptions[_uav][0].id, _manager.reroutingOptions[_uav][1].id, _manager.reroutingOptions[_uav][2].id);
 			}
 			else
                 _manager.RerouteUav(_uav, optionIndex);

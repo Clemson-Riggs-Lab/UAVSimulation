@@ -28,12 +28,18 @@ namespace Multiplayer
         public readonly int UavId;
         public readonly int OptionIndex;
         public readonly string LastReroutOptLsOrderBase;
+        public readonly int PathId_0;
+        public readonly int PathId_1;
+        public readonly int PathId_2;
 
-        public ReroutingUAVEventArgs(int uavId, int optionIndex, string lastReroutOptLsOrderBase)
+        public ReroutingUAVEventArgs(int uavId, int optionIndex, string lastReroutOptLsOrderBase, int pathId_0, int pathId_1, int pathId_2)
         {
             UavId = uavId;
             OptionIndex = optionIndex;
             LastReroutOptLsOrderBase = lastReroutOptLsOrderBase;
+            PathId_0 = pathId_0;
+            PathId_1 = pathId_1;
+            PathId_2 = pathId_2;
         }
     }
 
@@ -68,14 +74,40 @@ namespace Multiplayer
         public readonly int UavId;
         public readonly int OptionNumber;
         public readonly string LastReroutOptLsOrderBase;
+        public readonly int PathId_0;
+        public readonly int PathId_1;
+        public readonly int PathId_2;
 
-        public ReroutePreviewEventArgs(CallerType callerType, ulong localClientId, int uavId, int optionNumber, string lastReroutOptLsOrderBase)
+        public ReroutePreviewEventArgs(CallerType callerType, ulong localClientId, int uavId, int optionNumber, string lastReroutOptLsOrderBase, int pathId_0, int pathId_1, int pathId_2)
         {
             CallerType = callerType;
             LocalClientId = localClientId;
             UavId = uavId;
             OptionNumber = optionNumber;
             LastReroutOptLsOrderBase = lastReroutOptLsOrderBase;
+            PathId_0 = pathId_0;
+            PathId_1 = pathId_1;
+            PathId_2 = pathId_2;
+        }
+    }    
+    
+    public class ReroutePathMadeEventArgs : EventArgs
+    {
+        public readonly ulong LocalClientId;
+        public readonly int UavId;
+        public readonly string LastReroutOptLsOrderBase;
+        public readonly int PathId_0;
+        public readonly int PathId_1;
+        public readonly int PathId_2;
+
+        public ReroutePathMadeEventArgs(ulong localClientId, int uavId, string lastReroutOptLsOrderBase, int pathId_0, int pathId_1, int pathId_2)
+        {
+            LocalClientId = localClientId;
+            UavId = uavId;
+            LastReroutOptLsOrderBase = lastReroutOptLsOrderBase;
+            PathId_0 = pathId_0;
+            PathId_1 = pathId_1;
+            PathId_2 = pathId_2;
         }
     }
 

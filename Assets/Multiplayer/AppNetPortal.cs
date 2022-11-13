@@ -164,7 +164,7 @@ namespace Multiplayer
         
         public string GetLocalIPAddress()
         {
-            return "127.0.0.1";
+            //return "127.0.0.1";
             var host = Dns.GetHostEntry(Dns.GetHostName());
             foreach (var ip in host.AddressList)
             {

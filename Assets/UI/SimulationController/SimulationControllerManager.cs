@@ -41,6 +41,7 @@ namespace UI.Console
 			else
 			{
                 GameManager.Instance.ChangePauseStatus(GameManager.Instance.PauseStatus ? false : true);
+                GameManager.Instance.blockingPanelController.PauseView(GameManager.Instance.PauseStatus);
                 _pauseBtnTxt.text = GameManager.Instance.PauseStatus ? _pauseBtnTxt.text = "Resume" : _pauseBtnTxt.text = "Pause";
             }
         }
@@ -48,7 +49,7 @@ namespace UI.Console
         private void OnPauseBehaviourNetworkEventHandler(object sender, bool pauseStatus)
         {
             GameManager.Instance.ChangePauseStatus(pauseStatus);
-
+			GameManager.Instance.blockingPanelController.PauseView(GameManager.Instance.PauseStatus);
             _pauseBtnTxt.text = GameManager.Instance.PauseStatus ? _pauseBtnTxt.text = "Resume" : _pauseBtnTxt.text = "Pause";
         }
     }

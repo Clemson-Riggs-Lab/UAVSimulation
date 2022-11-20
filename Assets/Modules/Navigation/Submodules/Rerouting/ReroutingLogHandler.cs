@@ -6,6 +6,7 @@ using Modules.Navigation.Submodules.Rerouting.Settings.ScriptableObjects;
 using Multiplayer;
 using UAVs;
 using UAVs.Channels.ScriptableObjects;
+using UI.ReroutingPanel;
 using UnityEngine;
 
 namespace Modules.Navigation.Submodules.Rerouting
@@ -43,9 +44,22 @@ namespace Modules.Navigation.Submodules.Rerouting
 
 			if(_reroutingSettings.logReroutingEvents && _uavReroutedEventChannel != null)
 				_uavReroutedEventChannel.Subscribe(LogReroutingEvent);
+
+			ReroutingButtonsContainerController.DirectLogRerouteRequested_EventHandler += OnDirectLogRerouteRequestedEventHandler;
+            ReroutingManager.DirectLogRerouteOptionPreviewed_EventHandler += DirectLogRerouteOptionPreviewedEventHandler;
 		}
 
-		private void LogReroutingEvent(Uav uav, Path path)
+		private void OnDirectLogRerouteRequestedEventHandler(object sender, Uav e)
+		{
+			LogReroutingOptionsRequested(e);
+		}
+
+        private void DirectLogRerouteOptionPreviewedEventHandler(object sender, RerouteOptionPreviewedEventArgs e)
+        {
+			LogReroutingOptionPreviewed(e.UavObj, e.PathObj);
+        }
+
+        private void LogReroutingEvent(Uav uav, Path path)
 		{
 			var log = new Log();
 			log.logType = "Rerouting";
@@ -92,7 +106,10 @@ namespace Modules.Navigation.Submodules.Rerouting
 			log.eventType = "Rerouting Option Previewed";
 			log.logMessages = new() { $"Rerouting option previewed for Uav {uav.uavName} "};
 
-            log.logGenerator = CallerType.None.ToString();
+            if (AppNetPortal.Instance.IsMultiplayerMode())
+                log.logGenerator = GameplayNetworkCallsHandler.Instance.GetCallerType(CallType.RerouteOptionPreviewed).ToString();
+            else
+                log.logGenerator = CallerType.None.ToString();
 
             if (_reroutingSettings.logTimeOfPathStart)
 			{
@@ -115,7 +132,10 @@ namespace Modules.Navigation.Submodules.Rerouting
 			log.eventType = "Rerouting Options Requested";
 			log.logMessages = new() { $" requested rerouting options for uav {uav.uavName}"};
 
-            log.logGenerator = CallerType.None.ToString();
+            if (AppNetPortal.Instance.IsMultiplayerMode())
+                log.logGenerator = GameplayNetworkCallsHandler.Instance.GetCallerType(CallType.RerouteOptionRequested).ToString();
+            else
+                log.logGenerator = CallerType.None.ToString();
 
             if (_reroutingSettings.logTimeOfPathStart)
 			{
@@ -130,7 +150,6 @@ namespace Modules.Navigation.Submodules.Rerouting
 			
 			_logEventChannel.RaiseEvent(log);
 		}
-		
 		
 		private void LogTimeOfPathStart(Log log, Uav uav, Path path)
 		{

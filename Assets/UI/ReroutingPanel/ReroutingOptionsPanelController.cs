@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Modules.Navigation;
 using Modules.Navigation.Submodules.Rerouting;
@@ -11,10 +12,21 @@ using UnityEngine.UI;
 
 namespace UI.ReroutingPanel
 {
+	public class RerouteOptionPreviewedEventArgs
+	{
+		public readonly Uav UavObj;
+		public readonly Path PathObj;
+
+		public RerouteOptionPreviewedEventArgs(Uav uavObj, Path pathObj)
+		{
+			UavObj = uavObj;
+			PathObj = pathObj;
+		}
+	}
+
 	public class ReroutingOptionsPanelController : MonoBehaviour
 	{
-
-		public TextMeshProUGUI headerText;
+        public TextMeshProUGUI headerText;
 		public Outline outline;
 		private Uav _uav;
 		private  ReroutingPanelsContainerController _containerController;
@@ -27,8 +39,14 @@ namespace UI.ReroutingPanel
 		private GameObject _panelRowPrefab;
 		
 		private Dictionary<int, ReroutingOptionRowController> _panelRows = new ();
+        private UavsManager _uavsManager;
 
-		private void ClearRows()
+        private void Start()
+        {
+
+        }
+
+        private void ClearRows()
 		{
 			//find children with name containing "Row"
 			foreach (Transform child in transform)
@@ -40,13 +58,14 @@ namespace UI.ReroutingPanel
 			}
 		}
 
-		public void Initialize(Uav uav, ReroutingPanelsContainerController containerController, ReroutingManager manager)
+		public void Initialize(Uav uav, ReroutingPanelsContainerController containerController, UavsManager uavsManager)
 		{
 			this._uav= uav;
 			_containerController = containerController;
-			_manager = manager;
-			
-			_reroutingPanelSettings = GameManager.Instance.settingsDatabase.reroutingPanelSettings;
+            _uavsManager = uavsManager;
+            _manager = GameManager.Instance.reroutingManager;
+
+            _reroutingPanelSettings = GameManager.Instance.settingsDatabase.reroutingPanelSettings;
 			_panelRowPrefab = GameManager.Instance.prefabsDatabase.reroutingPrefabsDatabase.reroutingOptionRowPrefab;
 			closeButton.onClick.AddListener( OnCloseButtonClicked);
 			ClearRows();
@@ -64,10 +83,8 @@ namespace UI.ReroutingPanel
 				rowController.cancelButton.onClick.AddListener(() => OnCancelButtonClicked(iterator));
 				rowController.previewButton.onClick.AddListener(() => OnPreviewButtonClicked(iterator));
 				rowController.confirmButton.onClick.AddListener(() => OnConfirmButtonClicked(iterator));
-				_panelRows.Add(i, rowController);
-				
+				_panelRows.Add(i, rowController);			
 			}
-
 		}
 
 		private void OnCloseButtonClicked()
@@ -81,11 +98,12 @@ namespace UI.ReroutingPanel
 		
 		private void OnPreviewButtonClicked(int optionNumber)
 		{
-			_manager.PreviewPath(_uav, optionNumber);
-			_containerController.HighlightPanel(_uav);
-			HighlightRow(optionNumber);
+            _manager.PreviewPath(_uav, optionNumber);
+            _containerController.HighlightPanel(_uav);
+            HighlightRow(optionNumber);
 		}
-		private void OnCancelButtonClicked(int optionNumber)
+
+        private void OnCancelButtonClicked(int optionNumber)
 		{
 			UnhighlightAllRows();
 			this.Highlight(false);
@@ -96,8 +114,8 @@ namespace UI.ReroutingPanel
             if (AppNetPortal.Instance.IsMultiplayerMode())
 			{
                 GameplayNetworkCallsHandler.Instance.ReroutePanelCloseServerRpc(AppNetPortal.Instance.LocalClientId, _uav.id);
-
-                GameplayNetworkCallsHandler.Instance.ReroutingUAVOnServerRpc(AppNetPortal.Instance.IsThisHost ? CallerType.Host : CallerType.Client, _uav.id, optionIndex, _manager.LastReroutOptLsOrderBase.ToString());
+                GameplayNetworkCallsHandler.Instance.ReroutingUAVOnServerRpc(AppNetPortal.Instance.IsThisHost ? CallerType.Host : CallerType.Client, _uav.id, optionIndex, _manager.LastReroutOptLsOrderBase.ToString(),
+					_manager.reroutingOptions[_uav][0].id, _manager.reroutingOptions[_uav][1].id, _manager.reroutingOptions[_uav][2].id);
 			}
 			else
                 _manager.RerouteUav(_uav, optionIndex);

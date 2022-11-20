@@ -198,7 +198,8 @@ namespace UI.MainMenu
         private void OnSettingFileCompletelySentNetworkEventHandler(object sender, EventArgs e)
         {
             HandleBtns(PanelState.Ready);
-        }        
+            writeMessageToConsoleChannel.RaiseEvent("", new() { color = "green", doAnimate = true, text = "\n Data Completely Sent" });
+        }
 
         private void HandleBtns(PanelState panelState)
         {

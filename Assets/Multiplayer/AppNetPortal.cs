@@ -150,14 +150,21 @@ namespace Multiplayer
 
         public bool IsMultiplayerMode()
         {
-            if (_networkManager.IsClient || _networkManager.IsServer)
-                return true;
+            if (_networkManager != null)
+            {
+                if (_networkManager.IsClient || _networkManager.IsServer)
+                    return true;
+                else
+                    return false;
+            }
             else
                 return false;
+
         }
         
         public string GetLocalIPAddress()
         {
+            //return "127.0.0.1";
             var host = Dns.GetHostEntry(Dns.GetHostName());
             foreach (var ip in host.AddressList)
             {
@@ -192,7 +199,10 @@ namespace Multiplayer
             {
                 UNetTransport uNT = (UNetTransport)_networkManager.NetworkConfig.NetworkTransport;
                 writeMessageToConsoleChannel.RaiseEvent("", new() { color = "green", doAnimate = true, text = "\n Kindly Enter IP Address: " + uNT.ConnectAddress + " & Port: " + uNT.ConnectPort  + " on other computer"});
+                writeMessageToConsoleChannel.RaiseEvent("", new() { color = "green", doAnimate = true, text = "\n Sending Data... " });
             }
+            else
+                writeMessageToConsoleChannel.RaiseEvent("", new() { color = "green", doAnimate = true, text = "\n Receiving Data... " });
         }
 
         private void OnClientDisconnected(ulong obj)

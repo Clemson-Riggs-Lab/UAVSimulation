@@ -12,7 +12,7 @@ namespace UI
 
 		private const string LoadingText = "Loading... \n Trial will start in  \n";
 
-		private const string PauseText = "The Experiment is Paused, \n Please wait for the conductors instructions. \n";
+		private const string PauseText = "The Experiment is Paused, \n Please wait for the conductor's instructions. \n";
 		
 		private const string ClosingText = "The Experiment is over, \n Thank you for participating! \n";
 

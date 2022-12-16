@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13bd501e0f7c48f78b37bab7d2fe8777, type: 3}
   m_Name: FuelAndHealthPanelSettings
   m_EditorClassIdentifier: 
-  showFuelLeakConditionWhenUavHidden: 1
+  showFuelLeakConditionWhenUavHidden: 0
   enabledUavFuelAndHealthPanelConfigs:
     healthButtonInteractable: 0
     isVisibile: 1

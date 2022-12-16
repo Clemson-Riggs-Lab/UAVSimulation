@@ -15,9 +15,9 @@ MonoBehaviour:
   navigationRecordsSource: 1
   speedMode: 1
   fixedSpeed: 15
-  pathDuration: 1
+  pathDuration: 10
   followingType: 2
-  rotationDuration: 2
+  rotationDuration: 1
   loopingType: 0
   numberOfLoops: 0
   ignoreWaypointPositionOnAxis:

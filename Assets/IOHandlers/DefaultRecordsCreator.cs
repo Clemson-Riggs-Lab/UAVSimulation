@@ -14,14 +14,14 @@ namespace IOHandlers
 				{
 					StartCoordinates = { X = 0, Y = 0, Z = 350 },
 					EndCoordinates = { X = 100, Y = 300, Z = 750 },
-					TextOnNFZAfterCountdown = "No Fly Zone, Restricted Area, Reroute any UAVs",
+					TextOnNFZAfterCountdown = "No Fly Zone",
 					NFZCountdownTimer = 10, NFZStartTime = 10, NFZEndTime = 20
 				},
 				new()
 				{
 					StartCoordinates = { X = 600, Y = 0, Z = 0 },
 					EndCoordinates = { X = 800, Y = 300, Z = 100 },
-					TextOnNFZAfterCountdown = " Reroute any UAVs that enter this area",
+					TextOnNFZAfterCountdown = " Reroute any UAVs that are projected to enter this area",
 					NFZCountdownTimer = 10, NFZStartTime = 0, NFZEndTime = 0
 				},
 				new()

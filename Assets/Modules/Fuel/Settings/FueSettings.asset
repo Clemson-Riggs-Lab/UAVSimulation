@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: FueSettings
   m_EditorClassIdentifier: 
   fuelComputationType: 0
-  fuelDuration: 950
+  fuelDuration: 500
   fuelCapacity: 950
   fuelConsumptionPerSecond: 1
   fuelLeaksRecordsSource: 0

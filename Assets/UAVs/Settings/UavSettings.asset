@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef2eede12795c0048b3b8f9e0e074b92, type: 3}
   m_Name: UavSettings
   m_EditorClassIdentifier: 
-  hideUavInMapWhenHidden: 0
-  hideUavInMapWhenLostOrFinished: 0
-  disableCollisionWithNFZWhenHidden: 0
-  uavRecordsSource: 0
+  hideUavInMapWhenHidden: 1
+  hideUavInMapWhenLostOrFinished: 1
+  disableCollisionWithNFZWhenHidden: 1
+  uavRecordsSource: 1
   namingScheme: 5
   colorUavLikePath: 1
   logUavCreationEvents: 1

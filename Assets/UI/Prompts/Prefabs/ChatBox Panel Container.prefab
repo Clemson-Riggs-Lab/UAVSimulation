@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6486393343060331788}
   - component: {fileID: 6486393343060331789}
   - component: {fileID: 6486393343060331790}
-  - component: {fileID: 6486393343060331787}
+  - component: {fileID: 8681272025915953966}
   m_Layer: 5
   m_Name: Response Panel
   m_TagString: Untagged
@@ -98,7 +98,7 @@ MonoBehaviour:
   m_FlexibleWidth: 1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
---- !u!114 &6486393343060331787
+--- !u!114 &8681272025915953966
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -107,24 +107,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 6486393343060331776}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 36027b917181401799bf0166094b330c, type: 3}
+  m_Script: {fileID: 11500000, guid: 59f8146938fff824cb5fd77236b75775, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
-    m_Left: 0
-    m_Right: 0
-    m_Top: 0
-    m_Bottom: 0
+    m_Left: 20
+    m_Right: 20
+    m_Top: 20
+    m_Bottom: 20
   m_ChildAlignment: 0
-  alignment: 0
-  fitType: 0
-  columns: 0
-  rows: -2147483648
-  spacing: {x: 0, y: 0}
-  cellSize: {x: NaN, y: 54.72222}
-  fitX: 1
-  fitY: 1
-  nudgeLastItemsOver: 1
+  m_Spacing: 50
+  m_ChildForceExpandWidth: 1
+  m_ChildForceExpandHeight: 1
+  m_ChildControlWidth: 1
+  m_ChildControlHeight: 1
+  m_ChildScaleWidth: 0
+  m_ChildScaleHeight: 0
+  m_ReverseArrangement: 0
 --- !u!1 &6486393343220936407
 GameObject:
   m_ObjectHideFlags: 0
@@ -1261,6 +1260,7 @@ MonoBehaviour:
   animateAllAtStart: 1
   consoleTextMeshProUGUI: {fileID: 8402207199986651839}
   writeMessageToConsoleChannel: {fileID: 0}
+  settingsDatabase: {fileID: 0}
 --- !u!114 &8402207199986651839
 MonoBehaviour:
   m_ObjectHideFlags: 0

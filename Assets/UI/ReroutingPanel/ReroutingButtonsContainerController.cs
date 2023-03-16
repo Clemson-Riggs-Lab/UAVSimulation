@@ -131,7 +131,12 @@ namespace UI.ReroutingPanel
 			button.GetComponentInChildren<TextMeshProUGUI>().text = uav.uavName;
 			button.name = "UAV "+uav.uavName+ "Reroute Options Request Button";
 			button.GetComponent<Button>().onClick.AddListener(() => { OnClickButton(uav); } );
+			
+			if(_reroutingPanelSettings.ButtonsColorLikeUav)
+				button.GetComponent<Image>().color = uav.uavColor;
+			
 			_uavsToButtonsDictionary[uav]= button.GetComponent<Button>();
+			
 		}
 		
 		public void RemoveButton(Uav uav)

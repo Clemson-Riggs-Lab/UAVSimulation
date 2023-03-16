@@ -37,7 +37,8 @@ namespace UI.ReroutingPanel.Settings.ScriptableObjects
 	    public int numberOfReroutingOptionsPanelsGridColumns=2; 
 	    [JsonConverter(typeof(StringEnumConverter))]
 	    public NewPanelPosition newPanelPosition=NewPanelPosition.PlaceAtTheBeginning;
-	   
-	 
+
+
+	    public bool ButtonsColorLikeUav=true;
     }
 }

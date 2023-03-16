@@ -12,6 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f17dc019eddb4860bccf6e2444193bf3, type: 3}
   m_Name: ReroutingSettings
   m_EditorClassIdentifier: 
+  oneClickRerouteEnabled: 1
+  oneClickRerouteFalsePositiveProbability: 0.1
+  oneClickRerouteFalseNegativeProbability: 0.1
+  probabilityOfUnsuccessfulOneClickReroute: 0.7
+  oneClickRerouteRandomSeed: 1
+  oneClickRerouteFpFnRandomSeed: 1
   logReroutingEvents: 1
   logIfReroutingWasNeeded: 1
   logIfNewRouteIsGoodOrBad: 1
@@ -19,3 +25,4 @@ MonoBehaviour:
   logReroutingOptionsRequested: 1
   logReroutingOptionPreview: 1
   logIfPreviewedRouteIsGoodOrBad: 1
+  logOneClickReroutingRequested: 1

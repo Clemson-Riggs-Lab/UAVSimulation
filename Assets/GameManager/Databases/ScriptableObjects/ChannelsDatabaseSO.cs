@@ -3,6 +3,7 @@ using Modules.FuelAndHealth.Channels.ScriptableObjects;
 using Modules.Logging.Channels.ScriptableObjects;
 using Modules.Navigation.Channels.ScriptableObjects;
 using Modules.Prompts.Channels.ScriptableObjects;
+using Modules.ScoreKeeper.Channels.ScriptableObjects;
 using Modules.TargetDetection.Channels.ScriptableObjects;
 using ScriptableObjects.EventChannels;
 using UAVs.Channels.ScriptableObjects;
@@ -32,6 +33,7 @@ namespace Databases.ScriptableObjects
 		public WaypointEventChannelSO wayPointCreatedEventChannel;
 		public WaypointEventChannelSO wayPointDisabledEventChannel;
 	
+		public ScoreKeeperUpdatedEventChannelSO scoreKeeperUpdatedEventChannel;
 		private void OnEnable()
 		{
 			AssertAllReferencesAreNotNull();
@@ -49,8 +51,7 @@ namespace Databases.ScriptableObjects
 			AssertionHelper.AssertAssetReferenced(targetDetectionChannels,this);
 			AssertionHelper.AssertAssetReferenced(wayPointCreatedEventChannel,this);
 			AssertionHelper.AssertAssetReferenced(wayPointDisabledEventChannel,this);
-			
-		
+			AssertionHelper.AssertAssetReferenced(scoreKeeperUpdatedEventChannel,this);
 		}
 	}
 }

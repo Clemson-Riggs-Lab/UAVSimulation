@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -17,7 +18,11 @@ namespace HelperScripts
 			{ 'v', "Victor" }, { 'w', "Whiskey" }, { 'x', "X-Ray" },
 			{ 'y', "Yankee" }, { 'z', "Zulu" }
 		};
+		
+		private static HashSet<string> _uniqueNames = new HashSet<string>();
 
+		private static int randomSeed = -999;
+		private static Random random = new Random();
 		public static string LettersToName(string abbrvName)
 		{
 			string result = string.Join(" ", abbrvName.Select(x => _dDict[char.ToLower(x)]));
@@ -36,14 +41,19 @@ namespace HelperScripts
 		/// <param name="id"></param>
 		/// <param name="offsetZero"></param>
 		/// <returns></returns>
-		public static string IntToLetters(int id, bool offsetZero = true)
+		public static string IntToLetters(int id, bool offsetZero = true,bool resetAfter26 = false)
 		{
-			if (offsetZero is true)
-			{
-				id += 1;
-			}
-
 			var result = string.Empty;
+			
+			if (offsetZero is true)
+				id += 1;
+
+			if (resetAfter26)
+				id = id % 26;
+			
+			if (id == 0)
+				result = "A";
+			
 			while (--id >= 0)
 			{
 				result = (char)('A' + id % 26) + result;
@@ -51,6 +61,30 @@ namespace HelperScripts
 			}
 
 			return result;
+		}
+		
+		public static string LettersToUniqueName(string input)
+		{
+			var firstLetter = char.ToUpper(input[0]);
+			var firstName=LettersToName(firstLetter.ToString());
+			var name = "";
+	
+			//set up random seed (if not already set)
+			if (randomSeed == -999)
+			{
+				randomSeed = GameManager.Instance.settingsDatabase.randomSeed;
+				//create new instance of system random
+				random = new Random(randomSeed);
+			}
+			
+			do
+			{
+				var randomNumber = random.Next(1, GameManager.Instance.settingsDatabase.uavSettings.maxUavNumberAfterName);
+				name = $"{firstName} {randomNumber}";
+			} while (_uniqueNames.Contains(name));
+
+			_uniqueNames.Add(name);
+			return name;
 		}
 	}
 }

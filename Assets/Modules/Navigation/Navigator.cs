@@ -1,11 +1,13 @@
 using System;
 using System.Collections.Generic;
 using DG.Tweening;
+using HelperScripts;
 using Modules.Navigation.Channels.ScriptableObjects;
 using Modules.Navigation.Settings.ScriptableObjects;
 using UAVs;
 using UAVs.Channels.ScriptableObjects;
 using UnityEngine;
+using static HelperScripts.Enums.InputRecordsSource;
 using static HelperScripts.Enums.UavCondition;
 using Sequence = DG.Tweening.Sequence;
 
@@ -22,15 +24,26 @@ namespace Modules.Navigation
 
 		[NonSerialized] private Uav _uav;
 		[NonSerialized] private GameObject _uavBody;
-		[NonSerialized] public List<Path> paths =new();
 		
 		[NonSerialized] private Sequence _doTweenSequence;
 
-		 private Vector3 TargetPosition => IgnoreWaypointPositionByAxis(_currentPath.destinationWayPoint.transform.position);
+		private Vector3 TargetPosition
+		{
+			get
+			{
+				if (_currentPath == null || _currentPath.destinationWayPoint == null)
+				{
+					Debug.LogError("Navigator: Current path or destination waypoint is null. Current path is " + _currentPath + " and destination waypoint is " + _currentPath.destinationWayPoint, this);
+					return transform.position;
+				}
+				else
+				{
+					return IgnoreWaypointPositionByAxis(_currentPath.destinationWayPoint.transform.position);
+				}
+			}
+		}
+		
 		[NonSerialized] private Path _currentPath;
-		[NonSerialized] private float _pathStartTime; // this is used instead of _currentPath.startTime because this records simulation time and not real time ( seconds hours date month year etc )
-
-
 
 		private void Start()
 		{
@@ -63,18 +76,10 @@ namespace Modules.Navigation
 
 		public void StartNavigation()
 		{
-			if (paths.Count == 0)
-			{
-				Debug.LogWarning("No paths attached to UAV" + gameObject.name+ "Navigator Destroyed", gameObject);
-				Destroy(this);
-			}
-			else
-			{
-				_currentPath = paths[0];
-				_currentPath.startTime = DateTime.Now;
-				_pathStartTime = Time.time;
-				UpdateNavigation();
-			}
+			
+			_uav.currentPath=_currentPath = _navigationManager.GetRandomPathDynamically(_uav);
+			_currentPath.startTime = DateTime.Now;
+			UpdateNavigation();
 		}
 		
 
@@ -92,50 +97,48 @@ namespace Modules.Navigation
 
 		/// <summary>
 		/// This method is called when we want to change the current path to a new destination (e.g., when we are re-routing the UAV)
-		/// It bypasses the GetNextDestination method and directly sets the new destination, meaning that the _pathStartTime is not updated
+		/// It bypasses the StartNextDestination method and directly sets the new destination, meaning that the _pathStartTime is not updated
 		/// This allows us to keep all uavs in sync even when we reroute one of them.
 		/// </summary>
 		/// <param name="newPath"></param>
 		public void Reroute(Path newPath)
 		{
-			_currentPath = newPath;
+			_uav.currentPath=_currentPath = newPath;
 			_doTweenSequence.Kill();
-			UpdateNavigation();
+			UpdateNavigation(true);
 		}
 		
-		private void UpdateNavigation()
+		private void UpdateNavigation(bool reroute=false)
 		{
 			if(_uav.uavCondition== Lost) return; //we stop the navigation if the UAV is lost, since this is called recursively, this suffices to stop the navigation.
 			//also note that the above is just a safety check, since the navigator should be destroyed by the navigation manager when the UAV is lost.
-			_uavStartedNewPathEventChannel.RaiseEvent(_uav, _currentPath);
 			_doTweenSequence = DOTween.Sequence();
+			_doTweenSequence.AppendCallback(()=>_uavStartedNewPathEventChannel.RaiseEvent(_uav, _currentPath));
+			if(!reroute)
+				AddHoveringTween();
 			AddDOTweenNavigationAndRotation();
 			_doTweenSequence.AppendCallback(()=>_uavArrivedAtDestinationEventChannel.RaiseEvent(_uav, _currentPath));
-			if (navigationSettings.waypointHoveringType != NavigationSettingsSO.WaypointHoveringType.None)
-			{
-				AddHoveringTween();
-			}
-			_doTweenSequence.OnComplete(GetNextDestination);
+			
+			_doTweenSequence.OnComplete(StartNextDestination);
 		}
 		
-		private void GetNextDestination()
+		private void StartNextDestination()
 		{
-			_currentPath= _currentPath.nextPath;
+			_uav.currentPath=_currentPath=_navigationManager.GetRandomPathDynamically(_uav);
 			_currentPath.startTime= DateTime.Now;
 			
 			if(_currentPath == null) // we have reached the end 
 			{
 				Destroy(this);
-				_uavConditionChangedEventChannel.RaiseEvent(_uav, Finished);
+				Debug.Log("We couldnt find a new path for " + _uav.name + " so we are destroying the navigator");
 			}			
 			else
 			{
-				_pathStartTime = Time.time;
 				UpdateNavigation();
 			}
 			
 		}
-		
+
 		/// <summary>
 		/// This method is responsible for adding tweens of navigation and rotation. It does not modify the destination or any other path related data.
 		/// It only gets the current path and adds tweens to the DOTweenSequence.
@@ -143,7 +146,8 @@ namespace Modules.Navigation
 		private void AddDOTweenNavigationAndRotation() 
 		{
 			var navigationDuration = GetNavigationDuration();
-
+			if(navigationDuration == 0) return; //we don't want to add a tween if the duration is 0.
+			
 			//Choose or update rotation/facing according to facingType
 			switch (navigationSettings.followingType)
 			{
@@ -195,60 +199,30 @@ namespace Modules.Navigation
 					_doTweenSequence.Append(_uavBody.transform.DORotate(new Vector3(0,dynamicHoverAngle,0), navigationSettings.hoverDurationOnWaypoint, RotateMode.WorldAxisAdd).SetEase(Ease.Linear));
 					break;
 				case NavigationSettingsSO.WaypointHoveringType.FaceNextWaypoint :
-					if (_currentPath.nextPath != null) // else if it is null then we do not have to rotate anymore as there is no next waypoint to face
+					if (_currentPath != null && _currentPath.destinationWayPoint != null)  // else if it is null then we do not have to rotate anymore as there is no next waypoint to face
 					{
-						var target= IgnoreWaypointPositionByAxis(_currentPath.nextPath.destinationWayPoint.transform.position);
-						// use dotween Dorotate  to rotate the UAV to face the target
-						_doTweenSequence.Append(_uavBody.transform.DOLookAt(target, navigationSettings.hoverDurationOnWaypoint, AxisConstraint.Y, Vector3.up ).SetEase(Ease.Linear));
-						//TODO fix this so that we dont have wobbly rotation
+						//if already facing the next waypoint, then we do not need to rotate
+						var nextWaypointPosition = _currentPath.destinationWayPoint.transform.position;
+						var angle = Vector3.Angle(_uavBody.transform.forward, (nextWaypointPosition - transform.position).normalized);
+						if (angle >= 10f)
+							return;
+						
+						else
+							_doTweenSequence.Append(_uavBody.transform.DOLookAt(TargetPosition, navigationSettings.hoverDurationOnWaypoint, AxisConstraint.None, Vector3.up ).SetEase(Ease.Linear));
 					}
 					break;
 					
 				case NavigationSettingsSO.WaypointHoveringType.None:
 				default:
-					throw new ArgumentOutOfRangeException();
+					return;
 			}
 		}
 		
-		/// <summary>
-		/// This method is responsible for calculating the duration of the navigation tween.
-		/// It does not modify the destination or any other path related data.
-		///  It calculates the duration based on the current path and the speed of the object. duration = distance/speed
-		/// Or it uses the duration of the path if it is set.
-		/// Note that for rerouting, the pathStartTime would be set from the previous path,
-		/// so the lapsed duration would be subtracted from the fixed duration to give us the remaining duration.
-		/// </summary>
-		/// 
-		/// <example>
-		/// fixed duration: fixed duration=10 sec.
-		/// path started at t=50 sec,
-		/// at t=52 we rerouted,
-		/// then the result would be 10+50-52 = 8 sec
-		/// </example>
-		/// 
-		/// <example>
-		/// fixed speed: Same example as above,
-		/// but speed fixed to 10 units/sec.
-		/// We do not care if it is re-routing or not,
-		/// we calculate the duration directly by dividing the distance over the speed
-		/// </example>
 		private float GetNavigationDuration()
 		{
 			var navigationDuration = 0f;
-			
-			switch (navigationSettings.speedMode)
-			{
-				case NavigationSettingsSO.SpeedMode.FixedSpeed:
-					var distance = Vector3.Distance(transform.position, TargetPosition);
-					navigationDuration = distance / navigationSettings.fixedSpeed;
-					break;
-				
-				case NavigationSettingsSO.SpeedMode.FixedPathDuration:
-				default:
-					navigationDuration = navigationSettings.pathDuration+_pathStartTime-Time.time;
-					break;
-				
-			}
+			var distance = Vector3.Distance(transform.position, TargetPosition);
+			navigationDuration = distance / navigationSettings.fixedSpeed;
 			return navigationDuration;
 		}
 

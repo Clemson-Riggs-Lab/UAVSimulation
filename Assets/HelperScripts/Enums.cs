@@ -4,14 +4,15 @@ namespace HelperScripts
 	{
 		public enum InputRecordsSource 
 		{
-			FromInputFile, FromDefaultRecords
+			FromInputFile, FromDefaultRecords, Dynamic
 		}
 		
 		public enum UavCondition
 		{
-			Enabled,
+			EnabledForReroutingOnly,
+			EnabledForTargetDetectionOnly,
+			EnabledForTargetDetectionAndRerouting,
 			Hidden,
-			Finished,
 			Lost
 		}
 	}

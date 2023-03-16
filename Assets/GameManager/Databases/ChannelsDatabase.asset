@@ -22,3 +22,4 @@ MonoBehaviour:
   targetDetectionChannels: {fileID: 11400000, guid: 27322ddbfd8ffc848a8569068d84e503, type: 2}
   wayPointCreatedEventChannel: {fileID: 11400000, guid: 4f382b37e5fe55f42887f7758c7d1f14, type: 2}
   wayPointDisabledEventChannel: {fileID: 11400000, guid: 55c8594ff3d651e408c8f15a32baddb3, type: 2}
+  scoreKeeperUpdatedEventChannel: {fileID: 11400000, guid: bd7f552bb76a41e4d87816cabe1e0528, type: 2}

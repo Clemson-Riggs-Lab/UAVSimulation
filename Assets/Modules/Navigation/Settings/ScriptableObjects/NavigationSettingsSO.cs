@@ -2,11 +2,10 @@ using System;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using UnityEngine;
+using UnityEngine.Serialization;
 using static HelperScripts.Enums;
 using static HelperScripts.Enums.InputRecordsSource;
 using static Modules.Navigation.Settings.ScriptableObjects.NavigationSettingsSO.FollowType;
-using static Modules.Navigation.Settings.ScriptableObjects.NavigationSettingsSO.LoopType;
-using static Modules.Navigation.Settings.ScriptableObjects.NavigationSettingsSO.SpeedMode;
 using static Modules.Navigation.Settings.ScriptableObjects.NavigationSettingsSO.WaypointHoveringType;
 
 namespace Modules.Navigation.Settings.ScriptableObjects
@@ -25,13 +24,6 @@ namespace Modules.Navigation.Settings.ScriptableObjects
 		    SmoothDamping, // Speed will be decreased before each waypoint and accelerate after it 
 		    Teleport, // Simply teleport (transfer immediately) object to current waypoint position
 	    }
-		
-	    public enum LoopType
-	    {
-		    Once, // Only one cycle
-		    Cycled, // Infinite amounts of cycles
-		    SeveralTimes // Repeat loop several times (specified in numberOfLoops)
-	    }
 
 	    [Serializable]
 	    public struct UsedAxis
@@ -45,26 +37,15 @@ namespace Modules.Navigation.Settings.ScriptableObjects
 	    {
 		    None, UseAngle, UseSpeed, FaceNextWaypoint
 	    }
-
-	    public enum SpeedMode
-	    {
-		    FixedSpeed, FixedPathDuration
-	    }
 	    
+	     public int numberOfActiveUavsForRerouting = 10;
 	    [Space(20)]
-	    [JsonConverter(typeof(StringEnumConverter))]
-	    public InputRecordsSource navigationRecordsSource = FromInputFile;
-	   
-	    [Space(20)]
-	   
-	    [Header("Speed Mode (either Fixed Speed or Fixed Path Duration)")]
-	    [JsonConverter(typeof(StringEnumConverter))]
-	    public SpeedMode speedMode = FixedPathDuration;
-	    [Tooltip("Not used in Fixed Path Duration Mode")]
+	    
 	    public float fixedSpeed=15;
-	    [Tooltip("Not used in Fixed Speed Mode")]
-	    public float pathDuration=10;
-	    
+
+	    public float maxPathDuration = 35; // Max duration of path (in seconds), set to 0 to disable
+	    public float minPathDuration = 15; // Min duration of path (in seconds), set to 0 to disable
+	    public double minDistanceFromNFZInDuration= 7; // Min distance from NFZ in duration (in seconds), set to 0 to disable
 	    [Space(20)]
 	    
 	    [Header("How the UAV should follow the path")]
@@ -72,17 +53,8 @@ namespace Modules.Navigation.Settings.ScriptableObjects
 	    public FollowType followingType= SmoothFacing; // Choose one of following type to use
 	    [Tooltip("Speed of rotation when following type is set to SmoothFacing")]
 	    public float rotationDuration=2;
-	   
+
 	    [Space(20)]
-	    
-	    [Header("How many times should the path be repeated")]
-	    [JsonConverter(typeof(StringEnumConverter))]
-	    public LoopType loopingType= Once ; // Choose one of looping type to use
-	    [Tooltip("Neglected unless looping type is set to SeveralTimes")]
-	    public int numberOfLoops=0; // How much loops should be performed before stop. Use this parameter if loopingType=SeveralTimes
-	    
-	    [Space(20)]
-	    
 	    [Tooltip("Ignore waypoint position on selected axis")]
 	    public UsedAxis ignoreWaypointPositionOnAxis; // Ignore waypoint position along those axis
 	    
@@ -92,11 +64,15 @@ namespace Modules.Navigation.Settings.ScriptableObjects
 	    [JsonConverter(typeof(StringEnumConverter))]
 	    public  WaypointHoveringType waypointHoveringType= FaceNextWaypoint; // Choose one of hovering type to use
 	    [Tooltip("Neglected if hovering type is set to None")]
-	    public float hoverDurationOnWaypoint = 4;// Duration of hovering on waypoint (in seconds), set to 0 to disable hovering
+	    public float hoverDurationOnWaypoint = 2;// Duration of hovering on waypoint (in seconds), set to 0 to disable hovering
 	    [Tooltip("Neglected if hovering type not set to UseAngle")]
 	    public float hoverAngle = 360; // Angle of hovering (in degrees)
 	    [Tooltip("Neglected if hovering type not set to UseSpeed")]
 	    public float hoverSpeed = 1; // Speed of hovering (in degrees per second)
-	    
+
+	    public int shufflingPathsRandomGeneratorSeed = 1;
+	    public int targetAndNFZProbabilityRandomGeneratorSeed = 1;
+	    public int uavSelectionShuffleRandomNumberGeneratorSeed = 1;
+	   
     }
 }

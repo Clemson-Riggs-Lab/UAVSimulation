@@ -9,6 +9,9 @@ using Modules.Navigation;
 using Modules.Navigation.Submodules.Rerouting;
 using Modules.NoFlyZone;
 using Modules.Prompts;
+using Modules.ScoreKeeper;
+using Modules.ScoreKeeper.Settings;
+using Modules.ScoreKeeper.Settings.ScriptableObjects;
 using Modules.TargetDetection;
 using Newtonsoft.Json;
 using UAVs;
@@ -36,7 +39,8 @@ public class GameManager : MonoBehaviour
         [SerializeField] public ReroutingManager reroutingManager;
         [SerializeField] public NFZsManager nfzsManager;
         [SerializeField] public TargetsDetectionManager targetsDetectionManager;
-        
+        [SerializeField] public ScoreManager scoreManager;
+
         [Space(20)]
         [SerializeField] public InputRecordsDatabaseSO inputRecordsDatabase;
         [SerializeField] public ChannelsDatabaseSO channelsDatabase;
@@ -62,10 +66,13 @@ public class GameManager : MonoBehaviour
             AssertionHelper.AssertComponentReferencedInEditor(reroutingManager,this,this.gameObject);
             AssertionHelper.AssertComponentReferencedInEditor(nfzsManager,this,this.gameObject);
             AssertionHelper.AssertComponentReferencedInEditor(targetsDetectionManager,this,this.gameObject);
+            AssertionHelper.AssertComponentReferencedInEditor(scoreManager,this,this.gameObject);
+            
             AssertionHelper.AssertComponentReferencedInEditor(inputRecordsDatabase,this,this.gameObject);
             AssertionHelper.AssertComponentReferencedInEditor(channelsDatabase,this,this.gameObject);
             AssertionHelper.AssertComponentReferencedInEditor(prefabsDatabase,this,this.gameObject);
             AssertionHelper.AssertComponentReferencedInEditor(settingsDatabase,this,this.gameObject);
+            
             AssertionHelper.AssertComponentReferencedInEditor(blockingPanelController,this,this.gameObject);
             
         }
@@ -86,7 +93,6 @@ public class GameManager : MonoBehaviour
         
         private void Start()
         {
-            SubscribeToChannels();
             if(configFilesSettings.settingsFileFullFilePath != "")
             {
                 try
@@ -122,11 +128,7 @@ public class GameManager : MonoBehaviour
             StartCoroutine(InitializeSimulation());
 
         }
-
-        private void SubscribeToChannels()
-        {
-            channelsDatabase.simulationEndedEventChannel.Subscribe(OnSimulationEndEvent);
-        }
+        
         
 
         private IEnumerator InitializeSimulation()
@@ -134,36 +136,29 @@ public class GameManager : MonoBehaviour
             
             if (_forceGenerateFromRecords)
             {
-                settingsDatabase.navigationSettings.navigationRecordsSource = InputRecordsSource.FromDefaultRecords;
-                settingsDatabase.uavSettings.uavRecordsSource = InputRecordsSource.FromDefaultRecords;
-                settingsDatabase.waypointSettings.waypointsRecordsSource = InputRecordsSource.FromDefaultRecords;
                 settingsDatabase.nfzSettings.nfzRecordsSource = InputRecordsSource.FromDefaultRecords;
             }
             
-            simulationStartTime = Time.time+ 5f;
+            simulationStartTime = Time.time+ settingsDatabase.simulationStartDelay;
             blockingPanelController.LoadingView(simulationStartTime);
+            
+            nfzsManager.Initialize();
+            StartCoroutine( nfzsManager.StartNFZsTimerCoroutine(simulationStartTime));
+            yield return new WaitForSeconds(0.1f);
             
             wayPointsManager.Initialize();
             yield return new WaitForSeconds(0.1f);
             
             uavsManager.Initialize();
+            scoreManager.Initialize();
+            
             yield return new WaitForSeconds(0.1f);
+            uavsManager.StartNavigation(simulationStartTime);
             
-            navigationManager.Initialize();
-            yield return new WaitForSeconds(0.1f);
-
-            nfzsManager.Initialize();
+            yield return new WaitForSeconds(settingsDatabase.simulationDuration+ simulationStartTime - Time.time);
             
-            
-
-
-            StartCoroutine( navigationManager.NavigateAll(simulationStartTime));
-            StartCoroutine( nfzsManager.StartNFZsTimerCoroutine(simulationStartTime));
-        }
-        
-        
-        private void OnSimulationEndEvent()
-        {
+            Time.timeScale = 0f;   
             blockingPanelController.ClosingView();
+
         }
 }

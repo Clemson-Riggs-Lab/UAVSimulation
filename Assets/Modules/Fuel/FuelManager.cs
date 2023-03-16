@@ -98,7 +98,7 @@ namespace Modules.FuelAndHealth
 		{
 			if (!_uavToFuelControllerDictionary.ContainsKey(uav)) return;
 			
-			if (condition is Finished or Lost)
+			if (condition is Lost)
 			{
 				_uavToFuelControllerDictionary[uav].isConsumingFuel=false;
 			}

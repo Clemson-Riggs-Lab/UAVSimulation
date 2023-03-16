@@ -33,21 +33,16 @@ namespace UI.Paths_Rendering
    
         public void SetLineRenderer(Path path, bool preview=false)
         {
+            if(path.destinationWayPoint == null) return;
+            
             _lineRenderer.SetPosition(0, _uav.transform.position);
 
             if (preview)
                 _lineRenderer.startWidth = _lineRenderer.endWidth = _pathsRenderingSettings.pathWidthReroutingOption;
             else
                 _lineRenderer.startWidth = _lineRenderer.endWidth = _pathsRenderingSettings.pathWidthNormal;
-        
-            for(var i=1; i<_lineRenderer.positionCount; i++)
-            {
-                _lineRenderer.SetPosition(i, path.destinationWayPoint.transform.position+_lineOffset);
-                path = path.nextPath;
-            }
 
-       
-        
+            _lineRenderer.SetPosition(1, path.destinationWayPoint.transform.position+_lineOffset);
         }
 
         private IEnumerator LineRendererUpdater()
@@ -61,17 +56,17 @@ namespace UI.Paths_Rendering
 
         private void InitializeLineRenderer()
         {
-            _lineRenderer.positionCount = _pathsRenderingSettings.numberOfWaypointsAheadToDraw + 1;
+            _lineRenderer.positionCount = 2;
             _lineRenderer.startWidth = _lineRenderer.endWidth = _pathsRenderingSettings.pathWidthNormal;
             _lineRenderer.material = new Material(Shader.Find("Sprites/Default"));
        
             _lineColor = _uav.uavColor;
             _lineColor.a = 0.5f; // make material translucent
             _lineRenderer.startColor = _lineRenderer.endColor = _lineColor;
-      
-            var offset = (-8 + _uav.id);
-            _lineOffset = new Vector3(offset, 0, 0);
-        
+
+            _lineRenderer.SetPosition(0, _uav.transform.position);
+            _lineRenderer.SetPosition(1, _uav.transform.position);
+            
             _updateLineRendererCoroutine = StartCoroutine(LineRendererUpdater());
         }
 

@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using HelperScripts;
 using Modules.Navigation;
 using ScriptableObjects.EventChannels;
@@ -28,15 +29,13 @@ namespace UAVs
 		public TextMeshPro label;
 		public GameObject uavBody;
 		public Renderer uavRenderer;
-		
+		public int dedicatedLayer;
 
-
-		private void OnEnable()
+		private void Awake()
 		{
 			GetReferencesFromGameManager();
 		}
-		
-		
+
 		private void GetReferencesFromGameManager()
 		{
 			_uavCreatedEventChannel= GameManager.Instance.channelsDatabase.uavChannels.uavCreatedEventChannel;
@@ -44,15 +43,14 @@ namespace UAVs
 			_uavSettings= GameManager.Instance.settingsDatabase.uavSettings;
 		}
 
-		public void Initialize(int id, WayPoint wayPoint,bool enabledOnStart)
+		public void Initialize(int id, WayPoint wayPoint)
 		{
 			this.id = id;
 			SetUavName();
 			gameObject.name = uavName;
 			uavColor=ColorHelper.GetUniqueColorFromId(id);
-			
-			transform.SetLayerRecursively(LayerMask.NameToLayer("UAV"+id));//set layer to UAV1, UAV2, UAV3, etc.. including all children, based on UavName
-			
+			dedicatedLayer = UavsManager.GetEmptyLayer();
+			transform.SetLayerRecursively(dedicatedLayer);
 			startingWaypoint = wayPoint;
 			transform.position = startingWaypoint.transform.position;
 			
@@ -77,8 +75,8 @@ namespace UAVs
 				UavNamingScheme.HashtagNumber => "# " + (id),
 				UavNamingScheme.HashtagNumberOffsetZero =>  "# " + (id + 1),
 				UavNamingScheme.Letter =>  NatoAlphabetConverter.IntToLetters(id),
-				UavNamingScheme.NatoName =>  NatoAlphabetConverter.LettersToName(NatoAlphabetConverter.IntToLetters(id))
-				,
+				UavNamingScheme.NatoName =>  NatoAlphabetConverter.LettersToName(NatoAlphabetConverter.IntToLetters(id)),
+				UavNamingScheme.NatoNameWithRandomNumber => NatoAlphabetConverter.LettersToUniqueName(NatoAlphabetConverter.IntToLetters(id,true,true)),
 				_ => throw new ArgumentOutOfRangeException()
 			};
 		}
@@ -91,8 +89,8 @@ namespace UAVs
 
 		public void SetVisibility(bool visibility)
 		{
-			uavBody.transform.SetLayerRecursively(LayerMask.NameToLayer(visibility ? "UAV"+id : "UAVHidden"));
-			label.transform.SetLayerRecursively(LayerMask.NameToLayer(visibility ? "UAV"+id : "UAVHidden"));
+			uavBody.transform.SetLayerRecursively(visibility ? dedicatedLayer:LayerMask.NameToLayer("UAVHidden"));
+			label.transform.SetLayerRecursively(visibility ? dedicatedLayer:LayerMask.NameToLayer("UAVHidden"));
 			// the minimap camera is set to cull the UAVHidden layer, so the UAVs are not visible on the minimap if they are placed in the UAVHidden layer
 		}
 

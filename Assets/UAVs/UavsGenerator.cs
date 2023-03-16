@@ -3,62 +3,75 @@ using System.Collections.Generic;
 using System.Linq;
 using HelperScripts;
 using IOHandlers;
+using UAVs.Settings.ScriptableObjects;
 using Unity.VisualScripting;
 using UnityEngine;
 using WayPoints;
+using Random = System.Random;
 
 namespace UAVs
 {
     public class UavsGenerator : MonoBehaviour
     {
-  
-         private GameObject _uavPrefab;
-         private GameObject _uavsContainer;
-         private GameObject _wayPointsContainer;
-         private WayPointsManager _wayPointsManager;
-         private UavsManager _uavsManager;
-         
+        private GameObject _uavPrefab;
+        private GameObject _uavsContainer;
+        private GameObject _wayPointsContainer;
+        private WayPointsManager _wayPointsManager;
+        private UavsManager _uavsManager;
+        private UavSettingsSO _uavSettings;
+        private int _uavIterator;
+        private Random _waypointsShuffleRandomGenerator = new Random();
 
         public void Initialize()
         {
             GetReferencesFromGameManager();
-            _uavsContainer.transform.position = _wayPointsContainer.transform.position;//centering both on top of each other to avoid any offset due to local positioning
+            _uavsContainer.transform.position = _wayPointsContainer.transform.position;
+            _uavIterator = 0;
+            _waypointsShuffleRandomGenerator = new Random( _uavSettings.waypointsShuffleRandomGeneratorSeed);
         }
-        
+
         private void GetReferencesFromGameManager()
         {
-            _wayPointsManager =GameManager.Instance.wayPointsManager;
+            _wayPointsManager = GameManager.Instance.wayPointsManager;
             _uavsManager = GameManager.Instance.uavsManager;
             _uavsContainer = GameManager.Instance.uavsContainer;
             _wayPointsContainer = GameManager.Instance.wayPointsContainer;
             _uavPrefab = GameManager.Instance.prefabsDatabase.uavPrefab;
+            _uavSettings = GameManager.Instance.settingsDatabase.uavSettings;
         }
-        
-        public void GenerateUavsFromRecords(List<UavRecord> uavsRecords)
+
+        public List<Uav> GenerateUavsRandomly(int numberOfUavsToGenerate=0)
         {
-            uavsRecords= UavRecord.HandleNullValues(uavsRecords);
-            
-            foreach (var uavRecord in uavsRecords)
+            var uavs = new List<Uav>();
+            if (numberOfUavsToGenerate == 0)
             {
-                var wayPoint = _wayPointsManager.wayPoints.FirstOrDefault(w => w.id == uavRecord.StartingWayPointId);
-                if (wayPoint != null)
-                { 
-                    var id = uavRecord.Id ??= 0;
-                    var enabledOnStart= uavRecord.EnabledOnStart ??= true;
-                    GenerateUav(id, wayPoint, enabledOnStart);
-                }
-                else
+                numberOfUavsToGenerate = _uavSettings.numberOfUaVsToMaintain;
+            }
+            
+            var wayPoints = _wayPointsManager.wayPoints;
+            wayPoints.Shuffle(_waypointsShuffleRandomGenerator);
+            var uavCount = _uavIterator;
+
+            var nfzLayer = LayerMask.NameToLayer("NFZ");
+
+            for (int i = 0; i < wayPoints.Count && uavCount < _uavIterator + numberOfUavsToGenerate; i++)
+            {
+                if (!Physics.CheckSphere(wayPoints[i].transform.position, 5, 1 << nfzLayer))
                 {
-                    Debug.LogError("WayPoint with id " + uavRecord.StartingWayPointId + " not found");
+                    uavs.Add( GenerateUav(uavCount++, wayPoints[i]));
                 }
             }
+            _uavIterator = uavCount;
+            
+            return uavs;
         }
-        
-        private void GenerateUav(int id, WayPoint wayPoint, bool enabledOnStart=true)
+
+        private Uav GenerateUav(int id, WayPoint wayPoint)
         {
-            var  uav = Instantiate(_uavPrefab,wayPoint.transform.position, Quaternion.Euler(0,90,0),  _uavsContainer.transform).GetComponent<Uav>();
-            uav.Initialize(id, wayPoint,enabledOnStart);
+            var uav = Instantiate(_uavPrefab, wayPoint.transform.position, Quaternion.Euler(0, 90, 0), _uavsContainer.transform).GetComponent<Uav>();
+            uav.Initialize(id, wayPoint);
+            
+            return uav;
         }
-   
     }
 }

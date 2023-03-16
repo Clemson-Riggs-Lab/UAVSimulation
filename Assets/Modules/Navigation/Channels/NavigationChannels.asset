@@ -17,3 +17,4 @@ MonoBehaviour:
   uavReroutedEventChannel: {fileID: 11400000, guid: 5fe3995b2fb70434aa78482e3e58cd77, type: 2}
   uavReroutePreviewEventChannel: {fileID: 11400000, guid: 20147766f0047d94eaaa4e585bdeafbe, type: 2}
   reroutingOptionsRequestedChannel: {fileID: 11400000, guid: 986a23ff3e19460419bef169ba5bf0aa, type: 2}
+  oneClickReroutingRequestedChannel: {fileID: 11400000, guid: 969687847c5a5df4aab818bfa0096346, type: 2}

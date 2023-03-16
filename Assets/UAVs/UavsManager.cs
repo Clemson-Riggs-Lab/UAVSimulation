@@ -1,15 +1,16 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using IOHandlers;
 using Modules.Navigation;
 using Modules.Navigation.Channels.ScriptableObjects;
+using Modules.Navigation.Settings.ScriptableObjects;
+using Modules.TargetDetection.Settings.ScriptableObjects;
 using ScriptableObjects.EventChannels;
 using UAVs.Channels.ScriptableObjects;
 using UAVs.Settings.ScriptableObjects;
 using Unity.VisualScripting;
 using UnityEngine;
-using WayPoints;
+
 using static HelperScripts.Enums;
 using static HelperScripts.Enums.UavCondition;
 
@@ -18,19 +19,32 @@ namespace UAVs
     public class UavsManager : MonoBehaviour
     {
         private UavsGenerator _uavsGenerator;
+        private NavigationManager _navigationManager;
         private UavEventChannelSO _uavCreatedEventChannel;
         private UavEventChannelSO _uavDestroyedEventChannel;
         private UavPathEventChannelSO _uavStartedNewPathEventChannel;
         private UavConditionEventChannelSO _uavConditionChangedEventChannel;
         private VoidEventChannelSO _simulationEndedEventChannel;
         private UavSettingsSO _uavSettings;
+        private NavigationSettingsSO _navigationSettings;
+        private TargetDetectionSettingsSO _targetDetectionSettings;
         public List<Uav> uavs = new (); //automatically updated by listening to the uavCreatedEventChannel
-        public List<Uav> lostAndFinishedUavs = new ();  //automatically updated by monitoring the uavConditionChangedEventChannel
-        
+        public List<Uav> lostUavs = new ();  //automatically updated by monitoring the uavConditionChangedEventChannel
+       
+        private static List<int> availableLayers = new List<int>();
         public void Initialize()
         {
             GetReferencesFromGameManager();
             SubscribeToChannels();
+            
+            
+            //initialize available layers
+            for (int i = 0; i <= 20; i++)
+            {
+                availableLayers.Add(LayerMask.NameToLayer("UAV" + i));
+            }
+            
+            
             
             //logging
             var uavLogHandler = gameObject.GetOrAddComponent<UavLogHandler>();
@@ -40,6 +54,8 @@ namespace UAVs
             _uavsGenerator = gameObject.GetOrAddComponent<UavsGenerator>();
             _uavsGenerator.Initialize();
             GenerateUavs();
+            _navigationManager.Initialize();
+
         }
         private void SubscribeToChannels()
         {
@@ -56,43 +72,58 @@ namespace UAVs
                 _uavStartedNewPathEventChannel.Subscribe(OnUavStartedNewPath);
 
         }
-
+        
         private void OnUavConditionChanged(Uav uav, UavCondition uavCondition)
         {
-            if (!uavs.Contains(uav))
+            uav.uavCondition =uavCondition;
+            if ( uavCondition == Lost && !lostUavs.Contains(uav))
             {
-                Debug.LogError("UAV not found in the list of uavs in the UavsManager");
-                return;
-            }
-            uav.uavCondition = uavCondition;
-            if ((uavCondition is Lost or Finished )&& !lostAndFinishedUavs.Contains(uav))
-            {
-                lostAndFinishedUavs.Add(uav);
-                
-                if (lostAndFinishedUavs.Count == uavs.Count)
-                {
-                    _simulationEndedEventChannel.RaiseEvent();
-                }
+                lostUavs.Add(uav);
+                CheckIfNeedToGenerateMoreUavs();
             }
 
             SetUavVisibilityAndCollidability(uav, uavCondition);
-            //Hide/Show uav based on its condition, and set collisions active or not
-          
+        }
+
+        private void CheckIfNeedToGenerateMoreUavs()
+        {
+            var numberOfActiveUavsForRerouting = _navigationSettings.numberOfActiveUavsForRerouting - (uavs.Count - lostUavs.Count);
+            var numberOfActiveUavsForTargetDetection = _targetDetectionSettings.numberOfActiveUavsForTargetDetection - (uavs.Count - lostUavs.Count);
+            var numberOfUavsToGenerate = Math.Max(numberOfActiveUavsForRerouting, numberOfActiveUavsForTargetDetection);
+
+            if (numberOfUavsToGenerate > 0)
+            {
+                var generatedUavs = _uavsGenerator.GenerateUavsRandomly(numberOfUavsToGenerate);
+                StartCoroutine(_navigationManager.InitializeUavs(generatedUavs));
+                
+                RemoveUavsFromLostUavs(generatedUavs.Count);
+            }
             
-            
+        }
+
+        private void RemoveUavsFromLostUavs(int numberOfUavsToRemove)
+        {
+            for (var i = 0; i < numberOfUavsToRemove; i++)
+            {
+                var  randomIndex = UnityEngine.Random.Range(0, lostUavs.Count);
+                var uav = lostUavs[randomIndex];
+                lostUavs.RemoveAt(randomIndex);
+                uavs.Remove(uav);
+                Destroy(uav.gameObject);
+            }
         }
 
         private void SetUavVisibilityAndCollidability(Uav uav, UavCondition uavCondition)
         {
             // visibility
-            if((_uavSettings.hideUavInMapWhenHidden && uavCondition is Hidden)  ||(_uavSettings.hideUavInMapWhenLostOrFinished && uavCondition is Lost or Finished))
+            if((_uavSettings.hideUavInMapWhenHidden && uavCondition is Hidden or EnabledForTargetDetectionOnly)  ||(_uavSettings.hideUavInMapWhenLost && uavCondition is Lost))
                 uav.SetVisibility(false);
             
             else
                 uav.SetVisibility(true);
             
             //collisions
-            if((_uavSettings.disableCollisionWithNFZWhenHidden && uavCondition is Hidden))
+            if((_uavSettings.disableCollisionWithNFZWhenHidden && uavCondition is Hidden or EnabledForTargetDetectionOnly))
                 uav.SetCollisions(false);
             
             else
@@ -101,17 +132,26 @@ namespace UAVs
 
         private void OnUavStartedNewPath(Uav uav, Path path)
         {
-            if (!uavs.Contains(uav))
-            {
-                Debug.LogError("UAV not found in the list of uavs in the UavsManager");
-                return;
-            }
             uav.currentPath = path;
-            if (uav.uavCondition!=Lost)
+            if (uav.uavCondition == Lost) return;
+            
+            var condition = Hidden;
+
+            if (path.uavIsVisuallyEnabledForTargetDetection && path.uavIsVisuallyEnabledForRerouting)
             {
-                _uavConditionChangedEventChannel.RaiseEvent(uav, path.uavIsVisuallyEnabled ? Enabled : Hidden);
+                condition = EnabledForTargetDetectionAndRerouting;
             }
-               
+            else if (path.uavIsVisuallyEnabledForTargetDetection)
+            {
+                condition = EnabledForTargetDetectionOnly;
+            }
+            else if (path.uavIsVisuallyEnabledForRerouting)
+            {
+                condition = EnabledForReroutingOnly;
+            }
+            
+            _uavConditionChangedEventChannel.RaiseEvent(uav, condition);
+
         }
         private void ClearUavs()
         {
@@ -124,29 +164,19 @@ namespace UAVs
         public void GenerateUavs()
         {
             ClearUavs();
-            switch (_uavSettings.uavRecordsSource)
-            {
-                case InputRecordsSource.FromInputFile:
-                    _uavsGenerator.GenerateUavsFromRecords(GameManager.Instance.inputRecordsDatabase.UavsRecords);
-                    break;
-                case InputRecordsSource.FromDefaultRecords:
-                    _uavsGenerator.GenerateUavsFromRecords(DefaultRecordsCreator.GetDefaultUavRecords());
-                    break;
-                default:
-                    throw new ArgumentOutOfRangeException();
-            }
+            _uavsGenerator.GenerateUavsRandomly();
         }
         
         
         private void OnUavDestroyed(Uav uav)
         {
             uavs.Remove(uav);
+            availableLayers.Add(uav.dedicatedLayer);
         }
 
         private void OnUavCreated(Uav uav)
         {
             uavs.Add(uav);
-            Debug.Log(uav.uavName + " Created",uav.gameObject);
         }
 
         private void GetReferencesFromGameManager()
@@ -157,7 +187,10 @@ namespace UAVs
             _uavStartedNewPathEventChannel = GameManager.Instance.channelsDatabase.navigationChannels.uavStartedNewPathEventChannel;
             _simulationEndedEventChannel = GameManager.Instance.channelsDatabase.simulationEndedEventChannel;
             _uavSettings = GameManager.Instance.settingsDatabase.uavSettings;
-            
+            _navigationSettings = GameManager.Instance.settingsDatabase.navigationSettings;
+            _targetDetectionSettings = GameManager.Instance.settingsDatabase.targetDetectionSettings;
+            _navigationManager = GameManager.Instance.navigationManager;
+
         }
 
         private void OnDisable()
@@ -175,6 +208,25 @@ namespace UAVs
                 _uavConditionChangedEventChannel.Unsubscribe(OnUavConditionChanged);
             if(_uavStartedNewPathEventChannel != null)
                 _uavStartedNewPathEventChannel.Unsubscribe(OnUavStartedNewPath);
+        }
+
+        public void StartNavigation(float simulationStartTime)
+        {
+            StartCoroutine( _navigationManager.NavigateAll(simulationStartTime));
+        }
+
+        public static int GetEmptyLayer()
+        {
+            if (availableLayers.Count > 1)
+            {
+                var layer = availableLayers[0];
+                availableLayers.RemoveAt(0);
+                return   layer;
+            }
+            else
+            {
+                return availableLayers[0]; // last layer, add all uavs to it
+            }
         }
     }
 }

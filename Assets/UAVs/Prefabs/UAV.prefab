@@ -26,7 +26,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1384100469751372161}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: -45.4}
+  m_LocalPosition: {x: 0, y: 0, z: -49.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -35,7 +35,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 10.1, y: -0}
+  m_AnchoredPosition: {x: 10.1, y: 0}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!23 &5673148785741950404
@@ -219,14 +219,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d66e7f5b92fa61a489051054901c8226, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uavName: 
-  id: 0
-  uavCondition: 0
-  uavColor: {r: 0, g: 0, b: 0, a: 0}
-  startingWaypoint: {fileID: 0}
   label: {fileID: 1877801405154813579}
   uavBody: {fileID: 6958896719786651566}
   uavRenderer: {fileID: 5008431971366055888}
+  dedicatedLayer: 0
 --- !u!114 &4612493914961200634
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -239,7 +235,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1999f4b0d07573f4f857d155f00d0141, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  navigationSettings: {fileID: 0}
 --- !u!1 &6958896719786651566
 GameObject:
   m_ObjectHideFlags: 0
@@ -335,10 +330,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 444.1698
-  m_Height: 76.037994
-  m_Direction: 1
-  m_Center: {x: 0.05665589, y: 95.832695, z: 17.00162}
+  m_Radius: 1
+  m_Height: 1
+  m_Direction: 2
+  m_Center: {x: 0.056648254, y: 95.83272, z: 17.001616}
 --- !u!54 &6388053777276458265
 Rigidbody:
   m_ObjectHideFlags: 0

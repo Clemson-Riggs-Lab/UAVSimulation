@@ -2,6 +2,7 @@ using HelperScripts;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Modules.NoFlyZone.Settings.ScriptableObjects
 {
@@ -11,7 +12,13 @@ namespace Modules.NoFlyZone.Settings.ScriptableObjects
 		[JsonConverter(typeof(StringEnumConverter))]
 		public Enums.InputRecordsSource nfzRecordsSource =  Enums.InputRecordsSource.FromInputFile;
 		
+		[FormerlySerializedAs("defaultRatioOfHeadToNFZ")]
 		[Space(20)]
+		[Header("UAV Settings")]
+		public float RatioOfHeadToNFZ = 0.1f;
+		
+		[Space(20)]
+		[Header("NFZ Settings")]
 		public bool animateNFZGrowOnStart=true;
 		public float nfzGrowthAnimationDuration=3f;
 		public string nfzCountdownText = "No Fly Zone will be active in";

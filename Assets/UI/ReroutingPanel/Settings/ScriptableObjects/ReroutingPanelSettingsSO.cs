@@ -1,6 +1,7 @@
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace UI.ReroutingPanel.Settings.ScriptableObjects
 {
@@ -12,32 +13,33 @@ namespace UI.ReroutingPanel.Settings.ScriptableObjects
 	    {
 		    PlaceAtTheBeginning ,PlaceAtTheEnd
 	    }
+	    
 
 	    [Space(20)]
 	    public bool hideButtonsForHiddenUavs=true;
-	    public bool hideButtonsForFinishedUavs=true;
+	    public bool keepHiddenButtonsPositions=true;
 	    public bool hideButtonsForLostUavs=true;
 	    
 	    public bool disableButtonsForHiddenUavs=true;
-	    public bool disableButtonsForFinishedUavs=true;
 	    public bool disableButtonsForLostUavs=true;
 	    
 	    [Space(20)]
 	    public bool closePanelsForHiddenUavs=true;
-	    public bool closePanelsForFinishedUavs=true;
 	    public bool closePanelsForLostUavs=true;
 	    
 	    [Space(20)]
 	    public int numberOfReroutingOptionsToPresent = 3;
 	    public int numberOfBadReroutingOptionsToPresent = 1;
-	    public bool selectShortestPathsAsReroutingOptions=true;
-	    
 	    public int maximumNumberOfReroutingOptionsPanels = 4;
 	    public int numberOfReroutingOptionsPanelsGridRows = 2;
 	    public int numberOfReroutingOptionsPanelsGridColumns=2; 
+	    public int shuffleReroutingOptionsRandomGeneratorSeed = 1;
+
 	    [JsonConverter(typeof(StringEnumConverter))]
 	    public NewPanelPosition newPanelPosition=NewPanelPosition.PlaceAtTheBeginning;
-	   
-	 
+	    
+	    [Space(20)]
+	    public string headerText = "Primary task";
+	    public string headerTextColor = "light green";
     }
 }

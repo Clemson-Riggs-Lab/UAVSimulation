@@ -41,11 +41,7 @@ namespace UI.UavCameraAndTargetDetectionPanel.Settings.ScriptableObjects
 		[Space (20)]
 		public UavCameraPanelConfigs hiddenUavCameraAndTargetDetectionPanelConfigs =
 			new() { cameraAndTargetDetectionPanelState = DarkScreen};
-		
-		[Space (20)]
-		public UavCameraPanelConfigs finishedUavCameraAndTargetDetectionPanelConfigs =
-			new() { cameraAndTargetDetectionPanelState = DarkScreen, centerText = "Uav Finished Mission"};
-		
+
 		[Space (20)]
 		public UavCameraPanelConfigs lostUavCameraAndTargetDetectionPanelConfigs =
 			new() { cameraAndTargetDetectionPanelState = BlackScreen,centerText= " UAV Lost" };
@@ -66,11 +62,8 @@ namespace UI.UavCameraAndTargetDetectionPanel.Settings.ScriptableObjects
 		public UavCameraPanelConfigs emptyFuelCameraAndTargetDetectionPanelConfigs =
 			new() { cameraAndTargetDetectionPanelState = BlackScreen, bottomText = "Fuel Empty"};
 
-	
-		
-	
-		
-		
+		public string headerText = "Secondary Task";
+		public string headerTextColor ="Yellow";
 	}
 	
 	[System.Serializable]

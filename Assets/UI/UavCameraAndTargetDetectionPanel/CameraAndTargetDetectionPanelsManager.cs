@@ -4,6 +4,7 @@ using Modules.FuelAndHealth.Channels.ScriptableObjects;
 using Modules.Navigation;
 using Modules.Navigation.Channels.ScriptableObjects;
 using Modules.TargetDetection;
+using TMPro;
 using UAVs;
 using UAVs.Channels.ScriptableObjects;
 using UI.UavCameraAndTargetDetectionPanel.Settings.ScriptableObjects;
@@ -26,7 +27,8 @@ namespace UI.UavCameraAndTargetDetectionPanel
          
          private UavFuelConditionEventChannelSO _uavFuelConditionChangedEventChannel;
          private UavConditionEventChannelSO _uavConditionChangedEventChannel;
-        
+
+         public TextMeshProUGUI headerText;
          
          private Dictionary<Uav,UavCameraAndTargetDetectionPanelController> _uavPanelsDictionary = new ();
        
@@ -41,6 +43,9 @@ namespace UI.UavCameraAndTargetDetectionPanel
             GetReferencesFromGameManager();
             SubscribeToChannels();
             ClearPanels();
+            
+            headerText.text = _uavCameraAndTargetDetectionPanelSettings.headerText;
+            headerText.color = ColorHelper.StringToColor(_uavCameraAndTargetDetectionPanelSettings.headerTextColor);
         }
 
         private void ClearPanels()

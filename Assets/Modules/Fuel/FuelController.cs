@@ -139,7 +139,7 @@ namespace Modules.FuelAndHealth
                 var deltaTime = fuelLeakTime +GameManager.Instance.simulationStartTime - Time.time;
                 if (deltaTime >= 0)
                 {
-                    if (_uav.uavCondition is Lost or Finished)
+                    if (_uav.uavCondition is Lost )
                     {
                         Debug.Log("UAV is lost, no fuel leaks will be simulated");
                         yield break;

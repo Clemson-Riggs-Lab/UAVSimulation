@@ -1,0 +1,18 @@
+[
+  {
+    "timestamp": "03/13/2023 00:14:10.935987",
+    "simulationTimeStamp": "2.460861",
+    "logType": "Score",
+    "eventType": "Scoring Criteria",
+    "logMessages": [
+      "ReroutingFalsePositiveScore: -1",
+      "ReroutingFalseNegativeScore: -2",
+      "ReroutingTruePositiveScore: 2",
+      "ReroutingTrueNegativeScore: 1",
+      "TargetDetectionFalsePositiveScore: -1",
+      "TargetDetectionFalseNegativeScore: -2",
+      "TargetDetectionTruePositiveScore: 2",
+      "TargetDetectionTrueNegativeScore: 1"
+    ]
+  }
+]

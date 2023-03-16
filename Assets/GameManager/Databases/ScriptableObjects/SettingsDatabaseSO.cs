@@ -4,6 +4,7 @@ using Modules.Navigation.Settings.ScriptableObjects;
 using Modules.Navigation.Submodules.Rerouting.Settings.ScriptableObjects;
 using Modules.NoFlyZone.Settings.ScriptableObjects;
 using Modules.Prompts.Settings.ScriptableObjects;
+using Modules.ScoreKeeper.Settings.ScriptableObjects;
 using Modules.TargetDetection.Settings.ScriptableObjects;
 using UAVs.Settings.ScriptableObjects;
 using UI.FuelAndHealthPanel.Settings.ScriptableObjects;
@@ -11,6 +12,7 @@ using UI.Paths_Rendering.Settings.ScriptableObjects;
 using UI.ReroutingPanel.Settings.ScriptableObjects;
 using UI.UavCameraAndTargetDetectionPanel.Settings.ScriptableObjects;
 using UnityEngine;
+using UnityEngine.Serialization;
 using WayPoints.Settings.ScriptableObjects;
 
 namespace Databases.ScriptableObjects
@@ -32,6 +34,13 @@ namespace Databases.ScriptableObjects
 		public NavigationSettingsSO navigationSettings;
 		public FuelSettingsSO fuelSettings;
 		public PathsRenderingSettingsSO pathsRenderingSettings;
+		public ScoreKeepersSettingsSO scoreKeepersSettings;
+
+
+		public int simulationStartDelay = 5;
+		public int simulationDuration = 5 * 60;
+		public int randomSeed = 1; 
+		
 		private void OnEnable()
 		{
 			AssertAllReferencesAreNotNull();
@@ -51,6 +60,7 @@ namespace Databases.ScriptableObjects
 			AssertionHelper.AssertAssetReferenced(navigationSettings,this);
 			AssertionHelper.AssertAssetReferenced(fuelSettings,this);
 			AssertionHelper.AssertAssetReferenced(pathsRenderingSettings,this);
+			AssertionHelper.AssertAssetReferenced(scoreKeepersSettings,this);
 		}
 	}
 }

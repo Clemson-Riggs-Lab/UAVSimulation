@@ -22,19 +22,15 @@ MonoBehaviour:
     centerText: 
     bottomText: 
   hiddenUavCameraAndTargetDetectionPanelConfigs:
-    cameraAndTargetDetectionPanelState: 3
+    cameraAndTargetDetectionPanelState: 2
     centerText: 
-    bottomText: 
-  finishedUavCameraAndTargetDetectionPanelConfigs:
-    cameraAndTargetDetectionPanelState: 1
-    centerText: Uav Finished Mission
     bottomText: 
   lostUavCameraAndTargetDetectionPanelConfigs:
     cameraAndTargetDetectionPanelState: 2
-    centerText: ' UAV Lost'
+    centerText: 
     bottomText: 
   hoveringUavCameraAndTargetDetectionPanelConfigs:
-    cameraAndTargetDetectionPanelState: 1
+    cameraAndTargetDetectionPanelState: 0
     centerText: 
     bottomText: 
   fuelLeakCameraAndTargetDetectionPanelConfigs:
@@ -49,3 +45,5 @@ MonoBehaviour:
     cameraAndTargetDetectionPanelState: 2
     centerText: 
     bottomText: Fuel Empty
+  headerText: Primary Task
+  headerTextColor: lime

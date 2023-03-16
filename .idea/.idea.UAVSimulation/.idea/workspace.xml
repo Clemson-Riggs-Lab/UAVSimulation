@@ -5,17 +5,283 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2a31bee8-77bd-4176-b786-4bd852df0b13" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/IOHandlers/Records/UavDynamicNavigationWorkloadRecord.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/IOHandlers/Records/UavDynamicNavigationWorkloadRecord.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/IOHandlers/Records/UavDynamicTargetDetectionWorkloadRecord.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/IOHandlers/Records/UavDynamicTargetDetectionWorkloadRecord.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Modules/Logging/ScoreSummaryLogger.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Modules/Logging/ScoreSummaryLogger.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Modules/Navigation/Submodules/Rerouting/Channels/oneClickReroutingRequestedChannel.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Modules/Navigation/Submodules/Rerouting/Channels/oneClickReroutingRequestedChannel.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Modules/ScoreKeeper.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Modules/ScoreKeeper/Channels.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Modules/ScoreKeeper/Channels/ScoreKeeperUpdatedEventChannel.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Modules/ScoreKeeper/Channels/ScoreKeeperUpdatedEventChannel.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Modules/ScoreKeeper/Channels/ScriptableObjects.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Modules/ScoreKeeper/Channels/ScriptableObjects/ScoreKeeperUpdatedEventChannelSO.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Modules/ScoreKeeper/Channels/ScriptableObjects/ScoreKeeperUpdatedEventChannelSO.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Modules/ScoreKeeper/Score.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Modules/ScoreKeeper/Score.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Modules/ScoreKeeper/ScoreLogHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Modules/ScoreKeeper/ScoreLogHandler.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Modules/ScoreKeeper/ScoreManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Modules/ScoreKeeper/ScoreManager.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Modules/ScoreKeeper/Settings.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Modules/ScoreKeeper/Settings/ScoreKeepersSettings.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Modules/ScoreKeeper/Settings/ScoreKeepersSettings.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Modules/ScoreKeeper/Settings/ScriptableObjects.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Modules/ScoreKeeper/Settings/ScriptableObjects/ScoreKeepersSettingsSO.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Modules/ScoreKeeper/Settings/ScriptableObjects/ScoreKeepersSettingsSO.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/OutlineEffect.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/OutlineEffect/Demo.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/OutlineEffect/Demo/Bg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/OutlineEffect/Demo/Bg.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/OutlineEffect/Demo/Demo.unity" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/OutlineEffect/Demo/Demo.unity.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/OutlineEffect/Demo/DemoSettings.lighting" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/OutlineEffect/Demo/DemoSettings.lighting.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/OutlineEffect/Readme.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/OutlineEffect/Readme.txt.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/OutlineEffect/VerticesOutline.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/OutlineEffect/VerticesOutline.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/OutlineEffect/VerticesOutline2.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/OutlineEffect/VerticesOutline2.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/OutlineEffect/VerticesOutline_Always.shader" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/OutlineEffect/VerticesOutline_Always.shader.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/OutlineEffect/VerticesOutline_Normal.shader" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/OutlineEffect/VerticesOutline_Normal.shader.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UI/ReroutingPanel/ReroutingPanelManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UI/ReroutingPanel/ReroutingPanelManager.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UI/Score.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UI/Score/ScorePanelController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UI/Score/ScorePanelController.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/configFiles/input/sample.input - Copy.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/configFiles/input/sample.input - Copy.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/configFiles/settings/SettingsHWL-Secondary.settings.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/configFiles/settings/SettingsHWL-Secondary.settings.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/configFiles/settings/SettingsHWL.settings.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/configFiles/settings/SettingsHWL.settings.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/configFiles/settings/SettingsLWL-Secondary.settings.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/configFiles/settings/SettingsLWL-Secondary.settings.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/configFiles/settings/SettingsLWL.settings.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/configFiles/settings/SettingsLWL.settings.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/configFiles/settings/SettingsMWL-Secondary.settings.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/configFiles/settings/SettingsMWL-Secondary.settings.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/configFiles/settings/SettingsMWL.settings.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/configFiles/settings/SettingsMWL.settings.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/configFiles/settings/SettingsTraining-Secondary.settings.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/configFiles/settings/SettingsTraining-Secondary.settings.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/configFiles/settings/SettingsTraining.settings.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/configFiles/settings/SettingsTraining.settings.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-03-12 21-21-31.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-03-12 21-21-31.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-03-12 21-27-31.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-03-12 21-27-31.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-03-12 21-28-02.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-03-12 21-28-02.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-03-12 21-28-17.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-03-12 21-28-17.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-03-12 21-28-53.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-03-12 21-28-53.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-03-12 21-29-19.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-03-12 21-29-19.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-03-12 21-36-29.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-03-12 21-36-29.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-03-12 21-36-48.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-03-12 21-36-48.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-03-12 21-44-18.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-03-12 21-44-18.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-03-12 21-44-39.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-03-12 21-44-39.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-03-12 21-46-05.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-03-12 21-46-05.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-03-12 21-46-36.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-03-12 21-46-36.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-03-12 21-54-12.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-03-12 21-54-12.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-03-12 21-54-58.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-03-12 21-54-58.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-03-13 00-11-30-Su11ar23LoA.D.30.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-03-13 00-11-30-Su11ar23LoA.D.30.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-03-13 00-11-30.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-03-13 00-11-30.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-03-13 00-12-36-Su12ar23LoA.D.36.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-03-13 00-12-36-Su12ar23LoA.D.36.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-03-13 00-12-36.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-03-13 00-12-36.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-03-13 00-14-03-Su14ar23LoA.D.3.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-03-13 00-14-03-Su14ar23LoA.D.3.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-03-13 00-14-03.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-03-13 00-14-03.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-03-13 00-14-09-Su14ar23LoA.D.9.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-03-13 00-14-09-Su14ar23LoA.D.9.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-03-13 00-14-09.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-03-13 00-14-09.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-03-13 00-18-09-Su18ar23LoA.D.9.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-03-13 00-18-09-Su18ar23LoA.D.9.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-03-13 00-18-09.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-03-13 00-18-09.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-03-13 08-33-37-SummaryLogs.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-03-13 08-33-37-SummaryLogs.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-03-13 08-33-37.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-03-13 08-33-37.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-03-13 08-36-54-SummaryLogs.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-03-13 08-36-54-SummaryLogs.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-03-13 08-36-54.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-03-13 08-36-54.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-03-13 08-42-15-SummaryLogs.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-03-13 08-42-15-SummaryLogs.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-03-13 08-42-15.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-03-13 08-42-15.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-03-13 08-43-11-SummaryLogs.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-03-13 08-43-11-SummaryLogs.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-03-13 08-43-11.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-03-13 08-43-11.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-03-13 08-45-39-SummaryLogs.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-03-13 08-45-39-SummaryLogs.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-03-13 08-45-39.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-03-13 08-45-39.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-03-13 08-50-14-SummaryLogs.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-03-13 08-50-14-SummaryLogs.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-03-13 08-50-14.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-03-13 08-50-14.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-03-13 08-56-52-SummaryLogs.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-03-13 08-56-52-SummaryLogs.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-03-13 08-56-52.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-03-13 08-56-52.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-03-13 08-58-31-SummaryLogs.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-03-13 08-58-31-SummaryLogs.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-03-13 08-58-31.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-03-13 08-58-31.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/lab rat1- hw-primary.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/lab rat1- hw-primary.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/labrat 1- hw-secondary.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/labrat 1- hw-secondary.json.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.UAVSimulation/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UAVSimulation/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameManager/Databases/ChannelsDatabase.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameManager/Databases/ChannelsDatabase.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameManager/Databases/InputRecordsDatabase.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameManager/Databases/InputRecordsDatabase.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameManager/Databases/ScriptableObjects/ChannelsDatabaseSO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameManager/Databases/ScriptableObjects/ChannelsDatabaseSO.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameManager/Databases/ScriptableObjects/InputRecordsDatabaseSO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameManager/Databases/ScriptableObjects/InputRecordsDatabaseSO.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameManager/Databases/ScriptableObjects/SettingsDatabaseSO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameManager/Databases/ScriptableObjects/SettingsDatabaseSO.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameManager/Databases/SettingsDatabase.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameManager/Databases/SettingsDatabase.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameManager/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameManager/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HelperScripts/ColorHelper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HelperScripts/ColorHelper.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HelperScripts/Enums.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HelperScripts/Enums.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HelperScripts/Extensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HelperScripts/Extensions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HelperScripts/NatoAlphabetConverter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HelperScripts/NatoAlphabetConverter.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/IOHandlers/DefaultRecordsCreator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/IOHandlers/DefaultRecordsCreator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/IOHandlers/Records/TargetRecord.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/IOHandlers/Records/TargetRecord.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/IOHandlers/Records/UavPathsRecord.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/IOHandlers/Records/UavPathsRecord.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/IOHandlers/Records/UavRecord.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/IOHandlers/Records/UavRecord.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/JsonSerializerTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/JsonSerializerTest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Modules/Fuel/FuelController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Fuel/FuelController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Modules/Fuel/FuelManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Fuel/FuelManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Modules/Fuel/Settings/FueSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Fuel/Settings/FueSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Modules/Navigation/Channels/ScriptableObjects/NavigationChannelsSO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Navigation/Channels/ScriptableObjects/NavigationChannelsSO.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Modules/Navigation/NavigationManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Navigation/NavigationManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Modules/Navigation/Navigator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Navigation/Navigator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Modules/Navigation/Path.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Navigation/Path.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Modules/Navigation/PathsGenerator.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Modules/Navigation/PathsGenerator.cs.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Modules/Navigation/Settings/NavigationSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Navigation/Settings/NavigationSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/DOTweenSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/DOTweenSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Modules/Navigation/Settings/ScriptableObjects/NavigationSettingsSO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Navigation/Settings/ScriptableObjects/NavigationSettingsSO.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Modules/Navigation/Submodules/Rerouting/ReroutingLogHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Navigation/Submodules/Rerouting/ReroutingLogHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Modules/Navigation/Submodules/Rerouting/ReroutingManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Navigation/Submodules/Rerouting/ReroutingManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Modules/Navigation/Submodules/Rerouting/Settings/ReroutingSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Navigation/Submodules/Rerouting/Settings/ReroutingSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Modules/Navigation/Submodules/Rerouting/Settings/ScriptableObjects/ReroutingSettingsSO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Navigation/Submodules/Rerouting/Settings/ScriptableObjects/ReroutingSettingsSO.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Modules/NoFlyZone/NFZsManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/NoFlyZone/NFZsManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Modules/NoFlyZone/Prefabs/NFZMaterial.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/NoFlyZone/Prefabs/NFZMaterial.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Modules/NoFlyZone/Settings/NFZSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/NoFlyZone/Settings/NFZSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Modules/NoFlyZone/Settings/ScriptableObjects/NFZSettingsSO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/NoFlyZone/Settings/ScriptableObjects/NFZSettingsSO.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Modules/Prompts/Settings/PromptSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Prompts/Settings/PromptSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Modules/Prompts/Settings/ScriptableObjects/PromptSettingsSO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Prompts/Settings/ScriptableObjects/PromptSettingsSO.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Modules/TargetDetection/Settings/ScriptableObjects/TargetDetectionSettingsSO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/TargetDetection/Settings/ScriptableObjects/TargetDetectionSettingsSO.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Modules/TargetDetection/Settings/TargetDetectionSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/TargetDetection/Settings/TargetDetectionSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Modules/TargetDetection/Target.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/TargetDetection/Target.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Modules/TargetDetection/TargetDetectionLogHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/TargetDetection/TargetDetectionLogHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Modules/TargetDetection/TargetsDetectionManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/TargetDetection/TargetsDetectionManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Modules/WayPoints/Settings/ScriptableObjects/WaypointSettingsSO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/WayPoints/Settings/ScriptableObjects/WaypointSettingsSO.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Modules/WayPoints/Settings/WaypointSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/WayPoints/Settings/WaypointSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Modules/WayPoints/WayPointsGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/WayPoints/WayPointsGenerator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Modules/WayPoints/WayPointsManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/WayPoints/WayPointsManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SimulationScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SimulationScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UAVs/Prefabs/UAV.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UAVs/Prefabs/UAV.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UAVs/Settings/ScriptableObjects/UavSettingsSO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UAVs/Settings/ScriptableObjects/UavSettingsSO.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/UAVs/Settings/UavSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UAVs/Settings/UavSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UAVs/Uav.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UAVs/Uav.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UAVs/UavsGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UAVs/UavsGenerator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UAVs/UavsManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UAVs/UavsManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UI/FuelAndHealthPanel/FuelAndHealthStatusPanelController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/FuelAndHealthPanel/FuelAndHealthStatusPanelController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/UI/FuelAndHealthPanel/Settings/FuelAndHealthPanelSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/FuelAndHealthPanel/Settings/FuelAndHealthPanelSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UI/Paths Rendering/PathRenderer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/Paths Rendering/PathRenderer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UI/Paths Rendering/PathsRenderersManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/Paths Rendering/PathsRenderersManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/UI/Paths Rendering/Settings/Path Rendering Settings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/Paths Rendering/Settings/Path Rendering Settings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UI/Paths Rendering/Settings/ScriptableObjects/PathsRenderingSettingsSO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/Paths Rendering/Settings/ScriptableObjects/PathsRenderingSettingsSO.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UI/Prompts/PromptsAndResponsesHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/Prompts/PromptsAndResponsesHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UI/ReroutingPanel/Prefabs/rerouteButtonPrefab.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/ReroutingPanel/Prefabs/rerouteButtonPrefab.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UI/ReroutingPanel/ReroutingButtonsContainerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/ReroutingPanel/ReroutingButtonsContainerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UI/ReroutingPanel/ReroutingPanelsContainerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/ReroutingPanel/ReroutingPanelsContainerController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/UI/ReroutingPanel/Settings/ReroutingPanelSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/ReroutingPanel/Settings/ReroutingPanelSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UI/ReroutingPanel/Settings/ScriptableObjects/ReroutingPanelSettingsSO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/ReroutingPanel/Settings/ScriptableObjects/ReroutingPanelSettingsSO.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UI/UavCameraAndTargetDetectionPanel/CameraAndTargetDetectionPanelsManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/UavCameraAndTargetDetectionPanel/CameraAndTargetDetectionPanelsManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UI/UavCameraAndTargetDetectionPanel/Prefabs/UAV Camera and Target Detection Panel Container.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/UavCameraAndTargetDetectionPanel/Prefabs/UAV Camera and Target Detection Panel Container.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UI/UavCameraAndTargetDetectionPanel/Settings/ScriptableObjects/UavCameraAndTargetDetectionPanelSettingsSO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/UavCameraAndTargetDetectionPanel/Settings/ScriptableObjects/UavCameraAndTargetDetectionPanelSettingsSO.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/UI/UavCameraAndTargetDetectionPanel/Settings/UavCameraAndTargetDetectionSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/UavCameraAndTargetDetectionPanel/Settings/UavCameraAndTargetDetectionSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UI/UavCameraAndTargetDetectionPanel/UavCameraAndTargetDetectionPanelController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/UavCameraAndTargetDetectionPanel/UavCameraAndTargetDetectionPanelController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/configFiles/input/sample.input.json" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/configFiles/input/sample.input.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/configFiles/settings/sample settings explained.json.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/configFiles/settings/sample settings explained.json.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/configFiles/settings/sample.settings.json.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/configFiles/settings/sample.settings.json.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/logFiles/0001-01-01 00-00-00.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/logFiles/0001-01-01 00-00-00.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2022-09-28 09-54-18.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2022-09-28 09-54-18.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2022-09-28 09-55-50.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2022-09-28 09-55-50.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2022-09-28 09-59-29.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2022-09-28 09-59-29.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2022-09-28 09-59-55.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2022-09-28 09-59-55.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2022-09-28 10-42-20.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2022-09-28 10-42-20.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2022-09-28 10-45-15.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2022-09-28 10-45-15.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2022-09-28 10-47-57.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2022-09-28 10-47-57.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2022-09-28 10-51-10.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2022-09-28 10-51-10.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2022-09-28 10-56-06.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2022-09-28 10-56-06.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2022-09-28 10-58-31.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2022-09-28 10-58-31.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2022-09-28 11-00-32.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2022-09-28 11-00-32.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2022-09-28 11-02-19.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2022-09-28 11-02-19.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2022-09-28 11-03-44.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2022-09-28 11-03-44.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2022-09-28 11-06-28.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2022-09-28 11-06-28.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2022-09-28 11-19-33.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2022-09-28 11-19-33.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2022-09-28 11-24-39.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2022-09-28 11-24-39.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2022-11-02 12-01-07.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2022-11-02 12-01-07.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2022-11-02 12-01-51.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2022-11-02 12-01-51.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2022-11-02 12-04-38.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2022-11-02 12-04-38.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2022-11-10 14-38-01.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2022-11-10 14-38-01.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2022-11-10 15-16-38.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2022-11-10 15-16-38.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2022-11-10 15-18-01.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/DynamicsManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/DynamicsManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,79 +292,25 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/GameManager/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/IOHandlers/ConfigFilesHandler.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/IOHandlers/Records/Coordinates.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/IOHandlers/Records/TargetRecord.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/IOHandlers/Settings/ScriptableObjects/ConfigFilesSettingsSO.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/JsonSerializerTest.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Modules/TargetDetection/Channels/ScriptableObjects/TargetDetectionChannelsSO.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Plugins/StandaloneFileBrowser/StandaloneFileBrowserWindows.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/UAVs/Settings/ScriptableObjects/UavSettingsSO.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/UI/BlockingPanelController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/UI/Paths Rendering/PathRenderer.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/UI/ReroutingPanel/ReroutingButtonsContainerController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/UI/UavCameraAndTargetDetectionPanel/UavCameraAndTargetDetectionPanelController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.terrain-tools@4.0.3/Shaders/NoiseLib/Implementation/RidgeImpl.hlsl" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.test-framework@1.1.31/UnityEditor.TestRunner/TestRun/TestJobData.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.test-framework@1.1.31/UnityEngine.TestRunner/NUnitExtensions/Attributes/UnityTestAttribute.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.textmeshpro@3.0.6/Scripts/Editor/TMP_BaseEditorPanel.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.textmeshpro@3.0.6/Scripts/Editor/TMP_GlyphPairAdjustmentRecordPropertyDrawer.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.textmeshpro@3.0.6/Scripts/Runtime/TMP_InputField.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.textmeshpro@3.0.6/Scripts/Runtime/TMP_Text.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.textmeshpro@3.0.6/Scripts/Runtime/TMPro_UGUI_Private.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Editor/EventSystem/EventTriggerEditor.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Editor/UI/DropdownEditor.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Editor/UI/ScrollRectEditor.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/EventSystem/EventSystem.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/EventSystem/ExecuteEvents.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/EventSystem/InputModules/StandaloneInputModule.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/EventSystem/UIBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/UI/Animation/CoroutineTween.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/UI/Core/Button.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/UI/Core/FontUpdateTracker.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/UI/Core/Graphic.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/UI/Core/Layout/HorizontalLayoutGroup.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/UI/Core/Layout/HorizontalOrVerticalLayoutGroup.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/UI/Core/Layout/LayoutElement.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/UI/Core/Layout/LayoutGroup.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/UI/Core/Layout/VerticalLayoutGroup.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/UI/Core/MaskUtilities.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/599ef6b6d50f4e488ca73e2010b5243610fc00/75/7a8df838/Enumerable.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5ddb5fa70dfe40d2818192400111b9ec2aa00/45/a9410b60/ShortcutExtensions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/880832f2c4e2458090401bbb74a86b24a8a00/50/5c290803/JsonConvert.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d4cde64232cf45659d86aafa597faa7746a800/11/647ec695/List`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d4cde64232cf45659d86aafa597faa7746a800/cd/edcdb5c9/NullReferenceException.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d4cde64232cf45659d86aafa597faa7746a800/eb/843202c0/Dictionary`2.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f1212ad1dec44ce7b7147976b91869c3157800/19/aef5961a/ColorUtility.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f1212ad1dec44ce7b7147976b91869c3157800/3b/dba4b0db/Transform.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f1212ad1dec44ce7b7147976b91869c3157800/8a/5ef523ab/Debug.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f1212ad1dec44ce7b7147976b91869c3157800/a8/26ee26df/Vector3.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f1212ad1dec44ce7b7147976b91869c3157800/ec/f6ec734f/LineRenderer.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f1212ad1dec44ce7b7147976b91869c3157800/fe/10d62574/Object.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/d44b17e136d09081da1e8fd0e8c83fde60e11818b9f2442d7ed8cb733fae895e/System.Collections.Generic.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.textmeshpro@3.0.6/Scripts/Editor/TMP_BaseShaderGUI.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Editor/UI/InterceptedEventsPreview.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/UI/Core/RawImage.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/UI/Core/ScrollRect.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/UI/Core/Selectable.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/UI/Core/Slider.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/UI/Core/Toggle.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Tests/Editor/CanvasRenderer/ParentCanvasIsSane.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Tests/Editor/InputField/ContentValidation.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Tests/Editor/UnityEvent/UnityEventInvoke.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/Button/ButtonTests.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/Canvas/CanvasScalerWithChildTextObjectDoesNotCrash.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/Canvas/NestedCanvas.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/EventSystem/GraphicRaycasterWorldSpaceCanvasTests.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/Layout/ContentSizeFitterTests.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/Layout/HorizonalLayoutGroupTests.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/TextEditor/TextEditorTests.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.visualscripting@1.7.8/Editor/VisualScripting.Core/Windows/GraphWindow.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.visualscripting@1.7.8/Editor/VisualScripting.Core/Windows/LudiqEditorWindow.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.visualscripting@1.7.8/Editor/VisualScripting.Core/Windows/Sidebars/SidebarPanelWindow.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.visualscripting@1.7.8/Editor/VisualScripting.Core/Windows/Sidebars/Sidebars.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.visualscripting@1.7.8/Editor/VisualScripting.Flow/Options/UnitOption.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.visualscripting@1.7.8/Runtime/VisualScripting.Core/Collections/MergedList.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.visualscripting@1.7.8/Runtime/VisualScripting.Core/Dependencies/FullSerializer/fsSerializer.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.visualscripting@1.7.8/Runtime/VisualScripting.Core/Unity/LudiqBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.visualscripting@1.7.8/Runtime/VisualScripting.Core/Utilities/ComponentHolderProtocol.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.visualscripting@1.7.8/Runtime/VisualScripting.Flow/Framework/Events/Physics/OnCollisionEnter.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.visualscripting@1.7.8/Runtime/VisualScripting.Flow/Framework/Events/Physics/OnCollisionExit.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.visualscripting@1.7.8/Runtime/VisualScripting.Flow/Framework/Events/Physics/OnCollisionStay.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../UAV_Sim/Assets/Scripts/CustomNetworkManager.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../UAV_Sim/Assets/Scripts/DrawRoutes.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../UAV_Sim/Assets/Scripts/EyeTracker.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../UAV_Sim/Assets/Scripts/GazepointClient.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../UAV_Sim/Assets/Scripts/Initializer.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../UAV_Sim/Assets/Scripts/LoadingScript.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../UAV_Sim/Assets/Scripts/ReroutingManager.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../UAV_Sim/Assets/Scripts/SharedData.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/UI/Core/SetPropertyUtility.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/UI/Core/SpecializedCollections/IndexedSet.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.visualscripting@1.7.8/Runtime/VisualScripting.Flow/IDefaultValue.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -124,16 +336,30 @@
     "XThreadsFramesViewSplitterKey": "0.2870229",
     "last_opened_file_path": "C:/Users/abdel/OneDrive - University of Virginia/UVA/Research/UAV/UAVSimulation",
     "nodejs_package_manager_path": "npm",
-    "rider.run.widget.enabled.cache": "false",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "settings.editor.selected.configurable": "project.propDebugger",
     "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "rider.external.source.directories": [
+      "C:\\Users\\abdel\\AppData\\Roaming\\JetBrains\\Rider2022.3\\resharper-host\\DecompilerCache",
+      "C:\\Users\\abdel\\AppData\\Roaming\\JetBrains\\Rider2022.3\\resharper-host\\SourcesCache",
+      "C:\\Users\\abdel\\AppData\\Local\\Symbols\\src"
+    ]
   }
 }]]></component>
-  <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+  <component name="RunManager" selected="Standalone Player.Standalone Player">
     <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="$PROJECT_DIR$/Builds\UAVSimulation.exe" />
+      <option name="EXE_PATH" value="$PROJECT_DIR$/Builds/testbuild\UAVSimulation.exe" />
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="C:\Users\abdel\OneDrive - University of Virginia\UVA\Research\UAV\UAVSimulation\Builds" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2021.3.4f1\Editor\Unity.exe" />
+      <option name="PROGRAM_PARAMETERS" value="-projectPath &quot;C:\Users\abdel\OneDrive - University of Virginia\UVA\Research\UAV\UAVSimulation&quot; -debugCodeOptimization" />
+      <option name="WORKING_DIRECTORY" value="C:\Users\abdel\OneDrive - University of Virginia\UVA\Research\UAV\UAVSimulation" />
       <option name="PASS_PARENT_ENVS" value="1" />
       <option name="USE_EXTERNAL_CONSOLE" value="0" />
       <method v="2" />
@@ -233,6 +459,18 @@
       <workItem from="1667404946124" duration="3788000" />
       <workItem from="1667935247145" duration="1428000" />
       <workItem from="1671175089502" duration="218000" />
+      <workItem from="1676945337948" duration="4166000" />
+      <workItem from="1677011000535" duration="865000" />
+      <workItem from="1677011906723" duration="61000" />
+      <workItem from="1677011990854" duration="473000" />
+      <workItem from="1677012475483" duration="1512000" />
+      <workItem from="1677014000697" duration="133000" />
+      <workItem from="1677014144404" duration="123000" />
+      <workItem from="1677014280968" duration="178000" />
+      <workItem from="1677014477749" duration="349000" />
+      <workItem from="1677014846753" duration="99481000" />
+      <workItem from="1678554781540" duration="29865000" />
+      <workItem from="1678671775602" duration="9870000" />
     </task>
     <servers />
   </component>
@@ -321,52 +559,26 @@
           <line>172</line>
           <properties documentPath="C:\Users\abdel\OneDrive - University of Virginia\UVA\Research\UAV\UAVSimulation\Assets\Modules\Fuel\FuelController.cs" initialLine="172" containingFunctionPresentation="method 'OnHealthButtonClicked'">
             <startOffsets>
-              <option value="6850" />
+              <option value="6839" />
             </startOffsets>
             <endOffsets>
-              <option value="6851" />
+              <option value="6840" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="27" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/UI/MainMenu/FileBrowser.cs</url>
-          <line>47</line>
-          <properties documentPath="C:\Users\abdel\OneDrive - University of Virginia\UVA\Research\UAV\UAVSimulation\Assets\UI\MainMenu\FileBrowser.cs" initialLine="47" containingFunctionPresentation="method 'ShowBrowseFileDialog'">
+          <url>file://$PROJECT_DIR$/Assets/Modules/Navigation/NavigationManager.cs</url>
+          <line>165</line>
+          <properties documentPath="C:\Users\abdel\OneDrive - University of Virginia\UVA\Research\UAV\UAVSimulation\Assets\Modules\Navigation\NavigationManager.cs" initialLine="165" containingFunctionPresentation="method 'GetRandomPathDynamically'">
             <startOffsets>
-              <option value="1696" />
+              <option value="5933" />
             </startOffsets>
             <endOffsets>
-              <option value="1697" />
+              <option value="6051" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="30" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/UI/MainMenu/FileBrowser.cs</url>
-          <line>46</line>
-          <properties documentPath="C:\Users\abdel\OneDrive - University of Virginia\UVA\Research\UAV\UAVSimulation\Assets\UI\MainMenu\FileBrowser.cs" initialLine="46" containingFunctionPresentation="method 'ShowBrowseFileDialog'">
-            <startOffsets>
-              <option value="1506" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1648" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="31" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/GameManager/GameManager.cs</url>
-          <line>118</line>
-          <properties documentPath="C:\Users\abdel\OneDrive - University of Virginia\UVA\Research\UAV\UAVSimulation\Assets\GameManager\GameManager.cs" initialLine="118" containingFunctionPresentation="method 'Start'">
-            <startOffsets>
-              <option value="-1" />
-            </startOffsets>
-            <endOffsets>
-              <option value="-1" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="33" />
+          <option name="timeStamp" value="96" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -374,8 +586,17 @@
       <pinned-members>
         <PinnedItemInfo parentTag="Type#Newtonsoft.Json.Formatting" memberName="value__" />
         <PinnedItemInfo parentTag="Type#Menu.TypeWriterEffect" memberName="mTextMeshPro" />
+        <PinnedItemInfo parentTag="Type#UAVs.Uav" memberName="startingWaypoint" />
+        <PinnedItemInfo parentTag="Type#Modules.Navigation.Path" memberName="headingToNFZ" />
       </pinned-members>
     </pin-to-top-manager>
+    <watches-manager>
+      <configuration name="UNITY_DEBUG_RUN_CONFIGURATION">
+        <watch expression="((UAVs.Uav) uav).currentPath.headingToNFZ" />
+        <watch expression="((UAVs.Uav) uav).name" />
+        <watch expression="uav.uavCondition" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -13,18 +13,18 @@ MonoBehaviour:
   m_Name: ReroutingPanelSettings
   m_EditorClassIdentifier: 
   hideButtonsForHiddenUavs: 1
-  hideButtonsForFinishedUavs: 1
-  hideButtonsForLostUavs: 0
+  keepHiddenButtonsPositions: 1
+  hideButtonsForLostUavs: 1
   disableButtonsForHiddenUavs: 0
-  disableButtonsForFinishedUavs: 1
   disableButtonsForLostUavs: 1
-  closePanelsForHiddenUavs: 1
-  closePanelsForFinishedUavs: 1
+  closePanelsForHiddenUavs: 0
   closePanelsForLostUavs: 1
   numberOfReroutingOptionsToPresent: 3
   numberOfBadReroutingOptionsToPresent: 1
-  selectShortestPathsAsReroutingOptions: 1
   maximumNumberOfReroutingOptionsPanels: 4
   numberOfReroutingOptionsPanelsGridRows: 2
   numberOfReroutingOptionsPanelsGridColumns: 2
-  newPanelPosition: 0
+  shuffleReroutingOptionsRandomGeneratorSeed: 1
+  newPanelPosition: 1
+  headerText: Secondary Task
+  headerTextColor: Yellow

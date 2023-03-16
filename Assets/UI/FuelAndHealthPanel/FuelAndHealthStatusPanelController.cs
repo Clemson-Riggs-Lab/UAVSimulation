@@ -27,7 +27,7 @@ namespace UI.FuelAndHealthPanel
         private FuelAndHealthPanelSettingsSO _fuelAndHealthPanelSettings;
         private FuelAndHealthPanelConfigs _panelConfigs;
         private FuelCondition _fuelCondition = FuelCondition.Normal;
-        private UavCondition _uavCondition = UavCondition.Enabled;
+        private UavCondition _uavCondition = UavCondition.EnabledForTargetDetectionAndRerouting;
 
         
         public void Initialize(Uav uav, FuelAndHealthStatusPanelsManager manager)
@@ -64,7 +64,7 @@ namespace UI.FuelAndHealthPanel
                     _panelConfigs = _fuelAndHealthPanelSettings.lostUavFuelAndHealthPanelConfigs;
                     return;
                 
-                case (UavCondition.Hidden, FuelCondition.Normal): // if the UAV is hidden and the fuel condition is normal, we apply the hidden uav configs
+                case (UavCondition.Hidden , FuelCondition.Normal): // if the UAV is hidden and the fuel condition is normal, we apply the hidden uav configs
                 case (UavCondition.Hidden, _) when !_fuelAndHealthPanelSettings.showFuelLeakConditionWhenUavHidden:  // also if the uav is hidden and the fuel condition is not normal,but the settings say that fuel leaks should not be visible when the uav is hidden, we apply the hidden uav configs
                     _panelConfigs = _fuelAndHealthPanelSettings.hiddenUavFuelAndHealthPanelConfigs;
                     return;

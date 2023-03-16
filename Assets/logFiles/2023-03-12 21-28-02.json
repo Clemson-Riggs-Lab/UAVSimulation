@@ -1,0 +1,162 @@
+[
+  {
+    "timestamp": "03/12/2023 21:28:02.374446",
+    "simulationTimeStamp": "10.87566",
+    "logType": "Score",
+    "eventType": "Scoring Criteria",
+    "logMessages": [
+      "ReroutingFalsePositiveScore: -1",
+      "ReroutingFalseNegativeScore: -2",
+      "ReroutingTruePositiveScore: 2",
+      "ReroutingTrueNegativeScore: 1",
+      "TargetDetectionFalsePositiveScore: -1",
+      "TargetDetectionFalseNegativeScore: -2",
+      "TargetDetectionTruePositiveScore: 2",
+      "TargetDetectionTrueNegativeScore: 1"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:28:04.167441",
+    "simulationTimeStamp": "12.70276",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Alfa 2 condition changed to EnabledForTargetDetectionAndRerouting"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:28:04.171442",
+    "simulationTimeStamp": "12.70276",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Bravo 1 condition changed to EnabledForTargetDetectionAndRerouting"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:28:04.171442",
+    "simulationTimeStamp": "12.70276",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Charlie 4 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:28:04.172442",
+    "simulationTimeStamp": "12.70276",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Delta 7 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:28:04.172442",
+    "simulationTimeStamp": "12.70276",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Echo 6 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:28:04.172442",
+    "simulationTimeStamp": "12.70276",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Frank 4 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:28:04.172442",
+    "simulationTimeStamp": "12.70276",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Golf 3 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:28:04.172442",
+    "simulationTimeStamp": "12.70276",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Hotel 8 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:28:04.172442",
+    "simulationTimeStamp": "12.70276",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav India 1 condition changed to EnabledForTargetDetectionAndRerouting"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:28:04.172442",
+    "simulationTimeStamp": "12.70276",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav John 6 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:28:04.173442",
+    "simulationTimeStamp": "12.70276",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Kilo 1 condition changed to EnabledForTargetDetectionAndRerouting"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:28:04.173442",
+    "simulationTimeStamp": "12.70276",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Lima 2 condition changed to EnabledForTargetDetectionAndRerouting"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:28:04.173442",
+    "simulationTimeStamp": "12.70276",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Mike 3 condition changed to EnabledForTargetDetectionAndRerouting"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:28:04.173442",
+    "simulationTimeStamp": "12.70276",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Nectar 8 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:28:04.173442",
+    "simulationTimeStamp": "12.70276",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Oscar 6 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:28:04.173442",
+    "simulationTimeStamp": "12.70276",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Papa 6 condition changed to Hidden"
+    ]
+  }
+]

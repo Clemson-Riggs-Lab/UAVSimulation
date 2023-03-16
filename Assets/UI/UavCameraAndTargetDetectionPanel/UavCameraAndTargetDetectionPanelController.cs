@@ -9,6 +9,7 @@ using UI.UavCameraAndTargetDetectionPanel.Settings.ScriptableObjects;
 using UnityEngine;
 using UnityEngine.UI;
 using static HelperScripts.Enums;
+using static HelperScripts.Enums.UavCondition;
 using static UI.UavCameraAndTargetDetectionPanel.Settings.ScriptableObjects.UavCameraAndTargetDetectionPanelSettingsSO.UavCameraAndTargetDetectionPanelState;
 using static Modules.FuelAndHealth.Settings.ScriptableObjects.FuelSettingsSO;
 
@@ -32,7 +33,7 @@ namespace UI.UavCameraAndTargetDetectionPanel
         private UavPathEventChannelSO _targetNotDetectedButtonClickedEventChannel;
     
         private FuelCondition _uavFuelCondition = FuelCondition.Normal;
-        private UavCondition _uavCondition = UavCondition.Enabled;
+        private UavCondition _uavCondition = EnabledForTargetDetectionAndRerouting;
         
         private UavCameraPanelConfigs _panelConfigs=new();
         
@@ -71,6 +72,7 @@ namespace UI.UavCameraAndTargetDetectionPanel
         {
             this.uav = uav;
             gameObject.name = "UAVCameraPanel " + uav.uavName;
+            EnablePanel(false);
         }
 
 
@@ -126,10 +128,11 @@ namespace UI.UavCameraAndTargetDetectionPanel
             
             var uavConditionConfigs = _uavCondition switch
             {
-                UavCondition.Enabled =>  _uavCameraAndTargetDetectionPanelSettings.enabledUavCameraAndTargetDetectionPanelConfigs,
-                UavCondition.Lost =>  _uavCameraAndTargetDetectionPanelSettings.lostUavCameraAndTargetDetectionPanelConfigs,
-                UavCondition.Hidden => _uavCameraAndTargetDetectionPanelSettings.hiddenUavCameraAndTargetDetectionPanelConfigs,
-                UavCondition.Finished => _uavCameraAndTargetDetectionPanelSettings.finishedUavCameraAndTargetDetectionPanelConfigs,
+                Lost =>  _uavCameraAndTargetDetectionPanelSettings.lostUavCameraAndTargetDetectionPanelConfigs,
+                Hidden => _uavCameraAndTargetDetectionPanelSettings.hiddenUavCameraAndTargetDetectionPanelConfigs,
+                EnabledForReroutingOnly => _uavCameraAndTargetDetectionPanelSettings.hiddenUavCameraAndTargetDetectionPanelConfigs,
+                EnabledForTargetDetectionOnly => _uavCameraAndTargetDetectionPanelSettings.enabledUavCameraAndTargetDetectionPanelConfigs,
+                EnabledForTargetDetectionAndRerouting => _uavCameraAndTargetDetectionPanelSettings.enabledUavCameraAndTargetDetectionPanelConfigs,
                 _ => throw new ArgumentOutOfRangeException()
             };
             

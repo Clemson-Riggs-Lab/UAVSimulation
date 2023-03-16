@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using HelperScripts;
 using IOHandlers;
+using Modules.WayPoints;
 using ScriptableObjects.EventChannels;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -55,18 +56,8 @@ namespace WayPoints
          public void GenerateWayPoints()
         {
             ClearWayPoints(); //clear placeholders
+            _wayPointsGenerator.GenerateWayPointsOverGrid(_waypointSettings.waypointHeightFromTerrain, _waypointSettings.numberOfWaypoints);
             
-            switch(_waypointSettings.waypointsRecordsSource)
-            {
-                case FromInputFile:
-                    _wayPointsGenerator.GenerateWayPointsFromRecords(GameManager.Instance.inputRecordsDatabase.WayPointsRecords);
-                    break;
-                case FromDefaultRecords:
-                    _wayPointsGenerator.GenerateWayPointsFromRecords(DefaultRecordsCreator.GetDefaultWayPointsRecords());
-                    break;
-                default:
-                    throw new ArgumentOutOfRangeException();
-            }
         } 
         
         

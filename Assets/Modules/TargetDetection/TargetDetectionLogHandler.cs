@@ -60,10 +60,13 @@ namespace Modules.TargetDetection
 			var log = new Log();
 			log.logType = "TargetDetection";
 			log.eventType = isDetected ? "TargetDetected" : "TargetNotDetected";
-			log.logMessages = new() { isDetected ? "Target detected" : "Target not detected" + " by " + uav.name + " on path " + path.id };
+			log.logMessages = new() { isDetected ? "Target detected" : "Target not detected" + " by " + uav.name };
 			
 			if(_targetDetectionSettings.logTargetDetectionCorrectness)
 				log.logMessages.Add($"Responded correctly: {isDetected == path.targetIsPresent}");
+			
+			if(_targetDetectionSettings.logIfNonTargetIsPresent)
+				log.logMessages.Add($"Non target is present: {path.nonTargetIsPresent}");
 			
 			if(_targetDetectionSettings.logTimeSinceStartOfPathWhenTargetDetectionOccured)
 				log.logMessages.Add($"Time since start of path: {DateTime.Now- path.startTime}");

@@ -31,15 +31,14 @@ namespace UI.Paths_Rendering
 
 		private void PreviewPath(Uav uav, Path path)
 		{
-			if (_uavPathRenderers.ContainsKey(uav))
+			if (!_uavPathRenderers.ContainsKey(uav)) return;
+			if (uav.currentPath == path && path!=null)
 			{
-				if (uav.currentPath == path)
-				{
-					_uavPathRenderers[uav].SetLineRenderer(path,false); // sending the current path as a preview path means that we want to cancel the preview
-				}
-				
-				_uavPathRenderers[uav].SetLineRenderer(path,true);
+				_uavPathRenderers[uav].SetLineRenderer(path,false); // sending the current path as a preview path means that we want to cancel the preview
 			}
+			
+			
+			_uavPathRenderers[uav].SetLineRenderer(path,true);
 		}
 
 		private void RenderNewPath(Uav uav, Path path)
@@ -70,11 +69,11 @@ namespace UI.Paths_Rendering
 		}
 		
 
-		private void OnUavConditionChanged(Uav uav, UavCondition condition) // hide the line rendered if the uav is lost, finished, or hidden and the settings instruct to hide the render when the uav is hidden
+		private void OnUavConditionChanged(Uav uav, UavCondition condition) // hide the line rendered if the uav is lost or hidden and the settings instruct to hide the render when the uav is hidden
 		{
 			if (!_uavPathRenderers.ContainsKey(uav)) return;
 			
-			if (condition is Finished or Lost || (condition is Hidden && !_pathsRenderingSettings.showPathWhenUavIsHidden))
+			if (condition is  Lost || ((condition is Hidden or EnabledForTargetDetectionOnly) && !_pathsRenderingSettings.showPathWhenUavIsHidden))
 				_uavPathRenderers[uav].ShowLineRenderers(false);
 			else
 				_uavPathRenderers[uav].ShowLineRenderers(true);

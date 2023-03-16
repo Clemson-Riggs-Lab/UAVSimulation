@@ -14,6 +14,7 @@ namespace Modules.Navigation.Submodules.Rerouting
 		private ReroutingSettingsSO _reroutingSettings;
 		private LogEventChannelSO _logEventChannel;
 		private UavEventChannelSO _reroutingOptionsRequestedChannel;
+		private UavEventChannelSO _oneClickReroutingRequestedChannel;
 		private UavPathEventChannelSO _uavReroutePreviewEventChannel;
 		private UavPathEventChannelSO _uavReroutedEventChannel;
 		
@@ -30,6 +31,7 @@ namespace Modules.Navigation.Submodules.Rerouting
 			_uavReroutedEventChannel = GameManager.Instance.channelsDatabase.navigationChannels.uavReroutedEventChannel;
 			_uavReroutePreviewEventChannel = GameManager.Instance.channelsDatabase.navigationChannels.uavReroutePreviewEventChannel;
 			_reroutingOptionsRequestedChannel = GameManager.Instance.channelsDatabase.navigationChannels.reroutingOptionsRequestedChannel;
+			_oneClickReroutingRequestedChannel = GameManager.Instance.channelsDatabase.navigationChannels.oneClickReroutingRequestedChannel;
 		}
 		
 		private void SubscribeToChannels()
@@ -42,28 +44,34 @@ namespace Modules.Navigation.Submodules.Rerouting
 
 			if(_reroutingSettings.logReroutingEvents && _uavReroutedEventChannel != null)
 				_uavReroutedEventChannel.Subscribe(LogReroutingEvent);
+			
+			if(_reroutingSettings.logOneClickReroutingRequested && _oneClickReroutingRequestedChannel != null)
+				_oneClickReroutingRequestedChannel.Subscribe(LogOneClickReroutingRequested);
+		}
+
+		private void LogOneClickReroutingRequested(Uav arg0)
+		{
+			var log = new Log
+			{
+				logType = "Rerouting",
+				eventType = "One Click Rerouting Requested",
+				logMessages = new() { $"Uav {arg0.uavName} requested one click rerouting"}
+			};
+			_logEventChannel.RaiseEvent(log);
 		}
 
 		private void LogReroutingEvent(Uav uav, Path path)
 		{
-			var log = new Log();
-			log.logType = "Rerouting";
-			log.eventType = "Rerouting Event";
-			log.logMessages = new() { $"Uav {uav.uavName}  rerouted"};
+			var log = new Log
+			{
+				logType = "Rerouting",
+				eventType = "Rerouting Event",
+				logMessages = new() { $"Uav {uav.uavName}  rerouted"}
+			};
 			if (_reroutingSettings.logIfReroutingWasNeeded)
 			{
-				try
-				{
-					var originalPath = path.previousPath.nextPath;// a hacky way to check if the uav was heading to a NFZ since the next path of the previous path remains as the original path
-					var wasHeadingToNFZ=CheckIfHeadingToNFZ(uav,originalPath);
-					log.logMessages.Add(wasHeadingToNFZ ? "Rerouting was needed" : "Rerouting was not needed");
-				}
-				catch 
-				{
-					log.logMessages.Add("Rerouting could not be determined, since the original path was not found");
-				}
-				
-				
+				var wasHeadingToNFZ = path.headingToNFZ;
+				log.logMessages.Add(wasHeadingToNFZ ? "Rerouting was needed" : "Rerouting was not needed");
 			}
 
 			if (_reroutingSettings.logTimeOfPathStart)
@@ -84,10 +92,12 @@ namespace Modules.Navigation.Submodules.Rerouting
 
 		private void LogReroutingOptionPreviewed(Uav uav, Path path)
 		{
-			var log = new Log();
-			log.logType = "Rerouting";
-			log.eventType = "Rerouting Option Previewed";
-			log.logMessages = new() { $"Rerouting option previewed for Uav {uav.uavName} "};
+			var log = new Log
+			{
+				logType = "Rerouting",
+				eventType = "Rerouting Option Previewed",
+				logMessages = new() { $"Rerouting option previewed for Uav {uav.uavName} "}
+			};
 			if (_reroutingSettings.logTimeOfPathStart)
 			{
 				LogTimeOfPathStart(log, uav, path);

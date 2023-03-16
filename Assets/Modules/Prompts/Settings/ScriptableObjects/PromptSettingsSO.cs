@@ -44,6 +44,6 @@ namespace Modules.Prompts.Settings.ScriptableObjects
 		public bool logAllPromptResponseOptions = true;
 		public bool logReceivedResponses = true;
 		public bool logCorrectness = true;
-		
+		public int promptsShuffleRandomSeed = 1;
 	}
 }

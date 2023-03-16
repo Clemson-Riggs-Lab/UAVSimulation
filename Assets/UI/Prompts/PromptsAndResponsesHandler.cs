@@ -28,6 +28,8 @@ namespace Modules.Prompts
 		[NonSerialized] private IEnumerator _removeButtonsTimerCoroutine;
 		[NonSerialized] private bool _allowMultipleResponses;
 		[NonSerialized] private float _durationToAcceptResponses;
+		private System.Random _optionPositioningRandomGenerator = new System.Random();
+		
 
 		private void Start()
 		{
@@ -35,6 +37,8 @@ namespace Modules.Prompts
 			
 			if (newPromptEventChannel != null)
 				newPromptEventChannel.Subscribe(OnNewPromptReceivedEvent);
+
+			_optionPositioningRandomGenerator = new System.Random(_promptSettings.promptsShuffleRandomSeed);
 		}
 
 		private void GetSettingsFromGameManager()
@@ -62,7 +66,7 @@ namespace Modules.Prompts
 			_allowMultipleResponses = prompt.acceptMultipleResponses;
 
 			if (_promptSettings.shuffleResponses)
-				responseOptions = responseOptions.OrderBy(x => Random.value).ToList();
+				responseOptions = responseOptions.OrderBy(x => _optionPositioningRandomGenerator.Next()).ToList();
 
 			AddNewResponseOptions(responseOptions);
 

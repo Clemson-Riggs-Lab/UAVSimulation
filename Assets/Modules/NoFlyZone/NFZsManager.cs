@@ -70,13 +70,14 @@ namespace Modules.NoFlyZone
 				Debug.LogError("No Fly Zone records");
 				yield break;
 			}
-			
-			yield return new WaitForSeconds(simulationStartTime- Time.time);
+    
 			foreach (var nfzRecord in _nfzRecords)
 			{
-				var deltaTime = nfzRecord.NFZStartTime+simulationStartTime - Time.time;
-				if(deltaTime>0)
+				var deltaTime = nfzRecord.NFZStartTime + simulationStartTime - Time.time;
+				if (deltaTime > 0 && nfzRecord.NFZStartTime != 0)
+				{
 					yield return new WaitForSeconds(deltaTime);
+				}
 				GenerateNFZ(nfzRecord);
 			}
 		}

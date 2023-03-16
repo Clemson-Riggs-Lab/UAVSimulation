@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb7d312ce62e405b84276997e274cae7, type: 3}
+  m_Name: ScoreKeepersSettings
+  m_EditorClassIdentifier: 
+  keepScoreOfReroutingFalsePositives: 1
+  keepScoreOfReroutingFalseNegatives: 1
+  keepScoreOfReroutingTruePositives: 1
+  keepScoreOfReroutingTrueNegatives: 1
+  keepScoreOfTargetDetectionFalsePositives: 1
+  keepScoreOfTargetDetectionFalseNegatives: 1
+  keepScoreOfTargetDetectionTruePositives: 1
+  keepScoreOfTargetDetectionTrueNegatives: 1
+  reroutingFalsePositiveScore: -1
+  reroutingFalseNegativeScore: -2
+  reroutingTruePositiveScore: 2
+  reroutingTrueNegativeScore: 1
+  awardAndPenalizeForIntermediaryRerouting: 1
+  targetDetectionFalsePositiveScore: -1
+  targetDetectionFalseNegativeScore: -2
+  targetDetectionTruePositiveScore: 2
+  targetDetectionTrueNegativeScore: 1
+  awardAndPenalizeForIntermediaryTargetDetection: 1
+  logScoreResults: 1
+  logScoringCriteria: 1
+  showScorePanel: 1

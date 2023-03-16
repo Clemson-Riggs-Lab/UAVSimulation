@@ -15,7 +15,8 @@ namespace Modules.Navigation.Channels.ScriptableObjects
 		[SerializeField] public UavPathEventChannelSO uavReroutedEventChannel;
 		[SerializeField] public UavPathEventChannelSO uavReroutePreviewEventChannel;
 		[SerializeField] public UavEventChannelSO reroutingOptionsRequestedChannel;
-	
+		[SerializeField] public UavEventChannelSO oneClickReroutingRequestedChannel;
+
 
 		private void OnEnable()
 		{
@@ -29,7 +30,8 @@ namespace Modules.Navigation.Channels.ScriptableObjects
 			AssertionHelper.AssertAssetReferenced(uavReroutedEventChannel,this);
 			AssertionHelper.AssertAssetReferenced(uavReroutePreviewEventChannel,this);
 			AssertionHelper.AssertAssetReferenced(reroutingOptionsRequestedChannel,this);
-			
+			AssertionHelper.AssertAssetReferenced(oneClickReroutingRequestedChannel,this);
+
 
 		}
 	}

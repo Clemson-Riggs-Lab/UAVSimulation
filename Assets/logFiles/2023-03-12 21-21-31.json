@@ -1,0 +1,5487 @@
+[
+  {
+    "timestamp": "03/12/2023 21:21:31.822406",
+    "simulationTimeStamp": "52.62928",
+    "logType": "Score",
+    "eventType": "Scoring Criteria",
+    "logMessages": [
+      "ReroutingFalsePositiveScore: -1",
+      "ReroutingFalseNegativeScore: -2",
+      "ReroutingTruePositiveScore: 2",
+      "ReroutingTrueNegativeScore: 1",
+      "TargetDetectionFalsePositiveScore: -1",
+      "TargetDetectionFalseNegativeScore: -2",
+      "TargetDetectionTruePositiveScore: 2",
+      "TargetDetectionTrueNegativeScore: 1"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:21:33.600405",
+    "simulationTimeStamp": "54.45149",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Alfa 2 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:21:33.605405",
+    "simulationTimeStamp": "54.45149",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Bravo 1 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:21:33.605405",
+    "simulationTimeStamp": "54.45149",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Charlie 4 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:21:33.605405",
+    "simulationTimeStamp": "54.45149",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Delta 7 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:21:33.605405",
+    "simulationTimeStamp": "54.45149",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Echo 6 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:21:33.605405",
+    "simulationTimeStamp": "54.45149",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Frank 4 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:21:33.605405",
+    "simulationTimeStamp": "54.45149",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Golf 3 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:21:33.605405",
+    "simulationTimeStamp": "54.45149",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Hotel 8 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:21:33.607406",
+    "simulationTimeStamp": "54.45149",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav India 1 condition changed to EnabledForTargetDetectionAndRerouting"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:21:33.607406",
+    "simulationTimeStamp": "54.45149",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav John 6 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:21:33.607406",
+    "simulationTimeStamp": "54.45149",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Kilo 1 condition changed to EnabledForTargetDetectionAndRerouting"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:21:33.607406",
+    "simulationTimeStamp": "54.45149",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Lima 2 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:21:33.608405",
+    "simulationTimeStamp": "54.45149",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Mike 3 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:21:33.608405",
+    "simulationTimeStamp": "54.45149",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Nectar 8 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:21:33.608405",
+    "simulationTimeStamp": "54.45149",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Oscar 6 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:21:33.608405",
+    "simulationTimeStamp": "54.45149",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Papa 6 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:21:45.383411",
+    "simulationTimeStamp": "66.23959",
+    "logType": "TargetDetection",
+    "eventType": "TargetDetected",
+    "logMessages": [
+      "Target detected",
+      "Responded correctly: True",
+      "Non target is present: True",
+      "Time since start of path: 00:00:11.8099727"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:21:45.387414",
+    "simulationTimeStamp": "66.23959",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 0",
+      "ReroutingFalseNegativeCount: 0",
+      "ReroutingTruePositiveCount: 0",
+      "ReroutingTrueNegativeCount: 0",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 0",
+      "TargetDetectionTruePositiveCount: 1",
+      "TargetDetectionTrueNegativeCount: 0",
+      "ReroutingFalsePositiveScore: 0",
+      "ReroutingFalseNegativeScore: 0",
+      "ReroutingTruePositiveScore: 0",
+      "ReroutingTrueNegativeScore: 0",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: 0",
+      "TargetDetectionTruePositiveScore: 2",
+      "TargetDetectionTrueNegativeScore: 0"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:21:53.855619",
+    "simulationTimeStamp": "74.71267",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 0",
+      "ReroutingFalseNegativeCount: 0",
+      "ReroutingTruePositiveCount: 0",
+      "ReroutingTrueNegativeCount: 0",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 0",
+      "TargetDetectionTruePositiveCount: 1",
+      "TargetDetectionTrueNegativeCount: 0",
+      "ReroutingFalsePositiveScore: 0",
+      "ReroutingFalseNegativeScore: 0",
+      "ReroutingTruePositiveScore: 0",
+      "ReroutingTrueNegativeScore: 0",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: 0",
+      "TargetDetectionTruePositiveScore: 2",
+      "TargetDetectionTrueNegativeScore: 0"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:21:53.883620",
+    "simulationTimeStamp": "74.74064",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Bravo 1 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:21:54.478620",
+    "simulationTimeStamp": "75.33621",
+    "logType": "TargetDetection",
+    "eventType": "TargetNotDetected",
+    "logMessages": [
+      "Target not detected by India 1",
+      "Responded correctly: False",
+      "Non target is present: True",
+      "Time since start of path: 00:00:20.9051817"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:21:54.479627",
+    "simulationTimeStamp": "75.33621",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 0",
+      "ReroutingFalseNegativeCount: 0",
+      "ReroutingTruePositiveCount: 0",
+      "ReroutingTrueNegativeCount: 0",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 1",
+      "TargetDetectionTruePositiveCount: 1",
+      "TargetDetectionTrueNegativeCount: 0",
+      "ReroutingFalsePositiveScore: 0",
+      "ReroutingFalseNegativeScore: 0",
+      "ReroutingTruePositiveScore: 0",
+      "ReroutingTrueNegativeScore: 0",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -2",
+      "TargetDetectionTruePositiveScore: 2",
+      "TargetDetectionTrueNegativeScore: 0"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:21:54.653619",
+    "simulationTimeStamp": "75.51135",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 0",
+      "ReroutingFalseNegativeCount: 0",
+      "ReroutingTruePositiveCount: 0",
+      "ReroutingTrueNegativeCount: 0",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 1",
+      "TargetDetectionTruePositiveCount: 1",
+      "TargetDetectionTrueNegativeCount: 0",
+      "ReroutingFalsePositiveScore: 0",
+      "ReroutingFalseNegativeScore: 0",
+      "ReroutingTruePositiveScore: 0",
+      "ReroutingTrueNegativeScore: 0",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -2",
+      "TargetDetectionTruePositiveScore: 2",
+      "TargetDetectionTrueNegativeScore: 0"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:21:54.674627",
+    "simulationTimeStamp": "75.53215",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Nectar 8 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:21:55.003622",
+    "simulationTimeStamp": "75.86065",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 0",
+      "ReroutingFalseNegativeCount: 0",
+      "ReroutingTruePositiveCount: 0",
+      "ReroutingTrueNegativeCount: 1",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 1",
+      "TargetDetectionTruePositiveCount: 1",
+      "TargetDetectionTrueNegativeCount: 0",
+      "ReroutingFalsePositiveScore: 0",
+      "ReroutingFalseNegativeScore: 0",
+      "ReroutingTruePositiveScore: 0",
+      "ReroutingTrueNegativeScore: 1",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -2",
+      "TargetDetectionTruePositiveScore: 2",
+      "TargetDetectionTrueNegativeScore: 0"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:21:55.024622",
+    "simulationTimeStamp": "75.88136",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav India 1 condition changed to EnabledForTargetDetectionAndRerouting"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:21:55.159628",
+    "simulationTimeStamp": "76.01648",
+    "logType": "TargetDetection",
+    "eventType": "TargetDetected",
+    "logMessages": [
+      "Target detected",
+      "Responded correctly: True",
+      "Non target is present: False",
+      "Time since start of path: 00:00:00.1560069"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:21:55.159628",
+    "simulationTimeStamp": "76.01648",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 0",
+      "ReroutingFalseNegativeCount: 0",
+      "ReroutingTruePositiveCount: 0",
+      "ReroutingTrueNegativeCount: 1",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 1",
+      "TargetDetectionTruePositiveCount: 2",
+      "TargetDetectionTrueNegativeCount: 0",
+      "ReroutingFalsePositiveScore: 0",
+      "ReroutingFalseNegativeScore: 0",
+      "ReroutingTruePositiveScore: 0",
+      "ReroutingTrueNegativeScore: 1",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -2",
+      "TargetDetectionTruePositiveScore: 4",
+      "TargetDetectionTrueNegativeScore: 0"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:21:55.848619",
+    "simulationTimeStamp": "76.70557",
+    "logType": "TargetDetection",
+    "eventType": "TargetNotDetected",
+    "logMessages": [
+      "Target not detected by India 1",
+      "Responded correctly: False",
+      "Non target is present: False",
+      "Time since start of path: 00:00:00.8449970"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:21:55.848619",
+    "simulationTimeStamp": "76.70557",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 0",
+      "ReroutingFalseNegativeCount: 0",
+      "ReroutingTruePositiveCount: 0",
+      "ReroutingTrueNegativeCount: 1",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 2",
+      "TargetDetectionTruePositiveCount: 2",
+      "TargetDetectionTrueNegativeCount: 0",
+      "ReroutingFalsePositiveScore: 0",
+      "ReroutingFalseNegativeScore: 0",
+      "ReroutingTruePositiveScore: 0",
+      "ReroutingTrueNegativeScore: 1",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -4",
+      "TargetDetectionTruePositiveScore: 4",
+      "TargetDetectionTrueNegativeScore: 0"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:21:56.469620",
+    "simulationTimeStamp": "77.32684",
+    "logType": "TargetDetection",
+    "eventType": "TargetDetected",
+    "logMessages": [
+      "Target detected",
+      "Responded correctly: True",
+      "Non target is present: False",
+      "Time since start of path: 00:00:01.4659980"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:21:56.469620",
+    "simulationTimeStamp": "77.32684",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 0",
+      "ReroutingFalseNegativeCount: 0",
+      "ReroutingTruePositiveCount: 0",
+      "ReroutingTrueNegativeCount: 1",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 2",
+      "TargetDetectionTruePositiveCount: 3",
+      "TargetDetectionTrueNegativeCount: 0",
+      "ReroutingFalsePositiveScore: 0",
+      "ReroutingFalseNegativeScore: 0",
+      "ReroutingTruePositiveScore: 0",
+      "ReroutingTrueNegativeScore: 1",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -4",
+      "TargetDetectionTruePositiveScore: 6",
+      "TargetDetectionTrueNegativeScore: 0"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:21:57.618618",
+    "simulationTimeStamp": "78.47573",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 0",
+      "ReroutingFalseNegativeCount: 0",
+      "ReroutingTruePositiveCount: 0",
+      "ReroutingTrueNegativeCount: 1",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 2",
+      "TargetDetectionTruePositiveCount: 3",
+      "TargetDetectionTrueNegativeCount: 0",
+      "ReroutingFalsePositiveScore: 0",
+      "ReroutingFalseNegativeScore: 0",
+      "ReroutingTruePositiveScore: 0",
+      "ReroutingTrueNegativeScore: 1",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -4",
+      "TargetDetectionTruePositiveScore: 6",
+      "TargetDetectionTrueNegativeScore: 0"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:21:57.618618",
+    "simulationTimeStamp": "78.47573",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 0",
+      "ReroutingFalseNegativeCount: 0",
+      "ReroutingTruePositiveCount: 0",
+      "ReroutingTrueNegativeCount: 1",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 2",
+      "TargetDetectionTruePositiveCount: 3",
+      "TargetDetectionTrueNegativeCount: 0",
+      "ReroutingFalsePositiveScore: 0",
+      "ReroutingFalseNegativeScore: 0",
+      "ReroutingTruePositiveScore: 0",
+      "ReroutingTrueNegativeScore: 1",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -4",
+      "TargetDetectionTruePositiveScore: 6",
+      "TargetDetectionTrueNegativeScore: 0"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:21:57.639619",
+    "simulationTimeStamp": "78.49673",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Delta 7 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:21:57.639619",
+    "simulationTimeStamp": "78.49673",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Papa 6 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:22:00.241620",
+    "simulationTimeStamp": "81.09852",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 0",
+      "ReroutingFalseNegativeCount: 0",
+      "ReroutingTruePositiveCount: 0",
+      "ReroutingTrueNegativeCount: 1",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 2",
+      "TargetDetectionTruePositiveCount: 3",
+      "TargetDetectionTrueNegativeCount: 0",
+      "ReroutingFalsePositiveScore: 0",
+      "ReroutingFalseNegativeScore: 0",
+      "ReroutingTruePositiveScore: 0",
+      "ReroutingTrueNegativeScore: 1",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -4",
+      "TargetDetectionTruePositiveScore: 6",
+      "TargetDetectionTrueNegativeScore: 0"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:22:00.261618",
+    "simulationTimeStamp": "81.1186",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Lima 2 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:22:01.171622",
+    "simulationTimeStamp": "82.02916",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 0",
+      "ReroutingFalseNegativeCount: 0",
+      "ReroutingTruePositiveCount: 0",
+      "ReroutingTrueNegativeCount: 1",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 2",
+      "TargetDetectionTruePositiveCount: 3",
+      "TargetDetectionTrueNegativeCount: 0",
+      "ReroutingFalsePositiveScore: 0",
+      "ReroutingFalseNegativeScore: 0",
+      "ReroutingTruePositiveScore: 0",
+      "ReroutingTrueNegativeScore: 1",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -4",
+      "TargetDetectionTruePositiveScore: 6",
+      "TargetDetectionTrueNegativeScore: 0"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:22:01.191619",
+    "simulationTimeStamp": "82.04921",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Mike 3 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:22:01.927618",
+    "simulationTimeStamp": "82.78531",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 0",
+      "ReroutingFalseNegativeCount: 0",
+      "ReroutingTruePositiveCount: 0",
+      "ReroutingTrueNegativeCount: 1",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 2",
+      "TargetDetectionTruePositiveCount: 3",
+      "TargetDetectionTrueNegativeCount: 0",
+      "ReroutingFalsePositiveScore: 0",
+      "ReroutingFalseNegativeScore: 0",
+      "ReroutingTruePositiveScore: 0",
+      "ReroutingTrueNegativeScore: 1",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -4",
+      "TargetDetectionTruePositiveScore: 6",
+      "TargetDetectionTrueNegativeScore: 0"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:22:01.948620",
+    "simulationTimeStamp": "82.8056",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Alfa 2 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:22:02.113618",
+    "simulationTimeStamp": "82.97099",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 0",
+      "ReroutingFalseNegativeCount: 0",
+      "ReroutingTruePositiveCount: 0",
+      "ReroutingTrueNegativeCount: 1",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 2",
+      "TargetDetectionTruePositiveCount: 3",
+      "TargetDetectionTrueNegativeCount: 0",
+      "ReroutingFalsePositiveScore: 0",
+      "ReroutingFalseNegativeScore: 0",
+      "ReroutingTruePositiveScore: 0",
+      "ReroutingTrueNegativeScore: 1",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -4",
+      "TargetDetectionTruePositiveScore: 6",
+      "TargetDetectionTrueNegativeScore: 0"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:22:02.133628",
+    "simulationTimeStamp": "82.99126",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Oscar 6 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:22:02.275624",
+    "simulationTimeStamp": "83.13311",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 0",
+      "ReroutingFalseNegativeCount: 0",
+      "ReroutingTruePositiveCount: 0",
+      "ReroutingTrueNegativeCount: 1",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 2",
+      "TargetDetectionTruePositiveCount: 3",
+      "TargetDetectionTrueNegativeCount: 0",
+      "ReroutingFalsePositiveScore: 0",
+      "ReroutingFalseNegativeScore: 0",
+      "ReroutingTruePositiveScore: 0",
+      "ReroutingTrueNegativeScore: 1",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -4",
+      "TargetDetectionTruePositiveScore: 6",
+      "TargetDetectionTrueNegativeScore: 0"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:22:02.296627",
+    "simulationTimeStamp": "83.15351",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Frank 4 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:22:03.481619",
+    "simulationTimeStamp": "84.33902",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 0",
+      "ReroutingFalseNegativeCount: 0",
+      "ReroutingTruePositiveCount: 0",
+      "ReroutingTrueNegativeCount: 1",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 2",
+      "TargetDetectionTruePositiveCount: 3",
+      "TargetDetectionTrueNegativeCount: 0",
+      "ReroutingFalsePositiveScore: 0",
+      "ReroutingFalseNegativeScore: 0",
+      "ReroutingTruePositiveScore: 0",
+      "ReroutingTrueNegativeScore: 1",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -4",
+      "TargetDetectionTruePositiveScore: 6",
+      "TargetDetectionTrueNegativeScore: 0"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:22:03.501628",
+    "simulationTimeStamp": "84.35918",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav John 6 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:22:03.522619",
+    "simulationTimeStamp": "84.37997",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 0",
+      "ReroutingFalseNegativeCount: 0",
+      "ReroutingTruePositiveCount: 0",
+      "ReroutingTrueNegativeCount: 1",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 2",
+      "TargetDetectionTruePositiveCount: 3",
+      "TargetDetectionTrueNegativeCount: 0",
+      "ReroutingFalsePositiveScore: 0",
+      "ReroutingFalseNegativeScore: 0",
+      "ReroutingTruePositiveScore: 0",
+      "ReroutingTrueNegativeScore: 1",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -4",
+      "TargetDetectionTruePositiveScore: 6",
+      "TargetDetectionTrueNegativeScore: 0"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:22:03.543619",
+    "simulationTimeStamp": "84.40091",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Charlie 4 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:22:03.584645",
+    "simulationTimeStamp": "84.44174",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 0",
+      "ReroutingFalseNegativeCount: 0",
+      "ReroutingTruePositiveCount: 0",
+      "ReroutingTrueNegativeCount: 1",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 2",
+      "TargetDetectionTruePositiveCount: 3",
+      "TargetDetectionTrueNegativeCount: 0",
+      "ReroutingFalsePositiveScore: 0",
+      "ReroutingFalseNegativeScore: 0",
+      "ReroutingTruePositiveScore: 0",
+      "ReroutingTrueNegativeScore: 1",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -4",
+      "TargetDetectionTruePositiveScore: 6",
+      "TargetDetectionTrueNegativeScore: 0"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:22:03.604619",
+    "simulationTimeStamp": "84.46172",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Golf 3 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:22:06.913629",
+    "simulationTimeStamp": "87.77041",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 0",
+      "ReroutingFalseNegativeCount: 0",
+      "ReroutingTruePositiveCount: 0",
+      "ReroutingTrueNegativeCount: 2",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 2",
+      "TargetDetectionTruePositiveCount: 3",
+      "TargetDetectionTrueNegativeCount: 1",
+      "ReroutingFalsePositiveScore: 0",
+      "ReroutingFalseNegativeScore: 0",
+      "ReroutingTruePositiveScore: 0",
+      "ReroutingTrueNegativeScore: 2",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -4",
+      "TargetDetectionTruePositiveScore: 6",
+      "TargetDetectionTrueNegativeScore: 1"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:22:06.936628",
+    "simulationTimeStamp": "87.79335",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Kilo 1 condition changed to EnabledForTargetDetectionAndRerouting"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:22:06.956619",
+    "simulationTimeStamp": "87.81401",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 0",
+      "ReroutingFalseNegativeCount: 0",
+      "ReroutingTruePositiveCount: 0",
+      "ReroutingTrueNegativeCount: 2",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 2",
+      "TargetDetectionTruePositiveCount: 3",
+      "TargetDetectionTrueNegativeCount: 1",
+      "ReroutingFalsePositiveScore: 0",
+      "ReroutingFalseNegativeScore: 0",
+      "ReroutingTruePositiveScore: 0",
+      "ReroutingTrueNegativeScore: 2",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -4",
+      "TargetDetectionTruePositiveScore: 6",
+      "TargetDetectionTrueNegativeScore: 1"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:22:06.977618",
+    "simulationTimeStamp": "87.83447",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Echo 6 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:22:07.642636",
+    "simulationTimeStamp": "88.5001",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 0",
+      "ReroutingFalseNegativeCount: 0",
+      "ReroutingTruePositiveCount: 0",
+      "ReroutingTrueNegativeCount: 2",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 2",
+      "TargetDetectionTruePositiveCount: 3",
+      "TargetDetectionTrueNegativeCount: 1",
+      "ReroutingFalsePositiveScore: 0",
+      "ReroutingFalseNegativeScore: 0",
+      "ReroutingTruePositiveScore: 0",
+      "ReroutingTrueNegativeScore: 2",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -4",
+      "TargetDetectionTruePositiveScore: 6",
+      "TargetDetectionTrueNegativeScore: 1"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:22:07.665618",
+    "simulationTimeStamp": "88.52282",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Hotel 8 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:22:08.718630",
+    "simulationTimeStamp": "89.57643",
+    "logType": "TargetDetection",
+    "eventType": "TargetNotDetected",
+    "logMessages": [
+      "Target not detected by India 1",
+      "Responded correctly: False",
+      "Non target is present: False",
+      "Time since start of path: 00:00:13.7160077"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:22:08.719629",
+    "simulationTimeStamp": "89.57643",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 0",
+      "ReroutingFalseNegativeCount: 0",
+      "ReroutingTruePositiveCount: 0",
+      "ReroutingTrueNegativeCount: 2",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 3",
+      "TargetDetectionTruePositiveCount: 3",
+      "TargetDetectionTrueNegativeCount: 1",
+      "ReroutingFalsePositiveScore: 0",
+      "ReroutingFalseNegativeScore: 0",
+      "ReroutingTruePositiveScore: 0",
+      "ReroutingTrueNegativeScore: 2",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -6",
+      "TargetDetectionTruePositiveScore: 6",
+      "TargetDetectionTrueNegativeScore: 1"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:22:11.159628",
+    "simulationTimeStamp": "92.01727",
+    "logType": "TargetDetection",
+    "eventType": "TargetDetected",
+    "logMessages": [
+      "Target detected",
+      "Responded correctly: True",
+      "Non target is present: False",
+      "Time since start of path: 00:00:16.1560069"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:22:11.159628",
+    "simulationTimeStamp": "92.01727",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 0",
+      "ReroutingFalseNegativeCount: 0",
+      "ReroutingTruePositiveCount: 0",
+      "ReroutingTrueNegativeCount: 2",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 3",
+      "TargetDetectionTruePositiveCount: 4",
+      "TargetDetectionTrueNegativeCount: 1",
+      "ReroutingFalsePositiveScore: 0",
+      "ReroutingFalseNegativeScore: 0",
+      "ReroutingTruePositiveScore: 0",
+      "ReroutingTrueNegativeScore: 2",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -6",
+      "TargetDetectionTruePositiveScore: 8",
+      "TargetDetectionTrueNegativeScore: 1"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:22:14.397619",
+    "simulationTimeStamp": "95.24929",
+    "logType": "NFZ",
+    "eventType": " NFZ Collision",
+    "logMessages": [
+      "UAV India 1is lost due to NFZ collision"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:22:14.397619",
+    "simulationTimeStamp": "95.24929",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 0",
+      "ReroutingFalseNegativeCount: 1",
+      "ReroutingTruePositiveCount: 0",
+      "ReroutingTrueNegativeCount: 2",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 3",
+      "TargetDetectionTruePositiveCount: 4",
+      "TargetDetectionTrueNegativeCount: 1",
+      "ReroutingFalsePositiveScore: 0",
+      "ReroutingFalseNegativeScore: -2",
+      "ReroutingTruePositiveScore: 0",
+      "ReroutingTrueNegativeScore: 2",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -6",
+      "TargetDetectionTruePositiveScore: 8",
+      "TargetDetectionTrueNegativeScore: 1"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:22:14.397619",
+    "simulationTimeStamp": "95.24929",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav India 1 condition changed to Lost"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:22:19.032206",
+    "simulationTimeStamp": "99.88981",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 0",
+      "ReroutingFalseNegativeCount: 1",
+      "ReroutingTruePositiveCount: 0",
+      "ReroutingTrueNegativeCount: 2",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 3",
+      "TargetDetectionTruePositiveCount: 4",
+      "TargetDetectionTrueNegativeCount: 1",
+      "ReroutingFalsePositiveScore: 0",
+      "ReroutingFalseNegativeScore: -2",
+      "ReroutingTruePositiveScore: 0",
+      "ReroutingTrueNegativeScore: 2",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -6",
+      "TargetDetectionTruePositiveScore: 8",
+      "TargetDetectionTrueNegativeScore: 1"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:22:19.052205",
+    "simulationTimeStamp": "99.91005",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Bravo 1 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:22:20.163239",
+    "simulationTimeStamp": "101.0048",
+    "logType": "Rerouting",
+    "eventType": "Rerouting Options Requested",
+    "logMessages": [
+      " requested rerouting options for uav Kilo 1",
+      "Path start time: 03/12/2023 21:22:06.913629",
+      "Rerouting is not needed"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:22:20.800205",
+    "simulationTimeStamp": "101.6578",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 0",
+      "ReroutingFalseNegativeCount: 1",
+      "ReroutingTruePositiveCount: 0",
+      "ReroutingTrueNegativeCount: 2",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 3",
+      "TargetDetectionTruePositiveCount: 4",
+      "TargetDetectionTrueNegativeCount: 1",
+      "ReroutingFalsePositiveScore: 0",
+      "ReroutingFalseNegativeScore: -2",
+      "ReroutingTruePositiveScore: 0",
+      "ReroutingTrueNegativeScore: 2",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -6",
+      "TargetDetectionTruePositiveScore: 8",
+      "TargetDetectionTrueNegativeScore: 1"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:22:20.822206",
+    "simulationTimeStamp": "101.6795",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Alfa 2 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:22:21.721206",
+    "simulationTimeStamp": "102.5783",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 0",
+      "ReroutingFalseNegativeCount: 1",
+      "ReroutingTruePositiveCount: 0",
+      "ReroutingTrueNegativeCount: 2",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 3",
+      "TargetDetectionTruePositiveCount: 4",
+      "TargetDetectionTrueNegativeCount: 1",
+      "ReroutingFalsePositiveScore: 0",
+      "ReroutingFalseNegativeScore: -2",
+      "ReroutingTruePositiveScore: 0",
+      "ReroutingTrueNegativeScore: 2",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -6",
+      "TargetDetectionTruePositiveScore: 8",
+      "TargetDetectionTrueNegativeScore: 1"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:22:21.744215",
+    "simulationTimeStamp": "102.6011",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Oscar 6 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:22:22.754209",
+    "simulationTimeStamp": "103.6117",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 0",
+      "ReroutingFalseNegativeCount: 1",
+      "ReroutingTruePositiveCount: 0",
+      "ReroutingTrueNegativeCount: 2",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 3",
+      "TargetDetectionTruePositiveCount: 4",
+      "TargetDetectionTrueNegativeCount: 1",
+      "ReroutingFalsePositiveScore: 0",
+      "ReroutingFalseNegativeScore: -2",
+      "ReroutingTruePositiveScore: 0",
+      "ReroutingTrueNegativeScore: 2",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -6",
+      "TargetDetectionTruePositiveScore: 8",
+      "TargetDetectionTrueNegativeScore: 1"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:22:22.777206",
+    "simulationTimeStamp": "103.6347",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Hotel 8 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:22:22.955206",
+    "simulationTimeStamp": "103.8124",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 0",
+      "ReroutingFalseNegativeCount: 1",
+      "ReroutingTruePositiveCount: 0",
+      "ReroutingTrueNegativeCount: 2",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 3",
+      "TargetDetectionTruePositiveCount: 4",
+      "TargetDetectionTrueNegativeCount: 1",
+      "ReroutingFalsePositiveScore: 0",
+      "ReroutingFalseNegativeScore: -2",
+      "ReroutingTruePositiveScore: 0",
+      "ReroutingTrueNegativeScore: 2",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -6",
+      "TargetDetectionTruePositiveScore: 8",
+      "TargetDetectionTrueNegativeScore: 1"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:22:22.976214",
+    "simulationTimeStamp": "103.8338",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav John 6 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:22:24.305214",
+    "simulationTimeStamp": "105.1628",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 0",
+      "ReroutingFalseNegativeCount: 1",
+      "ReroutingTruePositiveCount: 0",
+      "ReroutingTrueNegativeCount: 2",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 3",
+      "TargetDetectionTruePositiveCount: 4",
+      "TargetDetectionTrueNegativeCount: 1",
+      "ReroutingFalsePositiveScore: 0",
+      "ReroutingFalseNegativeScore: -2",
+      "ReroutingTruePositiveScore: 0",
+      "ReroutingTrueNegativeScore: 2",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -6",
+      "TargetDetectionTruePositiveScore: 8",
+      "TargetDetectionTrueNegativeScore: 1"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:22:24.326205",
+    "simulationTimeStamp": "105.1836",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Papa 6 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:22:24.619208",
+    "simulationTimeStamp": "105.4762",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 0",
+      "ReroutingFalseNegativeCount: 1",
+      "ReroutingTruePositiveCount: 0",
+      "ReroutingTrueNegativeCount: 2",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 3",
+      "TargetDetectionTruePositiveCount: 4",
+      "TargetDetectionTrueNegativeCount: 1",
+      "ReroutingFalsePositiveScore: 0",
+      "ReroutingFalseNegativeScore: -2",
+      "ReroutingTruePositiveScore: 0",
+      "ReroutingTrueNegativeScore: 2",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -6",
+      "TargetDetectionTruePositiveScore: 8",
+      "TargetDetectionTrueNegativeScore: 1"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:22:24.642206",
+    "simulationTimeStamp": "105.4992",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Charlie 4 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:22:25.823216",
+    "simulationTimeStamp": "106.6798",
+    "logType": "Rerouting",
+    "eventType": "Rerouting Option Previewed",
+    "logMessages": [
+      "Rerouting option previewed for Uav Kilo 1 ",
+      "Path start time: 03/12/2023 21:22:06.913629",
+      "Previewed route is good"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:22:25.908205",
+    "simulationTimeStamp": "106.7657",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 0",
+      "ReroutingFalseNegativeCount: 1",
+      "ReroutingTruePositiveCount: 0",
+      "ReroutingTrueNegativeCount: 2",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 3",
+      "TargetDetectionTruePositiveCount: 4",
+      "TargetDetectionTrueNegativeCount: 1",
+      "ReroutingFalsePositiveScore: 0",
+      "ReroutingFalseNegativeScore: -2",
+      "ReroutingTruePositiveScore: 0",
+      "ReroutingTrueNegativeScore: 2",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -6",
+      "TargetDetectionTruePositiveScore: 8",
+      "TargetDetectionTrueNegativeScore: 1"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:22:25.930215",
+    "simulationTimeStamp": "106.7877",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Delta 7 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:22:26.710203",
+    "simulationTimeStamp": "107.5671",
+    "logType": "Rerouting",
+    "eventType": "Rerouting Option Previewed",
+    "logMessages": [
+      "Rerouting option previewed for Uav Kilo 1 ",
+      "Path start time: 03/12/2023 21:22:06.913629",
+      "Previewed route is good"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:22:27.994205",
+    "simulationTimeStamp": "108.851",
+    "logType": "Rerouting",
+    "eventType": "Rerouting Option Previewed",
+    "logMessages": [
+      "Rerouting option previewed for Uav Kilo 1 ",
+      "Path start time: 03/12/2023 21:22:06.913629",
+      "Previewed route is good"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:22:27.994205",
+    "simulationTimeStamp": "108.851",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 0",
+      "ReroutingFalseNegativeCount: 1",
+      "ReroutingTruePositiveCount: 0",
+      "ReroutingTrueNegativeCount: 2",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 3",
+      "TargetDetectionTruePositiveCount: 4",
+      "TargetDetectionTrueNegativeCount: 1",
+      "ReroutingFalsePositiveScore: 0",
+      "ReroutingFalseNegativeScore: -2",
+      "ReroutingTruePositiveScore: 0",
+      "ReroutingTrueNegativeScore: 2",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -6",
+      "TargetDetectionTruePositiveScore: 8",
+      "TargetDetectionTrueNegativeScore: 1"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:22:28.021205",
+    "simulationTimeStamp": "108.8783",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Nectar 8 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:22:28.704206",
+    "simulationTimeStamp": "109.5611",
+    "logType": "Rerouting",
+    "eventType": "Rerouting Option Previewed",
+    "logMessages": [
+      "Rerouting option previewed for Uav Kilo 1 ",
+      "Path start time: 03/12/2023 21:22:06.913629",
+      "Previewed route is good"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:22:28.789221",
+    "simulationTimeStamp": "109.6465",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 0",
+      "ReroutingFalseNegativeCount: 1",
+      "ReroutingTruePositiveCount: 0",
+      "ReroutingTrueNegativeCount: 2",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 3",
+      "TargetDetectionTruePositiveCount: 4",
+      "TargetDetectionTrueNegativeCount: 1",
+      "ReroutingFalsePositiveScore: 0",
+      "ReroutingFalseNegativeScore: -2",
+      "ReroutingTruePositiveScore: 0",
+      "ReroutingTrueNegativeScore: 2",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -6",
+      "TargetDetectionTruePositiveScore: 8",
+      "TargetDetectionTrueNegativeScore: 1"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:22:28.811215",
+    "simulationTimeStamp": "109.668",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Mike 3 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:22:29.356206",
+    "simulationTimeStamp": "110.2136",
+    "logType": "Rerouting",
+    "eventType": "Rerouting Event",
+    "logMessages": [
+      "Uav Kilo 1  rerouted",
+      "Rerouting was needed",
+      "Path start time: 03/12/2023 21:22:06.913629",
+      "New route is good"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:22:29.357215",
+    "simulationTimeStamp": "110.2136",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 1",
+      "ReroutingFalseNegativeCount: 1",
+      "ReroutingTruePositiveCount: 0",
+      "ReroutingTrueNegativeCount: 2",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 3",
+      "TargetDetectionTruePositiveCount: 4",
+      "TargetDetectionTrueNegativeCount: 1",
+      "ReroutingFalsePositiveScore: -1",
+      "ReroutingFalseNegativeScore: -2",
+      "ReroutingTruePositiveScore: 0",
+      "ReroutingTrueNegativeScore: 2",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -6",
+      "TargetDetectionTruePositiveScore: 8",
+      "TargetDetectionTrueNegativeScore: 1"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:22:29.357215",
+    "simulationTimeStamp": "110.2136",
+    "logType": "Rerouting",
+    "eventType": "Rerouting Option Previewed",
+    "logMessages": [
+      "Rerouting option previewed for Uav Kilo 1 ",
+      "Path start time: 03/12/2023 21:22:06.913629",
+      "Previewed route is good"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:22:29.357215",
+    "simulationTimeStamp": "110.2136",
+    "logType": "Rerouting",
+    "eventType": "Rerouting Option Previewed",
+    "logMessages": [
+      "Rerouting option previewed for Uav Kilo 1 ",
+      "Path start time: 03/12/2023 21:22:06.913629",
+      "Previewed route is good"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:22:29.359212",
+    "simulationTimeStamp": "110.2136",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Kilo 1 condition changed to EnabledForTargetDetectionAndRerouting"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:22:30.121206",
+    "simulationTimeStamp": "110.9782",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 1",
+      "ReroutingFalseNegativeCount: 1",
+      "ReroutingTruePositiveCount: 0",
+      "ReroutingTrueNegativeCount: 2",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 3",
+      "TargetDetectionTruePositiveCount: 4",
+      "TargetDetectionTrueNegativeCount: 1",
+      "ReroutingFalsePositiveScore: -1",
+      "ReroutingFalseNegativeScore: -2",
+      "ReroutingTruePositiveScore: 0",
+      "ReroutingTrueNegativeScore: 2",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -6",
+      "TargetDetectionTruePositiveScore: 8",
+      "TargetDetectionTrueNegativeScore: 1"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:22:30.141219",
+    "simulationTimeStamp": "110.9988",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Lima 2 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:22:35.954209",
+    "simulationTimeStamp": "116.8055",
+    "logType": "Rerouting",
+    "eventType": "Rerouting Options Requested",
+    "logMessages": [
+      " requested rerouting options for uav Kilo 1",
+      "Path start time: 03/12/2023 21:22:06.913629",
+      "Rerouting is not needed"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:22:36.320205",
+    "simulationTimeStamp": "117.1774",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 1",
+      "ReroutingFalseNegativeCount: 1",
+      "ReroutingTruePositiveCount: 0",
+      "ReroutingTrueNegativeCount: 2",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 3",
+      "TargetDetectionTruePositiveCount: 4",
+      "TargetDetectionTrueNegativeCount: 1",
+      "ReroutingFalsePositiveScore: -1",
+      "ReroutingFalseNegativeScore: -2",
+      "ReroutingTruePositiveScore: 0",
+      "ReroutingTrueNegativeScore: 2",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -6",
+      "TargetDetectionTruePositiveScore: 8",
+      "TargetDetectionTrueNegativeScore: 1"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:22:36.342216",
+    "simulationTimeStamp": "117.1991",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Frank 4 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:22:36.817215",
+    "simulationTimeStamp": "117.674",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 1",
+      "ReroutingFalseNegativeCount: 1",
+      "ReroutingTruePositiveCount: 0",
+      "ReroutingTrueNegativeCount: 2",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 3",
+      "TargetDetectionTruePositiveCount: 4",
+      "TargetDetectionTrueNegativeCount: 1",
+      "ReroutingFalsePositiveScore: -1",
+      "ReroutingFalseNegativeScore: -2",
+      "ReroutingTruePositiveScore: 0",
+      "ReroutingTrueNegativeScore: 2",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -6",
+      "TargetDetectionTruePositiveScore: 8",
+      "TargetDetectionTrueNegativeScore: 1"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:22:36.838204",
+    "simulationTimeStamp": "117.6954",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Echo 6 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:22:36.985205",
+    "simulationTimeStamp": "117.8421",
+    "logType": "Rerouting",
+    "eventType": "Rerouting Option Previewed",
+    "logMessages": [
+      "Rerouting option previewed for Uav Kilo 1 ",
+      "Path start time: 03/12/2023 21:22:06.913629",
+      "Previewed route is good"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:22:37.028205",
+    "simulationTimeStamp": "117.8852",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 1",
+      "ReroutingFalseNegativeCount: 1",
+      "ReroutingTruePositiveCount: 0",
+      "ReroutingTrueNegativeCount: 2",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 3",
+      "TargetDetectionTruePositiveCount: 4",
+      "TargetDetectionTrueNegativeCount: 1",
+      "ReroutingFalsePositiveScore: -1",
+      "ReroutingFalseNegativeScore: -2",
+      "ReroutingTruePositiveScore: 0",
+      "ReroutingTrueNegativeScore: 2",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -6",
+      "TargetDetectionTruePositiveScore: 8",
+      "TargetDetectionTrueNegativeScore: 1"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:22:37.052263",
+    "simulationTimeStamp": "117.9091",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Golf 3 condition changed to EnabledForTargetDetectionAndRerouting"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:22:37.875205",
+    "simulationTimeStamp": "118.7321",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 1",
+      "ReroutingFalseNegativeCount: 1",
+      "ReroutingTruePositiveCount: 0",
+      "ReroutingTrueNegativeCount: 2",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 3",
+      "TargetDetectionTruePositiveCount: 4",
+      "TargetDetectionTrueNegativeCount: 1",
+      "ReroutingFalsePositiveScore: -1",
+      "ReroutingFalseNegativeScore: -2",
+      "ReroutingTruePositiveScore: 0",
+      "ReroutingTrueNegativeScore: 2",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -6",
+      "TargetDetectionTruePositiveScore: 8",
+      "TargetDetectionTrueNegativeScore: 1"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:22:37.897214",
+    "simulationTimeStamp": "118.754",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Hotel 8 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:22:38.217206",
+    "simulationTimeStamp": "119.0745",
+    "logType": "Rerouting",
+    "eventType": "Rerouting Option Previewed",
+    "logMessages": [
+      "Rerouting option previewed for Uav Kilo 1 ",
+      "Path start time: 03/12/2023 21:22:06.913629",
+      "Previewed route is good"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:22:38.880206",
+    "simulationTimeStamp": "119.7371",
+    "logType": "Rerouting",
+    "eventType": "Rerouting Option Previewed",
+    "logMessages": [
+      "Rerouting option previewed for Uav Kilo 1 ",
+      "Path start time: 03/12/2023 21:22:06.913629",
+      "Previewed route is good"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:22:40.016206",
+    "simulationTimeStamp": "120.8733",
+    "logType": "Rerouting",
+    "eventType": "Rerouting Option Previewed",
+    "logMessages": [
+      "Rerouting option previewed for Uav Kilo 1 ",
+      "Path start time: 03/12/2023 21:22:06.913629",
+      "Previewed route is good"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:22:40.713204",
+    "simulationTimeStamp": "121.5702",
+    "logType": "Rerouting",
+    "eventType": "Rerouting Option Previewed",
+    "logMessages": [
+      "Rerouting option previewed for Uav Kilo 1 ",
+      "Path start time: 03/12/2023 21:22:06.913629",
+      "Previewed route is good"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:22:40.962215",
+    "simulationTimeStamp": "121.8199",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 1",
+      "ReroutingFalseNegativeCount: 1",
+      "ReroutingTruePositiveCount: 0",
+      "ReroutingTrueNegativeCount: 2",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 3",
+      "TargetDetectionTruePositiveCount: 4",
+      "TargetDetectionTrueNegativeCount: 1",
+      "ReroutingFalsePositiveScore: -1",
+      "ReroutingFalseNegativeScore: -2",
+      "ReroutingTruePositiveScore: 0",
+      "ReroutingTrueNegativeScore: 2",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -6",
+      "TargetDetectionTruePositiveScore: 8",
+      "TargetDetectionTrueNegativeScore: 1"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:22:40.983215",
+    "simulationTimeStamp": "121.8409",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Alfa 2 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:22:42.781205",
+    "simulationTimeStamp": "123.6386",
+    "logType": "Rerouting",
+    "eventType": "Rerouting Event",
+    "logMessages": [
+      "Uav Kilo 1  rerouted",
+      "Rerouting was not needed",
+      "Path start time: 03/12/2023 21:22:06.913629",
+      "New route is good"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:22:42.781205",
+    "simulationTimeStamp": "123.6386",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 1",
+      "ReroutingFalseNegativeCount: 1",
+      "ReroutingTruePositiveCount: 1",
+      "ReroutingTrueNegativeCount: 2",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 3",
+      "TargetDetectionTruePositiveCount: 4",
+      "TargetDetectionTrueNegativeCount: 1",
+      "ReroutingFalsePositiveScore: -1",
+      "ReroutingFalseNegativeScore: -2",
+      "ReroutingTruePositiveScore: 2",
+      "ReroutingTrueNegativeScore: 2",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -6",
+      "TargetDetectionTruePositiveScore: 8",
+      "TargetDetectionTrueNegativeScore: 1"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:22:42.781205",
+    "simulationTimeStamp": "123.6386",
+    "logType": "Rerouting",
+    "eventType": "Rerouting Option Previewed",
+    "logMessages": [
+      "Rerouting option previewed for Uav Kilo 1 ",
+      "Path start time: 03/12/2023 21:22:06.913629",
+      "Previewed route is good"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:22:42.781205",
+    "simulationTimeStamp": "123.6386",
+    "logType": "Rerouting",
+    "eventType": "Rerouting Option Previewed",
+    "logMessages": [
+      "Rerouting option previewed for Uav Kilo 1 ",
+      "Path start time: 03/12/2023 21:22:06.913629",
+      "Previewed route is good"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:22:42.782215",
+    "simulationTimeStamp": "123.6386",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Kilo 1 condition changed to EnabledForTargetDetectionAndRerouting"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:22:42.927205",
+    "simulationTimeStamp": "123.7849",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 1",
+      "ReroutingFalseNegativeCount: 1",
+      "ReroutingTruePositiveCount: 1",
+      "ReroutingTrueNegativeCount: 2",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 3",
+      "TargetDetectionTruePositiveCount: 4",
+      "TargetDetectionTrueNegativeCount: 1",
+      "ReroutingFalsePositiveScore: -1",
+      "ReroutingFalseNegativeScore: -2",
+      "ReroutingTruePositiveScore: 2",
+      "ReroutingTrueNegativeScore: 2",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -6",
+      "TargetDetectionTruePositiveScore: 8",
+      "TargetDetectionTrueNegativeScore: 1"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:22:42.949205",
+    "simulationTimeStamp": "123.8065",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Oscar 6 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:22:44.391206",
+    "simulationTimeStamp": "125.248",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 1",
+      "ReroutingFalseNegativeCount: 1",
+      "ReroutingTruePositiveCount: 1",
+      "ReroutingTrueNegativeCount: 2",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 3",
+      "TargetDetectionTruePositiveCount: 4",
+      "TargetDetectionTrueNegativeCount: 1",
+      "ReroutingFalsePositiveScore: -1",
+      "ReroutingFalseNegativeScore: -2",
+      "ReroutingTruePositiveScore: 2",
+      "ReroutingTrueNegativeScore: 2",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -6",
+      "TargetDetectionTruePositiveScore: 8",
+      "TargetDetectionTrueNegativeScore: 1"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:22:44.411221",
+    "simulationTimeStamp": "125.2687",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Papa 6 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:22:44.797206",
+    "simulationTimeStamp": "125.6544",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 1",
+      "ReroutingFalseNegativeCount: 1",
+      "ReroutingTruePositiveCount: 1",
+      "ReroutingTrueNegativeCount: 2",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 3",
+      "TargetDetectionTruePositiveCount: 4",
+      "TargetDetectionTrueNegativeCount: 1",
+      "ReroutingFalsePositiveScore: -1",
+      "ReroutingFalseNegativeScore: -2",
+      "ReroutingTruePositiveScore: 2",
+      "ReroutingTrueNegativeScore: 2",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -6",
+      "TargetDetectionTruePositiveScore: 8",
+      "TargetDetectionTrueNegativeScore: 1"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:22:44.817248",
+    "simulationTimeStamp": "125.6748",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Delta 7 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:22:45.088212",
+    "simulationTimeStamp": "125.9457",
+    "logType": "TargetDetection",
+    "eventType": "TargetDetected",
+    "logMessages": [
+      "Target detected",
+      "Responded correctly: True",
+      "Non target is present: False",
+      "Time since start of path: 00:00:08.0600066"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:22:45.088212",
+    "simulationTimeStamp": "125.9457",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 1",
+      "ReroutingFalseNegativeCount: 1",
+      "ReroutingTruePositiveCount: 1",
+      "ReroutingTrueNegativeCount: 2",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 3",
+      "TargetDetectionTruePositiveCount: 5",
+      "TargetDetectionTrueNegativeCount: 1",
+      "ReroutingFalsePositiveScore: -1",
+      "ReroutingFalseNegativeScore: -2",
+      "ReroutingTruePositiveScore: 2",
+      "ReroutingTrueNegativeScore: 2",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -6",
+      "TargetDetectionTruePositiveScore: 10",
+      "TargetDetectionTrueNegativeScore: 1"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:22:48.030037",
+    "simulationTimeStamp": "128.8876",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 1",
+      "ReroutingFalseNegativeCount: 1",
+      "ReroutingTruePositiveCount: 1",
+      "ReroutingTrueNegativeCount: 2",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 3",
+      "TargetDetectionTruePositiveCount: 5",
+      "TargetDetectionTrueNegativeCount: 1",
+      "ReroutingFalsePositiveScore: -1",
+      "ReroutingFalseNegativeScore: -2",
+      "ReroutingTruePositiveScore: 2",
+      "ReroutingTrueNegativeScore: 2",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -6",
+      "TargetDetectionTruePositiveScore: 10",
+      "TargetDetectionTrueNegativeScore: 1"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:22:48.052047",
+    "simulationTimeStamp": "128.9088",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Nectar 8 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:22:48.848047",
+    "simulationTimeStamp": "129.7056",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 1",
+      "ReroutingFalseNegativeCount: 1",
+      "ReroutingTruePositiveCount: 1",
+      "ReroutingTrueNegativeCount: 2",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 3",
+      "TargetDetectionTruePositiveCount: 5",
+      "TargetDetectionTrueNegativeCount: 1",
+      "ReroutingFalsePositiveScore: -1",
+      "ReroutingFalseNegativeScore: -2",
+      "ReroutingTruePositiveScore: 2",
+      "ReroutingTrueNegativeScore: 2",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -6",
+      "TargetDetectionTruePositiveScore: 10",
+      "TargetDetectionTrueNegativeScore: 1"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:22:48.869046",
+    "simulationTimeStamp": "129.7257",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Bravo 1 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:22:52.842035",
+    "simulationTimeStamp": "133.6989",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 1",
+      "ReroutingFalseNegativeCount: 1",
+      "ReroutingTruePositiveCount: 1",
+      "ReroutingTrueNegativeCount: 2",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 3",
+      "TargetDetectionTruePositiveCount: 5",
+      "TargetDetectionTrueNegativeCount: 1",
+      "ReroutingFalsePositiveScore: -1",
+      "ReroutingFalseNegativeScore: -2",
+      "ReroutingTruePositiveScore: 2",
+      "ReroutingTrueNegativeScore: 2",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -6",
+      "TargetDetectionTruePositiveScore: 10",
+      "TargetDetectionTrueNegativeScore: 1"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:22:52.862038",
+    "simulationTimeStamp": "133.7191",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Mike 3 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:22:53.683037",
+    "simulationTimeStamp": "134.5402",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 1",
+      "ReroutingFalseNegativeCount: 1",
+      "ReroutingTruePositiveCount: 1",
+      "ReroutingTrueNegativeCount: 2",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 3",
+      "TargetDetectionTruePositiveCount: 5",
+      "TargetDetectionTrueNegativeCount: 1",
+      "ReroutingFalsePositiveScore: -1",
+      "ReroutingFalseNegativeScore: -2",
+      "ReroutingTruePositiveScore: 2",
+      "ReroutingTrueNegativeScore: 2",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -6",
+      "TargetDetectionTruePositiveScore: 10",
+      "TargetDetectionTrueNegativeScore: 1"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:22:53.703039",
+    "simulationTimeStamp": "134.56",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav John 6 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:22:56.832034",
+    "simulationTimeStamp": "137.6896",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 1",
+      "ReroutingFalseNegativeCount: 1",
+      "ReroutingTruePositiveCount: 1",
+      "ReroutingTrueNegativeCount: 2",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 3",
+      "TargetDetectionTruePositiveCount: 5",
+      "TargetDetectionTrueNegativeCount: 1",
+      "ReroutingFalsePositiveScore: -1",
+      "ReroutingFalseNegativeScore: -2",
+      "ReroutingTruePositiveScore: 2",
+      "ReroutingTrueNegativeScore: 2",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -6",
+      "TargetDetectionTruePositiveScore: 10",
+      "TargetDetectionTrueNegativeScore: 1"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:22:56.853039",
+    "simulationTimeStamp": "137.7106",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Lima 2 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:22:57.961038",
+    "simulationTimeStamp": "138.8189",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 1",
+      "ReroutingFalseNegativeCount: 1",
+      "ReroutingTruePositiveCount: 1",
+      "ReroutingTrueNegativeCount: 2",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 3",
+      "TargetDetectionTruePositiveCount: 5",
+      "TargetDetectionTrueNegativeCount: 1",
+      "ReroutingFalsePositiveScore: -1",
+      "ReroutingFalseNegativeScore: -2",
+      "ReroutingTruePositiveScore: 2",
+      "ReroutingTrueNegativeScore: 2",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -6",
+      "TargetDetectionTruePositiveScore: 10",
+      "TargetDetectionTrueNegativeScore: 1"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:22:57.981036",
+    "simulationTimeStamp": "138.8383",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Charlie 4 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:23:01.209061",
+    "simulationTimeStamp": "142.0669",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 1",
+      "ReroutingFalseNegativeCount: 1",
+      "ReroutingTruePositiveCount: 1",
+      "ReroutingTrueNegativeCount: 3",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 3",
+      "TargetDetectionTruePositiveCount: 5",
+      "TargetDetectionTrueNegativeCount: 1",
+      "ReroutingFalsePositiveScore: -1",
+      "ReroutingFalseNegativeScore: -2",
+      "ReroutingTruePositiveScore: 2",
+      "ReroutingTrueNegativeScore: 3",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -6",
+      "TargetDetectionTruePositiveScore: 10",
+      "TargetDetectionTrueNegativeScore: 1"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:23:01.233034",
+    "simulationTimeStamp": "142.0904",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Golf 3 condition changed to EnabledForTargetDetectionAndRerouting"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:23:04.764037",
+    "simulationTimeStamp": "145.6216",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 1",
+      "ReroutingFalseNegativeCount: 1",
+      "ReroutingTruePositiveCount: 1",
+      "ReroutingTrueNegativeCount: 3",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 3",
+      "TargetDetectionTruePositiveCount: 5",
+      "TargetDetectionTrueNegativeCount: 1",
+      "ReroutingFalsePositiveScore: -1",
+      "ReroutingFalseNegativeScore: -2",
+      "ReroutingTruePositiveScore: 2",
+      "ReroutingTrueNegativeScore: 3",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -6",
+      "TargetDetectionTruePositiveScore: 10",
+      "TargetDetectionTrueNegativeScore: 1"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:23:04.785036",
+    "simulationTimeStamp": "145.6425",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Frank 4 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:23:05.476045",
+    "simulationTimeStamp": "146.3329",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 1",
+      "ReroutingFalseNegativeCount: 1",
+      "ReroutingTruePositiveCount: 1",
+      "ReroutingTrueNegativeCount: 3",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 3",
+      "TargetDetectionTruePositiveCount: 5",
+      "TargetDetectionTrueNegativeCount: 1",
+      "ReroutingFalsePositiveScore: -1",
+      "ReroutingFalseNegativeScore: -2",
+      "ReroutingTruePositiveScore: 2",
+      "ReroutingTrueNegativeScore: 3",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -6",
+      "TargetDetectionTruePositiveScore: 10",
+      "TargetDetectionTrueNegativeScore: 1"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:23:05.496040",
+    "simulationTimeStamp": "146.3535",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Hotel 8 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:23:06.117047",
+    "simulationTimeStamp": "146.9747",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 1",
+      "ReroutingFalseNegativeCount: 1",
+      "ReroutingTruePositiveCount: 1",
+      "ReroutingTrueNegativeCount: 3",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 3",
+      "TargetDetectionTruePositiveCount: 5",
+      "TargetDetectionTrueNegativeCount: 1",
+      "ReroutingFalsePositiveScore: -1",
+      "ReroutingFalseNegativeScore: -2",
+      "ReroutingTruePositiveScore: 2",
+      "ReroutingTrueNegativeScore: 3",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -6",
+      "TargetDetectionTruePositiveScore: 10",
+      "TargetDetectionTrueNegativeScore: 1"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:23:06.138036",
+    "simulationTimeStamp": "146.9949",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Oscar 6 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:23:09.132038",
+    "simulationTimeStamp": "149.9899",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 1",
+      "ReroutingFalseNegativeCount: 1",
+      "ReroutingTruePositiveCount: 1",
+      "ReroutingTrueNegativeCount: 3",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 3",
+      "TargetDetectionTruePositiveCount: 5",
+      "TargetDetectionTrueNegativeCount: 1",
+      "ReroutingFalsePositiveScore: -1",
+      "ReroutingFalseNegativeScore: -2",
+      "ReroutingTruePositiveScore: 2",
+      "ReroutingTrueNegativeScore: 3",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -6",
+      "TargetDetectionTruePositiveScore: 10",
+      "TargetDetectionTrueNegativeScore: 1"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:23:09.153036",
+    "simulationTimeStamp": "150.0102",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Nectar 8 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:23:10.851035",
+    "simulationTimeStamp": "151.7083",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 1",
+      "ReroutingFalseNegativeCount: 1",
+      "ReroutingTruePositiveCount: 1",
+      "ReroutingTrueNegativeCount: 3",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 3",
+      "TargetDetectionTruePositiveCount: 5",
+      "TargetDetectionTrueNegativeCount: 1",
+      "ReroutingFalsePositiveScore: -1",
+      "ReroutingFalseNegativeScore: -2",
+      "ReroutingTruePositiveScore: 2",
+      "ReroutingTrueNegativeScore: 3",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -6",
+      "TargetDetectionTruePositiveScore: 10",
+      "TargetDetectionTrueNegativeScore: 1"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:23:10.872039",
+    "simulationTimeStamp": "151.729",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Echo 6 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:23:11.868037",
+    "simulationTimeStamp": "152.7256",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 1",
+      "ReroutingFalseNegativeCount: 1",
+      "ReroutingTruePositiveCount: 1",
+      "ReroutingTrueNegativeCount: 4",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 3",
+      "TargetDetectionTruePositiveCount: 5",
+      "TargetDetectionTrueNegativeCount: 2",
+      "ReroutingFalsePositiveScore: -1",
+      "ReroutingFalseNegativeScore: -2",
+      "ReroutingTruePositiveScore: 2",
+      "ReroutingTrueNegativeScore: 4",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -6",
+      "TargetDetectionTruePositiveScore: 10",
+      "TargetDetectionTrueNegativeScore: 2"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:23:11.888038",
+    "simulationTimeStamp": "152.7457",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Kilo 1 condition changed to EnabledForTargetDetectionAndRerouting"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:23:11.930063",
+    "simulationTimeStamp": "152.7872",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 1",
+      "ReroutingFalseNegativeCount: 1",
+      "ReroutingTruePositiveCount: 1",
+      "ReroutingTrueNegativeCount: 4",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 3",
+      "TargetDetectionTruePositiveCount: 5",
+      "TargetDetectionTrueNegativeCount: 2",
+      "ReroutingFalsePositiveScore: -1",
+      "ReroutingFalseNegativeScore: -2",
+      "ReroutingTruePositiveScore: 2",
+      "ReroutingTrueNegativeScore: 4",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -6",
+      "TargetDetectionTruePositiveScore: 10",
+      "TargetDetectionTrueNegativeScore: 2"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:23:11.950034",
+    "simulationTimeStamp": "152.8071",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Papa 6 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:23:12.544036",
+    "simulationTimeStamp": "153.4012",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 1",
+      "ReroutingFalseNegativeCount: 1",
+      "ReroutingTruePositiveCount: 1",
+      "ReroutingTrueNegativeCount: 4",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 3",
+      "TargetDetectionTruePositiveCount: 5",
+      "TargetDetectionTrueNegativeCount: 2",
+      "ReroutingFalsePositiveScore: -1",
+      "ReroutingFalseNegativeScore: -2",
+      "ReroutingTruePositiveScore: 2",
+      "ReroutingTrueNegativeScore: 4",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -6",
+      "TargetDetectionTruePositiveScore: 10",
+      "TargetDetectionTrueNegativeScore: 2"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:23:12.565036",
+    "simulationTimeStamp": "153.4225",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav John 6 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:23:14.015037",
+    "simulationTimeStamp": "154.8723",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 1",
+      "ReroutingFalseNegativeCount: 1",
+      "ReroutingTruePositiveCount: 1",
+      "ReroutingTrueNegativeCount: 4",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 3",
+      "TargetDetectionTruePositiveCount: 5",
+      "TargetDetectionTrueNegativeCount: 2",
+      "ReroutingFalsePositiveScore: -1",
+      "ReroutingFalseNegativeScore: -2",
+      "ReroutingTruePositiveScore: 2",
+      "ReroutingTrueNegativeScore: 4",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -6",
+      "TargetDetectionTruePositiveScore: 10",
+      "TargetDetectionTrueNegativeScore: 2"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:23:14.035038",
+    "simulationTimeStamp": "154.8926",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Mike 3 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:23:14.307036",
+    "simulationTimeStamp": "155.1642",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 1",
+      "ReroutingFalseNegativeCount: 1",
+      "ReroutingTruePositiveCount: 1",
+      "ReroutingTrueNegativeCount: 4",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 3",
+      "TargetDetectionTruePositiveCount: 5",
+      "TargetDetectionTrueNegativeCount: 2",
+      "ReroutingFalsePositiveScore: -1",
+      "ReroutingFalseNegativeScore: -2",
+      "ReroutingTruePositiveScore: 2",
+      "ReroutingTrueNegativeScore: 4",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -6",
+      "TargetDetectionTruePositiveScore: 10",
+      "TargetDetectionTrueNegativeScore: 2"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:23:14.329038",
+    "simulationTimeStamp": "155.186",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Alfa 2 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:23:14.640037",
+    "simulationTimeStamp": "155.4976",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 1",
+      "ReroutingFalseNegativeCount: 1",
+      "ReroutingTruePositiveCount: 1",
+      "ReroutingTrueNegativeCount: 4",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 3",
+      "TargetDetectionTruePositiveCount: 5",
+      "TargetDetectionTrueNegativeCount: 2",
+      "ReroutingFalsePositiveScore: -1",
+      "ReroutingFalseNegativeScore: -2",
+      "ReroutingTruePositiveScore: 2",
+      "ReroutingTrueNegativeScore: 4",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -6",
+      "TargetDetectionTruePositiveScore: 10",
+      "TargetDetectionTrueNegativeScore: 2"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:23:14.660050",
+    "simulationTimeStamp": "155.5176",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Delta 7 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:23:18.792038",
+    "simulationTimeStamp": "159.6497",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 1",
+      "ReroutingFalseNegativeCount: 1",
+      "ReroutingTruePositiveCount: 1",
+      "ReroutingTrueNegativeCount: 4",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 3",
+      "TargetDetectionTruePositiveCount: 5",
+      "TargetDetectionTrueNegativeCount: 2",
+      "ReroutingFalsePositiveScore: -1",
+      "ReroutingFalseNegativeScore: -2",
+      "ReroutingTruePositiveScore: 2",
+      "ReroutingTrueNegativeScore: 4",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -6",
+      "TargetDetectionTruePositiveScore: 10",
+      "TargetDetectionTrueNegativeScore: 2"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:23:18.811038",
+    "simulationTimeStamp": "159.6689",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Bravo 1 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:23:26.012037",
+    "simulationTimeStamp": "166.8689",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 1",
+      "ReroutingFalseNegativeCount: 1",
+      "ReroutingTruePositiveCount: 1",
+      "ReroutingTrueNegativeCount: 4",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 3",
+      "TargetDetectionTruePositiveCount: 5",
+      "TargetDetectionTrueNegativeCount: 2",
+      "ReroutingFalsePositiveScore: -1",
+      "ReroutingFalseNegativeScore: -2",
+      "ReroutingTruePositiveScore: 2",
+      "ReroutingTrueNegativeScore: 4",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -6",
+      "TargetDetectionTruePositiveScore: 10",
+      "TargetDetectionTrueNegativeScore: 2"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:23:26.032035",
+    "simulationTimeStamp": "166.8894",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Frank 4 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:23:26.658036",
+    "simulationTimeStamp": "167.5151",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 1",
+      "ReroutingFalseNegativeCount: 1",
+      "ReroutingTruePositiveCount: 1",
+      "ReroutingTrueNegativeCount: 4",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 3",
+      "TargetDetectionTruePositiveCount: 5",
+      "TargetDetectionTrueNegativeCount: 2",
+      "ReroutingFalsePositiveScore: -1",
+      "ReroutingFalseNegativeScore: -2",
+      "ReroutingTruePositiveScore: 2",
+      "ReroutingTrueNegativeScore: 4",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -6",
+      "TargetDetectionTruePositiveScore: 10",
+      "TargetDetectionTrueNegativeScore: 2"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:23:26.678038",
+    "simulationTimeStamp": "167.5356",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Lima 2 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:23:31.338035",
+    "simulationTimeStamp": "172.1952",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 1",
+      "ReroutingFalseNegativeCount: 1",
+      "ReroutingTruePositiveCount: 1",
+      "ReroutingTrueNegativeCount: 4",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 3",
+      "TargetDetectionTruePositiveCount: 5",
+      "TargetDetectionTrueNegativeCount: 2",
+      "ReroutingFalsePositiveScore: -1",
+      "ReroutingFalseNegativeScore: -2",
+      "ReroutingTruePositiveScore: 2",
+      "ReroutingTrueNegativeScore: 4",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -6",
+      "TargetDetectionTruePositiveScore: 10",
+      "TargetDetectionTrueNegativeScore: 2"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:23:31.357037",
+    "simulationTimeStamp": "172.2147",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Charlie 4 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:23:32.087036",
+    "simulationTimeStamp": "172.9442",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 1",
+      "ReroutingFalseNegativeCount: 1",
+      "ReroutingTruePositiveCount: 1",
+      "ReroutingTrueNegativeCount: 4",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 3",
+      "TargetDetectionTruePositiveCount: 5",
+      "TargetDetectionTrueNegativeCount: 2",
+      "ReroutingFalsePositiveScore: -1",
+      "ReroutingFalseNegativeScore: -2",
+      "ReroutingTruePositiveScore: 2",
+      "ReroutingTrueNegativeScore: 4",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -6",
+      "TargetDetectionTruePositiveScore: 10",
+      "TargetDetectionTrueNegativeScore: 2"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:23:32.108036",
+    "simulationTimeStamp": "172.9656",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Echo 6 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:23:33.020038",
+    "simulationTimeStamp": "173.8769",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 1",
+      "ReroutingFalseNegativeCount: 1",
+      "ReroutingTruePositiveCount: 1",
+      "ReroutingTrueNegativeCount: 5",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 3",
+      "TargetDetectionTruePositiveCount: 5",
+      "TargetDetectionTrueNegativeCount: 3",
+      "ReroutingFalsePositiveScore: -1",
+      "ReroutingFalseNegativeScore: -2",
+      "ReroutingTruePositiveScore: 2",
+      "ReroutingTrueNegativeScore: 5",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -6",
+      "TargetDetectionTruePositiveScore: 10",
+      "TargetDetectionTrueNegativeScore: 3"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:23:33.041036",
+    "simulationTimeStamp": "173.8982",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Kilo 1 condition changed to EnabledForTargetDetectionAndRerouting"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:23:33.811034",
+    "simulationTimeStamp": "174.6682",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 1",
+      "ReroutingFalseNegativeCount: 1",
+      "ReroutingTruePositiveCount: 1",
+      "ReroutingTrueNegativeCount: 5",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 3",
+      "TargetDetectionTruePositiveCount: 5",
+      "TargetDetectionTrueNegativeCount: 3",
+      "ReroutingFalsePositiveScore: -1",
+      "ReroutingFalseNegativeScore: -2",
+      "ReroutingTruePositiveScore: 2",
+      "ReroutingTrueNegativeScore: 5",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -6",
+      "TargetDetectionTruePositiveScore: 10",
+      "TargetDetectionTrueNegativeScore: 3"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:23:33.831036",
+    "simulationTimeStamp": "174.6883",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Bravo 1 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:23:34.471036",
+    "simulationTimeStamp": "175.328",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 1",
+      "ReroutingFalseNegativeCount: 1",
+      "ReroutingTruePositiveCount: 1",
+      "ReroutingTrueNegativeCount: 5",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 3",
+      "TargetDetectionTruePositiveCount: 5",
+      "TargetDetectionTrueNegativeCount: 3",
+      "ReroutingFalsePositiveScore: -1",
+      "ReroutingFalseNegativeScore: -2",
+      "ReroutingTruePositiveScore: 2",
+      "ReroutingTrueNegativeScore: 5",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -6",
+      "TargetDetectionTruePositiveScore: 10",
+      "TargetDetectionTrueNegativeScore: 3"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:23:34.492034",
+    "simulationTimeStamp": "175.3493",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Oscar 6 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:23:35.206038",
+    "simulationTimeStamp": "176.0632",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 1",
+      "ReroutingFalseNegativeCount: 1",
+      "ReroutingTruePositiveCount: 1",
+      "ReroutingTrueNegativeCount: 6",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 3",
+      "TargetDetectionTruePositiveCount: 5",
+      "TargetDetectionTrueNegativeCount: 4",
+      "ReroutingFalsePositiveScore: -1",
+      "ReroutingFalseNegativeScore: -2",
+      "ReroutingTruePositiveScore: 2",
+      "ReroutingTrueNegativeScore: 6",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -6",
+      "TargetDetectionTruePositiveScore: 10",
+      "TargetDetectionTrueNegativeScore: 4"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:23:35.227038",
+    "simulationTimeStamp": "176.0844",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Golf 3 condition changed to EnabledForTargetDetectionAndRerouting"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:23:35.498035",
+    "simulationTimeStamp": "176.3554",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 1",
+      "ReroutingFalseNegativeCount: 1",
+      "ReroutingTruePositiveCount: 1",
+      "ReroutingTrueNegativeCount: 6",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 3",
+      "TargetDetectionTruePositiveCount: 5",
+      "TargetDetectionTrueNegativeCount: 4",
+      "ReroutingFalsePositiveScore: -1",
+      "ReroutingFalseNegativeScore: -2",
+      "ReroutingTruePositiveScore: 2",
+      "ReroutingTrueNegativeScore: 6",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -6",
+      "TargetDetectionTruePositiveScore: 10",
+      "TargetDetectionTrueNegativeScore: 4"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:23:35.520038",
+    "simulationTimeStamp": "176.3769",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Alfa 2 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:23:38.820038",
+    "simulationTimeStamp": "179.6776",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 1",
+      "ReroutingFalseNegativeCount: 1",
+      "ReroutingTruePositiveCount: 1",
+      "ReroutingTrueNegativeCount: 6",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 3",
+      "TargetDetectionTruePositiveCount: 5",
+      "TargetDetectionTrueNegativeCount: 4",
+      "ReroutingFalsePositiveScore: -1",
+      "ReroutingFalseNegativeScore: -2",
+      "ReroutingTruePositiveScore: 2",
+      "ReroutingTrueNegativeScore: 6",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -6",
+      "TargetDetectionTruePositiveScore: 10",
+      "TargetDetectionTrueNegativeScore: 4"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:23:38.840039",
+    "simulationTimeStamp": "179.6975",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Hotel 8 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:23:39.026038",
+    "simulationTimeStamp": "179.8836",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 1",
+      "ReroutingFalseNegativeCount: 1",
+      "ReroutingTruePositiveCount: 1",
+      "ReroutingTrueNegativeCount: 6",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 3",
+      "TargetDetectionTruePositiveCount: 5",
+      "TargetDetectionTrueNegativeCount: 4",
+      "ReroutingFalsePositiveScore: -1",
+      "ReroutingFalseNegativeScore: -2",
+      "ReroutingTruePositiveScore: 2",
+      "ReroutingTrueNegativeScore: 6",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -6",
+      "TargetDetectionTruePositiveScore: 10",
+      "TargetDetectionTrueNegativeScore: 4"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:23:39.048038",
+    "simulationTimeStamp": "179.9049",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Nectar 8 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:23:39.436577",
+    "simulationTimeStamp": "180.2936",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 1",
+      "ReroutingFalseNegativeCount: 1",
+      "ReroutingTruePositiveCount: 1",
+      "ReroutingTrueNegativeCount: 6",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 3",
+      "TargetDetectionTruePositiveCount: 5",
+      "TargetDetectionTrueNegativeCount: 4",
+      "ReroutingFalsePositiveScore: -1",
+      "ReroutingFalseNegativeScore: -2",
+      "ReroutingTruePositiveScore: 2",
+      "ReroutingTrueNegativeScore: 6",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -6",
+      "TargetDetectionTruePositiveScore: 10",
+      "TargetDetectionTrueNegativeScore: 4"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:23:39.456564",
+    "simulationTimeStamp": "180.3138",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Papa 6 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:23:40.097565",
+    "simulationTimeStamp": "180.9548",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 1",
+      "ReroutingFalseNegativeCount: 1",
+      "ReroutingTruePositiveCount: 1",
+      "ReroutingTrueNegativeCount: 6",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 3",
+      "TargetDetectionTruePositiveCount: 5",
+      "TargetDetectionTrueNegativeCount: 4",
+      "ReroutingFalsePositiveScore: -1",
+      "ReroutingFalseNegativeScore: -2",
+      "ReroutingTruePositiveScore: 2",
+      "ReroutingTrueNegativeScore: 6",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -6",
+      "TargetDetectionTruePositiveScore: 10",
+      "TargetDetectionTrueNegativeScore: 4"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:23:40.124569",
+    "simulationTimeStamp": "180.9817",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav John 6 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:23:40.870566",
+    "simulationTimeStamp": "181.7275",
+    "logType": "TargetDetection",
+    "eventType": "TargetDetected",
+    "logMessages": [
+      "Target detected",
+      "Responded correctly: True",
+      "Non target is present: True",
+      "Time since start of path: 00:00:07.8505278"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:23:40.870566",
+    "simulationTimeStamp": "181.7275",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 1",
+      "ReroutingFalseNegativeCount: 1",
+      "ReroutingTruePositiveCount: 1",
+      "ReroutingTrueNegativeCount: 6",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 3",
+      "TargetDetectionTruePositiveCount: 6",
+      "TargetDetectionTrueNegativeCount: 4",
+      "ReroutingFalsePositiveScore: -1",
+      "ReroutingFalseNegativeScore: -2",
+      "ReroutingTruePositiveScore: 2",
+      "ReroutingTrueNegativeScore: 6",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -6",
+      "TargetDetectionTruePositiveScore: 12",
+      "TargetDetectionTrueNegativeScore: 4"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:23:47.127565",
+    "simulationTimeStamp": "187.9853",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 1",
+      "ReroutingFalseNegativeCount: 1",
+      "ReroutingTruePositiveCount: 1",
+      "ReroutingTrueNegativeCount: 6",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 3",
+      "TargetDetectionTruePositiveCount: 6",
+      "TargetDetectionTrueNegativeCount: 4",
+      "ReroutingFalsePositiveScore: -1",
+      "ReroutingFalseNegativeScore: -2",
+      "ReroutingTruePositiveScore: 2",
+      "ReroutingTrueNegativeScore: 6",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -6",
+      "TargetDetectionTruePositiveScore: 12",
+      "TargetDetectionTrueNegativeScore: 4"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:23:47.148566",
+    "simulationTimeStamp": "188.006",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Echo 6 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:23:48.031569",
+    "simulationTimeStamp": "188.8891",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 1",
+      "ReroutingFalseNegativeCount: 1",
+      "ReroutingTruePositiveCount: 1",
+      "ReroutingTrueNegativeCount: 6",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 3",
+      "TargetDetectionTruePositiveCount: 6",
+      "TargetDetectionTrueNegativeCount: 4",
+      "ReroutingFalsePositiveScore: -1",
+      "ReroutingFalseNegativeScore: -2",
+      "ReroutingTruePositiveScore: 2",
+      "ReroutingTrueNegativeScore: 6",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -6",
+      "TargetDetectionTruePositiveScore: 12",
+      "TargetDetectionTrueNegativeScore: 4"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:23:48.051565",
+    "simulationTimeStamp": "188.9092",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Mike 3 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:23:48.743566",
+    "simulationTimeStamp": "189.601",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 1",
+      "ReroutingFalseNegativeCount: 1",
+      "ReroutingTruePositiveCount: 1",
+      "ReroutingTrueNegativeCount: 6",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 3",
+      "TargetDetectionTruePositiveCount: 6",
+      "TargetDetectionTrueNegativeCount: 4",
+      "ReroutingFalsePositiveScore: -1",
+      "ReroutingFalseNegativeScore: -2",
+      "ReroutingTruePositiveScore: 2",
+      "ReroutingTrueNegativeScore: 6",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -6",
+      "TargetDetectionTruePositiveScore: 12",
+      "TargetDetectionTrueNegativeScore: 4"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:23:48.765563",
+    "simulationTimeStamp": "189.6225",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Delta 7 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:23:50.201566",
+    "simulationTimeStamp": "191.0591",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 1",
+      "ReroutingFalseNegativeCount: 1",
+      "ReroutingTruePositiveCount: 1",
+      "ReroutingTrueNegativeCount: 6",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 3",
+      "TargetDetectionTruePositiveCount: 6",
+      "TargetDetectionTrueNegativeCount: 4",
+      "ReroutingFalsePositiveScore: -1",
+      "ReroutingFalseNegativeScore: -2",
+      "ReroutingTruePositiveScore: 2",
+      "ReroutingTrueNegativeScore: 6",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -6",
+      "TargetDetectionTruePositiveScore: 12",
+      "TargetDetectionTrueNegativeScore: 4"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:23:50.223568",
+    "simulationTimeStamp": "191.0811",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Frank 4 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:23:51.886563",
+    "simulationTimeStamp": "192.7443",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 1",
+      "ReroutingFalseNegativeCount: 1",
+      "ReroutingTruePositiveCount: 1",
+      "ReroutingTrueNegativeCount: 7",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 3",
+      "TargetDetectionTruePositiveCount: 6",
+      "TargetDetectionTrueNegativeCount: 4",
+      "ReroutingFalsePositiveScore: -1",
+      "ReroutingFalseNegativeScore: -2",
+      "ReroutingTruePositiveScore: 2",
+      "ReroutingTrueNegativeScore: 7",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -6",
+      "TargetDetectionTruePositiveScore: 12",
+      "TargetDetectionTrueNegativeScore: 4"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:23:51.907576",
+    "simulationTimeStamp": "192.7646",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Kilo 1 condition changed to EnabledForTargetDetectionAndRerouting"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:23:54.073565",
+    "simulationTimeStamp": "194.9306",
+    "logType": "TargetDetection",
+    "eventType": "TargetDetected",
+    "logMessages": [
+      "Target detected",
+      "Responded correctly: True",
+      "Non target is present: False",
+      "Time since start of path: 00:00:02.1859987"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:23:54.073565",
+    "simulationTimeStamp": "194.9306",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 1",
+      "ReroutingFalseNegativeCount: 1",
+      "ReroutingTruePositiveCount: 1",
+      "ReroutingTrueNegativeCount: 7",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 3",
+      "TargetDetectionTruePositiveCount: 7",
+      "TargetDetectionTrueNegativeCount: 4",
+      "ReroutingFalsePositiveScore: -1",
+      "ReroutingFalseNegativeScore: -2",
+      "ReroutingTruePositiveScore: 2",
+      "ReroutingTrueNegativeScore: 7",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -6",
+      "TargetDetectionTruePositiveScore: 14",
+      "TargetDetectionTrueNegativeScore: 4"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:23:54.212565",
+    "simulationTimeStamp": "195.0701",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 1",
+      "ReroutingFalseNegativeCount: 1",
+      "ReroutingTruePositiveCount: 1",
+      "ReroutingTrueNegativeCount: 7",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 3",
+      "TargetDetectionTruePositiveCount: 7",
+      "TargetDetectionTrueNegativeCount: 4",
+      "ReroutingFalsePositiveScore: -1",
+      "ReroutingFalseNegativeScore: -2",
+      "ReroutingTruePositiveScore: 2",
+      "ReroutingTrueNegativeScore: 7",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -6",
+      "TargetDetectionTruePositiveScore: 14",
+      "TargetDetectionTrueNegativeScore: 4"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:23:54.233566",
+    "simulationTimeStamp": "195.0905",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Lima 2 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:23:54.498565",
+    "simulationTimeStamp": "195.3561",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 1",
+      "ReroutingFalseNegativeCount: 1",
+      "ReroutingTruePositiveCount: 1",
+      "ReroutingTrueNegativeCount: 7",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 3",
+      "TargetDetectionTruePositiveCount: 7",
+      "TargetDetectionTrueNegativeCount: 4",
+      "ReroutingFalsePositiveScore: -1",
+      "ReroutingFalseNegativeScore: -2",
+      "ReroutingTruePositiveScore: 2",
+      "ReroutingTrueNegativeScore: 7",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -6",
+      "TargetDetectionTruePositiveScore: 14",
+      "TargetDetectionTrueNegativeScore: 4"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:23:54.519566",
+    "simulationTimeStamp": "195.3766",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Oscar 6 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:23:59.536563",
+    "simulationTimeStamp": "200.3939",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 1",
+      "ReroutingFalseNegativeCount: 1",
+      "ReroutingTruePositiveCount: 1",
+      "ReroutingTrueNegativeCount: 7",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 3",
+      "TargetDetectionTruePositiveCount: 7",
+      "TargetDetectionTrueNegativeCount: 4",
+      "ReroutingFalsePositiveScore: -1",
+      "ReroutingFalseNegativeScore: -2",
+      "ReroutingTruePositiveScore: 2",
+      "ReroutingTrueNegativeScore: 7",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -6",
+      "TargetDetectionTruePositiveScore: 14",
+      "TargetDetectionTrueNegativeScore: 4"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:23:59.556563",
+    "simulationTimeStamp": "200.4139",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Alfa 2 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:24:04.710562",
+    "simulationTimeStamp": "205.5675",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 1",
+      "ReroutingFalseNegativeCount: 1",
+      "ReroutingTruePositiveCount: 1",
+      "ReroutingTrueNegativeCount: 7",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 3",
+      "TargetDetectionTruePositiveCount: 7",
+      "TargetDetectionTrueNegativeCount: 4",
+      "ReroutingFalsePositiveScore: -1",
+      "ReroutingFalseNegativeScore: -2",
+      "ReroutingTruePositiveScore: 2",
+      "ReroutingTrueNegativeScore: 7",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -6",
+      "TargetDetectionTruePositiveScore: 14",
+      "TargetDetectionTrueNegativeScore: 4"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:24:04.731565",
+    "simulationTimeStamp": "205.5891",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Charlie 4 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:24:05.516566",
+    "simulationTimeStamp": "206.3737",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 1",
+      "ReroutingFalseNegativeCount: 1",
+      "ReroutingTruePositiveCount: 1",
+      "ReroutingTrueNegativeCount: 7",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 3",
+      "TargetDetectionTruePositiveCount: 7",
+      "TargetDetectionTrueNegativeCount: 4",
+      "ReroutingFalsePositiveScore: -1",
+      "ReroutingFalseNegativeScore: -2",
+      "ReroutingTruePositiveScore: 2",
+      "ReroutingTrueNegativeScore: 7",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -6",
+      "TargetDetectionTruePositiveScore: 14",
+      "TargetDetectionTrueNegativeScore: 4"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:24:05.536563",
+    "simulationTimeStamp": "206.3937",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Hotel 8 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:24:06.930563",
+    "simulationTimeStamp": "207.7875",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 1",
+      "ReroutingFalseNegativeCount: 1",
+      "ReroutingTruePositiveCount: 1",
+      "ReroutingTrueNegativeCount: 7",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 3",
+      "TargetDetectionTruePositiveCount: 7",
+      "TargetDetectionTrueNegativeCount: 4",
+      "ReroutingFalsePositiveScore: -1",
+      "ReroutingFalseNegativeScore: -2",
+      "ReroutingTruePositiveScore: 2",
+      "ReroutingTrueNegativeScore: 7",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -6",
+      "TargetDetectionTruePositiveScore: 14",
+      "TargetDetectionTrueNegativeScore: 4"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:24:06.951565",
+    "simulationTimeStamp": "207.809",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Papa 6 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:24:07.817566",
+    "simulationTimeStamp": "208.6751",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 1",
+      "ReroutingFalseNegativeCount: 1",
+      "ReroutingTruePositiveCount: 1",
+      "ReroutingTrueNegativeCount: 7",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 3",
+      "TargetDetectionTruePositiveCount: 7",
+      "TargetDetectionTrueNegativeCount: 4",
+      "ReroutingFalsePositiveScore: -1",
+      "ReroutingFalseNegativeScore: -2",
+      "ReroutingTruePositiveScore: 2",
+      "ReroutingTrueNegativeScore: 7",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -6",
+      "TargetDetectionTruePositiveScore: 14",
+      "TargetDetectionTrueNegativeScore: 4"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:24:07.838566",
+    "simulationTimeStamp": "208.696",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Bravo 1 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:24:08.611564",
+    "simulationTimeStamp": "209.4688",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 1",
+      "ReroutingFalseNegativeCount: 1",
+      "ReroutingTruePositiveCount: 1",
+      "ReroutingTrueNegativeCount: 8",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 3",
+      "TargetDetectionTruePositiveCount: 7",
+      "TargetDetectionTrueNegativeCount: 5",
+      "ReroutingFalsePositiveScore: -1",
+      "ReroutingFalseNegativeScore: -2",
+      "ReroutingTruePositiveScore: 2",
+      "ReroutingTrueNegativeScore: 8",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -6",
+      "TargetDetectionTruePositiveScore: 14",
+      "TargetDetectionTrueNegativeScore: 5"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:24:08.632563",
+    "simulationTimeStamp": "209.4896",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Golf 3 condition changed to EnabledForTargetDetectionAndRerouting"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:24:12.372564",
+    "simulationTimeStamp": "213.2298",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 1",
+      "ReroutingFalseNegativeCount: 1",
+      "ReroutingTruePositiveCount: 1",
+      "ReroutingTrueNegativeCount: 8",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 3",
+      "TargetDetectionTruePositiveCount: 7",
+      "TargetDetectionTrueNegativeCount: 5",
+      "ReroutingFalsePositiveScore: -1",
+      "ReroutingFalseNegativeScore: -2",
+      "ReroutingTruePositiveScore: 2",
+      "ReroutingTrueNegativeScore: 8",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -6",
+      "TargetDetectionTruePositiveScore: 14",
+      "TargetDetectionTrueNegativeScore: 5"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:24:12.393565",
+    "simulationTimeStamp": "213.251",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Nectar 8 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:24:12.759575",
+    "simulationTimeStamp": "213.6167",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 1",
+      "ReroutingFalseNegativeCount: 1",
+      "ReroutingTruePositiveCount: 1",
+      "ReroutingTrueNegativeCount: 9",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 3",
+      "TargetDetectionTruePositiveCount: 7",
+      "TargetDetectionTrueNegativeCount: 5",
+      "ReroutingFalsePositiveScore: -1",
+      "ReroutingFalseNegativeScore: -2",
+      "ReroutingTruePositiveScore: 2",
+      "ReroutingTrueNegativeScore: 9",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -6",
+      "TargetDetectionTruePositiveScore: 14",
+      "TargetDetectionTrueNegativeScore: 5"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:24:12.780565",
+    "simulationTimeStamp": "213.6373",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Kilo 1 condition changed to EnabledForTargetDetectionAndRerouting"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:24:13.444564",
+    "simulationTimeStamp": "214.302",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 1",
+      "ReroutingFalseNegativeCount: 1",
+      "ReroutingTruePositiveCount: 1",
+      "ReroutingTrueNegativeCount: 9",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 3",
+      "TargetDetectionTruePositiveCount: 7",
+      "TargetDetectionTrueNegativeCount: 5",
+      "ReroutingFalsePositiveScore: -1",
+      "ReroutingFalseNegativeScore: -2",
+      "ReroutingTruePositiveScore: 2",
+      "ReroutingTrueNegativeScore: 9",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -6",
+      "TargetDetectionTruePositiveScore: 14",
+      "TargetDetectionTrueNegativeScore: 5"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:24:13.464563",
+    "simulationTimeStamp": "214.3219",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav John 6 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:24:13.798564",
+    "simulationTimeStamp": "214.6558",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 1",
+      "ReroutingFalseNegativeCount: 1",
+      "ReroutingTruePositiveCount: 1",
+      "ReroutingTrueNegativeCount: 9",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 3",
+      "TargetDetectionTruePositiveCount: 7",
+      "TargetDetectionTrueNegativeCount: 5",
+      "ReroutingFalsePositiveScore: -1",
+      "ReroutingFalseNegativeScore: -2",
+      "ReroutingTruePositiveScore: 2",
+      "ReroutingTrueNegativeScore: 9",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -6",
+      "TargetDetectionTruePositiveScore: 14",
+      "TargetDetectionTrueNegativeScore: 5"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:24:13.819563",
+    "simulationTimeStamp": "214.6769",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Echo 6 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:24:16.552567",
+    "simulationTimeStamp": "217.4102",
+    "logType": "TargetDetection",
+    "eventType": "TargetDetected",
+    "logMessages": [
+      "Target detected",
+      "Responded correctly: True",
+      "Non target is present: False",
+      "Time since start of path: 00:00:03.7929920"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:24:16.552567",
+    "simulationTimeStamp": "217.4102",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 1",
+      "ReroutingFalseNegativeCount: 1",
+      "ReroutingTruePositiveCount: 1",
+      "ReroutingTrueNegativeCount: 9",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 3",
+      "TargetDetectionTruePositiveCount: 8",
+      "TargetDetectionTrueNegativeCount: 5",
+      "ReroutingFalsePositiveScore: -1",
+      "ReroutingFalseNegativeScore: -2",
+      "ReroutingTruePositiveScore: 2",
+      "ReroutingTrueNegativeScore: 9",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -6",
+      "TargetDetectionTruePositiveScore: 16",
+      "TargetDetectionTrueNegativeScore: 5"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:24:18.115566",
+    "simulationTimeStamp": "218.967",
+    "logType": "Rerouting",
+    "eventType": "Rerouting Options Requested",
+    "logMessages": [
+      " requested rerouting options for uav Golf 3",
+      "Path start time: 03/12/2023 21:24:08.611564",
+      "Rerouting is not needed"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:24:19.024563",
+    "simulationTimeStamp": "219.8815",
+    "logType": "Rerouting",
+    "eventType": "Rerouting Option Previewed",
+    "logMessages": [
+      "Rerouting option previewed for Uav Golf 3 ",
+      "Path start time: 03/12/2023 21:24:08.611564",
+      "Previewed route is good"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:24:19.520564",
+    "simulationTimeStamp": "220.3779",
+    "logType": "Rerouting",
+    "eventType": "Rerouting Option Previewed",
+    "logMessages": [
+      "Rerouting option previewed for Uav Golf 3 ",
+      "Path start time: 03/12/2023 21:24:08.611564",
+      "Previewed route is good"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:24:20.706564",
+    "simulationTimeStamp": "221.5641",
+    "logType": "Rerouting",
+    "eventType": "Rerouting Option Previewed",
+    "logMessages": [
+      "Rerouting option previewed for Uav Golf 3 ",
+      "Path start time: 03/12/2023 21:24:08.611564",
+      "Previewed route is good"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:24:21.404586",
+    "simulationTimeStamp": "222.2613",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 1",
+      "ReroutingFalseNegativeCount: 1",
+      "ReroutingTruePositiveCount: 1",
+      "ReroutingTrueNegativeCount: 9",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 3",
+      "TargetDetectionTruePositiveCount: 8",
+      "TargetDetectionTrueNegativeCount: 5",
+      "ReroutingFalsePositiveScore: -1",
+      "ReroutingFalseNegativeScore: -2",
+      "ReroutingTruePositiveScore: 2",
+      "ReroutingTrueNegativeScore: 9",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -6",
+      "TargetDetectionTruePositiveScore: 16",
+      "TargetDetectionTrueNegativeScore: 5"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:24:21.424566",
+    "simulationTimeStamp": "222.2823",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Mike 3 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:24:21.708563",
+    "simulationTimeStamp": "222.566",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 1",
+      "ReroutingFalseNegativeCount: 1",
+      "ReroutingTruePositiveCount: 1",
+      "ReroutingTrueNegativeCount: 9",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 3",
+      "TargetDetectionTruePositiveCount: 8",
+      "TargetDetectionTrueNegativeCount: 5",
+      "ReroutingFalsePositiveScore: -1",
+      "ReroutingFalseNegativeScore: -2",
+      "ReroutingTruePositiveScore: 2",
+      "ReroutingTrueNegativeScore: 9",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -6",
+      "TargetDetectionTruePositiveScore: 16",
+      "TargetDetectionTrueNegativeScore: 5"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:24:21.730577",
+    "simulationTimeStamp": "222.5874",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Lima 2 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:24:21.774566",
+    "simulationTimeStamp": "222.6313",
+    "logType": "Rerouting",
+    "eventType": "Rerouting Event",
+    "logMessages": [
+      "Uav Golf 3  rerouted",
+      "Rerouting was not needed",
+      "Path start time: 03/12/2023 21:24:08.611564",
+      "New route is good"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:24:21.774566",
+    "simulationTimeStamp": "222.6313",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 2",
+      "ReroutingFalseNegativeCount: 1",
+      "ReroutingTruePositiveCount: 1",
+      "ReroutingTrueNegativeCount: 9",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 3",
+      "TargetDetectionTruePositiveCount: 8",
+      "TargetDetectionTrueNegativeCount: 5",
+      "ReroutingFalsePositiveScore: -2",
+      "ReroutingFalseNegativeScore: -2",
+      "ReroutingTruePositiveScore: 2",
+      "ReroutingTrueNegativeScore: 9",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -6",
+      "TargetDetectionTruePositiveScore: 16",
+      "TargetDetectionTrueNegativeScore: 5"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:24:21.774566",
+    "simulationTimeStamp": "222.6313",
+    "logType": "Rerouting",
+    "eventType": "Rerouting Option Previewed",
+    "logMessages": [
+      "Rerouting option previewed for Uav Golf 3 ",
+      "Path start time: 03/12/2023 21:24:08.611564",
+      "Previewed route is good"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:24:21.774566",
+    "simulationTimeStamp": "222.6313",
+    "logType": "Rerouting",
+    "eventType": "Rerouting Option Previewed",
+    "logMessages": [
+      "Rerouting option previewed for Uav Golf 3 ",
+      "Path start time: 03/12/2023 21:24:08.611564",
+      "Previewed route is good"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:24:21.774566",
+    "simulationTimeStamp": "222.6313",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Golf 3 condition changed to EnabledForTargetDetectionAndRerouting"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:24:23.556564",
+    "simulationTimeStamp": "224.4136",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 2",
+      "ReroutingFalseNegativeCount: 1",
+      "ReroutingTruePositiveCount: 1",
+      "ReroutingTrueNegativeCount: 9",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 3",
+      "TargetDetectionTruePositiveCount: 8",
+      "TargetDetectionTrueNegativeCount: 5",
+      "ReroutingFalsePositiveScore: -2",
+      "ReroutingFalseNegativeScore: -2",
+      "ReroutingTruePositiveScore: 2",
+      "ReroutingTrueNegativeScore: 9",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -6",
+      "TargetDetectionTruePositiveScore: 16",
+      "TargetDetectionTrueNegativeScore: 5"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:24:23.575564",
+    "simulationTimeStamp": "224.4329",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Delta 7 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:24:24.195563",
+    "simulationTimeStamp": "225.0532",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 2",
+      "ReroutingFalseNegativeCount: 1",
+      "ReroutingTruePositiveCount: 1",
+      "ReroutingTrueNegativeCount: 9",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 3",
+      "TargetDetectionTruePositiveCount: 8",
+      "TargetDetectionTrueNegativeCount: 5",
+      "ReroutingFalsePositiveScore: -2",
+      "ReroutingFalseNegativeScore: -2",
+      "ReroutingTruePositiveScore: 2",
+      "ReroutingTrueNegativeScore: 9",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -6",
+      "TargetDetectionTruePositiveScore: 16",
+      "TargetDetectionTrueNegativeScore: 5"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:24:24.215565",
+    "simulationTimeStamp": "225.0732",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Frank 4 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:24:25.802564",
+    "simulationTimeStamp": "226.6601",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 2",
+      "ReroutingFalseNegativeCount: 1",
+      "ReroutingTruePositiveCount: 1",
+      "ReroutingTrueNegativeCount: 9",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 3",
+      "TargetDetectionTruePositiveCount: 8",
+      "TargetDetectionTrueNegativeCount: 5",
+      "ReroutingFalsePositiveScore: -2",
+      "ReroutingFalseNegativeScore: -2",
+      "ReroutingTruePositiveScore: 2",
+      "ReroutingTrueNegativeScore: 9",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -6",
+      "TargetDetectionTruePositiveScore: 16",
+      "TargetDetectionTrueNegativeScore: 5"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:24:25.822563",
+    "simulationTimeStamp": "226.6798",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Charlie 4 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:24:28.513566",
+    "simulationTimeStamp": "229.3704",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 2",
+      "ReroutingFalseNegativeCount: 1",
+      "ReroutingTruePositiveCount: 1",
+      "ReroutingTrueNegativeCount: 9",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 3",
+      "TargetDetectionTruePositiveCount: 8",
+      "TargetDetectionTrueNegativeCount: 5",
+      "ReroutingFalsePositiveScore: -2",
+      "ReroutingFalseNegativeScore: -2",
+      "ReroutingTruePositiveScore: 2",
+      "ReroutingTrueNegativeScore: 9",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -6",
+      "TargetDetectionTruePositiveScore: 16",
+      "TargetDetectionTrueNegativeScore: 5"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:24:28.535566",
+    "simulationTimeStamp": "229.3931",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Oscar 6 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:24:29.596873",
+    "simulationTimeStamp": "230.4545",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 2",
+      "ReroutingFalseNegativeCount: 1",
+      "ReroutingTruePositiveCount: 1",
+      "ReroutingTrueNegativeCount: 9",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 3",
+      "TargetDetectionTruePositiveCount: 8",
+      "TargetDetectionTrueNegativeCount: 5",
+      "ReroutingFalsePositiveScore: -2",
+      "ReroutingFalseNegativeScore: -2",
+      "ReroutingTruePositiveScore: 2",
+      "ReroutingTrueNegativeScore: 9",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -6",
+      "TargetDetectionTruePositiveScore: 16",
+      "TargetDetectionTrueNegativeScore: 5"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:24:29.616861",
+    "simulationTimeStamp": "230.4743",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Hotel 8 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:24:33.546859",
+    "simulationTimeStamp": "234.4043",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 2",
+      "ReroutingFalseNegativeCount: 1",
+      "ReroutingTruePositiveCount: 1",
+      "ReroutingTrueNegativeCount: 9",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 3",
+      "TargetDetectionTruePositiveCount: 8",
+      "TargetDetectionTrueNegativeCount: 5",
+      "ReroutingFalsePositiveScore: -2",
+      "ReroutingFalseNegativeScore: -2",
+      "ReroutingTruePositiveScore: 2",
+      "ReroutingTrueNegativeScore: 9",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -6",
+      "TargetDetectionTruePositiveScore: 16",
+      "TargetDetectionTrueNegativeScore: 5"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:24:33.566874",
+    "simulationTimeStamp": "234.4245",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Alfa 2 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:24:36.804856",
+    "simulationTimeStamp": "237.6617",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 2",
+      "ReroutingFalseNegativeCount: 1",
+      "ReroutingTruePositiveCount: 1",
+      "ReroutingTrueNegativeCount: 10",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 3",
+      "TargetDetectionTruePositiveCount: 8",
+      "TargetDetectionTrueNegativeCount: 5",
+      "ReroutingFalsePositiveScore: -2",
+      "ReroutingFalseNegativeScore: -2",
+      "ReroutingTruePositiveScore: 2",
+      "ReroutingTrueNegativeScore: 10",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -6",
+      "TargetDetectionTruePositiveScore: 16",
+      "TargetDetectionTrueNegativeScore: 5"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:24:36.824860",
+    "simulationTimeStamp": "237.6816",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Kilo 1 condition changed to EnabledForTargetDetectionAndRerouting"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:24:40.326860",
+    "simulationTimeStamp": "241.1836",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 2",
+      "ReroutingFalseNegativeCount: 1",
+      "ReroutingTruePositiveCount: 1",
+      "ReroutingTrueNegativeCount: 10",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 3",
+      "TargetDetectionTruePositiveCount: 8",
+      "TargetDetectionTrueNegativeCount: 5",
+      "ReroutingFalsePositiveScore: -2",
+      "ReroutingFalseNegativeScore: -2",
+      "ReroutingTruePositiveScore: 2",
+      "ReroutingTrueNegativeScore: 10",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -6",
+      "TargetDetectionTruePositiveScore: 16",
+      "TargetDetectionTrueNegativeScore: 5"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:24:40.347857",
+    "simulationTimeStamp": "241.205",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Papa 6 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:24:41.003129",
+    "simulationTimeStamp": "241.8606",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 2",
+      "ReroutingFalseNegativeCount: 1",
+      "ReroutingTruePositiveCount: 1",
+      "ReroutingTrueNegativeCount: 11",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 3",
+      "TargetDetectionTruePositiveCount: 8",
+      "TargetDetectionTrueNegativeCount: 6",
+      "ReroutingFalsePositiveScore: -2",
+      "ReroutingFalseNegativeScore: -2",
+      "ReroutingTruePositiveScore: 2",
+      "ReroutingTrueNegativeScore: 11",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -6",
+      "TargetDetectionTruePositiveScore: 16",
+      "TargetDetectionTrueNegativeScore: 6"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:24:41.023128",
+    "simulationTimeStamp": "241.8805",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Golf 3 condition changed to EnabledForTargetDetectionAndRerouting"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:24:41.840159",
+    "simulationTimeStamp": "242.6975",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 2",
+      "ReroutingFalseNegativeCount: 1",
+      "ReroutingTruePositiveCount: 1",
+      "ReroutingTrueNegativeCount: 11",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 3",
+      "TargetDetectionTruePositiveCount: 8",
+      "TargetDetectionTrueNegativeCount: 6",
+      "ReroutingFalsePositiveScore: -2",
+      "ReroutingFalseNegativeScore: -2",
+      "ReroutingTruePositiveScore: 2",
+      "ReroutingTrueNegativeScore: 11",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -6",
+      "TargetDetectionTruePositiveScore: 16",
+      "TargetDetectionTrueNegativeScore: 6"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:24:41.860130",
+    "simulationTimeStamp": "242.7178",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Bravo 1 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:24:42.693128",
+    "simulationTimeStamp": "243.5502",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 2",
+      "ReroutingFalseNegativeCount: 1",
+      "ReroutingTruePositiveCount: 1",
+      "ReroutingTrueNegativeCount: 11",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 3",
+      "TargetDetectionTruePositiveCount: 8",
+      "TargetDetectionTrueNegativeCount: 6",
+      "ReroutingFalsePositiveScore: -2",
+      "ReroutingFalseNegativeScore: -2",
+      "ReroutingTruePositiveScore: 2",
+      "ReroutingTrueNegativeScore: 11",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -6",
+      "TargetDetectionTruePositiveScore: 16",
+      "TargetDetectionTrueNegativeScore: 6"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:24:42.715126",
+    "simulationTimeStamp": "243.5728",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Mike 3 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:24:43.674216",
+    "simulationTimeStamp": "244.5311",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 2",
+      "ReroutingFalseNegativeCount: 1",
+      "ReroutingTruePositiveCount: 1",
+      "ReroutingTrueNegativeCount: 11",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 3",
+      "TargetDetectionTruePositiveCount: 8",
+      "TargetDetectionTrueNegativeCount: 6",
+      "ReroutingFalsePositiveScore: -2",
+      "ReroutingFalseNegativeScore: -2",
+      "ReroutingTruePositiveScore: 2",
+      "ReroutingTrueNegativeScore: 11",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -6",
+      "TargetDetectionTruePositiveScore: 16",
+      "TargetDetectionTrueNegativeScore: 6"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:24:43.697221",
+    "simulationTimeStamp": "244.5539",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Echo 6 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:24:45.725066",
+    "simulationTimeStamp": "246.5823",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 2",
+      "ReroutingFalseNegativeCount: 1",
+      "ReroutingTruePositiveCount: 1",
+      "ReroutingTrueNegativeCount: 11",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 3",
+      "TargetDetectionTruePositiveCount: 8",
+      "TargetDetectionTrueNegativeCount: 6",
+      "ReroutingFalsePositiveScore: -2",
+      "ReroutingFalseNegativeScore: -2",
+      "ReroutingTruePositiveScore: 2",
+      "ReroutingTrueNegativeScore: 11",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -6",
+      "TargetDetectionTruePositiveScore: 16",
+      "TargetDetectionTrueNegativeScore: 6"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:24:45.746069",
+    "simulationTimeStamp": "246.6036",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Nectar 8 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:24:45.996067",
+    "simulationTimeStamp": "246.8532",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 2",
+      "ReroutingFalseNegativeCount: 1",
+      "ReroutingTruePositiveCount: 1",
+      "ReroutingTrueNegativeCount: 11",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 3",
+      "TargetDetectionTruePositiveCount: 8",
+      "TargetDetectionTrueNegativeCount: 6",
+      "ReroutingFalsePositiveScore: -2",
+      "ReroutingFalseNegativeScore: -2",
+      "ReroutingTruePositiveScore: 2",
+      "ReroutingTrueNegativeScore: 11",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -6",
+      "TargetDetectionTruePositiveScore: 16",
+      "TargetDetectionTrueNegativeScore: 6"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:24:46.018068",
+    "simulationTimeStamp": "246.8753",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Charlie 4 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:24:46.822600",
+    "simulationTimeStamp": "247.6802",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 2",
+      "ReroutingFalseNegativeCount: 1",
+      "ReroutingTruePositiveCount: 1",
+      "ReroutingTrueNegativeCount: 11",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 3",
+      "TargetDetectionTruePositiveCount: 8",
+      "TargetDetectionTrueNegativeCount: 6",
+      "ReroutingFalsePositiveScore: -2",
+      "ReroutingFalseNegativeScore: -2",
+      "ReroutingTruePositiveScore: 2",
+      "ReroutingTrueNegativeScore: 11",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -6",
+      "TargetDetectionTruePositiveScore: 16",
+      "TargetDetectionTrueNegativeScore: 6"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:24:46.847602",
+    "simulationTimeStamp": "247.7046",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav John 6 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:24:50.255927",
+    "simulationTimeStamp": "251.1122",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 2",
+      "ReroutingFalseNegativeCount: 1",
+      "ReroutingTruePositiveCount: 1",
+      "ReroutingTrueNegativeCount: 11",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 3",
+      "TargetDetectionTruePositiveCount: 8",
+      "TargetDetectionTrueNegativeCount: 6",
+      "ReroutingFalsePositiveScore: -2",
+      "ReroutingFalseNegativeScore: -2",
+      "ReroutingTruePositiveScore: 2",
+      "ReroutingTrueNegativeScore: 11",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -6",
+      "TargetDetectionTruePositiveScore: 16",
+      "TargetDetectionTrueNegativeScore: 6"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:24:50.282925",
+    "simulationTimeStamp": "251.14",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Delta 7 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:24:50.689927",
+    "simulationTimeStamp": "251.5468",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 2",
+      "ReroutingFalseNegativeCount: 1",
+      "ReroutingTruePositiveCount: 1",
+      "ReroutingTrueNegativeCount: 11",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 3",
+      "TargetDetectionTruePositiveCount: 8",
+      "TargetDetectionTrueNegativeCount: 6",
+      "ReroutingFalsePositiveScore: -2",
+      "ReroutingFalseNegativeScore: -2",
+      "ReroutingTruePositiveScore: 2",
+      "ReroutingTrueNegativeScore: 11",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -6",
+      "TargetDetectionTruePositiveScore: 16",
+      "TargetDetectionTrueNegativeScore: 6"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:24:50.713926",
+    "simulationTimeStamp": "251.5707",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Hotel 8 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:24:51.649924",
+    "simulationTimeStamp": "252.5073",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 2",
+      "ReroutingFalseNegativeCount: 1",
+      "ReroutingTruePositiveCount: 1",
+      "ReroutingTrueNegativeCount: 11",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 3",
+      "TargetDetectionTruePositiveCount: 8",
+      "TargetDetectionTrueNegativeCount: 6",
+      "ReroutingFalsePositiveScore: -2",
+      "ReroutingFalseNegativeScore: -2",
+      "ReroutingTruePositiveScore: 2",
+      "ReroutingTrueNegativeScore: 11",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -6",
+      "TargetDetectionTruePositiveScore: 16",
+      "TargetDetectionTrueNegativeScore: 6"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:24:51.677922",
+    "simulationTimeStamp": "252.535",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Lima 2 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:24:52.599937",
+    "simulationTimeStamp": "253.4573",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 2",
+      "ReroutingFalseNegativeCount: 1",
+      "ReroutingTruePositiveCount: 1",
+      "ReroutingTrueNegativeCount: 11",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 3",
+      "TargetDetectionTruePositiveCount: 8",
+      "TargetDetectionTrueNegativeCount: 6",
+      "ReroutingFalsePositiveScore: -2",
+      "ReroutingFalseNegativeScore: -2",
+      "ReroutingTruePositiveScore: 2",
+      "ReroutingTrueNegativeScore: 11",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -6",
+      "TargetDetectionTruePositiveScore: 16",
+      "TargetDetectionTrueNegativeScore: 6"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:24:52.624923",
+    "simulationTimeStamp": "253.4818",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Oscar 6 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:24:58.203923",
+    "simulationTimeStamp": "259.0606",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 2",
+      "ReroutingFalseNegativeCount: 1",
+      "ReroutingTruePositiveCount: 1",
+      "ReroutingTrueNegativeCount: 11",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 3",
+      "TargetDetectionTruePositiveCount: 8",
+      "TargetDetectionTrueNegativeCount: 6",
+      "ReroutingFalsePositiveScore: -2",
+      "ReroutingFalseNegativeScore: -2",
+      "ReroutingTruePositiveScore: 2",
+      "ReroutingTrueNegativeScore: 11",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -6",
+      "TargetDetectionTruePositiveScore: 16",
+      "TargetDetectionTrueNegativeScore: 6"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:24:58.227922",
+    "simulationTimeStamp": "259.0853",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Frank 4 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:25:02.226923",
+    "simulationTimeStamp": "263.0836",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 2",
+      "ReroutingFalseNegativeCount: 1",
+      "ReroutingTruePositiveCount: 1",
+      "ReroutingTrueNegativeCount: 12",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 3",
+      "TargetDetectionTruePositiveCount: 8",
+      "TargetDetectionTrueNegativeCount: 7",
+      "ReroutingFalsePositiveScore: -2",
+      "ReroutingFalseNegativeScore: -2",
+      "ReroutingTruePositiveScore: 2",
+      "ReroutingTrueNegativeScore: 12",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -6",
+      "TargetDetectionTruePositiveScore: 16",
+      "TargetDetectionTrueNegativeScore: 7"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:25:02.248927",
+    "simulationTimeStamp": "263.1064",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Golf 3 condition changed to EnabledForTargetDetectionAndRerouting"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:25:06.628922",
+    "simulationTimeStamp": "267.4862",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 2",
+      "ReroutingFalseNegativeCount: 1",
+      "ReroutingTruePositiveCount: 1",
+      "ReroutingTrueNegativeCount: 13",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 3",
+      "TargetDetectionTruePositiveCount: 8",
+      "TargetDetectionTrueNegativeCount: 8",
+      "ReroutingFalsePositiveScore: -2",
+      "ReroutingFalseNegativeScore: -2",
+      "ReroutingTruePositiveScore: 2",
+      "ReroutingTrueNegativeScore: 13",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -6",
+      "TargetDetectionTruePositiveScore: 16",
+      "TargetDetectionTrueNegativeScore: 8"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:25:06.648940",
+    "simulationTimeStamp": "267.5062",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Kilo 1 condition changed to EnabledForTargetDetectionAndRerouting"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:25:06.891925",
+    "simulationTimeStamp": "267.7491",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 2",
+      "ReroutingFalseNegativeCount: 1",
+      "ReroutingTruePositiveCount: 1",
+      "ReroutingTrueNegativeCount: 13",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 3",
+      "TargetDetectionTruePositiveCount: 8",
+      "TargetDetectionTrueNegativeCount: 8",
+      "ReroutingFalsePositiveScore: -2",
+      "ReroutingFalseNegativeScore: -2",
+      "ReroutingTruePositiveScore: 2",
+      "ReroutingTrueNegativeScore: 13",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -6",
+      "TargetDetectionTruePositiveScore: 16",
+      "TargetDetectionTrueNegativeScore: 8"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:25:06.911923",
+    "simulationTimeStamp": "267.7694",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Alfa 2 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:25:07.777925",
+    "simulationTimeStamp": "268.6349",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 2",
+      "ReroutingFalseNegativeCount: 1",
+      "ReroutingTruePositiveCount: 1",
+      "ReroutingTrueNegativeCount: 13",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 3",
+      "TargetDetectionTruePositiveCount: 8",
+      "TargetDetectionTrueNegativeCount: 8",
+      "ReroutingFalsePositiveScore: -2",
+      "ReroutingFalseNegativeScore: -2",
+      "ReroutingTruePositiveScore: 2",
+      "ReroutingTrueNegativeScore: 13",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -6",
+      "TargetDetectionTruePositiveScore: 16",
+      "TargetDetectionTrueNegativeScore: 8"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:25:07.797922",
+    "simulationTimeStamp": "268.6555",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Echo 6 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:25:10.173925",
+    "simulationTimeStamp": "271.0309",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 2",
+      "ReroutingFalseNegativeCount: 1",
+      "ReroutingTruePositiveCount: 1",
+      "ReroutingTrueNegativeCount: 13",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 3",
+      "TargetDetectionTruePositiveCount: 8",
+      "TargetDetectionTrueNegativeCount: 8",
+      "ReroutingFalsePositiveScore: -2",
+      "ReroutingFalseNegativeScore: -2",
+      "ReroutingTruePositiveScore: 2",
+      "ReroutingTrueNegativeScore: 13",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -6",
+      "TargetDetectionTruePositiveScore: 16",
+      "TargetDetectionTrueNegativeScore: 8"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:25:10.193922",
+    "simulationTimeStamp": "271.0514",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Papa 6 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:25:11.515923",
+    "simulationTimeStamp": "272.373",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 2",
+      "ReroutingFalseNegativeCount: 1",
+      "ReroutingTruePositiveCount: 1",
+      "ReroutingTrueNegativeCount: 13",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 3",
+      "TargetDetectionTruePositiveCount: 8",
+      "TargetDetectionTrueNegativeCount: 8",
+      "ReroutingFalsePositiveScore: -2",
+      "ReroutingFalseNegativeScore: -2",
+      "ReroutingTruePositiveScore: 2",
+      "ReroutingTrueNegativeScore: 13",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -6",
+      "TargetDetectionTruePositiveScore: 16",
+      "TargetDetectionTrueNegativeScore: 8"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:25:11.535923",
+    "simulationTimeStamp": "272.3929",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Oscar 6 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:25:12.521924",
+    "simulationTimeStamp": "273.3792",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 2",
+      "ReroutingFalseNegativeCount: 1",
+      "ReroutingTruePositiveCount: 1",
+      "ReroutingTrueNegativeCount: 13",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 3",
+      "TargetDetectionTruePositiveCount: 8",
+      "TargetDetectionTrueNegativeCount: 8",
+      "ReroutingFalsePositiveScore: -2",
+      "ReroutingFalseNegativeScore: -2",
+      "ReroutingTruePositiveScore: 2",
+      "ReroutingTrueNegativeScore: 13",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -6",
+      "TargetDetectionTruePositiveScore: 16",
+      "TargetDetectionTrueNegativeScore: 8"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:25:12.541922",
+    "simulationTimeStamp": "273.3992",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Mike 3 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:25:13.316921",
+    "simulationTimeStamp": "274.1744",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 2",
+      "ReroutingFalseNegativeCount: 1",
+      "ReroutingTruePositiveCount: 1",
+      "ReroutingTrueNegativeCount: 13",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 3",
+      "TargetDetectionTruePositiveCount: 8",
+      "TargetDetectionTrueNegativeCount: 8",
+      "ReroutingFalsePositiveScore: -2",
+      "ReroutingFalseNegativeScore: -2",
+      "ReroutingTruePositiveScore: 2",
+      "ReroutingTrueNegativeScore: 13",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -6",
+      "TargetDetectionTruePositiveScore: 16",
+      "TargetDetectionTrueNegativeScore: 8"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:25:13.337923",
+    "simulationTimeStamp": "274.1952",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Nectar 8 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:25:13.606933",
+    "simulationTimeStamp": "274.4642",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 2",
+      "ReroutingFalseNegativeCount: 1",
+      "ReroutingTruePositiveCount: 1",
+      "ReroutingTrueNegativeCount: 13",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 3",
+      "TargetDetectionTruePositiveCount: 8",
+      "TargetDetectionTrueNegativeCount: 8",
+      "ReroutingFalsePositiveScore: -2",
+      "ReroutingFalseNegativeScore: -2",
+      "ReroutingTruePositiveScore: 2",
+      "ReroutingTrueNegativeScore: 13",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -6",
+      "TargetDetectionTruePositiveScore: 16",
+      "TargetDetectionTrueNegativeScore: 8"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:25:13.629923",
+    "simulationTimeStamp": "274.4869",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Charlie 4 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:25:15.214925",
+    "simulationTimeStamp": "276.0725",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 2",
+      "ReroutingFalseNegativeCount: 1",
+      "ReroutingTruePositiveCount: 1",
+      "ReroutingTrueNegativeCount: 13",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 3",
+      "TargetDetectionTruePositiveCount: 8",
+      "TargetDetectionTrueNegativeCount: 8",
+      "ReroutingFalsePositiveScore: -2",
+      "ReroutingFalseNegativeScore: -2",
+      "ReroutingTruePositiveScore: 2",
+      "ReroutingTrueNegativeScore: 13",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -6",
+      "TargetDetectionTruePositiveScore: 16",
+      "TargetDetectionTrueNegativeScore: 8"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:25:15.234923",
+    "simulationTimeStamp": "276.0927",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Bravo 1 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:25:17.770923",
+    "simulationTimeStamp": "278.628",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 2",
+      "ReroutingFalseNegativeCount: 1",
+      "ReroutingTruePositiveCount: 1",
+      "ReroutingTrueNegativeCount: 13",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 3",
+      "TargetDetectionTruePositiveCount: 8",
+      "TargetDetectionTrueNegativeCount: 8",
+      "ReroutingFalsePositiveScore: -2",
+      "ReroutingFalseNegativeScore: -2",
+      "ReroutingTruePositiveScore: 2",
+      "ReroutingTrueNegativeScore: 13",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -6",
+      "TargetDetectionTruePositiveScore: 16",
+      "TargetDetectionTrueNegativeScore: 8"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:25:17.792928",
+    "simulationTimeStamp": "278.6497",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Delta 7 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:25:20.141923",
+    "simulationTimeStamp": "280.9994",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 2",
+      "ReroutingFalseNegativeCount: 1",
+      "ReroutingTruePositiveCount: 1",
+      "ReroutingTrueNegativeCount: 13",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 3",
+      "TargetDetectionTruePositiveCount: 8",
+      "TargetDetectionTrueNegativeCount: 8",
+      "ReroutingFalsePositiveScore: -2",
+      "ReroutingFalseNegativeScore: -2",
+      "ReroutingTruePositiveScore: 2",
+      "ReroutingTrueNegativeScore: 13",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -6",
+      "TargetDetectionTruePositiveScore: 16",
+      "TargetDetectionTrueNegativeScore: 8"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:25:20.161923",
+    "simulationTimeStamp": "281.0196",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Lima 2 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:25:20.288925",
+    "simulationTimeStamp": "281.1458",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 2",
+      "ReroutingFalseNegativeCount: 1",
+      "ReroutingTruePositiveCount: 1",
+      "ReroutingTrueNegativeCount: 13",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 3",
+      "TargetDetectionTruePositiveCount: 8",
+      "TargetDetectionTrueNegativeCount: 8",
+      "ReroutingFalsePositiveScore: -2",
+      "ReroutingFalseNegativeScore: -2",
+      "ReroutingTruePositiveScore: 2",
+      "ReroutingTrueNegativeScore: 13",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -6",
+      "TargetDetectionTruePositiveScore: 16",
+      "TargetDetectionTrueNegativeScore: 8"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:25:20.308926",
+    "simulationTimeStamp": "281.166",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav John 6 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:25:24.043926",
+    "simulationTimeStamp": "284.901",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 2",
+      "ReroutingFalseNegativeCount: 1",
+      "ReroutingTruePositiveCount: 1",
+      "ReroutingTrueNegativeCount: 13",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 3",
+      "TargetDetectionTruePositiveCount: 8",
+      "TargetDetectionTrueNegativeCount: 8",
+      "ReroutingFalsePositiveScore: -2",
+      "ReroutingFalseNegativeScore: -2",
+      "ReroutingTruePositiveScore: 2",
+      "ReroutingTrueNegativeScore: 13",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -6",
+      "TargetDetectionTruePositiveScore: 16",
+      "TargetDetectionTrueNegativeScore: 8"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:25:24.063925",
+    "simulationTimeStamp": "284.9217",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Hotel 8 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:25:26.635922",
+    "simulationTimeStamp": "287.4931",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 2",
+      "ReroutingFalseNegativeCount: 1",
+      "ReroutingTruePositiveCount: 1",
+      "ReroutingTrueNegativeCount: 13",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 3",
+      "TargetDetectionTruePositiveCount: 8",
+      "TargetDetectionTrueNegativeCount: 8",
+      "ReroutingFalsePositiveScore: -2",
+      "ReroutingFalseNegativeScore: -2",
+      "ReroutingTruePositiveScore: 2",
+      "ReroutingTrueNegativeScore: 13",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -6",
+      "TargetDetectionTruePositiveScore: 16",
+      "TargetDetectionTrueNegativeScore: 8"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:25:26.660924",
+    "simulationTimeStamp": "287.5182",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Echo 6 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:25:27.976921",
+    "simulationTimeStamp": "288.8341",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 2",
+      "ReroutingFalseNegativeCount: 1",
+      "ReroutingTruePositiveCount: 1",
+      "ReroutingTrueNegativeCount: 13",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 3",
+      "TargetDetectionTruePositiveCount: 8",
+      "TargetDetectionTrueNegativeCount: 8",
+      "ReroutingFalsePositiveScore: -2",
+      "ReroutingFalseNegativeScore: -2",
+      "ReroutingTruePositiveScore: 2",
+      "ReroutingTrueNegativeScore: 13",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -6",
+      "TargetDetectionTruePositiveScore: 16",
+      "TargetDetectionTrueNegativeScore: 8"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:25:27.998924",
+    "simulationTimeStamp": "288.8562",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Alfa 2 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:25:30.621923",
+    "simulationTimeStamp": "291.4793",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 2",
+      "ReroutingFalseNegativeCount: 1",
+      "ReroutingTruePositiveCount: 1",
+      "ReroutingTrueNegativeCount: 14",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 3",
+      "TargetDetectionTruePositiveCount: 8",
+      "TargetDetectionTrueNegativeCount: 9",
+      "ReroutingFalsePositiveScore: -2",
+      "ReroutingFalseNegativeScore: -2",
+      "ReroutingTruePositiveScore: 2",
+      "ReroutingTrueNegativeScore: 14",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -6",
+      "TargetDetectionTruePositiveScore: 16",
+      "TargetDetectionTrueNegativeScore: 9"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:25:30.643926",
+    "simulationTimeStamp": "291.5008",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Golf 3 condition changed to EnabledForTargetDetectionAndRerouting"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:25:31.544923",
+    "simulationTimeStamp": "292.4029",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 2",
+      "ReroutingFalseNegativeCount: 1",
+      "ReroutingTruePositiveCount: 1",
+      "ReroutingTrueNegativeCount: 14",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 3",
+      "TargetDetectionTruePositiveCount: 8",
+      "TargetDetectionTrueNegativeCount: 9",
+      "ReroutingFalsePositiveScore: -2",
+      "ReroutingFalseNegativeScore: -2",
+      "ReroutingTruePositiveScore: 2",
+      "ReroutingTrueNegativeScore: 14",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -6",
+      "TargetDetectionTruePositiveScore: 16",
+      "TargetDetectionTrueNegativeScore: 9"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:25:31.566957",
+    "simulationTimeStamp": "292.4247",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Frank 4 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:25:34.597596",
+    "simulationTimeStamp": "295.4545",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 2",
+      "ReroutingFalseNegativeCount: 1",
+      "ReroutingTruePositiveCount: 1",
+      "ReroutingTrueNegativeCount: 14",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 3",
+      "TargetDetectionTruePositiveCount: 8",
+      "TargetDetectionTrueNegativeCount: 9",
+      "ReroutingFalsePositiveScore: -2",
+      "ReroutingFalseNegativeScore: -2",
+      "ReroutingTruePositiveScore: 2",
+      "ReroutingTrueNegativeScore: 14",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -6",
+      "TargetDetectionTruePositiveScore: 16",
+      "TargetDetectionTrueNegativeScore: 9"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:25:34.634596",
+    "simulationTimeStamp": "295.4911",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Nectar 8 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:25:35.448597",
+    "simulationTimeStamp": "296.305",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 2",
+      "ReroutingFalseNegativeCount: 1",
+      "ReroutingTruePositiveCount: 1",
+      "ReroutingTrueNegativeCount: 14",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 3",
+      "TargetDetectionTruePositiveCount: 8",
+      "TargetDetectionTrueNegativeCount: 9",
+      "ReroutingFalsePositiveScore: -2",
+      "ReroutingFalseNegativeScore: -2",
+      "ReroutingTruePositiveScore: 2",
+      "ReroutingTrueNegativeScore: 14",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -6",
+      "TargetDetectionTruePositiveScore: 16",
+      "TargetDetectionTrueNegativeScore: 9"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:25:35.484596",
+    "simulationTimeStamp": "296.341",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav John 6 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:25:38.302714",
+    "simulationTimeStamp": "299.1603",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 2",
+      "ReroutingFalseNegativeCount: 1",
+      "ReroutingTruePositiveCount: 1",
+      "ReroutingTrueNegativeCount: 14",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 3",
+      "TargetDetectionTruePositiveCount: 8",
+      "TargetDetectionTrueNegativeCount: 9",
+      "ReroutingFalsePositiveScore: -2",
+      "ReroutingFalseNegativeScore: -2",
+      "ReroutingTruePositiveScore: 2",
+      "ReroutingTrueNegativeScore: 14",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -6",
+      "TargetDetectionTruePositiveScore: 16",
+      "TargetDetectionTrueNegativeScore: 9"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:25:38.331714",
+    "simulationTimeStamp": "299.1889",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Oscar 6 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:25:40.037764",
+    "simulationTimeStamp": "300.8949",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 2",
+      "ReroutingFalseNegativeCount: 1",
+      "ReroutingTruePositiveCount: 1",
+      "ReroutingTrueNegativeCount: 15",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 3",
+      "TargetDetectionTruePositiveCount: 8",
+      "TargetDetectionTrueNegativeCount: 10",
+      "ReroutingFalsePositiveScore: -2",
+      "ReroutingFalseNegativeScore: -2",
+      "ReroutingTruePositiveScore: 2",
+      "ReroutingTrueNegativeScore: 15",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -6",
+      "TargetDetectionTruePositiveScore: 16",
+      "TargetDetectionTrueNegativeScore: 10"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:25:40.068768",
+    "simulationTimeStamp": "300.9252",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Kilo 1 condition changed to EnabledForTargetDetectionAndRerouting"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:25:42.348766",
+    "simulationTimeStamp": "303.2062",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 2",
+      "ReroutingFalseNegativeCount: 1",
+      "ReroutingTruePositiveCount: 1",
+      "ReroutingTrueNegativeCount: 15",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 3",
+      "TargetDetectionTruePositiveCount: 8",
+      "TargetDetectionTrueNegativeCount: 10",
+      "ReroutingFalsePositiveScore: -2",
+      "ReroutingFalseNegativeScore: -2",
+      "ReroutingTruePositiveScore: 2",
+      "ReroutingTrueNegativeScore: 15",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -6",
+      "TargetDetectionTruePositiveScore: 16",
+      "TargetDetectionTrueNegativeScore: 10"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:25:42.378767",
+    "simulationTimeStamp": "303.2356",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Mike 3 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:25:42.709764",
+    "simulationTimeStamp": "303.5669",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 2",
+      "ReroutingFalseNegativeCount: 1",
+      "ReroutingTruePositiveCount: 1",
+      "ReroutingTrueNegativeCount: 15",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 3",
+      "TargetDetectionTruePositiveCount: 8",
+      "TargetDetectionTrueNegativeCount: 10",
+      "ReroutingFalsePositiveScore: -2",
+      "ReroutingFalseNegativeScore: -2",
+      "ReroutingTruePositiveScore: 2",
+      "ReroutingTrueNegativeScore: 15",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -6",
+      "TargetDetectionTruePositiveScore: 16",
+      "TargetDetectionTrueNegativeScore: 10"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:25:42.735765",
+    "simulationTimeStamp": "303.5923",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Bravo 1 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:25:43.621555",
+    "simulationTimeStamp": "304.4788",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 2",
+      "ReroutingFalseNegativeCount: 1",
+      "ReroutingTruePositiveCount: 1",
+      "ReroutingTrueNegativeCount: 15",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 3",
+      "TargetDetectionTruePositiveCount: 8",
+      "TargetDetectionTrueNegativeCount: 10",
+      "ReroutingFalsePositiveScore: -2",
+      "ReroutingFalseNegativeScore: -2",
+      "ReroutingTruePositiveScore: 2",
+      "ReroutingTrueNegativeScore: 15",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -6",
+      "TargetDetectionTruePositiveScore: 16",
+      "TargetDetectionTrueNegativeScore: 10"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:25:43.651557",
+    "simulationTimeStamp": "304.5089",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Papa 6 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:25:45.261550",
+    "simulationTimeStamp": "306.1184",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 2",
+      "ReroutingFalseNegativeCount: 1",
+      "ReroutingTruePositiveCount: 1",
+      "ReroutingTrueNegativeCount: 15",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 3",
+      "TargetDetectionTruePositiveCount: 8",
+      "TargetDetectionTrueNegativeCount: 10",
+      "ReroutingFalsePositiveScore: -2",
+      "ReroutingFalseNegativeScore: -2",
+      "ReroutingTruePositiveScore: 2",
+      "ReroutingTrueNegativeScore: 15",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -6",
+      "TargetDetectionTruePositiveScore: 16",
+      "TargetDetectionTrueNegativeScore: 10"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:25:45.287553",
+    "simulationTimeStamp": "306.1443",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Delta 7 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:25:46.956467",
+    "simulationTimeStamp": "307.8136",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 2",
+      "ReroutingFalseNegativeCount: 1",
+      "ReroutingTruePositiveCount: 1",
+      "ReroutingTrueNegativeCount: 15",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 3",
+      "TargetDetectionTruePositiveCount: 8",
+      "TargetDetectionTrueNegativeCount: 10",
+      "ReroutingFalsePositiveScore: -2",
+      "ReroutingFalseNegativeScore: -2",
+      "ReroutingTruePositiveScore: 2",
+      "ReroutingTrueNegativeScore: 15",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -6",
+      "TargetDetectionTruePositiveScore: 16",
+      "TargetDetectionTrueNegativeScore: 10"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:25:46.978464",
+    "simulationTimeStamp": "307.8361",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Charlie 4 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:25:47.200500",
+    "simulationTimeStamp": "308.0575",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 2",
+      "ReroutingFalseNegativeCount: 1",
+      "ReroutingTruePositiveCount: 1",
+      "ReroutingTrueNegativeCount: 15",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 3",
+      "TargetDetectionTruePositiveCount: 8",
+      "TargetDetectionTrueNegativeCount: 10",
+      "ReroutingFalsePositiveScore: -2",
+      "ReroutingFalseNegativeScore: -2",
+      "ReroutingTruePositiveScore: 2",
+      "ReroutingTrueNegativeScore: 15",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -6",
+      "TargetDetectionTruePositiveScore: 16",
+      "TargetDetectionTrueNegativeScore: 10"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:25:47.222510",
+    "simulationTimeStamp": "308.0794",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Lima 2 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:25:51.562473",
+    "simulationTimeStamp": "312.4199",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 2",
+      "ReroutingFalseNegativeCount: 1",
+      "ReroutingTruePositiveCount: 1",
+      "ReroutingTrueNegativeCount: 15",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 3",
+      "TargetDetectionTruePositiveCount: 8",
+      "TargetDetectionTrueNegativeCount: 10",
+      "ReroutingFalsePositiveScore: -2",
+      "ReroutingFalseNegativeScore: -2",
+      "ReroutingTruePositiveScore: 2",
+      "ReroutingTrueNegativeScore: 15",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -6",
+      "TargetDetectionTruePositiveScore: 16",
+      "TargetDetectionTrueNegativeScore: 10"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:25:51.583482",
+    "simulationTimeStamp": "312.4403",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Hotel 8 condition changed to Hidden"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:25:54.676471",
+    "simulationTimeStamp": "315.5332",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 2",
+      "ReroutingFalseNegativeCount: 1",
+      "ReroutingTruePositiveCount: 1",
+      "ReroutingTrueNegativeCount: 16",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 4",
+      "TargetDetectionTruePositiveCount: 8",
+      "TargetDetectionTrueNegativeCount: 10",
+      "ReroutingFalsePositiveScore: -2",
+      "ReroutingFalseNegativeScore: -2",
+      "ReroutingTruePositiveScore: 2",
+      "ReroutingTrueNegativeScore: 16",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -8",
+      "TargetDetectionTruePositiveScore: 16",
+      "TargetDetectionTrueNegativeScore: 10"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:25:54.696479",
+    "simulationTimeStamp": "315.5532",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Golf 3 condition changed to EnabledForTargetDetectionAndRerouting"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:25:55.485473",
+    "simulationTimeStamp": "316.343",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logMessages": [
+      "ReroutingFalsePositiveCount: 2",
+      "ReroutingFalseNegativeCount: 1",
+      "ReroutingTruePositiveCount: 1",
+      "ReroutingTrueNegativeCount: 16",
+      "TargetDetectionFalsePositiveCount: 0",
+      "TargetDetectionFalseNegativeCount: 4",
+      "TargetDetectionTruePositiveCount: 8",
+      "TargetDetectionTrueNegativeCount: 10",
+      "ReroutingFalsePositiveScore: -2",
+      "ReroutingFalseNegativeScore: -2",
+      "ReroutingTruePositiveScore: 2",
+      "ReroutingTrueNegativeScore: 16",
+      "TargetDetectionFalsePositiveScore: 0",
+      "TargetDetectionFalseNegativeScore: -8",
+      "TargetDetectionTruePositiveScore: 16",
+      "TargetDetectionTrueNegativeScore: 10"
+    ]
+  },
+  {
+    "timestamp": "03/12/2023 21:25:55.506473",
+    "simulationTimeStamp": "316.3635",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logMessages": [
+      "Uav Alfa 2 condition changed to Hidden"
+    ]
+  }
+]

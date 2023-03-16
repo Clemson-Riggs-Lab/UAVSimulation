@@ -4,6 +4,7 @@ using HelperScripts;
 using Modules.Navigation;
 using Modules.Navigation.Channels.ScriptableObjects;
 using Modules.Navigation.Submodules.Rerouting;
+using Modules.Navigation.Submodules.Rerouting.Settings.ScriptableObjects;
 using UAVs;
 using UAVs.Channels.ScriptableObjects;
 using UI.ReroutingPanel.Settings.ScriptableObjects;
@@ -16,6 +17,7 @@ namespace UI.ReroutingPanel
 	public class ReroutingPanelsContainerController:MonoBehaviour
 	{
 		private ReroutingPanelSettingsSO _reroutingPanelSettings;
+		private ReroutingSettingsSO _reroutingSettings;
 		private ReroutingManager _reroutingManager;
 		private UavConditionEventChannelSO _uavConditionChangedEventChannel;
 		private UavEventChannelSO _reroutingOptionsRequestedChannel;
@@ -28,7 +30,9 @@ namespace UI.ReroutingPanel
 
 		private void Start()
 		{
+
 			GetReferencesFromGameManager();
+
 			SubscribeToChannels();
 			ClearPanels();
 			SetGridDimensions();
@@ -65,10 +69,12 @@ namespace UI.ReroutingPanel
 			
 			var closePanel = condition switch
 			{
-				Enabled => false,
+				
 				Hidden => _reroutingPanelSettings.closePanelsForHiddenUavs,
-				Finished => _reroutingPanelSettings.closePanelsForFinishedUavs,
 				Lost => _reroutingPanelSettings.closePanelsForLostUavs,
+				EnabledForReroutingOnly => false,
+				EnabledForTargetDetectionOnly => _reroutingPanelSettings.closePanelsForHiddenUavs,
+				EnabledForTargetDetectionAndRerouting => false,
 				_ => throw new ArgumentOutOfRangeException(nameof(condition), condition, null)
 			};
 			
@@ -101,6 +107,7 @@ namespace UI.ReroutingPanel
 		{
 			_reroutingManager = GameManager.Instance.reroutingManager;
 			_reroutingPanelSettings = GameManager.Instance.settingsDatabase.reroutingPanelSettings;
+			_reroutingSettings = GameManager.Instance.settingsDatabase.reroutingSettings;
 			_panelPrefab = GameManager.Instance.prefabsDatabase.reroutingPrefabsDatabase.reroutingOptionsPanelPrefab;
 			_uavDestroyedEventChannel = GameManager.Instance.channelsDatabase.uavChannels.uavDestroyedEventChannel;
 			_uavConditionChangedEventChannel = GameManager.Instance.channelsDatabase.uavChannels.uavConditionChangedEventChannel;

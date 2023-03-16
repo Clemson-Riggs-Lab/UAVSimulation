@@ -1,12 +1,7 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using HelperScripts;
-using IOHandlers;
-using Unity.VisualScripting;
 using UnityEngine;
+using WayPoints;
 
-namespace WayPoints
+namespace Modules.WayPoints
 {
     public class WayPointsGenerator:MonoBehaviour
     {
@@ -25,17 +20,34 @@ namespace WayPoints
             _terrainContainer = GameManager.Instance.terrainContainer;
             _wayPointPrefab = GameManager.Instance.prefabsDatabase.waypointPrefab;
         }
-        
 
-        public void GenerateWayPointsFromRecords(List<WayPointRecord> wayPointsRecords)
+        
+        public void GenerateWayPointsOverGrid(int heightFromTerrain, int numberOfWaypoints)
         {
-            HandleNullValues(wayPointsRecords);
-            foreach (var wayPointRecord in wayPointsRecords)
+            var terrain = _terrainContainer.GetComponentInChildren<Terrain>();
+
+            // Get the size of the terrain
+            float terrainWidth = terrain.terrainData.size.x;
+            float terrainLength = terrain.terrainData.size.z;
+
+            // Calculate the distance between waypoints based on the number of waypoints and the terrain size
+            float distanceBetweenWaypoints = Mathf.Sqrt((terrainWidth * terrainLength) / numberOfWaypoints);
+
+            // Generate the waypoints uniformly distributed around the grid
+            for (int i = 0; i < numberOfWaypoints; i++)
             {
-                var position = new Vector3(wayPointRecord.Position.X??=0, wayPointRecord.Position.Y??=0,wayPointRecord.Position.Z??=0);
-                GenerateWayPoint(wayPointRecord.Id??=0,position);
+                // Calculate the x and z coordinates of the current waypoint
+                float x = (i % Mathf.RoundToInt(terrainWidth / distanceBetweenWaypoints)) * distanceBetweenWaypoints+ distanceBetweenWaypoints/2;
+                float z = Mathf.FloorToInt(i / (terrainLength / distanceBetweenWaypoints)) * distanceBetweenWaypoints + distanceBetweenWaypoints/2;
+
+                // Get the height of the terrain at the current waypoint position
+                float y = terrain.SampleHeight(new Vector3(x, 0, z));
+
+                // Generate the waypoint at the calculated position
+                GenerateWayPoint(i, new Vector3(x, y + heightFromTerrain, z));
             }
         }
+        
         private void GenerateWayPoint(int id,Vector3 position)
         {
             var  wayPointGameObject = Instantiate(_wayPointPrefab,  _wayPointsContainer.transform);
@@ -43,23 +55,6 @@ namespace WayPoints
             var wayPoint= wayPointGameObject.GetComponent<WayPoint>();
             wayPoint.Initialize(id,position);
             wayPoint.id = id;
-        }
-        
-        
-        private void HandleNullValues(List<WayPointRecord> wayPointsRecords)
-        {
-            //if any wayPoint has a null id, we need to assign it a new id.
-            //we get the highest id in the list through linq, if it is null (no ids in the list, we set the max id to 0)
-            var maxId = wayPointsRecords.Max(x => x.Id) ?? 0;
-            //we assign a new id to each wayPoint that has a null id
-            //aslo we check if position y is null, if it is, we set it to 0
-            foreach (var wayPointRecord in wayPointsRecords)
-            {
-                wayPointRecord.Id ??= maxId + 1;
-                wayPointRecord.Position.Y ??= 0;
-            }
-            //todo handle null values in positions x,z (this should not occur, so we should throw an error and a popup that states what the error is)
-            
         }
 
 

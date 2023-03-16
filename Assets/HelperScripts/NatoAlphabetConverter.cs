@@ -7,11 +7,11 @@ namespace HelperScripts
 	{
 		static Dictionary<char, string> _dDict = new Dictionary<char, string>()
 		{
-			{ 'a', "Alfa" }, { 'b', "Bravo" }, { 'c', "Charlie" },
-			{ 'd', "Delta" }, { 'e', "Echo" }, { 'f', "Frank" },
+			{ 'a', "Alpha" }, { 'b', "Bravo" }, { 'c', "Charlie" },
+			{ 'd', "Delta" }, { 'e', "Echo" }, { 'f', "Fox" },
 			{ 'g', "Golf" }, { 'h', "Hotel" }, { 'i', "India" },
-			{ 'j', "John" }, { 'k', "Kilo" }, { 'l', "Lima" },
-			{ 'm', "Mike" }, { 'n', "Nectar" }, { 'o', "Oscar" },
+			{ 'j', "Juliet" }, { 'k', "Kilo" }, { 'l', "Lima" },
+			{ 'm', "Mike" }, { 'n', "Nov" }, { 'o', "Oscar" },
 			{ 'p', "Papa" }, { 'q', "Quebec" }, { 'r', "Romeo" },
 			{ 's', "Sierra" }, { 't', "Tango" }, { 'u', "Uniform" },
 			{ 'v', "Victor" }, { 'w', "Whiskey" }, { 'x', "X-Ray" },

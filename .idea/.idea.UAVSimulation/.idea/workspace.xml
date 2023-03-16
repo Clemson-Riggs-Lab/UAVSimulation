@@ -206,11 +206,19 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+  <component name="RunManager" selected="Standalone Player.Standalone Player">
     <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="$PROJECT_DIR$/Builds\UAVSimulation.exe" />
+      <option name="EXE_PATH" value="$PROJECT_DIR$/Builds/V2.0 Workload and Primary-Secondary Task Study\UAVSimulation.exe" />
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="C:\Users\abdel\OneDrive - University of Virginia\UVA\Research\UAV\UAVSimulation\Builds" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2021.3.4f1\Editor\Unity.exe" />
+      <option name="PROGRAM_PARAMETERS" value="-projectPath &quot;C:\Users\abdel\OneDrive - University of Virginia\UVA\Research\UAV\UAVSimulation&quot; -debugCodeOptimization" />
+      <option name="WORKING_DIRECTORY" value="C:\Users\abdel\OneDrive - University of Virginia\UVA\Research\UAV\UAVSimulation" />
       <option name="PASS_PARENT_ENVS" value="1" />
       <option name="USE_EXTERNAL_CONSOLE" value="0" />
       <method v="2" />

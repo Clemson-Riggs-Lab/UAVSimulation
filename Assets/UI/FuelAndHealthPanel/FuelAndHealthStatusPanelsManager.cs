@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Modules.FuelAndHealth.Channels.ScriptableObjects;
@@ -37,14 +38,17 @@ namespace UI.FuelAndHealthPanel
             if (AppNetPortal.Instance.IsMultiplayerMode())	  
 				GameplayNetworkCallsHandler.Instance.FixLeak_NetworkEventHandler += OnFixLeakNetworkEventHandler;
 
-            FixUavNameTextSize();
+            StartCoroutine(FixUavNameTextSizeCoroutine());
 		}
 
-		private void FixUavNameTextSize()
+		private IEnumerator FixUavNameTextSizeCoroutine()
 		{
+			yield return new WaitForSeconds(1) ;
 			var minimumTextSize = _uavToPanelController.Values.Min(panelController => panelController.idText.fontSize);
 			foreach (var panelController in _uavToPanelController.Values)
 			{
+				//remove auto font size first
+				panelController.idText.fontSizeMin = panelController.idText.fontSizeMax = minimumTextSize;
 				panelController.idText.fontSize = minimumTextSize;
 			}
 		}

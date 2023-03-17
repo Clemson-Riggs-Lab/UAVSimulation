@@ -64,6 +64,8 @@ namespace Modules.NoFlyZone
 			
 			if (nfzRecord.NFZCountdownTimer > 0) //checking if timer till start of NFZ is set
 			{
+				//set layer to default
+				cube.layer = 0;
 				cube.GetComponent<BoxCollider>().enabled = false; // disabling collider since the NFZ is not active yet
 				StartCoroutine(EnableCollider(nfzRecord)); //enabling collider after the timer is over
 			}
@@ -89,6 +91,7 @@ namespace Modules.NoFlyZone
 		{
 			yield return new WaitForSeconds(nfzRecord.NFZCountdownTimer);
 			cube.GetComponent<BoxCollider>().enabled = true;
+			cube.layer = LayerMask.NameToLayer("NFZ");
 			textMeshPro.text = nfzRecord.TextOnNFZAfterCountdown;
 		}
 

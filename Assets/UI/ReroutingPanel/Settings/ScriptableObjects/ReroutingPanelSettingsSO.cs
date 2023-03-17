@@ -38,7 +38,5 @@ namespace UI.ReroutingPanel.Settings.ScriptableObjects
 	    [JsonConverter(typeof(StringEnumConverter))]
 	    public NewPanelPosition newPanelPosition=NewPanelPosition.PlaceAtTheBeginning;
 
-
-	    public bool ButtonsColorLikeUav=true;
     }
 }

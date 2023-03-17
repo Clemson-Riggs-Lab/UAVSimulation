@@ -5,11 +5,50 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2a31bee8-77bd-4176-b786-4bd852df0b13" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-03-16 08-14-49.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-03-16 08-14-49.json.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-03-16 08-15-40.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-03-16 08-15-40.json.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UI/FuelAndHealthPanel/Prefabs/fuelAndHealthPanelPrefab.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/FuelAndHealthPanel/Prefabs/fuelAndHealthPanelPrefab.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-03-16 08-30-03.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-03-16 08-30-03.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-03-16 08-34-28.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-03-16 08-34-28.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-03-16 10-27-40.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-03-16 10-27-40.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-03-16 10-29-50.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-03-16 10-29-50.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-03-16 11-20-37.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-03-16 11-20-37.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-03-16 15-44-44.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-03-16 15-44-44.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-03-16 15-54-08.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-03-16 15-54-08.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-03-16 15-58-54.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-03-16 15-58-54.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-03-16 16-03-25.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-03-16 16-03-25.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-03-16 16-05-49.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-03-16 16-05-49.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-03-16 16-08-55.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-03-16 16-08-55.json.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.UAVSimulation/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UAVSimulation/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameManager/Databases/InputRecordsDatabase.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameManager/Databases/InputRecordsDatabase.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameManager/Databases/SettingsDatabase.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameManager/Databases/SettingsDatabase.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Modules/Fuel/Settings/FueSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Fuel/Settings/FueSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Modules/Navigation/Settings/NavigationSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Navigation/Settings/NavigationSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Modules/Navigation/Submodules/Rerouting/ReroutingManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Navigation/Submodules/Rerouting/ReroutingManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Modules/Navigation/Submodules/Rerouting/Settings/ReroutingSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Navigation/Submodules/Rerouting/Settings/ReroutingSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Modules/NoFlyZone/NFZController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/NoFlyZone/NFZController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Modules/NoFlyZone/Settings/NFZSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/NoFlyZone/Settings/NFZSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Modules/Prompts/Settings/PromptSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Prompts/Settings/PromptSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Modules/TargetDetection/Settings/TargetDetectionSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/TargetDetection/Settings/TargetDetectionSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Modules/WayPoints/Settings/WaypointSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/WayPoints/Settings/WaypointSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SimulationScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SimulationScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UAVs/Settings/UavSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UAVs/Settings/UavSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UI/FuelAndHealthPanel/Settings/FuelAndHealthPanelSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/FuelAndHealthPanel/Settings/FuelAndHealthPanelSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UI/Paths Rendering/Settings/Path Rendering Settings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/Paths Rendering/Settings/Path Rendering Settings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UI/ReroutingPanel/ReroutingButtonsContainerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/ReroutingPanel/ReroutingButtonsContainerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UI/ReroutingPanel/Settings/ReroutingPanelSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/ReroutingPanel/Settings/ReroutingPanelSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UI/ReroutingPanel/Settings/ScriptableObjects/ReroutingPanelSettingsSO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/ReroutingPanel/Settings/ScriptableObjects/ReroutingPanelSettingsSO.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UI/UavCameraAndTargetDetectionPanel/Settings/UavCameraAndTargetDetectionSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/UavCameraAndTargetDetectionPanel/Settings/UavCameraAndTargetDetectionSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,11 +158,15 @@
     <setting file="file://$PROJECT_DIR$/Assets/UI/Paths Rendering/PathRenderer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/UI/ReroutingPanel/ReroutingButtonsContainerController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/UI/UavCameraAndTargetDetectionPanel/UavCameraAndTargetDetectionPanelController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.burst@1.6.6/Tests/Runtime/Shared/TestSystemGuid.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.netcode.gameobjects@1.0.2/Runtime/SceneManagement/SceneEventProgress.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.services.relay@1.0.4/Samples~/InteractiveRelayUtp/RelayAllocUtp.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.terrain-tools@4.0.3/Shaders/NoiseLib/Implementation/RidgeImpl.hlsl" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.test-framework@1.1.31/UnityEditor.TestRunner/TestRun/TestJobData.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.test-framework@1.1.31/UnityEngine.TestRunner/NUnitExtensions/Attributes/UnityTestAttribute.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.textmeshpro@3.0.6/Scripts/Editor/TMP_BaseEditorPanel.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.textmeshpro@3.0.6/Scripts/Editor/TMP_GlyphPairAdjustmentRecordPropertyDrawer.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.textmeshpro@3.0.6/Scripts/Editor/TMPro_CreateObjectMenu.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.textmeshpro@3.0.6/Scripts/Runtime/TMP_InputField.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.textmeshpro@3.0.6/Scripts/Runtime/TMP_Text.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.textmeshpro@3.0.6/Scripts/Runtime/TMPro_UGUI_Private.cs" root0="SKIP_HIGHLIGHTING" />
@@ -215,9 +258,9 @@
     ]
   }
 }]]></component>
-  <component name="RunManager" selected="Standalone Player.Standalone Player">
+  <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="$PROJECT_DIR$/Builds/V2.0 Workload and Primary-Secondary Task Study\UAVSimulation.exe" />
+      <option name="EXE_PATH" value="$PROJECT_DIR$/Builds/v1.9 Networked\UAVSimulation.exe" />
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="C:\Users\abdel\OneDrive - University of Virginia\UVA\Research\UAV\UAVSimulation\Builds" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -250,10 +293,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="8784">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="8784" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -327,7 +370,7 @@
       <workItem from="1668903554455" duration="1241000" />
       <workItem from="1668905176678" duration="867000" />
       <workItem from="1669334955392" duration="33000" />
-      <workItem from="1678968799240" duration="408000" />
+      <workItem from="1678968799240" duration="4592000" />
     </task>
     <servers />
   </component>
@@ -449,6 +492,19 @@
             </endOffsets>
           </properties>
           <option name="timeStamp" value="31" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Modules/Navigation/Submodules/Rerouting/ReroutingManager.cs</url>
+          <line>84</line>
+          <properties documentPath="C:\Users\abdel\OneDrive - University of Virginia\UVA\Research\UAV\UAVSimulation\Assets\Modules\Navigation\Submodules\Rerouting\ReroutingManager.cs" initialLine="84" containingFunctionPresentation="method 'PopulateReroutingOptions'">
+            <startOffsets>
+              <option value="3720" />
+            </startOffsets>
+            <endOffsets>
+              <option value="3793" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="32" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

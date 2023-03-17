@@ -9,6 +9,7 @@ using UAVs.Channels.ScriptableObjects;
 using UI.ReroutingPanel;
 using UI.ReroutingPanel.Settings.ScriptableObjects;
 using UnityEngine;
+using Random = System.Random;
 
 namespace Modules.Navigation.Submodules.Rerouting
 {
@@ -76,16 +77,15 @@ namespace Modules.Navigation.Submodules.Rerouting
             }
             else //shuffle randomly
             {
-                _lastReroutOptLsOrderBase = Guid.NewGuid();
-                possiblePathsWithNFZ = possiblePathsWithNFZ.OrderBy(p => _lastReroutOptLsOrderBase).ToList();
-                possiblePathsWithNoNFZ = possiblePathsWithNoNFZ.OrderBy(p => _lastReroutOptLsOrderBase).ToList();
+                var rand = new Random();
+                possiblePathsWithNFZ = possiblePathsWithNFZ.OrderBy(p => rand.Next()).ToList();
+                possiblePathsWithNoNFZ = possiblePathsWithNoNFZ.OrderBy(p => rand.Next()).ToList();
             }
 
             AddInReroutingOptions(uav, possiblePathsWithNFZ, possiblePathsWithNoNFZ);
-
-            //shuffle the list of rerouting options
-            _lastReroutOptLsOrderBase = Guid.NewGuid();
-            reroutingOptions[uav] = reroutingOptions[uav].OrderBy(x => _lastReroutOptLsOrderBase).ToList();
+            
+            var random = new Random();
+            reroutingOptions[uav] =  reroutingOptions[uav].OrderBy(x => random.Next()).ToList();
 
             if (AppNetPortal.Instance.IsMultiplayerMode())
             {

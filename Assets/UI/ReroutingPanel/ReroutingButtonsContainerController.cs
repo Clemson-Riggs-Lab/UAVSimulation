@@ -27,6 +27,7 @@ namespace UI.ReroutingPanel
 		private UavEventChannelSO _reroutingOptionsRequestedChannel;
 		private Dictionary<Uav, Button> _uavsToButtonsDictionary = new();
 		private UavsManager _uavsManager;
+		private bool ButtonsColorLikeUav = true;
 
         private void OnDisable()
         {
@@ -132,7 +133,7 @@ namespace UI.ReroutingPanel
 			button.name = "UAV "+uav.uavName+ "Reroute Options Request Button";
 			button.GetComponent<Button>().onClick.AddListener(() => { OnClickButton(uav); } );
 			
-			if(_reroutingPanelSettings.ButtonsColorLikeUav)
+			if(ButtonsColorLikeUav)
 				button.GetComponent<Image>().color = uav.uavColor;
 			
 			_uavsToButtonsDictionary[uav]= button.GetComponent<Button>();

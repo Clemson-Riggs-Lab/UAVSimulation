@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -31,6 +33,7 @@ namespace HelperScripts
 	
 		public bool fitX;
 		public bool fitY;
+		public bool ignoreZeroScaleObjects;
 
 		public bool nudgeLastItemsOver;
 
@@ -38,6 +41,11 @@ namespace HelperScripts
 			base.CalculateLayoutInputHorizontal();
 			float sqrRt;
 			var childCount = transform.childCount;
+			if (ignoreZeroScaleObjects)
+			{
+				var activeChildren= rectChildren.Count(t => t.gameObject.transform.localScale.x > 0);
+				childCount = activeChildren;
+			}
 			switch (fitType) {
 				case FitType.Uniform:
 				default:

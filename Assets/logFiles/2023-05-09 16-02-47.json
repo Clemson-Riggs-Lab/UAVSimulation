@@ -1,0 +1,174 @@
+[
+  {
+    "timestamp": "05/09/2023 16:02:47.828846",
+    "simulationTimeStamp": "27.12078",
+    "logType": "Score",
+    "eventType": "Scoring Criteria",
+    "logData": {
+      "ReroutingScores": {
+        "FalsePositive": -1.0,
+        "FalseNegative": -2.0,
+        "TruePositive": 2.0,
+        "TrueNegative": 1.0,
+        "TruePositiveWithAITruePositive": 0.0,
+        "TruePositiveDespiteAIFalseNegative": 0.0,
+        "TrueNegativeWithAITrueNegative": 0.0,
+        "TrueNegativeDespiteAIFalsePositive": 0.0,
+        "FalsePositiveDueToAIFalsePositive": 0.0,
+        "FalsePositiveDespiteAITrueNegative": 0.0,
+        "FalseNegativeDespiteAITruePositive": 0.0,
+        "FalseNegativeDueToAIFalseNegative": 0.0
+      },
+      "TargetDetectionScores": {
+        "FalsePositive": -1.0,
+        "FalseNegative": -2.0,
+        "TruePositive": 2.0,
+        "TrueNegative": 1.0
+      }
+    }
+  },
+  {
+    "timestamp": "05/09/2023 16:02:57.632248",
+    "simulationTimeStamp": "36.96949",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logData": {
+      "message": "Uav Alfa 3 condition changed to EnabledForReroutingOnly"
+    }
+  },
+  {
+    "timestamp": "05/09/2023 16:02:57.636253",
+    "simulationTimeStamp": "36.96949",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logData": {
+      "message": "Uav Bravo 5 condition changed to EnabledForReroutingOnly"
+    }
+  },
+  {
+    "timestamp": "05/09/2023 16:02:57.638253",
+    "simulationTimeStamp": "36.96949",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logData": {
+      "message": "Uav Charlie 6 condition changed to EnabledForTargetDetectionOnly"
+    }
+  },
+  {
+    "timestamp": "05/09/2023 16:02:57.638253",
+    "simulationTimeStamp": "36.96949",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logData": {
+      "message": "Uav Delta 8 condition changed to EnabledForReroutingOnly"
+    }
+  },
+  {
+    "timestamp": "05/09/2023 16:02:57.639253",
+    "simulationTimeStamp": "36.96949",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logData": {
+      "message": "Uav Echo 7 condition changed to EnabledForReroutingOnly"
+    }
+  },
+  {
+    "timestamp": "05/09/2023 16:02:57.639253",
+    "simulationTimeStamp": "36.96949",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logData": {
+      "message": "Uav Frank 3 condition changed to EnabledForTargetDetectionOnly"
+    }
+  },
+  {
+    "timestamp": "05/09/2023 16:02:57.639253",
+    "simulationTimeStamp": "36.96949",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logData": {
+      "message": "Uav Golf 2 condition changed to EnabledForTargetDetectionOnly"
+    }
+  },
+  {
+    "timestamp": "05/09/2023 16:02:57.639253",
+    "simulationTimeStamp": "36.96949",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logData": {
+      "message": "Uav Hotel 6 condition changed to EnabledForReroutingOnly"
+    }
+  },
+  {
+    "timestamp": "05/09/2023 16:02:57.639253",
+    "simulationTimeStamp": "36.96949",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logData": {
+      "message": "Uav India 7 condition changed to EnabledForTargetDetectionOnly"
+    }
+  },
+  {
+    "timestamp": "05/09/2023 16:02:57.640253",
+    "simulationTimeStamp": "36.96949",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logData": {
+      "message": "Uav John 8 condition changed to EnabledForReroutingOnly"
+    }
+  },
+  {
+    "timestamp": "05/09/2023 16:02:57.640253",
+    "simulationTimeStamp": "36.96949",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logData": {
+      "message": "Uav Kilo 2 condition changed to EnabledForReroutingOnly"
+    }
+  },
+  {
+    "timestamp": "05/09/2023 16:02:57.640253",
+    "simulationTimeStamp": "36.96949",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logData": {
+      "message": "Uav Lima 1 condition changed to EnabledForTargetDetectionOnly"
+    }
+  },
+  {
+    "timestamp": "05/09/2023 16:02:57.640253",
+    "simulationTimeStamp": "36.96949",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logData": {
+      "message": "Uav Mike 2 condition changed to EnabledForTargetDetectionOnly"
+    }
+  },
+  {
+    "timestamp": "05/09/2023 16:02:57.640758",
+    "simulationTimeStamp": "36.96949",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logData": {
+      "message": "Uav Nectar 3 condition changed to EnabledForTargetDetectionOnly"
+    }
+  },
+  {
+    "timestamp": "05/09/2023 16:02:57.640758",
+    "simulationTimeStamp": "36.96949",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logData": {
+      "message": "Uav Oscar 5 condition changed to EnabledForTargetDetectionOnly"
+    }
+  },
+  {
+    "timestamp": "05/09/2023 16:02:57.640758",
+    "simulationTimeStamp": "36.96949",
+    "logType": "Uav",
+    "eventType": "ConditionChanged",
+    "logData": {
+      "message": "Uav Papa 2 condition changed to EnabledForReroutingOnly"
+    }
+  }
+]

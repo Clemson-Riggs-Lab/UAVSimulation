@@ -12,11 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f7b04ff4e0ab824f86c2c64a4e449d1, type: 3}
   m_Name: NavigationSettings
   m_EditorClassIdentifier: 
-  numberOfActiveUavsForRerouting: 8
-  fixedSpeed: 15
-  maxPathDuration: 35
-  minPathDuration: 15
-  minDistanceFromNFZInDuration: 7
+  numberOfActiveUavsForRerouting: 4
+  fixedSpeed: 25
+  maxPathDuration: 13
+  minPathDuration: 10
+  minDistanceFromNFZInDuration: 8
+  maxDistanceFromNFZInDuration: 12
   followingType: 2
   rotationDuration: 2
   ignoreWaypointPositionOnAxis:
@@ -24,9 +25,12 @@ MonoBehaviour:
     y: 0
     z: 0
   waypointHoveringType: 3
-  hoverDurationOnWaypoint: 2
+  hoverDurationOnWaypoint: 1
   hoverAngle: 360
-  hoverSpeed: 1
-  shufflingPathsRandomGeneratorSeed: 1
-  targetAndNFZProbabilityRandomGeneratorSeed: 1
-  uavSelectionShuffleRandomNumberGeneratorSeed: 1
+  hoverSpeed: 30
+  shufflingPathsRandomGeneratorSeed: 710000
+  targetAndNFZProbabilityRandomGeneratorSeed: 810000
+  uavSelectionShuffleRandomNumberGeneratorSeed: 910000
+  fixResponseTime: 1
+  reroutingMaxResponseTime: 10
+  distinctUavsForReroutingAndTargetDetection: 1

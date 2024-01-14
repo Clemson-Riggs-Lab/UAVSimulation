@@ -19,12 +19,12 @@ namespace Modules.NoFlyZone.Settings.ScriptableObjects
 		
 		[Space(20)]
 		[Header("NFZ Settings")]
-		public bool animateNFZGrowOnStart=true;
-		public float nfzGrowthAnimationDuration=3f;
-		public string nfzCountdownText = "No Fly Zone will be active in";
-		public bool nfzAddCountdownCounterToText = true;
-		public bool blinkNFZOnCountdownCounter = true;
-		public float nfzBlinkInterval = 0.5f;
+		public bool animateNFZGrowOnStart=false;
+		public float nfzGrowthAnimationDuration=0f;
+		public string nfzCountdownText = "NFZ";
+		public bool nfzAddCountdownCounterToText = false;
+		public bool blinkNFZOnCountdownCounter = false;
+		public float nfzBlinkInterval = 0f;
 		
 		
 		[Space(20)]

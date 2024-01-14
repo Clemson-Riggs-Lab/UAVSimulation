@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: Path Rendering Settings
   m_EditorClassIdentifier: 
   showPathWhenUavIsHidden: 0
-  pathWidthNormal: 5
-  pathWidthReroutingOption: 8
+  showWaypointOnMap: 1
+  showPathWhenReroutingOnly: 1
+  pathWidthNormal: 4
+  pathWidthReroutingOption: 7
   updateLineInterval: 0.1

@@ -135,11 +135,13 @@ namespace Modules.Navigation.Submodules.Rerouting
 				var random = oneClickRerouteRandomGenerator.NextDouble();
 				if (random <=  _reroutingSettings.probabilityOfUnsuccessfulOneClickReroute)
 				{
+					possiblePathsWithNFZ[0].dynamicStartTime = Time.time;
 					_uavReroutedEventChannel.RaiseEvent(uav, possiblePathsWithNFZ[0]);
 					return;
 				}
 				else
 				{
+					possiblePathsWithNoNFZ[0].dynamicStartTime = Time.time;
 					_uavReroutedEventChannel.RaiseEvent(uav, possiblePathsWithNoNFZ[0]);
 					return;
 				}
@@ -182,6 +184,8 @@ namespace Modules.Navigation.Submodules.Rerouting
 
 		public void RerouteUav(Uav uav, int optionIndex)
 		{
+			reroutingOptions[uav][optionIndex].dynamicStartTime = Time.time;
+			reroutingOptions[uav][optionIndex].SetHeadingToNfz();
 			_uavReroutedEventChannel.RaiseEvent(uav, reroutingOptions[uav][optionIndex]);
 			RemoveUavPanelAndOptions(uav);
 		}

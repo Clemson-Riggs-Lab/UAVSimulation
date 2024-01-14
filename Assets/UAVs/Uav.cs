@@ -90,6 +90,7 @@ namespace UAVs
 		public void SetVisibility(bool visibility)
 		{
 			uavBody.transform.SetLayerRecursively(visibility ? dedicatedLayer:LayerMask.NameToLayer("UAVHidden"));
+			uavBody.gameObject.layer = visibility ?LayerMask.NameToLayer("UAVs"):LayerMask.NameToLayer("UAVHidden"); //hiding the uav body from the target detection camera
 			label.transform.SetLayerRecursively(visibility ? dedicatedLayer:LayerMask.NameToLayer("UAVHidden"));
 			// the minimap camera is set to cull the UAVHidden layer, so the UAVs are not visible on the minimap if they are placed in the UAVHidden layer
 		}

@@ -22,11 +22,11 @@ MonoBehaviour:
     centerText: 
     bottomText: 
   hiddenUavCameraAndTargetDetectionPanelConfigs:
-    cameraAndTargetDetectionPanelState: 2
+    cameraAndTargetDetectionPanelState: 3
     centerText: 
     bottomText: 
   lostUavCameraAndTargetDetectionPanelConfigs:
-    cameraAndTargetDetectionPanelState: 2
+    cameraAndTargetDetectionPanelState: 3
     centerText: 
     bottomText: 
   hoveringUavCameraAndTargetDetectionPanelConfigs:
@@ -45,5 +45,7 @@ MonoBehaviour:
     cameraAndTargetDetectionPanelState: 2
     centerText: 
     bottomText: Fuel Empty
-  headerText: Primary Task
-  headerTextColor: lime
+  headerText: Secondary Task
+  headerTextColor: Yellow
+  keepHiddenUavsPanelsPositions: 0
+  onlyAccountForVisibleUavsButtonsInLayout: 1

@@ -18,6 +18,7 @@ namespace UI.Paths_Rendering
 		private UavPathEventChannelSO _uavArrivedAtDestinationEventChannel;
 		private UavPathEventChannelSO _uavReroutedEventChannel;
 		private UavPathEventChannelSO _uavReroutePreviewEventChannel;
+		private UavEventChannelSO _reroutingOptionsRequestedChannel;
 		private UavConditionEventChannelSO _uavConditionChangedEventChannel;
 		private PathsRenderingSettingsSO _pathsRenderingSettings;
 		private GameObject _uavPathRendererPrefab;
@@ -31,14 +32,16 @@ namespace UI.Paths_Rendering
 
 		private void PreviewPath(Uav uav, Path path)
 		{
-			if (!_uavPathRenderers.ContainsKey(uav)) return;
-			if (uav.currentPath == path && path!=null)
+			if (!_uavPathRenderers.ContainsKey(uav) || path==null) return;
+			if ( uav.currentPath == path)
 			{
 				_uavPathRenderers[uav].SetLineRenderer(path,false); // sending the current path as a preview path means that we want to cancel the preview
 			}
+			else
+			{
+				_uavPathRenderers[uav].SetLineRenderer(path,true);
+			}
 			
-			
-			_uavPathRenderers[uav].SetLineRenderer(path,true);
 		}
 
 		private void RenderNewPath(Uav uav, Path path)
@@ -107,7 +110,10 @@ namespace UI.Paths_Rendering
 			if(_uavConditionChangedEventChannel != null)
 				_uavConditionChangedEventChannel.Subscribe(OnUavConditionChanged);
 			
-		
+			if(_reroutingOptionsRequestedChannel != null)
+				_reroutingOptionsRequestedChannel.Subscribe(OnReroutingOptionsRequested);
+
+
 		}
 		private void UnsubscribeFromChannels()
 		{
@@ -129,8 +135,22 @@ namespace UI.Paths_Rendering
 			if(_uavReroutePreviewEventChannel != null)
 				_uavReroutePreviewEventChannel.Unsubscribe(PreviewPath);
 			
+			if(_uavConditionChangedEventChannel != null)
+				_uavConditionChangedEventChannel.Unsubscribe(OnUavConditionChanged);
+			
+			if(_reroutingOptionsRequestedChannel != null)
+				_reroutingOptionsRequestedChannel.Unsubscribe(OnReroutingOptionsRequested);
+
 		}
-		
+
+		private void OnReroutingOptionsRequested(Uav uav)
+		{
+			if (_pathsRenderingSettings.showPathWhenReroutingOnly)
+			{
+				_uavPathRenderers[uav].SetLineRenderer(uav.currentPath,true);
+			}
+		}
+
 		private void GetReferencesFromGameManager()
 		{
 			_uavStartedNewPathEventChannel = GameManager.Instance.channelsDatabase.navigationChannels.uavStartedNewPathEventChannel;
@@ -139,6 +159,7 @@ namespace UI.Paths_Rendering
 			_uavDestroyedEventChannel = GameManager.Instance.channelsDatabase.uavChannels.uavDestroyedEventChannel;
 			_uavReroutedEventChannel = GameManager.Instance.channelsDatabase.navigationChannels.uavReroutedEventChannel;
 			_uavReroutePreviewEventChannel = GameManager.Instance.channelsDatabase.navigationChannels.uavReroutePreviewEventChannel;
+			_reroutingOptionsRequestedChannel = GameManager.Instance.channelsDatabase.navigationChannels.reroutingOptionsRequestedChannel;
 			_uavPathRendererPrefab = GameManager.Instance.prefabsDatabase.uavPathRendererPrefab;
 			_pathsRenderingSettings = GameManager.Instance.settingsDatabase.pathsRenderingSettings;
 			_uavConditionChangedEventChannel = GameManager.Instance.channelsDatabase.uavChannels.uavConditionChangedEventChannel;

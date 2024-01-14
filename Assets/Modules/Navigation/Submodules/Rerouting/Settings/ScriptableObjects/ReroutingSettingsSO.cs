@@ -16,7 +16,7 @@ namespace Modules.Navigation.Submodules.Rerouting.Settings.ScriptableObjects
 		public bool oneClickRerouteEnabled= true;
 		public float oneClickRerouteFalsePositiveProbability = 0.1f;
 		public float oneClickRerouteFalseNegativeProbability = 0.1f;
-		public float probabilityOfUnsuccessfulOneClickReroute = 0.7f;
+		public float probabilityOfUnsuccessfulOneClickReroute = 0.3f;
 		public int oneClickRerouteRandomSeed = 1;
 		public int oneClickRerouteFpFnRandomSeed = 1;
 		

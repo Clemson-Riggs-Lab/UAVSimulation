@@ -3,6 +3,7 @@ using System.Linq;
 using HelperScripts;
 using Modules.Navigation;
 using Modules.Navigation.Channels.ScriptableObjects;
+using Modules.TargetDetection;
 using TMPro;
 using UAVs;
 using UI.UavCameraAndTargetDetectionPanel.Settings.ScriptableObjects;
@@ -40,6 +41,7 @@ namespace UI.UavCameraAndTargetDetectionPanel
         private void Start()
         {
             GetReferencesFromGameManager();
+            
         }
 
         private void GetReferencesFromGameManager()
@@ -69,7 +71,8 @@ namespace UI.UavCameraAndTargetDetectionPanel
 
         
         public void Initialize(Uav uav , RenderTexture renderTexture)
-        {
+        { 
+            GetReferencesFromGameManager();
             this.uav = uav;
             gameObject.name = "UAVCameraPanel " + uav.uavName;
             EnablePanel(false);
@@ -100,11 +103,20 @@ namespace UI.UavCameraAndTargetDetectionPanel
             {
                 gameObject.transform.localScale= Vector3.one;
                 gameObject.GetComponent<LayoutElement>().ignoreLayout = false;
+                
             }
             else
             {
-                gameObject.transform.localScale= Vector3.zero;
-                gameObject.GetComponent<LayoutElement>().ignoreLayout = true;
+                if(_uavCameraAndTargetDetectionPanelSettings.keepHiddenUavsPanelsPositions)
+                {
+                    gameObject.transform.localScale = Vector3.zero;
+                    gameObject.GetComponent<LayoutElement>().ignoreLayout = false;
+                }
+                else
+                {
+                    gameObject.transform.localScale = Vector3.zero;
+                    gameObject.GetComponent<LayoutElement>().ignoreLayout = true;
+                }
             }
         }
         public void ApplyHoveringConfigs() // this is called to set the configs when the uav is hovering over the waypoint (rotating to get to the destination)

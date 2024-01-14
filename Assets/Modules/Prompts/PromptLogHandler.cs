@@ -42,7 +42,7 @@ namespace Modules.Prompts
 			{
 				logType = "Prompts",
 				eventType = "PromptMessageSent",
-				logMessages = ComposeMessageLogString(chatMessage)
+				logData = ComposeMessageLogString(chatMessage)
 			};
 			_logEventChannel.RaiseEvent(log);
 		}
@@ -53,7 +53,7 @@ namespace Modules.Prompts
 			{
 				logType = "Prompts",
 				eventType = "ResponseReceived",
-				logMessages = ComposeResponseLogString(responseOption)
+				logData = ComposeResponseLogString(responseOption)
 			};
 			_logEventChannel.RaiseEvent(log);
 		}
@@ -61,15 +61,15 @@ namespace Modules.Prompts
 
 		private List<string> ComposeMessageLogString(Prompt prompt)
 		{
-			var logMessages = new List<string>();
+			var logData = new List<string>();
 			if (_promptSettings.logPrompts)
 			{
-				logMessages.Add("Prompt Message: " + prompt.consoleMessage.text);
+				logData.Add("Prompt Message: " + prompt.consoleMessage.text);
 			}
 
 			if (_promptSettings.logAllowedResponseTime)
 			{
-				logMessages.Add("Allowed Response Time: " + prompt.durationToAcceptResponses.ToString("0.0"));
+				logData.Add("Allowed Response Time: " + prompt.durationToAcceptResponses.ToString("0.0"));
 			}
 
 			if (prompt.responseOptions != null)
@@ -84,7 +84,7 @@ namespace Modules.Prompts
 						correctResponsesString += " | ";
 						correctResponsesString += response.buttonText;
 					}
-					logMessages.Add(correctResponsesString);
+					logData.Add(correctResponsesString);
 
 				}
 
@@ -97,23 +97,23 @@ namespace Modules.Prompts
 						wrongResponsesString += " | ";
 						wrongResponsesString += response.buttonText;
 					}
-					logMessages.Add(wrongResponsesString);
+					logData.Add(wrongResponsesString);
 				}
 			}
 
-			return logMessages;
+			return logData;
 		}
 		
 		private List<string> ComposeResponseLogString(ResponseOption response)
 		{
-			var logMessages = new List<string>();
-			logMessages.Add("Response: " + response.buttonText);
+			var logData = new List<string>();
+			logData.Add("Response: " + response.buttonText);
 
 			if (_promptSettings.logCorrectness)
 			{
-				logMessages.Add("Is Correct?: " + response.isCorrectResponse.ToString());
+				logData.Add("Is Correct?: " + response.isCorrectResponse.ToString());
 			}
-			return logMessages;
+			return logData;
 		}
 
 		private void OnDisable()

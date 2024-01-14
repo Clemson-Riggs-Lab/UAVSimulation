@@ -41,5 +41,7 @@ namespace UI.ReroutingPanel.Settings.ScriptableObjects
 	    [Space(20)]
 	    public string headerText = "Primary task";
 	    public string headerTextColor = "light green";
+	    public bool onlyAccountForVisibleUavsButtonsInLayout = false;
+	    public bool colorButtonsLikeUav=true;
     }
 }

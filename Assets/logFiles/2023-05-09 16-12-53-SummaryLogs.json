@@ -1,0 +1,177 @@
+[
+  {
+    "timestamp": "05/09/2023 16:12:54.038847",
+    "simulationTimeStamp": "18.85098",
+    "logType": "Score",
+    "eventType": "Scoring Criteria",
+    "logData": {
+      "ReroutingScores": {
+        "FalsePositive": -1.0,
+        "FalseNegative": -2.0,
+        "TruePositive": 2.0,
+        "TrueNegative": 1.0,
+        "TruePositiveWithAITruePositive": 0.0,
+        "TruePositiveDespiteAIFalseNegative": 0.0,
+        "TrueNegativeWithAITrueNegative": 0.0,
+        "TrueNegativeDespiteAIFalsePositive": 0.0,
+        "FalsePositiveDueToAIFalsePositive": 0.0,
+        "FalsePositiveDespiteAITrueNegative": 0.0,
+        "FalseNegativeDespiteAITruePositive": 0.0,
+        "FalseNegativeDueToAIFalseNegative": 0.0
+      },
+      "TargetDetectionScores": {
+        "FalsePositive": -1.0,
+        "FalseNegative": -2.0,
+        "TruePositive": 2.0,
+        "TrueNegative": 1.0
+      }
+    }
+  },
+  {
+    "timestamp": "05/09/2023 16:15:13.618339",
+    "simulationTimeStamp": "158.4778",
+    "logType": "Score",
+    "eventType": "Score Keeper Updated",
+    "logData": {
+      "ReroutingCounts": {
+        "ReroutingFalsePositiveCount": 3,
+        "ReroutingFalseNegativeCount": 1,
+        "ReroutingTruePositiveCount": 13,
+        "ReroutingTrueNegativeCount": 62,
+        "ReroutingTruePositiveWithAITruePositiveCount": 8,
+        "ReroutingTruePositiveDespiteAIFalseNegativeCount": 5,
+        "ReroutingTrueNegativeWithAITrueNegativeCount": 59,
+        "ReroutingTrueNegativeDespiteAIFalsePositiveCount": 3,
+        "ReroutingFalsePositiveDueToAIFalsePositiveCount": 3,
+        "ReroutingFalsePositiveDespiteAITrueNegativeCount": 0,
+        "ReroutingFalseNegativeDespiteAITruePositiveCount": 1,
+        "ReroutingFalseNegativeDueToAIFalseNegativeCount": 0
+      },
+      "TargetDetectionCounts": {
+        "TargetDetectionFalsePositiveCount": 0,
+        "TargetDetectionFalseNegativeCount": 23,
+        "TargetDetectionTruePositiveCount": 0,
+        "TargetDetectionTrueNegativeCount": 43
+      },
+      "ReroutingScores": {
+        "ReroutingFalsePositiveScore": -3.0,
+        "ReroutingFalseNegativeScore": -2.0,
+        "ReroutingTruePositiveScore": 26.0,
+        "ReroutingTrueNegativeScore": 62.0,
+        "ReroutingTruePositiveWithAITruePositiveScore": 0.0,
+        "ReroutingTruePositiveDespiteAIFalseNegativeScore": 0.0,
+        "ReroutingTrueNegativeWithAITrueNegativeScore": 0.0,
+        "ReroutingTrueNegativeDespiteAIFalsePositiveScore": 0.0,
+        "ReroutingFalsePositiveDueToAIFalsePositiveScore": 0.0,
+        "ReroutingFalsePositiveDespiteAITrueNegativeScore": 0.0,
+        "ReroutingFalseNegativeDespiteAITruePositiveScore": 0.0,
+        "ReroutingFalseNegativeDueToAIFalseNegativeScore": 0.0
+      },
+      "TargetDetectionScores": {
+        "TargetDetectionFalsePositiveScore": 0.0,
+        "TargetDetectionFalseNegativeScore": -46.0,
+        "TargetDetectionTruePositiveScore": 0.0,
+        "TargetDetectionTrueNegativeScore": 43.0
+      },
+      "ReroutingResponseTime": {
+        "11": 4.966385,
+        "19": 2.2638092,
+        "20": 1.97243881,
+        "33": 2.92108536,
+        "51": 2.0757103,
+        "55": 3.45515823,
+        "60": 4.518608,
+        "66": 6.478874,
+        "78": 2.80003357,
+        "82": 3.454071
+      },
+      "TargetDetectionResponseTime": {}
+    }
+  },
+  {
+    "timestamp": "05/09/2023 16:15:14.321236",
+    "simulationTimeStamp": "0",
+    "logType": "Settings",
+    "eventType": "Settings Log",
+    "logData": {
+      "navigationSettings": {
+        "numberOfActiveUavsForRerouting": 8,
+        "fixedSpeed": 25.0,
+        "reroutingMaxResponseTime": 10.0,
+        "maxPathDuration": 13.0,
+        "minPathDuration": 10.0,
+        "minDistanceFromNFZInDuration": 8.0,
+        "maxDistanceFromNFZInDuration": 12.0
+      },
+      "targetDetectionSettings": {
+        "numberOfActiveUavsForTargetDetection": 8,
+        "ratioOfActiveFeedsWithTarget": 0.3,
+        "ratioOfActiveFeedsWithNonTarget": 0.3,
+        "targetDetectionMaxResponseTime": 10.0
+      },
+      "nfzSettings": {
+        "RatioOfHeadToNFZ": 0.15
+      },
+      "panelSettings": {
+        "targetDetectionTaskPriority": "Secondary Task",
+        "reroutingTaskPriority": "Primary Task"
+      },
+      "reroutingSettings": {
+        "oneClickRerouting": true,
+        "oneClickReroutingFalsePositive": 0.1,
+        "oneClickReroutingFalseNegative": 0.1,
+        "probabilityOfUnsuccessfulOneClickReroute": 0.3
+      }
+    }
+  },
+  {
+    "timestamp": "05/09/2023 16:15:14.322237",
+    "simulationTimeStamp": "0",
+    "logType": "Response Time",
+    "eventType": "Response Time",
+    "logData": {
+      "reroutingResponseTime": 3.4906172752380371,
+      "targetDetectionResponseTime": null
+    }
+  },
+  {
+    "timestamp": "05/09/2023 16:15:14.323236",
+    "simulationTimeStamp": "0",
+    "logType": "One Click Reroute Frequency",
+    "eventType": "One Click Reroute Frequency",
+    "logData": {
+      "oneClickRerouteFrequency": 10,
+      "oneClickRerouteTimes": {
+        "11": 21.5808029,
+        "19": 28.7240963,
+        "20": 29.82053,
+        "33": 50.33877,
+        "51": 59.624958,
+        "55": 62.89803,
+        "60": 73.43585,
+        "66": 74.912384,
+        "78": 84.273056,
+        "82": 93.7570648
+      }
+    }
+  },
+  {
+    "timestamp": "05/09/2023 16:15:14.323236",
+    "simulationTimeStamp": "0",
+    "logType": "Fake Flare Counted As Target",
+    "eventType": "Fake Flare Counted As Target",
+    "logData": {
+      "fakeFlareCountedAsTargetFrequency": 0,
+      "fakeFlareCountedAsTargetTimes": {}
+    }
+  },
+  {
+    "timestamp": "05/09/2023 16:15:14.323236",
+    "simulationTimeStamp": "0",
+    "logType": "Simulation Ended",
+    "eventType": "Simulation Ended",
+    "logData": {
+      "simulationCompleted": false
+    }
+  }
+]

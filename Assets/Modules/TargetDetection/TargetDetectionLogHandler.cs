@@ -56,23 +56,22 @@ namespace Modules.TargetDetection
 
 		private void AddTargetDetectionLog(Uav uav, Path path, bool isDetected)
 		{
-			
-			var log = new Log();
-			log.logType = "TargetDetection";
-			log.eventType = isDetected ? "TargetDetected" : "TargetNotDetected";
-			log.logMessages = new() { isDetected ? "Target detected" : "Target not detected" + " by " + uav.name };
-			
-			if(_targetDetectionSettings.logTargetDetectionCorrectness)
-				log.logMessages.Add($"Responded correctly: {isDetected == path.targetIsPresent}");
-			
-			if(_targetDetectionSettings.logIfNonTargetIsPresent)
-				log.logMessages.Add($"Non target is present: {path.nonTargetIsPresent}");
-			
-			if(_targetDetectionSettings.logTimeSinceStartOfPathWhenTargetDetectionOccured)
-				log.logMessages.Add($"Time since start of path: {DateTime.Now- path.startTime}");
-			
+			var log = new Log
+			{
+				logType = "TargetDetection",
+				eventType = isDetected ? "TargetDetected" : "TargetNotDetected",
+				logData = new
+				{
+					message = (isDetected ? "Target detected" : "Target not detected") + " by " + uav.name,
+					respondedCorrectly = _targetDetectionSettings.logTargetDetectionCorrectness ? (bool?) (isDetected == path.targetIsPresent) : null,
+					nonTargetIsPresent = _targetDetectionSettings.logIfNonTargetIsPresent ? (bool?) path.nonTargetIsPresent : null,
+					timeSinceStartOfPath = _targetDetectionSettings.logTimeSinceStartOfPathWhenTargetDetectionOccured ? (TimeSpan?) (DateTime.Now - path.originalStartTimeDateTime) : null,
+				}
+			};
+
 			_logEventChannel.RaiseEvent(log);
 		}
+
 
 		private void OnDisable()
 		{

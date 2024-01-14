@@ -52,6 +52,8 @@ public class GameManager : MonoBehaviour
        [NonSerialized] private bool _forceGenerateFromRecords = false;
        [NonSerialized] public float simulationStartTime;
        
+       [NonSerialized] public int participantNumber = 0;
+       [NonSerialized] public string trialNumber = "";      
        
         private void OnValidate()
         {
@@ -93,6 +95,8 @@ public class GameManager : MonoBehaviour
         
         private void Start()
         {
+            participantNumber= configFilesSettings.participantNumber;
+            trialNumber = configFilesSettings.trialNumber;
             if(configFilesSettings.settingsFileFullFilePath != "")
             {
                 try
@@ -124,7 +128,12 @@ public class GameManager : MonoBehaviour
                 }
 
             }
-            else _forceGenerateFromRecords = true;
+            else
+            {
+                _forceGenerateFromRecords = true;
+                Debug.LogError("Error while reading input file:, defaulted to default input records");
+
+            }
             StartCoroutine(InitializeSimulation());
 
         }
@@ -156,7 +165,7 @@ public class GameManager : MonoBehaviour
             uavsManager.StartNavigation(simulationStartTime);
             
             yield return new WaitForSeconds(settingsDatabase.simulationDuration+ simulationStartTime - Time.time);
-            
+            channelsDatabase.simulationEndedEventChannel.RaiseEvent();
             Time.timeScale = 0f;   
             blockingPanelController.ClosingView();
 

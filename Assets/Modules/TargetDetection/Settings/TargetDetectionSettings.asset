@@ -13,14 +13,15 @@ MonoBehaviour:
   m_Name: TargetDetectionSettings
   m_EditorClassIdentifier: 
   defaultTargetType: 0
-  ratioOfActiveFeedsWithTarget: 0.5
-  ratioOfActiveFeedsWithNonTarget: 0.7
-  numberOfActiveUavsForTargetDetection: 8
+  ratioOfActiveFeedsWithTarget: 0.3
+  ratioOfActiveFeedsWithNonTarget: 0.3
+  numberOfActiveUavsForTargetDetection: 16
   logTargetDetection: 1
   logTargetDetectionCorrectness: 1
   logTimeSinceStartOfPathWhenTargetDetectionOccured: 1
   logIfNonTargetIsPresent: 1
-  targetColor: darkBlue
-  nonTargetColor: Green
-  targetPositioningRandomGeneratorSeed: 1
-  targetDistanceRandomGeneratorSeed: 1
+  targetColor: Yellow
+  nonTargetColor: Yellow
+  targetPositioningRandomGeneratorSeed: 110000
+  targetDistanceRandomGeneratorSeed: 210000
+  targetDetectionMaxResponseTime: 10

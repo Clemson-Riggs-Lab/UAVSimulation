@@ -57,7 +57,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 1000
+  far clip plane: 3000
   field of view: 60
   orthographic: 0
   orthographic size: 5
@@ -88,9 +88,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcac21fd2bf433945ade1980dc14848a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  renderTextureWidth: 250
-  renderTextureHeight: 250
-  renderTextureDepth: 24
-  rotationX: 20
-  fieldOfView: 61
-  DisableWhenUavIsNotVisible: 1
+  uavCamera: {fileID: 0}
+  renderTexture: {fileID: 0}

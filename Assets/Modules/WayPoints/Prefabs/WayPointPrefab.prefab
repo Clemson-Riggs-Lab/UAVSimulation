@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 2075306393312643593}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 7.6, y: 0, z: 5.99}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 10, y: 10, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -51,7 +51,7 @@ MeshRenderer:
   m_GameObject: {fileID: 2075306393312643593}
   m_Enabled: 0
   m_CastShadows: 0
-  m_ReceiveShadows: 1
+  m_ReceiveShadows: 0
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
   m_MotionVectors: 1
@@ -62,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 7ab977a21c92388468ee65ad1c0e5a78, type: 2}
+  - {fileID: -6973519697681599791, guid: 81ca42aaa94e6d349b40cbe70733484d, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -97,4 +97,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wayPointCreatedChannel: {fileID: 11400000, guid: 434256939b0e424438067ae5888d92c6, type: 2}
-  wayPointDestroyedChannel: {fileID: 11400000, guid: ee622e049e3d02449b0fab8df64e091e, type: 2}
+  wayPointDisabledChannel: {fileID: 0}

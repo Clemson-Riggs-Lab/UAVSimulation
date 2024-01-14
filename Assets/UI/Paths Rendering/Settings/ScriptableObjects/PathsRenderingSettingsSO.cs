@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace UI.Paths_Rendering.Settings.ScriptableObjects
 {
@@ -7,6 +8,8 @@ namespace UI.Paths_Rendering.Settings.ScriptableObjects
 	{
 
 		public bool showPathWhenUavIsHidden = false; //if true, the path will be shown even if the uav is hidden
+		public bool showWaypointOnMap = true;
+		public bool showPathWhenReroutingOnly = true;
 		public float pathWidthNormal = 5f; // width of the path when rendering the path(s) the UAV is  following
 
 		public float pathWidthReroutingOption = 8; // width of the path when it is a rendering a rerouting option

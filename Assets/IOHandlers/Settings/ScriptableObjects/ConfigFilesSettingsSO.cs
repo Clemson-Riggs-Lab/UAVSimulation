@@ -7,6 +7,8 @@ namespace IOHandlers.Settings.ScriptableObjects
     {
         public string inputFileFullFilePath = @"";
         public string settingsFileFullFilePath = @"";
+        public int participantNumber = 0;
+        public string trialNumber = "";
     }
 }
 

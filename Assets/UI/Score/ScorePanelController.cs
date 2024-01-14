@@ -3,6 +3,7 @@ using Modules.ScoreKeeper.Channels.ScriptableObjects;
 using Modules.ScoreKeeper.Settings.ScriptableObjects;
 using TMPro;
 using UnityEngine;
+using static Modules.ScoreKeeper.ScoreManager.AIRelatedScoreEventType;
 using static Modules.ScoreKeeper.ScoreManager.ScoreEventType;
 
 namespace UI.Score
@@ -18,10 +19,32 @@ namespace UI.Score
 		[SerializeField] private TextMeshProUGUI tnReroutingScoreText;
 		[SerializeField] private TextMeshProUGUI tpReroutingScoreText;
 		
+		
+		[SerializeField] private TextMeshProUGUI reroutingTruePositiveWithAITruePositiveScoreText;
+		[SerializeField] private TextMeshProUGUI reroutingTruePositiveDespiteAIFalseNegativeScoreText;
+		[SerializeField] private TextMeshProUGUI reroutingTrueNegativeWithAITrueNegativeScoreText; 
+		[SerializeField] private TextMeshProUGUI reroutingTrueNegativeDespiteAIFalsePositiveScoreText;
+		[SerializeField] private TextMeshProUGUI reroutingFalsePositiveDueToAIFalsePositiveScoreText;
+		[SerializeField] private TextMeshProUGUI reroutingFalsePositiveDespiteAITrueNegativeScoreText;
+		[SerializeField] private TextMeshProUGUI reroutingFalseNegativeDueToAIFalseNegativeScoreText;
+		[SerializeField] private TextMeshProUGUI reroutingFalseNegativeDespiteAITruePositiveScoreText;
+
+
 		[SerializeField] private TextMeshProUGUI fpReroutingCountText; 
 		[SerializeField] private TextMeshProUGUI fnReroutingCountText;
 		[SerializeField] private TextMeshProUGUI tnReroutingCountText;
 		[SerializeField] private TextMeshProUGUI tpReroutingCountText;
+		
+		
+		[SerializeField] private TextMeshProUGUI reroutingTruePositiveWithAITruePositiveCountText;
+		[SerializeField] private TextMeshProUGUI reroutingTruePositiveDespiteAIFalseNegativeCountText;
+		[SerializeField] private TextMeshProUGUI reroutingTrueNegativeWithAITrueNegativeCountText; 
+		[SerializeField] private TextMeshProUGUI reroutingTrueNegativeDespiteAIFalsePositiveCountText;
+		[SerializeField] private TextMeshProUGUI reroutingFalsePositiveDueToAIFalsePositiveCountText;
+		[SerializeField] private TextMeshProUGUI reroutingFalsePositiveDespiteAITrueNegativeCountText;
+		[SerializeField] private TextMeshProUGUI reroutingFalseNegativeDueToAIFalseNegativeCountText;
+		[SerializeField] private TextMeshProUGUI reroutingFalseNegativeDespiteAITruePositiveCountText;
+		
 		
 		[SerializeField] private TextMeshProUGUI fpTargetDetectionScoreText;
 		[SerializeField] private TextMeshProUGUI fnTargetDetectionScoreText;
@@ -57,10 +80,28 @@ namespace UI.Score
 			tnReroutingScoreText.text = "0";
 			tpReroutingScoreText.text = "0";
 			
+			reroutingTruePositiveWithAITruePositiveScoreText.text = "0";
+			reroutingTruePositiveDespiteAIFalseNegativeScoreText.text = "0";
+			reroutingTrueNegativeWithAITrueNegativeScoreText.text = "0";
+			reroutingTrueNegativeDespiteAIFalsePositiveScoreText.text = "0";
+			reroutingFalsePositiveDueToAIFalsePositiveScoreText.text = "0";
+			reroutingFalsePositiveDespiteAITrueNegativeScoreText.text = "0";
+			reroutingFalseNegativeDueToAIFalseNegativeScoreText.text = "0";
+			reroutingFalseNegativeDespiteAITruePositiveScoreText.text = "0";
+			
 			fpReroutingCountText.text = "0";
 			fnReroutingCountText.text = "0";
 			tnReroutingCountText.text = "0";
 			tpReroutingCountText.text = "0";
+			
+			reroutingTruePositiveWithAITruePositiveCountText.text = "0";
+			reroutingTruePositiveDespiteAIFalseNegativeCountText.text = "0";
+			reroutingTrueNegativeWithAITrueNegativeCountText.text = "0";
+			reroutingTrueNegativeDespiteAIFalsePositiveCountText.text = "0";
+			reroutingFalsePositiveDueToAIFalsePositiveCountText.text = "0";
+			reroutingFalsePositiveDespiteAITrueNegativeCountText.text = "0";
+			reroutingFalseNegativeDueToAIFalseNegativeCountText.text = "0";
+			reroutingFalseNegativeDespiteAITruePositiveCountText.text = "0";
 			
 			fpTargetDetectionScoreText.text = "0";
 			fnTargetDetectionScoreText.text = "0";
@@ -92,10 +133,29 @@ namespace UI.Score
 			tnReroutingScoreText.text = score.scoreValues[ReroutingTrueNegative].ToString();
 			tpReroutingScoreText.text = score.scoreValues[ReroutingTruePositive].ToString();
 			
+			reroutingTrueNegativeWithAITrueNegativeScoreText.text = score.aIRelatedScoreValues[ReroutingTrueNegativeWithAITrueNegative].ToString();
+			reroutingTrueNegativeDespiteAIFalsePositiveScoreText.text = score.aIRelatedScoreValues[ReroutingTrueNegativeDespiteAIFalsePositive].ToString();
+			reroutingTruePositiveWithAITruePositiveScoreText.text = score.aIRelatedScoreValues[ReroutingTruePositiveWithAITruePositive].ToString();
+			reroutingTruePositiveDespiteAIFalseNegativeScoreText.text = score.aIRelatedScoreValues[ReroutingTruePositiveDespiteAIFalseNegative].ToString();
+			reroutingFalsePositiveDueToAIFalsePositiveScoreText.text = score.aIRelatedScoreValues[ReroutingFalsePositiveDueToAIFalsePositive].ToString();
+			reroutingFalsePositiveDespiteAITrueNegativeScoreText.text = score.aIRelatedScoreValues[ReroutingFalsePositiveDespiteAITrueNegative].ToString();
+			reroutingFalseNegativeDueToAIFalseNegativeScoreText.text = score.aIRelatedScoreValues[ReroutingFalseNegativeDueToAIFalseNegative].ToString();
+			reroutingFalseNegativeDespiteAITruePositiveScoreText.text = score.aIRelatedScoreValues[ReroutingFalseNegativeDespiteAITruePositive].ToString();
+			
+
 			fpReroutingCountText.text = score.scoreCounts[ReroutingFalsePositive].ToString();
 			fnReroutingCountText.text = score.scoreCounts[ReroutingFalseNegative].ToString();
 			tnReroutingCountText.text = score.scoreCounts[ReroutingTrueNegative].ToString();
 			tpReroutingCountText.text = score.scoreCounts[ReroutingTruePositive].ToString();
+			
+			reroutingTrueNegativeWithAITrueNegativeCountText.text = score.aIRelatedScoreCounts[ReroutingTrueNegativeWithAITrueNegative].ToString();
+			reroutingTrueNegativeDespiteAIFalsePositiveCountText.text = score.aIRelatedScoreCounts[ReroutingTrueNegativeDespiteAIFalsePositive].ToString();
+			reroutingTruePositiveWithAITruePositiveCountText.text = score.aIRelatedScoreCounts[ReroutingTruePositiveWithAITruePositive].ToString();
+			reroutingTruePositiveDespiteAIFalseNegativeCountText.text = score.aIRelatedScoreCounts[ReroutingTruePositiveDespiteAIFalseNegative].ToString();
+			reroutingFalsePositiveDueToAIFalsePositiveCountText.text = score.aIRelatedScoreCounts[ReroutingFalsePositiveDueToAIFalsePositive].ToString();
+			reroutingFalsePositiveDespiteAITrueNegativeCountText.text = score.aIRelatedScoreCounts[ReroutingFalsePositiveDespiteAITrueNegative].ToString();
+			reroutingFalseNegativeDueToAIFalseNegativeCountText.text = score.aIRelatedScoreCounts[ReroutingFalseNegativeDueToAIFalseNegative].ToString();
+			reroutingFalseNegativeDespiteAITruePositiveCountText.text = score.aIRelatedScoreCounts[ReroutingFalseNegativeDespiteAITruePositive].ToString();
 			
 			fpTargetDetectionScoreText.text  = score.scoreValues[TargetDetectionFalsePositive].ToString();
 			fnTargetDetectionScoreText.text  = score.scoreValues[TargetDetectionFalseNegative].ToString();

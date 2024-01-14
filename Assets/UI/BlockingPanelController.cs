@@ -9,14 +9,24 @@ namespace UI
 	{
 		public TextMeshProUGUI tmpro;
 		public Button closeButton;
+		public TextMeshProUGUI primaryTaskTmpro;
+		public TextMeshProUGUI taskExplanationTmpro;
 
-		private const string LoadingText = "Loading... \n Trial will start in  \n";
+		private const string LoadingText = "The trial will start in ";
 
 		private const string ClosingText = "The Experiment is over, \n Thank you for participating! \n";
 
 
 		public void LoadingView(float duration)
 		{
+			var primaryTaskName = "";
+			if (GameManager.Instance.settingsDatabase.reroutingPanelSettings.headerText == "Primary Task")
+				primaryTaskName = "Rerouting";
+			else
+			{
+				primaryTaskName = "Flare Detection";
+			}
+			primaryTaskTmpro.text = "Primary Task: " + primaryTaskName;
 			// make the panel visible by setting scale to 1
 			transform.localScale = Vector3.one;
 		
@@ -32,7 +42,7 @@ namespace UI
 			tmpro.text = loadingText;
 			while(Time.time < simulationStartTime)
 			{
-				tmpro.text = loadingText + "  "+ (simulationStartTime - Time.time).ToString("F1");
+				tmpro.text = loadingText + "  "+ (simulationStartTime - Time.time).ToString("F0");
 				yield return new WaitForSeconds(0.1f);
 			}
 		
@@ -42,6 +52,8 @@ namespace UI
 	
 		public void ClosingView()
 		{
+			primaryTaskTmpro.text = "";
+			taskExplanationTmpro.text = " ";
 			// make the panel visible by setting scale to 1
 			transform.localScale = Vector3.one;
 			tmpro.text = ClosingText;

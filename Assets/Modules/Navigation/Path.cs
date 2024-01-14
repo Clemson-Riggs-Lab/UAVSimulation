@@ -3,6 +3,7 @@ using UAVs;
 using UAVs.Settings.ScriptableObjects;
 using UnityEngine;
 using WayPoints;
+using static HelperScripts.Enums;
 
 namespace Modules.Navigation
 {
@@ -22,9 +23,12 @@ namespace Modules.Navigation
         public Path reroutedPath=null;
         public float pathDuration;
         public float timeToReachNFZ=0;
-        public DateTime startTime;
-        
-        
+        public DateTime originalStartTimeDateTime;
+        public float dynamicStartTime;
+        public float originalStartTime;
+        public float startTimeForRerouting;
+        public ConditionalState OneClickRerouteButtonCondition;
+
 
         public Path( Uav uav, WayPoint destinationWayPoint, bool visuallyEnabledForTargetDetection, bool uavIsVisuallyEnabledForRerouting, bool targetIsPresent, bool nonTargetIsPresent,bool headingToNFZ)
         {
@@ -36,6 +40,7 @@ namespace Modules.Navigation
             this.targetIsPresent = targetIsPresent;
             this.nonTargetIsPresent = nonTargetIsPresent;
             this.headingToNFZ = headingToNFZ;
+            
 
             if (headingToNFZ)
             {
@@ -65,7 +70,8 @@ namespace Modules.Navigation
             this.uavIsVisuallyEnabledForRerouting = path.uavIsVisuallyEnabledForRerouting;
             this.targetIsPresent = path.targetIsPresent;
             this.nonTargetIsPresent = path.nonTargetIsPresent;
-            this.startTime = path.startTime;
+            this.originalStartTimeDateTime = path.originalStartTimeDateTime;
+            this.originalStartTime = path.originalStartTime;
             this.headingToNFZ = path.headingToNFZ;
             this.isReroutePath = true;
             this.reroutedPath = path;
@@ -78,6 +84,11 @@ namespace Modules.Navigation
             {
                 pathDuration = Vector3.Distance(uav.transform.position, destinationWayPoint.transform.position) / GameManager.Instance.settingsDatabase.navigationSettings.fixedSpeed;
             }
+        }
+
+        public void SetHeadingToNfz()
+        {
+            headingToNFZ = (GetCollisionPointWithNFZ() > 0);
         }
     }
 }

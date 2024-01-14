@@ -19,7 +19,7 @@ MonoBehaviour:
   namingScheme: 6
   colorUavLikePath: 1
   maxUavNumberAfterName: 9
-  waypointsShuffleRandomGeneratorSeed: 1
+  waypointsShuffleRandomGeneratorSeed: 310000
   logUavCreationEvents: 0
   logUavDestroyEvents: 0
   logUavConditionChangedEvents: 1

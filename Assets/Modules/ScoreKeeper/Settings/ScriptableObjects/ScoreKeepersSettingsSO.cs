@@ -29,7 +29,21 @@ namespace Modules.ScoreKeeper.Settings.ScriptableObjects
       public float reroutingFalseNegativeScore = -2; //not rerouted when uav was headed to nfz
       public float reroutingTruePositiveScore = +2; //rerouted when uav was headed to nfz
       public float reroutingTrueNegativeScore = +1; //not rerouted when uav was not headed to nfz
+      
+      
+      public float reroutingTruePositiveWithAITruePositiveScore=0;
+      public float reroutingTruePositiveDespiteAIFalseNegativeScore=0;
 
+      public float reroutingTrueNegativeWithAITrueNegativeScore=0;
+      public float reroutingTrueNegativeDespiteAIFalsePositiveScore=0;
+      
+      public float reroutingFalsePositiveDueToAIFalsePositiveScore=0; //this is on top of reroutingFalsePositiveScore
+      public float reroutingFalsePositiveDespiteAITrueNegativeScore=0;
+     
+      public float reroutingFalseNegativeDueToAIFalseNegativeScore=0; //this is on top of reroutingFalseNegativeScore
+      public float reroutingFalseNegativeDespiteAITruePositiveScore=0;
+      
+      
       public bool awardAndPenalizeForIntermediaryRerouting = true;
 
       public float targetDetectionFalsePositiveScore = -1;

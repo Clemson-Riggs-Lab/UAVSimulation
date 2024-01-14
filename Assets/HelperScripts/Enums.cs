@@ -1,6 +1,6 @@
 namespace HelperScripts
 {
-	public class Enums
+	public abstract class Enums
 	{
 		public enum InputRecordsSource 
 		{
@@ -14,6 +14,14 @@ namespace HelperScripts
 			EnabledForTargetDetectionAndRerouting,
 			Hidden,
 			Lost
+		}
+		public enum ConditionalState
+		{
+			FP, // On when it shouldn't be
+			FN, // Off when it shouldn't be
+			TP, // On when it should be
+			TN, // Off when it should be
+			OFF // no conditional state
 		}
 	}
 }

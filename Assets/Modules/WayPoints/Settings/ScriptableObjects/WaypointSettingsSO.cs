@@ -12,3 +12,4 @@ namespace WayPoints.Settings.ScriptableObjects
 		public int waypointHeightFromTerrain = 150;
 	}
 }
+ 

@@ -43,9 +43,7 @@ namespace UAVs
             {
                 availableLayers.Add(LayerMask.NameToLayer("UAV" + i));
             }
-            
-            
-            
+
             //logging
             var uavLogHandler = gameObject.GetOrAddComponent<UavLogHandler>();
             uavLogHandler.Initialize();
@@ -55,7 +53,7 @@ namespace UAVs
             _uavsGenerator.Initialize();
             GenerateUavs();
             _navigationManager.Initialize();
-
+            CheckIfNeedToGenerateMoreUavs();
         }
         private void SubscribeToChannels()
         {
@@ -87,8 +85,20 @@ namespace UAVs
 
         private void CheckIfNeedToGenerateMoreUavs()
         {
-            var numberOfActiveUavsForRerouting = _navigationSettings.numberOfActiveUavsForRerouting - (uavs.Count - lostUavs.Count);
-            var numberOfActiveUavsForTargetDetection = _targetDetectionSettings.numberOfActiveUavsForTargetDetection - (uavs.Count - lostUavs.Count);
+            var numberOfActiveUavsForRerouting = 0;
+            var numberOfActiveUavsForTargetDetection = 0;
+            
+            if (!_navigationSettings.distinctUavsForReroutingAndTargetDetection)
+            { 
+                numberOfActiveUavsForRerouting = _navigationSettings.numberOfActiveUavsForRerouting - (uavs.Count - lostUavs.Count);
+                numberOfActiveUavsForTargetDetection = _targetDetectionSettings.numberOfActiveUavsForTargetDetection - (uavs.Count - lostUavs.Count);
+            }
+            else //if distinct uavs are needed for 
+            {
+                numberOfActiveUavsForRerouting = _navigationSettings.numberOfActiveUavsForRerouting - (uavs.Count - (lostUavs.Count+_targetDetectionSettings.numberOfActiveUavsForTargetDetection));
+                numberOfActiveUavsForTargetDetection = _targetDetectionSettings.numberOfActiveUavsForTargetDetection - (uavs.Count - (lostUavs.Count+_navigationSettings.numberOfActiveUavsForRerouting));
+            }
+
             var numberOfUavsToGenerate = Math.Max(numberOfActiveUavsForRerouting, numberOfActiveUavsForTargetDetection);
 
             if (numberOfUavsToGenerate > 0)
@@ -103,6 +113,8 @@ namespace UAVs
 
         private void RemoveUavsFromLostUavs(int numberOfUavsToRemove)
         {
+            if (lostUavs.Count<numberOfUavsToRemove)
+                numberOfUavsToRemove = lostUavs.Count;
             for (var i = 0; i < numberOfUavsToRemove; i++)
             {
                 var  randomIndex = UnityEngine.Random.Range(0, lostUavs.Count);

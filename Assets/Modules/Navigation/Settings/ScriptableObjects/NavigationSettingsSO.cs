@@ -41,11 +41,12 @@ namespace Modules.Navigation.Settings.ScriptableObjects
 	     public int numberOfActiveUavsForRerouting = 10;
 	    [Space(20)]
 	    
-	    public float fixedSpeed=15;
+	    public float fixedSpeed=20;
 
-	    public float maxPathDuration = 35; // Max duration of path (in seconds), set to 0 to disable
-	    public float minPathDuration = 15; // Min duration of path (in seconds), set to 0 to disable
-	    public double minDistanceFromNFZInDuration= 7; // Min distance from NFZ in duration (in seconds), set to 0 to disable
+	    public float maxPathDuration = 15; // Max duration of path (in seconds), set to 0 to disable
+	    public float minPathDuration = 10; // Min duration of path (in seconds), set to 0 to disable
+	    public float minDistanceFromNFZInDuration= 8; // Min distance from NFZ in duration (in seconds), set to 0 to disable
+	    public float maxDistanceFromNFZInDuration= 12; // Max distance from NFZ in duration (in seconds), set to 0 to disable
 	    [Space(20)]
 	    
 	    [Header("How the UAV should follow the path")]
@@ -68,11 +69,13 @@ namespace Modules.Navigation.Settings.ScriptableObjects
 	    [Tooltip("Neglected if hovering type not set to UseAngle")]
 	    public float hoverAngle = 360; // Angle of hovering (in degrees)
 	    [Tooltip("Neglected if hovering type not set to UseSpeed")]
-	    public float hoverSpeed = 1; // Speed of hovering (in degrees per second)
+	    public float hoverSpeed = 20; // Speed of hovering (in degrees per second)
 
 	    public int shufflingPathsRandomGeneratorSeed = 1;
 	    public int targetAndNFZProbabilityRandomGeneratorSeed = 1;
 	    public int uavSelectionShuffleRandomNumberGeneratorSeed = 1;
-	   
+	    public bool fixResponseTime = true;
+	    public float reroutingMaxResponseTime =10;
+	    public bool distinctUavsForReroutingAndTargetDetection= true;
     }
 }

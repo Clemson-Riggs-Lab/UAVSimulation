@@ -24,6 +24,7 @@ namespace Modules.Navigation
 
 		[NonSerialized] private Uav _uav;
 		[NonSerialized] private GameObject _uavBody;
+		[NonSerialized] private GameObject _uavCamera;
 		
 		[NonSerialized] private Sequence _doTweenSequence;
 
@@ -55,6 +56,8 @@ namespace Modules.Navigation
 		{
 			_uav = gameObject.GetComponent<Uav>();
 			_uavBody = _uav.uavBody;
+			_uavCamera = _uav.GetComponentInChildren<UnityEngine.Camera>().gameObject;
+			
 			if (GetComponent<Rigidbody>())
 				GetComponent<Rigidbody>().freezeRotation = true;
 			if (_uav == null)
@@ -78,7 +81,6 @@ namespace Modules.Navigation
 		{
 			
 			_uav.currentPath=_currentPath = _navigationManager.GetRandomPathDynamically(_uav);
-			_currentPath.startTime = DateTime.Now;
 			UpdateNavigation();
 		}
 		
@@ -114,19 +116,34 @@ namespace Modules.Navigation
 			//also note that the above is just a safety check, since the navigator should be destroyed by the navigation manager when the UAV is lost.
 			_doTweenSequence = DOTween.Sequence();
 			_doTweenSequence.AppendCallback(()=>_uavStartedNewPathEventChannel.RaiseEvent(_uav, _currentPath));
-			if(!reroute)
+			_currentPath.startTimeForRerouting = Time.time;
+			if (!reroute)
 				AddHoveringTween();
+
+			_doTweenSequence.AppendCallback(()=>StartPath(reroute));
 			AddDOTweenNavigationAndRotation();
-			_doTweenSequence.AppendCallback(()=>_uavArrivedAtDestinationEventChannel.RaiseEvent(_uav, _currentPath));
 			
+			_doTweenSequence.AppendCallback(()=>_uavArrivedAtDestinationEventChannel.RaiseEvent(_uav, _currentPath));
 			_doTweenSequence.OnComplete(StartNextDestination);
 		}
-		
+
+		private void StartPath(bool reroute)
+		{
+			if (!reroute)
+			{
+				_currentPath.originalStartTimeDateTime = DateTime.Now;
+				_currentPath.dynamicStartTime = _currentPath.originalStartTime = Time.time;
+			}
+			else
+			{
+				_currentPath.dynamicStartTime = Time.time;
+			}
+		}
+
 		private void StartNextDestination()
 		{
 			_uav.currentPath=_currentPath=_navigationManager.GetRandomPathDynamically(_uav);
-			_currentPath.startTime= DateTime.Now;
-			
+
 			if(_currentPath == null) // we have reached the end 
 			{
 				Destroy(this);
@@ -155,7 +172,8 @@ namespace Modules.Navigation
 				case NavigationSettingsSO.FollowType.SmoothFacing:
 				default: 
 					_doTweenSequence.Append(transform.DOMove(TargetPosition , navigationDuration).SetEase(Ease.Linear));
-					_doTweenSequence.Join(_uavBody.transform.DOLookAt(TargetPosition, navigationSettings.rotationDuration, AxisConstraint.Y).SetEase(Ease.Linear));
+					_doTweenSequence.Join(_uavBody.transform.DOLookAt(TargetPosition, navigationSettings.rotationDuration).SetEase(Ease.Linear));
+					_doTweenSequence.Join(_uavCamera.transform.DOShakeRotation(navigationDuration, new Vector3(1,1,0), 1 , 0, false, ShakeRandomnessMode.Harmonic ));
 					break;
 				
 				// Just Look at	
@@ -204,11 +222,9 @@ namespace Modules.Navigation
 						//if already facing the next waypoint, then we do not need to rotate
 						var nextWaypointPosition = _currentPath.destinationWayPoint.transform.position;
 						var angle = Vector3.Angle(_uavBody.transform.forward, (nextWaypointPosition - transform.position).normalized);
-						if (angle >= 10f)
-							return;
+						var dynamicHoverDuration = angle / navigationSettings.hoverSpeed;
 						
-						else
-							_doTweenSequence.Append(_uavBody.transform.DOLookAt(TargetPosition, navigationSettings.hoverDurationOnWaypoint, AxisConstraint.None, Vector3.up ).SetEase(Ease.Linear));
+						_doTweenSequence.Append(_uavBody.transform.DOLookAt(TargetPosition, dynamicHoverDuration, AxisConstraint.Y, Vector3.up ).SetEase(Ease.Linear));
 					}
 					break;
 					
@@ -220,10 +236,26 @@ namespace Modules.Navigation
 		
 		private float GetNavigationDuration()
 		{
-			var navigationDuration = 0f;
-			var distance = Vector3.Distance(transform.position, TargetPosition);
-			navigationDuration = distance / navigationSettings.fixedSpeed;
+			 
+			var distanceToWaypoint = Vector3.Distance(transform.position, TargetPosition);//50
+			
+			if (_currentPath.headingToNFZ&& navigationSettings.fixResponseTime && _currentPath.isReroutePath==false )
+			{
+				//if we are heading to NFZ and we want to fix the speed to maintain a constant Response Time (duration till we reach the NFZ should be constant)
+				if(Physics.Linecast(transform.position, TargetPosition, out var hitInfo, 1<<LayerMask.NameToLayer("NFZ")))
+				{
+					var distanceToNfz = Vector3.Distance(transform.position, hitInfo.point);
+					var totalNavigationDuration = (distanceToWaypoint / distanceToNfz) * navigationSettings.reroutingMaxResponseTime; 
+					return totalNavigationDuration; 
+				}
+			}
+		
+			var navigationDuration = distanceToWaypoint / navigationSettings.fixedSpeed; 
+			//if (navigationDuration<1)
+			//	Debug.Log("Navigation Duration is less than 1");
 			return navigationDuration;
+			
+			
 		}
 
 		private void OnDestroy()

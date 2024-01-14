@@ -7,7 +7,10 @@ using Modules.ScoreKeeper.Channels.ScriptableObjects;
 using Modules.ScoreKeeper.Settings.ScriptableObjects;
 using UAVs;
 using UAVs.Channels.ScriptableObjects;
+using Unity.VisualScripting;
 using UnityEngine;
+using static HelperScripts.Enums.ConditionalState;
+using static Modules.ScoreKeeper.ScoreManager.AIRelatedScoreEventType;
 using static Modules.ScoreKeeper.ScoreManager.ScoreEventType;
 
 namespace Modules.ScoreKeeper
@@ -35,8 +38,8 @@ namespace Modules.ScoreKeeper
 			SubscribeToChannels();
 			_score = new Score();
 			
-			var ScoreLogHandler = gameObject.GetOrAddComponent<ScoreLogHandler>();
-			ScoreLogHandler.Initialize();
+			var scoreLogHandler = gameObject.GetOrAddComponent<ScoreLogHandler>();
+			scoreLogHandler.Initialize();
 		}
 
 		private void SubscribeToChannels()
@@ -69,9 +72,52 @@ namespace Modules.ScoreKeeper
 			if(uav.currentPath == null || !uav.currentPath.uavIsVisuallyEnabledForRerouting) return;
 			var  lastPathScoreData = GetLastPathScoreData(uav, uav.currentPath);
 			if( uav.currentPath.headingToNFZ)
-				lastPathScoreData.pathScoreEvents.Add( new PathScoreEvent(){ path = uav.currentPath,scoreEventType= ReroutingFalseNegative, time = Time.time});
+			{
+				lastPathScoreData.pathScoreEvents.Add(new PathScoreEvent() { path = uav.currentPath, scoreEventType = ReroutingFalseNegative, time = Time.time });
+				lastPathScoreData.pathAIRelatedScoreEvents.Add(AddAIRelatedScore(uav, ReroutingFalseNegative));
+			}
+		    //the else if is not needed because if it is lost without heading to NFZ it is an error and we shouldn't count it
+		    
 			lastPathScoreData.finalizedScore = true;
 			UpdateScore(lastPathScoreData);
+		}
+
+		private PathAIRelatedScoreEvent AddAIRelatedScore(Uav uav, ScoreEventType eventType)
+		{
+			AIRelatedScoreEventType aiRelatedScoreEventType;
+			switch (eventType)
+			{
+				case ReroutingTruePositive:
+					aiRelatedScoreEventType = uav.currentPath.reroutedPath.OneClickRerouteButtonCondition == TP ? ReroutingTruePositiveWithAITruePositive : ReroutingTruePositiveDespiteAIFalseNegative;
+					break;
+				case ReroutingTrueNegative:
+					aiRelatedScoreEventType = uav.currentPath.OneClickRerouteButtonCondition == TN ? ReroutingTrueNegativeWithAITrueNegative : ReroutingTrueNegativeDespiteAIFalsePositive;
+					break;
+				case ReroutingFalsePositive:
+					aiRelatedScoreEventType = uav.currentPath.OneClickRerouteButtonCondition == FP ? ReroutingFalsePositiveDueToAIFalsePositive : ReroutingFalsePositiveDespiteAITrueNegative;
+					break;
+				case ReroutingFalseNegative:
+				{
+					if (uav.currentPath.reroutedPath == null)
+					{
+						aiRelatedScoreEventType = uav.currentPath.OneClickRerouteButtonCondition == FN ? ReroutingFalseNegativeDueToAIFalseNegative : ReroutingFalseNegativeDespiteAITruePositive;
+					}
+					else
+					{
+						aiRelatedScoreEventType = uav.currentPath.reroutedPath.OneClickRerouteButtonCondition == FN ? ReroutingFalseNegativeDueToAIFalseNegative : ReroutingFalseNegativeDespiteAITruePositive;
+					}
+					break;
+				}
+				default:
+					Debug.LogError("Unknown ScoreEventType: " + eventType);
+					return null;
+			}
+			return new PathAIRelatedScoreEvent()
+			{
+				path = uav.currentPath,
+				scoreEventType = aiRelatedScoreEventType,
+				time = Time.time
+			};
 		}
 
 		private void OnUavArrivedAtDestination(Uav uav, Path path)
@@ -80,9 +126,11 @@ namespace Modules.ScoreKeeper
 			if(path.uavIsVisuallyEnabledForRerouting)
 			{
 				if (!lastPathScoreData.pathScoreEvents.Any(pse => pse.scoreEventType == ReroutingTruePositive) &&
-			     !lastPathScoreData.pathScoreEvents.Any(pse => pse.scoreEventType == ReroutingFalsePositive))
-				lastPathScoreData.pathScoreEvents.Add( new PathScoreEvent(){ path = path,scoreEventType= ReroutingTrueNegative, time = Time.time});
-				
+				    !lastPathScoreData.pathScoreEvents.Any(pse => pse.scoreEventType == ReroutingFalsePositive))
+				{
+					lastPathScoreData.pathScoreEvents.Add( new PathScoreEvent(){ path = path,scoreEventType= ReroutingTrueNegative, time = Time.time});
+					lastPathScoreData.pathAIRelatedScoreEvents.Add(AddAIRelatedScore(uav, ReroutingTrueNegative));
+				}
 			}
 
 			if (path.uavIsVisuallyEnabledForTargetDetection)
@@ -119,10 +167,9 @@ namespace Modules.ScoreKeeper
 			}
 			var lastPathScoreData = GetLastPathScoreData(uav, path);
 
-			lastPathScoreData.pathScoreEvents.Add( new PathScoreEvent(){
-				path = path,scoreEventType= path.reroutedPath.headingToNFZ
-					? ReroutingTruePositive
-					: ReroutingFalsePositive, time = Time.time});
+			var scoreEventType= path.reroutedPath.headingToNFZ ? ReroutingTruePositive : ReroutingFalsePositive;
+			lastPathScoreData.pathScoreEvents.Add( new PathScoreEvent(){ path = path,scoreEventType= scoreEventType, time = Time.time});
+			lastPathScoreData.pathAIRelatedScoreEvents.Add(AddAIRelatedScore(uav, scoreEventType));
 			if(_scoreKeepersSettings.awardAndPenalizeForIntermediaryRerouting)
 				UpdateScore(lastPathScoreData);
 		}
@@ -130,11 +177,8 @@ namespace Modules.ScoreKeeper
 		private void OnTargetDetected(Uav uav, Path path)
 		{
 			var lastPathScoreData = GetLastPathScoreData(uav, path);
-
-			lastPathScoreData.pathScoreEvents.Add(new PathScoreEvent(){
-				path = path,scoreEventType= path.targetIsPresent
-					? TargetDetectionTruePositive
-					: TargetDetectionFalsePositive, time = Time.time});
+			var scoreEventType = path.targetIsPresent ? TargetDetectionTruePositive : TargetDetectionFalsePositive;
+			lastPathScoreData.pathScoreEvents.Add(new PathScoreEvent(){ path = path,scoreEventType= scoreEventType, time = Time.time});
 			
 			if(_scoreKeepersSettings.awardAndPenalizeForIntermediaryTargetDetection)
 				UpdateScore(lastPathScoreData);
@@ -160,12 +204,13 @@ namespace Modules.ScoreKeeper
 			var lastPathScoreData = pathScoreDataList?.LastOrDefault();
 
 			if (lastPathScoreData?.path.id == path.id) return lastPathScoreData;
+			//if we are here, it means that the last path was not finalized but a new path was started, so we finalize the last path
 			if (lastPathScoreData != null)
 			{
 				lastPathScoreData.finalizedScore = true;
 				UpdateScore(lastPathScoreData);
-				Debug.Log("Finalized score for path: " + lastPathScoreData.path.id + " for uav: " + uav.id +
-				          ", This should not happen, please report this bug");
+				//Debug.Log("Finalized score for path: " + lastPathScoreData.path.id + " for uav: " + uav.uavName +
+				 //         ", This should not happen, please report this bug");
 			}
 
 			PathScoreData newpath= new PathScoreData(path);
@@ -190,20 +235,70 @@ namespace Modules.ScoreKeeper
 			{
 				//get the last score event from the list
 				var lastScoreEvent =lastPathScoreData.pathScoreEvents.LastOrDefault();
-				if(lastScoreEvent is null) return;
-				UpdateScoreCounts(lastScoreEvent.scoreEventType);
-				lastScoreEvent.accountedForInScore = true;
+				if(lastScoreEvent is not null)
+				{
+					UpdateScoreCounts(lastScoreEvent.scoreEventType);
+					lastScoreEvent.accountedForInScore = true;
+				}
+
+				var lastAIRelatedScoreEvent = lastPathScoreData.pathAIRelatedScoreEvents.LastOrDefault();
+				if(lastAIRelatedScoreEvent is not null)
+				{
+					UpdateAIRelatedScoreCounts(lastAIRelatedScoreEvent.scoreEventType);
+					lastAIRelatedScoreEvent.accountedForInScore = true;
+				}
 				
 			}
 			else
 			{
-				foreach (var pathScoreEvent in lastPathScoreData.pathScoreEvents.Where(pathScoreEvent => !pathScoreEvent.accountedForInScore))
+				var lastScoreEvent =lastPathScoreData.pathScoreEvents.LastOrDefault();
+				if (lastScoreEvent is not null)
 				{
-					UpdateScoreCounts(pathScoreEvent.scoreEventType);
-					pathScoreEvent.accountedForInScore = true;
+
+					foreach (var pathScoreEvent in lastPathScoreData.pathScoreEvents.Where(pathScoreEvent => !pathScoreEvent.accountedForInScore))
+					{
+						UpdateScoreCounts(pathScoreEvent.scoreEventType);
+						pathScoreEvent.accountedForInScore = true;
+					}
 				}
-			}
+
+				var lastAIRelatedScoreEvent = lastPathScoreData.pathAIRelatedScoreEvents.LastOrDefault();
+				if (lastAIRelatedScoreEvent is not null)
+				{
+					foreach (var pathAIRelatedScoreEvent in lastPathScoreData.pathAIRelatedScoreEvents.Where(pathAIRelatedScoreEvent => !pathAIRelatedScoreEvent.accountedForInScore))
+					{
+						UpdateAIRelatedScoreCounts(pathAIRelatedScoreEvent.scoreEventType);
+						pathAIRelatedScoreEvent.accountedForInScore = true;
+					}
+				}
+
+			}			
+			UpdateResponseTimes(lastPathScoreData);
 			RecalculateScores();
+			RecalculateAIRelatedScores();
+		}
+
+		private void UpdateResponseTimes(PathScoreData lastPathScoreData)
+		{
+			//check if we have a target detection true positive, if so, get the Response Time for that (the last one)
+			var targetDetectionTruePositive = lastPathScoreData.pathScoreEvents
+				.LastOrDefault(pse => pse.scoreEventType == TargetDetectionTruePositive);
+			
+			if (targetDetectionTruePositive != null)
+			{
+				_score.targetDetectionResponseTimePathIdDictionary[lastPathScoreData.path.id]= targetDetectionTruePositive.time - lastPathScoreData.path.dynamicStartTime;
+			}
+			
+			//check if we have a rerouting true positive, if so, get the Response Time for that (the last one)
+			var reroutingTruePositive = lastPathScoreData.pathScoreEvents
+				.LastOrDefault(pse => pse.scoreEventType == ReroutingTruePositive);
+
+			if (reroutingTruePositive != null)
+			{
+				_score.reroutingResponseTimePathIdDictionary[ lastPathScoreData.path.id]=reroutingTruePositive.time - lastPathScoreData.path.startTimeForRerouting; //this is a hacky way, but I just want to get done with it.
+				//print for debugging
+				Debug.Log("Rerouting Response Time for path: " + lastPathScoreData.path.id + " is: " + _score.reroutingResponseTimePathIdDictionary[lastPathScoreData.path.id]);
+			}
 		}
 
 		private void UpdateScoreCounts(ScoreEventType lastScoreEvent)
@@ -213,7 +308,13 @@ namespace Modules.ScoreKeeper
 				_score.scoreCounts[lastScoreEvent]++;
 			}
 		}
-
+		private void UpdateAIRelatedScoreCounts(AIRelatedScoreEventType lastAIRelatedScoreEvent)
+		{
+			if (_score.aIRelatedScoreCounts.ContainsKey(lastAIRelatedScoreEvent))
+			{
+				_score.aIRelatedScoreCounts[lastAIRelatedScoreEvent]++;
+			}
+		}
 		public void RecalculateScores()
 		{
 			foreach (var (scoreEventType, scoreEventCount) in _score.scoreCounts)
@@ -233,6 +334,7 @@ namespace Modules.ScoreKeeper
 					case ReroutingTrueNegative:
 						scoreValue = _scoreKeepersSettings.reroutingTrueNegativeScore;
 						break;
+
 					case TargetDetectionFalsePositive:
 						scoreValue = _scoreKeepersSettings.targetDetectionFalsePositiveScore;
 						break;
@@ -245,6 +347,7 @@ namespace Modules.ScoreKeeper
 					case TargetDetectionTrueNegative:
 						scoreValue = _scoreKeepersSettings.targetDetectionTrueNegativeScore;
 						break;
+					
 					default:
 						Debug.LogError("Unknown ScoreEventType: " + scoreEventType);
 						break;
@@ -253,6 +356,54 @@ namespace Modules.ScoreKeeper
 			}
 			// publish updated score event
 			_scoreKeeperUpdatedEventChannel.RaiseEvent(_score);
+		}
+
+		public void RecalculateAIRelatedScores()
+		{
+			foreach (var (scoreEventType, scoreEventCount) in _score.aIRelatedScoreCounts)
+			{
+				float scoreValue = 0f;
+				switch (scoreEventType)
+				{
+					
+					case ReroutingTruePositiveWithAITruePositive:
+						scoreValue = _scoreKeepersSettings.reroutingTruePositiveWithAITruePositiveScore;
+						break;
+					case ReroutingTruePositiveDespiteAIFalseNegative:
+						scoreValue = _scoreKeepersSettings.reroutingTruePositiveDespiteAIFalseNegativeScore;
+						break;
+					
+					case ReroutingTrueNegativeWithAITrueNegative:
+						scoreValue = _scoreKeepersSettings.reroutingTrueNegativeWithAITrueNegativeScore;
+						break;
+					case ReroutingTrueNegativeDespiteAIFalsePositive:
+						scoreValue = _scoreKeepersSettings.reroutingTrueNegativeDespiteAIFalsePositiveScore;
+						break;
+					
+					case ReroutingFalsePositiveDueToAIFalsePositive :
+						scoreValue = _scoreKeepersSettings.reroutingFalsePositiveDueToAIFalsePositiveScore;
+						break;
+					case ReroutingFalsePositiveDespiteAITrueNegative:
+						scoreValue = _scoreKeepersSettings.reroutingFalsePositiveDespiteAITrueNegativeScore;
+						break;
+					
+					case ReroutingFalseNegativeDespiteAITruePositive:
+						scoreValue = _scoreKeepersSettings.reroutingFalseNegativeDespiteAITruePositiveScore;
+						break;
+					case ReroutingFalseNegativeDueToAIFalseNegative:
+						scoreValue = _scoreKeepersSettings.reroutingFalseNegativeDueToAIFalseNegativeScore;
+						break;
+					
+					default:
+						Debug.LogError("Unknown ScoreEventType: " + scoreEventType);
+						break;
+				}
+				_score.aIRelatedScoreValues[scoreEventType] = scoreValue * scoreEventCount;
+			}
+			// publish updated score event
+			_scoreKeeperUpdatedEventChannel.RaiseEvent(_score);
+
+			
 		}
 
 		private void GetReferencesFromGameManager()
@@ -272,6 +423,7 @@ namespace Modules.ScoreKeeper
 		public class PathScoreData
 		{
 			public List<PathScoreEvent> pathScoreEvents = new List<PathScoreEvent>();
+			public List<PathAIRelatedScoreEvent> pathAIRelatedScoreEvents = new List<PathAIRelatedScoreEvent>();
 			public Path path;
 			public bool finalizedScore=false;
 			
@@ -288,19 +440,42 @@ namespace Modules.ScoreKeeper
 			public Path path;
 			public bool accountedForInScore=false;
 		}
+		
+		public class PathAIRelatedScoreEvent
+		{
+			public AIRelatedScoreEventType scoreEventType;
+			public float time;
+			public Path path;
+			public bool accountedForInScore=false;
+		}
 		public enum ScoreEventType
 		{
 			ReroutingFalsePositive,
 			ReroutingFalseNegative,
 			ReroutingTruePositive,
 			ReroutingTrueNegative,
+
 			TargetDetectionFalsePositive,
 			TargetDetectionFalseNegative,
 			TargetDetectionTruePositive,
 			TargetDetectionTrueNegative
 		}
 
-		
+		public enum AIRelatedScoreEventType
+		{
+			ReroutingTruePositiveWithAITruePositive,
+			ReroutingTruePositiveDespiteAIFalseNegative,
+			
+			ReroutingTrueNegativeWithAITrueNegative,
+			ReroutingTrueNegativeDespiteAIFalsePositive,
+			
+			ReroutingFalsePositiveDueToAIFalsePositive,
+			ReroutingFalsePositiveDespiteAITrueNegative,
+			
+			ReroutingFalseNegativeDespiteAITruePositive,
+			ReroutingFalseNegativeDueToAIFalseNegative,
+		}
+
 		private void OnDisable()
 		{
 			UnsubscribeFromChannels();

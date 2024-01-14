@@ -29,6 +29,7 @@ namespace UI.UavCameraAndTargetDetectionPanel
          private UavConditionEventChannelSO _uavConditionChangedEventChannel;
 
          public TextMeshProUGUI headerText;
+         public GameObject centerPanel;
          
          private Dictionary<Uav,UavCameraAndTargetDetectionPanelController> _uavPanelsDictionary = new ();
        
@@ -46,6 +47,9 @@ namespace UI.UavCameraAndTargetDetectionPanel
             
             headerText.text = _uavCameraAndTargetDetectionPanelSettings.headerText;
             headerText.color = ColorHelper.StringToColor(_uavCameraAndTargetDetectionPanelSettings.headerTextColor);
+            gameObject.GetComponent<FlexibleGridLayout>().ignoreZeroScaleObjects = _uavCameraAndTargetDetectionPanelSettings.onlyAccountForVisibleUavsButtonsInLayout;
+
+            centerPanel.GetComponent<Image>().color = ColorHelper.StringToColor(headerText.text == "Primary Task" ? _uavCameraAndTargetDetectionPanelSettings.headerTextColor : "Black");
         }
 
         private void ClearPanels()

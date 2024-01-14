@@ -24,6 +24,14 @@ MonoBehaviour:
   reroutingFalseNegativeScore: -2
   reroutingTruePositiveScore: 2
   reroutingTrueNegativeScore: 1
+  reroutingTruePositiveWithAITruePositiveScore: 0
+  reroutingTruePositiveDespiteAIFalseNegativeScore: 0
+  reroutingTrueNegativeWithAITrueNegativeScore: 0
+  reroutingTrueNegativeDespiteAIFalsePositiveScore: 0
+  reroutingFalsePositiveDueToAIFalsePositiveScore: 0
+  reroutingFalsePositiveDespiteAITrueNegativeScore: 0
+  reroutingFalseNegativeDueToAIFalseNegativeScore: 0
+  reroutingFalseNegativeDespiteAITruePositiveScore: 0
   awardAndPenalizeForIntermediaryRerouting: 1
   targetDetectionFalsePositiveScore: -1
   targetDetectionFalseNegativeScore: -2
@@ -32,4 +40,4 @@ MonoBehaviour:
   awardAndPenalizeForIntermediaryTargetDetection: 1
   logScoreResults: 1
   logScoringCriteria: 1
-  showScorePanel: 1
+  showScorePanel: 0

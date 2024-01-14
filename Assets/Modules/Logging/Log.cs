@@ -12,8 +12,6 @@ namespace Modules.Logging
 		public string simulationTimeStamp= Time.time.ToString();
 		public string logType;
 		public string eventType;
-		public List<string> logMessages;
-		
-		
+		public object logData;
 	}
 }

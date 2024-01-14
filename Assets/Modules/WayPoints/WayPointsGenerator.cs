@@ -33,12 +33,19 @@ namespace Modules.WayPoints
             // Calculate the distance between waypoints based on the number of waypoints and the terrain size
             float distanceBetweenWaypoints = Mathf.Sqrt((terrainWidth * terrainLength) / numberOfWaypoints);
 
+            // Calculate the number of rows and columns for the waypoints
+            int numberOfRows = Mathf.FloorToInt(terrainLength / distanceBetweenWaypoints);
+            int numberOfColumns = Mathf.FloorToInt(terrainWidth / distanceBetweenWaypoints);
+
+            // Calculate the actual number of waypoints based on the number of rows and columns
+            int actualNumberOfWaypoints = numberOfRows * numberOfColumns;
+
             // Generate the waypoints uniformly distributed around the grid
-            for (int i = 0; i < numberOfWaypoints; i++)
+            for (int i = 0; i < actualNumberOfWaypoints; i++)
             {
                 // Calculate the x and z coordinates of the current waypoint
-                float x = (i % Mathf.RoundToInt(terrainWidth / distanceBetweenWaypoints)) * distanceBetweenWaypoints+ distanceBetweenWaypoints/2;
-                float z = Mathf.FloorToInt(i / (terrainLength / distanceBetweenWaypoints)) * distanceBetweenWaypoints + distanceBetweenWaypoints/2;
+                float x = (i % numberOfColumns) * distanceBetweenWaypoints + distanceBetweenWaypoints / 2;
+                float z = Mathf.FloorToInt(i / numberOfColumns) * distanceBetweenWaypoints + distanceBetweenWaypoints / 2;
 
                 // Get the height of the terrain at the current waypoint position
                 float y = terrain.SampleHeight(new Vector3(x, 0, z));
@@ -47,6 +54,8 @@ namespace Modules.WayPoints
                 GenerateWayPoint(i, new Vector3(x, y + heightFromTerrain, z));
             }
         }
+
+
         
         private void GenerateWayPoint(int id,Vector3 position)
         {

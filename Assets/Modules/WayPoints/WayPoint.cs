@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using HelperScripts;
 using ScriptableObjects.EventChannels;
 using UnityEngine;
 using WayPoints.Channels.ScriptableObjects;
@@ -18,6 +19,7 @@ namespace WayPoints
             this.id = id;
             transform.position = position;
             gameObject.name="WayPoint "+id;
+            this.transform.SetLayerRecursively(LayerMask.NameToLayer("Waypoints"));
             
             if(wayPointCreatedChannel != null)
                 wayPointCreatedChannel.RaiseEvent(this);

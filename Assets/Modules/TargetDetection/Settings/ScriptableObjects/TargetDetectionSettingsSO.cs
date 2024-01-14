@@ -13,7 +13,6 @@ namespace Modules.TargetDetection.Settings.ScriptableObjects
 		[JsonConverter(typeof(StringEnumConverter))]
 		public ObjectType defaultTargetType = ObjectType.Box;
 		
-		public Range targetSpawnBufferRangeInSeconds = new Range(){ Min = 5, Max = 10};
 		public Range targetRandomDeviationFromCenter = new Range(){ Min = 0, Max = 20};
 
 		[Space(10)] [Header("Target Detection Default Frequency Settings")]
@@ -31,5 +30,6 @@ namespace Modules.TargetDetection.Settings.ScriptableObjects
 		public string nonTargetColor= "lightBlue";
 		public int targetPositioningRandomGeneratorSeed = 1;
 		public int targetDistanceRandomGeneratorSeed = 1;
+		public float targetDetectionMaxResponseTime = 10;
 	}
 }

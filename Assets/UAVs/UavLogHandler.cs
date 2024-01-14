@@ -54,7 +54,7 @@ namespace UAVs
 			{
 				logType = "Uav",
 				eventType = "ConditionChanged",
-				logMessages = new() { $"Uav {uav.uavName} condition changed to {condition}" }
+				logData = new { message=$"Uav {uav.uavName} condition changed to {condition}" }
 			};
 			_logEventChannel.RaiseEvent(log);
 		}
@@ -65,7 +65,7 @@ namespace UAVs
 			{
 				logType = "Uav",
 				eventType = "Destroyed",
-				logMessages = new() { $"Uav {uav.uavName} destroyed" }
+				logData = new { message= $"Uav {uav.uavName} destroyed" }
 			};
 			_logEventChannel.RaiseEvent(log);
 		}
@@ -76,7 +76,7 @@ namespace UAVs
 			{
 				logType = "Uav",
 				eventType = "Created",
-				logMessages = new() { $"Uav {uav.uavName} created" }
+				logData = new { message= $"Uav {uav.uavName} created" }
 			};
 			_logEventChannel.RaiseEvent(log);
 		}

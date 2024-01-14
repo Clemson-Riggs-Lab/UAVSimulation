@@ -1,0 +1,102 @@
+{
+  "WayPointsRecords": [],
+  "UavDynamicNavigationWorkloadRecords": [
+    {
+      "TimeOfChange": 0.0,
+      "FrequencyOfHeadToNFZ": 0.1,
+      "RatioOfVisibleUavsForRerouting": 0.5
+    },
+    {
+      "TimeOfChange": 50.0,
+      "FrequencyOfHeadToNFZ": 0.1,
+      "RatioOfVisibleUavsForRerouting": 0.8
+    }
+  ],
+  "UavDynamicTargetDetectionWorkloadRecords": [
+    {
+      "TimeOfChange": 0.0,
+      "RatioOfFeedsWithTarget": 0.1,
+      "RatioOfFeedsWithNonTarget": 0.0,
+      "RatioOfVisibleUavsForTargetDetection": 0.5
+    },
+    {
+      "TimeOfChange": 50.0,
+      "RatioOfFeedsWithTarget": 0.1,
+      "RatioOfFeedsWithNonTarget": 0.0,
+      "RatioOfVisibleUavsForTargetDetection": 0.8
+    }
+  ],
+  "FuelLeaksRecord": [
+  ],
+  "Prompts": [
+  ],
+  "NFZRecords": [
+    {
+      "StartCoordinates": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+      },
+      "EndCoordinates": {
+        "X": 90.0,
+        "Y": 300.0,
+        "Z": 1000.0
+      },
+      "TextOnNFZAfterCountdown": " ",
+      "NFZStartTime": 0.0,
+      "NFZEndTime": 0.0,
+      "NFZCountdownTimer": 0.0
+    },
+    {
+      "StartCoordinates": {
+        "X": 910.0,
+        "Y": 0.0,
+        "Z": 90.0
+      },
+      "EndCoordinates": {
+        "X": 1000.0,
+        "Y": 300.0,
+        "Z": 1000.0
+      },
+      "TextOnNFZAfterCountdown": " ",
+      "NFZStartTime": 0.0,
+      "NFZEndTime": 0.0,
+      "NFZCountdownTimer": 0.0
+    },
+    {
+      "StartCoordinates": {
+        "X": 90.0,
+        "Y": 0.0,
+        "Z": 0.0
+      },
+      "EndCoordinates": {
+        "X": 1000.0,
+        "Y": 300.0,
+        "Z": 90.0
+      },
+      "TextOnNFZAfterCountdown": " ",
+      "NFZStartTime": 0.0,
+      "NFZEndTime": 0.0,
+      "NFZCountdownTimer": 0.0
+    },
+    {
+      "StartCoordinates": {
+        "X": 90.0,
+        "Y": 0.0,
+        "Z": 910.0
+      },
+      "EndCoordinates": {
+        "X": 910.0,
+        "Y": 300.0,
+        "Z": 1000.0
+      },
+      "TextOnNFZAfterCountdown": " ",
+      "NFZStartTime": 0.0,
+      "NFZEndTime": 0.0,
+      "NFZCountdownTimer": 0.0
+    }
+  ],
+
+  "name": "InputRecordsDatabase",
+  "hideFlags": 0
+}

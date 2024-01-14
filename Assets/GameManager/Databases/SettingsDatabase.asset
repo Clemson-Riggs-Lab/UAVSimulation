@@ -25,6 +25,6 @@ MonoBehaviour:
   fuelSettings: {fileID: 11400000, guid: 10d8429633c2c8549858095f7bdb6021, type: 2}
   pathsRenderingSettings: {fileID: 11400000, guid: 7d8c20d3daa22814f81180b3fca0fbb3, type: 2}
   scoreKeepersSettings: {fileID: 11400000, guid: 057af97e3be980b4693f9a176abdc25e, type: 2}
-  simulationStartDelay: 2
+  simulationStartDelay: 1
   simulationDuration: 300
-  randomSeed: 1
+  randomSeed: 1010000

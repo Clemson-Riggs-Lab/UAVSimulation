@@ -38,7 +38,13 @@ namespace Modules.Navigation
 		private  List<Uav> _enabledUavsForTargetDetection = new List<Uav>();
 		private  List<Uav> _enabledUavsForRerouting = new List<Uav>();
 		
+		private int _numberOfTargetsInQueue=0;
+		private int _numberOfNonTargetsInQueue=0;
+		private int _numberOfNFZsInQueue=0;
+		
 		[NonSerialized] public Dictionary<Uav,Navigator> uavsNavigatorsDictionary = new ();
+		private List<WayPoint> _occupiedWaypointsList = new ();
+
 		public void Initialize()
 		{
 			GetReferencesFromGameManager();
@@ -47,53 +53,43 @@ namespace Modules.Navigation
 			_targetAndNFZProbabilityRandomNumberGenerator = new Random(_navigationSettings.targetAndNFZProbabilityRandomGeneratorSeed);
 			_uavSelectionShuffleRandomNumberGenerator = new Random(_navigationSettings.uavSelectionShuffleRandomNumberGeneratorSeed);
 			GenerateNavigators();
-			SetEnabledUavs();
 
 		}
 
-		private void SetEnabledUavs()
-		{
-			var uavs = _uavsManager.uavs;
-			
-			//shuffle the uavs list
-			uavs = uavs.OrderBy(x => _uavSelectionShuffleRandomNumberGenerator.Next()).ToList();
-			
-			for (var i = 0; i < uavs.Count; i++)
-			{
-				if (i < _targetDetectionSettings.numberOfActiveUavsForTargetDetection)
-				{
-					_enabledUavsForTargetDetection.Add(uavs[i]);
-				}
-				if (i < _navigationSettings.numberOfActiveUavsForRerouting)
-				{
-					_enabledUavsForRerouting.Add(uavs[i]);
-				}
-				
-			}
-		}
-
-
+		
 		private void OnUavDestroyed(Uav uav)
 		{
+			if (uav.currentPath != null&& uav.currentPath.destinationWayPoint != null)
+			{
+				_occupiedWaypointsList.Remove(uav.currentPath.destinationWayPoint);
+			}
+
+			if(_enabledUavsForTargetDetection.Contains(uav))
+				_enabledUavsForTargetDetection.Remove(uav);
+				
+			if(_enabledUavsForRerouting.Contains(uav))
+				_enabledUavsForRerouting.Remove(uav);
+				
+			//destroy navigator and remove it from the dictionary
+			if (uavsNavigatorsDictionary.ContainsKey(uav))
+			{
+				Destroy(uavsNavigatorsDictionary[uav]);
+				uavsNavigatorsDictionary.Remove(uav);
+			}
 			
-				if(_enabledUavsForTargetDetection.Contains(uav))
-					_enabledUavsForTargetDetection.Remove(uav);
-				
-				if(_enabledUavsForRerouting.Contains(uav))
-					_enabledUavsForRerouting.Remove(uav);
-				
-				//destroy navigator and remove it from the dictionary
-				if (uavsNavigatorsDictionary.ContainsKey(uav))
-				{
-					Destroy(uavsNavigatorsDictionary[uav]);
-					uavsNavigatorsDictionary.Remove(uav);
-				}
 		}
 
 		private void OnUavConditionChanged(Uav uav, UavCondition uavCondition)
 		{
+			
 			//destroy navigator and remove it from the dictionary if the uav is lost 
 			if (uavCondition is not Lost ) return;
+			
+			if (uav.currentPath != null&& uav.currentPath.destinationWayPoint != null)
+			{
+				_occupiedWaypointsList.Remove(uav.currentPath.destinationWayPoint);
+			}
+			
 			if (uavsNavigatorsDictionary.ContainsKey(uav))
 			{
 				Destroy(uavsNavigatorsDictionary[uav]);
@@ -109,68 +105,147 @@ namespace Modules.Navigation
 
 		private void RerouteUav(Uav uav, Path path)
 		{
+			
+			if(uav.currentPath!=null && uav.currentPath.destinationWayPoint!=null)
+				_occupiedWaypointsList.Remove(uav.currentPath.destinationWayPoint);
+			
+			_occupiedWaypointsList.Add(path.destinationWayPoint);
+			
 			//check if uavsNavigatorsDictionary dictionary contains the uav
 			if (uavsNavigatorsDictionary.ContainsKey(uav)) 
 				uavsNavigatorsDictionary[uav].Reroute(path); //if it does, reroute the uav
 		}
-
+/// <summary>
+///  
+/// </summary>
+/// Regarding the target, non-target and NFZ queues:
+/// if one condition is active, we dont want the other conditions to be active
+/// but at the same time we want to maintain the ratio of the conditions as provided in the input file.
+/// to get over this issue, we have queues where if more than one condition is active, we put the other condition in the queue
+/// non targets are the least priority, while NFZs and targets are of equal priority.
+/// <param name="uav"></param>
+/// <returns></returns>
 		public Path GetRandomPathDynamically(Uav uav)
 		{
 			UpdateEnabledUavsLists();
 			UpdateUavVisualSettings(uav, out var visuallyEnabledForTargetDetection, out var visuallyEnabledForRerouting, out var currentPathDestination);
+			bool hasTarget= false;
+			bool hasNonTarget= false;
+			bool pathHasNFZ= false;
 			
-			var hasTarget = visuallyEnabledForTargetDetection && _targetAndNFZProbabilityRandomNumberGenerator.NextDouble() < _targetDetectionSettings.ratioOfActiveFeedsWithTarget;
-			var hasNonTarget = visuallyEnabledForTargetDetection && _targetAndNFZProbabilityRandomNumberGenerator.NextDouble() < _targetDetectionSettings.ratioOfActiveFeedsWithNonTarget;
-			var pathHasNFZ = visuallyEnabledForRerouting && _targetAndNFZProbabilityRandomNumberGenerator.NextDouble() < _nfzSettings.RatioOfHeadToNFZ;
+			if (visuallyEnabledForTargetDetection)
+			{
+				if(_targetAndNFZProbabilityRandomNumberGenerator.NextDouble() < _targetDetectionSettings.ratioOfActiveFeedsWithTarget)
+					_numberOfTargetsInQueue++;
+				if(_targetAndNFZProbabilityRandomNumberGenerator.NextDouble() < _targetDetectionSettings.ratioOfActiveFeedsWithNonTarget)
+					_numberOfNonTargetsInQueue++;
+							
+				if (_numberOfTargetsInQueue > 0)
+				{
+					hasTarget = true;
+					_numberOfTargetsInQueue--;
+				}
+				else if (_numberOfNonTargetsInQueue > 0)//if there are no targets in the queue, we check for non targets, non targets are the least priority
+				{
+					hasNonTarget = true;
+					_numberOfNonTargetsInQueue--;
+				}
+			
+			}
 
+			if (visuallyEnabledForRerouting)
+			{
+				if( _targetAndNFZProbabilityRandomNumberGenerator.NextDouble() < _nfzSettings.RatioOfHeadToNFZ)
+					_numberOfNFZsInQueue++;
 
+				if (_numberOfNFZsInQueue > 0)
+				{
+					pathHasNFZ = true;
+					_numberOfNFZsInQueue--;
+				}
+			}
+			
+			if (pathHasNFZ && hasTarget)//we dont want both conditions to be active at the same time (designed this way, although it can be changed)
+			{
+				if (_numberOfNFZsInQueue >= _numberOfTargetsInQueue) //checking which queue is bigger, so that we dont keep on getting one queue big only.
+				{
+					hasTarget = false;
+					_numberOfTargetsInQueue++;
+				}
+				else
+				{
+					pathHasNFZ = false;
+					_numberOfNFZsInQueue++;
+				}
+			}
+			else if (pathHasNFZ && hasNonTarget)
+			{
+				hasNonTarget = false;
+				_numberOfNonTargetsInQueue++;
+			}
+			
+			
 			var validWaypoints = new List<WayPoint>(_waypoints);
+			_occupiedWaypointsList.Remove(currentPathDestination);
+			validWaypoints.Remove(currentPathDestination);
+			validWaypoints.RemoveAll(item=> _occupiedWaypointsList.Contains(item));
 			
 
-			validWaypoints.Remove(currentPathDestination);
-
-		
+			validWaypoints = validWaypoints.Where(waypoint =>
+			{
+				if (!(_navigationSettings.maxPathDuration > 0) && !(_navigationSettings.minPathDuration > 0))
+					return true; //if the duration range is not set, return true
+				var distance = Vector3.Distance(currentPathDestination.transform.position,
+					waypoint.transform.position);
+				var duration = distance / _navigationSettings.fixedSpeed;
+				return duration < _navigationSettings.maxPathDuration && duration > _navigationSettings.minPathDuration; //if the duration is  within range, return true //if the duration is not within range, return false
+			}).ToList();
+			
+			
+			validWaypoints.Shuffle(_shufflingPathsRandomNumberGenerator);
 			var fallbackWaypointCandidate = validWaypoints.FirstOrDefault();
 
 			validWaypoints = validWaypoints.Where(waypoint =>
 			{
-				if (_navigationSettings.maxPathDuration > 0)
-				{
-					var distance = Vector3.Distance(currentPathDestination.transform.position,
-						waypoint.transform.position);
-					var duration = distance / _navigationSettings.fixedSpeed;
-					if (duration > _navigationSettings.maxPathDuration ||
-					    duration < _navigationSettings.minPathDuration)
-					{
-						return false;
-					}
-				}
-
-
 				var nfzHit = Physics.Linecast(uav.uavBody.transform.position, waypoint.transform.position, out var hit, 1 << LayerMask.NameToLayer("NFZ"));
-				if (nfzHit == pathHasNFZ)
-				{
-					// if distance between uav and hit point is less than the minimum indicated in the settings , return false
-					return !(Vector3.Distance(uav.uavBody.transform.position, hit.point) <
-					         (_navigationSettings.minDistanceFromNFZInDuration * _navigationSettings.fixedSpeed));
-					//if the route satisfies the headingToNFZ condition(i.e.,uav should head to NFZ and the path contains a NFZ) , return true, otherwise return false
-				}
-				else
-				{
-					return false;
-				}
+				
+				if (nfzHit != pathHasNFZ) return false; //if we do not have a nfz and we need to hit one or vice versa, return false
+				
+				if(!pathHasNFZ) return true; //if we do not have a nfz, return true as there is no need to check the distance
+				
+				var distanceToNfz = Vector3.Distance(uav.uavBody.transform.position, hit.point);
+				var minDistanceFromNFZ = _navigationSettings.minDistanceFromNFZInDuration * _navigationSettings.fixedSpeed;
+				var maxDistanceFromNFZ = _navigationSettings.maxDistanceFromNFZInDuration* _navigationSettings.fixedSpeed;
+				var isWithinRange = distanceToNfz >= minDistanceFromNFZ && distanceToNfz <= maxDistanceFromNFZ;
+
+				// Return true if the distance is within the range, otherwise return false
+				return isWithinRange;
+
 			}).ToList();
 
-			if (validWaypoints.Count == 0)
+			if (validWaypoints.Count == 0) //if there are no valid waypoints, use the fallback waypoint
 			{
-				Debug.LogWarning($"No waypoints found for UAV {uav.name} because there are no waypoints that satisfy the conditions");
+				//adjust the queue because we are using the fallback waypoint which *might* not have the same conditions as the required path
+				 if (pathHasNFZ)
+					 _numberOfNFZsInQueue++;
+				
 				validWaypoints.Add(fallbackWaypointCandidate);
 				pathHasNFZ =  Physics.Linecast(uav.transform.position, fallbackWaypointCandidate.transform.position, 1 << LayerMask.NameToLayer("NFZ"));
+				
+				//adjust the queue again to reflect the actual conditions of the path
+				if (pathHasNFZ)
+					_numberOfNFZsInQueue--;
+				
+				
 			}
-			validWaypoints.Shuffle(_shufflingPathsRandomNumberGenerator);
+			
 			var newDestinationWaypointCandidate = validWaypoints.FirstOrDefault();
+			_occupiedWaypointsList.Add(newDestinationWaypointCandidate);
 			return new Path(uav, newDestinationWaypointCandidate, visuallyEnabledForTargetDetection, visuallyEnabledForRerouting  ,hasTarget, hasNonTarget, pathHasNFZ);
 		}
+
+
+
 
 		private void UpdateEnabledUavsLists()
 		{
@@ -185,12 +260,16 @@ namespace Modules.Navigation
 				uavs.Shuffle(_uavSelectionShuffleRandomNumberGenerator);
     
 				// find the enabled uavs for target detection and put them first in the list
+				
 				var enabledUavsForTargetDetection = _enabledUavsForTargetDetection.Intersect(uavs).ToList();
+				
 				uavs.RemoveAll(uav => _enabledUavsForTargetDetection.Contains(uav));
-				uavs.InsertRange(0, enabledUavsForTargetDetection);
-
+				if(!_navigationSettings.distinctUavsForReroutingAndTargetDetection) 
+					uavs.InsertRange(0, enabledUavsForTargetDetection);
+				
+				uavs= SortByClosestToDestination(uavs); //sort the list by the closest uav to the destination so that we get a uav that is qucikly enabled
 				// take the first uavsToEnable from the shuffled and sorted list of uavs
-				_enabledUavsForRerouting.AddRange(uavs.Take(uavsToEnable));
+				_enabledUavsForRerouting.AddRange(uavs.Take(Math.Min(uavsToEnable, uavs.Count)));
 			}
 			
 			else if (_navigationSettings.numberOfActiveUavsForRerouting < _enabledUavsForRerouting.Count)
@@ -209,13 +288,14 @@ namespace Modules.Navigation
 				// shuffle the remaining uavs
 				uavs.Shuffle(_uavSelectionShuffleRandomNumberGenerator);
 	
-				// find the enabled uavs for rerouting and put them first in the list
+				// find the enabled uavs for rerouting and put them first in the list or remove them if we want distinct uavs for rerouting and target detection
 				var enabledUavsForRerouting = _enabledUavsForRerouting.Intersect(uavs).ToList();
 				uavs.RemoveAll(uav => _enabledUavsForRerouting.Contains(uav));
-				uavs.InsertRange(0, enabledUavsForRerouting);
-
+				if(!_navigationSettings.distinctUavsForReroutingAndTargetDetection) 
+					uavs.InsertRange(0, enabledUavsForRerouting);
 				// take the first uavsToEnable from the shuffled and sorted list of uavs
-				_enabledUavsForTargetDetection.AddRange(uavs.Take(uavsToEnable));
+				uavs= SortByClosestToDestination(uavs);
+				_enabledUavsForTargetDetection.AddRange(uavs.Take(Math.Min(uavsToEnable, uavs.Count)));
 			}
 			
 			else if (_targetDetectionSettings.numberOfActiveUavsForTargetDetection < _enabledUavsForTargetDetection.Count)
@@ -224,6 +304,21 @@ namespace Modules.Navigation
 				_enabledUavsForTargetDetection.RemoveRange(0, uavsToDisable);
 			}
 			
+		}
+
+		private List<Uav> SortByClosestToDestination(List<Uav> uavs)
+		{
+			//sort them by which uav is closest to uav.currentPath.destinationWayPoint
+			var sortedUavs = uavs.OrderBy(uav =>
+			{
+				if (uav == null || uav.transform == null || uav.currentPath == null || uav.currentPath.destinationWayPoint == null || uav.currentPath.destinationWayPoint.transform == null)
+				{
+					return float.MaxValue; // Assign the maximum float value if any object is null
+				}
+				var distance = Vector3.Distance(uav.transform.position, uav.currentPath.destinationWayPoint.transform.position);
+				return distance;
+			}).ToList();
+			return sortedUavs;
 		}
 
 		private void UpdateUavVisualSettings(Uav uav, out bool enabledForTargetDetection, out bool enabledForRerouting, out WayPoint currentDestination)

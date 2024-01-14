@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 140827127f61433d92e230e48ff54404, type: 3}
   m_Name: NFZSettings
   m_EditorClassIdentifier: 
-  nfzRecordsSource: 1
-  RatioOfHeadToNFZ: 0.4
+  nfzRecordsSource: 0
+  RatioOfHeadToNFZ: 0.3
   animateNFZGrowOnStart: 0
   nfzGrowthAnimationDuration: 0
   nfzCountdownText: 

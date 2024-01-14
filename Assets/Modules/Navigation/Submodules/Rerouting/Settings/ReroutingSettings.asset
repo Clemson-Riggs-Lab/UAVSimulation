@@ -15,9 +15,9 @@ MonoBehaviour:
   oneClickRerouteEnabled: 1
   oneClickRerouteFalsePositiveProbability: 0.1
   oneClickRerouteFalseNegativeProbability: 0.1
-  probabilityOfUnsuccessfulOneClickReroute: 0.7
-  oneClickRerouteRandomSeed: 1
-  oneClickRerouteFpFnRandomSeed: 1
+  probabilityOfUnsuccessfulOneClickReroute: 0.3
+  oneClickRerouteRandomSeed: 410000
+  oneClickRerouteFpFnRandomSeed: 510000
   logReroutingEvents: 1
   logIfReroutingWasNeeded: 1
   logIfNewRouteIsGoodOrBad: 1

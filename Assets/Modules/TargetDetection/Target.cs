@@ -1,4 +1,5 @@
 using DG.Tweening;
+using HelperScripts;
 using UnityEngine;
 
 namespace Modules.TargetDetection
@@ -18,22 +19,29 @@ namespace Modules.TargetDetection
             transform.position = position;
             var o = gameObject;
             o.name="Target "+waypointId;
-            o.layer = gameObjectLayer;
+            o.transform.SetLayerRecursively( gameObjectLayer);
             RealTarget = realTarget;
             if(realTarget)
                 o.GetComponent<Renderer>().material.color = HelperScripts.ColorHelper.StringToColor( GameManager.Instance.settingsDatabase.targetDetectionSettings.targetColor);
             else
             {
-                o.GetComponent<Renderer>().material.color = HelperScripts.ColorHelper.StringToColor( GameManager.Instance.settingsDatabase.targetDetectionSettings.nonTargetColor);
+                //HIDE THE TARGET
+                o.GetComponent<Renderer>().enabled = false;
+                
+              //  o.GetComponent<Renderer>().material.color = HelperScripts.ColorHelper.StringToColor( GameManager.Instance.settingsDatabase.targetDetectionSettings.nonTargetColor);
+                //set transparency to 100%
+                
+                
+
             }
             StartRotation();
         }
 
         private void StartRotation()
         {
-            _sequence = DOTween.Sequence();
-            _sequence.Append(transform.DORotate(new Vector3(180, 180, 180), 3f, RotateMode.LocalAxisAdd).SetEase(Ease.Linear));
-            _sequence.SetLoops(-1);
+            // _sequence = DOTween.Sequence();
+            // _sequence.Append(transform.DORotate(new Vector3(180, 180, 180), 3f, RotateMode.LocalAxisAdd).SetEase(Ease.Linear));
+            // _sequence.SetLoops(-1);
         }
         
        private  void OnDisable()

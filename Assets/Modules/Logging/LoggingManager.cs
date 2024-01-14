@@ -58,7 +58,9 @@ namespace Modules.Logging
 			if (!Directory.Exists(logFolder)) Directory.CreateDirectory(logFolder);
 			
 			string json = JsonConvert.SerializeObject(Logs, Formatting.Indented);
-			using StreamWriter file = File.CreateText(logFolder+ _startTime.ToString("yyyy-MM-dd HH-mm-ss") +".json");
+			var participantNumber= GameManager.Instance.participantNumber;
+			var trialNumber = GameManager.Instance.trialNumber;
+			using StreamWriter file = File.CreateText(logFolder+ "p"+ participantNumber + "_t" + trialNumber + "_" + _startTime.ToString("yyyy-MM-dd HH-mm-ss") +".json");
 			file.Write(json);
 		}
 	}

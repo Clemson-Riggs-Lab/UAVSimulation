@@ -78,10 +78,7 @@ namespace Modules.TargetDetection
 
 		private void GenerateTarget(Uav uav, Path path, bool isTarget)
 		{
-			var timeToReachTarget = _targetDistanceRandomGenerator.NextDouble() *
-			                        (_settings.targetSpawnBufferRangeInSeconds.Max -
-			                         _settings.targetSpawnBufferRangeInSeconds.Min) +
-			                        _settings.targetSpawnBufferRangeInSeconds.Min;
+			var timeToReachTarget = _settings.targetDetectionMaxResponseTime;
 			var targetDistanceFromCurrentPosition = (float) timeToReachTarget * _navigationSettings.fixedSpeed;
 
 			// Get the vector between the UAV and the destination waypoint

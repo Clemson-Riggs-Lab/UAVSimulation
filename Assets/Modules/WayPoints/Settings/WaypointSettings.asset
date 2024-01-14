@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c2e8e242c77459f9a967f0f141625f1, type: 3}
   m_Name: WaypointSettings
   m_EditorClassIdentifier: 
-  numberOfWaypoints: 100
+  numberOfWaypoints: 200
   waypointHeightFromTerrain: 150

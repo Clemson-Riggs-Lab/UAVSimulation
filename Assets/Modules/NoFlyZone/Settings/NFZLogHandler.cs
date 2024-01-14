@@ -38,14 +38,19 @@ namespace Modules.NoFlyZone.Settings
 				_uavLostEventChannel.Subscribe(LogUavLost);
 			}
 		}
-
+		
 		private void LogUavLost(Uav arg0)
 		{
-			var log = new Log();
-			log.logType = "NFZ";
-			log.eventType = " NFZ Collision";
-			log.logMessages = new() { $"UAV {arg0.name}is lost due to NFZ collision" };
-			
+			var log = new Log
+			{
+				logType = "NFZ",
+				eventType = "NFZ Collision",
+				logData = new
+				{
+					message = $"UAV {arg0.name} is lost due to NFZ collision"
+				}
+			};
+
 			_logEventChannel.RaiseEvent(log);
 		}
 

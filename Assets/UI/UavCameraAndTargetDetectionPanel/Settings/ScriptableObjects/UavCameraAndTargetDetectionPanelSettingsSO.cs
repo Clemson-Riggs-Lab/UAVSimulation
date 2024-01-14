@@ -64,6 +64,8 @@ namespace UI.UavCameraAndTargetDetectionPanel.Settings.ScriptableObjects
 
 		public string headerText = "Secondary Task";
 		public string headerTextColor ="Yellow";
+		public bool keepHiddenUavsPanelsPositions=false;
+		public bool onlyAccountForVisibleUavsButtonsInLayout = false;
 	}
 	
 	[System.Serializable]

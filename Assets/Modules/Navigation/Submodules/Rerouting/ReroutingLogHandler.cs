@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using Modules.Logging;
 using Modules.Logging.Channels.ScriptableObjects;
 using Modules.Navigation.Channels.ScriptableObjects;
@@ -55,94 +56,116 @@ namespace Modules.Navigation.Submodules.Rerouting
 			{
 				logType = "Rerouting",
 				eventType = "One Click Rerouting Requested",
-				logMessages = new() { $"Uav {arg0.uavName} requested one click rerouting"}
+				logData = new
+				{
+					message = $"Uav {arg0.uavName} requested one click rerouting"
+				}
+
 			};
 			_logEventChannel.RaiseEvent(log);
 		}
-
+		
+		
 		private void LogReroutingEvent(Uav uav, Path path)
 		{
-			var log = new Log
+			var logDataDict = new Dictionary<string, object>
 			{
-				logType = "Rerouting",
-				eventType = "Rerouting Event",
-				logMessages = new() { $"Uav {uav.uavName}  rerouted"}
+				{"message", $"Uav {uav.uavName} rerouted"}
 			};
+
 			if (_reroutingSettings.logIfReroutingWasNeeded)
 			{
-				var wasHeadingToNFZ = path.headingToNFZ;
-				log.logMessages.Add(wasHeadingToNFZ ? "Rerouting was needed" : "Rerouting was not needed");
+				var wasHeadingToNFZ = path.reroutedPath.headingToNFZ;
+				logDataDict["reroutingNeeded"] = wasHeadingToNFZ ? "Rerouting was needed" : "Rerouting was not needed";
 			}
 
 			if (_reroutingSettings.logTimeOfPathStart)
 			{
-				LogTimeOfPathStart(log, uav, path);
+				LogTimeOfPathStart(logDataDict, uav, path);
 			}
 
 			if (_reroutingSettings.logIfNewRouteIsGoodOrBad)
 			{
-				var isHeadingToNFZ=CheckIfHeadingToNFZ(uav,path);
-				log.logMessages.Add(isHeadingToNFZ ? "New route is bad" : "New route is good");
+				var isHeadingToNFZ = CheckIfHeadingToNFZ(uav, path);
+				logDataDict["routeQuality"] = isHeadingToNFZ ? "New route is bad" : "New route is good";
 			}
-				
-			_logEventChannel.RaiseEvent(log);	
-			
+
+			var log = new Log
+			{
+				logType = "Rerouting",
+				eventType = "Rerouting Event",
+				logData = logDataDict
+			};
+
+			_logEventChannel.RaiseEvent(log);
 		}
 		
-
 		private void LogReroutingOptionPreviewed(Uav uav, Path path)
 		{
+			var logDataDict = new Dictionary<string, object>
+			{
+				{"message", $"Rerouting option previewed for Uav {uav.uavName}"}
+			};
+
+			if (_reroutingSettings.logTimeOfPathStart)
+			{
+				LogTimeOfPathStart(logDataDict, uav, path);
+			}
+
+			if (_reroutingSettings.logIfPreviewedRouteIsGoodOrBad)
+			{
+				var isHeadingToNFZ = CheckIfHeadingToNFZ(uav, path);
+				logDataDict["previewedRoute"] = isHeadingToNFZ ? "Previewed route is bad" : "Previewed route is good";
+			}
+
 			var log = new Log
 			{
 				logType = "Rerouting",
 				eventType = "Rerouting Option Previewed",
-				logMessages = new() { $"Rerouting option previewed for Uav {uav.uavName} "}
+				logData = logDataDict
 			};
-			if (_reroutingSettings.logTimeOfPathStart)
-			{
-				LogTimeOfPathStart(log, uav, path);
-			}
-			
-			if(_reroutingSettings.logIfPreviewedRouteIsGoodOrBad)
-			{
-				var isHeadingToNFZ=CheckIfHeadingToNFZ(uav,path);
-				log.logMessages.Add(isHeadingToNFZ ? "Previewed route is bad" : "Previewed route is good");
-			}
-			
+
 			_logEventChannel.RaiseEvent(log);
 		}
 
 		private void LogReroutingOptionsRequested(Uav uav)
 		{
-			var log = new Log();
-			log.logType = "Rerouting";
-			log.eventType = "Rerouting Options Requested";
-			log.logMessages = new() { $" requested rerouting options for uav {uav.uavName}"};
+			var logDataDict = new Dictionary<string, object>
+			{
+				{"message", $"requested rerouting options for uav {uav.uavName}"}
+			};
 
 			if (_reroutingSettings.logTimeOfPathStart)
 			{
-				LogTimeOfPathStart(log, uav, uav.currentPath);
+				LogTimeOfPathStart(logDataDict, uav, uav.currentPath);
 			}
 
 			if (_reroutingSettings.logIfReroutingWasNeeded)
 			{
-				var rerouteIsNeeded =CheckIfHeadingToNFZ(uav,uav.currentPath);
-				log.logMessages.Add(rerouteIsNeeded ? "Rerouting is needed" : "Rerouting is not needed");
+				var rerouteIsNeeded = CheckIfHeadingToNFZ(uav, uav.currentPath);
+				logDataDict["reroutingNeeded"] = rerouteIsNeeded ? "Rerouting is needed" : "Rerouting is not needed";
 			}
-			
+
+			var log = new Log
+			{
+				logType = "Rerouting",
+				eventType = "Rerouting Options Requested",
+				logData = logDataDict
+			};
+
 			_logEventChannel.RaiseEvent(log);
 		}
+
 		
-		
-		private void LogTimeOfPathStart(Log log, Uav uav, Path path)
+		private void LogTimeOfPathStart(Dictionary<string, object> logDataDict, Uav uav, Path path)
 		{
 			try
 			{
-				log.logMessages.Add($"Path start time: {path.startTime.ToString("MM/dd/yyyy HH:mm:ss.ffffff")}");
+				logDataDict["pathStartTime"] = $"Path start time: {path.originalStartTimeDateTime.ToString("MM/dd/yyyy HH:mm:ss.ffffff")}";
 			}
-			catch 
+			catch
 			{
-				log.logMessages.Add($"Path start time could not be logged, probably because it is the first path");
+				logDataDict["pathStartTime"] = "Path start time could not be logged, probably because it is the first path";
 			}
 		}
 

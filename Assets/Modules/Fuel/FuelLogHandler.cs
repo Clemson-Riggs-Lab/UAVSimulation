@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using Modules.FuelAndHealth.Channels.ScriptableObjects;
 using Modules.FuelAndHealth.Settings.ScriptableObjects;
 using Modules.Logging;
@@ -49,51 +50,45 @@ namespace Modules.Fuel
 			{
 				logType = "Fuel",
 				eventType = "Fuel Leak Fixed",
-				logMessages = new() { $"UAV {uav.uavName} fuel leak fixed" }
+				logData = new { message= $"UAV {uav.uavName} fuel leak fixed" }
 			};
 			_logEventChannel.RaiseEvent(log);
 		}
 		
-		
+
 		private void OnUavFuelConditionChanged(Uav uav, FuelCondition condition)
 		{
+			var logDataDict = new Dictionary<string, object>();
+
 			var log = new Log
 			{
 				logType = "Fuel",
 				eventType = "Fuel Condition Changed",
-				logMessages = new() 
+				logData = logDataDict
 			};
-			
+
 			switch (condition)
 			{
 				case FuelCondition.Empty when _fuelSettings.logFuelEmptyEvents:
-					if (_fuelSettings.logFuelEmptyEvents)
-					{
-						log.logMessages.Add($"UAV {uav.uavName} fuel became empty and it stopped navigating");
-					}
+					logDataDict.Add("message", $"UAV {uav.uavName} fuel became empty and it stopped navigating");
 					break;
 				case FuelCondition.Leaking when _fuelSettings.logFuelLeakEvents:
-					if (_fuelSettings.logFuelLeakEvents)
-					{
-						log.logMessages.Add($"UAV {uav.uavName} fuel leak event started");
-					}
+					logDataDict.Add("message", $"UAV {uav.uavName} fuel leak event started");
 					break;
 				case FuelCondition.FatalLeak when _fuelSettings.logFatalFuelLeakEvents:
-					if (_fuelSettings.logFatalFuelLeakEvents)
-					{
-						log.logMessages.Add($"UAV {uav.uavName} fuel leak became fatal ");
-					}
+					logDataDict.Add("message", $"UAV {uav.uavName} fuel leak became fatal ");
 					break;
 				case FuelCondition.Normal:
 				default:
 					return;
 			}
-			
-			if (log.logMessages.Count > 0)
+
+			if (logDataDict.Count > 0)
 			{
 				_logEventChannel.RaiseEvent(log);
 			}
 		}
+
 
 		private void OnDisable()
 		{

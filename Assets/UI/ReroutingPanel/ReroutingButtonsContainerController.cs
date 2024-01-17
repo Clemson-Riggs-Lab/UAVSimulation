@@ -31,7 +31,7 @@ namespace UI.ReroutingPanel
 		private Dictionary<Uav, GameObject> _uavsToButtonContainersDictionary = new();
 		private Random _OneClickReroutingRandomGenerator;
 		private int _falsePositiveQueuCounter=0;
-
+		
 		private void Start()
 		{
 			GetReferencesFromGameManager();
@@ -133,7 +133,8 @@ namespace UI.ReroutingPanel
 
 		private void SetOneClickRerouteButton(Uav uav, Button button)
 		{
-
+			
+			
 			if (_reroutingSettings.oneClickRerouteEnabled == false)
 			{
 				uav.currentPath.OneClickRerouteButtonCondition = OFF;
@@ -173,7 +174,6 @@ namespace UI.ReroutingPanel
 				}
 				
 				uav.currentPath.OneClickRerouteButtonCondition = TN;
-				
 			}
 			else
 			{

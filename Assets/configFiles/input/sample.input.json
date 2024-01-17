@@ -8090,19 +8090,51 @@
   "NFZRecords": [
     {
       "StartCoordinates": {
-        "X": 50.0,
+        "X": 0.0,
         "Y": 0.0,
-        "Z": 50.0
-      },
-      "EndCoordinates": {
-        "X": 250.0,
-        "Y": 300.0,
         "Z": 350.0
       },
-      "TextOnNFZAfterCountdown": "\n \n No Fly Zone \n \n Reroute any UAVs that are headed to this area \n \n",
+      "EndCoordinates": {
+        "X": 100.0,
+        "Y": 300.0,
+        "Z": 750.0
+      },
+      "TextOnNFZAfterCountdown": "No Fly Zone, Restricted Area, Reroute any UAVs",
+      "NFZStartTime": 10.0,
+      "NFZEndTime": 20.0,
+      "NFZCountdownTimer": 10.0
+    },
+    {
+      "StartCoordinates": {
+        "X": 600.0,
+        "Y": 0.0,
+        "Z": 0.0
+      },
+      "EndCoordinates": {
+        "X": 800.0,
+        "Y": 300.0,
+        "Z": 100.0
+      },
+      "TextOnNFZAfterCountdown": " Reroute any UAVs that enter this area",
+      "NFZStartTime": 0.0,
+      "NFZEndTime": 0.0,
+      "NFZCountdownTimer": 10.0
+    },
+    {
+      "StartCoordinates": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+      },
+      "EndCoordinates": {
+        "X": 100.0,
+        "Y": 300.0,
+        "Z": 300.0
+      },
+      "TextOnNFZAfterCountdown": "Restricted Fly Area",
       "NFZStartTime": 0.0,
       "NFZEndTime": 150.0,
-      "NFZCountdownTimer": 0.0
+      "NFZCountdownTimer": 50.0
     }
   ],
   "name": "InputRecords",

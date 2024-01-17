@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using Random = System.Random;
 
@@ -28,6 +29,14 @@ namespace HelperScripts
 				list[n] = value;  
 			}  
 		}
-		
+	}
+	public static class ArrayExtensions
+	{
+		public static string ToCustomString(this  List<int> list)
+		{
+			int sum = list.Sum();
+			string[] indexedElements = list.Select((value, index) => $"{index}:{value}").ToArray();
+			return $"sum:{sum}, " + string.Join(", ", indexedElements);
+		}
 	}
 }

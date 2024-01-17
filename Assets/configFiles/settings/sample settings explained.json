@@ -19,11 +19,11 @@
     "correctResponseColor": "Green", //this is the color that is used for correct responses (color of text, color of button, or both)
     "wrongResponseColor": "Red",// for incorrect responses
     "logPrompts": true, //should we log the prompts to the output file?
-    "logAllowedResponseTime": true, //should we log the allowed response time when we log the prompt
-    "logCorrectResponseOptions": true, //log the correct response options
-    "logAllPromptResponseOptions": true, //and/or log all response options
-    "logReceivedResponses": true, // log which response was received (which buttons were clicked)
-    "logCorrectness": true, // log if the response was correct or not 
+    "logAllowedResponseTime": false, //should we log the allowed response time when we log the prompt
+    "logCorrectResponseOptions": false, //log the correct response options
+    "logAllPromptResponseOptions": false, //and/or log all response options
+    "logReceivedResponses": false, // log which response was received (which buttons were clicked)
+    "logCorrectness": false, // log if the response was correct or not 
     "name": "PromptSettings", //do not alter this
     "hideFlags": 0// do not alter this
   },
@@ -48,7 +48,7 @@
     "colorUavLikePath": true,//the body of the uav would be colored with the same color as the path
     "logUavCreationEvents": true, //should we log the creation of the uav to the output file?
     "logUavDestroyEvents": true, //should we log the destruction of the uav to the output file?
-    "logUavConditionChangedEvents": true, //should we log the condition change of the uav to the output file? (when a uav condition changes, it means that the uav is either hidden, lost, or finished, or enabled after being hidden)
+    "logUavConditionChangedEvents": false, //should we log the condition change of the uav to the output file? (when a uav condition changes, it means that the uav is either hidden, lost, or finished, or enabled after being hidden)
     "name": "UavSettings",
     "hideFlags": 0
   },
@@ -231,8 +231,8 @@
     "fuelLeakDuration": 10.0, //this is the duration of the fuel leak
     "fuelLeakButtonInteractionDurationBeforeFatalLeak": 10.0, // this is the duration that the user will be able to click the button to fix the fuel leak before it becomes fatal
     "fuelConsumptionMultiplierOnFatalLeak": 20.0, // this is the multiplier that will be applied to the fuel consumption rate when the uav has a fatal fuel leak
-    "logFuelLeakEvents": true, //should the fuel leak events be logged
-    "logFuelLeakFixEvents": true, //should the fuel leak fix events be logged
+    "logFuelLeakEvents": false, //should the fuel leak events be logged
+    "logFuelLeakFixEvents": false, //should the fuel leak fix events be logged
     "logFatalFuelLeakEvents": true, //should the fatal fuel leak events be logged
     "logFuelEmptyEvents": true, //should the fuel empty events be logged
     "name": "FueSettings", //do not alter this

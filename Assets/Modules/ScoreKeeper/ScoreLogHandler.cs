@@ -1,4 +1,5 @@
 using System.Linq;
+using HelperScripts;
 using Modules.Logging;
 using Modules.Logging.Channels.ScriptableObjects;
 using Modules.ScoreKeeper.Channels.ScriptableObjects;
@@ -15,6 +16,7 @@ namespace Modules.ScoreKeeper
 		private LogEventChannelSO _logEventChannel;
 		private ScoreKeeperUpdatedEventChannelSO _scoreKeeperUpdatedEventChannel;
 		private ScoreManager _scoreManager;
+		
 		
 		public void Initialize()
 		{
@@ -45,8 +47,6 @@ namespace Modules.ScoreKeeper
 
 		private void LogScoreKeeperUpdated(Score score)
 		{
-			//Copilot seed = 33
-			
 			var log = new Log
 {
     logType = "Score",
@@ -60,14 +60,14 @@ namespace Modules.ScoreKeeper
             ReroutingTruePositiveCount = score.scoreCounts[ReroutingTruePositive],
             ReroutingTrueNegativeCount = score.scoreCounts[ReroutingTrueNegative],
            
-            ReroutingTruePositiveWithAITruePositiveCount = score.aIRelatedScoreCounts[ReroutingTruePositiveWithAITruePositive],
-            ReroutingTruePositiveDespiteAIFalseNegativeCount = score.aIRelatedScoreCounts[ReroutingTruePositiveDespiteAIFalseNegative],
-            ReroutingTrueNegativeWithAITrueNegativeCount = score.aIRelatedScoreCounts[ReroutingTrueNegativeWithAITrueNegative],
-            ReroutingTrueNegativeDespiteAIFalsePositiveCount = score.aIRelatedScoreCounts[ReroutingTrueNegativeDespiteAIFalsePositive],
-            ReroutingFalsePositiveDueToAIFalsePositiveCount = score.aIRelatedScoreCounts[ReroutingFalsePositiveDueToAIFalsePositive],
-            ReroutingFalsePositiveDespiteAITrueNegativeCount = score.aIRelatedScoreCounts[ReroutingFalsePositiveDespiteAITrueNegative],
-            ReroutingFalseNegativeDespiteAITruePositiveCount = score.aIRelatedScoreCounts[ReroutingFalseNegativeDespiteAITruePositive],
-            ReroutingFalseNegativeDueToAIFalseNegativeCount = score.aIRelatedScoreCounts[ReroutingFalseNegativeDueToAIFalseNegative],
+            ReroutingTruePositiveWithAITruePositiveCount = score.aIRelatedScoreCounts[ReroutingTruePositiveWithAITruePositive].ToCustomString() ,
+            ReroutingTruePositiveDespiteAIFalseNegativeCount = score.aIRelatedScoreCounts[ReroutingTruePositiveDespiteAIFalseNegative].ToCustomString(),
+            ReroutingTrueNegativeWithAITrueNegativeCount = score.aIRelatedScoreCounts[ReroutingTrueNegativeWithAITrueNegative].ToCustomString(),
+            ReroutingTrueNegativeDespiteAIFalsePositiveCount = score.aIRelatedScoreCounts[ReroutingTrueNegativeDespiteAIFalsePositive].ToCustomString(),
+            ReroutingFalsePositiveDueToAIFalsePositiveCount = score.aIRelatedScoreCounts[ReroutingFalsePositiveDueToAIFalsePositive].ToCustomString(),
+            ReroutingFalsePositiveDespiteAITrueNegativeCount = score.aIRelatedScoreCounts[ReroutingFalsePositiveDespiteAITrueNegative].ToCustomString(),
+            ReroutingFalseNegativeDespiteAITruePositiveCount = score.aIRelatedScoreCounts[ReroutingFalseNegativeDespiteAITruePositive].ToCustomString(),
+            ReroutingFalseNegativeDueToAIFalseNegativeCount = score.aIRelatedScoreCounts[ReroutingFalseNegativeDueToAIFalseNegative].ToCustomString(),
 	        
         },
         TargetDetectionCounts = new
@@ -77,30 +77,30 @@ namespace Modules.ScoreKeeper
             TargetDetectionTruePositiveCount = score.scoreCounts[TargetDetectionTruePositive],
             TargetDetectionTrueNegativeCount = score.scoreCounts[TargetDetectionTrueNegative],
         },
-        ReroutingScores = new
-        {
-            ReroutingFalsePositiveScore = score.scoreValues[ReroutingFalsePositive],
-            ReroutingFalseNegativeScore = score.scoreValues[ReroutingFalseNegative],
-            ReroutingTruePositiveScore = score.scoreValues[ReroutingTruePositive],
-            ReroutingTrueNegativeScore = score.scoreValues[ReroutingTrueNegative],
-            
-            ReroutingTruePositiveWithAITruePositiveScore = score.aIRelatedScoreValues[ReroutingTruePositiveWithAITruePositive],
-            ReroutingTruePositiveDespiteAIFalseNegativeScore = score.aIRelatedScoreValues[ReroutingTruePositiveDespiteAIFalseNegative],
-            ReroutingTrueNegativeWithAITrueNegativeScore = score.aIRelatedScoreValues[ReroutingTrueNegativeWithAITrueNegative],
-            ReroutingTrueNegativeDespiteAIFalsePositiveScore = score.aIRelatedScoreValues[ReroutingTrueNegativeDespiteAIFalsePositive],
-            ReroutingFalsePositiveDueToAIFalsePositiveScore = score.aIRelatedScoreValues[ReroutingFalsePositiveDueToAIFalsePositive],
-            ReroutingFalsePositiveDespiteAITrueNegativeScore = score.aIRelatedScoreValues[ReroutingFalsePositiveDespiteAITrueNegative],
-            ReroutingFalseNegativeDespiteAITruePositiveScore = score.aIRelatedScoreValues[ReroutingFalseNegativeDespiteAITruePositive],
-            ReroutingFalseNegativeDueToAIFalseNegativeScore = score.aIRelatedScoreValues[ReroutingFalseNegativeDueToAIFalseNegative],
-            
-        },
-        TargetDetectionScores = new
-        {
-            TargetDetectionFalsePositiveScore = score.scoreValues[TargetDetectionFalsePositive],
-            TargetDetectionFalseNegativeScore = score.scoreValues[TargetDetectionFalseNegative],
-            TargetDetectionTruePositiveScore = score.scoreValues[TargetDetectionTruePositive],
-            TargetDetectionTrueNegativeScore = score.scoreValues[TargetDetectionTrueNegative],
-        },
+        // ReroutingScores = new
+        // {
+        //     ReroutingFalsePositiveScore = score.scoreValues[ReroutingFalsePositive],
+        //     ReroutingFalseNegativeScore = score.scoreValues[ReroutingFalseNegative],
+        //     ReroutingTruePositiveScore = score.scoreValues[ReroutingTruePositive],
+        //     ReroutingTrueNegativeScore = score.scoreValues[ReroutingTrueNegative],
+        //     
+        //     ReroutingTruePositiveWithAITruePositiveScore = score.aIRelatedScoreValues[ReroutingTruePositiveWithAITruePositive],
+        //     ReroutingTruePositiveDespiteAIFalseNegativeScore = score.aIRelatedScoreValues[ReroutingTruePositiveDespiteAIFalseNegative],
+        //     ReroutingTrueNegativeWithAITrueNegativeScore = score.aIRelatedScoreValues[ReroutingTrueNegativeWithAITrueNegative],
+        //     ReroutingTrueNegativeDespiteAIFalsePositiveScore = score.aIRelatedScoreValues[ReroutingTrueNegativeDespiteAIFalsePositive],
+        //     ReroutingFalsePositiveDueToAIFalsePositiveScore = score.aIRelatedScoreValues[ReroutingFalsePositiveDueToAIFalsePositive],
+        //     ReroutingFalsePositiveDespiteAITrueNegativeScore = score.aIRelatedScoreValues[ReroutingFalsePositiveDespiteAITrueNegative],
+        //     ReroutingFalseNegativeDespiteAITruePositiveScore = score.aIRelatedScoreValues[ReroutingFalseNegativeDespiteAITruePositive],
+        //     ReroutingFalseNegativeDueToAIFalseNegativeScore = score.aIRelatedScoreValues[ReroutingFalseNegativeDueToAIFalseNegative],
+        //     
+        // },
+        // TargetDetectionScores = new
+        // {
+        //     TargetDetectionFalsePositiveScore = score.scoreValues[TargetDetectionFalsePositive],
+        //     TargetDetectionFalseNegativeScore = score.scoreValues[TargetDetectionFalseNegative],
+        //     TargetDetectionTruePositiveScore = score.scoreValues[TargetDetectionTruePositive],
+        //     TargetDetectionTrueNegativeScore = score.scoreValues[TargetDetectionTrueNegative],
+        // },
         ReroutingResponseTime = score.reroutingResponseTimePathIdDictionary,
         TargetDetectionResponseTime = score.targetDetectionResponseTimePathIdDictionary,
     }

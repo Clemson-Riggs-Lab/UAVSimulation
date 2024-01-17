@@ -5,510 +5,270 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2a31bee8-77bd-4176-b786-4bd852df0b13" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/Demo.unity" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/Demo.unity.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Demo Scene.lighting" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Demo Scene.lighting.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Materials.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Materials/ConstructionLight_Mat.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Materials/ConstructionLight_Mat.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Materials/DryWallPainted_Mat.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Materials/DryWallPainted_Mat.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Materials/DryWall_Mat.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Materials/DryWall_Mat.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Materials/Ground_Mat.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Materials/Ground_Mat.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Materials/Hammer_Mat.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Materials/Hammer_Mat.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Materials/HardHat_Mat.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Materials/HardHat_Mat.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Materials/Jigsaw_Mat.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Materials/Jigsaw_Mat.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Materials/LightBulb_Mat.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Materials/LightBulb_Mat.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Materials/Liquid_Mat.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Materials/Liquid_Mat.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Materials/Metal_Blue_Simple_Mat.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Materials/Metal_Blue_Simple_Mat.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Materials/Metal_Simple_Mat.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Materials/Metal_Simple_Mat.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Materials/OBS_Mat.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Materials/OBS_Mat.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Materials/Paint1G_WAnim_Material.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Materials/Paint1G_WAnim_Material.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Materials/PaintBrush_Mat.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Materials/PaintBrush_Mat.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Materials/PaintLabel_Mat.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Materials/PaintLabel_Mat.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Materials/Plastic_Black_Mat.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Materials/Plastic_Black_Mat.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Materials/Plastic_Gray_Mat.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Materials/Plastic_Gray_Mat.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Materials/Plastic_Ridges_Mat.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Materials/Plastic_Ridges_Mat.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Materials/Plastic_Rough_Mat.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Materials/Plastic_Rough_Mat.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Materials/Plastic_Transparent.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Materials/Plastic_Transparent.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Materials/Plastic_White_Mat.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Materials/Plastic_White_Mat.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Materials/Plastic_Yellow_Mat.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Materials/Plastic_Yellow_Mat.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Materials/Strap_Mat.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Materials/Strap_Mat.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Materials/Stud_Mat.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Materials/Stud_Mat.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Models.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Models/ConstructionLight_Low.fbx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Models/ConstructionLight_Low.fbx.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Models/Stud.fbx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Models/Stud.fbx.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Models/Workshop_Set.fbx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Models/Workshop_Set.fbx.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Models/brush_low.fbx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Models/brush_low.fbx.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Models/hammer_low.fbx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Models/hammer_low.fbx.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Models/jigsaw_low.fbx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Models/jigsaw_low.fbx.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Models/paintbucket_low.fbx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Models/paintbucket_low.fbx.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Models/small_plane.fbx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Models/small_plane.fbx.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Prefabs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Prefabs/Construction Light Low.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Prefabs/Construction Light Low.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Prefabs/Paint Supplies.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Prefabs/Paint Supplies.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Prefabs/Props.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Prefabs/Props.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Prefabs/Workbench.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Prefabs/Workbench.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Prefabs/Workbench_LOD0.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Prefabs/Workbench_LOD0.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Prefabs/Workbench_LOD1.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Prefabs/Workbench_LOD1.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Prefabs/Workshop Set.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Prefabs/Workshop Set.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/SampleSceneProfile.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/SampleSceneProfile.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Shaders.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Shaders/Paint1G_WAnim_Shader.shadergraph" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Shaders/Paint1G_WAnim_Shader.shadergraph.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Skybox_Mat.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Skybox_Mat.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Textures.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Textures/Concrete.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Textures/Concrete/Ground_Albedo.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Textures/Concrete/Ground_Albedo.tif.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Textures/Concrete/Ground_MetallicOcculusionSmoothness.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Textures/Concrete/Ground_MetallicOcculusionSmoothness.tif.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Textures/Concrete/Ground_Normal.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Textures/Concrete/Ground_Normal.tif.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Textures/Drywall.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Textures/Drywall/DrywallPainted_Normal.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Textures/Drywall/DrywallPainted_Normal.tif.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Textures/Drywall/Drywall_Albedo.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Textures/Drywall/Drywall_Albedo.tif.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Textures/Drywall/Drywall_AlbedoSmoothness.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Textures/Drywall/Drywall_AlbedoSmoothness.tif.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Textures/Drywall/Drywall_Normal.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Textures/Drywall/Drywall_Normal.tif.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Textures/Metal.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Textures/Metal/Metal_Albedo.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Textures/Metal/Metal_Albedo.tif.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Textures/Metal/Metal_MetallicSmoothness.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Textures/Metal/Metal_MetallicSmoothness.tif.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Textures/Metal/Metal_Normal.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Textures/Metal/Metal_Normal.tif.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Textures/Plastic.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Textures/Plastic/Elastic_MetallicOcculusionSmoothness.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Textures/Plastic/Elastic_MetallicOcculusionSmoothness.tif.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Textures/Plastic/Elastic_Normal.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Textures/Plastic/Elastic_Normal.tif.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Textures/Plastic/PlasticRidges_Albedo.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Textures/Plastic/PlasticRidges_Albedo.tif.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Textures/Plastic/PlasticRidges_MetallicOcculusionSmoothness.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Textures/Plastic/PlasticRidges_MetallicOcculusionSmoothness.tif.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Textures/Plastic/PlasticRidges_Normal.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Textures/Plastic/PlasticRidges_Normal.tif.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Textures/Plastic/PlasticRough_Albedo.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Textures/Plastic/PlasticRough_Albedo.tif.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Textures/Plastic/PlasticRough_MetallicOcculusionSmoothness.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Textures/Plastic/PlasticRough_MetallicOcculusionSmoothness.tif.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Textures/Plastic/Plastic_AlbedoSmoothness.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Textures/Plastic/Plastic_AlbedoSmoothness.tif.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Textures/Plastic/Plastic_Normal.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Textures/Plastic/Plastic_Normal.tif.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Textures/Props.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Textures/Props/Construction_Light.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Textures/Props/Construction_Light/ConstructionLight_Albedo.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Textures/Props/Construction_Light/ConstructionLight_Albedo.tif.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Textures/Props/Construction_Light/ConstructionLight_MetallicOcculusionSmoothness.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Textures/Props/Construction_Light/ConstructionLight_MetallicOcculusionSmoothness.tif.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Textures/Props/Hammer.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Textures/Props/Hammer/Hammer_Albedo.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Textures/Props/Hammer/Hammer_Albedo.tif.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Textures/Props/Hammer/Hammer_MetallicOcculusionSmoothness.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Textures/Props/Hammer/Hammer_MetallicOcculusionSmoothness.tif.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Textures/Props/Hammer/Hammer_Normal.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Textures/Props/Hammer/Hammer_Normal.tif.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Textures/Props/HardHat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Textures/Props/HardHat/SafetyHat_Albedo.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Textures/Props/HardHat/SafetyHat_Albedo.tif.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Textures/Props/HardHat/SafetyHat_MetallicOcculusionSmoothness.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Textures/Props/HardHat/SafetyHat_MetallicOcculusionSmoothness.tif.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Textures/Props/HardHat/SafetyHat_Normal.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Textures/Props/HardHat/SafetyHat_Normal.tif.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Textures/Props/Jigsaw.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Textures/Props/Jigsaw/Jigsaw_Albedo.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Textures/Props/Jigsaw/Jigsaw_Albedo.tif.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Textures/Props/Jigsaw/Jigsaw_MetallicOcculusionSmoothness.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Textures/Props/Jigsaw/Jigsaw_MetallicOcculusionSmoothness.tif.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Textures/Props/Jigsaw/Jigsaw_Normal.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Textures/Props/Jigsaw/Jigsaw_Normal.tif.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Textures/Props/Paint.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Textures/Props/Paint/Paint1G_Albedo.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Textures/Props/Paint/Paint1G_Albedo.tif.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Textures/Props/Paint/Paint1G_MetallicOcculusionRoughness.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Textures/Props/Paint/Paint1G_MetallicOcculusionRoughness.tif.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Textures/Props/Paint/Paint1G_Normal.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Textures/Props/Paint/Paint1G_Normal.tif.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Textures/Props/Paint/Paint5G_AlbedoSmoothness.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Textures/Props/Paint/Paint5G_AlbedoSmoothness.tif.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Textures/Props/Paint/PaintAnimMask.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Textures/Props/Paint/PaintAnimMask.tif.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Textures/Props/Paint/PaintLabel.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Textures/Props/Paint/PaintLabel.tif.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Textures/Props/Paint/Paintbrush_Albedo.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Textures/Props/Paint/Paintbrush_Albedo.tif.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Textures/Props/Paint/Paintbrush_MetallicOcculusionSmoothness.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Textures/Props/Paint/Paintbrush_MetallicOcculusionSmoothness.tif.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Textures/Props/Paint/Paintbrush_Normal.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Textures/Props/Paint/Paintbrush_Normal.tif.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Textures/Wood.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Textures/Wood/OBS_Albedo.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Textures/Wood/OBS_Albedo.tif.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Textures/Wood/OBS_MetallicOcculusionSmoothness.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Textures/Wood/OBS_MetallicOcculusionSmoothness.tif.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Textures/Wood/OBS_Normal.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Textures/Wood/OBS_Normal.tif.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Textures/Wood/Plywood_Albedo.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Textures/Wood/Plywood_Albedo.tif.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Textures/Wood/Plywood_MetallicOcculusionSmoothness.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Textures/Wood/Plywood_MetallicOcculusionSmoothness.tif.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Textures/Wood/Plywood_Normal.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/ExampleAssets/Textures/Wood/Plywood_Normal.tif.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/Materials.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/Materials/Flare.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/Materials/Flare.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/Materials/FlareBox.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/Materials/FlareBox.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/Materials/ParticleFirework.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/Materials/ParticleFirework.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/Materials/ParticleSmokeWhite.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/Materials/ParticleSmokeWhite.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/Materials/ParticleSpark.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/Materials/ParticleSpark.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/Models.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/Models/box_low.FBX" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/Models/box_low.FBX.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/Prefabs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/Prefabs/BoxofFlares.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/Prefabs/BoxofFlares.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/Prefabs/Flare.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/Prefabs/Flare.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/Prefabs/Flare_Box.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/Prefabs/Flare_Box.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/Prefabs/Flare_Particle.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/Prefabs/Flare_Particle.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/Textures.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/Textures/Flare.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/Textures/Flare/box_low_Flare_AO.tga" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/Textures/Flare/box_low_Flare_AO.tga.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/Textures/Flare/box_low_Flare_AlbedoTransparency.tga" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/Textures/Flare/box_low_Flare_AlbedoTransparency.tga.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/Textures/Flare/box_low_Flare_MetallicSmoothness.tga" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/Textures/Flare/box_low_Flare_MetallicSmoothness.tga.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/Textures/Flare/box_low_Flare_Normal.tga" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/Textures/Flare/box_low_Flare_Normal.tga.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/Textures/Flare_Box.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/Textures/Flare_Box/box_low_FlareBox_AO.tga" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/Textures/Flare_Box/box_low_FlareBox_AO.tga.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/Textures/Flare_Box/box_low_FlareBox_AlbedoTransparency.tga" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/Textures/Flare_Box/box_low_FlareBox_AlbedoTransparency.tga.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/Textures/Flare_Box/box_low_FlareBox_MetallicSmoothness.tga" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/Textures/Flare_Box/box_low_FlareBox_MetallicSmoothness.tga.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/Textures/Flare_Box/box_low_FlareBox_Normal.tga" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/Textures/Flare_Box/box_low_FlareBox_Normal.tga.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/Textures/Particles.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/Textures/Particles/ParticleCloudWhite.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/Textures/Particles/ParticleCloudWhite.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/Textures/Particles/ParticleFirecloud.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/Textures/Particles/ParticleFirecloud.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/Textures/Particles/ParticleFlamesSheet.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/Textures/Particles/ParticleFlamesSheet.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/Textures/Particles/ParticleFlare.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MOQAM - Flares/Textures/Particles/ParticleFlare.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Terrains/TerrainData_26c9e642-7546-46df-9c75-4657b01fcb9c.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Terrains/TerrainData_26c9e642-7546-46df-9c75-4657b01fcb9c.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Terrains/TerrainData_2e6a2a86-1a64-41e8-889c-fe5d63ba7607.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Terrains/TerrainData_2e6a2a86-1a64-41e8-889c-fe5d63ba7607.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Terrains/TerrainData_344e7871-d9ac-4bf7-a5f9-6496c1f70bc5.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Terrains/TerrainData_344e7871-d9ac-4bf7-a5f9-6496c1f70bc5.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Terrains/TerrainData_dbc3b851-60aa-4cd3-8390-bd179c626fa8.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Terrains/TerrainData_dbc3b851-60aa-4cd3-8390-bd179c626fa8.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Terrains/TerrainData_fdb19251-723c-4480-af43-8623e1e32a43.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Terrains/TerrainData_fdb19251-723c-4480-af43-8623e1e32a43.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/configFiles/input/default.input.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/configFiles/input/default.input.json.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/configFiles/settings/4Uavs.settings.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/configFiles/settings/4Uavs.settings.json.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/logFiles/0001-01-01 00-00-00.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/logFiles/0001-01-01 00-00-00.json.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-05-09 15-39-47.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-05-09 15-39-47.json.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-05-09 15-40-00.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-05-09 15-40-00.json.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-05-09 15-52-49-SummaryLogs.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-05-09 15-52-49-SummaryLogs.json.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-05-09 15-52-49.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-05-09 15-52-49.json.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-05-09 16-02-47.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-05-09 16-02-47.json.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-05-09 16-03-28-SummaryLogs.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-05-09 16-03-28-SummaryLogs.json.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-05-09 16-03-28.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-05-09 16-03-28.json.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-05-09 16-07-46-SummaryLogs.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-05-09 16-07-46-SummaryLogs.json.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-05-09 16-07-46.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-05-09 16-07-46.json.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-05-09 16-10-33-SummaryLogs.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-05-09 16-10-33-SummaryLogs.json.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-05-09 16-10-33.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-05-09 16-10-33.json.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-05-09 16-12-53-SummaryLogs.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-05-09 16-12-53-SummaryLogs.json.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-05-09 16-12-53.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-05-09 16-12-53.json.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-05-09 16-31-11-SummaryLogs.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-05-09 16-31-11-SummaryLogs.json.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-05-09 16-31-11.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-05-09 16-31-11.json.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-05-09 16-36-51-SummaryLogs.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-05-09 16-36-51-SummaryLogs.json.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-05-09 16-36-51.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-05-09 16-36-51.json.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-05-09 16-47-13-SummaryLogs.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-05-09 16-47-13-SummaryLogs.json.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-05-09 16-47-13.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-05-09 16-47-13.json.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-05-09 16-52-53-SummaryLogs.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-05-09 16-52-53-SummaryLogs.json.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-05-09 16-52-53.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-05-09 16-52-53.json.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-05-09 16-59-32-SummaryLogs.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-05-09 16-59-32-SummaryLogs.json.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-05-09 16-59-32.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-05-09 16-59-32.json.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-05-09 17-15-09-SummaryLogs.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-05-09 17-15-09-SummaryLogs.json.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-05-09 17-15-09.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-05-09 17-15-09.json.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-05-09 17-23-22.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-05-09 17-23-22.json.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-05-09 17-23-41-SummaryLogs.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-05-09 17-23-41-SummaryLogs.json.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-05-09 17-23-41.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/logFiles/2023-05-09 17-23-41.json.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/logFiles/p10_tt1_2023-05-10 03-22-16.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/logFiles/p10_tt1_2023-05-10 03-22-16.json.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/logFiles/p10_tt1_2023-05-10 03-22-16_SummaryLogs.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/logFiles/p10_tt1_2023-05-10 03-22-16_SummaryLogs.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/configFiles/settings/12 uavsPrimaryAI.settings.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/configFiles/settings/12 uavsPrimaryAI.settings.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/configFiles/settings/12 uavsSecondaryAI.settings.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/configFiles/settings/12 uavsSecondaryAI.settings.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/configFiles/settings/4 uavsPrimaryAI.settings.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/configFiles/settings/4 uavsPrimaryAI.settings.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/configFiles/settings/4 uavsSecondaryAI.settings.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/configFiles/settings/4 uavsSecondaryAI.settings.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/configFiles/settings/8 uavsPrimaryAI.settings.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/configFiles/settings/8 uavsPrimaryAI.settings.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/configFiles/settings/8 uavsSecondaryAI.settings.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/configFiles/settings/8 uavsSecondaryAI.settings.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/configFiles/settings/Secondary.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/configFiles/settings/Secondary/12 uavsSecondaryAI.settings.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/configFiles/settings/Secondary/12 uavsSecondaryAI.settings.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/configFiles/settings/Secondary/4 uavsSecondaryAI.settings.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/configFiles/settings/Secondary/4 uavsSecondaryAI.settings.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/configFiles/settings/Secondary/8 uavsSecondaryAI.settings.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/configFiles/settings/Secondary/8 uavsSecondaryAI.settings.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/configFiles/settings/Secondary/TrainingSecondaryAI.settings.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/configFiles/settings/Secondary/TrainingSecondaryAI.settings.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/configFiles/settings/TrainingSecondaryAI.settings.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/configFiles/settings/TrainingSecondaryAI.settings.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/configFiles/settings/not used.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/configFiles/settings/not used/16 uavsPrimary.settings.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/configFiles/settings/not used/16 uavsPrimary.settings.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/configFiles/settings/not used/16 uavsPrimaryAI.settings.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/configFiles/settings/not used/16 uavsPrimaryAI.settings.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/configFiles/settings/not used/16 uavsSecondary.settings.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/configFiles/settings/not used/16 uavsSecondary.settings.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/configFiles/settings/not used/16 uavsSecondaryAI.settings.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/configFiles/settings/not used/16 uavsSecondaryAI.settings.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/configFiles/settings/not used/4 uavsPrimary.settings.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/configFiles/settings/not used/4 uavsPrimary.settings.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/configFiles/settings/not used/4 uavsSecondary.settings.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/configFiles/settings/not used/4 uavsSecondary.settings.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/configFiles/settings/not used/8 uavsPrimary.settings.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/configFiles/settings/not used/8 uavsPrimary.settings.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/configFiles/settings/not used/8 uavsSecondary.settings.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/configFiles/settings/not used/8 uavsSecondary.settings.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/configFiles/settings/not used/trainingPrimary.settings.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/configFiles/settings/not used/trainingPrimary.settings.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/configFiles/settings/not used/trainingSecondary.settings.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/configFiles/settings/not used/trainingSecondary.settings.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/configFiles/settings/primary.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/configFiles/settings/primary/12 uavsPrimaryAI.settings.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/configFiles/settings/primary/12 uavsPrimaryAI.settings.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/configFiles/settings/primary/4 uavsPrimaryAI.settings.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/configFiles/settings/primary/4 uavsPrimaryAI.settings.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/configFiles/settings/primary/8 uavsPrimaryAI.settings.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/configFiles/settings/primary/8 uavsPrimaryAI.settings.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/configFiles/settings/primary/trainingPrimaryAI.settings.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/configFiles/settings/primary/trainingPrimaryAI.settings.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/configFiles/settings/trainingPrimaryAI.settings.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/configFiles/settings/trainingPrimaryAI.settings.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/p1_t10_2024-01-15 10-16-03.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/p1_t10_2024-01-15 10-16-03.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/p1_t10_2024-01-15 10-16-03_SummaryLogs.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/p1_t10_2024-01-15 10-16-03_SummaryLogs.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/p1_t10_2024-01-15 10-35-10.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/p1_t10_2024-01-15 10-35-10.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/p1_t1_2024-01-14 16-27-44.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/p1_t1_2024-01-14 16-27-44.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/p1_t1_2024-01-14 16-30-02.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/p1_t1_2024-01-14 16-30-02.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/p1_t1_2024-01-14 16-30-02_SummaryLogs.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/p1_t1_2024-01-14 16-30-02_SummaryLogs.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/p1_t1_2024-01-14 16-33-56.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/p1_t1_2024-01-14 16-33-56.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/p1_t1_2024-01-14 16-33-56_SummaryLogs.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/p1_t1_2024-01-14 16-33-56_SummaryLogs.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/p1_t1_2024-01-14 16-47-14.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/p1_t1_2024-01-14 16-47-14.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/p1_t1_2024-01-14 16-47-42.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/p1_t1_2024-01-14 16-47-42.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/p1_t1_2024-01-14 16-47-42_SummaryLogs.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/p1_t1_2024-01-14 16-47-42_SummaryLogs.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/p1_t1_2024-01-14 16-50-17.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/p1_t1_2024-01-14 16-50-17.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/p1_t1_2024-01-14 16-50-17_SummaryLogs.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/p1_t1_2024-01-14 16-50-17_SummaryLogs.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/p1_t1_2024-01-14 16-59-38.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/p1_t1_2024-01-14 16-59-38.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/p1_t1_2024-01-14 16-59-38_SummaryLogs.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/p1_t1_2024-01-14 16-59-38_SummaryLogs.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/p1_t1_2024-01-14 17-01-41.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/p1_t1_2024-01-14 17-01-41.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/p1_t1_2024-01-14 17-01-41_SummaryLogs.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/p1_t1_2024-01-14 17-01-41_SummaryLogs.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/p1_t1_2024-01-14 17-05-40.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/p1_t1_2024-01-14 17-05-40.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/p1_t1_2024-01-14 17-05-40_SummaryLogs.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/p1_t1_2024-01-14 17-05-40_SummaryLogs.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/p1_t1_2024-01-14 17-07-31.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/p1_t1_2024-01-14 17-07-31.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/p1_t1_2024-01-14 17-07-31_SummaryLogs.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/p1_t1_2024-01-14 17-07-31_SummaryLogs.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/p1_t1_2024-01-14 17-11-11.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/p1_t1_2024-01-14 17-11-11.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/p1_t1_2024-01-14 17-11-11_SummaryLogs.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/p1_t1_2024-01-14 17-11-11_SummaryLogs.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/p1_t1_2024-01-15 10-36-00.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/p1_t1_2024-01-15 10-36-00.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/p1_t1_2024-01-15 10-36-00_SummaryLogs.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/p1_t1_2024-01-15 10-36-00_SummaryLogs.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/p1_t1_2024-01-15 10-41-06.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/p1_t1_2024-01-15 10-41-06.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/p1_t1_2024-01-15 10-41-29.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/p1_t1_2024-01-15 10-41-29.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/p1_t1_2024-01-15 10-41-29_SummaryLogs.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/p1_t1_2024-01-15 10-41-29_SummaryLogs.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/p1_t1_2024-01-15 11-49-08.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/p1_t1_2024-01-15 11-49-08.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/p1_t1_2024-01-15 11-49-08_SummaryLogs.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/p1_t1_2024-01-15 11-49-08_SummaryLogs.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/p1_t1_2024-01-15 12-04-15.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/p1_t1_2024-01-15 12-04-15.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/p1_t1_2024-01-15 12-04-15_SummaryLogs.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/p1_t1_2024-01-15 12-04-15_SummaryLogs.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/p1_t1_2024-01-15 12-06-43.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/p1_t1_2024-01-15 12-06-43.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/p1_t1_2024-01-15 12-06-43_SummaryLogs.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/p1_t1_2024-01-15 12-06-43_SummaryLogs.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/p1_t1_2024-01-15 12-25-08.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/p1_t1_2024-01-15 12-25-08.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/p1_t1_2024-01-15 12-25-08_SummaryLogs.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/p1_t1_2024-01-15 12-25-08_SummaryLogs.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/p1_t1_2024-01-15 12-32-13.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/p1_t1_2024-01-15 12-32-13.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/p1_t1_2024-01-15 12-32-13_SummaryLogs.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/p1_t1_2024-01-15 12-32-13_SummaryLogs.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/p1_ttest1_2024-01-15 10-12-17.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/p1_ttest1_2024-01-15 10-12-17.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/p1_ttest1_2024-01-15 10-12-17_SummaryLogs.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/p1_ttest1_2024-01-15 10-12-17_SummaryLogs.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/p2_t2_2024-01-15 13-22-05.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/p2_t2_2024-01-15 13-22-05.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/p2_t2_2024-01-15 13-22-05_SummaryLogs.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/p2_t2_2024-01-15 13-22-05_SummaryLogs.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/p2_t2_2024-01-15 13-28-09.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/p2_t2_2024-01-15 13-28-09.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/p2_t2_2024-01-15 13-28-09_SummaryLogs.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/p2_t2_2024-01-15 13-28-09_SummaryLogs.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/p3_t3_2024-01-15 13-33-31.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/p3_t3_2024-01-15 13-33-31.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/p3_t3_2024-01-15 13-33-31_SummaryLogs.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/p3_t3_2024-01-15 13-33-31_SummaryLogs.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/p3_t3_2024-01-15 13-34-45.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/p3_t3_2024-01-15 13-34-45.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/p3_t3_2024-01-15 13-45-51.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/p3_t3_2024-01-15 13-45-51.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/p3_t3_2024-01-15 13-45-51_SummaryLogs.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/p3_t3_2024-01-15 13-45-51_SummaryLogs.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/p4_t4_2024-01-15 13-35-28.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/p4_t4_2024-01-15 13-35-28.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/p4_t4_2024-01-15 13-35-28_SummaryLogs.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/p4_t4_2024-01-15 13-35-28_SummaryLogs.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/p4_t4_2024-01-15 13-57-44.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/p4_t4_2024-01-15 13-57-44.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/p4_t4_2024-01-15 13-57-44_SummaryLogs.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/p4_t4_2024-01-15 13-57-44_SummaryLogs.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/p4_t4_2024-01-15 14-37-45.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/p4_t4_2024-01-15 14-37-45.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/p4_t4_2024-01-15 14-37-45_SummaryLogs.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/p4_t4_2024-01-15 14-37-45_SummaryLogs.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/p4_t4_2024-01-15 14-59-02.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/p4_t4_2024-01-15 14-59-02.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/p4_t4_2024-01-15 14-59-02_SummaryLogs.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/logFiles/p4_t4_2024-01-15 14-59-02_SummaryLogs.json.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.UAVSimulation/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UAVSimulation/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameManager/Databases/InputRecordsDatabase.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameManager/Databases/InputRecordsDatabase.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameManager/Databases/SettingsDatabase.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameManager/Databases/SettingsDatabase.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameManager/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameManager/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HelperScripts/ColorHelper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HelperScripts/ColorHelper.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/HelperScripts/Enums.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HelperScripts/Enums.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HelperScripts/FlexibleGridLayout.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HelperScripts/FlexibleGridLayout.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/IOHandlers/Settings/ScriptableObjects/ConfigFilesSettingsSO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/IOHandlers/Settings/ScriptableObjects/ConfigFilesSettingsSO.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Modules/Fuel/FuelLogHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Fuel/FuelLogHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Modules/Fuel/Settings/FueSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Fuel/Settings/FueSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Modules/Logging/Log.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Logging/Log.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Modules/Logging/LoggingManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Logging/LoggingManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Modules/Logging/ScoreSummaryLogger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Logging/ScoreSummaryLogger.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Modules/Navigation/NavigationManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Navigation/NavigationManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Modules/Navigation/Navigator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Navigation/Navigator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Modules/Navigation/Path.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Navigation/Path.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Modules/Navigation/Settings/NavigationSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Navigation/Settings/NavigationSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Modules/Navigation/Settings/ScriptableObjects/NavigationSettingsSO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Navigation/Settings/ScriptableObjects/NavigationSettingsSO.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HelperScripts/Extensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HelperScripts/Extensions.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Modules/Navigation/Submodules/Rerouting/ReroutingLogHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Navigation/Submodules/Rerouting/ReroutingLogHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Modules/Navigation/Submodules/Rerouting/ReroutingManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Navigation/Submodules/Rerouting/ReroutingManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Modules/Navigation/Submodules/Rerouting/Settings/ReroutingSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Navigation/Submodules/Rerouting/Settings/ReroutingSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Modules/Navigation/Submodules/Rerouting/Settings/ScriptableObjects/ReroutingSettingsSO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Navigation/Submodules/Rerouting/Settings/ScriptableObjects/ReroutingSettingsSO.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Modules/NoFlyZone/Prefabs/NFZMaterial.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/NoFlyZone/Prefabs/NFZMaterial.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Modules/NoFlyZone/Prefabs/NFZPrefab.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/NoFlyZone/Prefabs/NFZPrefab.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Modules/NoFlyZone/Settings/NFZLogHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/NoFlyZone/Settings/NFZLogHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Modules/NoFlyZone/Settings/NFZSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/NoFlyZone/Settings/NFZSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Modules/NoFlyZone/Settings/ScriptableObjects/NFZSettingsSO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/NoFlyZone/Settings/ScriptableObjects/NFZSettingsSO.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Modules/Prompts/PromptLogHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Prompts/PromptLogHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Modules/Prompts/Settings/PromptSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Prompts/Settings/PromptSettings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Modules/ScoreKeeper/Score.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/ScoreKeeper/Score.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Modules/ScoreKeeper/ScoreLogHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/ScoreKeeper/ScoreLogHandler.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Modules/ScoreKeeper/ScoreManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/ScoreKeeper/ScoreManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Modules/ScoreKeeper/Settings/ScoreKeepersSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/ScoreKeeper/Settings/ScoreKeepersSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Modules/ScoreKeeper/Settings/ScriptableObjects/ScoreKeepersSettingsSO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/ScoreKeeper/Settings/ScriptableObjects/ScoreKeepersSettingsSO.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Modules/TargetDetection/Prefabs/New Material.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/TargetDetection/Prefabs/New Material.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Modules/TargetDetection/Prefabs/TargetBoxPrefab.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/TargetDetection/Prefabs/TargetBoxPrefab.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Modules/TargetDetection/Prefabs/UAVCamera.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/TargetDetection/Prefabs/UAVCamera.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Modules/TargetDetection/Settings/ScriptableObjects/TargetDetectionSettingsSO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/TargetDetection/Settings/ScriptableObjects/TargetDetectionSettingsSO.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Modules/TargetDetection/Settings/TargetDetectionSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/TargetDetection/Settings/TargetDetectionSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Modules/TargetDetection/Target.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/TargetDetection/Target.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Modules/TargetDetection/TargetDetectionLogHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/TargetDetection/TargetDetectionLogHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Modules/TargetDetection/TargetsDetectionManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/TargetDetection/TargetsDetectionManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Modules/TargetDetection/UavCameraController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/TargetDetection/UavCameraController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Modules/WayPoints/Prefabs/WayPointPrefab.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/WayPoints/Prefabs/WayPointPrefab.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Modules/WayPoints/Settings/ScriptableObjects/WaypointSettingsSO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/WayPoints/Settings/ScriptableObjects/WaypointSettingsSO.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Modules/WayPoints/Settings/WaypointSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/WayPoints/Settings/WaypointSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Modules/WayPoints/WayPoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/WayPoints/WayPoint.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Modules/WayPoints/WayPointsGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/WayPoints/WayPointsGenerator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SimulationScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SimulationScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Terrains/Terrain.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Terrains/Terrain.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UAVs/Settings/UavSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UAVs/Settings/UavSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UAVs/Uav.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UAVs/Uav.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UAVs/UavLogHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UAVs/UavLogHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UAVs/UavsManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UAVs/UavsManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UI/BlockingPanelController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/BlockingPanelController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UI/FuelAndHealthPanel/Settings/FuelAndHealthPanelSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/FuelAndHealthPanel/Settings/FuelAndHealthPanelSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UI/MainMenu/SceneLoader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/MainMenu/SceneLoader.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UI/Paths Rendering/PathRenderer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/Paths Rendering/PathRenderer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UI/Paths Rendering/PathsRenderersManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/Paths Rendering/PathsRenderersManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UI/Paths Rendering/Settings/Path Rendering Settings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/Paths Rendering/Settings/Path Rendering Settings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UI/Paths Rendering/Settings/ScriptableObjects/PathsRenderingSettingsSO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/Paths Rendering/Settings/ScriptableObjects/PathsRenderingSettingsSO.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UI/ReroutingPanel/Prefabs/rerouteButtonPrefab.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/ReroutingPanel/Prefabs/rerouteButtonPrefab.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/UI/ReroutingPanel/ReroutingButtonsContainerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/ReroutingPanel/ReroutingButtonsContainerController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UI/ReroutingPanel/ReroutingPanelManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/ReroutingPanel/ReroutingPanelManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UI/ReroutingPanel/Settings/ReroutingPanelSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/ReroutingPanel/Settings/ReroutingPanelSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UI/ReroutingPanel/Settings/ScriptableObjects/ReroutingPanelSettingsSO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/ReroutingPanel/Settings/ScriptableObjects/ReroutingPanelSettingsSO.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/UI/Score/ScorePanelController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/Score/ScorePanelController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UI/UavCameraAndTargetDetectionPanel/CameraAndTargetDetectionPanelsManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/UavCameraAndTargetDetectionPanel/CameraAndTargetDetectionPanelsManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UI/UavCameraAndTargetDetectionPanel/Settings/ScriptableObjects/UavCameraAndTargetDetectionPanelSettingsSO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/UavCameraAndTargetDetectionPanel/Settings/ScriptableObjects/UavCameraAndTargetDetectionPanelSettingsSO.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UI/UavCameraAndTargetDetectionPanel/Settings/UavCameraAndTargetDetectionSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/UavCameraAndTargetDetectionPanel/Settings/UavCameraAndTargetDetectionSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UI/UavCameraAndTargetDetectionPanel/UavCameraAndTargetDetectionPanelController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/UavCameraAndTargetDetectionPanel/UavCameraAndTargetDetectionPanelController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/configFiles/settings/SettingsHWL-Secondary.settings.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/configFiles/settings/SettingsHWL-Secondary.settings.json.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/configFiles/settings/SettingsHWL.settings.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/configFiles/settings/SettingsHWL.settings.json.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/configFiles/settings/SettingsLWL-Secondary.settings.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/configFiles/settings/SettingsLWL-Secondary.settings.json.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/configFiles/settings/SettingsLWL.settings.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/configFiles/settings/SettingsLWL.settings.json.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/configFiles/settings/SettingsMWL-Secondary.settings.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/configFiles/settings/SettingsMWL-Secondary.settings.json.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/configFiles/settings/SettingsMWL.settings.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/configFiles/settings/SettingsMWL.settings.json.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/configFiles/settings/SettingsTraining-Secondary.settings.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/configFiles/settings/SettingsTraining-Secondary.settings.json.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/configFiles/settings/SettingsTraining.settings.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/configFiles/settings/SettingsTraining.settings.json.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-03-12 21-21-31.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-03-12 21-21-31.json.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-03-12 21-27-31.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-03-12 21-27-31.json.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-03-12 21-28-02.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-03-12 21-28-02.json.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-03-12 21-28-17.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-03-12 21-28-17.json.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-03-12 21-28-53.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-03-12 21-28-53.json.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-03-12 21-29-19.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-03-12 21-29-19.json.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-03-12 21-36-29.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-03-12 21-36-29.json.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-03-12 21-36-48.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-03-12 21-36-48.json.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-03-12 21-44-18.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-03-12 21-44-18.json.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-03-12 21-44-39.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-03-12 21-44-39.json.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-03-12 21-46-05.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-03-12 21-46-05.json.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-03-12 21-46-36.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-03-12 21-46-36.json.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-03-12 21-54-12.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-03-12 21-54-12.json.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-03-12 21-54-58.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-03-12 21-54-58.json.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-03-13 00-11-30-Su11ar23LoA.D.30.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-03-13 00-11-30-Su11ar23LoA.D.30.json.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-03-13 00-11-30.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-03-13 00-11-30.json.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-03-13 00-12-36-Su12ar23LoA.D.36.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-03-13 00-12-36-Su12ar23LoA.D.36.json.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-03-13 00-12-36.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-03-13 00-12-36.json.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-03-13 00-14-03-Su14ar23LoA.D.3.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-03-13 00-14-03-Su14ar23LoA.D.3.json.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-03-13 00-14-03.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-03-13 00-14-03.json.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-03-13 00-14-09-Su14ar23LoA.D.9.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-03-13 00-14-09-Su14ar23LoA.D.9.json.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-03-13 00-14-09.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-03-13 00-14-09.json.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-03-13 00-18-09-Su18ar23LoA.D.9.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-03-13 00-18-09-Su18ar23LoA.D.9.json.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-03-13 00-18-09.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-03-13 00-18-09.json.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-03-13 08-33-37-SummaryLogs.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-03-13 08-33-37-SummaryLogs.json.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-03-13 08-33-37.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-03-13 08-33-37.json.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-03-13 08-36-54-SummaryLogs.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-03-13 08-36-54-SummaryLogs.json.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-03-13 08-36-54.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-03-13 08-36-54.json.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-03-13 08-42-15-SummaryLogs.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-03-13 08-42-15-SummaryLogs.json.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-03-13 08-42-15.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-03-13 08-42-15.json.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-03-13 08-43-11-SummaryLogs.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-03-13 08-43-11-SummaryLogs.json.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-03-13 08-43-11.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-03-13 08-43-11.json.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-03-13 08-45-39-SummaryLogs.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-03-13 08-45-39-SummaryLogs.json.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-03-13 08-45-39.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-03-13 08-45-39.json.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-03-13 08-50-14-SummaryLogs.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-03-13 08-50-14-SummaryLogs.json.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-03-13 08-50-14.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-03-13 08-50-14.json.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-03-13 08-56-52-SummaryLogs.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-03-13 08-56-52-SummaryLogs.json.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-03-13 08-56-52.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-03-13 08-56-52.json.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-03-13 08-58-31-SummaryLogs.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-03-13 08-58-31-SummaryLogs.json.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-03-13 08-58-31.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-03-13 08-58-31.json.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-03-13 08-59-47-SummaryLogs.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-03-13 08-59-47-SummaryLogs.json.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-03-13 08-59-47.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-03-13 08-59-47.json.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/logFiles/lab rat1- hw-primary.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/logFiles/lab rat1- hw-primary.json.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/logFiles/labrat 1- hw-secondary.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/logFiles/labrat 1- hw-secondary.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/configFiles/input/default.input.json" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/configFiles/input/default.input.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/configFiles/input/sample input explained .json.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/configFiles/input/sample input explained .json.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/configFiles/input/sample.input - Copy.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/configFiles/input/sample.input - Copy.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/configFiles/input/sample.input.json" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/configFiles/input/sample.input.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/configFiles/input/sample.input.json.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/configFiles/input/sample.input.json.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/configFiles/settings/4Uavs.settings.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/configFiles/settings/4Uavs.settings.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/configFiles/settings/sample settings explained.json" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/configFiles/settings/sample settings explained.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/configFiles/settings/sample settings explained.json.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/configFiles/settings/sample settings explained.json.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/configFiles/settings/sample.settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/configFiles/settings/sample.settings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/configFiles/settings/sample.settings.json.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/configFiles/settings/sample.settings.json.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/logFiles/0001-01-01 00-00-00.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/logFiles/0001-01-01 00-00-00.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-05-09 15-39-47.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-05-09 15-39-47.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-05-09 15-40-00.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-05-09 15-40-00.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-05-09 15-52-49-SummaryLogs.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-05-09 15-52-49-SummaryLogs.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-05-09 15-52-49.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-05-09 15-52-49.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-05-09 16-02-47.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-05-09 16-02-47.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-05-09 16-03-28-SummaryLogs.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-05-09 16-03-28-SummaryLogs.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-05-09 16-03-28.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-05-09 16-03-28.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-05-09 16-07-46-SummaryLogs.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-05-09 16-07-46-SummaryLogs.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-05-09 16-07-46.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-05-09 16-07-46.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-05-09 16-10-33-SummaryLogs.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-05-09 16-10-33-SummaryLogs.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-05-09 16-10-33.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-05-09 16-10-33.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-05-09 16-12-53-SummaryLogs.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-05-09 16-12-53-SummaryLogs.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-05-09 16-12-53.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-05-09 16-12-53.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-05-09 16-31-11-SummaryLogs.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-05-09 16-31-11-SummaryLogs.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-05-09 16-31-11.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-05-09 16-31-11.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-05-09 16-36-51-SummaryLogs.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-05-09 16-36-51-SummaryLogs.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-05-09 16-36-51.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-05-09 16-36-51.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-05-09 16-47-13-SummaryLogs.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-05-09 16-47-13-SummaryLogs.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-05-09 16-47-13.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-05-09 16-47-13.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-05-09 16-52-53-SummaryLogs.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-05-09 16-52-53-SummaryLogs.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-05-09 16-52-53.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-05-09 16-52-53.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-05-09 16-59-32-SummaryLogs.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-05-09 16-59-32-SummaryLogs.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-05-09 16-59-32.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-05-09 16-59-32.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-05-09 17-15-09-SummaryLogs.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-05-09 17-15-09-SummaryLogs.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-05-09 17-15-09.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-05-09 17-15-09.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-05-09 17-23-22.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-05-09 17-23-22.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-05-09 17-23-41-SummaryLogs.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-05-09 17-23-41-SummaryLogs.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-05-09 17-23-41.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/logFiles/2023-05-09 17-23-41.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/logFiles/p10_tt1_2023-05-10 03-22-16.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/logFiles/p10_tt1_2023-05-10 03-22-16.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/logFiles/p10_tt1_2023-05-10 03-22-16_SummaryLogs.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/logFiles/p10_tt1_2023-05-10 03-22-16_SummaryLogs.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/logFiles/p2_t1_2023-05-10 10-09-05.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/logFiles/p2_t1_2023-05-10 10-09-05.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/logFiles/p2_t1_2023-05-10 10-09-05_SummaryLogs.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/logFiles/p2_t1_2023-05-10 10-09-05_SummaryLogs.json.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodyActiveAccount">
+    <option name="activeAccountId" value="VXNlcjoyNTk4NTQ=" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -554,6 +314,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d4cde64232cf45659d86aafa597faa7746a800/5d/7eca01a0/String.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d4cde64232cf45659d86aafa597faa7746a800/62/9bd9dae3/StringBuilder.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d4cde64232cf45659d86aafa597faa7746a800/63/4dc66c55/Nullable`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d4cde64232cf45659d86aafa597faa7746a800/70/df171cef/Random.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d4cde64232cf45659d86aafa597faa7746a800/75/374e3337/Task.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d4cde64232cf45659d86aafa597faa7746a800/7b/565aa599/UTF8Encoding.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d4cde64232cf45659d86aafa597faa7746a800/7b/991b1fec/List`1.cs" root0="SKIP_HIGHLIGHTING" />
@@ -573,6 +334,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d4cde64232cf45659d86aafa597faa7746a800/eb/843202c0/Dictionary`2.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d4cde64232cf45659d86aafa597faa7746a800/ec/66e5778e/Dictionary`2.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d4cde64232cf45659d86aafa597faa7746a800/f2/5debe7a0/Type.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d4cde64232cf45659d86aafa597faa7746a800/f3/3250964e/String.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d4cde64232cf45659d86aafa597faa7746a800/f7/351a739d/String.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d4cde64232cf45659d86aafa597faa7746a800/fc/4102a2a0/Dictionary`2.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d4cde64232cf45659d86aafa597faa7746a800/ff/ea2a158c/NullReferenceException.cs" root0="SKIP_HIGHLIGHTING" />
@@ -594,6 +356,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f1212ad1dec44ce7b7147976b91869c3157800/45/673bb8a6/MonoBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f1212ad1dec44ce7b7147976b91869c3157800/45/d031f111/Debug.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f1212ad1dec44ce7b7147976b91869c3157800/4d/2e53ff8f/MonoBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f1212ad1dec44ce7b7147976b91869c3157800/53/34dc86ce/ScriptableObject.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f1212ad1dec44ce7b7147976b91869c3157800/71/2f823de2/GameObject.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f1212ad1dec44ce7b7147976b91869c3157800/76/054566ea/MonoBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f1212ad1dec44ce7b7147976b91869c3157800/7c/70751430/UnitySynchronizationContext.cs" root0="SKIP_HIGHLIGHTING" />
@@ -689,8 +452,10 @@
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/Button/ButtonTests.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/Canvas/CanvasScalerWithChildTextObjectDoesNotCrash.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/Canvas/NestedCanvas.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/Dropdown/DropdownTests.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/EventSystem/GraphicRaycasterWorldSpaceCanvasTests.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/EventSystem/RaycastSortingTests.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/Layout/AspectRatioFitterTests.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/Layout/ContentSizeFitterTests.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/Layout/HorizonalLayoutGroupTests.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/Layout/LayoutGroupScaling.cs" root0="SKIP_HIGHLIGHTING" />
@@ -707,6 +472,7 @@
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.visualscripting@1.7.8/Runtime/VisualScripting.Core/Dependencies/FullSerializer/fsSerializer.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.visualscripting@1.7.8/Runtime/VisualScripting.Core/Unity/LudiqBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.visualscripting@1.7.8/Runtime/VisualScripting.Core/Utilities/ComponentHolderProtocol.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.visualscripting@1.7.8/Runtime/VisualScripting.Core/Utilities/StringUtility.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.visualscripting@1.7.8/Runtime/VisualScripting.Flow/Framework/Events/Physics/OnCollisionEnter.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.visualscripting@1.7.8/Runtime/VisualScripting.Flow/Framework/Events/Physics/OnCollisionExit.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.visualscripting@1.7.8/Runtime/VisualScripting.Flow/Framework/Events/Physics/OnCollisionStay.cs" root0="SKIP_HIGHLIGHTING" />
@@ -723,6 +489,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="PerforceDirect.Settings">
+    <option name="ENABLED" value="false" />
+  </component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
@@ -734,27 +503,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;Discover.Launch.Via.Unity&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;XThreadsFramesViewSplitterKey&quot;: &quot;0.28396946&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/abdel/OneDrive - University of Virginia/UVA/Research/UAV/UAVSimulation&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;project.propDebugger&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Discover.Launch.Via.Unity": "true",
+    "RunOnceActivity.CodyProjectSettingsMigration": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "XThreadsFramesViewSplitterKey": "0.18088737",
+    "last_opened_file_path": "C:/Users/abdel/OneDrive - University of Virginia/UVA/Research/UAV/UAVSimulation",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;rider.external.source.directories&quot;: [
-      &quot;C:\\Users\\abdel\\AppData\\Roaming\\JetBrains\\Rider2022.3\\resharper-host\\DecompilerCache&quot;,
-      &quot;C:\\Users\\abdel\\AppData\\Roaming\\JetBrains\\Rider2022.3\\resharper-host\\SourcesCache&quot;,
-      &quot;C:\\Users\\abdel\\AppData\\Local\\Symbols\\src&quot;
+  "keyToStringList": {
+    "rider.external.source.directories": [
+      "C:\\Users\\abdel\\AppData\\Roaming\\JetBrains\\Rider2022.3\\resharper-host\\DecompilerCache",
+      "C:\\Users\\abdel\\AppData\\Roaming\\JetBrains\\Rider2022.3\\resharper-host\\SourcesCache",
+      "C:\\Users\\abdel\\AppData\\Local\\Symbols\\src"
     ]
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="$PROJECT_DIR$/Builds/v4.0 Workload and Primary-Secondary Task Study\UAVSimulation.exe" />
@@ -790,10 +560,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="8588">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="8588" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -892,6 +662,9 @@
       <workItem from="1682658484319" duration="4185000" />
       <workItem from="1682735665166" duration="4779000" />
       <workItem from="1683660596047" duration="12793000" />
+      <workItem from="1705259479289" duration="102000" />
+      <workItem from="1705259824290" duration="587000" />
+      <workItem from="1705260442909" duration="22243000" />
     </task>
     <servers />
   </component>
@@ -989,17 +762,17 @@
           <option name="timeStamp" value="27" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Modules/ScoreKeeper/ScoreManager.cs</url>
-          <line>90</line>
-          <properties documentPath="C:\Users\abdel\OneDrive - University of Virginia\UVA\Research\UAV\UAVSimulation\Assets\Modules\ScoreKeeper\ScoreManager.cs" initialLine="90" containingFunctionPresentation="method 'AddAIRelatedScore'">
+          <url>file://$PROJECT_DIR$/Assets/Modules/Navigation/Submodules/Rerouting/ReroutingManager.cs</url>
+          <line>194</line>
+          <properties documentPath="C:\Users\abdel\OneDrive - University of Virginia\UVA\Research\UAV\UAVSimulation\Assets\Modules\Navigation\Submodules\Rerouting\ReroutingManager.cs" initialLine="194" containingFunctionPresentation="method 'RemoveUavPanelAndOptions'">
             <startOffsets>
-              <option value="3304" />
+              <option value="7431" />
             </startOffsets>
             <endOffsets>
-              <option value="3484" />
+              <option value="7501" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="29" />
+          <option name="timeStamp" value="47" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

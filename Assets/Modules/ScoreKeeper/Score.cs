@@ -34,16 +34,16 @@ namespace Modules.ScoreKeeper
 			{ TargetDetectionTrueNegative, 0 }
 		};
 		
-		public Dictionary<AIRelatedScoreEventType, int> aIRelatedScoreCounts = new Dictionary<AIRelatedScoreEventType, int>
+		public Dictionary<AIRelatedScoreEventType, List<int>> aIRelatedScoreCounts = new Dictionary<AIRelatedScoreEventType, List<int>>
 		{
-			{ReroutingTruePositiveWithAITruePositive, 0 },
-			{ReroutingTruePositiveDespiteAIFalseNegative, 0 },
-			{ReroutingTrueNegativeWithAITrueNegative, 0 },
-			{ReroutingTrueNegativeDespiteAIFalsePositive, 0 },
-			{ReroutingFalsePositiveDueToAIFalsePositive, 0 },
-			{ReroutingFalsePositiveDespiteAITrueNegative, 0 },
-			{ReroutingFalseNegativeDespiteAITruePositive, 0 },
-			{ReroutingFalseNegativeDueToAIFalseNegative, 0 },
+			{ReroutingTruePositiveWithAITruePositive, new List<int>() },
+			{ReroutingTruePositiveDespiteAIFalseNegative, new List<int>() },
+			{ReroutingTrueNegativeWithAITrueNegative, new List<int>() },
+			{ReroutingTrueNegativeDespiteAIFalsePositive, new List<int>() },
+			{ReroutingFalsePositiveDueToAIFalsePositive, new List<int>() },
+			{ReroutingFalsePositiveDespiteAITrueNegative, new List<int>() },
+			{ReroutingFalseNegativeDespiteAITruePositive, new List<int>() },
+			{ReroutingFalseNegativeDueToAIFalseNegative, new List<int>() },
 			
 		};
 		public Dictionary<AIRelatedScoreEventType, float> aIRelatedScoreValues = new Dictionary<AIRelatedScoreEventType, float>

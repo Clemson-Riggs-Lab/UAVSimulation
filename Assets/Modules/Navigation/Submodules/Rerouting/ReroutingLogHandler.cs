@@ -172,8 +172,15 @@ namespace Modules.Navigation.Submodules.Rerouting
 		private bool CheckIfHeadingToNFZ( Uav uav, Path path)
 		{
 			// linecast from the uav to the destination and check if it intersects with any NFZ based on the layer mask
-			var hit = Physics2D.Linecast(uav.transform.position, path.destinationWayPoint.transform.position, 1 << LayerMask.NameToLayer("NFZ"));
-			return  hit.collider != null;
+			if (Physics.Linecast(uav.transform.position, path.destinationWayPoint.transform.position, out  var hit, 1 << LayerMask.NameToLayer("NFZ")))
+			{
+				return true;
+				
+			}
+			else
+			{
+				return false;
+			}
 		}
 
 

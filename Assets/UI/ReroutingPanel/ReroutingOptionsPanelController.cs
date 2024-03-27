@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Modules.Navigation;
+using Modules.Navigation.Channels.ScriptableObjects;
 using Modules.Navigation.Submodules.Rerouting;
 using Multiplayer;
 using TMPro;
@@ -40,13 +41,22 @@ namespace UI.ReroutingPanel
 		
 		private Dictionary<int, ReroutingOptionRowController> _panelRows = new ();
         private UavsManager _uavsManager;
+        [NonSerialized] private UavPathEventChannelSO _uavStartedNewPathEventChannel;
 
-        private void Start()
+		private void Start()
         {
+            _uavStartedNewPathEventChannel = GameManager.Instance.channelsDatabase.navigationChannels.uavStartedNewPathEventChannel;
 
+            if (_uavStartedNewPathEventChannel != null)
+                _uavStartedNewPathEventChannel.Subscribe(CloseOptionsOnNewPathStarted);
+        }
+		private void OnDestroy()
+		{
+            if (_uavStartedNewPathEventChannel != null)
+                _uavStartedNewPathEventChannel.Unsubscribe(CloseOptionsOnNewPathStarted);
         }
 
-        private void ClearRows()
+		private void ClearRows()
 		{
 			//find children with name containing "Row"
 			foreach (Transform child in transform)
@@ -87,7 +97,12 @@ namespace UI.ReroutingPanel
 			}
 		}
 
-		private void OnCloseButtonClicked()
+        private void CloseOptionsOnNewPathStarted(Uav uav, Path path)
+        {
+			if (_uav != null && _uav.id == uav.id)
+				OnCloseButtonClicked();
+        }
+        private void OnCloseButtonClicked()
 		{
 			_manager.RemoveUavPanelAndOptions(_uav);//remove panel and stop rerouting manager from calculating rerouting options for this path.
 			_containerController.RemovePanel(_uav);
@@ -120,7 +135,7 @@ namespace UI.ReroutingPanel
 			else
                 _manager.RerouteUav(_uav, optionIndex);
 
-			_containerController.RemovePanel(_uav);
+			_containerController.DisablePanel(_uav);
 		}
 
 		private void HighlightRow(int optionNumber)

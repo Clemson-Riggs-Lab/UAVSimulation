@@ -13,6 +13,8 @@ namespace Modules.Navigation
 {
 	public class Navigator : MonoBehaviour
 	{
+		public static event Action UpdatingNavigation_Event;
+
 		[NonSerialized] private NavigationManager _navigationManager;
 		[NonSerialized] public NavigationSettingsSO navigationSettings;
 
@@ -97,15 +99,16 @@ namespace Modules.Navigation
 		/// </summary>
 		/// <param name="newPath"></param>
 		public void Reroute(Path newPath)
-		{
-			_currentPath = newPath;
+        {
+            _currentPath = newPath;
 			_doTweenSequence.Kill();
 			UpdateNavigation();
 		}
 		
 		private void UpdateNavigation()
-		{
-			if(_uav.uavCondition== Lost) return; //we stop the navigation if the UAV is lost, since this is called recursively, this suffices to stop the navigation.
+        {
+			UpdatingNavigation_Event?.Invoke();
+            if (_uav.uavCondition== Lost) return; //we stop the navigation if the UAV is lost, since this is called recursively, this suffices to stop the navigation.
 			//also note that the above is just a safety check, since the navigator should be destroyed by the navigation manager when the UAV is lost.
 			_uavStartedNewPathEventChannel.RaiseEvent(_uav, _currentPath);
 			_doTweenSequence = DOTween.Sequence();

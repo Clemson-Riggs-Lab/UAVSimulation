@@ -145,6 +145,13 @@ namespace UI.ReroutingPanel
             HighlightPanel(uav);
 		}
 		
+		public void DisablePanel(Uav uav)
+		{
+            if (_uavReroutingOptionsPanelControllerDictionary.ContainsKey(uav))
+            {
+                _uavReroutingOptionsPanelControllerDictionary[uav].gameObject.SetActive(false);
+            }
+        }
 		public void RemovePanel(Uav uav)
 		{
 			if(_uavReroutingOptionsPanelControllerDictionary.ContainsKey(uav))

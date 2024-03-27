@@ -80,7 +80,8 @@ namespace Multiplayer
         [ClientRpc]
         private void ReroutingUAVOnClientRpc(CallerType callerType, int uavId, int optionIndex, string lastReroutOptLsOrderBase, int pathId_0, int pathId_1, int pathId_2)
         {
-            _callCallerTypeDict.Add(CallType.ReroutingUAV, callerType);
+            if (_callCallerTypeDict.ContainsKey(CallType.ReroutingUAV) == false)
+                _callCallerTypeDict.Add(CallType.ReroutingUAV, callerType);
 
             ReroutingUAV_NetworkEventHandler?.Invoke(this, new ReroutingUAVEventArgs(uavId, optionIndex, lastReroutOptLsOrderBase, pathId_0, pathId_1, pathId_2));
 
@@ -90,7 +91,8 @@ namespace Multiplayer
         [ClientRpc]
         private void ReroutePanelOpenClientRpc(CallerType callerType, ulong localClientId, int uavId)
         {
-            _callCallerTypeDict.Add(CallType.RerouteOptionRequested, callerType);
+            if (_callCallerTypeDict.ContainsKey(CallType.RerouteOptionRequested) == false)
+                _callCallerTypeDict.Add(CallType.RerouteOptionRequested, callerType);
 
             ReroutePanelOpen_NetworkEventHandler?.Invoke(this, new ReroutingPanelOpenEventArgs(uavId, localClientId));
 
@@ -107,7 +109,8 @@ namespace Multiplayer
         [ClientRpc]
         private void ReroutePreviewClientRpc(CallerType callerType, ulong localClientId, int uavId, int optionNumber, string lastReroutOptLsOrderBase, int pathId_0, int pathId_1, int pathId_2)
         {
-            _callCallerTypeDict.Add(CallType.RerouteOptionPreviewed, callerType);
+            if (_callCallerTypeDict.ContainsKey(CallType.RerouteOptionPreviewed) == false)
+                _callCallerTypeDict.Add(CallType.RerouteOptionPreviewed, callerType);
 
             ReroutePreview_NetworkEventHandler?.Invoke(this, new ReroutePreviewEventArgs(callerType, localClientId, uavId, optionNumber, lastReroutOptLsOrderBase, pathId_0, pathId_1, pathId_2));
 
